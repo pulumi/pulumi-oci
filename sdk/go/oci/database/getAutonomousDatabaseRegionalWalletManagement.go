@@ -4,8 +4,12 @@
 package database
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -54,4 +58,62 @@ type LookupAutonomousDatabaseRegionalWalletManagementResult struct {
 	State string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated string `pulumi:"timeRotated"`
+}
+
+func LookupAutonomousDatabaseRegionalWalletManagementOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (LookupAutonomousDatabaseRegionalWalletManagementResult, error) {
+		r, err := LookupAutonomousDatabaseRegionalWalletManagement(ctx, opts...)
+		var s LookupAutonomousDatabaseRegionalWalletManagementResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(LookupAutonomousDatabaseRegionalWalletManagementResultOutput)
+}
+
+// A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
+type LookupAutonomousDatabaseRegionalWalletManagementResultOutput struct{ *pulumi.OutputState }
+
+func (LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupAutonomousDatabaseRegionalWalletManagementResult)(nil)).Elem()
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToLookupAutonomousDatabaseRegionalWalletManagementResultOutput() LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
+	return o
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToLookupAutonomousDatabaseRegionalWalletManagementResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
+	return o
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult] {
+	return pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) GracePeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) int { return v.GracePeriod }).(pulumi.IntOutput)
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ShouldRotate() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) bool { return v.ShouldRotate }).(pulumi.BoolOutput)
+}
+
+// The current lifecycle state of the Autonomous Database wallet.
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the wallet was last rotated.
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) TimeRotated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.TimeRotated }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(LookupAutonomousDatabaseRegionalWalletManagementResultOutput{})
 }

@@ -71,7 +71,25 @@ class TargetArgs:
              state: Optional[pulumi.Input[str]] = None,
              target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]] = None,
              target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceType' in kwargs:
+            target_resource_type = kwargs['targetResourceType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'targetDetectorRecipes' in kwargs:
+            target_detector_recipes = kwargs['targetDetectorRecipes']
+        if 'targetResponderRecipes' in kwargs:
+            target_responder_recipes = kwargs['targetResponderRecipes']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("target_resource_id", target_resource_id)
@@ -302,7 +320,39 @@ class _TargetState:
              target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inheritedByCompartments' in kwargs:
+            inherited_by_compartments = kwargs['inheritedByCompartments']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'recipeCount' in kwargs:
+            recipe_count = kwargs['recipeCount']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetDetails' in kwargs:
+            target_details = kwargs['targetDetails']
+        if 'targetDetectorRecipes' in kwargs:
+            target_detector_recipes = kwargs['targetDetectorRecipes']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceType' in kwargs:
+            target_resource_type = kwargs['targetResourceType']
+        if 'targetResponderRecipes' in kwargs:
+            target_responder_recipes = kwargs['targetResponderRecipes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

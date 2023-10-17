@@ -31,7 +31,11 @@ class UnsetUserAssessmentBaselineArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              user_assessment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("user_assessment_id", user_assessment_id)
 
     @property
@@ -71,7 +75,11 @@ class _UnsetUserAssessmentBaselineState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         if user_assessment_id is not None:
             _setter("user_assessment_id", user_assessment_id)
 

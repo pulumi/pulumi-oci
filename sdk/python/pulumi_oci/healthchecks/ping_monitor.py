@@ -71,7 +71,25 @@ class PingMonitorArgs:
              port: Optional[pulumi.Input[int]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("interval_in_seconds", interval_in_seconds)
@@ -299,7 +317,31 @@ class _PingMonitorState:
              time_created: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'homeRegion' in kwargs:
+            home_region = kwargs['homeRegion']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resultsUrl' in kwargs:
+            results_url = kwargs['resultsUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

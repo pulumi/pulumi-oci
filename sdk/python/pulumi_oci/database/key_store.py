@@ -45,7 +45,19 @@ class KeyStoreArgs:
              type_details: pulumi.Input['KeyStoreTypeDetailsArgs'],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'typeDetails' in kwargs:
+            type_details = kwargs['typeDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("type_details", type_details)
@@ -163,7 +175,25 @@ class _KeyStoreState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedDatabases' in kwargs:
+            associated_databases = kwargs['associatedDatabases']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'typeDetails' in kwargs:
+            type_details = kwargs['typeDetails']
+
         if associated_databases is not None:
             _setter("associated_databases", associated_databases)
         if compartment_id is not None:

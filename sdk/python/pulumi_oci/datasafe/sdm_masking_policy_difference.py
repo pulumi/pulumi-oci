@@ -51,7 +51,21 @@ class SdmMaskingPolicyDifferenceArgs:
              difference_type: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'differenceType' in kwargs:
+            difference_type = kwargs['differenceType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("masking_policy_id", masking_policy_id)
         if defined_tags is not None:
@@ -200,7 +214,29 @@ class _SdmMaskingPolicyDifferenceState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_creation_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'differenceType' in kwargs:
+            difference_type = kwargs['differenceType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeCreationStarted' in kwargs:
+            time_creation_started = kwargs['timeCreationStarted']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

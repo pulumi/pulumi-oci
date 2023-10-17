@@ -19,12 +19,15 @@ __all__ = [
     'WorkspaceApplicationPublishedObjectMetadataArgs',
     'WorkspaceApplicationRegistryMetadataArgs',
     'WorkspaceApplicationSourceApplicationInfoArgs',
+    'WorkspaceExportRequestExportedItemArgs',
     'WorkspaceFolderMetadataArgs',
     'WorkspaceFolderMetadataAggregatorArgs',
     'WorkspaceFolderMetadataCountStatisticArgs',
     'WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs',
     'WorkspaceFolderParentRefArgs',
     'WorkspaceFolderRegistryMetadataArgs',
+    'WorkspaceImportRequestImportConflictResolutionArgs',
+    'WorkspaceImportRequestImportedObjectArgs',
     'WorkspaceProjectMetadataArgs',
     'WorkspaceProjectMetadataAggregatorArgs',
     'WorkspaceProjectMetadataCountStatisticArgs',
@@ -32,7 +35,9 @@ __all__ = [
     'WorkspaceProjectParentRefArgs',
     'WorkspaceProjectRegistryMetadataArgs',
     'GetWorkspaceApplicationsFilterArgs',
+    'GetWorkspaceExportRequestsFilterArgs',
     'GetWorkspaceFoldersFilterArgs',
+    'GetWorkspaceImportRequestsFilterArgs',
     'GetWorkspaceProjectsFilterArgs',
     'GetWorkspacesFilterArgs',
 ]
@@ -76,7 +81,13 @@ class WorkspaceApplicationDependentObjectMetadataArgs:
              name_path: Optional[pulumi.Input[str]] = None,
              object_version: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'namePath' in kwargs:
+            name_path = kwargs['namePath']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+
         if action is not None:
             _setter("action", action)
         if identifier is not None:
@@ -244,7 +255,33 @@ class WorkspaceApplicationMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'countStatistics' in kwargs:
+            count_statistics = kwargs['countStatistics']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'createdByName' in kwargs:
+            created_by_name = kwargs['createdByName']
+        if 'identifierPath' in kwargs:
+            identifier_path = kwargs['identifierPath']
+        if 'infoFields' in kwargs:
+            info_fields = kwargs['infoFields']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+        if 'updatedByName' in kwargs:
+            updated_by_name = kwargs['updatedByName']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -474,7 +511,9 @@ class WorkspaceApplicationMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if identifier is not None:
@@ -562,7 +601,11 @@ class WorkspaceApplicationMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectTypeCountLists' in kwargs:
+            object_type_count_lists = kwargs['objectTypeCountLists']
+
         if object_type_count_lists is not None:
             _setter("object_type_count_lists", object_type_count_lists)
 
@@ -598,7 +641,13 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectCount' in kwargs:
+            object_count = kwargs['objectCount']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+
         if object_count is not None:
             _setter("object_count", object_count)
         if object_type is not None:
@@ -648,7 +697,11 @@ class WorkspaceApplicationParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rootDocId' in kwargs:
+            root_doc_id = kwargs['rootDocId']
+
         if parent is not None:
             _setter("parent", parent)
         if root_doc_id is not None:
@@ -718,7 +771,13 @@ class WorkspaceApplicationPublishedObjectMetadataArgs:
              name_path: Optional[pulumi.Input[str]] = None,
              object_version: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'namePath' in kwargs:
+            name_path = kwargs['namePath']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+
         if action is not None:
             _setter("action", action)
         if identifier is not None:
@@ -850,7 +909,15 @@ class WorkspaceApplicationRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -958,7 +1025,19 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
              copy_type: Optional[pulumi.Input[str]] = None,
              last_patch_key: Optional[pulumi.Input[str]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationKey' in kwargs:
+            application_key = kwargs['applicationKey']
+        if 'applicationVersion' in kwargs:
+            application_version = kwargs['applicationVersion']
+        if 'copyType' in kwargs:
+            copy_type = kwargs['copyType']
+        if 'lastPatchKey' in kwargs:
+            last_patch_key = kwargs['lastPatchKey']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if application_key is not None:
             _setter("application_key", application_key)
         if application_version is not None:
@@ -1036,6 +1115,176 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
 
 
 @pulumi.input_type
+class WorkspaceExportRequestExportedItemArgs:
+    def __init__(__self__, *,
+                 aggregator_key: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None,
+                 key: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 name_path: Optional[pulumi.Input[str]] = None,
+                 object_type: Optional[pulumi.Input[str]] = None,
+                 object_version: Optional[pulumi.Input[str]] = None,
+                 time_updated_in_millis: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] aggregator_key: Aggregator key
+        :param pulumi.Input[str] identifier: Object identifier
+        :param pulumi.Input[str] key: Export object request key
+        :param pulumi.Input[str] name: Name of the export request.
+        :param pulumi.Input[str] name_path: Object name path
+        :param pulumi.Input[str] object_type: Object type
+        :param pulumi.Input[str] object_version: Object version
+        :param pulumi.Input[str] time_updated_in_millis: time at which this object was last updated.
+        """
+        WorkspaceExportRequestExportedItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_type=object_type,
+            object_version=object_version,
+            time_updated_in_millis=time_updated_in_millis,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[pulumi.Input[str]] = None,
+             identifier: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             name_path: Optional[pulumi.Input[str]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             object_version: Optional[pulumi.Input[str]] = None,
+             time_updated_in_millis: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'namePath' in kwargs:
+            name_path = kwargs['namePath']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+        if 'timeUpdatedInMillis' in kwargs:
+            time_updated_in_millis = kwargs['timeUpdatedInMillis']
+
+        if aggregator_key is not None:
+            _setter("aggregator_key", aggregator_key)
+        if identifier is not None:
+            _setter("identifier", identifier)
+        if key is not None:
+            _setter("key", key)
+        if name is not None:
+            _setter("name", name)
+        if name_path is not None:
+            _setter("name_path", name_path)
+        if object_type is not None:
+            _setter("object_type", object_type)
+        if object_version is not None:
+            _setter("object_version", object_version)
+        if time_updated_in_millis is not None:
+            _setter("time_updated_in_millis", time_updated_in_millis)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Aggregator key
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @aggregator_key.setter
+    def aggregator_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "aggregator_key", value)
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object identifier
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identifier", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Export object request key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the export request.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="namePath")
+    def name_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object name path
+        """
+        return pulumi.get(self, "name_path")
+
+    @name_path.setter
+    def name_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name_path", value)
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object type
+        """
+        return pulumi.get(self, "object_type")
+
+    @object_type.setter
+    def object_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_type", value)
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object version
+        """
+        return pulumi.get(self, "object_version")
+
+    @object_version.setter
+    def object_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_version", value)
+
+    @property
+    @pulumi.getter(name="timeUpdatedInMillis")
+    def time_updated_in_millis(self) -> Optional[pulumi.Input[str]]:
+        """
+        time at which this object was last updated.
+        """
+        return pulumi.get(self, "time_updated_in_millis")
+
+    @time_updated_in_millis.setter
+    def time_updated_in_millis(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated_in_millis", value)
+
+
+@pulumi.input_type
 class WorkspaceFolderMetadataArgs:
     def __init__(__self__, *,
                  aggregator_key: Optional[pulumi.Input[str]] = None,
@@ -1102,7 +1351,33 @@ class WorkspaceFolderMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'countStatistics' in kwargs:
+            count_statistics = kwargs['countStatistics']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'createdByName' in kwargs:
+            created_by_name = kwargs['createdByName']
+        if 'identifierPath' in kwargs:
+            identifier_path = kwargs['identifierPath']
+        if 'infoFields' in kwargs:
+            info_fields = kwargs['infoFields']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+        if 'updatedByName' in kwargs:
+            updated_by_name = kwargs['updatedByName']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -1332,7 +1607,9 @@ class WorkspaceFolderMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if identifier is not None:
@@ -1420,7 +1697,11 @@ class WorkspaceFolderMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectTypeCountLists' in kwargs:
+            object_type_count_lists = kwargs['objectTypeCountLists']
+
         if object_type_count_lists is not None:
             _setter("object_type_count_lists", object_type_count_lists)
 
@@ -1456,7 +1737,13 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectCount' in kwargs:
+            object_count = kwargs['objectCount']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+
         if object_count is not None:
             _setter("object_count", object_count)
         if object_type is not None:
@@ -1506,7 +1793,11 @@ class WorkspaceFolderParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rootDocId' in kwargs:
+            root_doc_id = kwargs['rootDocId']
+
         if parent is not None:
             _setter("parent", parent)
         if root_doc_id is not None:
@@ -1568,7 +1859,15 @@ class WorkspaceFolderRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -1642,6 +1941,293 @@ class WorkspaceFolderRegistryMetadataArgs:
 
 
 @pulumi.input_type
+class WorkspaceImportRequestImportConflictResolutionArgs:
+    def __init__(__self__, *,
+                 import_conflict_resolution_type: pulumi.Input[str],
+                 duplicate_prefix: Optional[pulumi.Input[str]] = None,
+                 duplicate_suffix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] import_conflict_resolution_type: Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+        :param pulumi.Input[str] duplicate_prefix: In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+        :param pulumi.Input[str] duplicate_suffix: In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+        """
+        WorkspaceImportRequestImportConflictResolutionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_conflict_resolution_type=import_conflict_resolution_type,
+            duplicate_prefix=duplicate_prefix,
+            duplicate_suffix=duplicate_suffix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_conflict_resolution_type: pulumi.Input[str],
+             duplicate_prefix: Optional[pulumi.Input[str]] = None,
+             duplicate_suffix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importConflictResolutionType' in kwargs:
+            import_conflict_resolution_type = kwargs['importConflictResolutionType']
+        if 'duplicatePrefix' in kwargs:
+            duplicate_prefix = kwargs['duplicatePrefix']
+        if 'duplicateSuffix' in kwargs:
+            duplicate_suffix = kwargs['duplicateSuffix']
+
+        _setter("import_conflict_resolution_type", import_conflict_resolution_type)
+        if duplicate_prefix is not None:
+            _setter("duplicate_prefix", duplicate_prefix)
+        if duplicate_suffix is not None:
+            _setter("duplicate_suffix", duplicate_suffix)
+
+    @property
+    @pulumi.getter(name="importConflictResolutionType")
+    def import_conflict_resolution_type(self) -> pulumi.Input[str]:
+        """
+        Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+        """
+        return pulumi.get(self, "import_conflict_resolution_type")
+
+    @import_conflict_resolution_type.setter
+    def import_conflict_resolution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "import_conflict_resolution_type", value)
+
+    @property
+    @pulumi.getter(name="duplicatePrefix")
+    def duplicate_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+        """
+        return pulumi.get(self, "duplicate_prefix")
+
+    @duplicate_prefix.setter
+    def duplicate_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "duplicate_prefix", value)
+
+    @property
+    @pulumi.getter(name="duplicateSuffix")
+    def duplicate_suffix(self) -> Optional[pulumi.Input[str]]:
+        """
+        In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+        """
+        return pulumi.get(self, "duplicate_suffix")
+
+    @duplicate_suffix.setter
+    def duplicate_suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "duplicate_suffix", value)
+
+
+@pulumi.input_type
+class WorkspaceImportRequestImportedObjectArgs:
+    def __init__(__self__, *,
+                 aggregator_key: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 name_path: Optional[pulumi.Input[str]] = None,
+                 new_key: Optional[pulumi.Input[str]] = None,
+                 object_type: Optional[pulumi.Input[str]] = None,
+                 object_version: Optional[pulumi.Input[str]] = None,
+                 old_key: Optional[pulumi.Input[str]] = None,
+                 resolution_action: Optional[pulumi.Input[str]] = None,
+                 time_updated_in_millis: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] aggregator_key: Aggregator key
+        :param pulumi.Input[str] identifier: Object identifier
+        :param pulumi.Input[str] name: Name of the import request.
+        :param pulumi.Input[str] name_path: Object name path
+        :param pulumi.Input[str] new_key: New key of the object
+        :param pulumi.Input[str] object_type: Object type
+        :param pulumi.Input[str] object_version: Object version
+        :param pulumi.Input[str] old_key: Old key of the object
+        :param pulumi.Input[str] resolution_action: Object resolution action
+        :param pulumi.Input[str] time_updated_in_millis: time at which this object was last updated.
+        """
+        WorkspaceImportRequestImportedObjectArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            identifier=identifier,
+            name=name,
+            name_path=name_path,
+            new_key=new_key,
+            object_type=object_type,
+            object_version=object_version,
+            old_key=old_key,
+            resolution_action=resolution_action,
+            time_updated_in_millis=time_updated_in_millis,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[pulumi.Input[str]] = None,
+             identifier: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             name_path: Optional[pulumi.Input[str]] = None,
+             new_key: Optional[pulumi.Input[str]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             object_version: Optional[pulumi.Input[str]] = None,
+             old_key: Optional[pulumi.Input[str]] = None,
+             resolution_action: Optional[pulumi.Input[str]] = None,
+             time_updated_in_millis: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'namePath' in kwargs:
+            name_path = kwargs['namePath']
+        if 'newKey' in kwargs:
+            new_key = kwargs['newKey']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+        if 'oldKey' in kwargs:
+            old_key = kwargs['oldKey']
+        if 'resolutionAction' in kwargs:
+            resolution_action = kwargs['resolutionAction']
+        if 'timeUpdatedInMillis' in kwargs:
+            time_updated_in_millis = kwargs['timeUpdatedInMillis']
+
+        if aggregator_key is not None:
+            _setter("aggregator_key", aggregator_key)
+        if identifier is not None:
+            _setter("identifier", identifier)
+        if name is not None:
+            _setter("name", name)
+        if name_path is not None:
+            _setter("name_path", name_path)
+        if new_key is not None:
+            _setter("new_key", new_key)
+        if object_type is not None:
+            _setter("object_type", object_type)
+        if object_version is not None:
+            _setter("object_version", object_version)
+        if old_key is not None:
+            _setter("old_key", old_key)
+        if resolution_action is not None:
+            _setter("resolution_action", resolution_action)
+        if time_updated_in_millis is not None:
+            _setter("time_updated_in_millis", time_updated_in_millis)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Aggregator key
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @aggregator_key.setter
+    def aggregator_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "aggregator_key", value)
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object identifier
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "identifier", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the import request.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="namePath")
+    def name_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object name path
+        """
+        return pulumi.get(self, "name_path")
+
+    @name_path.setter
+    def name_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name_path", value)
+
+    @property
+    @pulumi.getter(name="newKey")
+    def new_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        New key of the object
+        """
+        return pulumi.get(self, "new_key")
+
+    @new_key.setter
+    def new_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "new_key", value)
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object type
+        """
+        return pulumi.get(self, "object_type")
+
+    @object_type.setter
+    def object_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_type", value)
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object version
+        """
+        return pulumi.get(self, "object_version")
+
+    @object_version.setter
+    def object_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_version", value)
+
+    @property
+    @pulumi.getter(name="oldKey")
+    def old_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Old key of the object
+        """
+        return pulumi.get(self, "old_key")
+
+    @old_key.setter
+    def old_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "old_key", value)
+
+    @property
+    @pulumi.getter(name="resolutionAction")
+    def resolution_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object resolution action
+        """
+        return pulumi.get(self, "resolution_action")
+
+    @resolution_action.setter
+    def resolution_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resolution_action", value)
+
+    @property
+    @pulumi.getter(name="timeUpdatedInMillis")
+    def time_updated_in_millis(self) -> Optional[pulumi.Input[str]]:
+        """
+        time at which this object was last updated.
+        """
+        return pulumi.get(self, "time_updated_in_millis")
+
+    @time_updated_in_millis.setter
+    def time_updated_in_millis(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated_in_millis", value)
+
+
+@pulumi.input_type
 class WorkspaceProjectMetadataArgs:
     def __init__(__self__, *,
                  aggregator_key: Optional[pulumi.Input[str]] = None,
@@ -1708,7 +2294,33 @@ class WorkspaceProjectMetadataArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              updated_by: Optional[pulumi.Input[str]] = None,
              updated_by_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'countStatistics' in kwargs:
+            count_statistics = kwargs['countStatistics']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'createdByName' in kwargs:
+            created_by_name = kwargs['createdByName']
+        if 'identifierPath' in kwargs:
+            identifier_path = kwargs['identifierPath']
+        if 'infoFields' in kwargs:
+            info_fields = kwargs['infoFields']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+        if 'updatedByName' in kwargs:
+            updated_by_name = kwargs['updatedByName']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
@@ -1938,7 +2550,9 @@ class WorkspaceProjectMetadataAggregatorArgs:
              key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if identifier is not None:
@@ -2026,7 +2640,11 @@ class WorkspaceProjectMetadataCountStatisticArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectTypeCountLists' in kwargs:
+            object_type_count_lists = kwargs['objectTypeCountLists']
+
         if object_type_count_lists is not None:
             _setter("object_type_count_lists", object_type_count_lists)
 
@@ -2062,7 +2680,13 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs:
              _setter: Callable[[Any, Any], None],
              object_count: Optional[pulumi.Input[str]] = None,
              object_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectCount' in kwargs:
+            object_count = kwargs['objectCount']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+
         if object_count is not None:
             _setter("object_count", object_count)
         if object_type is not None:
@@ -2112,7 +2736,11 @@ class WorkspaceProjectParentRefArgs:
              _setter: Callable[[Any, Any], None],
              parent: Optional[pulumi.Input[str]] = None,
              root_doc_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rootDocId' in kwargs:
+            root_doc_id = kwargs['rootDocId']
+
         if parent is not None:
             _setter("parent", parent)
         if root_doc_id is not None:
@@ -2174,7 +2802,15 @@ class WorkspaceProjectRegistryMetadataArgs:
              key: Optional[pulumi.Input[str]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              registry_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatorKey' in kwargs:
+            aggregator_key = kwargs['aggregatorKey']
+        if 'isFavorite' in kwargs:
+            is_favorite = kwargs['isFavorite']
+        if 'registryVersion' in kwargs:
+            registry_version = kwargs['registryVersion']
+
         if aggregator_key is not None:
             _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
@@ -2268,7 +2904,69 @@ class GetWorkspaceApplicationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("name", name)
+        _setter("values", values)
+        if regex is not None:
+            _setter("regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetWorkspaceExportRequestsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Used to filter by the name of the object.
+        """
+        GetWorkspaceExportRequestsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2326,7 +3024,69 @@ class GetWorkspaceFoldersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("name", name)
+        _setter("values", values)
+        if regex is not None:
+            _setter("regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetWorkspaceImportRequestsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Used to filter by the name of the object.
+        """
+        GetWorkspaceImportRequestsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2384,7 +3144,9 @@ class GetWorkspaceProjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2442,7 +3204,9 @@ class GetWorkspacesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

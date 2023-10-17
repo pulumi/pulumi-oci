@@ -5,7 +5,10 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabaseConnectionString;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -26,11 +29,13 @@ public final class GetPluggableDatabasesPluggableDatabase {
      * 
      */
     private List<GetPluggableDatabasesPluggableDatabaseConnectionString> connectionStrings;
+    private String containerDatabaseAdminPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      * 
      */
     private String containerDatabaseId;
+    private Integer convertToRegularTrigger;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -62,17 +67,30 @@ public final class GetPluggableDatabasesPluggableDatabase {
      */
     private String openMode;
     private String pdbAdminPassword;
+    private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails;
     /**
      * @return A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
      * 
      */
     private String pdbName;
     /**
+     * @return Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    private List<GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail> pdbNodeLevelDetails;
+    /**
      * @return The configuration of the Pluggable Database Management service.
      * 
      */
     private List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
+    private Integer refreshTrigger;
+    /**
+     * @return Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    private List<GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig> refreshableCloneConfigs;
     private Integer rotateKeyTrigger;
+    private Boolean shouldCreatePdbBackup;
     private Boolean shouldPdbAdminAccountBeLocked;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -101,12 +119,18 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public List<GetPluggableDatabasesPluggableDatabaseConnectionString> connectionStrings() {
         return this.connectionStrings;
     }
+    public String containerDatabaseAdminPassword() {
+        return this.containerDatabaseAdminPassword;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      * 
      */
     public String containerDatabaseId() {
         return this.containerDatabaseId;
+    }
+    public Integer convertToRegularTrigger() {
+        return this.convertToRegularTrigger;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -153,6 +177,9 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public String pdbAdminPassword() {
         return this.pdbAdminPassword;
     }
+    public List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails() {
+        return this.pdbCreationTypeDetails;
+    }
     /**
      * @return A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
      * 
@@ -161,14 +188,34 @@ public final class GetPluggableDatabasesPluggableDatabase {
         return this.pdbName;
     }
     /**
+     * @return Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    public List<GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail> pdbNodeLevelDetails() {
+        return this.pdbNodeLevelDetails;
+    }
+    /**
      * @return The configuration of the Pluggable Database Management service.
      * 
      */
     public List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs() {
         return this.pluggableDatabaseManagementConfigs;
     }
+    public Integer refreshTrigger() {
+        return this.refreshTrigger;
+    }
+    /**
+     * @return Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    public List<GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig> refreshableCloneConfigs() {
+        return this.refreshableCloneConfigs;
+    }
     public Integer rotateKeyTrigger() {
         return this.rotateKeyTrigger;
+    }
+    public Boolean shouldCreatePdbBackup() {
+        return this.shouldCreatePdbBackup;
     }
     public Boolean shouldPdbAdminAccountBeLocked() {
         return this.shouldPdbAdminAccountBeLocked;
@@ -202,7 +249,9 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public static final class Builder {
         private String compartmentId;
         private List<GetPluggableDatabasesPluggableDatabaseConnectionString> connectionStrings;
+        private String containerDatabaseAdminPassword;
         private String containerDatabaseId;
+        private Integer convertToRegularTrigger;
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
         private String id;
@@ -210,9 +259,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
         private String lifecycleDetails;
         private String openMode;
         private String pdbAdminPassword;
+        private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails;
         private String pdbName;
+        private List<GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail> pdbNodeLevelDetails;
         private List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
+        private Integer refreshTrigger;
+        private List<GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig> refreshableCloneConfigs;
         private Integer rotateKeyTrigger;
+        private Boolean shouldCreatePdbBackup;
         private Boolean shouldPdbAdminAccountBeLocked;
         private String state;
         private String tdeWalletPassword;
@@ -222,7 +276,9 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionStrings = defaults.connectionStrings;
+    	      this.containerDatabaseAdminPassword = defaults.containerDatabaseAdminPassword;
     	      this.containerDatabaseId = defaults.containerDatabaseId;
+    	      this.convertToRegularTrigger = defaults.convertToRegularTrigger;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -230,9 +286,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.openMode = defaults.openMode;
     	      this.pdbAdminPassword = defaults.pdbAdminPassword;
+    	      this.pdbCreationTypeDetails = defaults.pdbCreationTypeDetails;
     	      this.pdbName = defaults.pdbName;
+    	      this.pdbNodeLevelDetails = defaults.pdbNodeLevelDetails;
     	      this.pluggableDatabaseManagementConfigs = defaults.pluggableDatabaseManagementConfigs;
+    	      this.refreshTrigger = defaults.refreshTrigger;
+    	      this.refreshableCloneConfigs = defaults.refreshableCloneConfigs;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
+    	      this.shouldCreatePdbBackup = defaults.shouldCreatePdbBackup;
     	      this.shouldPdbAdminAccountBeLocked = defaults.shouldPdbAdminAccountBeLocked;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -253,8 +314,18 @@ public final class GetPluggableDatabasesPluggableDatabase {
             return connectionStrings(List.of(connectionStrings));
         }
         @CustomType.Setter
+        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+            this.containerDatabaseAdminPassword = Objects.requireNonNull(containerDatabaseAdminPassword);
+            return this;
+        }
+        @CustomType.Setter
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder convertToRegularTrigger(Integer convertToRegularTrigger) {
+            this.convertToRegularTrigger = Objects.requireNonNull(convertToRegularTrigger);
             return this;
         }
         @CustomType.Setter
@@ -293,9 +364,25 @@ public final class GetPluggableDatabasesPluggableDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pdbCreationTypeDetails(List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails) {
+            this.pdbCreationTypeDetails = Objects.requireNonNull(pdbCreationTypeDetails);
+            return this;
+        }
+        public Builder pdbCreationTypeDetails(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail... pdbCreationTypeDetails) {
+            return pdbCreationTypeDetails(List.of(pdbCreationTypeDetails));
+        }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             this.pdbName = Objects.requireNonNull(pdbName);
             return this;
+        }
+        @CustomType.Setter
+        public Builder pdbNodeLevelDetails(List<GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail> pdbNodeLevelDetails) {
+            this.pdbNodeLevelDetails = Objects.requireNonNull(pdbNodeLevelDetails);
+            return this;
+        }
+        public Builder pdbNodeLevelDetails(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail... pdbNodeLevelDetails) {
+            return pdbNodeLevelDetails(List.of(pdbNodeLevelDetails));
         }
         @CustomType.Setter
         public Builder pluggableDatabaseManagementConfigs(List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs) {
@@ -306,8 +393,26 @@ public final class GetPluggableDatabasesPluggableDatabase {
             return pluggableDatabaseManagementConfigs(List.of(pluggableDatabaseManagementConfigs));
         }
         @CustomType.Setter
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            this.refreshTrigger = Objects.requireNonNull(refreshTrigger);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder refreshableCloneConfigs(List<GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig> refreshableCloneConfigs) {
+            this.refreshableCloneConfigs = Objects.requireNonNull(refreshableCloneConfigs);
+            return this;
+        }
+        public Builder refreshableCloneConfigs(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig... refreshableCloneConfigs) {
+            return refreshableCloneConfigs(List.of(refreshableCloneConfigs));
+        }
+        @CustomType.Setter
         public Builder rotateKeyTrigger(Integer rotateKeyTrigger) {
             this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldCreatePdbBackup(Boolean shouldCreatePdbBackup) {
+            this.shouldCreatePdbBackup = Objects.requireNonNull(shouldCreatePdbBackup);
             return this;
         }
         @CustomType.Setter
@@ -334,7 +439,9 @@ public final class GetPluggableDatabasesPluggableDatabase {
             final var o = new GetPluggableDatabasesPluggableDatabase();
             o.compartmentId = compartmentId;
             o.connectionStrings = connectionStrings;
+            o.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
             o.containerDatabaseId = containerDatabaseId;
+            o.convertToRegularTrigger = convertToRegularTrigger;
             o.definedTags = definedTags;
             o.freeformTags = freeformTags;
             o.id = id;
@@ -342,9 +449,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
             o.lifecycleDetails = lifecycleDetails;
             o.openMode = openMode;
             o.pdbAdminPassword = pdbAdminPassword;
+            o.pdbCreationTypeDetails = pdbCreationTypeDetails;
             o.pdbName = pdbName;
+            o.pdbNodeLevelDetails = pdbNodeLevelDetails;
             o.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            o.refreshTrigger = refreshTrigger;
+            o.refreshableCloneConfigs = refreshableCloneConfigs;
             o.rotateKeyTrigger = rotateKeyTrigger;
+            o.shouldCreatePdbBackup = shouldCreatePdbBackup;
             o.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

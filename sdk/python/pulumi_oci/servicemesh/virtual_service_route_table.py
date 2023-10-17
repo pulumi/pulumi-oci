@@ -61,7 +61,19 @@ class VirtualServiceRouteTableArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("route_rules", route_rules)
         _setter("virtual_service_id", virtual_service_id)
@@ -245,7 +257,27 @@ class _VirtualServiceRouteTableState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

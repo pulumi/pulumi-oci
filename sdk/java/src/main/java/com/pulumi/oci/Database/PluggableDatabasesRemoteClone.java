@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.PluggableDatabasesRemoteCloneArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteCloneState;
 import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteCloneConnectionString;
+import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteClonePdbNodeLevelDetail;
 import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig;
+import com.pulumi.oci.Database.outputs.PluggableDatabasesRemoteCloneRefreshableCloneConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -22,6 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
  * 
+ * **Deprecated.** Use [CreatePluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/CreatePluggableDatabase) for Pluggable Database RemoteClone Operation.
  * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
  * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
  * 
@@ -223,6 +226,20 @@ public class PluggableDatabasesRemoteClone extends com.pulumi.resources.CustomRe
         return this.pdbName;
     }
     /**
+     * Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    @Export(name="pdbNodeLevelDetails", refs={List.class,PluggableDatabasesRemoteClonePdbNodeLevelDetail.class}, tree="[0,1]")
+    private Output<List<PluggableDatabasesRemoteClonePdbNodeLevelDetail>> pdbNodeLevelDetails;
+
+    /**
+     * @return Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    public Output<List<PluggableDatabasesRemoteClonePdbNodeLevelDetail>> pdbNodeLevelDetails() {
+        return this.pdbNodeLevelDetails;
+    }
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -249,6 +266,20 @@ public class PluggableDatabasesRemoteClone extends com.pulumi.resources.CustomRe
      */
     public Output<List<PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs() {
         return this.pluggableDatabaseManagementConfigs;
+    }
+    /**
+     * Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    @Export(name="refreshableCloneConfigs", refs={List.class,PluggableDatabasesRemoteCloneRefreshableCloneConfig.class}, tree="[0,1]")
+    private Output<List<PluggableDatabasesRemoteCloneRefreshableCloneConfig>> refreshableCloneConfigs;
+
+    /**
+     * @return Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    public Output<List<PluggableDatabasesRemoteCloneRefreshableCloneConfig>> refreshableCloneConfigs() {
+        return this.refreshableCloneConfigs;
     }
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.

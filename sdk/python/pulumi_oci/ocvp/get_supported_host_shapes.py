@@ -80,6 +80,9 @@ class GetSupportedHostShapesResult:
     @property
     @pulumi.getter(name="sddcType")
     def sddc_type(self) -> Optional[str]:
+        warnings.warn("""The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""", DeprecationWarning)
+        pulumi.log.warn("""sddc_type is deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""")
+
         return pulumi.get(self, "sddc_type")
 
 
@@ -121,7 +124,7 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str name: A filter to return only resources that match the given name exactly.
-    :param str sddc_type: A filter to return only resources that match the given SDDC type exactly.
+    :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -165,6 +168,6 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str name: A filter to return only resources that match the given name exactly.
-    :param str sddc_type: A filter to return only resources that match the given SDDC type exactly.
+    :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
     """
     ...

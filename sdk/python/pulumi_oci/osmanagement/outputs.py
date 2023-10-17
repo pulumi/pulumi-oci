@@ -79,7 +79,11 @@ class ManagedInstanceAutonomouse(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_auto_update_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+
         if is_auto_update_enabled is not None:
             _setter("is_auto_update_enabled", is_auto_update_enabled)
 
@@ -111,7 +115,9 @@ class ManagedInstanceChildSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -170,7 +176,11 @@ class ManagedInstanceGroupManagedInstance(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -229,7 +239,11 @@ class ManagedInstanceManagedInstanceGroup(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -275,7 +289,9 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -338,7 +354,11 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -384,7 +404,9 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -430,7 +452,9 @@ class ManagedInstanceParentSoftwareSource(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -489,7 +513,11 @@ class SoftwareSourceAssociatedManagedInstance(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -527,7 +555,11 @@ class GetManagedInstanceAutonomouseResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_auto_update_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+
         _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
@@ -558,7 +590,9 @@ class GetManagedInstanceChildSoftwareSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("name", name)
 
@@ -598,7 +632,11 @@ class GetManagedInstanceGroupManagedInstanceResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 
@@ -637,7 +675,9 @@ class GetManagedInstanceGroupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -709,7 +749,23 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
              managed_instances: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult'],
              os_family: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+        if 'managedInstances' in kwargs:
+            managed_instances = kwargs['managedInstances']
+        if 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -818,7 +874,11 @@ class GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 
@@ -858,7 +918,11 @@ class GetManagedInstanceManagedInstanceGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 
@@ -897,7 +961,9 @@ class GetManagedInstanceModuleStreamsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -954,7 +1020,17 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(dict):
              status: str,
              stream_name: str,
              time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if 'softwareSourceId' in kwargs:
+            software_source_id = kwargs['softwareSourceId']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("module_name", module_name)
         _setter("profiles", profiles)
         _setter("software_source_id", software_source_id)
@@ -1042,7 +1118,17 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(
              status: str,
              stream_name: str,
              time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
         _setter("status", status)
@@ -1109,7 +1195,9 @@ class GetManagedInstanceParentSoftwareSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("name", name)
 
@@ -1148,7 +1236,9 @@ class GetManagedInstanceStreamProfileFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1201,7 +1291,17 @@ class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult(
              status: str,
              stream_name: str,
              time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
         _setter("status", status)
@@ -1270,7 +1370,9 @@ class GetManagedInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1413,7 +1515,55 @@ class GetManagedInstancesManagedInstanceResult(dict):
              status: str,
              updates_available: int,
              work_request_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bugUpdatesAvailable' in kwargs:
+            bug_updates_available = kwargs['bugUpdatesAvailable']
+        if 'childSoftwareSources' in kwargs:
+            child_software_sources = kwargs['childSoftwareSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'enhancementUpdatesAvailable' in kwargs:
+            enhancement_updates_available = kwargs['enhancementUpdatesAvailable']
+        if 'isDataCollectionAuthorized' in kwargs:
+            is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
+        if 'isRebootRequired' in kwargs:
+            is_reboot_required = kwargs['isRebootRequired']
+        if 'kspliceEffectiveKernelVersion' in kwargs:
+            ksplice_effective_kernel_version = kwargs['kspliceEffectiveKernelVersion']
+        if 'lastBoot' in kwargs:
+            last_boot = kwargs['lastBoot']
+        if 'lastCheckin' in kwargs:
+            last_checkin = kwargs['lastCheckin']
+        if 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'notificationTopicId' in kwargs:
+            notification_topic_id = kwargs['notificationTopicId']
+        if 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if 'osKernelVersion' in kwargs:
+            os_kernel_version = kwargs['osKernelVersion']
+        if 'osName' in kwargs:
+            os_name = kwargs['osName']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'otherUpdatesAvailable' in kwargs:
+            other_updates_available = kwargs['otherUpdatesAvailable']
+        if 'parentSoftwareSources' in kwargs:
+            parent_software_sources = kwargs['parentSoftwareSources']
+        if 'scheduledJobCount' in kwargs:
+            scheduled_job_count = kwargs['scheduledJobCount']
+        if 'securityUpdatesAvailable' in kwargs:
+            security_updates_available = kwargs['securityUpdatesAvailable']
+        if 'updatesAvailable' in kwargs:
+            updates_available = kwargs['updatesAvailable']
+        if 'workRequestCount' in kwargs:
+            work_request_count = kwargs['workRequestCount']
+
         _setter("autonomouses", autonomouses)
         _setter("bug_updates_available", bug_updates_available)
         _setter("child_software_sources", child_software_sources)
@@ -1671,7 +1821,11 @@ class GetManagedInstancesManagedInstanceAutonomouseResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_auto_update_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+
         _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
@@ -1702,7 +1856,9 @@ class GetManagedInstancesManagedInstanceChildSoftwareSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("name", name)
 
@@ -1742,7 +1898,11 @@ class GetManagedInstancesManagedInstanceManagedInstanceGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 
@@ -1782,7 +1942,9 @@ class GetManagedInstancesManagedInstanceParentSoftwareSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("name", name)
 
@@ -1822,7 +1984,11 @@ class GetSoftwareSourceAssociatedManagedInstanceResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 
@@ -1861,7 +2027,9 @@ class GetSoftwareSourceStreamProfileFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1906,7 +2074,15 @@ class GetSoftwareSourceStreamProfileModuleStreamProfileResult(dict):
              module_name: str,
              profile_name: str,
              stream_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+
         _setter("module_name", module_name)
         _setter("profile_name", profile_name)
         _setter("stream_name", stream_name)
@@ -1954,7 +2130,9 @@ class GetSoftwareSourcesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2075,7 +2253,41 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
              state: str,
              status: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if 'associatedManagedInstances' in kwargs:
+            associated_managed_instances = kwargs['associatedManagedInstances']
+        if 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'parentName' in kwargs:
+            parent_name = kwargs['parentName']
+        if 'repoType' in kwargs:
+            repo_type = kwargs['repoType']
+
         _setter("arch_type", arch_type)
         _setter("associated_managed_instances", associated_managed_instances)
         _setter("checksum_type", checksum_type)
@@ -2295,7 +2507,11 @@ class GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("id", id)
 

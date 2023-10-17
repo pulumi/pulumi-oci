@@ -49,7 +49,19 @@ class DrPlanExecutionArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'executionOptions' in kwargs:
+            execution_options = kwargs['executionOptions']
+        if 'planId' in kwargs:
+            plan_id = kwargs['planId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("execution_options", execution_options)
         _setter("plan_id", plan_id)
         if defined_tags is not None:
@@ -220,7 +232,47 @@ class _DrPlanExecutionState:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drProtectionGroupId' in kwargs:
+            dr_protection_group_id = kwargs['drProtectionGroupId']
+        if 'executionDurationInSec' in kwargs:
+            execution_duration_in_sec = kwargs['executionDurationInSec']
+        if 'executionOptions' in kwargs:
+            execution_options = kwargs['executionOptions']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'groupExecutions' in kwargs:
+            group_executions = kwargs['groupExecutions']
+        if 'lifeCycleDetails' in kwargs:
+            life_cycle_details = kwargs['lifeCycleDetails']
+        if 'logLocations' in kwargs:
+            log_locations = kwargs['logLocations']
+        if 'peerDrProtectionGroupId' in kwargs:
+            peer_dr_protection_group_id = kwargs['peerDrProtectionGroupId']
+        if 'peerRegion' in kwargs:
+            peer_region = kwargs['peerRegion']
+        if 'planExecutionType' in kwargs:
+            plan_execution_type = kwargs['planExecutionType']
+        if 'planId' in kwargs:
+            plan_id = kwargs['planId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

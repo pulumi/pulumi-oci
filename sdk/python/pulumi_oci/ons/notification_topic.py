@@ -47,7 +47,15 @@ class NotificationTopicArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -183,7 +191,23 @@ class _NotificationTopicState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiEndpoint' in kwargs:
+            api_endpoint = kwargs['apiEndpoint']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'shortTopicId' in kwargs:
+            short_topic_id = kwargs['shortTopicId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         if api_endpoint is not None:
             _setter("api_endpoint", api_endpoint)
         if compartment_id is not None:

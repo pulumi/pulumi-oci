@@ -59,7 +59,21 @@ class PublicIpArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              private_ip_id: Optional[pulumi.Input[str]] = None,
              public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'privateIpId' in kwargs:
+            private_ip_id = kwargs['privateIpId']
+        if 'publicIpPoolId' in kwargs:
+            public_ip_pool_id = kwargs['publicIpPoolId']
+
         _setter("compartment_id", compartment_id)
         _setter("lifetime", lifetime)
         if defined_tags is not None:
@@ -242,7 +256,31 @@ class _PublicIpState:
              scope: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignedEntityId' in kwargs:
+            assigned_entity_id = kwargs['assignedEntityId']
+        if 'assignedEntityType' in kwargs:
+            assigned_entity_type = kwargs['assignedEntityType']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'privateIpId' in kwargs:
+            private_ip_id = kwargs['privateIpId']
+        if 'publicIpPoolId' in kwargs:
+            public_ip_pool_id = kwargs['publicIpPoolId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if assigned_entity_id is not None:
             _setter("assigned_entity_id", assigned_entity_id)
         if assigned_entity_type is not None:

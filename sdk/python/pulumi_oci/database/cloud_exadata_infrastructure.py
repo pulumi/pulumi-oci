@@ -69,7 +69,27 @@ class CloudExadataInfrastructureArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
              storage_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if 'customerContacts' in kwargs:
+            customer_contacts = kwargs['customerContacts']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'storageCount' in kwargs:
+            storage_count = kwargs['storageCount']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -352,7 +372,67 @@ class _CloudExadataInfrastructureState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activatedStorageCount' in kwargs:
+            activated_storage_count = kwargs['activatedStorageCount']
+        if 'additionalStorageCount' in kwargs:
+            additional_storage_count = kwargs['additionalStorageCount']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'availableStorageSizeInGbs' in kwargs:
+            available_storage_size_in_gbs = kwargs['availableStorageSizeInGbs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if 'cpuCount' in kwargs:
+            cpu_count = kwargs['cpuCount']
+        if 'customerContacts' in kwargs:
+            customer_contacts = kwargs['customerContacts']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServerVersion' in kwargs:
+            db_server_version = kwargs['dbServerVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'maxCpuCount' in kwargs:
+            max_cpu_count = kwargs['maxCpuCount']
+        if 'maxDataStorageInTbs' in kwargs:
+            max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
+        if 'maxDbNodeStorageInGbs' in kwargs:
+            max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
+        if 'maxMemoryInGbs' in kwargs:
+            max_memory_in_gbs = kwargs['maxMemoryInGbs']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'monthlyDbServerVersion' in kwargs:
+            monthly_db_server_version = kwargs['monthlyDbServerVersion']
+        if 'monthlyStorageServerVersion' in kwargs:
+            monthly_storage_server_version = kwargs['monthlyStorageServerVersion']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'storageCount' in kwargs:
+            storage_count = kwargs['storageCount']
+        if 'storageServerVersion' in kwargs:
+            storage_server_version = kwargs['storageServerVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'totalStorageSizeInGbs' in kwargs:
+            total_storage_size_in_gbs = kwargs['totalStorageSizeInGbs']
+
         if activated_storage_count is not None:
             _setter("activated_storage_count", activated_storage_count)
         if additional_storage_count is not None:

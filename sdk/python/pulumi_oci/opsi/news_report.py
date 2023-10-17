@@ -69,7 +69,21 @@ class NewsReportArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'contentTypes' in kwargs:
+            content_types = kwargs['contentTypes']
+        if 'newsFrequency' in kwargs:
+            news_frequency = kwargs['newsFrequency']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("content_types", content_types)
         _setter("description", description)
@@ -286,7 +300,29 @@ class _NewsReportState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'contentTypes' in kwargs:
+            content_types = kwargs['contentTypes']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'newsFrequency' in kwargs:
+            news_frequency = kwargs['newsFrequency']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if content_types is not None:

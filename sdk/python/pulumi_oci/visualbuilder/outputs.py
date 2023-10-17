@@ -72,7 +72,13 @@ class VbInstanceAlternateCustomEndpoint(dict):
              hostname: str,
              certificate_secret_id: Optional[str] = None,
              certificate_secret_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if certificate_secret_id is not None:
             _setter("certificate_secret_id", certificate_secret_id)
@@ -161,7 +167,19 @@ class VbInstanceAttachment(dict):
              target_instance_url: Optional[str] = None,
              target_role: Optional[str] = None,
              target_service_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
             _setter("is_implicit", is_implicit)
         if target_id is not None:
@@ -257,7 +275,13 @@ class VbInstanceCustomEndpoint(dict):
              hostname: str,
              certificate_secret_id: Optional[str] = None,
              certificate_secret_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if certificate_secret_id is not None:
             _setter("certificate_secret_id", certificate_secret_id)
@@ -345,7 +369,19 @@ class VbInstanceIdcsInfo(dict):
              idcs_app_location_url: Optional[str] = None,
              idcs_app_name: Optional[str] = None,
              instance_primary_audience_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppDisplayName' in kwargs:
+            idcs_app_display_name = kwargs['idcsAppDisplayName']
+        if 'idcsAppId' in kwargs:
+            idcs_app_id = kwargs['idcsAppId']
+        if 'idcsAppLocationUrl' in kwargs:
+            idcs_app_location_url = kwargs['idcsAppLocationUrl']
+        if 'idcsAppName' in kwargs:
+            idcs_app_name = kwargs['idcsAppName']
+        if 'instancePrimaryAudienceUrl' in kwargs:
+            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
+
         if idcs_app_display_name is not None:
             _setter("idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
@@ -421,7 +457,13 @@ class GetVbInstanceAlternateCustomEndpointResult(dict):
              certificate_secret_id: str,
              certificate_secret_version: int,
              hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("certificate_secret_id", certificate_secret_id)
         _setter("certificate_secret_version", certificate_secret_version)
         _setter("hostname", hostname)
@@ -463,7 +505,9 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -499,7 +543,11 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionItemResult(dict):
              project_id: str,
              state: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+
         _setter("id", id)
         _setter("project_id", project_id)
         _setter("state", state)
@@ -570,7 +618,19 @@ class GetVbInstanceAttachmentResult(dict):
              target_instance_url: str,
              target_role: str,
              target_service_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         _setter("is_implicit", is_implicit)
         _setter("target_id", target_id)
         _setter("target_instance_url", target_instance_url)
@@ -642,7 +702,13 @@ class GetVbInstanceCustomEndpointResult(dict):
              certificate_secret_id: str,
              certificate_secret_version: int,
              hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("certificate_secret_id", certificate_secret_id)
         _setter("certificate_secret_version", certificate_secret_version)
         _setter("hostname", hostname)
@@ -703,7 +769,19 @@ class GetVbInstanceIdcsInfoResult(dict):
              idcs_app_location_url: str,
              idcs_app_name: str,
              instance_primary_audience_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppDisplayName' in kwargs:
+            idcs_app_display_name = kwargs['idcsAppDisplayName']
+        if 'idcsAppId' in kwargs:
+            idcs_app_id = kwargs['idcsAppId']
+        if 'idcsAppLocationUrl' in kwargs:
+            idcs_app_location_url = kwargs['idcsAppLocationUrl']
+        if 'idcsAppName' in kwargs:
+            idcs_app_name = kwargs['idcsAppName']
+        if 'instancePrimaryAudienceUrl' in kwargs:
+            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
+
         _setter("idcs_app_display_name", idcs_app_display_name)
         _setter("idcs_app_id", idcs_app_id)
         _setter("idcs_app_location_url", idcs_app_location_url)
@@ -769,7 +847,9 @@ class GetVbInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -803,7 +883,9 @@ class GetVbInstancesVbInstanceSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -914,7 +996,49 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternateCustomEndpoints' in kwargs:
+            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'customEndpoints' in kwargs:
+            custom_endpoints = kwargs['customEndpoints']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsInfos' in kwargs:
+            idcs_infos = kwargs['idcsInfos']
+        if 'idcsOpenId' in kwargs:
+            idcs_open_id = kwargs['idcsOpenId']
+        if 'instanceUrl' in kwargs:
+            instance_url = kwargs['instanceUrl']
+        if 'isVisualBuilderEnabled' in kwargs:
+            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
+        if 'managementNatGatewayIp' in kwargs:
+            management_nat_gateway_ip = kwargs['managementNatGatewayIp']
+        if 'managementVcnId' in kwargs:
+            management_vcn_id = kwargs['managementVcnId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'serviceNatGatewayIp' in kwargs:
+            service_nat_gateway_ip = kwargs['serviceNatGatewayIp']
+        if 'serviceVcnId' in kwargs:
+            service_vcn_id = kwargs['serviceVcnId']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         _setter("attachments", attachments)
         _setter("compartment_id", compartment_id)
@@ -1144,7 +1268,13 @@ class GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult
              certificate_secret_id: str,
              certificate_secret_version: int,
              hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("certificate_secret_id", certificate_secret_id)
         _setter("certificate_secret_version", certificate_secret_version)
         _setter("hostname", hostname)
@@ -1206,7 +1336,19 @@ class GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult(dict):
              target_instance_url: str,
              target_role: str,
              target_service_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         _setter("is_implicit", is_implicit)
         _setter("target_id", target_id)
         _setter("target_instance_url", target_instance_url)
@@ -1278,7 +1420,13 @@ class GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(dict):
              certificate_secret_id: str,
              certificate_secret_version: int,
              hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("certificate_secret_id", certificate_secret_id)
         _setter("certificate_secret_version", certificate_secret_version)
         _setter("hostname", hostname)
@@ -1339,7 +1487,19 @@ class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult(dict):
              idcs_app_location_url: str,
              idcs_app_name: str,
              instance_primary_audience_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppDisplayName' in kwargs:
+            idcs_app_display_name = kwargs['idcsAppDisplayName']
+        if 'idcsAppId' in kwargs:
+            idcs_app_id = kwargs['idcsAppId']
+        if 'idcsAppLocationUrl' in kwargs:
+            idcs_app_location_url = kwargs['idcsAppLocationUrl']
+        if 'idcsAppName' in kwargs:
+            idcs_app_name = kwargs['idcsAppName']
+        if 'instancePrimaryAudienceUrl' in kwargs:
+            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
+
         _setter("idcs_app_display_name", idcs_app_display_name)
         _setter("idcs_app_id", idcs_app_id)
         _setter("idcs_app_location_url", idcs_app_location_url)

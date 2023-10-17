@@ -83,6 +83,8 @@ from .get_autonomous_patch import *
 from .get_autonomous_virtual_machine import *
 from .get_autonomous_virtual_machines import *
 from .get_autonomous_vm_cluster import *
+from .get_autonomous_vm_cluster_acd_resource_usages import *
+from .get_autonomous_vm_cluster_resource_usage import *
 from .get_autonomous_vm_clusters import *
 from .get_backup_destination import *
 from .get_backup_destinations import *

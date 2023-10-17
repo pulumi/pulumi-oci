@@ -42,7 +42,11 @@ class SecretSecretContentArgs:
              content_type: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
              stage: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+
         _setter("content", content)
         _setter("content_type", content_type)
         if name is not None:
@@ -130,7 +134,19 @@ class SecretSecretRuleArgs:
              is_secret_content_retrieval_blocked_on_expiry: Optional[pulumi.Input[bool]] = None,
              secret_version_expiry_interval: Optional[pulumi.Input[str]] = None,
              time_of_absolute_expiry: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'isEnforcedOnDeletedSecretVersions' in kwargs:
+            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
+        if 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
+            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
+        if 'secretVersionExpiryInterval' in kwargs:
+            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
+        if 'timeOfAbsoluteExpiry' in kwargs:
+            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
+
         _setter("rule_type", rule_type)
         if is_enforced_on_deleted_secret_versions is not None:
             _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
@@ -223,7 +239,9 @@ class GetSecretsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -44,7 +44,15 @@ class AutonomousDatabaseWalletArgs:
              password: pulumi.Input[str],
              base64_encode_content: Optional[pulumi.Input[bool]] = None,
              generate_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'base64EncodeContent' in kwargs:
+            base64_encode_content = kwargs['base64EncodeContent']
+        if 'generateType' in kwargs:
+            generate_type = kwargs['generateType']
+
         _setter("autonomous_database_id", autonomous_database_id)
         _setter("password", password)
         if base64_encode_content is not None:
@@ -141,7 +149,15 @@ class _AutonomousDatabaseWalletState:
              content: Optional[pulumi.Input[str]] = None,
              generate_type: Optional[pulumi.Input[str]] = None,
              password: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'base64EncodeContent' in kwargs:
+            base64_encode_content = kwargs['base64EncodeContent']
+        if 'generateType' in kwargs:
+            generate_type = kwargs['generateType']
+
         if autonomous_database_id is not None:
             _setter("autonomous_database_id", autonomous_database_id)
         if base64_encode_content is not None:

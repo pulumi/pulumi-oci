@@ -51,7 +51,15 @@ class DkimArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailDomainId' in kwargs:
+            email_domain_id = kwargs['emailDomainId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("email_domain_id", email_domain_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -207,7 +215,31 @@ class _DkimState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              txt_record_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cnameRecordValue' in kwargs:
+            cname_record_value = kwargs['cnameRecordValue']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsSubdomainName' in kwargs:
+            dns_subdomain_name = kwargs['dnsSubdomainName']
+        if 'emailDomainId' in kwargs:
+            email_domain_id = kwargs['emailDomainId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'txtRecordValue' in kwargs:
+            txt_record_value = kwargs['txtRecordValue']
+
         if cname_record_value is not None:
             _setter("cname_record_value", cname_record_value)
         if compartment_id is not None:

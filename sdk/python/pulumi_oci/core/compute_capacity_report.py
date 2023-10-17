@@ -37,7 +37,15 @@ class ComputeCapacityReportArgs:
              availability_domain: pulumi.Input[str],
              compartment_id: pulumi.Input[str],
              shape_availabilities: pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeAvailabilities' in kwargs:
+            shape_availabilities = kwargs['shapeAvailabilities']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("shape_availabilities", shape_availabilities)
@@ -107,7 +115,17 @@ class _ComputeCapacityReportState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeAvailabilities' in kwargs:
+            shape_availabilities = kwargs['shapeAvailabilities']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

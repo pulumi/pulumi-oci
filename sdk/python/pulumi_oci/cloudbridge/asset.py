@@ -77,7 +77,31 @@ class AssetArgs:
              vm: Optional[pulumi.Input['AssetVmArgs']] = None,
              vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
              vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'externalAssetKey' in kwargs:
+            external_asset_key = kwargs['externalAssetKey']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'sourceKey' in kwargs:
+            source_key = kwargs['sourceKey']
+        if 'assetSourceIds' in kwargs:
+            asset_source_ids = kwargs['assetSourceIds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'vmwareVcenter' in kwargs:
+            vmware_vcenter = kwargs['vmwareVcenter']
+        if 'vmwareVm' in kwargs:
+            vmware_vm = kwargs['vmwareVm']
+
         _setter("asset_type", asset_type)
         _setter("compartment_id", compartment_id)
         _setter("external_asset_key", external_asset_key)
@@ -337,7 +361,37 @@ class _AssetState:
              vm: Optional[pulumi.Input['AssetVmArgs']] = None,
              vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
              vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetSourceIds' in kwargs:
+            asset_source_ids = kwargs['assetSourceIds']
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalAssetKey' in kwargs:
+            external_asset_key = kwargs['externalAssetKey']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'sourceKey' in kwargs:
+            source_key = kwargs['sourceKey']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vmwareVcenter' in kwargs:
+            vmware_vcenter = kwargs['vmwareVcenter']
+        if 'vmwareVm' in kwargs:
+            vmware_vm = kwargs['vmwareVm']
+
         if asset_source_ids is not None:
             _setter("asset_source_ids", asset_source_ids)
         if asset_type is not None:

@@ -57,7 +57,21 @@ class NetworkAddressListArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'vcnAddresses' in kwargs:
+            vcn_addresses = kwargs['vcnAddresses']
+
         _setter("compartment_id", compartment_id)
         _setter("type", type)
         if addresses is not None:
@@ -230,7 +244,27 @@ class _NetworkAddressListState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnAddresses' in kwargs:
+            vcn_addresses = kwargs['vcnAddresses']
+
         if addresses is not None:
             _setter("addresses", addresses)
         if compartment_id is not None:

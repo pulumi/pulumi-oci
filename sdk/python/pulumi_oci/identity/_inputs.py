@@ -372,7 +372,11 @@ class AuthenticationPolicyNetworkPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              network_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkSourceIds' in kwargs:
+            network_source_ids = kwargs['networkSourceIds']
+
         if network_source_ids is not None:
             _setter("network_source_ids", network_source_ids)
 
@@ -428,7 +432,21 @@ class AuthenticationPolicyPasswordPolicyArgs:
              is_uppercase_characters_required: Optional[pulumi.Input[bool]] = None,
              is_username_containment_allowed: Optional[pulumi.Input[bool]] = None,
              minimum_password_length: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isLowercaseCharactersRequired' in kwargs:
+            is_lowercase_characters_required = kwargs['isLowercaseCharactersRequired']
+        if 'isNumericCharactersRequired' in kwargs:
+            is_numeric_characters_required = kwargs['isNumericCharactersRequired']
+        if 'isSpecialCharactersRequired' in kwargs:
+            is_special_characters_required = kwargs['isSpecialCharactersRequired']
+        if 'isUppercaseCharactersRequired' in kwargs:
+            is_uppercase_characters_required = kwargs['isUppercaseCharactersRequired']
+        if 'isUsernameContainmentAllowed' in kwargs:
+            is_username_containment_allowed = kwargs['isUsernameContainmentAllowed']
+        if 'minimumPasswordLength' in kwargs:
+            minimum_password_length = kwargs['minimumPasswordLength']
+
         if is_lowercase_characters_required is not None:
             _setter("is_lowercase_characters_required", is_lowercase_characters_required)
         if is_numeric_characters_required is not None:
@@ -542,7 +560,9 @@ class DomainReplicaRegionArgs:
              region: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if region is not None:
             _setter("region", region)
         if state is not None:
@@ -668,7 +688,9 @@ class DomainsAccountRecoverySettingIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -871,7 +893,9 @@ class DomainsAccountRecoverySettingIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -1074,7 +1098,13 @@ class DomainsAccountRecoverySettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -1236,7 +1266,9 @@ class DomainsAccountRecoverySettingTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -1370,7 +1402,9 @@ class DomainsApiKeyIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -1581,7 +1615,9 @@ class DomainsApiKeyIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -1788,7 +1824,13 @@ class DomainsApiKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -1954,7 +1996,9 @@ class DomainsApiKeyTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -2033,7 +2077,11 @@ class DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -2146,7 +2194,9 @@ class DomainsApiKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -2358,7 +2408,11 @@ class DomainsAppAccountArgs:
              owner_id: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ownerId' in kwargs:
+            owner_id = kwargs['ownerId']
+
         if active is not None:
             _setter("active", active)
         if name is not None:
@@ -2552,7 +2606,9 @@ class DomainsAppAdminRoleArgs:
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if description is not None:
             _setter("description", description)
@@ -2717,7 +2773,9 @@ class DomainsAppAliasAppArgs:
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if description is not None:
             _setter("description", description)
@@ -2869,7 +2927,13 @@ class DomainsAppAllowedScopeArgs:
              fqs: pulumi.Input[str],
              id_of_defining_app: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idOfDefiningApp' in kwargs:
+            id_of_defining_app = kwargs['idOfDefiningApp']
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+
         _setter("fqs", fqs)
         if id_of_defining_app is not None:
             _setter("id_of_defining_app", id_of_defining_app)
@@ -3002,7 +3066,11 @@ class DomainsAppAllowedTagArgs:
              key: pulumi.Input[str],
              value: pulumi.Input[str],
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+
         _setter("key", key)
         _setter("value", value)
         if read_only is not None:
@@ -3121,7 +3189,9 @@ class DomainsAppAppSignonPolicyArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -3214,7 +3284,9 @@ class DomainsAppAppsNetworkPerimeterArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -3307,7 +3379,9 @@ class DomainsAppAsOpcServiceArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -3572,7 +3646,19 @@ class DomainsAppAttrRenderingMetadataArgs:
              section: Optional[pulumi.Input[str]] = None,
              visible: Optional[pulumi.Input[bool]] = None,
              widget: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxLength' in kwargs:
+            max_length = kwargs['maxLength']
+        if 'maxSize' in kwargs:
+            max_size = kwargs['maxSize']
+        if 'minLength' in kwargs:
+            min_length = kwargs['minLength']
+        if 'minSize' in kwargs:
+            min_size = kwargs['minSize']
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+
         _setter("name", name)
         if datatype is not None:
             _setter("datatype", datatype)
@@ -3997,7 +4083,13 @@ class DomainsAppBasedOnTemplateArgs:
              last_modified: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'wellKnownId' in kwargs:
+            well_known_id = kwargs['wellKnownId']
+
         _setter("value", value)
         if last_modified is not None:
             _setter("last_modified", last_modified)
@@ -4180,7 +4272,11 @@ class DomainsAppCertificateArgs:
              sha1thumbprint: Optional[pulumi.Input[str]] = None,
              x509base64certificate: Optional[pulumi.Input[str]] = None,
              x5t: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certAlias' in kwargs:
+            cert_alias = kwargs['certAlias']
+
         _setter("cert_alias", cert_alias)
         if kid is not None:
             _setter("kid", kid)
@@ -4345,7 +4441,9 @@ class DomainsAppCloudControlPropertyArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              values: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
 
@@ -4426,7 +4524,9 @@ class DomainsAppEditableAttributeArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4541,7 +4641,15 @@ class DomainsAppGrantArgs:
              grantee_type: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+        if 'granteeId' in kwargs:
+            grantee_id = kwargs['granteeId']
+        if 'granteeType' in kwargs:
+            grantee_type = kwargs['granteeType']
+
         if grant_mechanism is not None:
             _setter("grant_mechanism", grant_mechanism)
         if grantee_id is not None:
@@ -4808,7 +4916,19 @@ class DomainsAppGrantedAppRoleArgs:
              read_only: Optional[pulumi.Input[bool]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+
         _setter("value", value)
         if admin_role is not None:
             _setter("admin_role", admin_role)
@@ -5113,7 +5233,9 @@ class DomainsAppIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -5324,7 +5446,9 @@ class DomainsAppIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -5504,7 +5628,9 @@ class DomainsAppIdentityProviderArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -5620,7 +5746,9 @@ class DomainsAppIdpPolicyArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -5752,7 +5880,13 @@ class DomainsAppMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -5917,7 +6051,11 @@ class DomainsAppProtectableSecondaryAudienceArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              read_only: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+
         _setter("value", value)
         if read_only is not None:
             _setter("read_only", read_only)
@@ -6012,7 +6150,9 @@ class DomainsAppRadiusPolicyArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -6142,7 +6282,11 @@ class DomainsAppRoleAppArgs:
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              service_instance_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceInstanceIdentifier' in kwargs:
+            service_instance_identifier = kwargs['serviceInstanceIdentifier']
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -6342,7 +6486,9 @@ class DomainsAppRoleIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -6545,7 +6691,9 @@ class DomainsAppRoleIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -6734,7 +6882,9 @@ class DomainsAppRoleMemberArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -6912,7 +7062,13 @@ class DomainsAppRoleMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -7074,7 +7230,9 @@ class DomainsAppRoleTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -7164,7 +7322,9 @@ class DomainsAppSamlServiceProviderArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -7314,7 +7474,15 @@ class DomainsAppScopeArgs:
              fqs: Optional[pulumi.Input[str]] = None,
              read_only: Optional[pulumi.Input[bool]] = None,
              requires_consent: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'readOnly' in kwargs:
+            read_only = kwargs['readOnly']
+        if 'requiresConsent' in kwargs:
+            requires_consent = kwargs['requiresConsent']
+
         _setter("value", value)
         if description is not None:
             _setter("description", description)
@@ -7508,7 +7676,9 @@ class DomainsAppServiceParamArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if value is not None:
             _setter("value", value)
@@ -7605,7 +7775,9 @@ class DomainsAppSignonPolicyArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -7700,7 +7872,9 @@ class DomainsAppTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -7811,7 +7985,9 @@ class DomainsAppTermsOfUseArgs:
              value: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if name is not None:
             _setter("name", name)
@@ -7931,7 +8107,9 @@ class DomainsAppTrustPolicyArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -8035,7 +8213,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tagSlug' in kwargs:
+            tag_slug = kwargs['tagSlug']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -8167,7 +8353,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
              key: pulumi.Input[str],
              namespace: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -8287,7 +8475,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArg
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -8382,7 +8572,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs:
              _setter: Callable[[Any, Any], None],
              domain_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']] = None,
              domain_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainApp' in kwargs:
+            domain_app = kwargs['domainApp']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+
         if domain_app is not None:
             _setter("domain_app", domain_app)
         if domain_name is not None:
@@ -8490,7 +8686,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -8654,7 +8852,19 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs:
              app_resources: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]] = None,
              deny_authz_decision_ttl: Optional[pulumi.Input[int]] = None,
              deny_authz_policy: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowAuthzDecisionTtl' in kwargs:
+            allow_authz_decision_ttl = kwargs['allowAuthzDecisionTtl']
+        if 'allowAuthzPolicy' in kwargs:
+            allow_authz_policy = kwargs['allowAuthzPolicy']
+        if 'appResources' in kwargs:
+            app_resources = kwargs['appResources']
+        if 'denyAuthzDecisionTtl' in kwargs:
+            deny_authz_decision_ttl = kwargs['denyAuthzDecisionTtl']
+        if 'denyAuthzPolicy' in kwargs:
+            deny_authz_policy = kwargs['denyAuthzPolicy']
+
         if allow_authz_decision_ttl is not None:
             _setter("allow_authz_decision_ttl", allow_authz_decision_ttl)
         if allow_authz_policy is not None:
@@ -8826,7 +9036,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllow
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -8919,7 +9131,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppRe
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -9012,7 +9226,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyA
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -9200,7 +9416,25 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs:
              sync_from_template: Optional[pulumi.Input[bool]] = None,
              user_name_form_expression: Optional[pulumi.Input[str]] = None,
              user_name_form_template: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formCredMethod' in kwargs:
+            form_cred_method = kwargs['formCredMethod']
+        if 'formCredentialSharingGroupId' in kwargs:
+            form_credential_sharing_group_id = kwargs['formCredentialSharingGroupId']
+        if 'formFillUrlMatches' in kwargs:
+            form_fill_url_matches = kwargs['formFillUrlMatches']
+        if 'formType' in kwargs:
+            form_type = kwargs['formType']
+        if 'revealPasswordOnForm' in kwargs:
+            reveal_password_on_form = kwargs['revealPasswordOnForm']
+        if 'syncFromTemplate' in kwargs:
+            sync_from_template = kwargs['syncFromTemplate']
+        if 'userNameFormExpression' in kwargs:
+            user_name_form_expression = kwargs['userNameFormExpression']
+        if 'userNameFormTemplate' in kwargs:
+            user_name_form_template = kwargs['userNameFormTemplate']
+
         if configuration is not None:
             _setter("configuration", configuration)
         if form_cred_method is not None:
@@ -9457,7 +9691,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFil
              _setter: Callable[[Any, Any], None],
              form_url: pulumi.Input[str],
              form_url_match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formUrl' in kwargs:
+            form_url = kwargs['formUrl']
+        if 'formUrlMatchType' in kwargs:
+            form_url_match_type = kwargs['formUrlMatchType']
+
         _setter("form_url", form_url)
         if form_url_match_type is not None:
             _setter("form_url_match_type", form_url_match_type)
@@ -9643,7 +9883,25 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAp
              sync_from_template: Optional[pulumi.Input[bool]] = None,
              user_name_form_expression: Optional[pulumi.Input[str]] = None,
              user_name_form_template: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formCredMethod' in kwargs:
+            form_cred_method = kwargs['formCredMethod']
+        if 'formCredentialSharingGroupId' in kwargs:
+            form_credential_sharing_group_id = kwargs['formCredentialSharingGroupId']
+        if 'formFillUrlMatches' in kwargs:
+            form_fill_url_matches = kwargs['formFillUrlMatches']
+        if 'formType' in kwargs:
+            form_type = kwargs['formType']
+        if 'revealPasswordOnForm' in kwargs:
+            reveal_password_on_form = kwargs['revealPasswordOnForm']
+        if 'syncFromTemplate' in kwargs:
+            sync_from_template = kwargs['syncFromTemplate']
+        if 'userNameFormExpression' in kwargs:
+            user_name_form_expression = kwargs['userNameFormExpression']
+        if 'userNameFormTemplate' in kwargs:
+            user_name_form_template = kwargs['userNameFormTemplate']
+
         if configuration is not None:
             _setter("configuration", configuration)
         if form_cred_method is not None:
@@ -9900,7 +10158,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAp
              _setter: Callable[[Any, Any], None],
              form_url: pulumi.Input[str],
              form_url_match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formUrl' in kwargs:
+            form_url = kwargs['formUrl']
+        if 'formUrlMatchType' in kwargs:
+            form_url_match_type = kwargs['formUrlMatchType']
+
         _setter("form_url", form_url)
         if form_url_match_type is not None:
             _setter("form_url_match_type", form_url_match_type)
@@ -10053,7 +10317,23 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs:
              realm_name: Optional[pulumi.Input[str]] = None,
              supported_encryption_salt_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ticket_flags: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultEncryptionSaltType' in kwargs:
+            default_encryption_salt_type = kwargs['defaultEncryptionSaltType']
+        if 'masterKey' in kwargs:
+            master_key = kwargs['masterKey']
+        if 'maxRenewableAge' in kwargs:
+            max_renewable_age = kwargs['maxRenewableAge']
+        if 'maxTicketLife' in kwargs:
+            max_ticket_life = kwargs['maxTicketLife']
+        if 'realmName' in kwargs:
+            realm_name = kwargs['realmName']
+        if 'supportedEncryptionSaltTypes' in kwargs:
+            supported_encryption_salt_types = kwargs['supportedEncryptionSaltTypes']
+        if 'ticketFlags' in kwargs:
+            ticket_flags = kwargs['ticketFlags']
+
         if default_encryption_salt_type is not None:
             _setter("default_encryption_salt_type", default_encryption_salt_type)
         if master_key is not None:
@@ -10582,7 +10862,55 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs:
              sync_config_last_modified: Optional[pulumi.Input[str]] = None,
              three_legged_oauth_credential: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']] = None,
              three_legged_oauth_provider_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountFormVisible' in kwargs:
+            account_form_visible = kwargs['accountFormVisible']
+        if 'adminConsentGranted' in kwargs:
+            admin_consent_granted = kwargs['adminConsentGranted']
+        if 'bundleConfigurationProperties' in kwargs:
+            bundle_configuration_properties = kwargs['bundleConfigurationProperties']
+        if 'bundlePoolConfiguration' in kwargs:
+            bundle_pool_configuration = kwargs['bundlePoolConfiguration']
+        if 'canBeAuthoritative' in kwargs:
+            can_be_authoritative = kwargs['canBeAuthoritative']
+        if 'connectorBundles' in kwargs:
+            connector_bundles = kwargs['connectorBundles']
+        if 'enableAuthSyncNewUserNotification' in kwargs:
+            enable_auth_sync_new_user_notification = kwargs['enableAuthSyncNewUserNotification']
+        if 'enableSync' in kwargs:
+            enable_sync = kwargs['enableSync']
+        if 'enableSyncSummaryReportNotification' in kwargs:
+            enable_sync_summary_report_notification = kwargs['enableSyncSummaryReportNotification']
+        if 'flatFileBundleConfigurationProperties' in kwargs:
+            flat_file_bundle_configuration_properties = kwargs['flatFileBundleConfigurationProperties']
+        if 'flatFileConnectorBundle' in kwargs:
+            flat_file_connector_bundle = kwargs['flatFileConnectorBundle']
+        if 'identityBridges' in kwargs:
+            identity_bridges = kwargs['identityBridges']
+        if 'isAuthoritative' in kwargs:
+            is_authoritative = kwargs['isAuthoritative']
+        if 'isDirectory' in kwargs:
+            is_directory = kwargs['isDirectory']
+        if 'isOnPremiseApp' in kwargs:
+            is_on_premise_app = kwargs['isOnPremiseApp']
+        if 'isSchemaCustomizationSupported' in kwargs:
+            is_schema_customization_supported = kwargs['isSchemaCustomizationSupported']
+        if 'isSchemaDiscoverySupported' in kwargs:
+            is_schema_discovery_supported = kwargs['isSchemaDiscoverySupported']
+        if 'isThreeLeggedOauthEnabled' in kwargs:
+            is_three_legged_oauth_enabled = kwargs['isThreeLeggedOauthEnabled']
+        if 'isTwoLeggedOauthEnabled' in kwargs:
+            is_two_legged_oauth_enabled = kwargs['isTwoLeggedOauthEnabled']
+        if 'objectClasses' in kwargs:
+            object_classes = kwargs['objectClasses']
+        if 'syncConfigLastModified' in kwargs:
+            sync_config_last_modified = kwargs['syncConfigLastModified']
+        if 'threeLeggedOauthCredential' in kwargs:
+            three_legged_oauth_credential = kwargs['threeLeggedOauthCredential']
+        if 'threeLeggedOauthProviderName' in kwargs:
+            three_legged_oauth_provider_name = kwargs['threeLeggedOauthProviderName']
+
         if account_form_visible is not None:
             _setter("account_form_visible", account_form_visible)
         if admin_consent_granted is not None:
@@ -11305,7 +11633,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleCo
              help_message: Optional[pulumi.Input[str]] = None,
              order: Optional[pulumi.Input[int]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icfType' in kwargs:
+            icf_type = kwargs['icfType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'helpMessage' in kwargs:
+            help_message = kwargs['helpMessage']
+
         _setter("icf_type", icf_type)
         _setter("name", name)
         _setter("required", required)
@@ -11582,7 +11918,19 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePo
              max_wait: Optional[pulumi.Input[int]] = None,
              min_evictable_idle_time_millis: Optional[pulumi.Input[int]] = None,
              min_idle: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxIdle' in kwargs:
+            max_idle = kwargs['maxIdle']
+        if 'maxObjects' in kwargs:
+            max_objects = kwargs['maxObjects']
+        if 'maxWait' in kwargs:
+            max_wait = kwargs['maxWait']
+        if 'minEvictableIdleTimeMillis' in kwargs:
+            min_evictable_idle_time_millis = kwargs['minEvictableIdleTimeMillis']
+        if 'minIdle' in kwargs:
+            min_idle = kwargs['minIdle']
+
         if max_idle is not None:
             _setter("max_idle", max_idle)
         if max_objects is not None:
@@ -11792,7 +12140,11 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnecto
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'wellKnownId' in kwargs:
+            well_known_id = kwargs['wellKnownId']
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -12046,7 +12398,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFile
              help_message: Optional[pulumi.Input[str]] = None,
              order: Optional[pulumi.Input[int]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icfType' in kwargs:
+            icf_type = kwargs['icfType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'helpMessage' in kwargs:
+            help_message = kwargs['helpMessage']
+
         _setter("icf_type", icf_type)
         _setter("name", name)
         _setter("required", required)
@@ -12312,7 +12672,11 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFile
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              well_known_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'wellKnownId' in kwargs:
+            well_known_id = kwargs['wellKnownId']
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -12471,7 +12835,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentity
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if ref is not None:
@@ -12648,7 +13014,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectCl
              is_account_object_class: Optional[pulumi.Input[bool]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAccountObjectClass' in kwargs:
+            is_account_object_class = kwargs['isAccountObjectClass']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -12850,7 +13222,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeg
              access_token: Optional[pulumi.Input[str]] = None,
              access_token_expiry: Optional[pulumi.Input[str]] = None,
              refresh_token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessToken' in kwargs:
+            access_token = kwargs['accessToken']
+        if 'accessTokenExpiry' in kwargs:
+            access_token_expiry = kwargs['accessTokenExpiry']
+        if 'refreshToken' in kwargs:
+            refresh_token = kwargs['refreshToken']
+
         if access_token is not None:
             _setter("access_token", access_token)
         if access_token_expiry is not None:
@@ -12969,7 +13349,13 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppA
              _setter: Callable[[Any, Any], None],
              multicloud_service_type: pulumi.Input[str],
              multicloud_platform_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'multicloudServiceType' in kwargs:
+            multicloud_service_type = kwargs['multicloudServiceType']
+        if 'multicloudPlatformUrl' in kwargs:
+            multicloud_platform_url = kwargs['multicloudPlatformUrl']
+
         _setter("multicloud_service_type", multicloud_service_type)
         if multicloud_platform_url is not None:
             _setter("multicloud_platform_url", multicloud_platform_url)
@@ -13137,7 +13523,21 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs:
              next_synchronization_mode: Optional[pulumi.Input[str]] = None,
              region: Optional[pulumi.Input[str]] = None,
              service_instance_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentFederationMode' in kwargs:
+            current_federation_mode = kwargs['currentFederationMode']
+        if 'currentSynchronizationMode' in kwargs:
+            current_synchronization_mode = kwargs['currentSynchronizationMode']
+        if 'enablingNextFedSyncModes' in kwargs:
+            enabling_next_fed_sync_modes = kwargs['enablingNextFedSyncModes']
+        if 'nextFederationMode' in kwargs:
+            next_federation_mode = kwargs['nextFederationMode']
+        if 'nextSynchronizationMode' in kwargs:
+            next_synchronization_mode = kwargs['nextSynchronizationMode']
+        if 'serviceInstanceIdentifier' in kwargs:
+            service_instance_identifier = kwargs['serviceInstanceIdentifier']
+
         if current_federation_mode is not None:
             _setter("current_federation_mode", current_federation_mode)
         if current_synchronization_mode is not None:
@@ -13549,7 +13949,37 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs:
              response_format: Optional[pulumi.Input[str]] = None,
              response_format_delimiter: Optional[pulumi.Input[str]] = None,
              type_of_radius_app: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientIp' in kwargs:
+            client_ip = kwargs['clientIp']
+        if 'includeGroupInResponse' in kwargs:
+            include_group_in_response = kwargs['includeGroupInResponse']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'captureClientIp' in kwargs:
+            capture_client_ip = kwargs['captureClientIp']
+        if 'countryCodeResponseAttributeId' in kwargs:
+            country_code_response_attribute_id = kwargs['countryCodeResponseAttributeId']
+        if 'endUserIpAttribute' in kwargs:
+            end_user_ip_attribute = kwargs['endUserIpAttribute']
+        if 'groupMembershipRadiusAttribute' in kwargs:
+            group_membership_radius_attribute = kwargs['groupMembershipRadiusAttribute']
+        if 'groupMembershipToReturns' in kwargs:
+            group_membership_to_returns = kwargs['groupMembershipToReturns']
+        if 'groupNameFormat' in kwargs:
+            group_name_format = kwargs['groupNameFormat']
+        if 'passwordAndOtpTogether' in kwargs:
+            password_and_otp_together = kwargs['passwordAndOtpTogether']
+        if 'radiusVendorSpecificId' in kwargs:
+            radius_vendor_specific_id = kwargs['radiusVendorSpecificId']
+        if 'responseFormat' in kwargs:
+            response_format = kwargs['responseFormat']
+        if 'responseFormatDelimiter' in kwargs:
+            response_format_delimiter = kwargs['responseFormatDelimiter']
+        if 'typeOfRadiusApp' in kwargs:
+            type_of_radius_app = kwargs['typeOfRadiusApp']
+
         _setter("client_ip", client_ip)
         _setter("include_group_in_response", include_group_in_response)
         _setter("port", port)
@@ -13976,7 +14406,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMemb
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -14078,7 +14510,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              requestable: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if requestable is not None:
             _setter("requestable", requestable)
 
@@ -14516,7 +14950,61 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
              succinct_id: Optional[pulumi.Input[str]] = None,
              tenant_provider_id: Optional[pulumi.Input[str]] = None,
              user_assertion_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assertionConsumerUrl' in kwargs:
+            assertion_consumer_url = kwargs['assertionConsumerUrl']
+        if 'encryptAssertion' in kwargs:
+            encrypt_assertion = kwargs['encryptAssertion']
+        if 'encryptionAlgorithm' in kwargs:
+            encryption_algorithm = kwargs['encryptionAlgorithm']
+        if 'encryptionCertificate' in kwargs:
+            encryption_certificate = kwargs['encryptionCertificate']
+        if 'federationProtocol' in kwargs:
+            federation_protocol = kwargs['federationProtocol']
+        if 'groupAssertionAttributes' in kwargs:
+            group_assertion_attributes = kwargs['groupAssertionAttributes']
+        if 'hokAcsUrl' in kwargs:
+            hok_acs_url = kwargs['hokAcsUrl']
+        if 'hokRequired' in kwargs:
+            hok_required = kwargs['hokRequired']
+        if 'includeSigningCertInSignature' in kwargs:
+            include_signing_cert_in_signature = kwargs['includeSigningCertInSignature']
+        if 'keyEncryptionAlgorithm' in kwargs:
+            key_encryption_algorithm = kwargs['keyEncryptionAlgorithm']
+        if 'lastNotificationSentTime' in kwargs:
+            last_notification_sent_time = kwargs['lastNotificationSentTime']
+        if 'logoutBinding' in kwargs:
+            logout_binding = kwargs['logoutBinding']
+        if 'logoutEnabled' in kwargs:
+            logout_enabled = kwargs['logoutEnabled']
+        if 'logoutRequestUrl' in kwargs:
+            logout_request_url = kwargs['logoutRequestUrl']
+        if 'logoutResponseUrl' in kwargs:
+            logout_response_url = kwargs['logoutResponseUrl']
+        if 'nameIdFormat' in kwargs:
+            name_id_format = kwargs['nameIdFormat']
+        if 'nameIdUserstoreAttribute' in kwargs:
+            name_id_userstore_attribute = kwargs['nameIdUserstoreAttribute']
+        if 'outboundAssertionAttributes' in kwargs:
+            outbound_assertion_attributes = kwargs['outboundAssertionAttributes']
+        if 'partnerProviderId' in kwargs:
+            partner_provider_id = kwargs['partnerProviderId']
+        if 'partnerProviderPattern' in kwargs:
+            partner_provider_pattern = kwargs['partnerProviderPattern']
+        if 'signResponseOrAssertion' in kwargs:
+            sign_response_or_assertion = kwargs['signResponseOrAssertion']
+        if 'signatureHashAlgorithm' in kwargs:
+            signature_hash_algorithm = kwargs['signatureHashAlgorithm']
+        if 'signingCertificate' in kwargs:
+            signing_certificate = kwargs['signingCertificate']
+        if 'succinctId' in kwargs:
+            succinct_id = kwargs['succinctId']
+        if 'tenantProviderId' in kwargs:
+            tenant_provider_id = kwargs['tenantProviderId']
+        if 'userAssertionAttributes' in kwargs:
+            user_assertion_attributes = kwargs['userAssertionAttributes']
+
         if assertion_consumer_url is not None:
             _setter("assertion_consumer_url", assertion_consumer_url)
         if encrypt_assertion is not None:
@@ -15266,7 +15754,11 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
              condition: Optional[pulumi.Input[str]] = None,
              format: Optional[pulumi.Input[str]] = None,
              group_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupName' in kwargs:
+            group_name = kwargs['groupName']
+
         _setter("name", name)
         if condition is not None:
             _setter("condition", condition)
@@ -15432,7 +15924,9 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
              value: pulumi.Input[str],
              direction: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if direction is not None:
             _setter("direction", direction)
@@ -15571,7 +16065,11 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
              name: pulumi.Input[str],
              user_store_attribute_name: pulumi.Input[str],
              format: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userStoreAttributeName' in kwargs:
+            user_store_attribute_name = kwargs['userStoreAttributeName']
+
         _setter("name", name)
         _setter("user_store_attribute_name", user_store_attribute_name)
         if format is not None:
@@ -15707,7 +16205,15 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs:
              resource_ref: Optional[pulumi.Input[bool]] = None,
              web_tier_policy_az_control: Optional[pulumi.Input[str]] = None,
              web_tier_policy_json: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resourceRef' in kwargs:
+            resource_ref = kwargs['resourceRef']
+        if 'webTierPolicyAzControl' in kwargs:
+            web_tier_policy_az_control = kwargs['webTierPolicyAzControl']
+        if 'webTierPolicyJson' in kwargs:
+            web_tier_policy_json = kwargs['webTierPolicyJson']
+
         if resource_ref is not None:
             _setter("resource_ref", resource_ref)
         if web_tier_policy_az_control is not None:
@@ -15850,7 +16356,9 @@ class DomainsAppUserRoleArgs:
              description: Optional[pulumi.Input[str]] = None,
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if description is not None:
             _setter("description", description)
@@ -16033,7 +16541,9 @@ class DomainsAuthTokenIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -16244,7 +16754,9 @@ class DomainsAuthTokenIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -16451,7 +16963,13 @@ class DomainsAuthTokenMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -16617,7 +17135,9 @@ class DomainsAuthTokenTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -16696,7 +17216,11 @@ class DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUserA
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -16809,7 +17333,9 @@ class DomainsAuthTokenUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -17033,7 +17559,19 @@ class DomainsAuthenticationFactorSettingBypassCodeSettingsArgs:
              length: pulumi.Input[int],
              max_active: pulumi.Input[int],
              self_service_generation_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'helpDeskCodeExpiryInMins' in kwargs:
+            help_desk_code_expiry_in_mins = kwargs['helpDeskCodeExpiryInMins']
+        if 'helpDeskGenerationEnabled' in kwargs:
+            help_desk_generation_enabled = kwargs['helpDeskGenerationEnabled']
+        if 'helpDeskMaxUsage' in kwargs:
+            help_desk_max_usage = kwargs['helpDeskMaxUsage']
+        if 'maxActive' in kwargs:
+            max_active = kwargs['maxActive']
+        if 'selfServiceGenerationEnabled' in kwargs:
+            self_service_generation_enabled = kwargs['selfServiceGenerationEnabled']
+
         _setter("help_desk_code_expiry_in_mins", help_desk_code_expiry_in_mins)
         _setter("help_desk_generation_enabled", help_desk_generation_enabled)
         _setter("help_desk_max_usage", help_desk_max_usage)
@@ -17402,7 +17940,39 @@ class DomainsAuthenticationFactorSettingClientAppSettingsArgs:
              unlock_app_interval_in_secs: pulumi.Input[int],
              unlock_on_app_foreground_enabled: pulumi.Input[bool],
              unlock_on_app_start_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deviceProtectionPolicy' in kwargs:
+            device_protection_policy = kwargs['deviceProtectionPolicy']
+        if 'initialLockoutPeriodInSecs' in kwargs:
+            initial_lockout_period_in_secs = kwargs['initialLockoutPeriodInSecs']
+        if 'keyPairLength' in kwargs:
+            key_pair_length = kwargs['keyPairLength']
+        if 'lockoutEscalationPattern' in kwargs:
+            lockout_escalation_pattern = kwargs['lockoutEscalationPattern']
+        if 'maxFailuresBeforeLockout' in kwargs:
+            max_failures_before_lockout = kwargs['maxFailuresBeforeLockout']
+        if 'maxFailuresBeforeWarning' in kwargs:
+            max_failures_before_warning = kwargs['maxFailuresBeforeWarning']
+        if 'maxLockoutIntervalInSecs' in kwargs:
+            max_lockout_interval_in_secs = kwargs['maxLockoutIntervalInSecs']
+        if 'minPinLength' in kwargs:
+            min_pin_length = kwargs['minPinLength']
+        if 'policyUpdateFreqInDays' in kwargs:
+            policy_update_freq_in_days = kwargs['policyUpdateFreqInDays']
+        if 'requestSigningAlgo' in kwargs:
+            request_signing_algo = kwargs['requestSigningAlgo']
+        if 'sharedSecretEncoding' in kwargs:
+            shared_secret_encoding = kwargs['sharedSecretEncoding']
+        if 'unlockAppForEachRequestEnabled' in kwargs:
+            unlock_app_for_each_request_enabled = kwargs['unlockAppForEachRequestEnabled']
+        if 'unlockAppIntervalInSecs' in kwargs:
+            unlock_app_interval_in_secs = kwargs['unlockAppIntervalInSecs']
+        if 'unlockOnAppForegroundEnabled' in kwargs:
+            unlock_on_app_foreground_enabled = kwargs['unlockOnAppForegroundEnabled']
+        if 'unlockOnAppStartEnabled' in kwargs:
+            unlock_on_app_start_enabled = kwargs['unlockOnAppStartEnabled']
+
         _setter("device_protection_policy", device_protection_policy)
         _setter("initial_lockout_period_in_secs", initial_lockout_period_in_secs)
         _setter("key_pair_length", key_pair_length)
@@ -17806,7 +18376,9 @@ class DomainsAuthenticationFactorSettingCompliancePolicyArgs:
              action: pulumi.Input[str],
              name: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("name", name)
         _setter("value", value)
@@ -17917,7 +18489,13 @@ class DomainsAuthenticationFactorSettingEmailSettingsArgs:
              _setter: Callable[[Any, Any], None],
              email_link_enabled: pulumi.Input[bool],
              email_link_custom_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailLinkEnabled' in kwargs:
+            email_link_enabled = kwargs['emailLinkEnabled']
+        if 'emailLinkCustomUrl' in kwargs:
+            email_link_custom_url = kwargs['emailLinkCustomUrl']
+
         _setter("email_link_enabled", email_link_enabled)
         if email_link_custom_url is not None:
             _setter("email_link_custom_url", email_link_custom_url)
@@ -18053,7 +18631,19 @@ class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs:
              max_incorrect_attempts: pulumi.Input[int],
              max_trusted_endpoints: pulumi.Input[int],
              trusted_endpoints_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxEndpointTrustDurationInDays' in kwargs:
+            max_endpoint_trust_duration_in_days = kwargs['maxEndpointTrustDurationInDays']
+        if 'maxEnrolledDevices' in kwargs:
+            max_enrolled_devices = kwargs['maxEnrolledDevices']
+        if 'maxIncorrectAttempts' in kwargs:
+            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
+        if 'maxTrustedEndpoints' in kwargs:
+            max_trusted_endpoints = kwargs['maxTrustedEndpoints']
+        if 'trustedEndpointsEnabled' in kwargs:
+            trusted_endpoints_enabled = kwargs['trustedEndpointsEnabled']
+
         _setter("max_endpoint_trust_duration_in_days", max_endpoint_trust_duration_in_days)
         _setter("max_enrolled_devices", max_enrolled_devices)
         _setter("max_incorrect_attempts", max_incorrect_attempts)
@@ -18255,7 +18845,9 @@ class DomainsAuthenticationFactorSettingIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -18458,7 +19050,9 @@ class DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -18617,7 +19211,13 @@ class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs:
              _setter: Callable[[Any, Any], None],
              mobile_number_enabled: Optional[pulumi.Input[bool]] = None,
              mobile_number_update_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mobileNumberEnabled' in kwargs:
+            mobile_number_enabled = kwargs['mobileNumberEnabled']
+        if 'mobileNumberUpdateEnabled' in kwargs:
+            mobile_number_update_enabled = kwargs['mobileNumberUpdateEnabled']
+
         if mobile_number_enabled is not None:
             _setter("mobile_number_enabled", mobile_number_enabled)
         if mobile_number_update_enabled is not None:
@@ -18747,7 +19347,13 @@ class DomainsAuthenticationFactorSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -18896,7 +19502,11 @@ class DomainsAuthenticationFactorSettingNotificationSettingsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              pull_enabled: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pullEnabled' in kwargs:
+            pull_enabled = kwargs['pullEnabled']
+
         _setter("pull_enabled", pull_enabled)
 
     @property
@@ -18962,7 +19572,9 @@ class DomainsAuthenticationFactorSettingTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -19037,7 +19649,11 @@ class DomainsAuthenticationFactorSettingThirdPartyFactorArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              duo_security: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'duoSecurity' in kwargs:
+            duo_security = kwargs['duoSecurity']
+
         _setter("duo_security", duo_security)
 
     @property
@@ -19227,7 +19843,29 @@ class DomainsAuthenticationFactorSettingTotpSettingsArgs:
              sms_passcode_length: pulumi.Input[int],
              time_step_in_secs: pulumi.Input[int],
              time_step_tolerance: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailOtpValidityDurationInMins' in kwargs:
+            email_otp_validity_duration_in_mins = kwargs['emailOtpValidityDurationInMins']
+        if 'emailPasscodeLength' in kwargs:
+            email_passcode_length = kwargs['emailPasscodeLength']
+        if 'hashingAlgorithm' in kwargs:
+            hashing_algorithm = kwargs['hashingAlgorithm']
+        if 'jwtValidityDurationInSecs' in kwargs:
+            jwt_validity_duration_in_secs = kwargs['jwtValidityDurationInSecs']
+        if 'keyRefreshIntervalInDays' in kwargs:
+            key_refresh_interval_in_days = kwargs['keyRefreshIntervalInDays']
+        if 'passcodeLength' in kwargs:
+            passcode_length = kwargs['passcodeLength']
+        if 'smsOtpValidityDurationInMins' in kwargs:
+            sms_otp_validity_duration_in_mins = kwargs['smsOtpValidityDurationInMins']
+        if 'smsPasscodeLength' in kwargs:
+            sms_passcode_length = kwargs['smsPasscodeLength']
+        if 'timeStepInSecs' in kwargs:
+            time_step_in_secs = kwargs['timeStepInSecs']
+        if 'timeStepTolerance' in kwargs:
+            time_step_tolerance = kwargs['timeStepTolerance']
+
         _setter("email_otp_validity_duration_in_mins", email_otp_validity_duration_in_mins)
         _setter("email_passcode_length", email_passcode_length)
         _setter("hashing_algorithm", hashing_algorithm)
@@ -19622,7 +20260,23 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
              public_key_types: pulumi.Input[Sequence[pulumi.Input[str]]],
              timeout: pulumi.Input[int],
              domain_validation_level: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticatorSelectionAttachment' in kwargs:
+            authenticator_selection_attachment = kwargs['authenticatorSelectionAttachment']
+        if 'authenticatorSelectionRequireResidentKey' in kwargs:
+            authenticator_selection_require_resident_key = kwargs['authenticatorSelectionRequireResidentKey']
+        if 'authenticatorSelectionResidentKey' in kwargs:
+            authenticator_selection_resident_key = kwargs['authenticatorSelectionResidentKey']
+        if 'authenticatorSelectionUserVerification' in kwargs:
+            authenticator_selection_user_verification = kwargs['authenticatorSelectionUserVerification']
+        if 'excludeCredentials' in kwargs:
+            exclude_credentials = kwargs['excludeCredentials']
+        if 'publicKeyTypes' in kwargs:
+            public_key_types = kwargs['publicKeyTypes']
+        if 'domainValidationLevel' in kwargs:
+            domain_validation_level = kwargs['domainValidationLevel']
+
         _setter("attestation", attestation)
         _setter("authenticator_selection_attachment", authenticator_selection_attachment)
         _setter("authenticator_selection_require_resident_key", authenticator_selection_require_resident_key)
@@ -19872,7 +20526,11 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
     def _configure(
              _setter: Callable[[Any, Any], None],
              duo_security_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'duoSecuritySettings' in kwargs:
+            duo_security_settings = kwargs['duoSecuritySettings']
+
         if duo_security_settings is not None:
             _setter("duo_security_settings", duo_security_settings)
 
@@ -19986,7 +20644,19 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
              secret_key: pulumi.Input[str],
              user_mapping_attribute: pulumi.Input[str],
              attestation_key: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiHostname' in kwargs:
+            api_hostname = kwargs['apiHostname']
+        if 'integrationKey' in kwargs:
+            integration_key = kwargs['integrationKey']
+        if 'secretKey' in kwargs:
+            secret_key = kwargs['secretKey']
+        if 'userMappingAttribute' in kwargs:
+            user_mapping_attribute = kwargs['userMappingAttribute']
+        if 'attestationKey' in kwargs:
+            attestation_key = kwargs['attestationKey']
+
         _setter("api_hostname", api_hostname)
         _setter("integration_key", integration_key)
         _setter("secret_key", secret_key)
@@ -20195,7 +20865,9 @@ class DomainsCustomerSecretKeyIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -20406,7 +21078,9 @@ class DomainsCustomerSecretKeyIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -20613,7 +21287,13 @@ class DomainsCustomerSecretKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -20779,7 +21459,9 @@ class DomainsCustomerSecretKeyTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -20858,7 +21540,11 @@ class DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfCha
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -20971,7 +21657,9 @@ class DomainsCustomerSecretKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -21208,7 +21896,17 @@ class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs:
              display: Optional[pulumi.Input[str]] = None,
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+
         _setter("value", value)
         if admin_role is not None:
             _setter("admin_role", admin_role)
@@ -21452,7 +22150,13 @@ class DomainsDynamicResourceGroupGrantArgs:
              grant_mechanism: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+
         if app_id is not None:
             _setter("app_id", app_id)
         if grant_mechanism is not None:
@@ -21639,7 +22343,9 @@ class DomainsDynamicResourceGroupIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -21844,7 +22550,9 @@ class DomainsDynamicResourceGroupIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -22048,7 +22756,13 @@ class DomainsDynamicResourceGroupMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -22212,7 +22926,9 @@ class DomainsDynamicResourceGroupTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -22319,7 +23035,15 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tagSlug' in kwargs:
+            tag_slug = kwargs['tagSlug']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -22453,7 +23177,9 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
              key: pulumi.Input[str],
              namespace: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -22569,7 +23295,9 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -22673,7 +23401,9 @@ class DomainsGrantAppArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -22786,7 +23516,9 @@ class DomainsGrantAppEntitlementCollectionArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -22876,7 +23608,13 @@ class DomainsGrantEntitlementArgs:
              _setter: Callable[[Any, Any], None],
              attribute_name: pulumi.Input[str],
              attribute_value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
 
@@ -22993,7 +23731,9 @@ class DomainsGrantGranteeArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -23157,7 +23897,9 @@ class DomainsGrantGrantorArgs:
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if ref is not None:
@@ -23337,7 +24079,9 @@ class DomainsGrantIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -23540,7 +24284,9 @@ class DomainsGrantIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -23743,7 +24489,13 @@ class DomainsGrantMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -23905,7 +24657,9 @@ class DomainsGrantTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -24041,7 +24795,9 @@ class DomainsGroupIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -24256,7 +25012,9 @@ class DomainsGroupIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -24516,7 +25274,13 @@ class DomainsGroupMemberArgs:
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateAdded' in kwargs:
+            date_added = kwargs['dateAdded']
+        if 'membershipOcid' in kwargs:
+            membership_ocid = kwargs['membershipOcid']
+
         _setter("type", type)
         _setter("value", value)
         if date_added is not None:
@@ -24799,7 +25563,13 @@ class DomainsGroupMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -24964,7 +25734,9 @@ class DomainsGroupTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -25068,7 +25840,15 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tagSlug' in kwargs:
+            tag_slug = kwargs['tagSlug']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -25199,7 +25979,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagAr
              key: pulumi.Input[str],
              namespace: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -25317,7 +26099,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagA
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -25442,7 +26226,17 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs:
              domain_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]] = None,
              instance_level_schema: Optional[pulumi.Input[str]] = None,
              instance_level_schema_names: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainLevelSchema' in kwargs:
+            domain_level_schema = kwargs['domainLevelSchema']
+        if 'domainLevelSchemaNames' in kwargs:
+            domain_level_schema_names = kwargs['domainLevelSchemaNames']
+        if 'instanceLevelSchema' in kwargs:
+            instance_level_schema = kwargs['instanceLevelSchema']
+        if 'instanceLevelSchemaNames' in kwargs:
+            instance_level_schema_names = kwargs['instanceLevelSchemaNames']
+
         if domain_level_schema is not None:
             _setter("domain_level_schema", domain_level_schema)
         if domain_level_schema_names is not None:
@@ -25590,7 +26384,13 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLeve
              _setter: Callable[[Any, Any], None],
              domain_name: pulumi.Input[str],
              schema_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("domain_name", domain_name)
         _setter("schema_name", schema_name)
 
@@ -25686,7 +26486,13 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLe
              _setter: Callable[[Any, Any], None],
              db_instance_id: pulumi.Input[str],
              schema_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbInstanceId' in kwargs:
+            db_instance_id = kwargs['dbInstanceId']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("db_instance_id", db_instance_id)
         _setter("schema_name", schema_name)
 
@@ -25782,7 +26588,13 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs:
              _setter: Callable[[Any, Any], None],
              membership_rule: Optional[pulumi.Input[str]] = None,
              membership_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'membershipRule' in kwargs:
+            membership_rule = kwargs['membershipRule']
+        if 'membershipType' in kwargs:
+            membership_type = kwargs['membershipType']
+
         if membership_rule is not None:
             _setter("membership_rule", membership_rule)
         if membership_type is not None:
@@ -25955,7 +26767,17 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs:
              owners: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]] = None,
              password_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]] = None,
              synced_from_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appRoles' in kwargs:
+            app_roles = kwargs['appRoles']
+        if 'creationMechanism' in kwargs:
+            creation_mechanism = kwargs['creationMechanism']
+        if 'passwordPolicies' in kwargs:
+            password_policies = kwargs['passwordPolicies']
+        if 'syncedFromApps' in kwargs:
+            synced_from_apps = kwargs['syncedFromApps']
+
         if app_roles is not None:
             _setter("app_roles", app_roles)
         if creation_mechanism is not None:
@@ -26263,7 +27085,17 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleAr
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+
         _setter("value", value)
         if admin_role is not None:
             _setter("admin_role", admin_role)
@@ -26535,7 +27367,13 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs
              grant_mechanism: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+
         if app_id is not None:
             _setter("app_id", app_id)
         if grant_mechanism is not None:
@@ -26713,7 +27551,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -26888,7 +27728,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordP
              name: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if name is not None:
             _setter("name", name)
@@ -27064,7 +27906,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFro
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -27191,7 +28035,11 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              gid_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gidNumber' in kwargs:
+            gid_number = kwargs['gidNumber']
+
         if gid_number is not None:
             _setter("gid_number", gid_number)
 
@@ -27249,7 +28097,9 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArg
     def _configure(
              _setter: Callable[[Any, Any], None],
              requestable: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if requestable is not None:
             _setter("requestable", requestable)
 
@@ -27352,7 +28202,9 @@ class DomainsIdentityProviderCorrelationPolicyArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -27534,7 +28386,9 @@ class DomainsIdentityProviderIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -27741,7 +28595,9 @@ class DomainsIdentityProviderIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -27918,7 +28774,9 @@ class DomainsIdentityProviderJitUserProvAssignedGroupArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -28030,7 +28888,9 @@ class DomainsIdentityProviderJitUserProvAttributesArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -28130,7 +28990,11 @@ class DomainsIdentityProviderJitUserProvGroupMappingArgs:
              idp_group: pulumi.Input[str],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idpGroup' in kwargs:
+            idp_group = kwargs['idpGroup']
+
         _setter("idp_group", idp_group)
         _setter("value", value)
         if ref is not None:
@@ -28282,7 +29146,13 @@ class DomainsIdentityProviderMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -28444,7 +29314,9 @@ class DomainsIdentityProviderTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -28760,7 +29632,37 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialId
              redirect_url: Optional[pulumi.Input[str]] = None,
              scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountLinkingEnabled' in kwargs:
+            account_linking_enabled = kwargs['accountLinkingEnabled']
+        if 'consumerKey' in kwargs:
+            consumer_key = kwargs['consumerKey']
+        if 'consumerSecret' in kwargs:
+            consumer_secret = kwargs['consumerSecret']
+        if 'registrationEnabled' in kwargs:
+            registration_enabled = kwargs['registrationEnabled']
+        if 'serviceProviderName' in kwargs:
+            service_provider_name = kwargs['serviceProviderName']
+        if 'accessTokenUrl' in kwargs:
+            access_token_url = kwargs['accessTokenUrl']
+        if 'adminScopes' in kwargs:
+            admin_scopes = kwargs['adminScopes']
+        if 'authzUrl' in kwargs:
+            authz_url = kwargs['authzUrl']
+        if 'clientCredentialInPayload' in kwargs:
+            client_credential_in_payload = kwargs['clientCredentialInPayload']
+        if 'clockSkewInSeconds' in kwargs:
+            clock_skew_in_seconds = kwargs['clockSkewInSeconds']
+        if 'discoveryUrl' in kwargs:
+            discovery_url = kwargs['discoveryUrl']
+        if 'idAttribute' in kwargs:
+            id_attribute = kwargs['idAttribute']
+        if 'profileUrl' in kwargs:
+            profile_url = kwargs['profileUrl']
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+
         _setter("account_linking_enabled", account_linking_enabled)
         _setter("consumer_key", consumer_key)
         _setter("consumer_secret", consumer_secret)
@@ -29457,7 +30359,43 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509iden
              ocsp_server_name: Optional[pulumi.Input[str]] = None,
              ocsp_trust_cert_chains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              other_cert_match_attribute: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certMatchAttribute' in kwargs:
+            cert_match_attribute = kwargs['certMatchAttribute']
+        if 'signingCertificateChains' in kwargs:
+            signing_certificate_chains = kwargs['signingCertificateChains']
+        if 'userMatchAttribute' in kwargs:
+            user_match_attribute = kwargs['userMatchAttribute']
+        if 'crlCheckOnOcspFailureEnabled' in kwargs:
+            crl_check_on_ocsp_failure_enabled = kwargs['crlCheckOnOcspFailureEnabled']
+        if 'crlEnabled' in kwargs:
+            crl_enabled = kwargs['crlEnabled']
+        if 'crlLocation' in kwargs:
+            crl_location = kwargs['crlLocation']
+        if 'crlReloadDuration' in kwargs:
+            crl_reload_duration = kwargs['crlReloadDuration']
+        if 'ekuValidationEnabled' in kwargs:
+            eku_validation_enabled = kwargs['ekuValidationEnabled']
+        if 'ekuValues' in kwargs:
+            eku_values = kwargs['ekuValues']
+        if 'ocspAllowUnknownResponseStatus' in kwargs:
+            ocsp_allow_unknown_response_status = kwargs['ocspAllowUnknownResponseStatus']
+        if 'ocspEnableSignedResponse' in kwargs:
+            ocsp_enable_signed_response = kwargs['ocspEnableSignedResponse']
+        if 'ocspEnabled' in kwargs:
+            ocsp_enabled = kwargs['ocspEnabled']
+        if 'ocspResponderUrl' in kwargs:
+            ocsp_responder_url = kwargs['ocspResponderUrl']
+        if 'ocspRevalidateTime' in kwargs:
+            ocsp_revalidate_time = kwargs['ocspRevalidateTime']
+        if 'ocspServerName' in kwargs:
+            ocsp_server_name = kwargs['ocspServerName']
+        if 'ocspTrustCertChains' in kwargs:
+            ocsp_trust_cert_chains = kwargs['ocspTrustCertChains']
+        if 'otherCertMatchAttribute' in kwargs:
+            other_cert_match_attribute = kwargs['otherCertMatchAttribute']
+
         _setter("cert_match_attribute", cert_match_attribute)
         _setter("signing_certificate_chains", signing_certificate_chains)
         _setter("user_match_attribute", user_match_attribute)
@@ -29979,7 +30917,9 @@ class DomainsIdentitySettingIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -30180,7 +31120,9 @@ class DomainsIdentitySettingIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -30382,7 +31324,13 @@ class DomainsIdentitySettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -30576,7 +31524,17 @@ class DomainsIdentitySettingMyProfileArgs:
              allow_end_users_to_link_their_support_account: Optional[pulumi.Input[bool]] = None,
              allow_end_users_to_manage_their_capabilities: Optional[pulumi.Input[bool]] = None,
              allow_end_users_to_update_their_security_settings: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowEndUsersToChangeTheirPassword' in kwargs:
+            allow_end_users_to_change_their_password = kwargs['allowEndUsersToChangeTheirPassword']
+        if 'allowEndUsersToLinkTheirSupportAccount' in kwargs:
+            allow_end_users_to_link_their_support_account = kwargs['allowEndUsersToLinkTheirSupportAccount']
+        if 'allowEndUsersToManageTheirCapabilities' in kwargs:
+            allow_end_users_to_manage_their_capabilities = kwargs['allowEndUsersToManageTheirCapabilities']
+        if 'allowEndUsersToUpdateTheirSecuritySettings' in kwargs:
+            allow_end_users_to_update_their_security_settings = kwargs['allowEndUsersToUpdateTheirSecuritySettings']
+
         if allow_end_users_to_change_their_password is not None:
             _setter("allow_end_users_to_change_their_password", allow_end_users_to_change_their_password)
         if allow_end_users_to_link_their_support_account is not None:
@@ -30720,7 +31678,13 @@ class DomainsIdentitySettingPosixGidArgs:
              _setter: Callable[[Any, Any], None],
              manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
              manual_assignment_starts_from: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'manualAssignmentEndsAt' in kwargs:
+            manual_assignment_ends_at = kwargs['manualAssignmentEndsAt']
+        if 'manualAssignmentStartsFrom' in kwargs:
+            manual_assignment_starts_from = kwargs['manualAssignmentStartsFrom']
+
         if manual_assignment_ends_at is not None:
             _setter("manual_assignment_ends_at", manual_assignment_ends_at)
         if manual_assignment_starts_from is not None:
@@ -30814,7 +31778,13 @@ class DomainsIdentitySettingPosixUidArgs:
              _setter: Callable[[Any, Any], None],
              manual_assignment_ends_at: Optional[pulumi.Input[int]] = None,
              manual_assignment_starts_from: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'manualAssignmentEndsAt' in kwargs:
+            manual_assignment_ends_at = kwargs['manualAssignmentEndsAt']
+        if 'manualAssignmentStartsFrom' in kwargs:
+            manual_assignment_starts_from = kwargs['manualAssignmentStartsFrom']
+
         if manual_assignment_ends_at is not None:
             _setter("manual_assignment_ends_at", manual_assignment_ends_at)
         if manual_assignment_starts_from is not None:
@@ -30906,7 +31876,9 @@ class DomainsIdentitySettingTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -30992,7 +31964,11 @@ class DomainsIdentitySettingTokenArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              expires_after: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expiresAfter' in kwargs:
+            expires_after = kwargs['expiresAfter']
+
         _setter("type", type)
         if expires_after is not None:
             _setter("expires_after", expires_after)
@@ -31121,7 +32097,9 @@ class DomainsKmsiSettingIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -31324,7 +32302,9 @@ class DomainsKmsiSettingIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -31527,7 +32507,13 @@ class DomainsKmsiSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -31689,7 +32675,9 @@ class DomainsKmsiSettingTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -31823,7 +32811,9 @@ class DomainsMyApiKeyIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -32034,7 +33024,9 @@ class DomainsMyApiKeyIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -32241,7 +33233,13 @@ class DomainsMyApiKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -32407,7 +33405,9 @@ class DomainsMyApiKeyTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -32545,7 +33545,9 @@ class DomainsMyApiKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -32757,7 +33759,9 @@ class DomainsMyAuthTokenIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -32968,7 +33972,9 @@ class DomainsMyAuthTokenIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -33175,7 +34181,13 @@ class DomainsMyAuthTokenMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -33341,7 +34353,9 @@ class DomainsMyAuthTokenTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -33479,7 +34493,9 @@ class DomainsMyAuthTokenUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -33691,7 +34707,9 @@ class DomainsMyCustomerSecretKeyIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -33902,7 +34920,9 @@ class DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -34109,7 +35129,13 @@ class DomainsMyCustomerSecretKeyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -34275,7 +35301,9 @@ class DomainsMyCustomerSecretKeyTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -34413,7 +35441,9 @@ class DomainsMyCustomerSecretKeyUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -34625,7 +35655,9 @@ class DomainsMyOauth2clientCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -34836,7 +35868,9 @@ class DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -35043,7 +36077,13 @@ class DomainsMyOauth2clientCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -35201,7 +36241,9 @@ class DomainsMyOauth2clientCredentialScopeArgs:
              _setter: Callable[[Any, Any], None],
              audience: pulumi.Input[str],
              scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("audience", audience)
         _setter("scope", scope)
 
@@ -35289,7 +36331,9 @@ class DomainsMyOauth2clientCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -35427,7 +36471,9 @@ class DomainsMyOauth2clientCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -35635,7 +36681,9 @@ class DomainsMyRequestIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -35838,7 +36886,9 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -36041,7 +37091,13 @@ class DomainsMyRequestMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -36231,7 +37287,9 @@ class DomainsMyRequestRequestingArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -36379,7 +37437,9 @@ class DomainsMyRequestRequestorArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -36490,7 +37550,9 @@ class DomainsMyRequestTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -36620,7 +37682,9 @@ class DomainsMySmtpCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -36823,7 +37887,9 @@ class DomainsMySmtpCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -37026,7 +38092,13 @@ class DomainsMySmtpCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -37188,7 +38260,9 @@ class DomainsMySmtpCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -37318,7 +38392,9 @@ class DomainsMySmtpCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -37522,7 +38598,9 @@ class DomainsMySupportAccountIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -37725,7 +38803,9 @@ class DomainsMySupportAccountIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -37928,7 +39008,13 @@ class DomainsMySupportAccountMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -38090,7 +39176,9 @@ class DomainsMySupportAccountTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -38220,7 +39308,9 @@ class DomainsMySupportAccountUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -38428,7 +39518,9 @@ class DomainsMyUserDbCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -38639,7 +39731,9 @@ class DomainsMyUserDbCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -38846,7 +39940,13 @@ class DomainsMyUserDbCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -39012,7 +40112,9 @@ class DomainsMyUserDbCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -39150,7 +40252,9 @@ class DomainsMyUserDbCredentialUserArgs:
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -39361,7 +40465,9 @@ class DomainsOauth2clientCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -39572,7 +40678,9 @@ class DomainsOauth2clientCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -39779,7 +40887,13 @@ class DomainsOauth2clientCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -39937,7 +41051,9 @@ class DomainsOauth2clientCredentialScopeArgs:
              _setter: Callable[[Any, Any], None],
              audience: pulumi.Input[str],
              scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("audience", audience)
         _setter("scope", scope)
 
@@ -40025,7 +41141,9 @@ class DomainsOauth2clientCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -40104,7 +41222,11 @@ class DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionse
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -40217,7 +41339,9 @@ class DomainsOauth2clientCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -40383,7 +41507,9 @@ class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -40485,7 +41611,9 @@ class DomainsPasswordPolicyGroupArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -40640,7 +41768,9 @@ class DomainsPasswordPolicyIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -40843,7 +41973,9 @@ class DomainsPasswordPolicyIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -41046,7 +42178,13 @@ class DomainsPasswordPolicyMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -41208,7 +42346,9 @@ class DomainsPasswordPolicyTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -41342,7 +42482,9 @@ class DomainsSecurityQuestionIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -41553,7 +42695,9 @@ class DomainsSecurityQuestionIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -41760,7 +42904,13 @@ class DomainsSecurityQuestionMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -41937,7 +43087,9 @@ class DomainsSecurityQuestionQuestionTextArgs:
              locale: pulumi.Input[str],
              value: pulumi.Input[str],
              default: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("locale", locale)
         _setter("value", value)
         if default is not None:
@@ -42092,7 +43244,9 @@ class DomainsSecurityQuestionSettingIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -42295,7 +43449,9 @@ class DomainsSecurityQuestionSettingIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -42498,7 +43654,13 @@ class DomainsSecurityQuestionSettingMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -42660,7 +43822,9 @@ class DomainsSecurityQuestionSettingTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -42748,7 +43912,9 @@ class DomainsSecurityQuestionTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -42878,7 +44044,9 @@ class DomainsSmtpCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -43081,7 +44249,9 @@ class DomainsSmtpCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -43284,7 +44454,13 @@ class DomainsSmtpCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -43446,7 +44622,9 @@ class DomainsSmtpCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -43521,7 +44699,11 @@ class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChange
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -43630,7 +44812,9 @@ class DomainsSmtpCredentialUserArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if display is not None:
             _setter("display", display)
         if name is not None:
@@ -43876,7 +45060,13 @@ class DomainsUserAddressArgs:
              primary: Optional[pulumi.Input[bool]] = None,
              region: Optional[pulumi.Input[str]] = None,
              street_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'streetAddress' in kwargs:
+            street_address = kwargs['streetAddress']
+
         _setter("type", type)
         if country is not None:
             _setter("country", country)
@@ -44155,7 +45345,9 @@ class DomainsUserDbCredentialIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -44366,7 +45558,9 @@ class DomainsUserDbCredentialIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -44573,7 +45767,13 @@ class DomainsUserDbCredentialMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -44739,7 +45939,9 @@ class DomainsUserDbCredentialTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -44818,7 +46020,11 @@ class DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChan
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -44931,7 +46137,9 @@ class DomainsUserDbCredentialUserArgs:
              name: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -45156,7 +46364,11 @@ class DomainsUserEmailArgs:
              primary: Optional[pulumi.Input[bool]] = None,
              secondary: Optional[pulumi.Input[bool]] = None,
              verified: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pendingVerificationData' in kwargs:
+            pending_verification_data = kwargs['pendingVerificationData']
+
         _setter("type", type)
         _setter("value", value)
         if pending_verification_data is not None:
@@ -45372,7 +46584,9 @@ class DomainsUserEntitlementArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -45613,7 +46827,17 @@ class DomainsUserGroupArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateAdded' in kwargs:
+            date_added = kwargs['dateAdded']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'membershipOcid' in kwargs:
+            membership_ocid = kwargs['membershipOcid']
+        if 'nonUniqueDisplay' in kwargs:
+            non_unique_display = kwargs['nonUniqueDisplay']
+
         _setter("value", value)
         if date_added is not None:
             _setter("date_added", date_added)
@@ -45923,7 +47147,9 @@ class DomainsUserIdcsCreatedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -46134,7 +47360,9 @@ class DomainsUserIdcsLastModifiedByArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -46327,7 +47555,9 @@ class DomainsUserImArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -46505,7 +47735,13 @@ class DomainsUserMetaArgs:
              location: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastModified' in kwargs:
+            last_modified = kwargs['lastModified']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if created is not None:
             _setter("created", created)
         if last_modified is not None:
@@ -46726,7 +47962,19 @@ class DomainsUserNameArgs:
              honorific_prefix: Optional[pulumi.Input[str]] = None,
              honorific_suffix: Optional[pulumi.Input[str]] = None,
              middle_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'familyName' in kwargs:
+            family_name = kwargs['familyName']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'honorificPrefix' in kwargs:
+            honorific_prefix = kwargs['honorificPrefix']
+        if 'honorificSuffix' in kwargs:
+            honorific_suffix = kwargs['honorificSuffix']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+
         _setter("family_name", family_name)
         if formatted is not None:
             _setter("formatted", formatted)
@@ -46956,7 +48204,9 @@ class DomainsUserPhoneNumberArgs:
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
              verified: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -47144,7 +48394,9 @@ class DomainsUserPhotoArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -47308,7 +48560,9 @@ class DomainsUserRoleArgs:
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -47449,7 +48703,9 @@ class DomainsUserTagArgs:
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -47613,7 +48869,13 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs:
              employee_number: Optional[pulumi.Input[str]] = None,
              manager: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']] = None,
              organization: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costCenter' in kwargs:
+            cost_center = kwargs['costCenter']
+        if 'employeeNumber' in kwargs:
+            employee_number = kwargs['employeeNumber']
+
         if cost_center is not None:
             _setter("cost_center", cost_center)
         if department is not None:
@@ -47831,7 +49093,11 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if ref is not None:
@@ -47961,7 +49227,15 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs:
              defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]] = None,
              tag_slug: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tagSlug' in kwargs:
+            tag_slug = kwargs['tagSlug']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -48094,7 +49368,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArg
              key: pulumi.Input[str],
              namespace: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -48216,7 +49492,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagAr
              _setter: Callable[[Any, Any], None],
              key: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -48312,7 +49590,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs:
              _setter: Callable[[Any, Any], None],
              risk_level: Optional[pulumi.Input[str]] = None,
              risk_scores: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+        if 'riskScores' in kwargs:
+            risk_scores = kwargs['riskScores']
+
         if risk_level is not None:
             _setter("risk_level", risk_level)
         if risk_scores is not None:
@@ -48486,7 +49770,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScor
              ref: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastUpdateTimestamp' in kwargs:
+            last_update_timestamp = kwargs['lastUpdateTimestamp']
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+
         _setter("last_update_timestamp", last_update_timestamp)
         _setter("risk_level", risk_level)
         _setter("score", score)
@@ -48803,7 +50093,25 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
              can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canUseApiKeys' in kwargs:
+            can_use_api_keys = kwargs['canUseApiKeys']
+        if 'canUseAuthTokens' in kwargs:
+            can_use_auth_tokens = kwargs['canUseAuthTokens']
+        if 'canUseConsole' in kwargs:
+            can_use_console = kwargs['canUseConsole']
+        if 'canUseConsolePassword' in kwargs:
+            can_use_console_password = kwargs['canUseConsolePassword']
+        if 'canUseCustomerSecretKeys' in kwargs:
+            can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
+        if 'canUseDbCredentials' in kwargs:
+            can_use_db_credentials = kwargs['canUseDbCredentials']
+        if 'canUseOauth2clientCredentials' in kwargs:
+            can_use_oauth2client_credentials = kwargs['canUseOauth2clientCredentials']
+        if 'canUseSmtpCredentials' in kwargs:
+            can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
+
         if can_use_api_keys is not None:
             _setter("can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:
@@ -49056,7 +50364,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArg
              _setter: Callable[[Any, Any], None],
              db_login_attempts: Optional[pulumi.Input[int]] = None,
              db_user_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbLoginAttempts' in kwargs:
+            db_login_attempts = kwargs['dbLoginAttempts']
+        if 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+
         if db_login_attempts is not None:
             _setter("db_login_attempts", db_login_attempts)
         if db_user_name is not None:
@@ -49201,7 +50515,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs:
              instance_level_schema: Optional[pulumi.Input[str]] = None,
              is_db_user: Optional[pulumi.Input[bool]] = None,
              password_verifiers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbGlobalRoles' in kwargs:
+            db_global_roles = kwargs['dbGlobalRoles']
+        if 'domainLevelSchema' in kwargs:
+            domain_level_schema = kwargs['domainLevelSchema']
+        if 'instanceLevelSchema' in kwargs:
+            instance_level_schema = kwargs['instanceLevelSchema']
+        if 'isDbUser' in kwargs:
+            is_db_user = kwargs['isDbUser']
+        if 'passwordVerifiers' in kwargs:
+            password_verifiers = kwargs['passwordVerifiers']
+
         if db_global_roles is not None:
             _setter("db_global_roles", db_global_roles)
         if domain_level_schema is not None:
@@ -49375,7 +50701,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVe
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -49450,7 +50778,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs
     def _configure(
              _setter: Callable[[Any, Any], None],
              realm_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'realmUsers' in kwargs:
+            realm_users = kwargs['realmUsers']
+
         if realm_users is not None:
             _setter("realm_users", realm_users)
 
@@ -49546,7 +50878,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
              principal_name: Optional[pulumi.Input[str]] = None,
              realm_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'principalName' in kwargs:
+            principal_name = kwargs['principalName']
+        if 'realmName' in kwargs:
+            realm_name = kwargs['realmName']
+
         _setter("value", value)
         if principal_name is not None:
             _setter("principal_name", principal_name)
@@ -49831,7 +51169,29 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs:
              preferred_device: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']] = None,
              preferred_third_party_vendor: Optional[pulumi.Input[str]] = None,
              trusted_user_agents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bypassCodes' in kwargs:
+            bypass_codes = kwargs['bypassCodes']
+        if 'loginAttempts' in kwargs:
+            login_attempts = kwargs['loginAttempts']
+        if 'mfaEnabledOn' in kwargs:
+            mfa_enabled_on = kwargs['mfaEnabledOn']
+        if 'mfaIgnoredApps' in kwargs:
+            mfa_ignored_apps = kwargs['mfaIgnoredApps']
+        if 'mfaStatus' in kwargs:
+            mfa_status = kwargs['mfaStatus']
+        if 'preferredAuthenticationFactor' in kwargs:
+            preferred_authentication_factor = kwargs['preferredAuthenticationFactor']
+        if 'preferredAuthenticationMethod' in kwargs:
+            preferred_authentication_method = kwargs['preferredAuthenticationMethod']
+        if 'preferredDevice' in kwargs:
+            preferred_device = kwargs['preferredDevice']
+        if 'preferredThirdPartyVendor' in kwargs:
+            preferred_third_party_vendor = kwargs['preferredThirdPartyVendor']
+        if 'trustedUserAgents' in kwargs:
+            trusted_user_agents = kwargs['trustedUserAgents']
+
         if bypass_codes is not None:
             _setter("bypass_codes", bypass_codes)
         if devices is not None:
@@ -50160,7 +51520,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArg
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -50360,7 +51722,19 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs:
              ref: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              third_party_vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationMethod' in kwargs:
+            authentication_method = kwargs['authenticationMethod']
+        if 'factorStatus' in kwargs:
+            factor_status = kwargs['factorStatus']
+        if 'factorType' in kwargs:
+            factor_type = kwargs['factorType']
+        if 'lastSyncTime' in kwargs:
+            last_sync_time = kwargs['lastSyncTime']
+        if 'thirdPartyVendorName' in kwargs:
+            third_party_vendor_name = kwargs['thirdPartyVendorName']
+
         _setter("value", value)
         if authentication_method is not None:
             _setter("authentication_method", authentication_method)
@@ -50643,7 +52017,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevi
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -50776,7 +52152,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAg
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -50979,7 +52357,23 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArg
              last_successful_set_date: Optional[pulumi.Input[str]] = None,
              last_successful_validation_date: Optional[pulumi.Input[str]] = None,
              must_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicablePasswordPolicy' in kwargs:
+            applicable_password_policy = kwargs['applicablePasswordPolicy']
+        if 'cantChange' in kwargs:
+            cant_change = kwargs['cantChange']
+        if 'cantExpire' in kwargs:
+            cant_expire = kwargs['cantExpire']
+        if 'lastFailedValidationDate' in kwargs:
+            last_failed_validation_date = kwargs['lastFailedValidationDate']
+        if 'lastSuccessfulSetDate' in kwargs:
+            last_successful_set_date = kwargs['lastSuccessfulSetDate']
+        if 'lastSuccessfulValidationDate' in kwargs:
+            last_successful_validation_date = kwargs['lastSuccessfulValidationDate']
+        if 'mustChange' in kwargs:
+            must_change = kwargs['mustChange']
+
         if applicable_password_policy is not None:
             _setter("applicable_password_policy", applicable_password_policy)
         if cant_change is not None:
@@ -51248,7 +52642,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApp
              display: Optional[pulumi.Input[str]] = None,
              priority: Optional[pulumi.Input[int]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -51409,7 +52805,15 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs
              factor_identifier: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']] = None,
              factor_method: Optional[pulumi.Input[str]] = None,
              factor_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'factorIdentifier' in kwargs:
+            factor_identifier = kwargs['factorIdentifier']
+        if 'factorMethod' in kwargs:
+            factor_method = kwargs['factorMethod']
+        if 'factorType' in kwargs:
+            factor_type = kwargs['factorType']
+
         if factor_identifier is not None:
             _setter("factor_identifier", factor_identifier)
         if factor_method is not None:
@@ -51546,7 +52950,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFact
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -51699,7 +53105,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs:
              home_directory: Optional[pulumi.Input[str]] = None,
              login_shell: Optional[pulumi.Input[str]] = None,
              uid_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gidNumber' in kwargs:
+            gid_number = kwargs['gidNumber']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'loginShell' in kwargs:
+            login_shell = kwargs['loginShell']
+        if 'uidNumber' in kwargs:
+            uid_number = kwargs['uidNumber']
+
         if gecos is not None:
             _setter("gecos", gecos)
         if gid_number is not None:
@@ -51841,7 +53257,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
     def _configure(
              _setter: Callable[[Any, Any], None],
              sec_questions: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secQuestions' in kwargs:
+            sec_questions = kwargs['secQuestions']
+
         if sec_questions is not None:
             _setter("sec_questions", sec_questions)
 
@@ -51939,7 +53359,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUse
              value: pulumi.Input[str],
              hint_text: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hintText' in kwargs:
+            hint_text = kwargs['hintText']
+
         _setter("answer", answer)
         _setter("value", value)
         if hint_text is not None:
@@ -52067,7 +53491,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              allow_self_change: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowSelfChange' in kwargs:
+            allow_self_change = kwargs['allowSelfChange']
+
         if allow_self_change is not None:
             _setter("allow_self_change", allow_self_change)
 
@@ -52148,7 +53576,15 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser
              self_registration_profile: pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs'],
              consent_granted: Optional[pulumi.Input[bool]] = None,
              user_token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'selfRegistrationProfile' in kwargs:
+            self_registration_profile = kwargs['selfRegistrationProfile']
+        if 'consentGranted' in kwargs:
+            consent_granted = kwargs['consentGranted']
+        if 'userToken' in kwargs:
+            user_token = kwargs['userToken']
+
         _setter("self_registration_profile", self_registration_profile)
         if consent_granted is not None:
             _setter("consent_granted", consent_granted)
@@ -52278,7 +53714,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -52379,7 +53817,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              sff_auth_keys: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sffAuthKeys' in kwargs:
+            sff_auth_keys = kwargs['sffAuthKeys']
+
         if sff_auth_keys is not None:
             _setter("sff_auth_keys", sff_auth_keys)
 
@@ -52431,7 +53873,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArg
     def _configure(
              _setter: Callable[[Any, Any], None],
              social_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'socialAccounts' in kwargs:
+            social_accounts = kwargs['socialAccounts']
+
         if social_accounts is not None:
             _setter("social_accounts", social_accounts)
 
@@ -52515,7 +53961,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSoc
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -52619,7 +54067,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              terms_of_use_consents: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'termsOfUseConsents' in kwargs:
+            terms_of_use_consents = kwargs['termsOfUseConsents']
+
         if terms_of_use_consents is not None:
             _setter("terms_of_use_consents", terms_of_use_consents)
 
@@ -52691,7 +54143,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsO
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if ref is not None:
             _setter("ref", ref)
@@ -52852,7 +54306,21 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              db_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]] = None,
              o_auth2client_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]] = None,
              smtp_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiKeys' in kwargs:
+            api_keys = kwargs['apiKeys']
+        if 'authTokens' in kwargs:
+            auth_tokens = kwargs['authTokens']
+        if 'customerSecretKeys' in kwargs:
+            customer_secret_keys = kwargs['customerSecretKeys']
+        if 'dbCredentials' in kwargs:
+            db_credentials = kwargs['dbCredentials']
+        if 'oAuth2clientCredentials' in kwargs:
+            o_auth2client_credentials = kwargs['oAuth2clientCredentials']
+        if 'smtpCredentials' in kwargs:
+            smtp_credentials = kwargs['smtpCredentials']
+
         if api_keys is not None:
             _setter("api_keys", api_keys)
         if auth_tokens is not None:
@@ -53086,7 +54554,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if ocid is not None:
@@ -53252,7 +54722,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -53392,7 +54864,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserC
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -53532,7 +55006,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserD
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -53672,7 +55148,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserO
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -53812,7 +55290,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserS
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -54043,7 +55523,25 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs:
              recovery_attempts: Optional[pulumi.Input[int]] = None,
              recovery_enroll_attempts: Optional[pulumi.Input[int]] = None,
              recovery_locked: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastFailedLoginDate' in kwargs:
+            last_failed_login_date = kwargs['lastFailedLoginDate']
+        if 'lastSuccessfulLoginDate' in kwargs:
+            last_successful_login_date = kwargs['lastSuccessfulLoginDate']
+        if 'loginAttempts' in kwargs:
+            login_attempts = kwargs['loginAttempts']
+        if 'maxConcurrentSessions' in kwargs:
+            max_concurrent_sessions = kwargs['maxConcurrentSessions']
+        if 'previousSuccessfulLoginDate' in kwargs:
+            previous_successful_login_date = kwargs['previousSuccessfulLoginDate']
+        if 'recoveryAttempts' in kwargs:
+            recovery_attempts = kwargs['recoveryAttempts']
+        if 'recoveryEnrollAttempts' in kwargs:
+            recovery_enroll_attempts = kwargs['recoveryEnrollAttempts']
+        if 'recoveryLocked' in kwargs:
+            recovery_locked = kwargs['recoveryLocked']
+
         if last_failed_login_date is not None:
             _setter("last_failed_login_date", last_failed_login_date)
         if last_successful_login_date is not None:
@@ -54350,7 +55848,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedA
              lock_date: Optional[pulumi.Input[str]] = None,
              on: Optional[pulumi.Input[bool]] = None,
              reason: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lockDate' in kwargs:
+            lock_date = kwargs['lockDate']
+
         if expired is not None:
             _setter("expired", expired)
         if lock_date is not None:
@@ -54501,7 +56003,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecover
              _setter: Callable[[Any, Any], None],
              lock_date: Optional[pulumi.Input[str]] = None,
              on: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lockDate' in kwargs:
+            lock_date = kwargs['lockDate']
+
         if lock_date is not None:
             _setter("lock_date", lock_date)
         if on is not None:
@@ -54934,7 +56440,51 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs:
              user_flow_controlled_by_external_client: Optional[pulumi.Input[bool]] = None,
              user_provider: Optional[pulumi.Input[str]] = None,
              user_tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountRecoveryRequired' in kwargs:
+            account_recovery_required = kwargs['accountRecoveryRequired']
+        if 'appRoles' in kwargs:
+            app_roles = kwargs['appRoles']
+        if 'applicableAuthenticationTargetApps' in kwargs:
+            applicable_authentication_target_apps = kwargs['applicableAuthenticationTargetApps']
+        if 'bypassNotification' in kwargs:
+            bypass_notification = kwargs['bypassNotification']
+        if 'creationMechanism' in kwargs:
+            creation_mechanism = kwargs['creationMechanism']
+        if 'delegatedAuthenticationTargetApp' in kwargs:
+            delegated_authentication_target_app = kwargs['delegatedAuthenticationTargetApp']
+        if 'doNotShowGettingStarted' in kwargs:
+            do_not_show_getting_started = kwargs['doNotShowGettingStarted']
+        if 'groupMembershipLastModified' in kwargs:
+            group_membership_last_modified = kwargs['groupMembershipLastModified']
+        if 'idcsAppRolesLimitedToGroups' in kwargs:
+            idcs_app_roles_limited_to_groups = kwargs['idcsAppRolesLimitedToGroups']
+        if 'isAccountRecoveryEnrolled' in kwargs:
+            is_account_recovery_enrolled = kwargs['isAccountRecoveryEnrolled']
+        if 'isAuthenticationDelegated' in kwargs:
+            is_authentication_delegated = kwargs['isAuthenticationDelegated']
+        if 'isFederatedUser' in kwargs:
+            is_federated_user = kwargs['isFederatedUser']
+        if 'isGroupMembershipNormalized' in kwargs:
+            is_group_membership_normalized = kwargs['isGroupMembershipNormalized']
+        if 'isGroupMembershipSyncedToUsersGroups' in kwargs:
+            is_group_membership_synced_to_users_groups = kwargs['isGroupMembershipSyncedToUsersGroups']
+        if 'notificationEmailTemplateId' in kwargs:
+            notification_email_template_id = kwargs['notificationEmailTemplateId']
+        if 'preferredUiLandingPage' in kwargs:
+            preferred_ui_landing_page = kwargs['preferredUiLandingPage']
+        if 'supportAccounts' in kwargs:
+            support_accounts = kwargs['supportAccounts']
+        if 'syncedFromApp' in kwargs:
+            synced_from_app = kwargs['syncedFromApp']
+        if 'userFlowControlledByExternalClient' in kwargs:
+            user_flow_controlled_by_external_client = kwargs['userFlowControlledByExternalClient']
+        if 'userProvider' in kwargs:
+            user_provider = kwargs['userProvider']
+        if 'userTokens' in kwargs:
+            user_tokens = kwargs['userTokens']
+
         if account_recovery_required is not None:
             _setter("account_recovery_required", account_recovery_required)
         if accounts is not None:
@@ -55631,7 +57181,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs:
              name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+
         if active is not None:
             _setter("active", active)
         if app_id is not None:
@@ -55883,7 +57437,17 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs:
              legacy_group_name: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+
         _setter("value", value)
         if admin_role is not None:
             _setter("admin_role", admin_role)
@@ -56161,7 +57725,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAu
              ref: Optional[pulumi.Input[str]] = None,
              target_request_timeout: Optional[pulumi.Input[int]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetRequestTimeout' in kwargs:
+            target_request_timeout = kwargs['targetRequestTimeout']
+
         _setter("type", type)
         if display is not None:
             _setter("display", display)
@@ -56356,7 +57924,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAut
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -56545,7 +58115,15 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs:
              grantor_id: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appId' in kwargs:
+            app_id = kwargs['appId']
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+        if 'grantorId' in kwargs:
+            grantor_id = kwargs['grantorId']
+
         if app_id is not None:
             _setter("app_id", app_id)
         if grant_mechanism is not None:
@@ -56765,7 +58343,11 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRoles
              display: Optional[pulumi.Input[str]] = None,
              ocid: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppRoleId' in kwargs:
+            idcs_app_role_id = kwargs['idcsAppRoleId']
+
         _setter("idcs_app_role_id", idcs_app_role_id)
         _setter("value", value)
         if display is not None:
@@ -56984,7 +58566,13 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccou
              user_id: Optional[pulumi.Input[str]] = None,
              user_provider: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'userProvider' in kwargs:
+            user_provider = kwargs['userProvider']
+
         if ocid is not None:
             _setter("ocid", ocid)
         if ref is not None:
@@ -57186,7 +58774,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAp
              value: pulumi.Input[str],
              display: Optional[pulumi.Input[str]] = None,
              ref: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
         if display is not None:
@@ -57328,7 +58918,9 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArg
              _setter: Callable[[Any, Any], None],
              ref: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ref is not None:
             _setter("ref", ref)
         if value is not None:
@@ -57450,7 +59042,9 @@ class DomainsUserX509certificateArgs:
              display: Optional[pulumi.Input[str]] = None,
              primary: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if display is not None:
             _setter("display", display)
@@ -57563,7 +59157,13 @@ class NetworkSourceVirtualSourceListArgs:
              _setter: Callable[[Any, Any], None],
              ip_ranges: pulumi.Input[Sequence[pulumi.Input[str]]],
              vcn_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipRanges' in kwargs:
+            ip_ranges = kwargs['ipRanges']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("ip_ranges", ip_ranges)
         _setter("vcn_id", vcn_id)
 
@@ -57605,7 +59205,11 @@ class TagValidatorArgs:
              _setter: Callable[[Any, Any], None],
              validator_type: pulumi.Input[str],
              values: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validatorType' in kwargs:
+            validator_type = kwargs['validatorType']
+
         _setter("validator_type", validator_type)
         _setter("values", values)
 
@@ -57673,7 +59277,23 @@ class UserCapabilityArgs:
              can_use_db_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_oauth2client_credentials: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canUseApiKeys' in kwargs:
+            can_use_api_keys = kwargs['canUseApiKeys']
+        if 'canUseAuthTokens' in kwargs:
+            can_use_auth_tokens = kwargs['canUseAuthTokens']
+        if 'canUseConsolePassword' in kwargs:
+            can_use_console_password = kwargs['canUseConsolePassword']
+        if 'canUseCustomerSecretKeys' in kwargs:
+            can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
+        if 'canUseDbCredentials' in kwargs:
+            can_use_db_credentials = kwargs['canUseDbCredentials']
+        if 'canUseOauth2clientCredentials' in kwargs:
+            can_use_oauth2client_credentials = kwargs['canUseOauth2clientCredentials']
+        if 'canUseSmtpCredentials' in kwargs:
+            can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
+
         if can_use_api_keys is not None:
             _setter("can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:
@@ -57795,7 +59415,9 @@ class GetAllowedDomainLicenseTypesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -57850,7 +59472,9 @@ class GetApiKeysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -57902,7 +59526,9 @@ class GetAuthTokensFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -57957,7 +59583,9 @@ class GetAvailabilityDomainsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58015,7 +59643,9 @@ class GetCompartmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58074,7 +59704,9 @@ class GetCostTrackingTagsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58132,7 +59764,9 @@ class GetCustomerSecretKeysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58187,7 +59821,9 @@ class GetDbCredentialsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58245,7 +59881,9 @@ class GetDomainsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58303,7 +59941,9 @@ class GetDynamicGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58361,7 +60001,9 @@ class GetFaultDomainsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58419,7 +60061,9 @@ class GetGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58474,7 +60118,9 @@ class GetIamWorkRequestErrorsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58526,7 +60172,9 @@ class GetIamWorkRequestLogsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58578,7 +60226,9 @@ class GetIamWorkRequestsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58633,7 +60283,9 @@ class GetIdentityProviderGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58691,7 +60343,9 @@ class GetIdentityProvidersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58746,7 +60400,9 @@ class GetIdpGroupMappingsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58801,7 +60457,9 @@ class GetNetworkSourcesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58859,7 +60517,9 @@ class GetPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58914,7 +60574,9 @@ class GetRegionSubscriptionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -58969,7 +60631,9 @@ class GetRegionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59024,7 +60688,9 @@ class GetSmtpCredentialsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59076,7 +60742,9 @@ class GetTagDefaultsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59131,7 +60799,9 @@ class GetTagNamespacesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59186,7 +60856,9 @@ class GetTagStandardTagNamespaceTemplatesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59242,7 +60914,9 @@ class GetTagsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59300,7 +60974,9 @@ class GetUserGroupMembershipsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -59355,7 +61031,9 @@ class GetUsersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

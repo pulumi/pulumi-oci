@@ -67,7 +67,29 @@ class VaultArgs:
              restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
              restore_trigger: Optional[pulumi.Input[bool]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'vaultType' in kwargs:
+            vault_type = kwargs['vaultType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalKeyManagerMetadata' in kwargs:
+            external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("vault_type", vault_type)
@@ -293,7 +315,43 @@ class _VaultState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKeyManagerMetadata' in kwargs:
+            external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
+        if 'externalKeyManagerMetadataSummaries' in kwargs:
+            external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'restoredFromVaultId' in kwargs:
+            restored_from_vault_id = kwargs['restoredFromVaultId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultType' in kwargs:
+            vault_type = kwargs['vaultType']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if crypto_endpoint is not None:

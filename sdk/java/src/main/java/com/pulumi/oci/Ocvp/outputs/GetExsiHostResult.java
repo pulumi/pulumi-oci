@@ -21,7 +21,11 @@ public final class GetExsiHostResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
+     * @deprecated
+     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
     private String billingDonorHostId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -44,9 +48,13 @@ public final class GetExsiHostResult {
      */
     private String computeInstanceId;
     /**
-     * @return The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     private String currentSku;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -62,7 +70,11 @@ public final class GetExsiHostResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      * 
+     * @deprecated
+     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
     private String failedEsxiHostId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -100,14 +112,22 @@ public final class GetExsiHostResult {
      */
     private Boolean isBillingSwappingInProgress;
     /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
     private String nextSku;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
      * 
+     * @deprecated
+     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     private String nonUpgradedEsxiHostId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -115,9 +135,13 @@ public final class GetExsiHostResult {
      */
     private String replacementEsxiHostId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * 
+     * @deprecated
+     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
      * 
      */
+    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
     private String sddcId;
     /**
      * @return The current state of the ESXi host.
@@ -161,7 +185,11 @@ public final class GetExsiHostResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
+     * @deprecated
+     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
     public String billingDonorHostId() {
         return this.billingDonorHostId;
     }
@@ -194,9 +222,13 @@ public final class GetExsiHostResult {
         return this.computeInstanceId;
     }
     /**
-     * @return The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     public String currentSku() {
         return this.currentSku;
     }
@@ -220,7 +252,11 @@ public final class GetExsiHostResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      * 
+     * @deprecated
+     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
     public String failedEsxiHostId() {
         return this.failedEsxiHostId;
     }
@@ -274,16 +310,24 @@ public final class GetExsiHostResult {
         return this.isBillingSwappingInProgress;
     }
     /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
     public String nextSku() {
         return this.nextSku;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
      * 
+     * @deprecated
+     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * 
      */
+    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     public String nonUpgradedEsxiHostId() {
         return this.nonUpgradedEsxiHostId;
     }
@@ -295,9 +339,13 @@ public final class GetExsiHostResult {
         return this.replacementEsxiHostId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * 
+     * @deprecated
+     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
      * 
      */
+    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
     public String sddcId() {
         return this.sddcId;
     }

@@ -86,7 +86,11 @@ class BackendSetBackendArgs:
              name: Optional[pulumi.Input[str]] = None,
              offline: Optional[pulumi.Input[bool]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("ip_address", ip_address)
         _setter("port", port)
         if backup is not None:
@@ -242,7 +246,21 @@ class BackendSetHealthCheckerArgs:
              return_code: Optional[pulumi.Input[int]] = None,
              timeout_in_millis: Optional[pulumi.Input[int]] = None,
              url_path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalMs' in kwargs:
+            interval_ms = kwargs['intervalMs']
+        if 'isForcePlainText' in kwargs:
+            is_force_plain_text = kwargs['isForcePlainText']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_ms is not None:
             _setter("interval_ms", interval_ms)
@@ -439,7 +457,19 @@ class BackendSetLbCookieSessionPersistenceConfigurationArgs:
              is_secure: Optional[pulumi.Input[bool]] = None,
              max_age_in_seconds: Optional[pulumi.Input[int]] = None,
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+        if 'isHttpOnly' in kwargs:
+            is_http_only = kwargs['isHttpOnly']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
@@ -583,7 +613,13 @@ class BackendSetSessionPersistenceConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              cookie_name: pulumi.Input[str],
              disable_fallback: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+
         _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
             _setter("disable_fallback", disable_fallback)
@@ -692,7 +728,23 @@ class BackendSetSslConfigurationArgs:
              trusted_certificate_authority_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              verify_depth: Optional[pulumi.Input[int]] = None,
              verify_peer_certificate: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateIds' in kwargs:
+            certificate_ids = kwargs['certificateIds']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'cipherSuiteName' in kwargs:
+            cipher_suite_name = kwargs['cipherSuiteName']
+        if 'serverOrderPreference' in kwargs:
+            server_order_preference = kwargs['serverOrderPreference']
+        if 'trustedCertificateAuthorityIds' in kwargs:
+            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
+        if 'verifyDepth' in kwargs:
+            verify_depth = kwargs['verifyDepth']
+        if 'verifyPeerCertificate' in kwargs:
+            verify_peer_certificate = kwargs['verifyPeerCertificate']
+
         if certificate_ids is not None:
             _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
@@ -866,7 +918,13 @@ class ListenerConnectionConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              idle_timeout_in_seconds: pulumi.Input[str],
              backend_tcp_proxy_protocol_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idleTimeoutInSeconds' in kwargs:
+            idle_timeout_in_seconds = kwargs['idleTimeoutInSeconds']
+        if 'backendTcpProxyProtocolVersion' in kwargs:
+            backend_tcp_proxy_protocol_version = kwargs['backendTcpProxyProtocolVersion']
+
         _setter("idle_timeout_in_seconds", idle_timeout_in_seconds)
         if backend_tcp_proxy_protocol_version is not None:
             _setter("backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
@@ -980,7 +1038,23 @@ class ListenerSslConfigurationArgs:
              trusted_certificate_authority_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              verify_depth: Optional[pulumi.Input[int]] = None,
              verify_peer_certificate: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateIds' in kwargs:
+            certificate_ids = kwargs['certificateIds']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'cipherSuiteName' in kwargs:
+            cipher_suite_name = kwargs['cipherSuiteName']
+        if 'serverOrderPreference' in kwargs:
+            server_order_preference = kwargs['serverOrderPreference']
+        if 'trustedCertificateAuthorityIds' in kwargs:
+            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
+        if 'verifyDepth' in kwargs:
+            verify_depth = kwargs['verifyDepth']
+        if 'verifyPeerCertificate' in kwargs:
+            verify_peer_certificate = kwargs['verifyPeerCertificate']
+
         if certificate_ids is not None:
             _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
@@ -1155,7 +1229,15 @@ class LoadBalancerIpAddressDetailArgs:
              ip_address: Optional[pulumi.Input[str]] = None,
              is_public: Optional[pulumi.Input[bool]] = None,
              reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         if ip_address is not None:
             _setter("ip_address", ip_address)
         if is_public is not None:
@@ -1212,7 +1294,9 @@ class LoadBalancerIpAddressDetailReservedIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -1238,7 +1322,9 @@ class LoadBalancerReservedIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -1279,7 +1365,9 @@ class LoadBalancerRoutingPolicyRuleArgs:
              actions: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleActionArgs']]],
              condition: pulumi.Input[str],
              name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
         _setter("condition", condition)
         _setter("name", name)
@@ -1348,7 +1436,11 @@ class LoadBalancerRoutingPolicyRuleActionArgs:
              _setter: Callable[[Any, Any], None],
              backend_set_name: pulumi.Input[str],
              name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+
         _setter("backend_set_name", backend_set_name)
         _setter("name", name)
 
@@ -1404,7 +1496,13 @@ class LoadBalancerShapeDetailsArgs:
              _setter: Callable[[Any, Any], None],
              maximum_bandwidth_in_mbps: pulumi.Input[int],
              minimum_bandwidth_in_mbps: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumBandwidthInMbps' in kwargs:
+            maximum_bandwidth_in_mbps = kwargs['maximumBandwidthInMbps']
+        if 'minimumBandwidthInMbps' in kwargs:
+            minimum_bandwidth_in_mbps = kwargs['minimumBandwidthInMbps']
+
         _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
         _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
@@ -1465,7 +1563,13 @@ class PathRouteSetPathRouteArgs:
              backend_set_name: pulumi.Input[str],
              path: pulumi.Input[str],
              path_match_type: pulumi.Input['PathRouteSetPathRoutePathMatchTypeArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'pathMatchType' in kwargs:
+            path_match_type = kwargs['pathMatchType']
+
         _setter("backend_set_name", backend_set_name)
         _setter("path", path)
         _setter("path_match_type", path_match_type)
@@ -1537,7 +1641,11 @@ class PathRouteSetPathRoutePathMatchTypeArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              match_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+
         _setter("match_type", match_type)
 
     @property
@@ -1682,7 +1790,21 @@ class RuleSetItemArgs:
              status_code: Optional[pulumi.Input[int]] = None,
              suffix: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'areInvalidCharactersAllowed' in kwargs:
+            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
+        if 'httpLargeHeaderSizeInKb' in kwargs:
+            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
+        if 'redirectUri' in kwargs:
+            redirect_uri = kwargs['redirectUri']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         _setter("action", action)
         if allowed_methods is not None:
             _setter("allowed_methods", allowed_methods)
@@ -1952,7 +2074,13 @@ class RuleSetItemConditionArgs:
              attribute_name: pulumi.Input[str],
              attribute_value: pulumi.Input[str],
              operator: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
         if operator is not None:
@@ -2091,7 +2219,9 @@ class RuleSetItemRedirectUriArgs:
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              query: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
             _setter("host", host)
         if path is not None:
@@ -2243,7 +2373,9 @@ class GetBackendSetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2301,7 +2433,9 @@ class GetBackendsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2356,7 +2490,9 @@ class GetCertificatesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2411,7 +2547,9 @@ class GetHostnamesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2469,7 +2607,9 @@ class GetListenerRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2527,7 +2667,9 @@ class GetLoadBalancerRoutingPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2585,7 +2727,9 @@ class GetLoadBalancersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2643,7 +2787,9 @@ class GetPathRouteSetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2701,7 +2847,9 @@ class GetPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2759,7 +2907,9 @@ class GetProtocolsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2817,7 +2967,9 @@ class GetRuleSetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2875,7 +3027,9 @@ class GetShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2933,7 +3087,9 @@ class GetSslCipherSuitesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

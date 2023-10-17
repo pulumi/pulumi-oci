@@ -53,7 +53,17 @@ class FusionEnvironmentAdminUserArgs:
              last_name: pulumi.Input[str],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("fusion_environment_id", fusion_environment_id)
@@ -182,7 +192,17 @@ class _FusionEnvironmentAdminUserState:
              last_name: Optional[pulumi.Input[str]] = None,
              password: Optional[pulumi.Input[str]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         if email_address is not None:
             _setter("email_address", email_address)
         if first_name is not None:

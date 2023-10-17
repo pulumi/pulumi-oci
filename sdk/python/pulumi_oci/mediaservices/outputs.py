@@ -84,7 +84,9 @@ class MediaAssetMediaAssetTag(dict):
              _setter: Callable[[Any, Any], None],
              value: str,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if type is not None:
             _setter("type", type)
@@ -125,7 +127,9 @@ class MediaAssetMetadata(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metadata", metadata)
 
     @property
@@ -185,7 +189,11 @@ class MediaWorkflowJobOutput(dict):
              id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+
         if asset_type is not None:
             _setter("asset_type", asset_type)
         if bucket is not None:
@@ -278,7 +286,11 @@ class MediaWorkflowJobTaskLifecycleState(dict):
              key: Optional[str] = None,
              lifecycle_details: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if key is not None:
             _setter("key", key)
         if lifecycle_details is not None:
@@ -373,7 +385,13 @@ class MediaWorkflowTask(dict):
              enable_parameter_reference: Optional[str] = None,
              enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
              prerequisites: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableParameterReference' in kwargs:
+            enable_parameter_reference = kwargs['enableParameterReference']
+        if 'enableWhenReferencedParameterEquals' in kwargs:
+            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+
         _setter("key", key)
         _setter("parameters", parameters)
         _setter("type", type)
@@ -542,7 +560,31 @@ class StreamCdnConfigConfig(dict):
              origin_auth_secret_key_nonce_b: Optional[str] = None,
              origin_auth_sign_encryption: Optional[str] = None,
              origin_auth_sign_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'edgePathPrefix' in kwargs:
+            edge_path_prefix = kwargs['edgePathPrefix']
+        if 'edgeTokenKey' in kwargs:
+            edge_token_key = kwargs['edgeTokenKey']
+        if 'edgeTokenSalt' in kwargs:
+            edge_token_salt = kwargs['edgeTokenSalt']
+        if 'isEdgeTokenAuth' in kwargs:
+            is_edge_token_auth = kwargs['isEdgeTokenAuth']
+        if 'originAuthSecretKeyA' in kwargs:
+            origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
+        if 'originAuthSecretKeyB' in kwargs:
+            origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
+        if 'originAuthSecretKeyNonceA' in kwargs:
+            origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
+        if 'originAuthSecretKeyNonceB' in kwargs:
+            origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
+        if 'originAuthSignEncryption' in kwargs:
+            origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
+        if 'originAuthSignType' in kwargs:
+            origin_auth_sign_type = kwargs['originAuthSignType']
+
         _setter("type", type)
         if edge_hostname is not None:
             _setter("edge_hostname", edge_hostname)
@@ -700,7 +742,11 @@ class StreamPackagingConfigEncryption(dict):
              _setter: Callable[[Any, Any], None],
              algorithm: str,
              kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("algorithm", algorithm)
         if kms_key_id is not None:
             _setter("kms_key_id", kms_key_id)
@@ -741,7 +787,9 @@ class GetMediaAssetMediaAssetTagResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -777,7 +825,9 @@ class GetMediaAssetMetadataResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metadata", metadata)
 
     @property
@@ -807,7 +857,9 @@ class GetMediaAssetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -841,7 +893,9 @@ class GetMediaAssetsMediaAssetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -953,7 +1007,41 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'masterMediaAssetId' in kwargs:
+            master_media_asset_id = kwargs['masterMediaAssetId']
+        if 'mediaAssetTags' in kwargs:
+            media_asset_tags = kwargs['mediaAssetTags']
+        if 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if 'objectEtag' in kwargs:
+            object_etag = kwargs['objectEtag']
+        if 'parentMediaAssetId' in kwargs:
+            parent_media_asset_id = kwargs['parentMediaAssetId']
+        if 'segmentRangeEndIndex' in kwargs:
+            segment_range_end_index = kwargs['segmentRangeEndIndex']
+        if 'segmentRangeStartIndex' in kwargs:
+            segment_range_start_index = kwargs['segmentRangeStartIndex']
+        if 'sourceMediaWorkflowId' in kwargs:
+            source_media_workflow_id = kwargs['sourceMediaWorkflowId']
+        if 'sourceMediaWorkflowVersion' in kwargs:
+            source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("bucket", bucket)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1182,7 +1270,9 @@ class GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -1218,7 +1308,9 @@ class GetMediaAssetsMediaAssetCollectionItemMetadataResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metadata", metadata)
 
     @property
@@ -1248,7 +1340,9 @@ class GetMediaWorkflowConfigurationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1282,7 +1376,9 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1346,7 +1442,25 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -1469,7 +1583,9 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1506,7 +1622,9 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1546,7 +1664,11 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
              media_workflow_job_id: str,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+
         _setter("detail", detail)
         _setter("key", key)
         _setter("media_workflow_job_id", media_workflow_job_id)
@@ -1625,7 +1747,11 @@ class GetMediaWorkflowJobOutputResult(dict):
              id: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+
         _setter("asset_type", asset_type)
         _setter("bucket", bucket)
         _setter("id", id)
@@ -1696,7 +1822,11 @@ class GetMediaWorkflowJobTaskLifecycleStateResult(dict):
              key: str,
              lifecycle_details: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         _setter("key", key)
         _setter("lifecycle_details", lifecycle_details)
         _setter("state", state)
@@ -1744,7 +1874,9 @@ class GetMediaWorkflowJobsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1778,7 +1910,9 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1876,7 +2010,39 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
              time_started: str,
              time_updated: str,
              workflow_identifier_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mediaWorkflowConfigurationIds' in kwargs:
+            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
+        if 'mediaWorkflowId' in kwargs:
+            media_workflow_id = kwargs['mediaWorkflowId']
+        if 'mediaWorkflowName' in kwargs:
+            media_workflow_name = kwargs['mediaWorkflowName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'taskLifecycleStates' in kwargs:
+            task_lifecycle_states = kwargs['taskLifecycleStates']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'workflowIdentifierType' in kwargs:
+            workflow_identifier_type = kwargs['workflowIdentifierType']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2084,7 +2250,11 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(dict):
              id: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+
         _setter("asset_type", asset_type)
         _setter("bucket", bucket)
         _setter("id", id)
@@ -2155,7 +2325,11 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult
              key: str,
              lifecycle_details: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         _setter("key", key)
         _setter("lifecycle_details", lifecycle_details)
         _setter("state", state)
@@ -2224,7 +2398,13 @@ class GetMediaWorkflowTaskResult(dict):
              prerequisites: Sequence[str],
              type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableParameterReference' in kwargs:
+            enable_parameter_reference = kwargs['enableParameterReference']
+        if 'enableWhenReferencedParameterEquals' in kwargs:
+            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         _setter("key", key)
@@ -2317,7 +2497,13 @@ class GetMediaWorkflowTaskDeclarationItemResult(dict):
              parameters_schema: str,
              parameters_schema_allowing_references: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parametersSchema' in kwargs:
+            parameters_schema = kwargs['parametersSchema']
+        if 'parametersSchemaAllowingReferences' in kwargs:
+            parameters_schema_allowing_references = kwargs['parametersSchemaAllowingReferences']
+
         _setter("name", name)
         _setter("parameters_schema", parameters_schema)
         _setter("parameters_schema_allowing_references", parameters_schema_allowing_references)
@@ -2374,7 +2560,9 @@ class GetMediaWorkflowsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2408,7 +2596,9 @@ class GetMediaWorkflowsMediaWorkflowCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2484,7 +2674,27 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'mediaWorkflowConfigurationIds' in kwargs:
+            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2652,7 +2862,13 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
              prerequisites: Sequence[str],
              type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableParameterReference' in kwargs:
+            enable_parameter_reference = kwargs['enableParameterReference']
+        if 'enableWhenReferencedParameterEquals' in kwargs:
+            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         _setter("key", key)
@@ -2777,7 +2993,31 @@ class GetStreamCdnConfigConfigResult(dict):
              origin_auth_sign_encryption: str,
              origin_auth_sign_type: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'edgePathPrefix' in kwargs:
+            edge_path_prefix = kwargs['edgePathPrefix']
+        if 'edgeTokenKey' in kwargs:
+            edge_token_key = kwargs['edgeTokenKey']
+        if 'edgeTokenSalt' in kwargs:
+            edge_token_salt = kwargs['edgeTokenSalt']
+        if 'isEdgeTokenAuth' in kwargs:
+            is_edge_token_auth = kwargs['isEdgeTokenAuth']
+        if 'originAuthSecretKeyA' in kwargs:
+            origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
+        if 'originAuthSecretKeyB' in kwargs:
+            origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
+        if 'originAuthSecretKeyNonceA' in kwargs:
+            origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
+        if 'originAuthSecretKeyNonceB' in kwargs:
+            origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
+        if 'originAuthSignEncryption' in kwargs:
+            origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
+        if 'originAuthSignType' in kwargs:
+            origin_auth_sign_type = kwargs['originAuthSignType']
+
         _setter("edge_hostname", edge_hostname)
         _setter("edge_path_prefix", edge_path_prefix)
         _setter("edge_token_key", edge_token_key)
@@ -2906,7 +3146,9 @@ class GetStreamCdnConfigsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2940,7 +3182,9 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3012,7 +3256,29 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("configs", configs)
         _setter("defined_tags", defined_tags)
@@ -3191,7 +3457,31 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
              origin_auth_sign_encryption: str,
              origin_auth_sign_type: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'edgePathPrefix' in kwargs:
+            edge_path_prefix = kwargs['edgePathPrefix']
+        if 'edgeTokenKey' in kwargs:
+            edge_token_key = kwargs['edgeTokenKey']
+        if 'edgeTokenSalt' in kwargs:
+            edge_token_salt = kwargs['edgeTokenSalt']
+        if 'isEdgeTokenAuth' in kwargs:
+            is_edge_token_auth = kwargs['isEdgeTokenAuth']
+        if 'originAuthSecretKeyA' in kwargs:
+            origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
+        if 'originAuthSecretKeyB' in kwargs:
+            origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
+        if 'originAuthSecretKeyNonceA' in kwargs:
+            origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
+        if 'originAuthSecretKeyNonceB' in kwargs:
+            origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
+        if 'originAuthSignEncryption' in kwargs:
+            origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
+        if 'originAuthSignType' in kwargs:
+            origin_auth_sign_type = kwargs['originAuthSignType']
+
         _setter("edge_hostname", edge_hostname)
         _setter("edge_path_prefix", edge_path_prefix)
         _setter("edge_token_key", edge_token_key)
@@ -3320,7 +3610,9 @@ class GetStreamDistributionChannelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3354,7 +3646,9 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3414,7 +3708,25 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -3526,7 +3838,11 @@ class GetStreamPackagingConfigEncryptionResult(dict):
              _setter: Callable[[Any, Any], None],
              algorithm: str,
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("algorithm", algorithm)
         _setter("kms_key_id", kms_key_id)
 
@@ -3565,7 +3881,9 @@ class GetStreamPackagingConfigsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3599,7 +3917,9 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3671,7 +3991,29 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'segmentTimeInSeconds' in kwargs:
+            segment_time_in_seconds = kwargs['segmentTimeInSeconds']
+        if 'streamPackagingFormat' in kwargs:
+            stream_packaging_format = kwargs['streamPackagingFormat']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -3810,7 +4152,11 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResu
              _setter: Callable[[Any, Any], None],
              algorithm: str,
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("algorithm", algorithm)
         _setter("kms_key_id", kms_key_id)
 
@@ -3858,7 +4204,9 @@ class GetSystemMediaWorkflowItemResult(dict):
              name: str,
              parameters: str,
              tasks: Sequence['outputs.GetSystemMediaWorkflowItemTaskResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("name", name)
         _setter("parameters", parameters)
@@ -3936,7 +4284,13 @@ class GetSystemMediaWorkflowItemTaskResult(dict):
              prerequisites: Sequence[str],
              type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableParameterReference' in kwargs:
+            enable_parameter_reference = kwargs['enableParameterReference']
+        if 'enableWhenReferencedParameterEquals' in kwargs:
+            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+
         _setter("enable_parameter_reference", enable_parameter_reference)
         _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         _setter("key", key)

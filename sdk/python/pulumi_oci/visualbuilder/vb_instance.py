@@ -69,7 +69,29 @@ class VbInstanceArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              idcs_open_id: Optional[pulumi.Input[str]] = None,
              is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'alternateCustomEndpoints' in kwargs:
+            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'customEndpoint' in kwargs:
+            custom_endpoint = kwargs['customEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsOpenId' in kwargs:
+            idcs_open_id = kwargs['idcsOpenId']
+        if 'isVisualBuilderEnabled' in kwargs:
+            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("node_count", node_count)
@@ -317,7 +339,49 @@ class _VbInstanceState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternateCustomEndpoints' in kwargs:
+            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'customEndpoint' in kwargs:
+            custom_endpoint = kwargs['customEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsInfos' in kwargs:
+            idcs_infos = kwargs['idcsInfos']
+        if 'idcsOpenId' in kwargs:
+            idcs_open_id = kwargs['idcsOpenId']
+        if 'instanceUrl' in kwargs:
+            instance_url = kwargs['instanceUrl']
+        if 'isVisualBuilderEnabled' in kwargs:
+            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
+        if 'managementNatGatewayIp' in kwargs:
+            management_nat_gateway_ip = kwargs['managementNatGatewayIp']
+        if 'managementVcnId' in kwargs:
+            management_vcn_id = kwargs['managementVcnId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'serviceNatGatewayIp' in kwargs:
+            service_nat_gateway_ip = kwargs['serviceNatGatewayIp']
+        if 'serviceVcnId' in kwargs:
+            service_vcn_id = kwargs['serviceVcnId']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if alternate_custom_endpoints is not None:
             _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if attachments is not None:

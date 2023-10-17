@@ -61,7 +61,25 @@ class MonitoredResourcesSearchAssociationArgs:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              source_resource_name: Optional[pulumi.Input[str]] = None,
              source_resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'destinationResourceName' in kwargs:
+            destination_resource_name = kwargs['destinationResourceName']
+        if 'destinationResourceType' in kwargs:
+            destination_resource_type = kwargs['destinationResourceType']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+        if 'sourceResourceName' in kwargs:
+            source_resource_name = kwargs['sourceResourceName']
+        if 'sourceResourceType' in kwargs:
+            source_resource_type = kwargs['sourceResourceType']
+
         _setter("compartment_id", compartment_id)
         if association_type is not None:
             _setter("association_type", association_type)
@@ -231,7 +249,25 @@ class _MonitoredResourcesSearchAssociationState:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              source_resource_name: Optional[pulumi.Input[str]] = None,
              source_resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'destinationResourceName' in kwargs:
+            destination_resource_name = kwargs['destinationResourceName']
+        if 'destinationResourceType' in kwargs:
+            destination_resource_type = kwargs['destinationResourceType']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+        if 'sourceResourceName' in kwargs:
+            source_resource_name = kwargs['sourceResourceName']
+        if 'sourceResourceType' in kwargs:
+            source_resource_type = kwargs['sourceResourceType']
+
         if association_type is not None:
             _setter("association_type", association_type)
         if compartment_id is not None:

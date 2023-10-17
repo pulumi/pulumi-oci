@@ -58,6 +58,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     private String lifecycleDetails;
     private String ncharacterSet;
     private String pdbName;
+    private List<String> pluggableDatabases;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -157,6 +158,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     public String pdbName() {
         return this.pdbName;
     }
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases;
+    }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -210,6 +214,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
         private String lifecycleDetails;
         private String ncharacterSet;
         private String pdbName;
+        private List<String> pluggableDatabases;
         private String state;
         private String tdeWalletPassword;
         private String timeCreated;
@@ -238,6 +243,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
@@ -352,6 +358,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(List<String> pluggableDatabases) {
+            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -398,6 +412,7 @@ public final class GetDbSystemsDbSystemDbHomeDatabase {
             o.lifecycleDetails = lifecycleDetails;
             o.ncharacterSet = ncharacterSet;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;
             o.timeCreated = timeCreated;

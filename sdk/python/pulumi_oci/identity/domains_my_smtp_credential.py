@@ -136,7 +136,15 @@ class DomainsMySmtpCredentialArgs:
              status: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialTagArgs']]]] = None,
              user: Optional[pulumi.Input['DomainsMySmtpCredentialUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'expiresOn' in kwargs:
+            expires_on = kwargs['expiresOn']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("schemas", schemas)
         if authorization is not None:
@@ -607,7 +615,33 @@ class _DomainsMySmtpCredentialState:
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user: Optional[pulumi.Input['DomainsMySmtpCredentialUserArgs']] = None,
              user_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'expiresOn' in kwargs:
+            expires_on = kwargs['expiresOn']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if authorization is not None:
             _setter("authorization", authorization)
         if compartment_ocid is not None:

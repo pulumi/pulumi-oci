@@ -210,7 +210,27 @@ class DomainsAppRoleArgs:
              public: Optional[pulumi.Input[bool]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'availableToClients' in kwargs:
+            available_to_clients = kwargs['availableToClients']
+        if 'availableToGroups' in kwargs:
+            available_to_groups = kwargs['availableToGroups']
+        if 'availableToUsers' in kwargs:
+            available_to_users = kwargs['availableToUsers']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+
         _setter("app", app)
         _setter("display_name", display_name)
         _setter("idcs_endpoint", idcs_endpoint)
@@ -946,7 +966,49 @@ class _DomainsAppRoleState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              unique_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'availableToClients' in kwargs:
+            available_to_clients = kwargs['availableToClients']
+        if 'availableToGroups' in kwargs:
+            available_to_groups = kwargs['availableToGroups']
+        if 'availableToUsers' in kwargs:
+            available_to_users = kwargs['availableToUsers']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+        if 'limitedToOneOrMoreGroups' in kwargs:
+            limited_to_one_or_more_groups = kwargs['limitedToOneOrMoreGroups']
+        if 'localizedDisplayName' in kwargs:
+            localized_display_name = kwargs['localizedDisplayName']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'uniqueName' in kwargs:
+            unique_name = kwargs['uniqueName']
+
         if admin_role is not None:
             _setter("admin_role", admin_role)
         if app is not None:

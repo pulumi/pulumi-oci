@@ -39,7 +39,15 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
              enable_database_management: pulumi.Input[bool],
              external_db_system_id: pulumi.Input[str],
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableDatabaseManagement' in kwargs:
+            enable_database_management = kwargs['enableDatabaseManagement']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("enable_database_management", enable_database_management)
         _setter("external_db_system_id", external_db_system_id)
         if license_model is not None:
@@ -114,7 +122,15 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
              enable_database_management: Optional[pulumi.Input[bool]] = None,
              external_db_system_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableDatabaseManagement' in kwargs:
+            enable_database_management = kwargs['enableDatabaseManagement']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if enable_database_management is not None:
             _setter("enable_database_management", enable_database_management)
         if external_db_system_id is not None:

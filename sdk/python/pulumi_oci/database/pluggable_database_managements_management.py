@@ -65,7 +65,21 @@ class PluggableDatabaseManagementsManagementArgs:
              protocol: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'enablePluggabledatabasemanagement' in kwargs:
+            enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
+        if 'pluggableDatabaseId' in kwargs:
+            pluggable_database_id = kwargs['pluggableDatabaseId']
+        if 'privateEndPointId' in kwargs:
+            private_end_point_id = kwargs['privateEndPointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         _setter("credential_details", credential_details)
         _setter("enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         _setter("pluggable_database_id", pluggable_database_id)
@@ -293,7 +307,43 @@ class _PluggableDatabaseManagementsManagementState:
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'enablePluggabledatabasemanagement' in kwargs:
+            enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isRestricted' in kwargs:
+            is_restricted = kwargs['isRestricted']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+        if 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if 'pluggableDatabaseId' in kwargs:
+            pluggable_database_id = kwargs['pluggableDatabaseId']
+        if 'pluggableDatabaseManagementConfigs' in kwargs:
+            pluggable_database_management_configs = kwargs['pluggableDatabaseManagementConfigs']
+        if 'privateEndPointId' in kwargs:
+            private_end_point_id = kwargs['privateEndPointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_strings is not None:

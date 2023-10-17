@@ -120,7 +120,13 @@ class DomainsMyApiKeyArgs:
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyApiKeyTagArgs']]]] = None,
              user: Optional[pulumi.Input['DomainsMyApiKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("key", key)
         _setter("schemas", schemas)
@@ -547,7 +553,29 @@ class _DomainsMyApiKeyState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyApiKeyTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user: Optional[pulumi.Input['DomainsMyApiKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+
         if authorization is not None:
             _setter("authorization", authorization)
         if compartment_ocid is not None:

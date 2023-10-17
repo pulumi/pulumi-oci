@@ -160,7 +160,65 @@ class CloudVmClusterArgs:
              scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
              scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'giVersion' in kwargs:
+            gi_version = kwargs['giVersion']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if 'isSparseDiskgroupEnabled' in kwargs:
+            is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if 'privateZoneId' in kwargs:
+            private_zone_id = kwargs['privateZoneId']
+        if 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if 'scanListenerPortTcpSsl' in kwargs:
+            scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("backup_subnet_id", backup_subnet_id)
         _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         _setter("compartment_id", compartment_id)
@@ -802,7 +860,95 @@ class _CloudVmClusterState:
              time_zone: Optional[pulumi.Input[str]] = None,
              vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'diskRedundancy' in kwargs:
+            disk_redundancy = kwargs['diskRedundancy']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'giVersion' in kwargs:
+            gi_version = kwargs['giVersion']
+        if 'iormConfigCaches' in kwargs:
+            iorm_config_caches = kwargs['iormConfigCaches']
+        if 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if 'isSparseDiskgroupEnabled' in kwargs:
+            is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
+        if 'lastUpdateHistoryEntryId' in kwargs:
+            last_update_history_entry_id = kwargs['lastUpdateHistoryEntryId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if 'privateZoneId' in kwargs:
+            private_zone_id = kwargs['privateZoneId']
+        if 'scanDnsName' in kwargs:
+            scan_dns_name = kwargs['scanDnsName']
+        if 'scanDnsRecordId' in kwargs:
+            scan_dns_record_id = kwargs['scanDnsRecordId']
+        if 'scanIpIds' in kwargs:
+            scan_ip_ids = kwargs['scanIpIds']
+        if 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if 'scanListenerPortTcpSsl' in kwargs:
+            scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'storageSizeInGbs' in kwargs:
+            storage_size_in_gbs = kwargs['storageSizeInGbs']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemVersion' in kwargs:
+            system_version = kwargs['systemVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'vipIds' in kwargs:
+            vip_ids = kwargs['vipIds']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:

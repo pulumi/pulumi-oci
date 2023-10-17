@@ -105,7 +105,35 @@ class MonitoredResourcesSearchArgs:
              time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
              time_updated_less_than: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'excludeFields' in kwargs:
+            exclude_fields = kwargs['excludeFields']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'hostNameContains' in kwargs:
+            host_name_contains = kwargs['hostNameContains']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'nameContains' in kwargs:
+            name_contains = kwargs['nameContains']
+        if 'propertyEquals' in kwargs:
+            property_equals = kwargs['propertyEquals']
+        if 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+        if 'timeCreatedGreaterThanOrEqualTo' in kwargs:
+            time_created_greater_than_or_equal_to = kwargs['timeCreatedGreaterThanOrEqualTo']
+        if 'timeCreatedLessThan' in kwargs:
+            time_created_less_than = kwargs['timeCreatedLessThan']
+        if 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
+            time_updated_greater_than_or_equal_to = kwargs['timeUpdatedGreaterThanOrEqualTo']
+        if 'timeUpdatedLessThan' in kwargs:
+            time_updated_less_than = kwargs['timeUpdatedLessThan']
+
         _setter("compartment_id", compartment_id)
         if exclude_fields is not None:
             _setter("exclude_fields", exclude_fields)
@@ -453,7 +481,35 @@ class _MonitoredResourcesSearchState:
              time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
              time_updated_less_than: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'excludeFields' in kwargs:
+            exclude_fields = kwargs['excludeFields']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'hostNameContains' in kwargs:
+            host_name_contains = kwargs['hostNameContains']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'nameContains' in kwargs:
+            name_contains = kwargs['nameContains']
+        if 'propertyEquals' in kwargs:
+            property_equals = kwargs['propertyEquals']
+        if 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+        if 'timeCreatedGreaterThanOrEqualTo' in kwargs:
+            time_created_greater_than_or_equal_to = kwargs['timeCreatedGreaterThanOrEqualTo']
+        if 'timeCreatedLessThan' in kwargs:
+            time_created_less_than = kwargs['timeCreatedLessThan']
+        if 'timeUpdatedGreaterThanOrEqualTo' in kwargs:
+            time_updated_greater_than_or_equal_to = kwargs['timeUpdatedGreaterThanOrEqualTo']
+        if 'timeUpdatedLessThan' in kwargs:
+            time_updated_less_than = kwargs['timeUpdatedLessThan']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if exclude_fields is not None:

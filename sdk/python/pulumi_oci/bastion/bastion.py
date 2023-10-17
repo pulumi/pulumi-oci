@@ -71,7 +71,29 @@ class BastionArgs:
              name: Optional[pulumi.Input[str]] = None,
              phone_book_entry: Optional[pulumi.Input[str]] = None,
              static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionType' in kwargs:
+            bastion_type = kwargs['bastionType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'targetSubnetId' in kwargs:
+            target_subnet_id = kwargs['targetSubnetId']
+        if 'clientCidrBlockAllowLists' in kwargs:
+            client_cidr_block_allow_lists = kwargs['clientCidrBlockAllowLists']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsProxyStatus' in kwargs:
+            dns_proxy_status = kwargs['dnsProxyStatus']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'maxSessionTtlInSeconds' in kwargs:
+            max_session_ttl_in_seconds = kwargs['maxSessionTtlInSeconds']
+        if 'phoneBookEntry' in kwargs:
+            phone_book_entry = kwargs['phoneBookEntry']
+        if 'staticJumpHostIpAddresses' in kwargs:
+            static_jump_host_ip_addresses = kwargs['staticJumpHostIpAddresses']
+
         _setter("bastion_type", bastion_type)
         _setter("compartment_id", compartment_id)
         _setter("target_subnet_id", target_subnet_id)
@@ -321,7 +343,43 @@ class _BastionState:
              target_vcn_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionType' in kwargs:
+            bastion_type = kwargs['bastionType']
+        if 'clientCidrBlockAllowLists' in kwargs:
+            client_cidr_block_allow_lists = kwargs['clientCidrBlockAllowLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsProxyStatus' in kwargs:
+            dns_proxy_status = kwargs['dnsProxyStatus']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxSessionTtlInSeconds' in kwargs:
+            max_session_ttl_in_seconds = kwargs['maxSessionTtlInSeconds']
+        if 'maxSessionsAllowed' in kwargs:
+            max_sessions_allowed = kwargs['maxSessionsAllowed']
+        if 'phoneBookEntry' in kwargs:
+            phone_book_entry = kwargs['phoneBookEntry']
+        if 'privateEndpointIpAddress' in kwargs:
+            private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
+        if 'staticJumpHostIpAddresses' in kwargs:
+            static_jump_host_ip_addresses = kwargs['staticJumpHostIpAddresses']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetSubnetId' in kwargs:
+            target_subnet_id = kwargs['targetSubnetId']
+        if 'targetVcnId' in kwargs:
+            target_vcn_id = kwargs['targetVcnId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bastion_type is not None:
             _setter("bastion_type", bastion_type)
         if client_cidr_block_allow_lists is not None:

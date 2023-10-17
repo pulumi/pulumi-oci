@@ -65,7 +65,19 @@ class TagArgs:
              is_retired: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagNamespaceId' in kwargs:
+            tag_namespace_id = kwargs['tagNamespaceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCostTracking' in kwargs:
+            is_cost_tracking = kwargs['isCostTracking']
+        if 'isRetired' in kwargs:
+            is_retired = kwargs['isRetired']
+
         _setter("description", description)
         _setter("tag_namespace_id", tag_namespace_id)
         if defined_tags is not None:
@@ -246,7 +258,21 @@ class _TagState:
              tag_namespace_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCostTracking' in kwargs:
+            is_cost_tracking = kwargs['isCostTracking']
+        if 'isRetired' in kwargs:
+            is_retired = kwargs['isRetired']
+        if 'tagNamespaceId' in kwargs:
+            tag_namespace_id = kwargs['tagNamespaceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if description is not None:

@@ -50,7 +50,15 @@ class ReplicationPolicyArgs:
              namespace: pulumi.Input[str],
              delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationBucketName' in kwargs:
+            destination_bucket_name = kwargs['destinationBucketName']
+        if 'destinationRegionName' in kwargs:
+            destination_region_name = kwargs['destinationRegionName']
+        if 'deleteObjectInDestinationBucket' in kwargs:
+            delete_object_in_destination_bucket = kwargs['deleteObjectInDestinationBucket']
+
         _setter("bucket", bucket)
         _setter("destination_bucket_name", destination_bucket_name)
         _setter("destination_region_name", destination_region_name)
@@ -195,7 +203,21 @@ class _ReplicationPolicyState:
              status_message: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_sync: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deleteObjectInDestinationBucket' in kwargs:
+            delete_object_in_destination_bucket = kwargs['deleteObjectInDestinationBucket']
+        if 'destinationBucketName' in kwargs:
+            destination_bucket_name = kwargs['destinationBucketName']
+        if 'destinationRegionName' in kwargs:
+            destination_region_name = kwargs['destinationRegionName']
+        if 'statusMessage' in kwargs:
+            status_message = kwargs['statusMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastSync' in kwargs:
+            time_last_sync = kwargs['timeLastSync']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if delete_object_in_destination_bucket is not None:

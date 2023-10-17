@@ -89,7 +89,21 @@ class NetworkSecurityGroupSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkSecurityGroupId' in kwargs:
+            network_security_group_id = kwargs['networkSecurityGroupId']
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("direction", direction)
         _setter("network_security_group_id", network_security_group_id)
         _setter("protocol", protocol)
@@ -357,7 +371,25 @@ class _NetworkSecurityGroupSecurityRuleState:
              tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'isValid' in kwargs:
+            is_valid = kwargs['isValid']
+        if 'networkSecurityGroupId' in kwargs:
+            network_security_group_id = kwargs['networkSecurityGroupId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         if description is not None:
             _setter("description", description)
         if destination is not None:

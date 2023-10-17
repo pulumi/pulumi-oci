@@ -45,7 +45,13 @@ class LogAnalyticsImportCustomContentArgs:
              namespace: pulumi.Input[str],
              expect: Optional[pulumi.Input[str]] = None,
              is_overwrite: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importCustomContentFile' in kwargs:
+            import_custom_content_file = kwargs['importCustomContentFile']
+        if 'isOverwrite' in kwargs:
+            is_overwrite = kwargs['isOverwrite']
+
         _setter("import_custom_content_file", import_custom_content_file)
         _setter("namespace", namespace)
         if expect is not None:
@@ -158,7 +164,23 @@ class _LogAnalyticsImportCustomContentState:
              namespace: Optional[pulumi.Input[str]] = None,
              parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'changeLists' in kwargs:
+            change_lists = kwargs['changeLists']
+        if 'contentName' in kwargs:
+            content_name = kwargs['contentName']
+        if 'fieldNames' in kwargs:
+            field_names = kwargs['fieldNames']
+        if 'importCustomContentFile' in kwargs:
+            import_custom_content_file = kwargs['importCustomContentFile']
+        if 'isOverwrite' in kwargs:
+            is_overwrite = kwargs['isOverwrite']
+        if 'parserNames' in kwargs:
+            parser_names = kwargs['parserNames']
+        if 'sourceNames' in kwargs:
+            source_names = kwargs['sourceNames']
+
         if change_lists is not None:
             _setter("change_lists", change_lists)
         if content_name is not None:

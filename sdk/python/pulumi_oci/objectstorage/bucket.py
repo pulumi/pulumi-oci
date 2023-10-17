@@ -81,7 +81,27 @@ class BucketArgs:
              retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
              storage_tier: Optional[pulumi.Input[str]] = None,
              versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'autoTiering' in kwargs:
+            auto_tiering = kwargs['autoTiering']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'objectEventsEnabled' in kwargs:
+            object_events_enabled = kwargs['objectEventsEnabled']
+        if 'retentionRules' in kwargs:
+            retention_rules = kwargs['retentionRules']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+
         _setter("compartment_id", compartment_id)
         _setter("namespace", namespace)
         if access_type is not None:
@@ -372,7 +392,43 @@ class _BucketState:
              storage_tier: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              versioning: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'approximateCount' in kwargs:
+            approximate_count = kwargs['approximateCount']
+        if 'approximateSize' in kwargs:
+            approximate_size = kwargs['approximateSize']
+        if 'autoTiering' in kwargs:
+            auto_tiering = kwargs['autoTiering']
+        if 'bucketId' in kwargs:
+            bucket_id = kwargs['bucketId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'objectEventsEnabled' in kwargs:
+            object_events_enabled = kwargs['objectEventsEnabled']
+        if 'objectLifecyclePolicyEtag' in kwargs:
+            object_lifecycle_policy_etag = kwargs['objectLifecyclePolicyEtag']
+        if 'replicationEnabled' in kwargs:
+            replication_enabled = kwargs['replicationEnabled']
+        if 'retentionRules' in kwargs:
+            retention_rules = kwargs['retentionRules']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if access_type is not None:
             _setter("access_type", access_type)
         if approximate_count is not None:

@@ -93,7 +93,37 @@ class BlockchainPlatformArgs:
              replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
              storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
              total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeShape' in kwargs:
+            compute_shape = kwargs['computeShape']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'platformRole' in kwargs:
+            platform_role = kwargs['platformRole']
+        if 'caCertArchiveText' in kwargs:
+            ca_cert_archive_text = kwargs['caCertArchiveText']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'federatedUserId' in kwargs:
+            federated_user_id = kwargs['federatedUserId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isByol' in kwargs:
+            is_byol = kwargs['isByol']
+        if 'loadBalancerShape' in kwargs:
+            load_balancer_shape = kwargs['loadBalancerShape']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'storageSizeInTbs' in kwargs:
+            storage_size_in_tbs = kwargs['storageSizeInTbs']
+        if 'totalOcpuCapacity' in kwargs:
+            total_ocpu_capacity = kwargs['totalOcpuCapacity']
+
         _setter("compartment_id", compartment_id)
         _setter("compute_shape", compute_shape)
         _setter("display_name", display_name)
@@ -443,7 +473,57 @@ class _BlockchainPlatformState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              total_ocpu_capacity: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertArchiveText' in kwargs:
+            ca_cert_archive_text = kwargs['caCertArchiveText']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentDetails' in kwargs:
+            component_details = kwargs['componentDetails']
+        if 'computeShape' in kwargs:
+            compute_shape = kwargs['computeShape']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'federatedUserId' in kwargs:
+            federated_user_id = kwargs['federatedUserId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostOcpuUtilizationInfos' in kwargs:
+            host_ocpu_utilization_infos = kwargs['hostOcpuUtilizationInfos']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'isByol' in kwargs:
+            is_byol = kwargs['isByol']
+        if 'isMultiAd' in kwargs:
+            is_multi_ad = kwargs['isMultiAd']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'loadBalancerShape' in kwargs:
+            load_balancer_shape = kwargs['loadBalancerShape']
+        if 'platformRole' in kwargs:
+            platform_role = kwargs['platformRole']
+        if 'platformShapeType' in kwargs:
+            platform_shape_type = kwargs['platformShapeType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'serviceEndpoint' in kwargs:
+            service_endpoint = kwargs['serviceEndpoint']
+        if 'serviceVersion' in kwargs:
+            service_version = kwargs['serviceVersion']
+        if 'storageSizeInTbs' in kwargs:
+            storage_size_in_tbs = kwargs['storageSizeInTbs']
+        if 'storageUsedInTbs' in kwargs:
+            storage_used_in_tbs = kwargs['storageUsedInTbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalOcpuCapacity' in kwargs:
+            total_ocpu_capacity = kwargs['totalOcpuCapacity']
+
         if ca_cert_archive_text is not None:
             _setter("ca_cert_archive_text", ca_cert_archive_text)
         if compartment_id is not None:

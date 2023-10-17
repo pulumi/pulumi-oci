@@ -20,6 +20,16 @@ export const getWorkspaceApplications: typeof import("./getWorkspaceApplications
 export const getWorkspaceApplicationsOutput: typeof import("./getWorkspaceApplications").getWorkspaceApplicationsOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaceApplications","getWorkspaceApplicationsOutput"], () => require("./getWorkspaceApplications"));
 
+export { GetWorkspaceExportRequestArgs, GetWorkspaceExportRequestResult, GetWorkspaceExportRequestOutputArgs } from "./getWorkspaceExportRequest";
+export const getWorkspaceExportRequest: typeof import("./getWorkspaceExportRequest").getWorkspaceExportRequest = null as any;
+export const getWorkspaceExportRequestOutput: typeof import("./getWorkspaceExportRequest").getWorkspaceExportRequestOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceExportRequest","getWorkspaceExportRequestOutput"], () => require("./getWorkspaceExportRequest"));
+
+export { GetWorkspaceExportRequestsArgs, GetWorkspaceExportRequestsResult, GetWorkspaceExportRequestsOutputArgs } from "./getWorkspaceExportRequests";
+export const getWorkspaceExportRequests: typeof import("./getWorkspaceExportRequests").getWorkspaceExportRequests = null as any;
+export const getWorkspaceExportRequestsOutput: typeof import("./getWorkspaceExportRequests").getWorkspaceExportRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceExportRequests","getWorkspaceExportRequestsOutput"], () => require("./getWorkspaceExportRequests"));
+
 export { GetWorkspaceFolderArgs, GetWorkspaceFolderResult, GetWorkspaceFolderOutputArgs } from "./getWorkspaceFolder";
 export const getWorkspaceFolder: typeof import("./getWorkspaceFolder").getWorkspaceFolder = null as any;
 export const getWorkspaceFolderOutput: typeof import("./getWorkspaceFolder").getWorkspaceFolderOutput = null as any;
@@ -29,6 +39,16 @@ export { GetWorkspaceFoldersArgs, GetWorkspaceFoldersResult, GetWorkspaceFolders
 export const getWorkspaceFolders: typeof import("./getWorkspaceFolders").getWorkspaceFolders = null as any;
 export const getWorkspaceFoldersOutput: typeof import("./getWorkspaceFolders").getWorkspaceFoldersOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaceFolders","getWorkspaceFoldersOutput"], () => require("./getWorkspaceFolders"));
+
+export { GetWorkspaceImportRequestArgs, GetWorkspaceImportRequestResult, GetWorkspaceImportRequestOutputArgs } from "./getWorkspaceImportRequest";
+export const getWorkspaceImportRequest: typeof import("./getWorkspaceImportRequest").getWorkspaceImportRequest = null as any;
+export const getWorkspaceImportRequestOutput: typeof import("./getWorkspaceImportRequest").getWorkspaceImportRequestOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceImportRequest","getWorkspaceImportRequestOutput"], () => require("./getWorkspaceImportRequest"));
+
+export { GetWorkspaceImportRequestsArgs, GetWorkspaceImportRequestsResult, GetWorkspaceImportRequestsOutputArgs } from "./getWorkspaceImportRequests";
+export const getWorkspaceImportRequests: typeof import("./getWorkspaceImportRequests").getWorkspaceImportRequests = null as any;
+export const getWorkspaceImportRequestsOutput: typeof import("./getWorkspaceImportRequests").getWorkspaceImportRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspaceImportRequests","getWorkspaceImportRequestsOutput"], () => require("./getWorkspaceImportRequests"));
 
 export { GetWorkspaceProjectArgs, GetWorkspaceProjectResult, GetWorkspaceProjectOutputArgs } from "./getWorkspaceProject";
 export const getWorkspaceProject: typeof import("./getWorkspaceProject").getWorkspaceProject = null as any;
@@ -55,10 +75,20 @@ export type WorkspaceApplication = import("./workspaceApplication").WorkspaceApp
 export const WorkspaceApplication: typeof import("./workspaceApplication").WorkspaceApplication = null as any;
 utilities.lazyLoad(exports, ["WorkspaceApplication"], () => require("./workspaceApplication"));
 
+export { WorkspaceExportRequestArgs, WorkspaceExportRequestState } from "./workspaceExportRequest";
+export type WorkspaceExportRequest = import("./workspaceExportRequest").WorkspaceExportRequest;
+export const WorkspaceExportRequest: typeof import("./workspaceExportRequest").WorkspaceExportRequest = null as any;
+utilities.lazyLoad(exports, ["WorkspaceExportRequest"], () => require("./workspaceExportRequest"));
+
 export { WorkspaceFolderArgs, WorkspaceFolderState } from "./workspaceFolder";
 export type WorkspaceFolder = import("./workspaceFolder").WorkspaceFolder;
 export const WorkspaceFolder: typeof import("./workspaceFolder").WorkspaceFolder = null as any;
 utilities.lazyLoad(exports, ["WorkspaceFolder"], () => require("./workspaceFolder"));
+
+export { WorkspaceImportRequestArgs, WorkspaceImportRequestState } from "./workspaceImportRequest";
+export type WorkspaceImportRequest = import("./workspaceImportRequest").WorkspaceImportRequest;
+export const WorkspaceImportRequest: typeof import("./workspaceImportRequest").WorkspaceImportRequest = null as any;
+utilities.lazyLoad(exports, ["WorkspaceImportRequest"], () => require("./workspaceImportRequest"));
 
 export { WorkspaceProjectArgs, WorkspaceProjectState } from "./workspaceProject";
 export type WorkspaceProject = import("./workspaceProject").WorkspaceProject;
@@ -74,8 +104,12 @@ const _module = {
                 return new Workspace(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceApplication:WorkspaceApplication":
                 return new WorkspaceApplication(name, <any>undefined, { urn })
+            case "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest":
+                return new WorkspaceExportRequest(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
                 return new WorkspaceFolder(name, <any>undefined, { urn })
+            case "oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest":
+                return new WorkspaceImportRequest(name, <any>undefined, { urn })
             case "oci:DataIntegration/workspaceProject:WorkspaceProject":
                 return new WorkspaceProject(name, <any>undefined, { urn })
             default:
@@ -85,5 +119,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspace", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceApplication", _module)
+pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceExportRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceFolder", _module)
+pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceImportRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "DataIntegration/workspaceProject", _module)

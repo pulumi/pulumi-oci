@@ -85,7 +85,19 @@ class BackendSetArgs:
              name: Optional[pulumi.Input[str]] = None,
              session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
              ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'lbCookieSessionPersistenceConfiguration' in kwargs:
+            lb_cookie_session_persistence_configuration = kwargs['lbCookieSessionPersistenceConfiguration']
+        if 'sessionPersistenceConfiguration' in kwargs:
+            session_persistence_configuration = kwargs['sessionPersistenceConfiguration']
+        if 'sslConfiguration' in kwargs:
+            ssl_configuration = kwargs['sslConfiguration']
+
         _setter("health_checker", health_checker)
         _setter("load_balancer_id", load_balancer_id)
         _setter("policy", policy)
@@ -293,7 +305,19 @@ class _BackendSetState:
              session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
              ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if 'lbCookieSessionPersistenceConfiguration' in kwargs:
+            lb_cookie_session_persistence_configuration = kwargs['lbCookieSessionPersistenceConfiguration']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'sessionPersistenceConfiguration' in kwargs:
+            session_persistence_configuration = kwargs['sessionPersistenceConfiguration']
+        if 'sslConfiguration' in kwargs:
+            ssl_configuration = kwargs['sslConfiguration']
+
         if backends is not None:
             _setter("backends", backends)
         if health_checker is not None:

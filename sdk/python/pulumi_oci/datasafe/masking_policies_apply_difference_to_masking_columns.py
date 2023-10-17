@@ -29,7 +29,13 @@ class MaskingPoliciesApplyDifferenceToMaskingColumnsArgs:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: pulumi.Input[str],
              sdm_masking_policy_difference_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'sdmMaskingPolicyDifferenceId' in kwargs:
+            sdm_masking_policy_difference_id = kwargs['sdmMaskingPolicyDifferenceId']
+
         _setter("masking_policy_id", masking_policy_id)
         _setter("sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
 
@@ -70,7 +76,13 @@ class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: Optional[pulumi.Input[str]] = None,
              sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'sdmMaskingPolicyDifferenceId' in kwargs:
+            sdm_masking_policy_difference_id = kwargs['sdmMaskingPolicyDifferenceId']
+
         if masking_policy_id is not None:
             _setter("masking_policy_id", masking_policy_id)
         if sdm_masking_policy_difference_id is not None:

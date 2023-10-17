@@ -35,7 +35,13 @@ class ApiKeyArgs:
              _setter: Callable[[Any, Any], None],
              key_value: pulumi.Input[str],
              user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyValue' in kwargs:
+            key_value = kwargs['keyValue']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("key_value", key_value)
         _setter("user_id", user_id)
 
@@ -108,7 +114,17 @@ class _ApiKeyState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'inactiveStatus' in kwargs:
+            inactive_status = kwargs['inactiveStatus']
+        if 'keyValue' in kwargs:
+            key_value = kwargs['keyValue']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if fingerprint is not None:
             _setter("fingerprint", fingerprint)
         if inactive_status is not None:

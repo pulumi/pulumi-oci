@@ -48,7 +48,15 @@ class DrgRouteTableRouteRuleArgs:
              destination_type: pulumi.Input[str],
              drg_route_table_id: pulumi.Input[str],
              next_hop_drg_attachment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if 'nextHopDrgAttachmentId' in kwargs:
+            next_hop_drg_attachment_id = kwargs['nextHopDrgAttachmentId']
+
         _setter("destination", destination)
         _setter("destination_type", destination_type)
         _setter("drg_route_table_id", drg_route_table_id)
@@ -169,7 +177,23 @@ class _DrgRouteTableRouteRuleState:
              next_hop_drg_attachment_id: Optional[pulumi.Input[str]] = None,
              route_provenance: Optional[pulumi.Input[str]] = None,
              route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if 'isBlackhole' in kwargs:
+            is_blackhole = kwargs['isBlackhole']
+        if 'isConflict' in kwargs:
+            is_conflict = kwargs['isConflict']
+        if 'nextHopDrgAttachmentId' in kwargs:
+            next_hop_drg_attachment_id = kwargs['nextHopDrgAttachmentId']
+        if 'routeProvenance' in kwargs:
+            route_provenance = kwargs['routeProvenance']
+        if 'routeType' in kwargs:
+            route_type = kwargs['routeType']
+
         if attributes is not None:
             _setter("attributes", attributes)
         if destination is not None:

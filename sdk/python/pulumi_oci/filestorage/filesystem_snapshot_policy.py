@@ -63,7 +63,21 @@ class FilesystemSnapshotPolicyArgs:
              policy_prefix: Optional[pulumi.Input[str]] = None,
              schedules: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'policyPrefix' in kwargs:
+            policy_prefix = kwargs['policyPrefix']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -236,7 +250,23 @@ class _FilesystemSnapshotPolicyState:
              schedules: Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'policyPrefix' in kwargs:
+            policy_prefix = kwargs['policyPrefix']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

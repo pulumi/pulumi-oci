@@ -14,6 +14,14 @@ __all__ = [
     'BootVolumeBackupSourceDetailsArgs',
     'BootVolumeBootVolumeReplicaArgs',
     'BootVolumeSourceDetailsArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs',
+    'CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs',
     'CaptureFilterVtapCaptureFilterRuleArgs',
     'CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs',
     'CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs',
@@ -287,7 +295,13 @@ class BootVolumeAutotunePolicyArgs:
              _setter: Callable[[Any, Any], None],
              autotune_type: pulumi.Input[str],
              max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotuneType' in kwargs:
+            autotune_type = kwargs['autotuneType']
+        if 'maxVpusPerGb' in kwargs:
+            max_vpus_per_gb = kwargs['maxVpusPerGb']
+
         _setter("autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             _setter("max_vpus_per_gb", max_vpus_per_gb)
@@ -339,7 +353,13 @@ class BootVolumeBackupSourceDetailsArgs:
              boot_volume_backup_id: pulumi.Input[str],
              region: pulumi.Input[str],
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeBackupId' in kwargs:
+            boot_volume_backup_id = kwargs['bootVolumeBackupId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("boot_volume_backup_id", boot_volume_backup_id)
         _setter("region", region)
         if kms_key_id is not None:
@@ -402,7 +422,15 @@ class BootVolumeBootVolumeReplicaArgs:
              availability_domain: pulumi.Input[str],
              boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'bootVolumeReplicaId' in kwargs:
+            boot_volume_replica_id = kwargs['bootVolumeReplicaId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("availability_domain", availability_domain)
         if boot_volume_replica_id is not None:
             _setter("boot_volume_replica_id", boot_volume_replica_id)
@@ -465,7 +493,9 @@ class BootVolumeSourceDetailsArgs:
              _setter: Callable[[Any, Any], None],
              id: pulumi.Input[str],
              type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -492,6 +522,647 @@ class BootVolumeSourceDetailsArgs:
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleArgs:
+    def __init__(__self__, *,
+                 destination_cidr: Optional[pulumi.Input[str]] = None,
+                 flow_log_type: Optional[pulumi.Input[str]] = None,
+                 icmp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 priority: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 rule_action: Optional[pulumi.Input[str]] = None,
+                 sampling_rate: Optional[pulumi.Input[int]] = None,
+                 source_cidr: Optional[pulumi.Input[str]] = None,
+                 tcp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']] = None,
+                 udp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']] = None):
+        """
+        :param pulumi.Input[str] destination_cidr: (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        :param pulumi.Input[str] flow_log_type: (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs'] icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+               
+               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates whether a flow log capture filter rule is enabled.
+        :param pulumi.Input[int] priority: (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
+        :param pulumi.Input[str] protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+               * 1 = ICMP
+               * 6 = TCP
+               * 17 = UDP
+        :param pulumi.Input[str] rule_action: (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        :param pulumi.Input[int] sampling_rate: (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
+        :param pulumi.Input[str] source_cidr: (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        CaptureFilterFlowLogCaptureFilterRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_cidr=destination_cidr,
+            flow_log_type=flow_log_type,
+            icmp_options=icmp_options,
+            is_enabled=is_enabled,
+            priority=priority,
+            protocol=protocol,
+            rule_action=rule_action,
+            sampling_rate=sampling_rate,
+            source_cidr=source_cidr,
+            tcp_options=tcp_options,
+            udp_options=udp_options,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_cidr: Optional[pulumi.Input[str]] = None,
+             flow_log_type: Optional[pulumi.Input[str]] = None,
+             icmp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             rule_action: Optional[pulumi.Input[str]] = None,
+             sampling_rate: Optional[pulumi.Input[int]] = None,
+             source_cidr: Optional[pulumi.Input[str]] = None,
+             tcp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']] = None,
+             udp_options: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationCidr' in kwargs:
+            destination_cidr = kwargs['destinationCidr']
+        if 'flowLogType' in kwargs:
+            flow_log_type = kwargs['flowLogType']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'ruleAction' in kwargs:
+            rule_action = kwargs['ruleAction']
+        if 'samplingRate' in kwargs:
+            sampling_rate = kwargs['samplingRate']
+        if 'sourceCidr' in kwargs:
+            source_cidr = kwargs['sourceCidr']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
+        if destination_cidr is not None:
+            _setter("destination_cidr", destination_cidr)
+        if flow_log_type is not None:
+            _setter("flow_log_type", flow_log_type)
+        if icmp_options is not None:
+            _setter("icmp_options", icmp_options)
+        if is_enabled is not None:
+            _setter("is_enabled", is_enabled)
+        if priority is not None:
+            _setter("priority", priority)
+        if protocol is not None:
+            _setter("protocol", protocol)
+        if rule_action is not None:
+            _setter("rule_action", rule_action)
+        if sampling_rate is not None:
+            _setter("sampling_rate", sampling_rate)
+        if source_cidr is not None:
+            _setter("source_cidr", source_cidr)
+        if tcp_options is not None:
+            _setter("tcp_options", tcp_options)
+        if udp_options is not None:
+            _setter("udp_options", udp_options)
+
+    @property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @destination_cidr.setter
+    def destination_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_cidr", value)
+
+    @property
+    @pulumi.getter(name="flowLogType")
+    def flow_log_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
+        """
+        return pulumi.get(self, "flow_log_type")
+
+    @flow_log_type.setter
+    def flow_log_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "flow_log_type", value)
+
+    @property
+    @pulumi.getter(name="icmpOptions")
+    def icmp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']]:
+        """
+        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+
+        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+        """
+        return pulumi.get(self, "icmp_options")
+
+    @icmp_options.setter
+    def icmp_options(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']]):
+        pulumi.set(self, "icmp_options", value)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether a flow log capture filter rule is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "priority", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+        * 1 = ICMP
+        * 6 = TCP
+        * 17 = UDP
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        """
+        return pulumi.get(self, "rule_action")
+
+    @rule_action.setter
+    def rule_action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_action", value)
+
+    @property
+    @pulumi.getter(name="samplingRate")
+    def sampling_rate(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
+        """
+        return pulumi.get(self, "sampling_rate")
+
+    @sampling_rate.setter
+    def sampling_rate(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "sampling_rate", value)
+
+    @property
+    @pulumi.getter(name="sourceCidr")
+    def source_cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "source_cidr")
+
+    @source_cidr.setter
+    def source_cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_cidr", value)
+
+    @property
+    @pulumi.getter(name="tcpOptions")
+    def tcp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']]:
+        """
+        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "tcp_options")
+
+    @tcp_options.setter
+    def tcp_options(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']]):
+        pulumi.set(self, "tcp_options", value)
+
+    @property
+    @pulumi.getter(name="udpOptions")
+    def udp_options(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']]:
+        """
+        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "udp_options")
+
+    @udp_options.setter
+    def udp_options(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']]):
+        pulumi.set(self, "udp_options", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[int],
+                 code: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] type: (Updatable) The ICMP type.
+        :param pulumi.Input[int] code: (Updatable) The ICMP code (optional).
+        """
+        CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            code=code,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[int],
+             code: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("type", type)
+        if code is not None:
+            _setter("code", code)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The ICMP type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[int]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def code(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The ICMP code (optional).
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "code", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs:
+    def __init__(__self__, *,
+                 destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
+                 source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None):
+        """
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
+        """
+        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_port_range=destination_port_range,
+            source_port_range=source_port_range,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
+             source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
+        if destination_port_range is not None:
+            _setter("destination_port_range", destination_port_range)
+        if source_port_range is not None:
+            _setter("source_port_range", source_port_range)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @destination_port_range.setter
+    def destination_port_range(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]):
+        pulumi.set(self, "destination_port_range", value)
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "source_port_range")
+
+    @source_port_range.setter
+    def source_port_range(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]):
+        pulumi.set(self, "source_port_range", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
+    def __init__(__self__, *,
+                 max: pulumi.Input[int],
+                 min: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: pulumi.Input[int],
+             min: pulumi.Input[int],
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("max", max)
+        _setter("min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @max.setter
+    def max(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max", value)
+
+    @property
+    @pulumi.getter
+    def min(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "min")
+
+    @min.setter
+    def min(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
+    def __init__(__self__, *,
+                 max: pulumi.Input[int],
+                 min: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: pulumi.Input[int],
+             min: pulumi.Input[int],
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("max", max)
+        _setter("min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @max.setter
+    def max(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max", value)
+
+    @property
+    @pulumi.getter
+    def min(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "min")
+
+    @min.setter
+    def min(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs:
+    def __init__(__self__, *,
+                 destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
+                 source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None):
+        """
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs'] destination_port_range: (Updatable)
+        :param pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs'] source_port_range: (Updatable)
+        """
+        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_port_range=destination_port_range,
+            source_port_range=source_port_range,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
+             source_port_range: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
+        if destination_port_range is not None:
+            _setter("destination_port_range", destination_port_range)
+        if source_port_range is not None:
+            _setter("source_port_range", source_port_range)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @destination_port_range.setter
+    def destination_port_range(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]):
+        pulumi.set(self, "destination_port_range", value)
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "source_port_range")
+
+    @source_port_range.setter
+    def source_port_range(self, value: Optional[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]):
+        pulumi.set(self, "source_port_range", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
+    def __init__(__self__, *,
+                 max: pulumi.Input[int],
+                 min: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: pulumi.Input[int],
+             min: pulumi.Input[int],
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("max", max)
+        _setter("min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @max.setter
+    def max(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max", value)
+
+    @property
+    @pulumi.getter
+    def min(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "min")
+
+    @min.setter
+    def min(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min", value)
+
+
+@pulumi.input_type
+class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
+    def __init__(__self__, *,
+                 max: pulumi.Input[int],
+                 min: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param pulumi.Input[int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: pulumi.Input[int],
+             min: pulumi.Input[int],
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
+        _setter("max", max)
+        _setter("min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @max.setter
+    def max(self, value: pulumi.Input[int]):
+        pulumi.set(self, "max", value)
+
+    @property
+    @pulumi.getter
+    def min(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "min")
+
+    @min.setter
+    def min(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min", value)
 
 
 @pulumi.input_type
@@ -544,7 +1215,23 @@ class CaptureFilterVtapCaptureFilterRuleArgs:
              source_cidr: Optional[pulumi.Input[str]] = None,
              tcp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'trafficDirection' in kwargs:
+            traffic_direction = kwargs['trafficDirection']
+        if 'destinationCidr' in kwargs:
+            destination_cidr = kwargs['destinationCidr']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'ruleAction' in kwargs:
+            rule_action = kwargs['ruleAction']
+        if 'sourceCidr' in kwargs:
+            source_cidr = kwargs['sourceCidr']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("traffic_direction", traffic_direction)
         if destination_cidr is not None:
             _setter("destination_cidr", destination_cidr)
@@ -684,7 +1371,9 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -733,7 +1422,13 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']] = None,
              source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if destination_port_range is not None:
             _setter("destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -787,7 +1482,9 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -843,7 +1540,9 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -895,7 +1594,13 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              destination_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']] = None,
              source_port_range: Optional[pulumi.Input['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if destination_port_range is not None:
             _setter("destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -949,7 +1654,9 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -1005,7 +1712,9 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -1057,7 +1766,13 @@ class ClusterNetworkClusterConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              hpc_island_id: pulumi.Input[str],
              network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hpcIslandId' in kwargs:
+            hpc_island_id = kwargs['hpcIslandId']
+        if 'networkBlockIds' in kwargs:
+            network_block_ids = kwargs['networkBlockIds']
+
         _setter("hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
             _setter("network_block_ids", network_block_ids)
@@ -1148,7 +1863,29 @@ class ClusterNetworkInstancePoolArgs:
              placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceDisplayNameFormatter' in kwargs:
+            instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
+        if 'instanceHostnameFormatter' in kwargs:
+            instance_hostname_formatter = kwargs['instanceHostnameFormatter']
+        if 'loadBalancers' in kwargs:
+            load_balancers = kwargs['loadBalancers']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("instance_configuration_id", instance_configuration_id)
         _setter("size", size)
         if compartment_id is not None:
@@ -1364,7 +2101,17 @@ class ClusterNetworkInstancePoolLoadBalancerArgs:
              port: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              vnic_selection: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'instancePoolId' in kwargs:
+            instance_pool_id = kwargs['instancePoolId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'vnicSelection' in kwargs:
+            vnic_selection = kwargs['vnicSelection']
+
         if backend_set_name is not None:
             _setter("backend_set_name", backend_set_name)
         if id is not None:
@@ -1496,7 +2243,19 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
              primary_subnet_id: Optional[pulumi.Input[str]] = None,
              primary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]] = None,
              secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'primarySubnetId' in kwargs:
+            primary_subnet_id = kwargs['primarySubnetId']
+        if 'primaryVnicSubnets' in kwargs:
+            primary_vnic_subnets = kwargs['primaryVnicSubnets']
+        if 'secondaryVnicSubnets' in kwargs:
+            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if fault_domains is not None:
@@ -1596,7 +2355,15 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs:
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_assign_ipv6ip is not None:
@@ -1660,7 +2427,11 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addre
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -1708,7 +2479,17 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
@@ -1786,7 +2567,11 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6add
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -1833,7 +2618,19 @@ class ClusterNetworkPlacementConfigurationArgs:
              primary_subnet_id: Optional[pulumi.Input[str]] = None,
              primary_vnic_subnets: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
              secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'placementConstraint' in kwargs:
+            placement_constraint = kwargs['placementConstraint']
+        if 'primarySubnetId' in kwargs:
+            primary_subnet_id = kwargs['primarySubnetId']
+        if 'primaryVnicSubnets' in kwargs:
+            primary_vnic_subnets = kwargs['primaryVnicSubnets']
+        if 'secondaryVnicSubnets' in kwargs:
+            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
+
         _setter("availability_domain", availability_domain)
         if placement_constraint is not None:
             _setter("placement_constraint", placement_constraint)
@@ -1929,7 +2726,15 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs:
              subnet_id: pulumi.Input[str],
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+
         _setter("subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
@@ -1992,7 +2797,11 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subne
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -2040,7 +2849,17 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+
         _setter("subnet_id", subnet_id)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -2117,7 +2936,11 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subn
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -2167,7 +2990,19 @@ class ComputeCapacityReportShapeAvailabilityArgs:
              available_count: Optional[pulumi.Input[str]] = None,
              fault_domain: Optional[pulumi.Input[str]] = None,
              instance_shape_config: Optional[pulumi.Input['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceShape' in kwargs:
+            instance_shape = kwargs['instanceShape']
+        if 'availabilityStatus' in kwargs:
+            availability_status = kwargs['availabilityStatus']
+        if 'availableCount' in kwargs:
+            available_count = kwargs['availableCount']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'instanceShapeConfig' in kwargs:
+            instance_shape_config = kwargs['instanceShapeConfig']
+
         _setter("instance_shape", instance_shape)
         if availability_status is not None:
             _setter("availability_status", availability_status)
@@ -2268,7 +3103,11 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2364,7 +3203,21 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
              fault_domain: Optional[pulumi.Input[str]] = None,
              instance_shape_config: Optional[pulumi.Input['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']] = None,
              used_count: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceShape' in kwargs:
+            instance_shape = kwargs['instanceShape']
+        if 'reservedCount' in kwargs:
+            reserved_count = kwargs['reservedCount']
+        if 'clusterConfig' in kwargs:
+            cluster_config = kwargs['clusterConfig']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'instanceShapeConfig' in kwargs:
+            instance_shape_config = kwargs['instanceShapeConfig']
+        if 'usedCount' in kwargs:
+            used_count = kwargs['usedCount']
+
         _setter("instance_shape", instance_shape)
         _setter("reserved_count", reserved_count)
         if cluster_config is not None:
@@ -2480,7 +3333,13 @@ class ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs:
              _setter: Callable[[Any, Any], None],
              hpc_island_id: pulumi.Input[str],
              network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hpcIslandId' in kwargs:
+            hpc_island_id = kwargs['hpcIslandId']
+        if 'networkBlockIds' in kwargs:
+            network_block_ids = kwargs['networkBlockIds']
+
         _setter("hpc_island_id", hpc_island_id)
         if network_block_ids is not None:
             _setter("network_block_ids", network_block_ids)
@@ -2529,7 +3388,11 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[pulumi.Input[float]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2591,7 +3454,15 @@ class CrossConnectGroupMacsecPropertiesArgs:
              encryption_cipher: Optional[pulumi.Input[str]] = None,
              is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
              primary_key: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'encryptionCipher' in kwargs:
+            encryption_cipher = kwargs['encryptionCipher']
+        if 'isUnprotectedTrafficAllowed' in kwargs:
+            is_unprotected_traffic_allowed = kwargs['isUnprotectedTrafficAllowed']
+        if 'primaryKey' in kwargs:
+            primary_key = kwargs['primaryKey']
+
         _setter("state", state)
         if encryption_cipher is not None:
             _setter("encryption_cipher", encryption_cipher)
@@ -2684,7 +3555,17 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
              connectivity_association_name_secret_id: pulumi.Input[str],
              connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
              connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectivityAssociationKeySecretId' in kwargs:
+            connectivity_association_key_secret_id = kwargs['connectivityAssociationKeySecretId']
+        if 'connectivityAssociationNameSecretId' in kwargs:
+            connectivity_association_name_secret_id = kwargs['connectivityAssociationNameSecretId']
+        if 'connectivityAssociationKeySecretVersion' in kwargs:
+            connectivity_association_key_secret_version = kwargs['connectivityAssociationKeySecretVersion']
+        if 'connectivityAssociationNameSecretVersion' in kwargs:
+            connectivity_association_name_secret_version = kwargs['connectivityAssociationNameSecretVersion']
+
         _setter("connectivity_association_key_secret_id", connectivity_association_key_secret_id)
         _setter("connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
@@ -2772,7 +3653,15 @@ class CrossConnectMacsecPropertiesArgs:
              encryption_cipher: Optional[pulumi.Input[str]] = None,
              is_unprotected_traffic_allowed: Optional[pulumi.Input[bool]] = None,
              primary_key: Optional[pulumi.Input['CrossConnectMacsecPropertiesPrimaryKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'encryptionCipher' in kwargs:
+            encryption_cipher = kwargs['encryptionCipher']
+        if 'isUnprotectedTrafficAllowed' in kwargs:
+            is_unprotected_traffic_allowed = kwargs['isUnprotectedTrafficAllowed']
+        if 'primaryKey' in kwargs:
+            primary_key = kwargs['primaryKey']
+
         _setter("state", state)
         if encryption_cipher is not None:
             _setter("encryption_cipher", encryption_cipher)
@@ -2861,7 +3750,17 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
              connectivity_association_name_secret_id: pulumi.Input[str],
              connectivity_association_key_secret_version: Optional[pulumi.Input[str]] = None,
              connectivity_association_name_secret_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectivityAssociationKeySecretId' in kwargs:
+            connectivity_association_key_secret_id = kwargs['connectivityAssociationKeySecretId']
+        if 'connectivityAssociationNameSecretId' in kwargs:
+            connectivity_association_name_secret_id = kwargs['connectivityAssociationNameSecretId']
+        if 'connectivityAssociationKeySecretVersion' in kwargs:
+            connectivity_association_key_secret_version = kwargs['connectivityAssociationKeySecretVersion']
+        if 'connectivityAssociationNameSecretVersion' in kwargs:
+            connectivity_association_name_secret_version = kwargs['connectivityAssociationNameSecretVersion']
+
         _setter("connectivity_association_key_secret_id", connectivity_association_key_secret_id)
         _setter("connectivity_association_name_secret_id", connectivity_association_name_secret_id)
         if connectivity_association_key_secret_version is not None:
@@ -2943,7 +3842,15 @@ class DefaultDhcpOptionsOptionArgs:
              custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              server_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customDnsServers' in kwargs:
+            custom_dns_servers = kwargs['customDnsServers']
+        if 'searchDomainNames' in kwargs:
+            search_domain_names = kwargs['searchDomainNames']
+        if 'serverType' in kwargs:
+            server_type = kwargs['serverType']
+
         _setter("type", type)
         if custom_dns_servers is not None:
             _setter("custom_dns_servers", custom_dns_servers)
@@ -3016,7 +3923,17 @@ class DefaultRouteTableRouteRuleArgs:
              destination: Optional[pulumi.Input[str]] = None,
              destination_type: Optional[pulumi.Input[str]] = None,
              route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEntityId' in kwargs:
+            network_entity_id = kwargs['networkEntityId']
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'routeType' in kwargs:
+            route_type = kwargs['routeType']
+
         _setter("network_entity_id", network_entity_id)
         if cidr_block is not None:
             warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
@@ -3123,7 +4040,17 @@ class DefaultSecurityListEgressSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("destination", destination)
         _setter("protocol", protocol)
         if description is not None:
@@ -3227,7 +4154,9 @@ class DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -3269,7 +4198,11 @@ class DefaultSecurityListEgressSecurityRuleTcpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -3320,7 +4253,9 @@ class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -3361,7 +4296,11 @@ class DefaultSecurityListEgressSecurityRuleUdpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -3412,7 +4351,9 @@ class DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -3468,7 +4409,17 @@ class DefaultSecurityListIngressSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("protocol", protocol)
         _setter("source", source)
         if description is not None:
@@ -3572,7 +4523,9 @@ class DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -3614,7 +4567,11 @@ class DefaultSecurityListIngressSecurityRuleTcpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -3665,7 +4622,9 @@ class DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -3706,7 +4665,11 @@ class DefaultSecurityListIngressSecurityRuleUdpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -3757,7 +4720,9 @@ class DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -3814,7 +4779,15 @@ class DhcpOptionsOptionArgs:
              custom_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              search_domain_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              server_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customDnsServers' in kwargs:
+            custom_dns_servers = kwargs['customDnsServers']
+        if 'searchDomainNames' in kwargs:
+            search_domain_names = kwargs['searchDomainNames']
+        if 'serverType' in kwargs:
+            server_type = kwargs['serverType']
+
         _setter("type", type)
         if custom_dns_servers is not None:
             _setter("custom_dns_servers", custom_dns_servers)
@@ -3910,7 +4883,13 @@ class DrgAttachmentManagementNetworkDetailsArgs:
              type: pulumi.Input[str],
              ipsec_connection_id: Optional[pulumi.Input[str]] = None,
              route_table_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipsecConnectionId' in kwargs:
+            ipsec_connection_id = kwargs['ipsecConnectionId']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+
         _setter("id", id)
         _setter("type", type)
         if ipsec_connection_id is not None:
@@ -4019,7 +4998,19 @@ class DrgAttachmentNetworkDetailsArgs:
              transport_attachment_id: Optional[pulumi.Input[str]] = None,
              transport_only_mode: Optional[pulumi.Input[bool]] = None,
              vcn_route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipsecConnectionId' in kwargs:
+            ipsec_connection_id = kwargs['ipsecConnectionId']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'transportAttachmentId' in kwargs:
+            transport_attachment_id = kwargs['transportAttachmentId']
+        if 'transportOnlyMode' in kwargs:
+            transport_only_mode = kwargs['transportOnlyMode']
+        if 'vcnRouteType' in kwargs:
+            vcn_route_type = kwargs['vcnRouteType']
+
         _setter("type", type)
         if id is not None:
             _setter("id", id)
@@ -4153,7 +5144,9 @@ class DrgAttachmentsListDrgAllAttachmentArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -4197,7 +5190,15 @@ class DrgDefaultDrgRouteTableArgs:
              remote_peering_connection: Optional[pulumi.Input[str]] = None,
              vcn: Optional[pulumi.Input[str]] = None,
              virtual_circuit: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipsecTunnel' in kwargs:
+            ipsec_tunnel = kwargs['ipsecTunnel']
+        if 'remotePeeringConnection' in kwargs:
+            remote_peering_connection = kwargs['remotePeeringConnection']
+        if 'virtualCircuit' in kwargs:
+            virtual_circuit = kwargs['virtualCircuit']
+
         if ipsec_tunnel is not None:
             _setter("ipsec_tunnel", ipsec_tunnel)
         if remote_peering_connection is not None:
@@ -4279,7 +5280,15 @@ class DrgRouteDistributionStatementMatchCriteriaArgs:
              attachment_type: Optional[pulumi.Input[str]] = None,
              drg_attachment_id: Optional[pulumi.Input[str]] = None,
              match_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentType' in kwargs:
+            attachment_type = kwargs['attachmentType']
+        if 'drgAttachmentId' in kwargs:
+            drg_attachment_id = kwargs['drgAttachmentId']
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+
         if attachment_type is not None:
             _setter("attachment_type", attachment_type)
         if drg_attachment_id is not None:
@@ -4343,7 +5352,13 @@ class ImageAgentFeatureArgs:
              _setter: Callable[[Any, Any], None],
              is_management_supported: Optional[pulumi.Input[bool]] = None,
              is_monitoring_supported: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isManagementSupported' in kwargs:
+            is_management_supported = kwargs['isManagementSupported']
+        if 'isMonitoringSupported' in kwargs:
+            is_monitoring_supported = kwargs['isMonitoringSupported']
+
         if is_management_supported is not None:
             _setter("is_management_supported", is_management_supported)
         if is_monitoring_supported is not None:
@@ -4417,7 +5432,25 @@ class ImageImageSourceDetailsArgs:
              operating_system_version: Optional[pulumi.Input[str]] = None,
              source_image_type: Optional[pulumi.Input[str]] = None,
              source_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'bucketName' in kwargs:
+            bucket_name = kwargs['bucketName']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if 'objectName' in kwargs:
+            object_name = kwargs['objectName']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+        if 'sourceImageType' in kwargs:
+            source_image_type = kwargs['sourceImageType']
+        if 'sourceUri' in kwargs:
+            source_uri = kwargs['sourceUri']
+
         _setter("source_type", source_type)
         if bucket_name is not None:
             _setter("bucket_name", bucket_name)
@@ -4566,7 +5599,19 @@ class ImageLaunchOptionArgs:
              is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
              network_type: Optional[pulumi.Input[str]] = None,
              remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeType' in kwargs:
+            boot_volume_type = kwargs['bootVolumeType']
+        if 'isConsistentVolumeNamingEnabled' in kwargs:
+            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'remoteDataVolumeType' in kwargs:
+            remote_data_volume_type = kwargs['remoteDataVolumeType']
+
         if boot_volume_type is not None:
             _setter("boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -4694,7 +5739,17 @@ class InstanceAgentConfigArgs:
              is_management_disabled: Optional[pulumi.Input[bool]] = None,
              is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
              plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areAllPluginsDisabled' in kwargs:
+            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
+        if 'isManagementDisabled' in kwargs:
+            is_management_disabled = kwargs['isManagementDisabled']
+        if 'isMonitoringDisabled' in kwargs:
+            is_monitoring_disabled = kwargs['isMonitoringDisabled']
+        if 'pluginsConfigs' in kwargs:
+            plugins_configs = kwargs['pluginsConfigs']
+
         if are_all_plugins_disabled is not None:
             _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -4788,7 +5843,11 @@ class InstanceAgentConfigPluginsConfigArgs:
              _setter: Callable[[Any, Any], None],
              desired_state: pulumi.Input[str],
              name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+
         _setter("desired_state", desired_state)
         _setter("name", name)
 
@@ -4838,7 +5897,13 @@ class InstanceAvailabilityConfigArgs:
              _setter: Callable[[Any, Any], None],
              is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
              recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isLiveMigrationPreferred' in kwargs:
+            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
+        if 'recoveryAction' in kwargs:
+            recovery_action = kwargs['recoveryAction']
+
         if is_live_migration_preferred is not None:
             _setter("is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -4902,7 +5967,17 @@ class InstanceConfigurationInstanceDetailsArgs:
              launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']] = None,
              options: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]] = None,
              secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceType' in kwargs:
+            instance_type = kwargs['instanceType']
+        if 'blockVolumes' in kwargs:
+            block_volumes = kwargs['blockVolumes']
+        if 'launchDetails' in kwargs:
+            launch_details = kwargs['launchDetails']
+        if 'secondaryVnics' in kwargs:
+            secondary_vnics = kwargs['secondaryVnics']
+
         _setter("instance_type", instance_type)
         if block_volumes is not None:
             _setter("block_volumes", block_volumes)
@@ -4999,7 +6074,15 @@ class InstanceConfigurationInstanceDetailsBlockVolumeArgs:
              attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs']] = None,
              create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs']] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachDetails' in kwargs:
+            attach_details = kwargs['attachDetails']
+        if 'createDetails' in kwargs:
+            create_details = kwargs['createDetails']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+
         if attach_details is not None:
             _setter("attach_details", attach_details)
         if create_details is not None:
@@ -5083,7 +6166,19 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
              is_read_only: Optional[pulumi.Input[bool]] = None,
              is_shareable: Optional[pulumi.Input[bool]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'isShareable' in kwargs:
+            is_shareable = kwargs['isShareable']
+        if 'useChap' in kwargs:
+            use_chap = kwargs['useChap']
+
         _setter("type", type)
         if device is not None:
             _setter("device", device)
@@ -5247,7 +6342,35 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs:
              size_in_gbs: Optional[pulumi.Input[str]] = None,
              source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotunePolicies' in kwargs:
+            autotune_policies = kwargs['autotunePolicies']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'blockVolumeReplicas' in kwargs:
+            block_volume_replicas = kwargs['blockVolumeReplicas']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoTuneEnabled' in kwargs:
+            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'vpusPerGb' in kwargs:
+            vpus_per_gb = kwargs['vpusPerGb']
+
         if autotune_policies is not None:
             _setter("autotune_policies", autotune_policies)
         if availability_domain is not None:
@@ -5450,7 +6573,13 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy
              _setter: Callable[[Any, Any], None],
              autotune_type: pulumi.Input[str],
              max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotuneType' in kwargs:
+            autotune_type = kwargs['autotuneType']
+        if 'maxVpusPerGb' in kwargs:
+            max_vpus_per_gb = kwargs['maxVpusPerGb']
+
         _setter("autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             _setter("max_vpus_per_gb", max_vpus_per_gb)
@@ -5499,7 +6628,13 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
              _setter: Callable[[Any, Any], None],
              availability_domain: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("availability_domain", availability_domain)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -5548,7 +6683,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if id is not None:
             _setter("id", id)
@@ -5740,7 +6877,53 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
              shape: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs']] = None,
              source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentConfig' in kwargs:
+            agent_config = kwargs['agentConfig']
+        if 'availabilityConfig' in kwargs:
+            availability_config = kwargs['availabilityConfig']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'dedicatedVmHostId' in kwargs:
+            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceOptions' in kwargs:
+            instance_options = kwargs['instanceOptions']
+        if 'ipxeScript' in kwargs:
+            ipxe_script = kwargs['ipxeScript']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'launchMode' in kwargs:
+            launch_mode = kwargs['launchMode']
+        if 'launchOptions' in kwargs:
+            launch_options = kwargs['launchOptions']
+        if 'platformConfig' in kwargs:
+            platform_config = kwargs['platformConfig']
+        if 'preemptibleInstanceConfig' in kwargs:
+            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
+        if 'preferredMaintenanceAction' in kwargs:
+            preferred_maintenance_action = kwargs['preferredMaintenanceAction']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+
         if agent_config is not None:
             _setter("agent_config", agent_config)
         if availability_config is not None:
@@ -6173,7 +7356,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs:
              is_management_disabled: Optional[pulumi.Input[bool]] = None,
              is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
              plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areAllPluginsDisabled' in kwargs:
+            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
+        if 'isManagementDisabled' in kwargs:
+            is_management_disabled = kwargs['isManagementDisabled']
+        if 'isMonitoringDisabled' in kwargs:
+            is_monitoring_disabled = kwargs['isMonitoringDisabled']
+        if 'pluginsConfigs' in kwargs:
+            plugins_configs = kwargs['pluginsConfigs']
+
         if are_all_plugins_disabled is not None:
             _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -6267,7 +7460,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigA
              _setter: Callable[[Any, Any], None],
              desired_state: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+
         if desired_state is not None:
             _setter("desired_state", desired_state)
         if name is not None:
@@ -6319,7 +7516,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs:
              _setter: Callable[[Any, Any], None],
              is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
              recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isLiveMigrationPreferred' in kwargs:
+            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
+        if 'recoveryAction' in kwargs:
+            recovery_action = kwargs['recoveryAction']
+
         if is_live_migration_preferred is not None:
             _setter("is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -6409,7 +7612,33 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
              private_ip: Optional[pulumi.Input[str]] = None,
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -6599,7 +7828,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
              _setter: Callable[[Any, Any], None],
              ipv6address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6address is not None:
             _setter("ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -6645,7 +7878,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+
         if are_legacy_imds_endpoints_disabled is not None:
             _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -6697,7 +7934,19 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
              is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
              network_type: Optional[pulumi.Input[str]] = None,
              remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeType' in kwargs:
+            boot_volume_type = kwargs['bootVolumeType']
+        if 'isConsistentVolumeNamingEnabled' in kwargs:
+            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'remoteDataVolumeType' in kwargs:
+            remote_data_volume_type = kwargs['remoteDataVolumeType']
+
         if boot_volume_type is not None:
             _setter("boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -6847,7 +8096,31 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
              is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
              numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
              percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areVirtualInstructionsEnabled' in kwargs:
+            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
+        if 'configMap' in kwargs:
+            config_map = kwargs['configMap']
+        if 'isAccessControlServiceEnabled' in kwargs:
+            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
+        if 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
+            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
+        if 'isMeasuredBootEnabled' in kwargs:
+            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
+        if 'isMemoryEncryptionEnabled' in kwargs:
+            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
+        if 'isSecureBootEnabled' in kwargs:
+            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
+        if 'isSymmetricMultiThreadingEnabled' in kwargs:
+            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
+        if 'isTrustedPlatformModuleEnabled' in kwargs:
+            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
+        if 'numaNodesPerSocket' in kwargs:
+            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
+        if 'percentageOfCoresEnabled' in kwargs:
+            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
+
         _setter("type", type)
         if are_virtual_instructions_enabled is not None:
             _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -7036,7 +8309,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionAction' in kwargs:
+            preemption_action = kwargs['preemptionAction']
+
         if preemption_action is not None:
             _setter("preemption_action", preemption_action)
 
@@ -7072,7 +8349,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preserveBootVolume' in kwargs:
+            preserve_boot_volume = kwargs['preserveBootVolume']
+
         _setter("type", type)
         if preserve_boot_volume is not None:
             _setter("preserve_boot_volume", preserve_boot_volume)
@@ -7135,7 +8416,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
              vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baselineOcpuUtilization' in kwargs:
+            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if baseline_ocpu_utilization is not None:
             _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
@@ -7251,7 +8538,23 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs:
              image_id: Optional[pulumi.Input[str]] = None,
              instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'bootVolumeId' in kwargs:
+            boot_volume_id = kwargs['bootVolumeId']
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+        if 'bootVolumeVpusPerGb' in kwargs:
+            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'instanceSourceImageFilterDetails' in kwargs:
+            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("source_type", source_type)
         if boot_volume_id is not None:
             _setter("boot_volume_id", boot_volume_id)
@@ -7380,7 +8683,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
              defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              operating_system: Optional[pulumi.Input[str]] = None,
              operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTagsFilter' in kwargs:
+            defined_tags_filter = kwargs['definedTagsFilter']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags_filter is not None:
@@ -7464,7 +8777,15 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
              block_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]] = None,
              launch_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']] = None,
              secondary_vnics: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumes' in kwargs:
+            block_volumes = kwargs['blockVolumes']
+        if 'launchDetails' in kwargs:
+            launch_details = kwargs['launchDetails']
+        if 'secondaryVnics' in kwargs:
+            secondary_vnics = kwargs['secondaryVnics']
+
         if block_volumes is not None:
             _setter("block_volumes", block_volumes)
         if launch_details is not None:
@@ -7534,7 +8855,15 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs:
              attach_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']] = None,
              create_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachDetails' in kwargs:
+            attach_details = kwargs['attachDetails']
+        if 'createDetails' in kwargs:
+            create_details = kwargs['createDetails']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+
         if attach_details is not None:
             _setter("attach_details", attach_details)
         if create_details is not None:
@@ -7618,7 +8947,19 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
              is_read_only: Optional[pulumi.Input[bool]] = None,
              is_shareable: Optional[pulumi.Input[bool]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'isShareable' in kwargs:
+            is_shareable = kwargs['isShareable']
+        if 'useChap' in kwargs:
+            use_chap = kwargs['useChap']
+
         _setter("type", type)
         if device is not None:
             _setter("device", device)
@@ -7782,7 +9123,35 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs:
              size_in_gbs: Optional[pulumi.Input[str]] = None,
              source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotunePolicies' in kwargs:
+            autotune_policies = kwargs['autotunePolicies']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'blockVolumeReplicas' in kwargs:
+            block_volume_replicas = kwargs['blockVolumeReplicas']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoTuneEnabled' in kwargs:
+            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'vpusPerGb' in kwargs:
+            vpus_per_gb = kwargs['vpusPerGb']
+
         if autotune_policies is not None:
             _setter("autotune_policies", autotune_policies)
         if availability_domain is not None:
@@ -7985,7 +9354,13 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotune
              _setter: Callable[[Any, Any], None],
              autotune_type: pulumi.Input[str],
              max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotuneType' in kwargs:
+            autotune_type = kwargs['autotuneType']
+        if 'maxVpusPerGb' in kwargs:
+            max_vpus_per_gb = kwargs['maxVpusPerGb']
+
         _setter("autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             _setter("max_vpus_per_gb", max_vpus_per_gb)
@@ -8034,7 +9409,13 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
              _setter: Callable[[Any, Any], None],
              availability_domain: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("availability_domain", availability_domain)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -8083,7 +9464,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if id is not None:
             _setter("id", id)
@@ -8275,7 +9658,53 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
              shape: Optional[pulumi.Input[str]] = None,
              shape_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']] = None,
              source_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentConfig' in kwargs:
+            agent_config = kwargs['agentConfig']
+        if 'availabilityConfig' in kwargs:
+            availability_config = kwargs['availabilityConfig']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'dedicatedVmHostId' in kwargs:
+            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceOptions' in kwargs:
+            instance_options = kwargs['instanceOptions']
+        if 'ipxeScript' in kwargs:
+            ipxe_script = kwargs['ipxeScript']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'launchMode' in kwargs:
+            launch_mode = kwargs['launchMode']
+        if 'launchOptions' in kwargs:
+            launch_options = kwargs['launchOptions']
+        if 'platformConfig' in kwargs:
+            platform_config = kwargs['platformConfig']
+        if 'preemptibleInstanceConfig' in kwargs:
+            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
+        if 'preferredMaintenanceAction' in kwargs:
+            preferred_maintenance_action = kwargs['preferredMaintenanceAction']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+
         if agent_config is not None:
             _setter("agent_config", agent_config)
         if availability_config is not None:
@@ -8708,7 +10137,17 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs:
              is_management_disabled: Optional[pulumi.Input[bool]] = None,
              is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
              plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areAllPluginsDisabled' in kwargs:
+            are_all_plugins_disabled = kwargs['areAllPluginsDisabled']
+        if 'isManagementDisabled' in kwargs:
+            is_management_disabled = kwargs['isManagementDisabled']
+        if 'isMonitoringDisabled' in kwargs:
+            is_monitoring_disabled = kwargs['isMonitoringDisabled']
+        if 'pluginsConfigs' in kwargs:
+            plugins_configs = kwargs['pluginsConfigs']
+
         if are_all_plugins_disabled is not None:
             _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
@@ -8802,7 +10241,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
              _setter: Callable[[Any, Any], None],
              desired_state: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+
         if desired_state is not None:
             _setter("desired_state", desired_state)
         if name is not None:
@@ -8854,7 +10297,13 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigA
              _setter: Callable[[Any, Any], None],
              is_live_migration_preferred: Optional[pulumi.Input[bool]] = None,
              recovery_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isLiveMigrationPreferred' in kwargs:
+            is_live_migration_preferred = kwargs['isLiveMigrationPreferred']
+        if 'recoveryAction' in kwargs:
+            recovery_action = kwargs['recoveryAction']
+
         if is_live_migration_preferred is not None:
             _setter("is_live_migration_preferred", is_live_migration_preferred)
         if recovery_action is not None:
@@ -8944,7 +10393,33 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
              private_ip: Optional[pulumi.Input[str]] = None,
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -9134,7 +10609,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
              _setter: Callable[[Any, Any], None],
              ipv6address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6address is not None:
             _setter("ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -9180,7 +10659,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+
         if are_legacy_imds_endpoints_disabled is not None:
             _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -9232,7 +10715,19 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs:
              is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
              network_type: Optional[pulumi.Input[str]] = None,
              remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeType' in kwargs:
+            boot_volume_type = kwargs['bootVolumeType']
+        if 'isConsistentVolumeNamingEnabled' in kwargs:
+            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'remoteDataVolumeType' in kwargs:
+            remote_data_volume_type = kwargs['remoteDataVolumeType']
+
         if boot_volume_type is not None:
             _setter("boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -9378,7 +10873,29 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
              is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
              numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
              percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areVirtualInstructionsEnabled' in kwargs:
+            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
+        if 'isAccessControlServiceEnabled' in kwargs:
+            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
+        if 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
+            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
+        if 'isMeasuredBootEnabled' in kwargs:
+            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
+        if 'isMemoryEncryptionEnabled' in kwargs:
+            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
+        if 'isSecureBootEnabled' in kwargs:
+            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
+        if 'isSymmetricMultiThreadingEnabled' in kwargs:
+            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
+        if 'isTrustedPlatformModuleEnabled' in kwargs:
+            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
+        if 'numaNodesPerSocket' in kwargs:
+            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
+        if 'percentageOfCoresEnabled' in kwargs:
+            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
+
         _setter("type", type)
         if are_virtual_instructions_enabled is not None:
             _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -9553,7 +11070,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_action: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionAction' in kwargs:
+            preemption_action = kwargs['preemptionAction']
+
         if preemption_action is not None:
             _setter("preemption_action", preemption_action)
 
@@ -9589,7 +11110,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstance
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preserveBootVolume' in kwargs:
+            preserve_boot_volume = kwargs['preserveBootVolume']
+
         _setter("type", type)
         if preserve_boot_volume is not None:
             _setter("preserve_boot_volume", preserve_boot_volume)
@@ -9652,7 +11177,13 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
              nvmes: Optional[pulumi.Input[int]] = None,
              ocpus: Optional[pulumi.Input[float]] = None,
              vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baselineOcpuUtilization' in kwargs:
+            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if baseline_ocpu_utilization is not None:
             _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
@@ -9768,7 +11299,23 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs:
              image_id: Optional[pulumi.Input[str]] = None,
              instance_source_image_filter_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'bootVolumeId' in kwargs:
+            boot_volume_id = kwargs['bootVolumeId']
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+        if 'bootVolumeVpusPerGb' in kwargs:
+            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'instanceSourceImageFilterDetails' in kwargs:
+            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("source_type", source_type)
         if boot_volume_id is not None:
             _setter("boot_volume_id", boot_volume_id)
@@ -9897,7 +11444,17 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
              defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              operating_system: Optional[pulumi.Input[str]] = None,
              operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTagsFilter' in kwargs:
+            defined_tags_filter = kwargs['definedTagsFilter']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags_filter is not None:
@@ -9979,7 +11536,15 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs:
              create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'nicIndex' in kwargs:
+            nic_index = kwargs['nicIndex']
+
         if create_vnic_details is not None:
             _setter("create_vnic_details", create_vnic_details)
         if display_name is not None:
@@ -10083,7 +11648,33 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
              private_ip: Optional[pulumi.Input[str]] = None,
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -10273,7 +11864,11 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
              _setter: Callable[[Any, Any], None],
              ipv6address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6address is not None:
             _setter("ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -10327,7 +11922,15 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicArgs:
              create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'nicIndex' in kwargs:
+            nic_index = kwargs['nicIndex']
+
         if create_vnic_details is not None:
             _setter("create_vnic_details", create_vnic_details)
         if display_name is not None:
@@ -10431,7 +12034,33 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
              private_ip: Optional[pulumi.Input[str]] = None,
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -10621,7 +12250,11 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
              _setter: Callable[[Any, Any], None],
              ipv6address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6address is not None:
             _setter("ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -10736,7 +12369,35 @@ class InstanceCreateVnicDetailsArgs:
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vlan_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -10957,7 +12618,11 @@ class InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
              _setter: Callable[[Any, Any], None],
              ipv6address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6address is not None:
             _setter("ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -10997,7 +12662,11 @@ class InstanceInstanceOptionsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areLegacyImdsEndpointsDisabled' in kwargs:
+            are_legacy_imds_endpoints_disabled = kwargs['areLegacyImdsEndpointsDisabled']
+
         if are_legacy_imds_endpoints_disabled is not None:
             _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
@@ -11049,7 +12718,19 @@ class InstanceLaunchOptionsArgs:
              is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
              network_type: Optional[pulumi.Input[str]] = None,
              remote_data_volume_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeType' in kwargs:
+            boot_volume_type = kwargs['bootVolumeType']
+        if 'isConsistentVolumeNamingEnabled' in kwargs:
+            is_consistent_volume_naming_enabled = kwargs['isConsistentVolumeNamingEnabled']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'remoteDataVolumeType' in kwargs:
+            remote_data_volume_type = kwargs['remoteDataVolumeType']
+
         if boot_volume_type is not None:
             _setter("boot_volume_type", boot_volume_type)
         if firmware is not None:
@@ -11199,7 +12880,31 @@ class InstancePlatformConfigArgs:
              is_trusted_platform_module_enabled: Optional[pulumi.Input[bool]] = None,
              numa_nodes_per_socket: Optional[pulumi.Input[str]] = None,
              percentage_of_cores_enabled: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areVirtualInstructionsEnabled' in kwargs:
+            are_virtual_instructions_enabled = kwargs['areVirtualInstructionsEnabled']
+        if 'configMap' in kwargs:
+            config_map = kwargs['configMap']
+        if 'isAccessControlServiceEnabled' in kwargs:
+            is_access_control_service_enabled = kwargs['isAccessControlServiceEnabled']
+        if 'isInputOutputMemoryManagementUnitEnabled' in kwargs:
+            is_input_output_memory_management_unit_enabled = kwargs['isInputOutputMemoryManagementUnitEnabled']
+        if 'isMeasuredBootEnabled' in kwargs:
+            is_measured_boot_enabled = kwargs['isMeasuredBootEnabled']
+        if 'isMemoryEncryptionEnabled' in kwargs:
+            is_memory_encryption_enabled = kwargs['isMemoryEncryptionEnabled']
+        if 'isSecureBootEnabled' in kwargs:
+            is_secure_boot_enabled = kwargs['isSecureBootEnabled']
+        if 'isSymmetricMultiThreadingEnabled' in kwargs:
+            is_symmetric_multi_threading_enabled = kwargs['isSymmetricMultiThreadingEnabled']
+        if 'isTrustedPlatformModuleEnabled' in kwargs:
+            is_trusted_platform_module_enabled = kwargs['isTrustedPlatformModuleEnabled']
+        if 'numaNodesPerSocket' in kwargs:
+            numa_nodes_per_socket = kwargs['numaNodesPerSocket']
+        if 'percentageOfCoresEnabled' in kwargs:
+            percentage_of_cores_enabled = kwargs['percentageOfCoresEnabled']
+
         _setter("type", type)
         if are_virtual_instructions_enabled is not None:
             _setter("are_virtual_instructions_enabled", are_virtual_instructions_enabled)
@@ -11404,7 +13109,17 @@ class InstancePoolInstanceLoadBalancerBackendArgs:
              backend_set_name: Optional[pulumi.Input[str]] = None,
              load_balancer_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendHealthStatus' in kwargs:
+            backend_health_status = kwargs['backendHealthStatus']
+        if 'backendName' in kwargs:
+            backend_name = kwargs['backendName']
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if backend_health_status is not None:
             _setter("backend_health_status", backend_health_status)
         if backend_name is not None:
@@ -11520,7 +13235,17 @@ class InstancePoolLoadBalancerArgs:
              id: Optional[pulumi.Input[str]] = None,
              instance_pool_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'vnicSelection' in kwargs:
+            vnic_selection = kwargs['vnicSelection']
+        if 'instancePoolId' in kwargs:
+            instance_pool_id = kwargs['instancePoolId']
+
         _setter("backend_set_name", backend_set_name)
         _setter("load_balancer_id", load_balancer_id)
         _setter("port", port)
@@ -11660,7 +13385,19 @@ class InstancePoolPlacementConfigurationArgs:
              primary_subnet_id: Optional[pulumi.Input[str]] = None,
              primary_vnic_subnets: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
              secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'primarySubnetId' in kwargs:
+            primary_subnet_id = kwargs['primarySubnetId']
+        if 'primaryVnicSubnets' in kwargs:
+            primary_vnic_subnets = kwargs['primaryVnicSubnets']
+        if 'secondaryVnicSubnets' in kwargs:
+            secondary_vnic_subnets = kwargs['secondaryVnicSubnets']
+
         _setter("availability_domain", availability_domain)
         if fault_domains is not None:
             _setter("fault_domains", fault_domains)
@@ -11763,7 +13500,15 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
              subnet_id: pulumi.Input[str],
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+
         _setter("subnet_id", subnet_id)
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             _setter("ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
@@ -11822,7 +13567,11 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetC
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -11866,7 +13615,17 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
              is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'isAssignIpv6ip' in kwargs:
+            is_assign_ipv6ip = kwargs['isAssignIpv6ip']
+
         _setter("subnet_id", subnet_id)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -11939,7 +13698,11 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnet
     def _configure(
              _setter: Callable[[Any, Any], None],
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         if ipv6subnet_cidr is not None:
             _setter("ipv6subnet_cidr", ipv6subnet_cidr)
 
@@ -11971,7 +13734,11 @@ class InstancePreemptibleInstanceConfigArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_action: pulumi.Input['InstancePreemptibleInstanceConfigPreemptionActionArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionAction' in kwargs:
+            preemption_action = kwargs['preemptionAction']
+
         _setter("preemption_action", preemption_action)
 
     @property
@@ -12006,7 +13773,11 @@ class InstancePreemptibleInstanceConfigPreemptionActionArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preserveBootVolume' in kwargs:
+            preserve_boot_volume = kwargs['preserveBootVolume']
+
         _setter("type", type)
         if preserve_boot_volume is not None:
             _setter("preserve_boot_volume", preserve_boot_volume)
@@ -12101,7 +13872,27 @@ class InstanceShapeConfigArgs:
              ocpus: Optional[pulumi.Input[float]] = None,
              processor_description: Optional[pulumi.Input[str]] = None,
              vcpus: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baselineOcpuUtilization' in kwargs:
+            baseline_ocpu_utilization = kwargs['baselineOcpuUtilization']
+        if 'gpuDescription' in kwargs:
+            gpu_description = kwargs['gpuDescription']
+        if 'localDiskDescription' in kwargs:
+            local_disk_description = kwargs['localDiskDescription']
+        if 'localDisks' in kwargs:
+            local_disks = kwargs['localDisks']
+        if 'localDisksTotalSizeInGbs' in kwargs:
+            local_disks_total_size_in_gbs = kwargs['localDisksTotalSizeInGbs']
+        if 'maxVnicAttachments' in kwargs:
+            max_vnic_attachments = kwargs['maxVnicAttachments']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         if baseline_ocpu_utilization is not None:
             _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if gpu_description is not None:
@@ -12325,7 +14116,21 @@ class InstanceSourceDetailsArgs:
              instance_source_image_filter_details: Optional[pulumi.Input['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']] = None,
              kms_key_id: Optional[pulumi.Input[str]] = None,
              source_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+        if 'bootVolumeVpusPerGb' in kwargs:
+            boot_volume_vpus_per_gb = kwargs['bootVolumeVpusPerGb']
+        if 'instanceSourceImageFilterDetails' in kwargs:
+            instance_source_image_filter_details = kwargs['instanceSourceImageFilterDetails']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+
         _setter("source_type", source_type)
         if boot_volume_size_in_gbs is not None:
             _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
@@ -12440,7 +14245,17 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
              defined_tags_filter: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              operating_system: Optional[pulumi.Input[str]] = None,
              operating_system_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTagsFilter' in kwargs:
+            defined_tags_filter = kwargs['definedTagsFilter']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+
         _setter("compartment_id", compartment_id)
         if defined_tags_filter is not None:
             _setter("defined_tags_filter", defined_tags_filter)
@@ -12553,7 +14368,21 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
              customer_interface_ip: Optional[pulumi.Input[str]] = None,
              oracle_bgp_asn: Optional[pulumi.Input[str]] = None,
              oracle_interface_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bgpIpv6state' in kwargs:
+            bgp_ipv6state = kwargs['bgpIpv6state']
+        if 'bgpState' in kwargs:
+            bgp_state = kwargs['bgpState']
+        if 'customerBgpAsn' in kwargs:
+            customer_bgp_asn = kwargs['customerBgpAsn']
+        if 'customerInterfaceIp' in kwargs:
+            customer_interface_ip = kwargs['customerInterfaceIp']
+        if 'oracleBgpAsn' in kwargs:
+            oracle_bgp_asn = kwargs['oracleBgpAsn']
+        if 'oracleInterfaceIp' in kwargs:
+            oracle_interface_ip = kwargs['oracleInterfaceIp']
+
         if bgp_ipv6state is not None:
             _setter("bgp_ipv6state", bgp_ipv6state)
         if bgp_state is not None:
@@ -12675,7 +14504,13 @@ class IpsecConnectionTunnelManagementDpdConfigArgs:
              _setter: Callable[[Any, Any], None],
              dpd_mode: Optional[pulumi.Input[str]] = None,
              dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dpdMode' in kwargs:
+            dpd_mode = kwargs['dpdMode']
+        if 'dpdTimeoutInSec' in kwargs:
+            dpd_timeout_in_sec = kwargs['dpdTimeoutInSec']
+
         if dpd_mode is not None:
             _setter("dpd_mode", dpd_mode)
         if dpd_timeout_in_sec is not None:
@@ -12719,7 +14554,13 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
              _setter: Callable[[Any, Any], None],
              cpe_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              oracle_traffic_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpeTrafficSelectors' in kwargs:
+            cpe_traffic_selectors = kwargs['cpeTrafficSelectors']
+        if 'oracleTrafficSelectors' in kwargs:
+            oracle_traffic_selectors = kwargs['oracleTrafficSelectors']
+
         if cpe_traffic_selectors is not None:
             _setter("cpe_traffic_selectors", cpe_traffic_selectors)
         if oracle_traffic_selectors is not None:
@@ -12792,7 +14633,29 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
              negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
              remaining_lifetime: Optional[pulumi.Input[str]] = None,
              remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customAuthenticationAlgorithm' in kwargs:
+            custom_authentication_algorithm = kwargs['customAuthenticationAlgorithm']
+        if 'customDhGroup' in kwargs:
+            custom_dh_group = kwargs['customDhGroup']
+        if 'customEncryptionAlgorithm' in kwargs:
+            custom_encryption_algorithm = kwargs['customEncryptionAlgorithm']
+        if 'isCustomPhaseOneConfig' in kwargs:
+            is_custom_phase_one_config = kwargs['isCustomPhaseOneConfig']
+        if 'isIkeEstablished' in kwargs:
+            is_ike_established = kwargs['isIkeEstablished']
+        if 'negotiatedAuthenticationAlgorithm' in kwargs:
+            negotiated_authentication_algorithm = kwargs['negotiatedAuthenticationAlgorithm']
+        if 'negotiatedDhGroup' in kwargs:
+            negotiated_dh_group = kwargs['negotiatedDhGroup']
+        if 'negotiatedEncryptionAlgorithm' in kwargs:
+            negotiated_encryption_algorithm = kwargs['negotiatedEncryptionAlgorithm']
+        if 'remainingLifetime' in kwargs:
+            remaining_lifetime = kwargs['remainingLifetime']
+        if 'remainingLifetimeLastRetrieved' in kwargs:
+            remaining_lifetime_last_retrieved = kwargs['remainingLifetimeLastRetrieved']
+
         if custom_authentication_algorithm is not None:
             _setter("custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_dh_group is not None:
@@ -12961,7 +14824,31 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
              negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
              remaining_lifetime: Optional[pulumi.Input[str]] = None,
              remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customAuthenticationAlgorithm' in kwargs:
+            custom_authentication_algorithm = kwargs['customAuthenticationAlgorithm']
+        if 'customEncryptionAlgorithm' in kwargs:
+            custom_encryption_algorithm = kwargs['customEncryptionAlgorithm']
+        if 'dhGroup' in kwargs:
+            dh_group = kwargs['dhGroup']
+        if 'isCustomPhaseTwoConfig' in kwargs:
+            is_custom_phase_two_config = kwargs['isCustomPhaseTwoConfig']
+        if 'isEspEstablished' in kwargs:
+            is_esp_established = kwargs['isEspEstablished']
+        if 'isPfsEnabled' in kwargs:
+            is_pfs_enabled = kwargs['isPfsEnabled']
+        if 'negotiatedAuthenticationAlgorithm' in kwargs:
+            negotiated_authentication_algorithm = kwargs['negotiatedAuthenticationAlgorithm']
+        if 'negotiatedDhGroup' in kwargs:
+            negotiated_dh_group = kwargs['negotiatedDhGroup']
+        if 'negotiatedEncryptionAlgorithm' in kwargs:
+            negotiated_encryption_algorithm = kwargs['negotiatedEncryptionAlgorithm']
+        if 'remainingLifetime' in kwargs:
+            remaining_lifetime = kwargs['remainingLifetime']
+        if 'remainingLifetimeLastRetrieved' in kwargs:
+            remaining_lifetime_last_retrieved = kwargs['remainingLifetimeLastRetrieved']
+
         if custom_authentication_algorithm is not None:
             _setter("custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_encryption_algorithm is not None:
@@ -13115,7 +15002,9 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -13160,7 +15049,13 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs']] = None,
              source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if destination_port_range is not None:
             _setter("destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -13208,7 +15103,9 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -13264,7 +15161,9 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -13312,7 +15211,13 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              destination_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs']] = None,
              source_port_range: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPortRange' in kwargs:
+            destination_port_range = kwargs['destinationPortRange']
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if destination_port_range is not None:
             _setter("destination_port_range", destination_port_range)
         if source_port_range is not None:
@@ -13360,7 +15265,9 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -13416,7 +15323,9 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -13494,7 +15403,17 @@ class RouteTableRouteRuleArgs:
              destination: Optional[pulumi.Input[str]] = None,
              destination_type: Optional[pulumi.Input[str]] = None,
              route_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEntityId' in kwargs:
+            network_entity_id = kwargs['networkEntityId']
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'routeType' in kwargs:
+            route_type = kwargs['routeType']
+
         _setter("network_entity_id", network_entity_id)
         if cidr_block is not None:
             warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
@@ -13649,7 +15568,17 @@ class SecurityListEgressSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("destination", destination)
         _setter("protocol", protocol)
         if description is not None:
@@ -13791,7 +15720,9 @@ class SecurityListEgressSecurityRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -13844,7 +15775,11 @@ class SecurityListEgressSecurityRuleTcpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -13908,7 +15843,9 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -13960,7 +15897,11 @@ class SecurityListEgressSecurityRuleUdpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -14024,7 +15965,9 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -14104,7 +16047,17 @@ class SecurityListIngressSecurityRuleArgs:
              stateless: Optional[pulumi.Input[bool]] = None,
              tcp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs']] = None,
              udp_options: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpOptions' in kwargs:
+            icmp_options = kwargs['icmpOptions']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'tcpOptions' in kwargs:
+            tcp_options = kwargs['tcpOptions']
+        if 'udpOptions' in kwargs:
+            udp_options = kwargs['udpOptions']
+
         _setter("protocol", protocol)
         _setter("source", source)
         if description is not None:
@@ -14244,7 +16197,9 @@ class SecurityListIngressSecurityRuleIcmpOptionsArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[int],
              code: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if code is not None:
             _setter("code", code)
@@ -14297,7 +16252,11 @@ class SecurityListIngressSecurityRuleTcpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -14361,7 +16320,9 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -14413,7 +16374,11 @@ class SecurityListIngressSecurityRuleUdpOptionsArgs:
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
              source_port_range: Optional[pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourcePortRange' in kwargs:
+            source_port_range = kwargs['sourcePortRange']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -14477,7 +16442,9 @@ class SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs:
              _setter: Callable[[Any, Any], None],
              max: pulumi.Input[int],
              min: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -14525,7 +16492,13 @@ class ServiceGatewayServiceArgs:
              _setter: Callable[[Any, Any], None],
              service_id: pulumi.Input[str],
              service_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceId' in kwargs:
+            service_id = kwargs['serviceId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("service_id", service_id)
         if service_name is not None:
             _setter("service_name", service_name)
@@ -14574,7 +16547,13 @@ class VcnByoipv6cidrDetailArgs:
              _setter: Callable[[Any, Any], None],
              byoipv6range_id: pulumi.Input[str],
              ipv6cidr_block: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'byoipv6rangeId' in kwargs:
+            byoipv6range_id = kwargs['byoipv6rangeId']
+        if 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+
         _setter("byoipv6range_id", byoipv6range_id)
         _setter("ipv6cidr_block", ipv6cidr_block)
 
@@ -14662,7 +16641,21 @@ class VirtualCircuitCrossConnectMappingArgs:
              oracle_bgp_peering_ip: Optional[pulumi.Input[str]] = None,
              oracle_bgp_peering_ipv6: Optional[pulumi.Input[str]] = None,
              vlan: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bgpMd5authKey' in kwargs:
+            bgp_md5auth_key = kwargs['bgpMd5authKey']
+        if 'crossConnectOrCrossConnectGroupId' in kwargs:
+            cross_connect_or_cross_connect_group_id = kwargs['crossConnectOrCrossConnectGroupId']
+        if 'customerBgpPeeringIp' in kwargs:
+            customer_bgp_peering_ip = kwargs['customerBgpPeeringIp']
+        if 'customerBgpPeeringIpv6' in kwargs:
+            customer_bgp_peering_ipv6 = kwargs['customerBgpPeeringIpv6']
+        if 'oracleBgpPeeringIp' in kwargs:
+            oracle_bgp_peering_ip = kwargs['oracleBgpPeeringIp']
+        if 'oracleBgpPeeringIpv6' in kwargs:
+            oracle_bgp_peering_ipv6 = kwargs['oracleBgpPeeringIpv6']
+
         if bgp_md5auth_key is not None:
             _setter("bgp_md5auth_key", bgp_md5auth_key)
         if cross_connect_or_cross_connect_group_id is not None:
@@ -14798,7 +16791,11 @@ class VirtualCircuitPublicPrefixArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              cidr_block: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+
         _setter("cidr_block", cidr_block)
 
     @property
@@ -14829,7 +16826,13 @@ class VirtualNetworkByoipv6cidrDetailArgs:
              _setter: Callable[[Any, Any], None],
              byoipv6range_id: pulumi.Input[str],
              ipv6cidr_block: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'byoipv6rangeId' in kwargs:
+            byoipv6range_id = kwargs['byoipv6rangeId']
+        if 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+
         _setter("byoipv6range_id", byoipv6range_id)
         _setter("ipv6cidr_block", ipv6cidr_block)
 
@@ -14947,7 +16950,35 @@ class VnicAttachmentCreateVnicDetailsArgs:
              skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vlan_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignIpv6ip' in kwargs:
+            assign_ipv6ip = kwargs['assignIpv6ip']
+        if 'assignPrivateDnsRecord' in kwargs:
+            assign_private_dns_record = kwargs['assignPrivateDnsRecord']
+        if 'assignPublicIp' in kwargs:
+            assign_public_ip = kwargs['assignPublicIp']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipv6addressIpv6subnetCidrPairDetails' in kwargs:
+            ipv6address_ipv6subnet_cidr_pair_details = kwargs['ipv6addressIpv6subnetCidrPairDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+
         if assign_ipv6ip is not None:
             _setter("assign_ipv6ip", assign_ipv6ip)
         if assign_private_dns_record is not None:
@@ -15179,7 +17210,13 @@ class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
              _setter: Callable[[Any, Any], None],
              ipv6_address: Optional[pulumi.Input[str]] = None,
              ipv6_subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipv6Address' in kwargs:
+            ipv6_address = kwargs['ipv6Address']
+        if 'ipv6SubnetCidr' in kwargs:
+            ipv6_subnet_cidr = kwargs['ipv6SubnetCidr']
+
         if ipv6_address is not None:
             _setter("ipv6_address", ipv6_address)
         if ipv6_subnet_cidr is not None:
@@ -15227,7 +17264,9 @@ class VolumeAttachmentMultipathDeviceArgs:
              ipv4: Optional[pulumi.Input[str]] = None,
              iqn: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if ipv4 is not None:
             _setter("ipv4", ipv4)
         if iqn is not None:
@@ -15291,7 +17330,13 @@ class VolumeAutotunePolicyArgs:
              _setter: Callable[[Any, Any], None],
              autotune_type: pulumi.Input[str],
              max_vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autotuneType' in kwargs:
+            autotune_type = kwargs['autotuneType']
+        if 'maxVpusPerGb' in kwargs:
+            max_vpus_per_gb = kwargs['maxVpusPerGb']
+
         _setter("autotune_type", autotune_type)
         if max_vpus_per_gb is not None:
             _setter("max_vpus_per_gb", max_vpus_per_gb)
@@ -15387,7 +17432,25 @@ class VolumeBackupPolicyScheduleArgs:
              offset_seconds: Optional[pulumi.Input[int]] = None,
              offset_type: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupType' in kwargs:
+            backup_type = kwargs['backupType']
+        if 'retentionSeconds' in kwargs:
+            retention_seconds = kwargs['retentionSeconds']
+        if 'dayOfMonth' in kwargs:
+            day_of_month = kwargs['dayOfMonth']
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'hourOfDay' in kwargs:
+            hour_of_day = kwargs['hourOfDay']
+        if 'offsetSeconds' in kwargs:
+            offset_seconds = kwargs['offsetSeconds']
+        if 'offsetType' in kwargs:
+            offset_type = kwargs['offsetType']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("backup_type", backup_type)
         _setter("period", period)
         _setter("retention_seconds", retention_seconds)
@@ -15569,7 +17632,13 @@ class VolumeBackupSourceDetailsArgs:
              region: pulumi.Input[str],
              volume_backup_id: pulumi.Input[str],
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'volumeBackupId' in kwargs:
+            volume_backup_id = kwargs['volumeBackupId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("region", region)
         _setter("volume_backup_id", volume_backup_id)
         if kms_key_id is not None:
@@ -15639,7 +17708,15 @@ class VolumeBlockVolumeReplicaArgs:
              availability_domain: pulumi.Input[str],
              block_volume_replica_id: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'blockVolumeReplicaId' in kwargs:
+            block_volume_replica_id = kwargs['blockVolumeReplicaId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("availability_domain", availability_domain)
         if block_volume_replica_id is not None:
             _setter("block_volume_replica_id", block_volume_replica_id)
@@ -15711,7 +17788,13 @@ class VolumeGroupBackupSourceDetailsArgs:
              region: pulumi.Input[str],
              volume_group_backup_id: pulumi.Input[str],
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'volumeGroupBackupId' in kwargs:
+            volume_group_backup_id = kwargs['volumeGroupBackupId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("region", region)
         _setter("volume_group_backup_id", volume_group_backup_id)
         if kms_key_id is not None:
@@ -15790,7 +17873,17 @@ class VolumeGroupSourceDetailsArgs:
              volume_group_id: Optional[pulumi.Input[str]] = None,
              volume_group_replica_id: Optional[pulumi.Input[str]] = None,
              volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'volumeGroupBackupId' in kwargs:
+            volume_group_backup_id = kwargs['volumeGroupBackupId']
+        if 'volumeGroupId' in kwargs:
+            volume_group_id = kwargs['volumeGroupId']
+        if 'volumeGroupReplicaId' in kwargs:
+            volume_group_replica_id = kwargs['volumeGroupReplicaId']
+        if 'volumeIds' in kwargs:
+            volume_ids = kwargs['volumeIds']
+
         _setter("type", type)
         if volume_group_backup_id is not None:
             _setter("volume_group_backup_id", volume_group_backup_id)
@@ -15889,7 +17982,15 @@ class VolumeGroupVolumeGroupReplicaArgs:
              availability_domain: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
              volume_group_replica_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'volumeGroupReplicaId' in kwargs:
+            volume_group_replica_id = kwargs['volumeGroupReplicaId']
+
         _setter("availability_domain", availability_domain)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -15956,7 +18057,9 @@ class VolumeSourceDetailsArgs:
              _setter: Callable[[Any, Any], None],
              id: pulumi.Input[str],
              type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -16003,7 +18106,9 @@ class GetAppCatalogListingResourceVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16055,7 +18160,9 @@ class GetAppCatalogListingsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16107,7 +18214,9 @@ class GetAppCatalogSubscriptionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16159,7 +18268,9 @@ class GetBlockVolumeReplicasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16211,7 +18322,9 @@ class GetBootVolumeAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16263,7 +18376,9 @@ class GetBootVolumeBackupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16315,7 +18430,9 @@ class GetBootVolumeReplicasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16367,7 +18484,9 @@ class GetBootVolumesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16419,7 +18538,9 @@ class GetByoipAllocatedRangesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16471,7 +18592,9 @@ class GetByoipRangesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16523,7 +18646,9 @@ class GetCaptureFiltersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16575,7 +18700,9 @@ class GetClusterNetworkInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16627,7 +18754,9 @@ class GetClusterNetworksFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16679,7 +18808,9 @@ class GetComputeCapacityReservationInstanceShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16731,7 +18862,9 @@ class GetComputeCapacityReservationInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16783,7 +18916,9 @@ class GetComputeCapacityReservationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16835,7 +18970,9 @@ class GetComputeClustersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16887,7 +19024,9 @@ class GetComputeGlobalImageCapabilitySchemasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16943,7 +19082,9 @@ class GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17004,7 +19145,9 @@ class GetComputeImageCapabilitySchemasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17059,7 +19202,9 @@ class GetConsoleHistoriesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17111,7 +19256,9 @@ class GetCpeDeviceShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17163,7 +19310,9 @@ class GetCpesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17215,7 +19364,9 @@ class GetCrossConnectGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17270,7 +19421,9 @@ class GetCrossConnectLocationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17328,7 +19481,9 @@ class GetCrossConnectPortSpeedShapeFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17383,7 +19538,9 @@ class GetCrossConnectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17435,7 +19592,9 @@ class GetDedicatedVmHostInstanceShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17487,7 +19646,9 @@ class GetDedicatedVmHostInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17539,7 +19700,9 @@ class GetDedicatedVmHostShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17591,7 +19754,9 @@ class GetDedicatedVmHostsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17643,7 +19808,9 @@ class GetDhcpOptionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17695,7 +19862,9 @@ class GetDrgAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17747,7 +19916,9 @@ class GetDrgRouteDistributionStatementsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17799,7 +19970,9 @@ class GetDrgRouteDistributionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17851,7 +20024,9 @@ class GetDrgRouteTableRouteRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17903,7 +20078,9 @@ class GetDrgRouteTablesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17955,7 +20132,9 @@ class GetDrgsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18007,7 +20186,9 @@ class GetFastConnectProviderServicesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18059,7 +20240,9 @@ class GetImageShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18111,7 +20294,9 @@ class GetImagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18166,7 +20351,9 @@ class GetInstanceConfigurationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18221,7 +20408,9 @@ class GetInstanceConsoleConnectionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18276,7 +20465,9 @@ class GetInstanceDevicesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18331,7 +20522,9 @@ class GetInstancePoolInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18383,7 +20576,9 @@ class GetInstancePoolsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18438,7 +20633,9 @@ class GetInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18493,7 +20690,9 @@ class GetInternetGatewaysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18545,7 +20744,9 @@ class GetIpsecConfigFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18597,7 +20798,9 @@ class GetIpsecConnectionTunnelRoutesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18649,7 +20852,9 @@ class GetIpsecConnectionTunnelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18701,7 +20906,9 @@ class GetIpsecConnectionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18753,7 +20960,9 @@ class GetIpsecStatusFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18805,7 +21014,9 @@ class GetIpv6sFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18857,7 +21068,9 @@ class GetListingResourceVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18909,7 +21122,9 @@ class GetLocalPeeringGatewaysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18961,7 +21176,9 @@ class GetNatGatewaysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19013,7 +21230,9 @@ class GetNetworkSecurityGroupSecurityRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19065,7 +21284,9 @@ class GetNetworkSecurityGroupVnicsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19117,7 +21338,9 @@ class GetNetworkSecurityGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19172,7 +21395,9 @@ class GetPeerRegionForRemotePeeringsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19227,7 +21452,9 @@ class GetPrivateIpsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19279,7 +21506,9 @@ class GetPublicIpPoolsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19331,7 +21560,9 @@ class GetPublicIpsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19383,7 +21614,9 @@ class GetRemotePeeringConnectionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19435,7 +21668,9 @@ class GetRouteTablesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19487,7 +21722,9 @@ class GetSecurityListsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19539,7 +21776,9 @@ class GetServiceGatewaysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19594,7 +21833,9 @@ class GetServicesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19649,7 +21890,9 @@ class GetShapeFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19704,7 +21947,9 @@ class GetShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19759,7 +22004,9 @@ class GetSubnetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19811,7 +22058,9 @@ class GetTunnelSecurityAssociationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19863,7 +22112,9 @@ class GetVcnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19915,7 +22166,9 @@ class GetVirtualCircuitAssociatedTunnelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19970,7 +22223,9 @@ class GetVirtualCircuitBandwidthShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20025,7 +22280,9 @@ class GetVirtualCircuitPublicPrefixesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20077,7 +22334,9 @@ class GetVirtualCircuitsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20129,7 +22388,9 @@ class GetVirtualNetworksFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20181,7 +22442,9 @@ class GetVlansFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20233,7 +22496,9 @@ class GetVnicAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20285,7 +22550,9 @@ class GetVolumeAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20337,7 +22604,9 @@ class GetVolumeBackupPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20389,7 +22658,9 @@ class GetVolumeBackupPolicyAssignmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20441,7 +22712,9 @@ class GetVolumeBackupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20493,7 +22766,9 @@ class GetVolumeGroupBackupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20545,7 +22820,9 @@ class GetVolumeGroupReplicasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20597,7 +22874,9 @@ class GetVolumeGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20649,7 +22928,9 @@ class GetVolumesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20701,7 +22982,9 @@ class GetVtapsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

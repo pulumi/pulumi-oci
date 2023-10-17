@@ -104,7 +104,47 @@ class MigrationArgs:
              include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
              source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'sourceDatabaseConnectionId' in kwargs:
+            source_database_connection_id = kwargs['sourceDatabaseConnectionId']
+        if 'targetDatabaseConnectionId' in kwargs:
+            target_database_connection_id = kwargs['targetDatabaseConnectionId']
+        if 'advisorSettings' in kwargs:
+            advisor_settings = kwargs['advisorSettings']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'csvText' in kwargs:
+            csv_text = kwargs['csvText']
+        if 'dataTransferMediumDetails' in kwargs:
+            data_transfer_medium_details = kwargs['dataTransferMediumDetails']
+        if 'dataTransferMediumDetailsV2' in kwargs:
+            data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
+        if 'datapumpSettings' in kwargs:
+            datapump_settings = kwargs['datapumpSettings']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dumpTransferDetails' in kwargs:
+            dump_transfer_details = kwargs['dumpTransferDetails']
+        if 'excludeObjects' in kwargs:
+            exclude_objects = kwargs['excludeObjects']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'goldenGateDetails' in kwargs:
+            golden_gate_details = kwargs['goldenGateDetails']
+        if 'goldenGateServiceDetails' in kwargs:
+            golden_gate_service_details = kwargs['goldenGateServiceDetails']
+        if 'includeObjects' in kwargs:
+            include_objects = kwargs['includeObjects']
+        if 'sourceContainerDatabaseConnectionId' in kwargs:
+            source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
+        if 'vaultDetails' in kwargs:
+            vault_details = kwargs['vaultDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("source_database_connection_id", source_database_connection_id)
         _setter("target_database_connection_id", target_database_connection_id)
@@ -507,7 +547,63 @@ class _MigrationState:
              type: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
              wait_after: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advisorSettings' in kwargs:
+            advisor_settings = kwargs['advisorSettings']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'credentialsSecretId' in kwargs:
+            credentials_secret_id = kwargs['credentialsSecretId']
+        if 'csvText' in kwargs:
+            csv_text = kwargs['csvText']
+        if 'dataTransferMediumDetails' in kwargs:
+            data_transfer_medium_details = kwargs['dataTransferMediumDetails']
+        if 'dataTransferMediumDetailsV2' in kwargs:
+            data_transfer_medium_details_v2 = kwargs['dataTransferMediumDetailsV2']
+        if 'datapumpSettings' in kwargs:
+            datapump_settings = kwargs['datapumpSettings']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dumpTransferDetails' in kwargs:
+            dump_transfer_details = kwargs['dumpTransferDetails']
+        if 'excludeObjects' in kwargs:
+            exclude_objects = kwargs['excludeObjects']
+        if 'executingJobId' in kwargs:
+            executing_job_id = kwargs['executingJobId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'goldenGateDetails' in kwargs:
+            golden_gate_details = kwargs['goldenGateDetails']
+        if 'goldenGateServiceDetails' in kwargs:
+            golden_gate_service_details = kwargs['goldenGateServiceDetails']
+        if 'includeObjects' in kwargs:
+            include_objects = kwargs['includeObjects']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'sourceContainerDatabaseConnectionId' in kwargs:
+            source_container_database_connection_id = kwargs['sourceContainerDatabaseConnectionId']
+        if 'sourceDatabaseConnectionId' in kwargs:
+            source_database_connection_id = kwargs['sourceDatabaseConnectionId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetDatabaseConnectionId' in kwargs:
+            target_database_connection_id = kwargs['targetDatabaseConnectionId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastMigration' in kwargs:
+            time_last_migration = kwargs['timeLastMigration']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vaultDetails' in kwargs:
+            vault_details = kwargs['vaultDetails']
+        if 'waitAfter' in kwargs:
+            wait_after = kwargs['waitAfter']
+
         if advisor_settings is not None:
             _setter("advisor_settings", advisor_settings)
         if agent_id is not None:

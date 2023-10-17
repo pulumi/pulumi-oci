@@ -37,7 +37,9 @@ class GetInstVbsInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -74,7 +76,9 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -153,7 +157,33 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              vbs_access_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'isResourceUsageAgreementGranted' in kwargs:
+            is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vbsAccessUrl' in kwargs:
+            vbs_access_url = kwargs['vbsAccessUrl']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)

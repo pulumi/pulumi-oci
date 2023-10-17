@@ -46,7 +46,19 @@ class OpaInstanceAttachmentArgs:
              target_instance_url: Optional[pulumi.Input[str]] = None,
              target_role: Optional[pulumi.Input[str]] = None,
              target_service_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
             _setter("is_implicit", is_implicit)
         if target_id is not None:
@@ -138,7 +150,9 @@ class GetOpaInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

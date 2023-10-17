@@ -37,7 +37,13 @@ class ExternalListenerArgs:
              _setter: Callable[[Any, Any], None],
              external_listener_id: pulumi.Input[str],
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalListenerId' in kwargs:
+            external_listener_id = kwargs['externalListenerId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+
         _setter("external_listener_id", external_listener_id)
         if external_connector_id is not None:
             _setter("external_connector_id", external_connector_id)
@@ -187,7 +193,53 @@ class _ExternalListenerState:
              time_updated: Optional[pulumi.Input[str]] = None,
              trace_directory: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbHomeId' in kwargs:
+            external_db_home_id = kwargs['externalDbHomeId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'externalListenerId' in kwargs:
+            external_listener_id = kwargs['externalListenerId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'listenerAlias' in kwargs:
+            listener_alias = kwargs['listenerAlias']
+        if 'listenerOraLocation' in kwargs:
+            listener_ora_location = kwargs['listenerOraLocation']
+        if 'listenerType' in kwargs:
+            listener_type = kwargs['listenerType']
+        if 'logDirectory' in kwargs:
+            log_directory = kwargs['logDirectory']
+        if 'oracleHome' in kwargs:
+            oracle_home = kwargs['oracleHome']
+        if 'servicedAsms' in kwargs:
+            serviced_asms = kwargs['servicedAsms']
+        if 'servicedDatabases' in kwargs:
+            serviced_databases = kwargs['servicedDatabases']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'traceDirectory' in kwargs:
+            trace_directory = kwargs['traceDirectory']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if adr_home_directory is not None:

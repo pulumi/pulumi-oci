@@ -39,7 +39,15 @@ class GenericArtifactArgs:
              artifact_id: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("artifact_id", artifact_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -151,7 +159,27 @@ class _GenericArtifactState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'artifactPath' in kwargs:
+            artifact_path = kwargs['artifactPath']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if artifact_id is not None:
             _setter("artifact_id", artifact_id)
         if artifact_path is not None:

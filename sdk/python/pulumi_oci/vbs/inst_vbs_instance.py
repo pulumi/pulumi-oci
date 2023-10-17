@@ -59,7 +59,23 @@ class InstVbsInstanceArgs:
              is_resource_usage_agreement_granted: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              resource_compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'isResourceUsageAgreementGranted' in kwargs:
+            is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -248,7 +264,33 @@ class _InstVbsInstanceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vbs_access_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'isResourceUsageAgreementGranted' in kwargs:
+            is_resource_usage_agreement_granted = kwargs['isResourceUsageAgreementGranted']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vbsAccessUrl' in kwargs:
+            vbs_access_url = kwargs['vbsAccessUrl']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

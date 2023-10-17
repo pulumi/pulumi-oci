@@ -42,7 +42,9 @@ class ManagementAgentManagementAgentPropertyArgs:
              name: Optional[pulumi.Input[str]] = None,
              units: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if units is not None:
@@ -126,7 +128,23 @@ class ManagementAgentPluginListArgs:
              plugin_status: Optional[pulumi.Input[str]] = None,
              plugin_status_message: Optional[pulumi.Input[str]] = None,
              plugin_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pluginDisplayName' in kwargs:
+            plugin_display_name = kwargs['pluginDisplayName']
+        if 'pluginId' in kwargs:
+            plugin_id = kwargs['pluginId']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'pluginStatus' in kwargs:
+            plugin_status = kwargs['pluginStatus']
+        if 'pluginStatusMessage' in kwargs:
+            plugin_status_message = kwargs['pluginStatusMessage']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
         if plugin_display_name is not None:
@@ -245,7 +263,9 @@ class GetManagementAgentAvailableHistoriesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -300,7 +320,9 @@ class GetManagementAgentImagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -355,7 +377,9 @@ class GetManagementAgentInstallKeysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -410,7 +434,9 @@ class GetManagementAgentPluginsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -469,7 +495,9 @@ class GetManagementAgentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

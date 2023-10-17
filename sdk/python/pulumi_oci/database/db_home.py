@@ -85,7 +85,31 @@ class DbHomeArgs:
              kms_key_version_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'enableDatabaseDelete' in kwargs:
+            enable_database_delete = kwargs['enableDatabaseDelete']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDesupportedVersion' in kwargs:
+            is_desupported_version = kwargs['isDesupportedVersion']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         if database is not None:
             _setter("database", database)
         if database_software_image_id is not None:
@@ -374,7 +398,41 @@ class _DbHomeState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if 'dbHomeLocation' in kwargs:
+            db_home_location = kwargs['dbHomeLocation']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'enableDatabaseDelete' in kwargs:
+            enable_database_delete = kwargs['enableDatabaseDelete']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDesupportedVersion' in kwargs:
+            is_desupported_version = kwargs['isDesupportedVersion']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'lastPatchHistoryEntryId' in kwargs:
+            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database is not None:

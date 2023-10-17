@@ -53,7 +53,15 @@ class UserArgs:
              email: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("description", description)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -226,7 +234,31 @@ class _UserState:
              previous_successful_login_time: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailVerified' in kwargs:
+            email_verified = kwargs['emailVerified']
+        if 'externalIdentifier' in kwargs:
+            external_identifier = kwargs['externalIdentifier']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'identityProviderId' in kwargs:
+            identity_provider_id = kwargs['identityProviderId']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'lastSuccessfulLoginTime' in kwargs:
+            last_successful_login_time = kwargs['lastSuccessfulLoginTime']
+        if 'previousSuccessfulLoginTime' in kwargs:
+            previous_successful_login_time = kwargs['previousSuccessfulLoginTime']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if capabilities is not None:
             _setter("capabilities", capabilities)
         if compartment_id is not None:

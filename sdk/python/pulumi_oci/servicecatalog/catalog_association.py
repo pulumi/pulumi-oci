@@ -39,7 +39,15 @@ class CatalogAssociationArgs:
              entity_id: pulumi.Input[str],
              service_catalog_id: pulumi.Input[str],
              entity_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'serviceCatalogId' in kwargs:
+            service_catalog_id = kwargs['serviceCatalogId']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
         _setter("entity_id", entity_id)
         _setter("service_catalog_id", service_catalog_id)
         if entity_type is not None:
@@ -118,7 +126,17 @@ class _CatalogAssociationState:
              entity_type: Optional[pulumi.Input[str]] = None,
              service_catalog_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'serviceCatalogId' in kwargs:
+            service_catalog_id = kwargs['serviceCatalogId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if entity_id is not None:
             _setter("entity_id", entity_id)
         if entity_type is not None:

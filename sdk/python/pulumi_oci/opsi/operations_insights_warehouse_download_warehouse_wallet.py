@@ -35,7 +35,13 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
              _setter: Callable[[Any, Any], None],
              operations_insights_warehouse_id: pulumi.Input[str],
              operations_insights_warehouse_wallet_password: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'operationsInsightsWarehouseWalletPassword' in kwargs:
+            operations_insights_warehouse_wallet_password = kwargs['operationsInsightsWarehouseWalletPassword']
+
         _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
         _setter("operations_insights_warehouse_wallet_password", operations_insights_warehouse_wallet_password)
 
@@ -92,7 +98,13 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
              _setter: Callable[[Any, Any], None],
              operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
              operations_insights_warehouse_wallet_password: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'operationsInsightsWarehouseWalletPassword' in kwargs:
+            operations_insights_warehouse_wallet_password = kwargs['operationsInsightsWarehouseWalletPassword']
+
         if operations_insights_warehouse_id is not None:
             _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
         if operations_insights_warehouse_wallet_password is not None:

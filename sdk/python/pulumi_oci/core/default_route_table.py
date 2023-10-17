@@ -43,7 +43,21 @@ class DefaultRouteTableArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              route_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultRouteTableRouteRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+
         _setter("manage_default_resource_id", manage_default_resource_id)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -147,7 +161,23 @@ class _DefaultRouteTableState:
              route_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultRouteTableRouteRuleArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

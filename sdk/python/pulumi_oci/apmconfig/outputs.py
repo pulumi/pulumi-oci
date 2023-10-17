@@ -64,7 +64,11 @@ class ConfigDimension(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         if name is not None:
             _setter("name", name)
         if value_source is not None:
@@ -135,7 +139,15 @@ class ConfigInUseBy(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              options_group: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'optionsGroup' in kwargs:
+            options_group = kwargs['optionsGroup']
+
         if config_type is not None:
             _setter("config_type", config_type)
         if display_name is not None:
@@ -222,7 +234,11 @@ class ConfigMetric(dict):
              name: Optional[str] = None,
              unit: Optional[str] = None,
              value_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         if description is not None:
             _setter("description", description)
         if name is not None:
@@ -335,7 +351,21 @@ class ConfigRule(dict):
              priority: Optional[int] = None,
              satisfied_response_time: Optional[int] = None,
              tolerating_response_time: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterText' in kwargs:
+            filter_text = kwargs['filterText']
+        if 'isApplyToErrorSpans' in kwargs:
+            is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'satisfiedResponseTime' in kwargs:
+            satisfied_response_time = kwargs['satisfiedResponseTime']
+        if 'toleratingResponseTime' in kwargs:
+            tolerating_response_time = kwargs['toleratingResponseTime']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if filter_text is not None:
@@ -431,7 +461,11 @@ class GetConfigDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         _setter("name", name)
         _setter("value_source", value_source)
 
@@ -479,7 +513,15 @@ class GetConfigInUseByResult(dict):
              display_name: str,
              id: str,
              options_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'optionsGroup' in kwargs:
+            options_group = kwargs['optionsGroup']
+
         _setter("config_type", config_type)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -545,7 +587,11 @@ class GetConfigMetricResult(dict):
              name: str,
              unit: str,
              value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         _setter("description", description)
         _setter("name", name)
         _setter("unit", unit)
@@ -623,7 +669,21 @@ class GetConfigRuleResult(dict):
              priority: int,
              satisfied_response_time: int,
              tolerating_response_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterText' in kwargs:
+            filter_text = kwargs['filterText']
+        if 'isApplyToErrorSpans' in kwargs:
+            is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'satisfiedResponseTime' in kwargs:
+            satisfied_response_time = kwargs['satisfiedResponseTime']
+        if 'toleratingResponseTime' in kwargs:
+            tolerating_response_time = kwargs['toleratingResponseTime']
+
         _setter("display_name", display_name)
         _setter("filter_text", filter_text)
         _setter("is_apply_to_error_spans", is_apply_to_error_spans)
@@ -701,7 +761,9 @@ class GetConfigsConfigCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -807,7 +869,35 @@ class GetConfigsConfigCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              updated_by: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterId' in kwargs:
+            filter_id = kwargs['filterId']
+        if 'filterText' in kwargs:
+            filter_text = kwargs['filterText']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inUseBies' in kwargs:
+            in_use_bies = kwargs['inUseBies']
+        if 'opcDryRun' in kwargs:
+            opc_dry_run = kwargs['opcDryRun']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("config_type", config_type)
         _setter("created_by", created_by)
@@ -1021,7 +1111,11 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         _setter("name", name)
         _setter("value_source", value_source)
 
@@ -1069,7 +1163,15 @@ class GetConfigsConfigCollectionItemInUseByResult(dict):
              display_name: str,
              id: str,
              options_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'optionsGroup' in kwargs:
+            options_group = kwargs['optionsGroup']
+
         _setter("config_type", config_type)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -1135,7 +1237,11 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
              name: str,
              unit: str,
              value_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         _setter("description", description)
         _setter("name", name)
         _setter("unit", unit)
@@ -1213,7 +1319,21 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
              priority: int,
              satisfied_response_time: int,
              tolerating_response_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterText' in kwargs:
+            filter_text = kwargs['filterText']
+        if 'isApplyToErrorSpans' in kwargs:
+            is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'satisfiedResponseTime' in kwargs:
+            satisfied_response_time = kwargs['satisfiedResponseTime']
+        if 'toleratingResponseTime' in kwargs:
+            tolerating_response_time = kwargs['toleratingResponseTime']
+
         _setter("display_name", display_name)
         _setter("filter_text", filter_text)
         _setter("is_apply_to_error_spans", is_apply_to_error_spans)
@@ -1300,7 +1420,9 @@ class GetConfigsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

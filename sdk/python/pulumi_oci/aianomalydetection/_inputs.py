@@ -118,7 +118,41 @@ class DataAssetDataSourceDetailsArgs:
              user_name: Optional[pulumi.Input[str]] = None,
              version_specific_details: Optional[pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs']] = None,
              wallet_password_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataSourceType' in kwargs:
+            data_source_type = kwargs['dataSourceType']
+        if 'atpPasswordSecretId' in kwargs:
+            atp_password_secret_id = kwargs['atpPasswordSecretId']
+        if 'atpUserName' in kwargs:
+            atp_user_name = kwargs['atpUserName']
+        if 'cwalletFileSecretId' in kwargs:
+            cwallet_file_secret_id = kwargs['cwalletFileSecretId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'ewalletFileSecretId' in kwargs:
+            ewallet_file_secret_id = kwargs['ewalletFileSecretId']
+        if 'keyStoreFileSecretId' in kwargs:
+            key_store_file_secret_id = kwargs['keyStoreFileSecretId']
+        if 'measurementName' in kwargs:
+            measurement_name = kwargs['measurementName']
+        if 'ojdbcFileSecretId' in kwargs:
+            ojdbc_file_secret_id = kwargs['ojdbcFileSecretId']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tnsnamesFileSecretId' in kwargs:
+            tnsnames_file_secret_id = kwargs['tnsnamesFileSecretId']
+        if 'truststoreFileSecretId' in kwargs:
+            truststore_file_secret_id = kwargs['truststoreFileSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'versionSpecificDetails' in kwargs:
+            version_specific_details = kwargs['versionSpecificDetails']
+        if 'walletPasswordSecretId' in kwargs:
+            wallet_password_secret_id = kwargs['walletPasswordSecretId']
+
         _setter("data_source_type", data_source_type)
         if atp_password_secret_id is not None:
             _setter("atp_password_secret_id", atp_password_secret_id)
@@ -431,7 +465,17 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
              database_name: Optional[pulumi.Input[str]] = None,
              organization_name: Optional[pulumi.Input[str]] = None,
              retention_policy_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'influxVersion' in kwargs:
+            influx_version = kwargs['influxVersion']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'organizationName' in kwargs:
+            organization_name = kwargs['organizationName']
+        if 'retentionPolicyName' in kwargs:
+            retention_policy_name = kwargs['retentionPolicyName']
+
         _setter("influx_version", influx_version)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -540,7 +584,17 @@ class DetectAnomalyJobInputDetailsArgs:
              message: Optional[pulumi.Input[str]] = None,
              object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]]] = None,
              signal_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'inputType' in kwargs:
+            input_type = kwargs['inputType']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if 'signalNames' in kwargs:
+            signal_names = kwargs['signalNames']
+
         _setter("input_type", input_type)
         if content is not None:
             _setter("content", content)
@@ -653,7 +707,9 @@ class DetectAnomalyJobInputDetailsDataArgs:
              _setter: Callable[[Any, Any], None],
              timestamp: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if timestamp is not None:
             _setter("timestamp", timestamp)
         if values is not None:
@@ -707,7 +763,9 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -779,7 +837,11 @@ class DetectAnomalyJobOutputDetailsArgs:
              namespace: pulumi.Input[str],
              output_type: pulumi.Input[str],
              prefix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'outputType' in kwargs:
+            output_type = kwargs['outputType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("output_type", output_type)
@@ -866,7 +928,19 @@ class ModelModelTrainingDetailsArgs:
              target_fap: Optional[pulumi.Input[float]] = None,
              training_fraction: Optional[pulumi.Input[float]] = None,
              window_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataAssetIds' in kwargs:
+            data_asset_ids = kwargs['dataAssetIds']
+        if 'algorithmHint' in kwargs:
+            algorithm_hint = kwargs['algorithmHint']
+        if 'targetFap' in kwargs:
+            target_fap = kwargs['targetFap']
+        if 'trainingFraction' in kwargs:
+            training_fraction = kwargs['trainingFraction']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
             _setter("algorithm_hint", algorithm_hint)
@@ -986,7 +1060,21 @@ class ModelModelTrainingResultArgs:
              signal_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]]] = None,
              warning: Optional[pulumi.Input[str]] = None,
              window_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTrainingGoalAchieved' in kwargs:
+            is_training_goal_achieved = kwargs['isTrainingGoalAchieved']
+        if 'maxInferenceSyncRows' in kwargs:
+            max_inference_sync_rows = kwargs['maxInferenceSyncRows']
+        if 'multivariateFap' in kwargs:
+            multivariate_fap = kwargs['multivariateFap']
+        if 'rowReductionDetails' in kwargs:
+            row_reduction_details = kwargs['rowReductionDetails']
+        if 'signalDetails' in kwargs:
+            signal_details = kwargs['signalDetails']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         if fap is not None:
             _setter("fap", fap)
         if is_training_goal_achieved is not None:
@@ -1145,7 +1233,15 @@ class ModelModelTrainingResultRowReductionDetailArgs:
              is_reduction_enabled: Optional[pulumi.Input[bool]] = None,
              reduction_method: Optional[pulumi.Input[str]] = None,
              reduction_percentage: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReductionEnabled' in kwargs:
+            is_reduction_enabled = kwargs['isReductionEnabled']
+        if 'reductionMethod' in kwargs:
+            reduction_method = kwargs['reductionMethod']
+        if 'reductionPercentage' in kwargs:
+            reduction_percentage = kwargs['reductionPercentage']
+
         if is_reduction_enabled is not None:
             _setter("is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
@@ -1242,7 +1338,15 @@ class ModelModelTrainingResultSignalDetailArgs:
              signal_name: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              std: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isQuantized' in kwargs:
+            is_quantized = kwargs['isQuantized']
+        if 'mviRatio' in kwargs:
+            mvi_ratio = kwargs['mviRatio']
+        if 'signalName' in kwargs:
+            signal_name = kwargs['signalName']
+
         if details is not None:
             _setter("details", details)
         if fap is not None:
@@ -1392,7 +1496,9 @@ class GetAiPrivateEndpointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1444,7 +1550,9 @@ class GetDetectAnomalyJobsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1496,7 +1604,9 @@ class GetDetectionDataAssetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1548,7 +1658,9 @@ class GetDetectionModelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1600,7 +1712,9 @@ class GetDetectionProjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -35,7 +35,15 @@ class ShapeManagementArgs:
              compartment_id: pulumi.Input[str],
              image_id: pulumi.Input[str],
              shape_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("compartment_id", compartment_id)
         _setter("image_id", image_id)
         _setter("shape_name", shape_name)
@@ -101,7 +109,15 @@ class _ShapeManagementState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              image_id: Optional[pulumi.Input[str]] = None,
              shape_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if image_id is not None:

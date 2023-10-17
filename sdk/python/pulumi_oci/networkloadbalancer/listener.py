@@ -51,7 +51,15 @@ class ListenerArgs:
              protocol: pulumi.Input[str],
              ip_version: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultBackendSetName' in kwargs:
+            default_backend_set_name = kwargs['defaultBackendSetName']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+
         _setter("default_backend_set_name", default_backend_set_name)
         _setter("network_load_balancer_id", network_load_balancer_id)
         _setter("port", port)
@@ -178,7 +186,15 @@ class _ListenerState:
              network_load_balancer_id: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultBackendSetName' in kwargs:
+            default_backend_set_name = kwargs['defaultBackendSetName']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+
         if default_backend_set_name is not None:
             _setter("default_backend_set_name", default_backend_set_name)
         if ip_version is not None:

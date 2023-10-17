@@ -59,7 +59,23 @@ class DedicatedVmHostArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              fault_domain: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dedicatedVmHostShape' in kwargs:
+            dedicated_vm_host_shape = kwargs['dedicatedVmHostShape']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("dedicated_vm_host_shape", dedicated_vm_host_shape)
@@ -237,7 +253,33 @@ class _DedicatedVmHostState:
              time_created: Optional[pulumi.Input[str]] = None,
              total_memory_in_gbs: Optional[pulumi.Input[float]] = None,
              total_ocpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dedicatedVmHostShape' in kwargs:
+            dedicated_vm_host_shape = kwargs['dedicatedVmHostShape']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'remainingMemoryInGbs' in kwargs:
+            remaining_memory_in_gbs = kwargs['remainingMemoryInGbs']
+        if 'remainingOcpus' in kwargs:
+            remaining_ocpus = kwargs['remainingOcpus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'totalMemoryInGbs' in kwargs:
+            total_memory_in_gbs = kwargs['totalMemoryInGbs']
+        if 'totalOcpus' in kwargs:
+            total_ocpus = kwargs['totalOcpus']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

@@ -72,7 +72,31 @@ class PipelineRunArgs:
              log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
              step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'pipelineId' in kwargs:
+            pipeline_id = kwargs['pipelineId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'configurationOverrideDetails' in kwargs:
+            configuration_override_details = kwargs['configurationOverrideDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'logConfigurationOverrideDetails' in kwargs:
+            log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
+        if 'stepOverrideDetails' in kwargs:
+            step_override_details = kwargs['stepOverrideDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("compartment_id", compartment_id)
         _setter("pipeline_id", pipeline_id)
         _setter("project_id", project_id)
@@ -326,7 +350,49 @@ class _PipelineRunState:
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if 'configurationOverrideDetails' in kwargs:
+            configuration_override_details = kwargs['configurationOverrideDetails']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logConfigurationOverrideDetails' in kwargs:
+            log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
+        if 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if 'pipelineId' in kwargs:
+            pipeline_id = kwargs['pipelineId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stepOverrideDetails' in kwargs:
+            step_override_details = kwargs['stepOverrideDetails']
+        if 'stepRuns' in kwargs:
+            step_runs = kwargs['stepRuns']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if configuration_details is not None:

@@ -44,6 +44,7 @@ export interface GetAutonomousVmClusterArgs {
  * A collection of values returned by getAutonomousVmCluster.
  */
 export interface GetAutonomousVmClusterResult {
+    readonly autonomousDataStoragePercentage: number;
     /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
      */
@@ -77,6 +78,7 @@ export interface GetAutonomousVmClusterResult {
      * The number of CPU cores enabled per VM cluster node.
      */
     readonly cpuCoreCountPerNode: number;
+    readonly cpuPercentage: number;
     /**
      * The number of enabled CPU cores.
      */
@@ -158,16 +160,20 @@ export interface GetAutonomousVmClusterResult {
      * The number of nodes in the Autonomous VM Cluster.
      */
     readonly nodeCount: number;
+    readonly nonProvisionableAutonomousContainerDatabases: number;
     /**
      * The number of enabled OCPU cores.
      */
     readonly ocpusEnabled: number;
+    readonly provisionedAutonomousContainerDatabases: number;
+    readonly provisionedCpus: number;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     readonly reclaimableCpus: number;
+    readonly reservedCpus: number;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
@@ -196,6 +202,7 @@ export interface GetAutonomousVmClusterResult {
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;
+    readonly totalAutonomousDataStorageInTbs: number;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */

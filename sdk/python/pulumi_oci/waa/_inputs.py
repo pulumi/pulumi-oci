@@ -42,7 +42,11 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+
         if is_response_header_based_caching_enabled is not None:
             _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
@@ -84,7 +88,11 @@ class AppAccelerationPolicyResponseCompressionPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compression: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gzipCompression' in kwargs:
+            gzip_compression = kwargs['gzipCompression']
+
         if gzip_compression is not None:
             _setter("gzip_compression", gzip_compression)
 
@@ -118,7 +126,11 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -155,7 +167,9 @@ class GetAppAccelerationPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -207,7 +221,9 @@ class GetAppAccelerationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -53,7 +53,19 @@ class MediaWorkflowArgs:
              media_workflow_configuration_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              parameters: Optional[pulumi.Input[str]] = None,
              tasks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowTaskArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mediaWorkflowConfigurationIds' in kwargs:
+            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -220,7 +232,27 @@ class _MediaWorkflowState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'mediaWorkflowConfigurationIds' in kwargs:
+            media_workflow_configuration_ids = kwargs['mediaWorkflowConfigurationIds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

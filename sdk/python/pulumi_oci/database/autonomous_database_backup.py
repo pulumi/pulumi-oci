@@ -49,7 +49,19 @@ class AutonomousDatabaseBackupArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              is_long_term_backup: Optional[pulumi.Input[bool]] = None,
              retention_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isLongTermBackup' in kwargs:
+            is_long_term_backup = kwargs['isLongTermBackup']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+
         _setter("autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:
             _setter("backup_destination_details", backup_destination_details)
@@ -229,7 +241,49 @@ class _AutonomousDatabaseBackupState:
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSizeInTbs' in kwargs:
+            database_size_in_tbs = kwargs['databaseSizeInTbs']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isAutomatic' in kwargs:
+            is_automatic = kwargs['isAutomatic']
+        if 'isLongTermBackup' in kwargs:
+            is_long_term_backup = kwargs['isLongTermBackup']
+        if 'isRestorable' in kwargs:
+            is_restorable = kwargs['isRestorable']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if 'sizeInTbs' in kwargs:
+            size_in_tbs = kwargs['sizeInTbs']
+        if 'timeAvailableTill' in kwargs:
+            time_available_till = kwargs['timeAvailableTill']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if autonomous_database_id is not None:
             _setter("autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:

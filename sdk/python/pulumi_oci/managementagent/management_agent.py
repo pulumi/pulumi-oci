@@ -48,7 +48,19 @@ class ManagementAgentArgs:
              deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedAgentId' in kwargs:
+            managed_agent_id = kwargs['managedAgentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployPluginsIds' in kwargs:
+            deploy_plugins_ids = kwargs['deployPluginsIds']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("managed_agent_id", managed_agent_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -242,7 +254,55 @@ class _ManagementAgentState:
              time_last_heartbeat: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityStatus' in kwargs:
+            availability_status = kwargs['availabilityStatus']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployPluginsIds' in kwargs:
+            deploy_plugins_ids = kwargs['deployPluginsIds']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostId' in kwargs:
+            host_id = kwargs['hostId']
+        if 'installKeyId' in kwargs:
+            install_key_id = kwargs['installKeyId']
+        if 'installPath' in kwargs:
+            install_path = kwargs['installPath']
+        if 'installType' in kwargs:
+            install_type = kwargs['installType']
+        if 'isAgentAutoUpgradable' in kwargs:
+            is_agent_auto_upgradable = kwargs['isAgentAutoUpgradable']
+        if 'isCustomerDeployed' in kwargs:
+            is_customer_deployed = kwargs['isCustomerDeployed']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedAgentId' in kwargs:
+            managed_agent_id = kwargs['managedAgentId']
+        if 'managementAgentProperties' in kwargs:
+            management_agent_properties = kwargs['managementAgentProperties']
+        if 'platformName' in kwargs:
+            platform_name = kwargs['platformName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'pluginLists' in kwargs:
+            plugin_lists = kwargs['pluginLists']
+        if 'resourceArtifactVersion' in kwargs:
+            resource_artifact_version = kwargs['resourceArtifactVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastHeartbeat' in kwargs:
+            time_last_heartbeat = kwargs['timeLastHeartbeat']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if availability_status is not None:
             _setter("availability_status", availability_status)
         if compartment_id is not None:

@@ -117,7 +117,21 @@ class ExportExportOption(dict):
              identity_squash: Optional[str] = None,
              is_anonymous_access_allowed: Optional[bool] = None,
              require_privileged_source_port: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedAuths' in kwargs:
+            allowed_auths = kwargs['allowedAuths']
+        if 'anonymousGid' in kwargs:
+            anonymous_gid = kwargs['anonymousGid']
+        if 'anonymousUid' in kwargs:
+            anonymous_uid = kwargs['anonymousUid']
+        if 'identitySquash' in kwargs:
+            identity_squash = kwargs['identitySquash']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'requirePrivilegedSourcePort' in kwargs:
+            require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
+
         _setter("source", source)
         if access is not None:
             _setter("access", access)
@@ -243,7 +257,13 @@ class FileSystemSourceDetail(dict):
              _setter: Callable[[Any, Any], None],
              parent_file_system_id: Optional[str] = None,
              source_snapshot_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parentFileSystemId' in kwargs:
+            parent_file_system_id = kwargs['parentFileSystemId']
+        if 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+
         if parent_file_system_id is not None:
             _setter("parent_file_system_id", parent_file_system_id)
         if source_snapshot_id is not None:
@@ -346,7 +366,23 @@ class FilesystemSnapshotPolicySchedule(dict):
              retention_duration_in_seconds: Optional[str] = None,
              schedule_prefix: Optional[str] = None,
              time_schedule_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'dayOfMonth' in kwargs:
+            day_of_month = kwargs['dayOfMonth']
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'hourOfDay' in kwargs:
+            hour_of_day = kwargs['hourOfDay']
+        if 'retentionDurationInSeconds' in kwargs:
+            retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
+        if 'schedulePrefix' in kwargs:
+            schedule_prefix = kwargs['schedulePrefix']
+        if 'timeScheduleStart' in kwargs:
+            time_schedule_start = kwargs['timeScheduleStart']
+
         _setter("period", period)
         _setter("time_zone", time_zone)
         if day_of_month is not None:
@@ -493,7 +529,19 @@ class MountTargetKerberos(dict):
              current_key_tab_secret_version: Optional[int] = None,
              is_kerberos_enabled: Optional[bool] = None,
              key_tab_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kerberosRealm' in kwargs:
+            kerberos_realm = kwargs['kerberosRealm']
+        if 'backupKeyTabSecretVersion' in kwargs:
+            backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
+        if 'currentKeyTabSecretVersion' in kwargs:
+            current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
+        if 'isKerberosEnabled' in kwargs:
+            is_kerberos_enabled = kwargs['isKerberosEnabled']
+        if 'keyTabSecretId' in kwargs:
+            key_tab_secret_id = kwargs['keyTabSecretId']
+
         _setter("kerberos_realm", kerberos_realm)
         if backup_key_tab_secret_version is not None:
             _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
@@ -619,7 +667,25 @@ class MountTargetLdapIdmap(dict):
              outbound_connector2id: Optional[str] = None,
              schema_type: Optional[str] = None,
              user_search_base: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheLifetimeSeconds' in kwargs:
+            cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
+        if 'cacheRefreshIntervalSeconds' in kwargs:
+            cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
+        if 'groupSearchBase' in kwargs:
+            group_search_base = kwargs['groupSearchBase']
+        if 'negativeCacheLifetimeSeconds' in kwargs:
+            negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
+        if 'outboundConnector1id' in kwargs:
+            outbound_connector1id = kwargs['outboundConnector1id']
+        if 'outboundConnector2id' in kwargs:
+            outbound_connector2id = kwargs['outboundConnector2id']
+        if 'schemaType' in kwargs:
+            schema_type = kwargs['schemaType']
+        if 'userSearchBase' in kwargs:
+            user_search_base = kwargs['userSearchBase']
+
         if cache_lifetime_seconds is not None:
             _setter("cache_lifetime_seconds", cache_lifetime_seconds)
         if cache_refresh_interval_seconds is not None:
@@ -721,7 +787,9 @@ class OutboundConnectorEndpoint(dict):
              _setter: Callable[[Any, Any], None],
              hostname: str,
              port: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("port", port)
 
@@ -792,7 +860,25 @@ class GetExportSetsExportSetResult(dict):
              state: str,
              time_created: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'maxFsStatBytes' in kwargs:
+            max_fs_stat_bytes = kwargs['maxFsStatBytes']
+        if 'maxFsStatFiles' in kwargs:
+            max_fs_stat_files = kwargs['maxFsStatFiles']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -900,7 +986,9 @@ class GetExportSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -965,7 +1053,19 @@ class GetExportsExportResult(dict):
              path: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exportOptions' in kwargs:
+            export_options = kwargs['exportOptions']
+        if 'exportSetId' in kwargs:
+            export_set_id = kwargs['exportSetId']
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'isIdmapGroupsForSysAuth' in kwargs:
+            is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("export_options", export_options)
         _setter("export_set_id", export_set_id)
         _setter("file_system_id", file_system_id)
@@ -1083,7 +1183,21 @@ class GetExportsExportExportOptionResult(dict):
              is_anonymous_access_allowed: bool,
              require_privileged_source_port: bool,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedAuths' in kwargs:
+            allowed_auths = kwargs['allowedAuths']
+        if 'anonymousGid' in kwargs:
+            anonymous_gid = kwargs['anonymousGid']
+        if 'anonymousUid' in kwargs:
+            anonymous_uid = kwargs['anonymousUid']
+        if 'identitySquash' in kwargs:
+            identity_squash = kwargs['identitySquash']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'requirePrivilegedSourcePort' in kwargs:
+            require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
+
         _setter("access", access)
         _setter("allowed_auths", allowed_auths)
         _setter("anonymous_gid", anonymous_gid)
@@ -1176,7 +1290,9 @@ class GetExportsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1281,7 +1397,41 @@ class GetFileSystemsFileSystemResult(dict):
              source_snapshot_id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filesystemSnapshotPolicyId' in kwargs:
+            filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCloneParent' in kwargs:
+            is_clone_parent = kwargs['isCloneParent']
+        if 'isHydrated' in kwargs:
+            is_hydrated = kwargs['isHydrated']
+        if 'isTargetable' in kwargs:
+            is_targetable = kwargs['isTargetable']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'meteredBytes' in kwargs:
+            metered_bytes = kwargs['meteredBytes']
+        if 'replicationTargetId' in kwargs:
+            replication_target_id = kwargs['replicationTargetId']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1465,7 +1615,13 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              parent_file_system_id: str,
              source_snapshot_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parentFileSystemId' in kwargs:
+            parent_file_system_id = kwargs['parentFileSystemId']
+        if 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+
         _setter("parent_file_system_id", parent_file_system_id)
         _setter("source_snapshot_id", source_snapshot_id)
 
@@ -1504,7 +1660,9 @@ class GetFileSystemsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1577,7 +1735,23 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
              schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'policyPrefix' in kwargs:
+            policy_prefix = kwargs['policyPrefix']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1717,7 +1891,23 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult(dict):
              schedule_prefix: str,
              time_schedule_start: str,
              time_zone: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dayOfMonth' in kwargs:
+            day_of_month = kwargs['dayOfMonth']
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'hourOfDay' in kwargs:
+            hour_of_day = kwargs['hourOfDay']
+        if 'retentionDurationInSeconds' in kwargs:
+            retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
+        if 'schedulePrefix' in kwargs:
+            schedule_prefix = kwargs['schedulePrefix']
+        if 'timeScheduleStart' in kwargs:
+            time_schedule_start = kwargs['timeScheduleStart']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("day_of_month", day_of_month)
         _setter("day_of_week", day_of_week)
         _setter("hour_of_day", hour_of_day)
@@ -1819,7 +2009,9 @@ class GetFilesystemSnapshotPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1888,7 +2080,23 @@ class GetFilesystemSnapshotPolicyScheduleResult(dict):
              schedule_prefix: str,
              time_schedule_start: str,
              time_zone: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dayOfMonth' in kwargs:
+            day_of_month = kwargs['dayOfMonth']
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'hourOfDay' in kwargs:
+            hour_of_day = kwargs['hourOfDay']
+        if 'retentionDurationInSeconds' in kwargs:
+            retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
+        if 'schedulePrefix' in kwargs:
+            schedule_prefix = kwargs['schedulePrefix']
+        if 'timeScheduleStart' in kwargs:
+            time_schedule_start = kwargs['timeScheduleStart']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("day_of_month", day_of_month)
         _setter("day_of_week", day_of_week)
         _setter("hour_of_day", hour_of_day)
@@ -1990,7 +2198,9 @@ class GetMountTargetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2093,7 +2303,39 @@ class GetMountTargetsMountTargetResult(dict):
              state: str,
              subnet_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exportSetId' in kwargs:
+            export_set_id = kwargs['exportSetId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'idmapType' in kwargs:
+            idmap_type = kwargs['idmapType']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ldapIdmaps' in kwargs:
+            ldap_idmaps = kwargs['ldapIdmaps']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIpIds' in kwargs:
+            private_ip_ids = kwargs['privateIpIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2283,7 +2525,19 @@ class GetMountTargetsMountTargetKerberoResult(dict):
              is_kerberos_enabled: bool,
              kerberos_realm: str,
              key_tab_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupKeyTabSecretVersion' in kwargs:
+            backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
+        if 'currentKeyTabSecretVersion' in kwargs:
+            current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
+        if 'isKerberosEnabled' in kwargs:
+            is_kerberos_enabled = kwargs['isKerberosEnabled']
+        if 'kerberosRealm' in kwargs:
+            kerberos_realm = kwargs['kerberosRealm']
+        if 'keyTabSecretId' in kwargs:
+            key_tab_secret_id = kwargs['keyTabSecretId']
+
         _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
         _setter("current_key_tab_secret_version", current_key_tab_secret_version)
         _setter("is_kerberos_enabled", is_kerberos_enabled)
@@ -2374,7 +2628,25 @@ class GetMountTargetsMountTargetLdapIdmapResult(dict):
              outbound_connector2id: str,
              schema_type: str,
              user_search_base: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheLifetimeSeconds' in kwargs:
+            cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
+        if 'cacheRefreshIntervalSeconds' in kwargs:
+            cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
+        if 'groupSearchBase' in kwargs:
+            group_search_base = kwargs['groupSearchBase']
+        if 'negativeCacheLifetimeSeconds' in kwargs:
+            negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
+        if 'outboundConnector1id' in kwargs:
+            outbound_connector1id = kwargs['outboundConnector1id']
+        if 'outboundConnector2id' in kwargs:
+            outbound_connector2id = kwargs['outboundConnector2id']
+        if 'schemaType' in kwargs:
+            schema_type = kwargs['schemaType']
+        if 'userSearchBase' in kwargs:
+            user_search_base = kwargs['userSearchBase']
+
         _setter("cache_lifetime_seconds", cache_lifetime_seconds)
         _setter("cache_refresh_interval_seconds", cache_refresh_interval_seconds)
         _setter("group_search_base", group_search_base)
@@ -2468,7 +2740,9 @@ class GetOutboundConnectorEndpointResult(dict):
              _setter: Callable[[Any, Any], None],
              hostname: str,
              port: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("port", port)
 
@@ -2507,7 +2781,9 @@ class GetOutboundConnectorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2592,7 +2868,29 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
              password_secret_version: int,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'bindDistinguishedName' in kwargs:
+            bind_distinguished_name = kwargs['bindDistinguishedName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'passwordSecretVersion' in kwargs:
+            password_secret_version = kwargs['passwordSecretVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("bind_distinguished_name", bind_distinguished_name)
         _setter("compartment_id", compartment_id)
@@ -2731,7 +3029,9 @@ class GetOutboundConnectorsOutboundConnectorEndpointResult(dict):
              _setter: Callable[[Any, Any], None],
              hostname: str,
              port: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("port", port)
 
@@ -2770,7 +3070,9 @@ class GetReplicationTargetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2867,7 +3169,37 @@ class GetReplicationTargetsReplicationTargetResult(dict):
              state: str,
              target_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deltaProgress' in kwargs:
+            delta_progress = kwargs['deltaProgress']
+        if 'deltaStatus' in kwargs:
+            delta_status = kwargs['deltaStatus']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastSnapshotId' in kwargs:
+            last_snapshot_id = kwargs['lastSnapshotId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'recoveryPointTime' in kwargs:
+            recovery_point_time = kwargs['recoveryPointTime']
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3032,7 +3364,9 @@ class GetReplicationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3133,7 +3467,39 @@ class GetReplicationsReplicationResult(dict):
              state: str,
              target_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deltaProgress' in kwargs:
+            delta_progress = kwargs['deltaProgress']
+        if 'deltaStatus' in kwargs:
+            delta_status = kwargs['deltaStatus']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastSnapshotId' in kwargs:
+            last_snapshot_id = kwargs['lastSnapshotId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'recoveryPointTime' in kwargs:
+            recovery_point_time = kwargs['recoveryPointTime']
+        if 'replicationInterval' in kwargs:
+            replication_interval = kwargs['replicationInterval']
+        if 'replicationTargetId' in kwargs:
+            replication_target_id = kwargs['replicationTargetId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3310,7 +3676,9 @@ class GetSnapshotsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3405,7 +3773,31 @@ class GetSnapshotsSnapshotResult(dict):
              snapshot_type: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'expirationTime' in kwargs:
+            expiration_time = kwargs['expirationTime']
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'filesystemSnapshotPolicyId' in kwargs:
+            filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCloneSource' in kwargs:
+            is_clone_source = kwargs['isCloneSource']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'provenanceId' in kwargs:
+            provenance_id = kwargs['provenanceId']
+        if 'snapshotTime' in kwargs:
+            snapshot_time = kwargs['snapshotTime']
+        if 'snapshotType' in kwargs:
+            snapshot_type = kwargs['snapshotType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("defined_tags", defined_tags)
         _setter("expiration_time", expiration_time)
         _setter("file_system_id", file_system_id)

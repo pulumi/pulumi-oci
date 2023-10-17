@@ -35,7 +35,13 @@ class FusionEnvironmentDataMaskingActivityArgs:
              _setter: Callable[[Any, Any], None],
              fusion_environment_id: pulumi.Input[str],
              is_resume_data_masking: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'isResumeDataMasking' in kwargs:
+            is_resume_data_masking = kwargs['isResumeDataMasking']
+
         _setter("fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:
             _setter("is_resume_data_masking", is_resume_data_masking)
@@ -105,7 +111,17 @@ class _FusionEnvironmentDataMaskingActivityState:
              state: Optional[pulumi.Input[str]] = None,
              time_masking_finish: Optional[pulumi.Input[str]] = None,
              time_masking_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'isResumeDataMasking' in kwargs:
+            is_resume_data_masking = kwargs['isResumeDataMasking']
+        if 'timeMaskingFinish' in kwargs:
+            time_masking_finish = kwargs['timeMaskingFinish']
+        if 'timeMaskingStart' in kwargs:
+            time_masking_start = kwargs['timeMaskingStart']
+
         if fusion_environment_id is not None:
             _setter("fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:

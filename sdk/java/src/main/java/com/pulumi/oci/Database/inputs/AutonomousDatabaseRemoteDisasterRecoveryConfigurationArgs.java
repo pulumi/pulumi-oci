@@ -16,14 +16,14 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs ext
     public static final AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs Empty = new AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs();
 
     /**
-     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Import(name="disasterRecoveryType")
     private @Nullable Output<String> disasterRecoveryType;
 
     /**
-     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Optional<Output<String>> disasterRecoveryType() {
@@ -55,7 +55,7 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs ext
         }
 
         /**
-         * @param disasterRecoveryType Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * @param disasterRecoveryType Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs ext
         }
 
         /**
-         * @param disasterRecoveryType Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * @param disasterRecoveryType Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
          * 

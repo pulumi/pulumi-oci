@@ -71,7 +71,31 @@ class PipelineArgs:
              infrastructure_configuration_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']] = None,
              log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
              step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stepDetails' in kwargs:
+            step_details = kwargs['stepDetails']
+        if 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedPipelineRuns' in kwargs:
+            delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureConfigurationDetails' in kwargs:
+            infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
+        if 'logConfigurationDetails' in kwargs:
+            log_configuration_details = kwargs['logConfigurationDetails']
+        if 'stepArtifact' in kwargs:
+            step_artifact = kwargs['stepArtifact']
+
         _setter("compartment_id", compartment_id)
         _setter("project_id", project_id)
         _setter("step_details", step_details)
@@ -315,7 +339,41 @@ class _PipelineState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedPipelineRuns' in kwargs:
+            delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureConfigurationDetails' in kwargs:
+            infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logConfigurationDetails' in kwargs:
+            log_configuration_details = kwargs['logConfigurationDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stepArtifact' in kwargs:
+            step_artifact = kwargs['stepArtifact']
+        if 'stepDetails' in kwargs:
+            step_details = kwargs['stepDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if configuration_details is not None:

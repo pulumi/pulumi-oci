@@ -65,7 +65,21 @@ class VirtualDeploymentArgs:
              listeners: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+        if 'accessLogging' in kwargs:
+            access_logging = kwargs['accessLogging']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'serviceDiscovery' in kwargs:
+            service_discovery = kwargs['serviceDiscovery']
+
         _setter("compartment_id", compartment_id)
         _setter("virtual_service_id", virtual_service_id)
         if access_logging is not None:
@@ -268,7 +282,29 @@ class _VirtualDeploymentState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_service_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogging' in kwargs:
+            access_logging = kwargs['accessLogging']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'serviceDiscovery' in kwargs:
+            service_discovery = kwargs['serviceDiscovery']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         if access_logging is not None:
             _setter("access_logging", access_logging)
         if compartment_id is not None:

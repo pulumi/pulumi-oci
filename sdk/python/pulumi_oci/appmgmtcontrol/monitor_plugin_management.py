@@ -31,7 +31,11 @@ class MonitorPluginManagementArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              monitored_instance_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'monitoredInstanceId' in kwargs:
+            monitored_instance_id = kwargs['monitoredInstanceId']
+
         _setter("monitored_instance_id", monitored_instance_id)
 
     @property
@@ -86,7 +90,19 @@ class _MonitorPluginManagementState:
              monitored_instance_id: Optional[pulumi.Input[str]] = None,
              monitored_instance_management_agent_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'monitoredInstanceDescription' in kwargs:
+            monitored_instance_description = kwargs['monitoredInstanceDescription']
+        if 'monitoredInstanceDisplayName' in kwargs:
+            monitored_instance_display_name = kwargs['monitoredInstanceDisplayName']
+        if 'monitoredInstanceId' in kwargs:
+            monitored_instance_id = kwargs['monitoredInstanceId']
+        if 'monitoredInstanceManagementAgentId' in kwargs:
+            monitored_instance_management_agent_id = kwargs['monitoredInstanceManagementAgentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if monitored_instance_description is not None:

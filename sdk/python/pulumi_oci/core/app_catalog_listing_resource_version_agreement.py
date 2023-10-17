@@ -31,7 +31,13 @@ class AppCatalogListingResourceVersionAgreementArgs:
              _setter: Callable[[Any, Any], None],
              listing_id: pulumi.Input[str],
              listing_resource_version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'listingResourceVersion' in kwargs:
+            listing_resource_version = kwargs['listingResourceVersion']
+
         _setter("listing_id", listing_id)
         _setter("listing_resource_version", listing_resource_version)
 
@@ -96,7 +102,19 @@ class _AppCatalogListingResourceVersionAgreementState:
              oracle_terms_of_use_link: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              time_retrieved: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eulaLink' in kwargs:
+            eula_link = kwargs['eulaLink']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'listingResourceVersion' in kwargs:
+            listing_resource_version = kwargs['listingResourceVersion']
+        if 'oracleTermsOfUseLink' in kwargs:
+            oracle_terms_of_use_link = kwargs['oracleTermsOfUseLink']
+        if 'timeRetrieved' in kwargs:
+            time_retrieved = kwargs['timeRetrieved']
+
         if eula_link is not None:
             _setter("eula_link", eula_link)
         if listing_id is not None:

@@ -73,7 +73,29 @@ class AppFirewallPolicyArgs:
              response_access_control: Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']] = None,
              response_protection: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'requestAccessControl' in kwargs:
+            request_access_control = kwargs['requestAccessControl']
+        if 'requestProtection' in kwargs:
+            request_protection = kwargs['requestProtection']
+        if 'requestRateLimiting' in kwargs:
+            request_rate_limiting = kwargs['requestRateLimiting']
+        if 'responseAccessControl' in kwargs:
+            response_access_control = kwargs['responseAccessControl']
+        if 'responseProtection' in kwargs:
+            response_protection = kwargs['responseProtection']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("compartment_id", compartment_id)
         if actions is not None:
             _setter("actions", actions)
@@ -309,7 +331,35 @@ class _AppFirewallPolicyState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'requestAccessControl' in kwargs:
+            request_access_control = kwargs['requestAccessControl']
+        if 'requestProtection' in kwargs:
+            request_protection = kwargs['requestProtection']
+        if 'requestRateLimiting' in kwargs:
+            request_rate_limiting = kwargs['requestRateLimiting']
+        if 'responseAccessControl' in kwargs:
+            response_access_control = kwargs['responseAccessControl']
+        if 'responseProtection' in kwargs:
+            response_protection = kwargs['responseProtection']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if actions is not None:
             _setter("actions", actions)
         if compartment_id is not None:

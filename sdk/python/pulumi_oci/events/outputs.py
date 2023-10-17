@@ -36,7 +36,9 @@ class RuleActions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              actions: Sequence['outputs.RuleActionsAction'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
 
     @property
@@ -129,7 +131,21 @@ class RuleActionsAction(dict):
              state: Optional[str] = None,
              stream_id: Optional[str] = None,
              topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("action_type", action_type)
         _setter("is_enabled", is_enabled)
         if description is not None:
@@ -242,7 +258,9 @@ class GetRuleActionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              actions: Sequence['outputs.GetRuleActionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
 
     @property
@@ -304,7 +322,21 @@ class GetRuleActionActionResult(dict):
              state: str,
              stream_id: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("action_type", action_type)
         _setter("description", description)
         _setter("function_id", function_id)
@@ -409,7 +441,9 @@ class GetRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -491,7 +525,23 @@ class GetRulesRuleResult(dict):
              lifecycle_message: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
         _setter("condition", condition)
@@ -618,7 +668,9 @@ class GetRulesRuleActionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              actions: Sequence['outputs.GetRulesRuleActionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
 
     @property
@@ -680,7 +732,21 @@ class GetRulesRuleActionActionResult(dict):
              state: str,
              stream_id: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("action_type", action_type)
         _setter("description", description)
         _setter("function_id", function_id)

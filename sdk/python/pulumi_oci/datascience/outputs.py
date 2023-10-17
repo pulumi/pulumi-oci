@@ -220,7 +220,17 @@ class JobJobConfigurationDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("job_type", job_type)
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
@@ -318,7 +328,19 @@ class JobJobInfrastructureConfigurationDetails(dict):
              shape_name: str,
              job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("job_infrastructure_type", job_infrastructure_type)
         _setter("shape_name", shape_name)
@@ -404,7 +426,11 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -477,7 +503,17 @@ class JobJobLogConfigurationDetails(dict):
              enable_logging: Optional[bool] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
             _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -570,7 +606,17 @@ class JobRunJobConfigurationOverrideDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("job_type", job_type)
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
@@ -668,7 +714,19 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
              job_shape_config_details: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']] = None,
              shape_name: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if block_storage_size_in_gbs is not None:
             _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
@@ -757,7 +815,11 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -830,7 +892,17 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
              enable_logging: Optional[bool] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
             _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -911,7 +983,13 @@ class JobRunLogDetail(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if log_group_id is not None:
             _setter("log_group_id", log_group_id)
         if log_id is not None:
@@ -969,7 +1047,9 @@ class ModelCustomMetadataList(dict):
              description: Optional[str] = None,
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if category is not None:
             _setter("category", category)
         if description is not None:
@@ -1055,7 +1135,9 @@ class ModelDefinedMetadataList(dict):
              description: Optional[str] = None,
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if category is not None:
             _setter("category", category)
         if description is not None:
@@ -1125,7 +1207,9 @@ class ModelDeploymentCategoryLogDetails(dict):
              _setter: Callable[[Any, Any], None],
              access: Optional['outputs.ModelDeploymentCategoryLogDetailsAccess'] = None,
              predict: Optional['outputs.ModelDeploymentCategoryLogDetailsPredict'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if access is not None:
             _setter("access", access)
         if predict is not None:
@@ -1186,7 +1270,13 @@ class ModelDeploymentCategoryLogDetailsAccess(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -1245,7 +1335,13 @@ class ModelDeploymentCategoryLogDetailsPredict(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -1310,7 +1406,15 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
              deployment_type: str,
              model_configuration_details: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails',
              environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+        if 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+
         _setter("deployment_type", deployment_type)
         _setter("model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
@@ -1409,7 +1513,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
              image: Optional[str] = None,
              image_digest: Optional[str] = None,
              server_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+
         _setter("environment_configuration_type", environment_configuration_type)
         if cmds is not None:
             _setter("cmds", cmds)
@@ -1541,7 +1657,17 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
              model_id: str,
              bandwidth_mbps: Optional[int] = None,
              scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceConfiguration' in kwargs:
+            instance_configuration = kwargs['instanceConfiguration']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if 'scalingPolicy' in kwargs:
+            scaling_policy = kwargs['scalingPolicy']
+
         _setter("instance_configuration", instance_configuration)
         _setter("model_id", model_id)
         if bandwidth_mbps is not None:
@@ -1620,7 +1746,13 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
              _setter: Callable[[Any, Any], None],
              instance_shape_name: str,
              model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+
         _setter("instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
@@ -1678,7 +1810,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1739,7 +1875,13 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
              _setter: Callable[[Any, Any], None],
              instance_count: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("instance_count", instance_count)
         _setter("policy_type", policy_type)
 
@@ -1814,7 +1956,17 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
              notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails'] = None,
              private_endpoint_id: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("shape", shape)
         if block_storage_size_in_gbs is not None:
             _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -1902,7 +2054,11 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1979,7 +2135,17 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
              block_storage_size_in_gbs: Optional[int] = None,
              notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None,
              private_endpoint_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("shape", shape)
         _setter("subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
@@ -2066,7 +2232,11 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2127,7 +2297,13 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
              _setter: Callable[[Any, Any], None],
              custom_environment_variables: Optional[Mapping[str, Any]] = None,
              notebook_session_git_config_details: Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+
         if custom_environment_variables is not None:
             _setter("custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
@@ -2182,7 +2358,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
     def _configure(
              _setter: Callable[[Any, Any], None],
              notebook_session_git_repo_config_collections: Optional[Sequence['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+
         if notebook_session_git_repo_config_collections is not None:
             _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
@@ -2210,7 +2390,9 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
     def _configure(
              _setter: Callable[[Any, Any], None],
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("url", url)
 
     @property
@@ -2270,7 +2452,15 @@ class PipelineConfigurationDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("type", type)
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
@@ -2356,7 +2546,15 @@ class PipelineInfrastructureConfigurationDetails(dict):
              block_storage_size_in_gbs: int,
              shape_name: str,
              shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_name", shape_name)
         if shape_config_details is not None:
@@ -2423,7 +2621,11 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2496,7 +2698,17 @@ class PipelineLogConfigurationDetails(dict):
              enable_logging: Optional[bool] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
             _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2587,7 +2799,15 @@ class PipelineRunConfigurationDetail(dict):
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2678,7 +2898,15 @@ class PipelineRunConfigurationOverrideDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("type", type)
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
@@ -2770,7 +2998,17 @@ class PipelineRunLogConfigurationOverrideDetails(dict):
              enable_logging: Optional[bool] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
             _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2851,7 +3089,13 @@ class PipelineRunLogDetail(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if log_group_id is not None:
             _setter("log_group_id", log_group_id)
         if log_id is not None:
@@ -2912,7 +3156,13 @@ class PipelineRunStepOverrideDetail(dict):
              _setter: Callable[[Any, Any], None],
              step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
              step_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+
         _setter("step_configuration_details", step_configuration_details)
         _setter("step_name", step_name)
 
@@ -2977,7 +3227,15 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -3076,7 +3334,21 @@ class PipelineRunStepRun(dict):
              step_type: Optional[str] = None,
              time_finished: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if job_run_id is not None:
             _setter("job_run_id", job_run_id)
         if lifecycle_details is not None:
@@ -3206,7 +3478,21 @@ class PipelineStepArtifact(dict):
              artifact_content_disposition: Optional[str] = None,
              artifact_content_md5: Optional[str] = None,
              artifact_last_modified: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+
         _setter("artifact_content_length", artifact_content_length)
         _setter("pipeline_step_artifact", pipeline_step_artifact)
         _setter("step_name", step_name)
@@ -3327,7 +3613,23 @@ class PipelineStepDetail(dict):
              job_id: Optional[str] = None,
              step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
              step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+
         _setter("step_name", step_name)
         _setter("step_type", step_type)
         if depends_ons is not None:
@@ -3456,7 +3758,15 @@ class PipelineStepDetailStepConfigurationDetails(dict):
              command_line_arguments: Optional[str] = None,
              environment_variables: Optional[Mapping[str, Any]] = None,
              maximum_runtime_in_minutes: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
             _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -3533,7 +3843,15 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
              block_storage_size_in_gbs: int,
              shape_name: str,
              shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_name", shape_name)
         if shape_config_details is not None:
@@ -3600,7 +3918,11 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -3658,7 +3980,19 @@ class GetFastLaunchJobConfigsFastLaunchJobConfigResult(dict):
              name: str,
              shape_name: str,
              shape_series: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if 'managedEgressSupport' in kwargs:
+            managed_egress_support = kwargs['managedEgressSupport']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+
         _setter("core_count", core_count)
         _setter("managed_egress_support", managed_egress_support)
         _setter("memory_in_gbs", memory_in_gbs)
@@ -3736,7 +4070,9 @@ class GetFastLaunchJobConfigsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3788,7 +4124,17 @@ class GetJobJobConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              job_type: str,
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("job_type", job_type)
@@ -3858,7 +4204,19 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
              job_shape_config_details: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
              shape_name: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("job_infrastructure_type", job_infrastructure_type)
         _setter("job_shape_config_details", job_shape_config_details)
@@ -3925,7 +4283,11 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -3973,7 +4335,17 @@ class GetJobJobLogConfigurationDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -4039,7 +4411,17 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
              environment_variables: Mapping[str, Any],
              job_type: str,
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("job_type", job_type)
@@ -4109,7 +4491,19 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
              job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
              shape_name: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("job_infrastructure_type", job_infrastructure_type)
         _setter("job_shape_config_details", job_shape_config_details)
@@ -4176,7 +4570,11 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -4224,7 +4622,17 @@ class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -4282,7 +4690,13 @@ class GetJobRunLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -4321,7 +4735,9 @@ class GetJobRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4425,7 +4841,39 @@ class GetJobRunsJobRunResult(dict):
              time_accepted: str,
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobConfigurationOverrideDetails' in kwargs:
+            job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if 'jobLogConfigurationOverrideDetails' in kwargs:
+            job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("asynchronous", asynchronous)
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
@@ -4614,7 +5062,17 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
              environment_variables: Mapping[str, Any],
              job_type: str,
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("job_type", job_type)
@@ -4684,7 +5142,19 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
              job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
              shape_name: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("job_infrastructure_type", job_infrastructure_type)
         _setter("job_shape_config_details", job_shape_config_details)
@@ -4751,7 +5221,11 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -4799,7 +5273,17 @@ class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -4857,7 +5341,13 @@ class GetJobRunsJobRunLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -4899,7 +5389,9 @@ class GetJobShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4951,7 +5443,15 @@ class GetJobShapesJobShapeResult(dict):
              memory_in_gbs: int,
              name: str,
              shape_series: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+
         _setter("core_count", core_count)
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("name", name)
@@ -5008,7 +5508,9 @@ class GetJobsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5118,7 +5620,45 @@ class GetJobsJobResult(dict):
              project_id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'emptyArtifact' in kwargs:
+            empty_artifact = kwargs['emptyArtifact']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobArtifact' in kwargs:
+            job_artifact = kwargs['jobArtifact']
+        if 'jobConfigurationDetails' in kwargs:
+            job_configuration_details = kwargs['jobConfigurationDetails']
+        if 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if 'jobLogConfigurationDetails' in kwargs:
+            job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("artifact_content_disposition", artifact_content_disposition)
         _setter("artifact_content_length", artifact_content_length)
         _setter("artifact_content_md5", artifact_content_md5)
@@ -5316,7 +5856,17 @@ class GetJobsJobJobConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              job_type: str,
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("job_type", job_type)
@@ -5386,7 +5936,19 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
              job_shape_config_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
              shape_name: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("job_infrastructure_type", job_infrastructure_type)
         _setter("job_shape_config_details", job_shape_config_details)
@@ -5453,7 +6015,11 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -5501,7 +6067,17 @@ class GetJobsJobJobLogConfigurationDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -5573,7 +6149,9 @@ class GetModelCustomMetadataListResult(dict):
              description: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("description", description)
         _setter("key", key)
@@ -5651,7 +6229,9 @@ class GetModelDefinedMetadataListResult(dict):
              description: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("description", description)
         _setter("key", key)
@@ -5715,7 +6295,9 @@ class GetModelDeploymentCategoryLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              accesses: Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult'],
              predicts: Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accesses", accesses)
         _setter("predicts", predicts)
 
@@ -5755,7 +6337,13 @@ class GetModelDeploymentCategoryLogDetailAccessResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -5795,7 +6383,13 @@ class GetModelDeploymentCategoryLogDetailPredictResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -5839,7 +6433,15 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
              deployment_type: str,
              environment_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
              model_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+        if 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+
         _setter("deployment_type", deployment_type)
         _setter("environment_configuration_details", environment_configuration_details)
         _setter("model_configuration_details", model_configuration_details)
@@ -5912,7 +6514,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
              image: str,
              image_digest: str,
              server_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+
         _setter("cmds", cmds)
         _setter("entrypoints", entrypoints)
         _setter("environment_configuration_type", environment_configuration_type)
@@ -6014,7 +6628,17 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
              instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
              model_id: str,
              scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if 'instanceConfigurations' in kwargs:
+            instance_configurations = kwargs['instanceConfigurations']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'scalingPolicies' in kwargs:
+            scaling_policies = kwargs['scalingPolicies']
+
         _setter("bandwidth_mbps", bandwidth_mbps)
         _setter("instance_configurations", instance_configurations)
         _setter("model_id", model_id)
@@ -6072,7 +6696,13 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
              _setter: Callable[[Any, Any], None],
              instance_shape_name: str,
              model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+
         _setter("instance_shape_name", instance_shape_name)
         _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
@@ -6112,7 +6742,11 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -6152,7 +6786,13 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
              _setter: Callable[[Any, Any], None],
              instance_count: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("instance_count", instance_count)
         _setter("policy_type", policy_type)
 
@@ -6194,7 +6834,9 @@ class GetModelDeploymentShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6246,7 +6888,15 @@ class GetModelDeploymentShapesModelDeploymentShapeResult(dict):
              memory_in_gbs: int,
              name: str,
              shape_series: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+
         _setter("core_count", core_count)
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("name", name)
@@ -6303,7 +6953,9 @@ class GetModelDeploymentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6392,7 +7044,31 @@ class GetModelDeploymentsModelDeploymentResult(dict):
              project_id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryLogDetails' in kwargs:
+            category_log_details = kwargs['categoryLogDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelDeploymentConfigurationDetails' in kwargs:
+            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
+        if 'modelDeploymentUrl' in kwargs:
+            model_deployment_url = kwargs['modelDeploymentUrl']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("category_log_details", category_log_details)
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
@@ -6540,7 +7216,9 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              accesses: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult'],
              predicts: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accesses", accesses)
         _setter("predicts", predicts)
 
@@ -6580,7 +7258,13 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -6620,7 +7304,13 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -6664,7 +7354,15 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
              deployment_type: str,
              environment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
              model_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+        if 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+
         _setter("deployment_type", deployment_type)
         _setter("environment_configuration_details", environment_configuration_details)
         _setter("model_configuration_details", model_configuration_details)
@@ -6737,7 +7435,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
              image: str,
              image_digest: str,
              server_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+
         _setter("cmds", cmds)
         _setter("entrypoints", entrypoints)
         _setter("environment_configuration_type", environment_configuration_type)
@@ -6839,7 +7549,17 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
              instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
              model_id: str,
              scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if 'instanceConfigurations' in kwargs:
+            instance_configurations = kwargs['instanceConfigurations']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'scalingPolicies' in kwargs:
+            scaling_policies = kwargs['scalingPolicies']
+
         _setter("bandwidth_mbps", bandwidth_mbps)
         _setter("instance_configurations", instance_configurations)
         _setter("model_id", model_id)
@@ -6897,7 +7617,13 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
              _setter: Callable[[Any, Any], None],
              instance_shape_name: str,
              model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+
         _setter("instance_shape_name", instance_shape_name)
         _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
@@ -6937,7 +7663,11 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -6977,7 +7707,13 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
              _setter: Callable[[Any, Any], None],
              instance_count: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("instance_count", instance_count)
         _setter("policy_type", policy_type)
 
@@ -7019,7 +7755,9 @@ class GetModelVersionSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7099,7 +7837,23 @@ class GetModelVersionSetsModelVersionSetResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("defined_tags", defined_tags)
@@ -7219,7 +7973,9 @@ class GetModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7326,7 +8082,43 @@ class GetModelsModelResult(dict):
              project_id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'customMetadataLists' in kwargs:
+            custom_metadata_lists = kwargs['customMetadataLists']
+        if 'definedMetadataLists' in kwargs:
+            defined_metadata_lists = kwargs['definedMetadataLists']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'emptyModel' in kwargs:
+            empty_model = kwargs['emptyModel']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inputSchema' in kwargs:
+            input_schema = kwargs['inputSchema']
+        if 'modelArtifact' in kwargs:
+            model_artifact = kwargs['modelArtifact']
+        if 'outputSchema' in kwargs:
+            output_schema = kwargs['outputSchema']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("artifact_content_disposition", artifact_content_disposition)
         _setter("artifact_content_length", artifact_content_length)
         _setter("artifact_content_md5", artifact_content_md5)
@@ -7524,7 +8316,9 @@ class GetModelsModelCustomMetadataListResult(dict):
              description: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("description", description)
         _setter("key", key)
@@ -7602,7 +8396,9 @@ class GetModelsModelDefinedMetadataListResult(dict):
              description: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("description", description)
         _setter("key", key)
@@ -7678,7 +8474,17 @@ class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
              private_endpoint_id: str,
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -7745,7 +8551,11 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -7797,7 +8607,17 @@ class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
              private_endpoint_id: str,
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -7864,7 +8684,11 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -7904,7 +8728,13 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              custom_environment_variables: Mapping[str, Any],
              notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+
         _setter("custom_environment_variables", custom_environment_variables)
         _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
@@ -7940,7 +8770,11 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
     def _configure(
              _setter: Callable[[Any, Any], None],
              notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+
         _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
@@ -7967,7 +8801,9 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
     def _configure(
              _setter: Callable[[Any, Any], None],
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("url", url)
 
     @property
@@ -8000,7 +8836,9 @@ class GetNotebookSessionShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8052,7 +8890,15 @@ class GetNotebookSessionShapesNotebookSessionShapeResult(dict):
              memory_in_gbs: int,
              name: str,
              shape_series: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+
         _setter("core_count", core_count)
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("name", name)
@@ -8109,7 +8955,9 @@ class GetNotebookSessionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8198,7 +9046,33 @@ class GetNotebookSessionsNotebookSessionResult(dict):
              project_id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if 'notebookSessionUrl' in kwargs:
+            notebook_session_url = kwargs['notebookSessionUrl']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("defined_tags", defined_tags)
@@ -8358,7 +9232,17 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
              private_endpoint_id: str,
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -8425,7 +9309,11 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -8477,7 +9365,17 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult
              private_endpoint_id: str,
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -8544,7 +9442,11 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -8584,7 +9486,13 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult
              _setter: Callable[[Any, Any], None],
              custom_environment_variables: Mapping[str, Any],
              notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+
         _setter("custom_environment_variables", custom_environment_variables)
         _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
@@ -8620,7 +9528,11 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
     def _configure(
              _setter: Callable[[Any, Any], None],
              notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+
         _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
@@ -8647,7 +9559,9 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
     def _configure(
              _setter: Callable[[Any, Any], None],
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("url", url)
 
     @property
@@ -8686,7 +9600,15 @@ class GetPipelineConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -8748,7 +9670,15 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
              block_storage_size_in_gbs: int,
              shape_config_details: Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_config_details", shape_config_details)
         _setter("shape_name", shape_name)
@@ -8797,7 +9727,11 @@ class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -8845,7 +9779,17 @@ class GetPipelineLogConfigurationDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -8911,7 +9855,15 @@ class GetPipelineRunConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -8977,7 +9929,15 @@ class GetPipelineRunConfigurationOverrideDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -9043,7 +10003,17 @@ class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -9101,7 +10071,13 @@ class GetPipelineRunLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -9141,7 +10117,13 @@ class GetPipelineRunStepOverrideDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
              step_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+
         _setter("step_configuration_details", step_configuration_details)
         _setter("step_name", step_name)
 
@@ -9185,7 +10167,15 @@ class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
              command_line_arguments: str,
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -9254,7 +10244,21 @@ class GetPipelineRunStepRunResult(dict):
              step_type: str,
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("job_run_id", job_run_id)
         _setter("lifecycle_details", lifecycle_details)
         _setter("state", state)
@@ -9338,7 +10342,9 @@ class GetPipelineRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9458,7 +10464,49 @@ class GetPipelineRunsPipelineRunResult(dict):
              time_finished: str,
              time_started: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if 'configurationOverrideDetails' in kwargs:
+            configuration_override_details = kwargs['configurationOverrideDetails']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logConfigurationOverrideDetails' in kwargs:
+            log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
+        if 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if 'pipelineId' in kwargs:
+            pipeline_id = kwargs['pipelineId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stepOverrideDetails' in kwargs:
+            step_override_details = kwargs['stepOverrideDetails']
+        if 'stepRuns' in kwargs:
+            step_runs = kwargs['stepRuns']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("configuration_details", configuration_details)
         _setter("configuration_override_details", configuration_override_details)
@@ -9683,7 +10731,15 @@ class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -9749,7 +10805,15 @@ class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -9815,7 +10879,17 @@ class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -9873,7 +10947,13 @@ class GetPipelineRunsPipelineRunLogDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -9913,7 +10993,13 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
              step_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+
         _setter("step_configuration_details", step_configuration_details)
         _setter("step_name", step_name)
 
@@ -9957,7 +11043,15 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(
              command_line_arguments: str,
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -10026,7 +11120,21 @@ class GetPipelineRunsPipelineRunStepRunResult(dict):
              step_type: str,
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("job_run_id", job_run_id)
         _setter("lifecycle_details", lifecycle_details)
         _setter("state", state)
@@ -10122,7 +11230,21 @@ class GetPipelineStepArtifactResult(dict):
              artifact_last_modified: str,
              pipeline_step_artifact: str,
              step_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+
         _setter("artifact_content_disposition", artifact_content_disposition)
         _setter("artifact_content_length", artifact_content_length)
         _setter("artifact_content_md5", artifact_content_md5)
@@ -10207,7 +11329,23 @@ class GetPipelineStepDetailResult(dict):
              step_infrastructure_configuration_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
              step_name: str,
              step_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+
         _setter("depends_ons", depends_ons)
         _setter("description", description)
         _setter("is_artifact_uploaded", is_artifact_uploaded)
@@ -10305,7 +11443,15 @@ class GetPipelineStepDetailStepConfigurationDetailResult(dict):
              command_line_arguments: str,
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -10358,7 +11504,15 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
              block_storage_size_in_gbs: int,
              shape_config_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_config_details", shape_config_details)
         _setter("shape_name", shape_name)
@@ -10407,7 +11561,11 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetai
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -10446,7 +11604,9 @@ class GetPipelinesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -10553,7 +11713,41 @@ class GetPipelinesPipelineResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedPipelineRuns' in kwargs:
+            delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureConfigurationDetails' in kwargs:
+            infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logConfigurationDetails' in kwargs:
+            log_configuration_details = kwargs['logConfigurationDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stepArtifacts' in kwargs:
+            step_artifacts = kwargs['stepArtifacts']
+        if 'stepDetails' in kwargs:
+            step_details = kwargs['stepDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("configuration_details", configuration_details)
         _setter("created_by", created_by)
@@ -10748,7 +11942,15 @@ class GetPipelinesPipelineConfigurationDetailResult(dict):
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -10810,7 +12012,15 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
              block_storage_size_in_gbs: int,
              shape_config_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_config_details", shape_config_details)
         _setter("shape_name", shape_name)
@@ -10859,7 +12069,11 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResu
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -10907,7 +12121,17 @@ class GetPipelinesPipelineLogConfigurationDetailResult(dict):
              enable_logging: bool,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("enable_auto_log_creation", enable_auto_log_creation)
         _setter("enable_logging", enable_logging)
         _setter("log_group_id", log_group_id)
@@ -10976,7 +12200,21 @@ class GetPipelinesPipelineStepArtifactResult(dict):
              artifact_last_modified: str,
              pipeline_step_artifact: str,
              step_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+
         _setter("artifact_content_disposition", artifact_content_disposition)
         _setter("artifact_content_length", artifact_content_length)
         _setter("artifact_content_md5", artifact_content_md5)
@@ -11061,7 +12299,23 @@ class GetPipelinesPipelineStepDetailResult(dict):
              step_infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
              step_name: str,
              step_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+        if 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+
         _setter("depends_ons", depends_ons)
         _setter("description", description)
         _setter("is_artifact_uploaded", is_artifact_uploaded)
@@ -11159,7 +12413,15 @@ class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
              command_line_arguments: str,
              environment_variables: Mapping[str, Any],
              maximum_runtime_in_minutes: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         _setter("command_line_arguments", command_line_arguments)
         _setter("environment_variables", environment_variables)
         _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
@@ -11212,7 +12474,15 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
              block_storage_size_in_gbs: int,
              shape_config_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         _setter("shape_config_details", shape_config_details)
         _setter("shape_name", shape_name)
@@ -11261,7 +12531,11 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeCo
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -11356,7 +12630,33 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'dataScienceResourceType' in kwargs:
+            data_science_resource_type = kwargs['dataScienceResourceType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subDomain' in kwargs:
+            sub_domain = kwargs['subDomain']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("data_science_resource_type", data_science_resource_type)
@@ -11518,7 +12818,9 @@ class GetPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11558,7 +12860,9 @@ class GetProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11627,7 +12931,21 @@ class GetProjectsProjectResult(dict):
              id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("defined_tags", defined_tags)

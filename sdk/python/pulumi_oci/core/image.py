@@ -56,7 +56,23 @@ class ImageArgs:
              image_source_details: Optional[pulumi.Input['ImageImageSourceDetailsArgs']] = None,
              instance_id: Optional[pulumi.Input[str]] = None,
              launch_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageSourceDetails' in kwargs:
+            image_source_details = kwargs['imageSourceDetails']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'launchMode' in kwargs:
+            launch_mode = kwargs['launchMode']
+
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -244,7 +260,43 @@ class _ImageState:
              size_in_mbs: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentFeatures' in kwargs:
+            agent_features = kwargs['agentFeatures']
+        if 'baseImageId' in kwargs:
+            base_image_id = kwargs['baseImageId']
+        if 'billableSizeInGbs' in kwargs:
+            billable_size_in_gbs = kwargs['billableSizeInGbs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createImageAllowed' in kwargs:
+            create_image_allowed = kwargs['createImageAllowed']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageSourceDetails' in kwargs:
+            image_source_details = kwargs['imageSourceDetails']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'launchMode' in kwargs:
+            launch_mode = kwargs['launchMode']
+        if 'launchOptions' in kwargs:
+            launch_options = kwargs['launchOptions']
+        if 'listingType' in kwargs:
+            listing_type = kwargs['listingType']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if agent_features is not None:
             _setter("agent_features", agent_features)
         if base_image_id is not None:

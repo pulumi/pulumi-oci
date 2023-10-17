@@ -37,7 +37,13 @@ class OdaInstanceRestrictedOperationArgs:
              _setter: Callable[[Any, Any], None],
              operation_name: Optional[pulumi.Input[str]] = None,
              restricting_service: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'restrictingService' in kwargs:
+            restricting_service = kwargs['restrictingService']
+
         if operation_name is not None:
             _setter("operation_name", operation_name)
         if restricting_service is not None:
@@ -91,7 +97,15 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
              scan_listener_fqdn: Optional[pulumi.Input[str]] = None,
              scan_listener_ip: Optional[pulumi.Input[str]] = None,
              scan_listener_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanListenerFqdn' in kwargs:
+            scan_listener_fqdn = kwargs['scanListenerFqdn']
+        if 'scanListenerIp' in kwargs:
+            scan_listener_ip = kwargs['scanListenerIp']
+        if 'scanListenerPort' in kwargs:
+            scan_listener_port = kwargs['scanListenerPort']
+
         if scan_listener_fqdn is not None:
             _setter("scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
@@ -154,7 +168,9 @@ class GetOdaInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -206,7 +222,9 @@ class GetOdaPrivateEndpointAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -258,7 +276,9 @@ class GetOdaPrivateEndpointScanProxiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -310,7 +330,9 @@ class GetOdaPrivateEndpointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

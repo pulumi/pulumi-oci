@@ -41,7 +41,17 @@ class ManagedInstanceManagementArgs:
              child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementChildSoftwareSourceArgs']]]] = None,
              managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementManagedInstanceGroupArgs']]]] = None,
              parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'childSoftwareSources' in kwargs:
+            child_software_sources = kwargs['childSoftwareSources']
+        if 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if 'parentSoftwareSource' in kwargs:
+            parent_software_source = kwargs['parentSoftwareSource']
+
         _setter("managed_instance_id", managed_instance_id)
         if child_software_sources is not None:
             _setter("child_software_sources", child_software_sources)
@@ -167,7 +177,33 @@ class _ManagedInstanceManagementState:
              parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
              status: Optional[pulumi.Input[str]] = None,
              updates_available: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'childSoftwareSources' in kwargs:
+            child_software_sources = kwargs['childSoftwareSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'lastBoot' in kwargs:
+            last_boot = kwargs['lastBoot']
+        if 'lastCheckin' in kwargs:
+            last_checkin = kwargs['lastCheckin']
+        if 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'osKernelVersion' in kwargs:
+            os_kernel_version = kwargs['osKernelVersion']
+        if 'osName' in kwargs:
+            os_name = kwargs['osName']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'parentSoftwareSource' in kwargs:
+            parent_software_source = kwargs['parentSoftwareSource']
+        if 'updatesAvailable' in kwargs:
+            updates_available = kwargs['updatesAvailable']
+
         if child_software_sources is not None:
             _setter("child_software_sources", child_software_sources)
         if compartment_id is not None:

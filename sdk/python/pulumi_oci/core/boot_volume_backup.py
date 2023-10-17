@@ -57,7 +57,23 @@ class BootVolumeBackupArgs:
              kms_key_id: Optional[pulumi.Input[str]] = None,
              source_details: Optional[pulumi.Input['BootVolumeBackupSourceDetailsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeId' in kwargs:
+            boot_volume_id = kwargs['bootVolumeId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+
         if boot_volume_id is not None:
             _setter("boot_volume_id", boot_volume_id)
         if compartment_id is not None:
@@ -256,7 +272,41 @@ class _BootVolumeBackupState:
              time_request_received: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              unique_size_in_gbs: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeId' in kwargs:
+            boot_volume_id = kwargs['bootVolumeId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'expirationTime' in kwargs:
+            expiration_time = kwargs['expirationTime']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sourceBootVolumeBackupId' in kwargs:
+            source_boot_volume_backup_id = kwargs['sourceBootVolumeBackupId']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeRequestReceived' in kwargs:
+            time_request_received = kwargs['timeRequestReceived']
+        if 'uniqueSizeInGbs' in kwargs:
+            unique_size_in_gbs = kwargs['uniqueSizeInGbs']
+
         if boot_volume_id is not None:
             _setter("boot_volume_id", boot_volume_id)
         if compartment_id is not None:

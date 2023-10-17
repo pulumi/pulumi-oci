@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
         ///         SmtpCredentialId = oci_identity_smtp_credential.Test_smtp_credential.Id,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Smtp_credential_authorization,
         ///         ResourceTypeSchemaVersion = @var.Smtp_credential_resource_type_schema_version,
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
         ///         SmtpCredentialId = oci_identity_smtp_credential.Test_smtp_credential.Id,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Smtp_credential_authorization,
         ///         ResourceTypeSchemaVersion = @var.Smtp_credential_resource_type_schema_version,

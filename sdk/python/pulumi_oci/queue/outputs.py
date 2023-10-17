@@ -34,7 +34,9 @@ class GetQueuesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -68,7 +70,9 @@ class GetQueuesQueueCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetQueuesQueueCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -162,7 +166,43 @@ class GetQueuesQueueCollectionItemResult(dict):
              time_updated: str,
              timeout_in_seconds: int,
              visibility_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'channelConsumptionLimit' in kwargs:
+            channel_consumption_limit = kwargs['channelConsumptionLimit']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customEncryptionKeyId' in kwargs:
+            custom_encryption_key_id = kwargs['customEncryptionKeyId']
+        if 'deadLetterQueueDeliveryCount' in kwargs:
+            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'messagesEndpoint' in kwargs:
+            messages_endpoint = kwargs['messagesEndpoint']
+        if 'purgeQueue' in kwargs:
+            purge_queue = kwargs['purgeQueue']
+        if 'purgeType' in kwargs:
+            purge_type = kwargs['purgeType']
+        if 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'visibilityInSeconds' in kwargs:
+            visibility_in_seconds = kwargs['visibilityInSeconds']
+
         _setter("channel_consumption_limit", channel_consumption_limit)
         _setter("compartment_id", compartment_id)
         _setter("custom_encryption_key_id", custom_encryption_key_id)

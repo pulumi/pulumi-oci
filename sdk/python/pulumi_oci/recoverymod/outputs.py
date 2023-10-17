@@ -96,7 +96,23 @@ class ProtectedDatabaseMetric(dict):
              is_redo_logs_enabled: Optional[bool] = None,
              retention_period_in_days: Optional[float] = None,
              unprotected_window_in_seconds: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+
         if backup_space_estimate_in_gbs is not None:
             _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
@@ -209,7 +225,11 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
              _setter: Callable[[Any, Any], None],
              recovery_service_subnet_id: str,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+
         _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
             _setter("state", state)
@@ -274,7 +294,23 @@ class GetProtectedDatabaseMetricResult(dict):
              is_redo_logs_enabled: bool,
              retention_period_in_days: float,
              unprotected_window_in_seconds: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+
         _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
         _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
@@ -359,7 +395,11 @@ class GetProtectedDatabaseRecoveryServiceSubnetResult(dict):
              _setter: Callable[[Any, Any], None],
              recovery_service_subnet_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+
         _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         _setter("state", state)
 
@@ -398,7 +438,9 @@ class GetProtectedDatabasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -432,7 +474,9 @@ class GetProtectedDatabasesProtectedDatabaseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -542,7 +586,43 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              vpc_user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseSize' in kwargs:
+            database_size = kwargs['databaseSize']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthDetails' in kwargs:
+            health_details = kwargs['healthDetails']
+        if 'isReadOnlyResource' in kwargs:
+            is_read_only_resource = kwargs['isReadOnlyResource']
+        if 'isRedoLogsShipped' in kwargs:
+            is_redo_logs_shipped = kwargs['isRedoLogsShipped']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'protectionPolicyId' in kwargs:
+            protection_policy_id = kwargs['protectionPolicyId']
+        if 'recoveryServiceSubnets' in kwargs:
+            recovery_service_subnets = kwargs['recoveryServiceSubnets']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vpcUserName' in kwargs:
+            vpc_user_name = kwargs['vpcUserName']
+
         _setter("compartment_id", compartment_id)
         _setter("database_id", database_id)
         _setter("database_size", database_size)
@@ -782,7 +862,23 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult(dict):
              is_redo_logs_enabled: bool,
              retention_period_in_days: float,
              unprotected_window_in_seconds: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+
         _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
         _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
@@ -867,7 +963,11 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetR
              _setter: Callable[[Any, Any], None],
              recovery_service_subnet_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+
         _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         _setter("state", state)
 
@@ -906,7 +1006,9 @@ class GetProtectionPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -940,7 +1042,9 @@ class GetProtectionPoliciesProtectionPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1008,7 +1112,29 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupRetentionPeriodInDays' in kwargs:
+            backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPredefinedPolicy' in kwargs:
+            is_predefined_policy = kwargs['isPredefinedPolicy']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("backup_retention_period_in_days", backup_retention_period_in_days)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1137,7 +1263,9 @@ class GetRecoveryServiceSubnetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1171,7 +1299,9 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1245,7 +1375,29 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)

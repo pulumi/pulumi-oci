@@ -37,7 +37,15 @@ class AuthenticationPolicyArgs:
              compartment_id: pulumi.Input[str],
              network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
              password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'networkPolicy' in kwargs:
+            network_policy = kwargs['networkPolicy']
+        if 'passwordPolicy' in kwargs:
+            password_policy = kwargs['passwordPolicy']
+
         _setter("compartment_id", compartment_id)
         if network_policy is not None:
             _setter("network_policy", network_policy)
@@ -105,7 +113,15 @@ class _AuthenticationPolicyState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              network_policy: Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']] = None,
              password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'networkPolicy' in kwargs:
+            network_policy = kwargs['networkPolicy']
+        if 'passwordPolicy' in kwargs:
+            password_policy = kwargs['passwordPolicy']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if network_policy is not None:

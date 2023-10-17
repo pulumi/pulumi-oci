@@ -51,7 +51,17 @@ class CaBundleArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundlePem' in kwargs:
+            ca_bundle_pem = kwargs['caBundlePem']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("ca_bundle_pem", ca_bundle_pem)
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -192,7 +202,21 @@ class _CaBundleState:
              name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundlePem' in kwargs:
+            ca_bundle_pem = kwargs['caBundlePem']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if ca_bundle_pem is not None:
             _setter("ca_bundle_pem", ca_bundle_pem)
         if compartment_id is not None:

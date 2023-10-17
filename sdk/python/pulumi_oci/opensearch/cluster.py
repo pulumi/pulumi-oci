@@ -135,7 +135,63 @@ class ClusterArgs:
              security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
              security_mode: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataNodeCount' in kwargs:
+            data_node_count = kwargs['dataNodeCount']
+        if 'dataNodeHostMemoryGb' in kwargs:
+            data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
+        if 'dataNodeHostOcpuCount' in kwargs:
+            data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
+        if 'dataNodeHostType' in kwargs:
+            data_node_host_type = kwargs['dataNodeHostType']
+        if 'dataNodeStorageGb' in kwargs:
+            data_node_storage_gb = kwargs['dataNodeStorageGb']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'masterNodeCount' in kwargs:
+            master_node_count = kwargs['masterNodeCount']
+        if 'masterNodeHostMemoryGb' in kwargs:
+            master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
+        if 'masterNodeHostOcpuCount' in kwargs:
+            master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
+        if 'masterNodeHostType' in kwargs:
+            master_node_host_type = kwargs['masterNodeHostType']
+        if 'opendashboardNodeCount' in kwargs:
+            opendashboard_node_count = kwargs['opendashboardNodeCount']
+        if 'opendashboardNodeHostMemoryGb' in kwargs:
+            opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
+        if 'opendashboardNodeHostOcpuCount' in kwargs:
+            opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
+        if 'softwareVersion' in kwargs:
+            software_version = kwargs['softwareVersion']
+        if 'subnetCompartmentId' in kwargs:
+            subnet_compartment_id = kwargs['subnetCompartmentId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnCompartmentId' in kwargs:
+            vcn_compartment_id = kwargs['vcnCompartmentId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'dataNodeHostBareMetalShape' in kwargs:
+            data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'masterNodeHostBareMetalShape' in kwargs:
+            master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
+        if 'securityMasterUserName' in kwargs:
+            security_master_user_name = kwargs['securityMasterUserName']
+        if 'securityMasterUserPasswordHash' in kwargs:
+            security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
+        if 'securityMode' in kwargs:
+            security_mode = kwargs['securityMode']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("compartment_id", compartment_id)
         _setter("data_node_count", data_node_count)
         _setter("data_node_host_memory_gb", data_node_host_memory_gb)
@@ -673,7 +729,83 @@ class _ClusterState:
              total_storage_gb: Optional[pulumi.Input[int]] = None,
              vcn_compartment_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomains' in kwargs:
+            availability_domains = kwargs['availabilityDomains']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataNodeCount' in kwargs:
+            data_node_count = kwargs['dataNodeCount']
+        if 'dataNodeHostBareMetalShape' in kwargs:
+            data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
+        if 'dataNodeHostMemoryGb' in kwargs:
+            data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
+        if 'dataNodeHostOcpuCount' in kwargs:
+            data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
+        if 'dataNodeHostType' in kwargs:
+            data_node_host_type = kwargs['dataNodeHostType']
+        if 'dataNodeStorageGb' in kwargs:
+            data_node_storage_gb = kwargs['dataNodeStorageGb']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'masterNodeCount' in kwargs:
+            master_node_count = kwargs['masterNodeCount']
+        if 'masterNodeHostBareMetalShape' in kwargs:
+            master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
+        if 'masterNodeHostMemoryGb' in kwargs:
+            master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
+        if 'masterNodeHostOcpuCount' in kwargs:
+            master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
+        if 'masterNodeHostType' in kwargs:
+            master_node_host_type = kwargs['masterNodeHostType']
+        if 'opendashboardFqdn' in kwargs:
+            opendashboard_fqdn = kwargs['opendashboardFqdn']
+        if 'opendashboardNodeCount' in kwargs:
+            opendashboard_node_count = kwargs['opendashboardNodeCount']
+        if 'opendashboardNodeHostMemoryGb' in kwargs:
+            opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
+        if 'opendashboardNodeHostOcpuCount' in kwargs:
+            opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
+        if 'opendashboardPrivateIp' in kwargs:
+            opendashboard_private_ip = kwargs['opendashboardPrivateIp']
+        if 'opensearchFqdn' in kwargs:
+            opensearch_fqdn = kwargs['opensearchFqdn']
+        if 'opensearchPrivateIp' in kwargs:
+            opensearch_private_ip = kwargs['opensearchPrivateIp']
+        if 'securityMasterUserName' in kwargs:
+            security_master_user_name = kwargs['securityMasterUserName']
+        if 'securityMasterUserPasswordHash' in kwargs:
+            security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
+        if 'securityMode' in kwargs:
+            security_mode = kwargs['securityMode']
+        if 'softwareVersion' in kwargs:
+            software_version = kwargs['softwareVersion']
+        if 'subnetCompartmentId' in kwargs:
+            subnet_compartment_id = kwargs['subnetCompartmentId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeDeleted' in kwargs:
+            time_deleted = kwargs['timeDeleted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalStorageGb' in kwargs:
+            total_storage_gb = kwargs['totalStorageGb']
+        if 'vcnCompartmentId' in kwargs:
+            vcn_compartment_id = kwargs['vcnCompartmentId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if availability_domains is not None:
             _setter("availability_domains", availability_domains)
         if compartment_id is not None:

@@ -60,7 +60,21 @@ class InstanceConfigurationArgs:
              instance_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsArgs']] = None,
              instance_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceDetails' in kwargs:
+            instance_details = kwargs['instanceDetails']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -220,7 +234,25 @@ class _InstanceConfigurationState:
              instance_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'deferredFields' in kwargs:
+            deferred_fields = kwargs['deferredFields']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceDetails' in kwargs:
+            instance_details = kwargs['instanceDetails']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if deferred_fields is not None:

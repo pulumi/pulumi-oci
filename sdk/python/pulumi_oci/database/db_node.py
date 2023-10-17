@@ -39,7 +39,15 @@ class DbNodeArgs:
              db_node_id: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("db_node_id", db_node_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -199,7 +207,51 @@ class _DbNodeState:
              time_maintenance_window_start: Optional[pulumi.Input[str]] = None,
              vnic2id: Optional[pulumi.Input[str]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'backupIpId' in kwargs:
+            backup_ip_id = kwargs['backupIpId']
+        if 'backupVnic2id' in kwargs:
+            backup_vnic2id = kwargs['backupVnic2id']
+        if 'backupVnicId' in kwargs:
+            backup_vnic_id = kwargs['backupVnicId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServerId' in kwargs:
+            db_server_id = kwargs['dbServerId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostIpId' in kwargs:
+            host_ip_id = kwargs['hostIpId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceType' in kwargs:
+            maintenance_type = kwargs['maintenanceType']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'softwareStorageSizeInGb' in kwargs:
+            software_storage_size_in_gb = kwargs['softwareStorageSizeInGb']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeMaintenanceWindowEnd' in kwargs:
+            time_maintenance_window_end = kwargs['timeMaintenanceWindowEnd']
+        if 'timeMaintenanceWindowStart' in kwargs:
+            time_maintenance_window_start = kwargs['timeMaintenanceWindowStart']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if backup_ip_id is not None:

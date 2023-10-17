@@ -35,7 +35,13 @@ class SetUserAssessmentBaselineArgs:
              _setter: Callable[[Any, Any], None],
              user_assessment_id: pulumi.Input[str],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+        if 'assessmentIds' in kwargs:
+            assessment_ids = kwargs['assessmentIds']
+
         _setter("user_assessment_id", user_assessment_id)
         if assessment_ids is not None:
             _setter("assessment_ids", assessment_ids)
@@ -93,7 +99,13 @@ class _SetUserAssessmentBaselineState:
              _setter: Callable[[Any, Any], None],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assessmentIds' in kwargs:
+            assessment_ids = kwargs['assessmentIds']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         if assessment_ids is not None:
             _setter("assessment_ids", assessment_ids)
         if user_assessment_id is not None:

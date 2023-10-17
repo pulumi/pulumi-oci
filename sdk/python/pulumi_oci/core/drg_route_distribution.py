@@ -47,7 +47,19 @@ class DrgRouteDistributionArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'distributionType' in kwargs:
+            distribution_type = kwargs['distributionType']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("distribution_type", distribution_type)
         _setter("drg_id", drg_id)
         if defined_tags is not None:
@@ -170,7 +182,23 @@ class _DrgRouteDistributionState:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'distributionType' in kwargs:
+            distribution_type = kwargs['distributionType']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

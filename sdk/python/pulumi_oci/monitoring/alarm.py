@@ -133,7 +133,33 @@ class AlarmArgs:
              resolution: Optional[pulumi.Input[str]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
              suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("destinations", destinations)
         _setter("display_name", display_name)
@@ -558,7 +584,37 @@ class _AlarmState:
              suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if body is not None:
             _setter("body", body)
         if compartment_id is not None:

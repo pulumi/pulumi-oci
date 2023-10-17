@@ -45,7 +45,17 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
              compartment_id: pulumi.Input[str],
              destination_resource_id: pulumi.Input[str],
              source_resource_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+
         _setter("association_type", association_type)
         _setter("compartment_id", compartment_id)
         _setter("destination_resource_id", destination_resource_id)
@@ -159,7 +169,25 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
              source_resource_id: Optional[pulumi.Input[str]] = None,
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationResourceDetails' in kwargs:
+            destination_resource_details = kwargs['destinationResourceDetails']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'sourceResourceDetails' in kwargs:
+            source_resource_details = kwargs['sourceResourceDetails']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if association_type is not None:
             _setter("association_type", association_type)
         if category is not None:

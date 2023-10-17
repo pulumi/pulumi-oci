@@ -53,7 +53,21 @@ class TableArgs:
              is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+
         _setter("compartment_id", compartment_id)
         _setter("ddl_statement", ddl_statement)
         if defined_tags is not None:
@@ -220,7 +234,31 @@ class _TableState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_expiration: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if ddl_statement is not None:

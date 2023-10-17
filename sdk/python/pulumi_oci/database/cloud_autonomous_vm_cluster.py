@@ -115,7 +115,49 @@ class CloudAutonomousVmClusterArgs:
              scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              total_container_databases: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'autonomousDataStorageSizeInTbs' in kwargs:
+            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
+        if 'clusterTimeZone' in kwargs:
+            cluster_time_zone = kwargs['clusterTimeZone']
+        if 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if 'cpuCoreCountPerNode' in kwargs:
+            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isMtlsEnabledVmCluster' in kwargs:
+            is_mtls_enabled_vm_cluster = kwargs['isMtlsEnabledVmCluster']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'scanListenerPortNonTls' in kwargs:
+            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
+        if 'scanListenerPortTls' in kwargs:
+            scan_listener_port_tls = kwargs['scanListenerPortTls']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalContainerDatabases' in kwargs:
+            total_container_databases = kwargs['totalContainerDatabases']
+
         _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -642,7 +684,103 @@ class _CloudAutonomousVmClusterState:
              total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
              total_container_databases: Optional[pulumi.Input[int]] = None,
              total_cpus: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDataStoragePercentage' in kwargs:
+            autonomous_data_storage_percentage = kwargs['autonomousDataStoragePercentage']
+        if 'autonomousDataStorageSizeInTbs' in kwargs:
+            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'availableAutonomousDataStorageSizeInTbs' in kwargs:
+            available_autonomous_data_storage_size_in_tbs = kwargs['availableAutonomousDataStorageSizeInTbs']
+        if 'availableContainerDatabases' in kwargs:
+            available_container_databases = kwargs['availableContainerDatabases']
+        if 'availableCpus' in kwargs:
+            available_cpus = kwargs['availableCpus']
+        if 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if 'clusterTimeZone' in kwargs:
+            cluster_time_zone = kwargs['clusterTimeZone']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'cpuCoreCountPerNode' in kwargs:
+            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
+        if 'cpuPercentage' in kwargs:
+            cpu_percentage = kwargs['cpuPercentage']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isMtlsEnabledVmCluster' in kwargs:
+            is_mtls_enabled_vm_cluster = kwargs['isMtlsEnabledVmCluster']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'lastUpdateHistoryEntryId' in kwargs:
+            last_update_history_entry_id = kwargs['lastUpdateHistoryEntryId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nonProvisionableAutonomousContainerDatabases' in kwargs:
+            non_provisionable_autonomous_container_databases = kwargs['nonProvisionableAutonomousContainerDatabases']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if 'provisionableAutonomousContainerDatabases' in kwargs:
+            provisionable_autonomous_container_databases = kwargs['provisionableAutonomousContainerDatabases']
+        if 'provisionedAutonomousContainerDatabases' in kwargs:
+            provisioned_autonomous_container_databases = kwargs['provisionedAutonomousContainerDatabases']
+        if 'provisionedCpus' in kwargs:
+            provisioned_cpus = kwargs['provisionedCpus']
+        if 'reclaimableCpus' in kwargs:
+            reclaimable_cpus = kwargs['reclaimableCpus']
+        if 'reservedCpus' in kwargs:
+            reserved_cpus = kwargs['reservedCpus']
+        if 'scanListenerPortNonTls' in kwargs:
+            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
+        if 'scanListenerPortTls' in kwargs:
+            scan_listener_port_tls = kwargs['scanListenerPortTls']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalAutonomousDataStorageInTbs' in kwargs:
+            total_autonomous_data_storage_in_tbs = kwargs['totalAutonomousDataStorageInTbs']
+        if 'totalContainerDatabases' in kwargs:
+            total_container_databases = kwargs['totalContainerDatabases']
+        if 'totalCpus' in kwargs:
+            total_cpus = kwargs['totalCpus']
+
         if autonomous_data_storage_percentage is not None:
             _setter("autonomous_data_storage_percentage", autonomous_data_storage_percentage)
         if autonomous_data_storage_size_in_tbs is not None:

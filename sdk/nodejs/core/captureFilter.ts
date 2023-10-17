@@ -32,6 +32,40 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     displayName: _var.capture_filter_display_name,
+ *     flowLogCaptureFilterRules: [{
+ *         destinationCidr: _var.capture_filter_flow_log_capture_filter_rules_destination_cidr,
+ *         flowLogType: _var.capture_filter_flow_log_capture_filter_rules_flow_log_type,
+ *         icmpOptions: {
+ *             type: _var.capture_filter_flow_log_capture_filter_rules_icmp_options_type,
+ *             code: _var.capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+ *         },
+ *         isEnabled: _var.capture_filter_flow_log_capture_filter_rules_is_enabled,
+ *         priority: _var.capture_filter_flow_log_capture_filter_rules_priority,
+ *         protocol: _var.capture_filter_flow_log_capture_filter_rules_protocol,
+ *         ruleAction: _var.capture_filter_flow_log_capture_filter_rules_rule_action,
+ *         samplingRate: _var.capture_filter_flow_log_capture_filter_rules_sampling_rate,
+ *         sourceCidr: _var.capture_filter_flow_log_capture_filter_rules_source_cidr,
+ *         tcpOptions: {
+ *             destinationPortRange: {
+ *                 max: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
+ *                 min: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+ *             },
+ *             sourcePortRange: {
+ *                 max: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
+ *                 min: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+ *             },
+ *         },
+ *         udpOptions: {
+ *             destinationPortRange: {
+ *                 max: _var.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
+ *                 min: _var.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+ *             },
+ *             sourcePortRange: {
+ *                 max: _var.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
+ *                 min: _var.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+ *             },
+ *         },
+ *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -122,6 +156,10 @@ export class CaptureFilter extends pulumi.CustomResource {
      */
     public readonly filterType!: pulumi.Output<string>;
     /**
+     * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     */
+    public readonly flowLogCaptureFilterRules!: pulumi.Output<outputs.Core.CaptureFilterFlowLogCaptureFilterRule[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -155,6 +193,7 @@ export class CaptureFilter extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["filterType"] = state ? state.filterType : undefined;
+            resourceInputs["flowLogCaptureFilterRules"] = state ? state.flowLogCaptureFilterRules : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -171,6 +210,7 @@ export class CaptureFilter extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["filterType"] = args ? args.filterType : undefined;
+            resourceInputs["flowLogCaptureFilterRules"] = args ? args.flowLogCaptureFilterRules : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["vtapCaptureFilterRules"] = args ? args.vtapCaptureFilterRules : undefined;
             resourceInputs["state"] = undefined /*out*/;
@@ -201,6 +241,10 @@ export interface CaptureFilterState {
      * Indicates which service will use this capture filter
      */
     filterType?: pulumi.Input<string>;
+    /**
+     * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     */
+    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -239,6 +283,10 @@ export interface CaptureFilterArgs {
      * Indicates which service will use this capture filter
      */
     filterType: pulumi.Input<string>;
+    /**
+     * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     */
+    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

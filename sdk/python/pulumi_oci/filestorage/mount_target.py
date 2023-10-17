@@ -87,7 +87,31 @@ class MountTargetArgs:
              kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
              ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'idmapType' in kwargs:
+            idmap_type = kwargs['idmapType']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ldapIdmap' in kwargs:
+            ldap_idmap = kwargs['ldapIdmap']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("subnet_id", subnet_id)
@@ -363,7 +387,39 @@ class _MountTargetState:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exportSetId' in kwargs:
+            export_set_id = kwargs['exportSetId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'idmapType' in kwargs:
+            idmap_type = kwargs['idmapType']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ldapIdmap' in kwargs:
+            ldap_idmap = kwargs['ldapIdmap']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIpIds' in kwargs:
+            private_ip_ids = kwargs['privateIpIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

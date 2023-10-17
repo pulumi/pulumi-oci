@@ -29,7 +29,13 @@ class MaskDataArgs:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: pulumi.Input[str],
              target_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("masking_policy_id", masking_policy_id)
         _setter("target_id", target_id)
 
@@ -70,7 +76,13 @@ class _MaskDataState:
              _setter: Callable[[Any, Any], None],
              masking_policy_id: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         if masking_policy_id is not None:
             _setter("masking_policy_id", masking_policy_id)
         if target_id is not None:

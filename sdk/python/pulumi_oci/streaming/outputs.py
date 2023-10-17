@@ -66,7 +66,13 @@ class StreamPoolCustomEncryptionKey(dict):
              _setter: Callable[[Any, Any], None],
              kms_key_id: str,
              key_state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'keyState' in kwargs:
+            key_state = kwargs['keyState']
+
         _setter("kms_key_id", kms_key_id)
         if key_state is not None:
             _setter("key_state", key_state)
@@ -138,7 +144,17 @@ class StreamPoolKafkaSettings(dict):
              bootstrap_servers: Optional[str] = None,
              log_retention_hours: Optional[int] = None,
              num_partitions: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoCreateTopicsEnable' in kwargs:
+            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'logRetentionHours' in kwargs:
+            log_retention_hours = kwargs['logRetentionHours']
+        if 'numPartitions' in kwargs:
+            num_partitions = kwargs['numPartitions']
+
         if auto_create_topics_enable is not None:
             _setter("auto_create_topics_enable", auto_create_topics_enable)
         if bootstrap_servers is not None:
@@ -229,7 +245,15 @@ class StreamPoolPrivateEndpointSettings(dict):
              nsg_ids: Optional[Sequence[str]] = None,
              private_endpoint_ip: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if nsg_ids is not None:
             _setter("nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
@@ -309,7 +333,19 @@ class GetConnectHarnessesConnectHarnessResult(dict):
              name: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -405,7 +441,9 @@ class GetConnectHarnessesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -449,7 +487,13 @@ class GetStreamPoolCustomEncryptionKeyResult(dict):
              _setter: Callable[[Any, Any], None],
              key_state: str,
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyState' in kwargs:
+            key_state = kwargs['keyState']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("key_state", key_state)
         _setter("kms_key_id", kms_key_id)
 
@@ -497,7 +541,17 @@ class GetStreamPoolKafkaSettingResult(dict):
              bootstrap_servers: str,
              log_retention_hours: int,
              num_partitions: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoCreateTopicsEnable' in kwargs:
+            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'logRetentionHours' in kwargs:
+            log_retention_hours = kwargs['logRetentionHours']
+        if 'numPartitions' in kwargs:
+            num_partitions = kwargs['numPartitions']
+
         _setter("auto_create_topics_enable", auto_create_topics_enable)
         _setter("bootstrap_servers", bootstrap_servers)
         _setter("log_retention_hours", log_retention_hours)
@@ -559,7 +613,15 @@ class GetStreamPoolPrivateEndpointSettingResult(dict):
              nsg_ids: Sequence[str],
              private_endpoint_ip: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("nsg_ids", nsg_ids)
         _setter("private_endpoint_ip", private_endpoint_ip)
         _setter("subnet_id", subnet_id)
@@ -610,7 +672,9 @@ class GetStreamPoolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -698,7 +762,29 @@ class GetStreamPoolsStreamPoolResult(dict):
              private_endpoint_settings: Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult'],
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customEncryptionKeys' in kwargs:
+            custom_encryption_keys = kwargs['customEncryptionKeys']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'kafkaSettings' in kwargs:
+            kafka_settings = kwargs['kafkaSettings']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'privateEndpointSettings' in kwargs:
+            private_endpoint_settings = kwargs['privateEndpointSettings']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("custom_encryption_keys", custom_encryption_keys)
         _setter("defined_tags", defined_tags)
@@ -837,7 +923,13 @@ class GetStreamPoolsStreamPoolCustomEncryptionKeyResult(dict):
              _setter: Callable[[Any, Any], None],
              key_state: str,
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyState' in kwargs:
+            key_state = kwargs['keyState']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("key_state", key_state)
         _setter("kms_key_id", kms_key_id)
 
@@ -885,7 +977,17 @@ class GetStreamPoolsStreamPoolKafkaSettingResult(dict):
              bootstrap_servers: str,
              log_retention_hours: int,
              num_partitions: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoCreateTopicsEnable' in kwargs:
+            auto_create_topics_enable = kwargs['autoCreateTopicsEnable']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'logRetentionHours' in kwargs:
+            log_retention_hours = kwargs['logRetentionHours']
+        if 'numPartitions' in kwargs:
+            num_partitions = kwargs['numPartitions']
+
         _setter("auto_create_topics_enable", auto_create_topics_enable)
         _setter("bootstrap_servers", bootstrap_servers)
         _setter("log_retention_hours", log_retention_hours)
@@ -947,7 +1049,15 @@ class GetStreamPoolsStreamPoolPrivateEndpointSettingResult(dict):
              nsg_ids: Sequence[str],
              private_endpoint_ip: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("nsg_ids", nsg_ids)
         _setter("private_endpoint_ip", private_endpoint_ip)
         _setter("subnet_id", subnet_id)
@@ -998,7 +1108,9 @@ class GetStreamsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1082,7 +1194,25 @@ class GetStreamsStreamResult(dict):
              state: str,
              stream_pool_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'messagesEndpoint' in kwargs:
+            messages_endpoint = kwargs['messagesEndpoint']
+        if 'retentionInHours' in kwargs:
+            retention_in_hours = kwargs['retentionInHours']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)

@@ -113,10 +113,12 @@ namespace Pulumi.Oci.Database
         /// Connection strings to connect to an Oracle Pluggable Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabaseConnectionStringResult> ConnectionStrings;
+        public readonly string ContainerDatabaseAdminPassword;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         /// </summary>
         public readonly string ContainerDatabaseId;
+        public readonly int ConvertToRegularTrigger;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -142,16 +144,27 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string OpenMode;
         public readonly string PdbAdminPassword;
+        public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> PdbCreationTypeDetails;
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
         public readonly string PdbName;
+        /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbNodeLevelDetailResult> PdbNodeLevelDetails;
         public readonly string PluggableDatabaseId;
         /// <summary>
         /// The configuration of the Pluggable Database Management service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> PluggableDatabaseManagementConfigs;
+        public readonly int RefreshTrigger;
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPluggableDatabaseRefreshableCloneConfigResult> RefreshableCloneConfigs;
         public readonly int RotateKeyTrigger;
+        public readonly bool ShouldCreatePdbBackup;
         public readonly bool ShouldPdbAdminAccountBeLocked;
         /// <summary>
         /// The current state of the pluggable database.
@@ -169,7 +182,11 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetPluggableDatabaseConnectionStringResult> connectionStrings,
 
+            string containerDatabaseAdminPassword,
+
             string containerDatabaseId,
+
+            int convertToRegularTrigger,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -185,13 +202,23 @@ namespace Pulumi.Oci.Database
 
             string pdbAdminPassword,
 
+            ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> pdbCreationTypeDetails,
+
             string pdbName,
+
+            ImmutableArray<Outputs.GetPluggableDatabasePdbNodeLevelDetailResult> pdbNodeLevelDetails,
 
             string pluggableDatabaseId,
 
             ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> pluggableDatabaseManagementConfigs,
 
+            int refreshTrigger,
+
+            ImmutableArray<Outputs.GetPluggableDatabaseRefreshableCloneConfigResult> refreshableCloneConfigs,
+
             int rotateKeyTrigger,
+
+            bool shouldCreatePdbBackup,
 
             bool shouldPdbAdminAccountBeLocked,
 
@@ -203,7 +230,9 @@ namespace Pulumi.Oci.Database
         {
             CompartmentId = compartmentId;
             ConnectionStrings = connectionStrings;
+            ContainerDatabaseAdminPassword = containerDatabaseAdminPassword;
             ContainerDatabaseId = containerDatabaseId;
+            ConvertToRegularTrigger = convertToRegularTrigger;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             Id = id;
@@ -211,10 +240,15 @@ namespace Pulumi.Oci.Database
             LifecycleDetails = lifecycleDetails;
             OpenMode = openMode;
             PdbAdminPassword = pdbAdminPassword;
+            PdbCreationTypeDetails = pdbCreationTypeDetails;
             PdbName = pdbName;
+            PdbNodeLevelDetails = pdbNodeLevelDetails;
             PluggableDatabaseId = pluggableDatabaseId;
             PluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            RefreshTrigger = refreshTrigger;
+            RefreshableCloneConfigs = refreshableCloneConfigs;
             RotateKeyTrigger = rotateKeyTrigger;
+            ShouldCreatePdbBackup = shouldCreatePdbBackup;
             ShouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             State = state;
             TdeWalletPassword = tdeWalletPassword;

@@ -585,7 +585,81 @@ class DomainsPasswordPolicyArgs:
              starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
              user_name_disallowed: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'allowedChars' in kwargs:
+            allowed_chars = kwargs['allowedChars']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'dictionaryDelimiter' in kwargs:
+            dictionary_delimiter = kwargs['dictionaryDelimiter']
+        if 'dictionaryLocation' in kwargs:
+            dictionary_location = kwargs['dictionaryLocation']
+        if 'dictionaryWordDisallowed' in kwargs:
+            dictionary_word_disallowed = kwargs['dictionaryWordDisallowed']
+        if 'disallowedChars' in kwargs:
+            disallowed_chars = kwargs['disallowedChars']
+        if 'disallowedSubstrings' in kwargs:
+            disallowed_substrings = kwargs['disallowedSubstrings']
+        if 'disallowedUserAttributeValues' in kwargs:
+            disallowed_user_attribute_values = kwargs['disallowedUserAttributeValues']
+        if 'distinctCharacters' in kwargs:
+            distinct_characters = kwargs['distinctCharacters']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'firstNameDisallowed' in kwargs:
+            first_name_disallowed = kwargs['firstNameDisallowed']
+        if 'forcePasswordReset' in kwargs:
+            force_password_reset = kwargs['forcePasswordReset']
+        if 'lastNameDisallowed' in kwargs:
+            last_name_disallowed = kwargs['lastNameDisallowed']
+        if 'lockoutDuration' in kwargs:
+            lockout_duration = kwargs['lockoutDuration']
+        if 'maxIncorrectAttempts' in kwargs:
+            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
+        if 'maxLength' in kwargs:
+            max_length = kwargs['maxLength']
+        if 'maxRepeatedChars' in kwargs:
+            max_repeated_chars = kwargs['maxRepeatedChars']
+        if 'maxSpecialChars' in kwargs:
+            max_special_chars = kwargs['maxSpecialChars']
+        if 'minAlphaNumerals' in kwargs:
+            min_alpha_numerals = kwargs['minAlphaNumerals']
+        if 'minAlphas' in kwargs:
+            min_alphas = kwargs['minAlphas']
+        if 'minLength' in kwargs:
+            min_length = kwargs['minLength']
+        if 'minLowerCase' in kwargs:
+            min_lower_case = kwargs['minLowerCase']
+        if 'minNumerals' in kwargs:
+            min_numerals = kwargs['minNumerals']
+        if 'minPasswordAge' in kwargs:
+            min_password_age = kwargs['minPasswordAge']
+        if 'minSpecialChars' in kwargs:
+            min_special_chars = kwargs['minSpecialChars']
+        if 'minUniqueChars' in kwargs:
+            min_unique_chars = kwargs['minUniqueChars']
+        if 'minUpperCase' in kwargs:
+            min_upper_case = kwargs['minUpperCase']
+        if 'numPasswordsInHistory' in kwargs:
+            num_passwords_in_history = kwargs['numPasswordsInHistory']
+        if 'passwordExpireWarning' in kwargs:
+            password_expire_warning = kwargs['passwordExpireWarning']
+        if 'passwordExpiresAfter' in kwargs:
+            password_expires_after = kwargs['passwordExpiresAfter']
+        if 'passwordStrength' in kwargs:
+            password_strength = kwargs['passwordStrength']
+        if 'requiredChars' in kwargs:
+            required_chars = kwargs['requiredChars']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'startsWithAlphabet' in kwargs:
+            starts_with_alphabet = kwargs['startsWithAlphabet']
+        if 'userNameDisallowed' in kwargs:
+            user_name_disallowed = kwargs['userNameDisallowed']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("schemas", schemas)
         if allowed_chars is not None:
@@ -2303,7 +2377,99 @@ class _DomainsPasswordPolicyState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user_name_disallowed: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedChars' in kwargs:
+            allowed_chars = kwargs['allowedChars']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'configuredPasswordPolicyRules' in kwargs:
+            configured_password_policy_rules = kwargs['configuredPasswordPolicyRules']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'dictionaryDelimiter' in kwargs:
+            dictionary_delimiter = kwargs['dictionaryDelimiter']
+        if 'dictionaryLocation' in kwargs:
+            dictionary_location = kwargs['dictionaryLocation']
+        if 'dictionaryWordDisallowed' in kwargs:
+            dictionary_word_disallowed = kwargs['dictionaryWordDisallowed']
+        if 'disallowedChars' in kwargs:
+            disallowed_chars = kwargs['disallowedChars']
+        if 'disallowedSubstrings' in kwargs:
+            disallowed_substrings = kwargs['disallowedSubstrings']
+        if 'disallowedUserAttributeValues' in kwargs:
+            disallowed_user_attribute_values = kwargs['disallowedUserAttributeValues']
+        if 'distinctCharacters' in kwargs:
+            distinct_characters = kwargs['distinctCharacters']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'firstNameDisallowed' in kwargs:
+            first_name_disallowed = kwargs['firstNameDisallowed']
+        if 'forcePasswordReset' in kwargs:
+            force_password_reset = kwargs['forcePasswordReset']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'lastNameDisallowed' in kwargs:
+            last_name_disallowed = kwargs['lastNameDisallowed']
+        if 'lockoutDuration' in kwargs:
+            lockout_duration = kwargs['lockoutDuration']
+        if 'maxIncorrectAttempts' in kwargs:
+            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
+        if 'maxLength' in kwargs:
+            max_length = kwargs['maxLength']
+        if 'maxRepeatedChars' in kwargs:
+            max_repeated_chars = kwargs['maxRepeatedChars']
+        if 'maxSpecialChars' in kwargs:
+            max_special_chars = kwargs['maxSpecialChars']
+        if 'minAlphaNumerals' in kwargs:
+            min_alpha_numerals = kwargs['minAlphaNumerals']
+        if 'minAlphas' in kwargs:
+            min_alphas = kwargs['minAlphas']
+        if 'minLength' in kwargs:
+            min_length = kwargs['minLength']
+        if 'minLowerCase' in kwargs:
+            min_lower_case = kwargs['minLowerCase']
+        if 'minNumerals' in kwargs:
+            min_numerals = kwargs['minNumerals']
+        if 'minPasswordAge' in kwargs:
+            min_password_age = kwargs['minPasswordAge']
+        if 'minSpecialChars' in kwargs:
+            min_special_chars = kwargs['minSpecialChars']
+        if 'minUniqueChars' in kwargs:
+            min_unique_chars = kwargs['minUniqueChars']
+        if 'minUpperCase' in kwargs:
+            min_upper_case = kwargs['minUpperCase']
+        if 'numPasswordsInHistory' in kwargs:
+            num_passwords_in_history = kwargs['numPasswordsInHistory']
+        if 'passwordExpireWarning' in kwargs:
+            password_expire_warning = kwargs['passwordExpireWarning']
+        if 'passwordExpiresAfter' in kwargs:
+            password_expires_after = kwargs['passwordExpiresAfter']
+        if 'passwordStrength' in kwargs:
+            password_strength = kwargs['passwordStrength']
+        if 'requiredChars' in kwargs:
+            required_chars = kwargs['requiredChars']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'startsWithAlphabet' in kwargs:
+            starts_with_alphabet = kwargs['startsWithAlphabet']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'userNameDisallowed' in kwargs:
+            user_name_disallowed = kwargs['userNameDisallowed']
+
         if allowed_chars is not None:
             _setter("allowed_chars", allowed_chars)
         if attribute_sets is not None:

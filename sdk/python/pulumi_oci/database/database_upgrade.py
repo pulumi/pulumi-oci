@@ -37,7 +37,13 @@ class DatabaseUpgradeArgs:
              action: pulumi.Input[str],
              database_id: pulumi.Input[str],
              database_upgrade_source_details: Optional[pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseUpgradeSourceDetails' in kwargs:
+            database_upgrade_source_details = kwargs['databaseUpgradeSourceDetails']
+
         _setter("action", action)
         _setter("database_id", database_id)
         if database_upgrade_source_details is not None:
@@ -220,7 +226,69 @@ class _DatabaseUpgradeState:
              time_created: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if 'databaseUpgradeSourceDetails' in kwargs:
+            database_upgrade_source_details = kwargs['databaseUpgradeSourceDetails']
+        if 'dbBackupConfigs' in kwargs:
+            db_backup_configs = kwargs['dbBackupConfigs']
+        if 'dbHomeId' in kwargs:
+            db_home_id = kwargs['dbHomeId']
+        if 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCdb' in kwargs:
+            is_cdb = kwargs['isCdb']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'lastBackupDurationInSeconds' in kwargs:
+            last_backup_duration_in_seconds = kwargs['lastBackupDurationInSeconds']
+        if 'lastBackupTimestamp' in kwargs:
+            last_backup_timestamp = kwargs['lastBackupTimestamp']
+        if 'lastFailedBackupTimestamp' in kwargs:
+            last_failed_backup_timestamp = kwargs['lastFailedBackupTimestamp']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if 'sidPrefix' in kwargs:
+            sid_prefix = kwargs['sidPrefix']
+        if 'sourceDatabasePointInTimeRecoveryTimestamp' in kwargs:
+            source_database_point_in_time_recovery_timestamp = kwargs['sourceDatabasePointInTimeRecoveryTimestamp']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         if action is not None:
             _setter("action", action)
         if character_set is not None:

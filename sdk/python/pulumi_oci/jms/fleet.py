@@ -57,7 +57,23 @@ class FleetArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
              operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'inventoryLog' in kwargs:
+            inventory_log = kwargs['inventoryLog']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAdvancedFeaturesEnabled' in kwargs:
+            is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
+        if 'operationLog' in kwargs:
+            operation_log = kwargs['operationLog']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("inventory_log", inventory_log)
@@ -245,7 +261,37 @@ class _FleetState:
              state: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateApplicationCount' in kwargs:
+            approximate_application_count = kwargs['approximateApplicationCount']
+        if 'approximateInstallationCount' in kwargs:
+            approximate_installation_count = kwargs['approximateInstallationCount']
+        if 'approximateJavaServerCount' in kwargs:
+            approximate_java_server_count = kwargs['approximateJavaServerCount']
+        if 'approximateJreCount' in kwargs:
+            approximate_jre_count = kwargs['approximateJreCount']
+        if 'approximateManagedInstanceCount' in kwargs:
+            approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryLog' in kwargs:
+            inventory_log = kwargs['inventoryLog']
+        if 'isAdvancedFeaturesEnabled' in kwargs:
+            is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
+        if 'operationLog' in kwargs:
+            operation_log = kwargs['operationLog']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if approximate_application_count is not None:
             _setter("approximate_application_count", approximate_application_count)
         if approximate_installation_count is not None:

@@ -55,7 +55,11 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return The supported SDDC types for the shape.
      * 
+     * @deprecated
+     * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * 
      */
+    @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
     private List<String> supportedSddcTypes;
     /**
      * @return The VMware software versions supported by the shape.
@@ -123,7 +127,11 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return The supported SDDC types for the shape.
      * 
+     * @deprecated
+     * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * 
      */
+    @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
     public List<String> supportedSddcTypes() {
         return this.supportedSddcTypes;
     }

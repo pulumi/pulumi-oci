@@ -55,7 +55,23 @@ class ReplicationArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              replication_interval: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'replicationInterval' in kwargs:
+            replication_interval = kwargs['replicationInterval']
+
         _setter("compartment_id", compartment_id)
         _setter("source_id", source_id)
         _setter("target_id", target_id)
@@ -237,7 +253,39 @@ class _ReplicationState:
              state: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deltaProgress' in kwargs:
+            delta_progress = kwargs['deltaProgress']
+        if 'deltaStatus' in kwargs:
+            delta_status = kwargs['deltaStatus']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastSnapshotId' in kwargs:
+            last_snapshot_id = kwargs['lastSnapshotId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'recoveryPointTime' in kwargs:
+            recovery_point_time = kwargs['recoveryPointTime']
+        if 'replicationInterval' in kwargs:
+            replication_interval = kwargs['replicationInterval']
+        if 'replicationTargetId' in kwargs:
+            replication_target_id = kwargs['replicationTargetId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

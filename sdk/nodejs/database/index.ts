@@ -395,6 +395,16 @@ export const getAutonomousVmCluster: typeof import("./getAutonomousVmCluster").g
 export const getAutonomousVmClusterOutput: typeof import("./getAutonomousVmCluster").getAutonomousVmClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousVmCluster","getAutonomousVmClusterOutput"], () => require("./getAutonomousVmCluster"));
 
+export { GetAutonomousVmClusterAcdResourceUsagesArgs, GetAutonomousVmClusterAcdResourceUsagesResult, GetAutonomousVmClusterAcdResourceUsagesOutputArgs } from "./getAutonomousVmClusterAcdResourceUsages";
+export const getAutonomousVmClusterAcdResourceUsages: typeof import("./getAutonomousVmClusterAcdResourceUsages").getAutonomousVmClusterAcdResourceUsages = null as any;
+export const getAutonomousVmClusterAcdResourceUsagesOutput: typeof import("./getAutonomousVmClusterAcdResourceUsages").getAutonomousVmClusterAcdResourceUsagesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVmClusterAcdResourceUsages","getAutonomousVmClusterAcdResourceUsagesOutput"], () => require("./getAutonomousVmClusterAcdResourceUsages"));
+
+export { GetAutonomousVmClusterResourceUsageArgs, GetAutonomousVmClusterResourceUsageResult, GetAutonomousVmClusterResourceUsageOutputArgs } from "./getAutonomousVmClusterResourceUsage";
+export const getAutonomousVmClusterResourceUsage: typeof import("./getAutonomousVmClusterResourceUsage").getAutonomousVmClusterResourceUsage = null as any;
+export const getAutonomousVmClusterResourceUsageOutput: typeof import("./getAutonomousVmClusterResourceUsage").getAutonomousVmClusterResourceUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVmClusterResourceUsage","getAutonomousVmClusterResourceUsageOutput"], () => require("./getAutonomousVmClusterResourceUsage"));
+
 export { GetAutonomousVmClustersArgs, GetAutonomousVmClustersResult, GetAutonomousVmClustersOutputArgs } from "./getAutonomousVmClusters";
 export const getAutonomousVmClusters: typeof import("./getAutonomousVmClusters").getAutonomousVmClusters = null as any;
 export const getAutonomousVmClustersOutput: typeof import("./getAutonomousVmClusters").getAutonomousVmClustersOutput = null as any;

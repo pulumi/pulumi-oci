@@ -247,7 +247,43 @@ class AddressActionVerificationAddress(dict):
              state_inscription: Optional[str] = None,
              street_name: Optional[str] = None,
              street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -678,7 +714,43 @@ class SubscriptionBillingAddress(dict):
              state_inscription: Optional[str] = None,
              street_name: Optional[str] = None,
              street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -973,7 +1045,11 @@ class SubscriptionPaymentGateway(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Optional[Sequence['outputs.SubscriptionPaymentGatewayMerchantDefinedData']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         if merchant_defined_datas is not None:
             _setter("merchant_defined_datas", merchant_defined_datas)
 
@@ -1024,7 +1100,13 @@ class SubscriptionPaymentGatewayMerchantDefinedData(dict):
              _setter: Callable[[Any, Any], None],
              cloud_account_name: Optional[str] = None,
              promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         if cloud_account_name is not None:
             _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -1139,7 +1221,31 @@ class SubscriptionPaymentOption(dict):
              time_expiration: Optional[str] = None,
              wallet_instrument_id: Optional[str] = None,
              wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         if credit_card_type is not None:
             _setter("credit_card_type", credit_card_type)
         if email_address is not None:
@@ -1402,7 +1508,49 @@ class SubscriptionSubscription(dict):
              time_start: Optional[str] = None,
              upgrade_state: Optional[str] = None,
              upgrade_state_details: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'paymentGateway' in kwargs:
+            payment_gateway = kwargs['paymentGateway']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'taxInfo' in kwargs:
+            tax_info = kwargs['taxInfo']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         _setter("subscription_plan_number", subscription_plan_number)
         if account_type is not None:
             _setter("account_type", account_type)
@@ -1778,7 +1926,43 @@ class SubscriptionSubscriptionBillingAddress(dict):
              state_inscription: Optional[str] = None,
              street_name: Optional[str] = None,
              street_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -2073,7 +2257,11 @@ class SubscriptionSubscriptionPaymentGateway(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_data: Optional['outputs.SubscriptionSubscriptionPaymentGatewayMerchantDefinedData'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedData' in kwargs:
+            merchant_defined_data = kwargs['merchantDefinedData']
+
         if merchant_defined_data is not None:
             _setter("merchant_defined_data", merchant_defined_data)
 
@@ -2124,7 +2312,13 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedData(dict):
              _setter: Callable[[Any, Any], None],
              cloud_account_name: Optional[str] = None,
              promo_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         if cloud_account_name is not None:
             _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -2239,7 +2433,31 @@ class SubscriptionSubscriptionPaymentOption(dict):
              time_expiration: Optional[str] = None,
              wallet_instrument_id: Optional[str] = None,
              wallet_transaction_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("payment_method", payment_method)
         if credit_card_type is not None:
             _setter("credit_card_type", credit_card_type)
@@ -2407,7 +2625,19 @@ class SubscriptionSubscriptionTaxInfo(dict):
              tax_cnpj: Optional[str] = None,
              tax_payer_id: Optional[str] = None,
              tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         if no_tax_reason_code is not None:
             _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2516,7 +2746,19 @@ class SubscriptionTaxInfo(dict):
              tax_cnpj: Optional[str] = None,
              tax_payer_id: Optional[str] = None,
              tax_reg_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         if no_tax_reason_code is not None:
             _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2588,7 +2830,11 @@ class GetAddressRuleAddressResult(dict):
              _setter: Callable[[Any, Any], None],
              fields: Sequence['outputs.GetAddressRuleAddressFieldResult'],
              third_party_validation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'thirdPartyValidation' in kwargs:
+            third_party_validation = kwargs['thirdPartyValidation']
+
         _setter("fields", fields)
         _setter("third_party_validation", third_party_validation)
 
@@ -2640,7 +2886,11 @@ class GetAddressRuleAddressFieldResult(dict):
              labels: Sequence['outputs.GetAddressRuleAddressFieldLabelResult'],
              language: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("formats", formats)
         _setter("is_required", is_required)
         _setter("labels", labels)
@@ -2707,7 +2957,9 @@ class GetAddressRuleAddressFieldFormatResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -2747,7 +2999,9 @@ class GetAddressRuleAddressFieldLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -2783,7 +3037,9 @@ class GetAddressRuleContactResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              fields: Sequence['outputs.GetAddressRuleContactFieldResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("fields", fields)
 
     @property
@@ -2826,7 +3082,11 @@ class GetAddressRuleContactFieldResult(dict):
              labels: Sequence['outputs.GetAddressRuleContactFieldLabelResult'],
              language: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("formats", formats)
         _setter("is_required", is_required)
         _setter("labels", labels)
@@ -2893,7 +3153,9 @@ class GetAddressRuleContactFieldFormatResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -2933,7 +3195,9 @@ class GetAddressRuleContactFieldLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -2969,7 +3233,9 @@ class GetAddressRuleTaxResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              fields: Sequence['outputs.GetAddressRuleTaxFieldResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("fields", fields)
 
     @property
@@ -3012,7 +3278,11 @@ class GetAddressRuleTaxFieldResult(dict):
              labels: Sequence['outputs.GetAddressRuleTaxFieldLabelResult'],
              language: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("formats", formats)
         _setter("is_required", is_required)
         _setter("labels", labels)
@@ -3079,7 +3349,9 @@ class GetAddressRuleTaxFieldFormatResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -3119,7 +3391,9 @@ class GetAddressRuleTaxFieldLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              example: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("example", example)
         _setter("value", value)
 
@@ -3207,7 +3481,27 @@ class GetInvoiceBillToAddressResult(dict):
              state: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLine1' in kwargs:
+            address_line1 = kwargs['addressLine1']
+        if 'addressLine2' in kwargs:
+            address_line2 = kwargs['addressLine2']
+        if 'addressLine3' in kwargs:
+            address_line3 = kwargs['addressLine3']
+        if 'addressLine4' in kwargs:
+            address_line4 = kwargs['addressLine4']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contactName' in kwargs:
+            contact_name = kwargs['contactName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_line1", address_line1)
         _setter("address_line2", address_line2)
         _setter("address_line3", address_line3)
@@ -3367,7 +3661,19 @@ class GetInvoiceBillToAddressCountryResult(dict):
              country_id: float,
              country_name: str,
              language_id: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ascii3countryCode' in kwargs:
+            ascii3country_code = kwargs['ascii3countryCode']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'countryId' in kwargs:
+            country_id = kwargs['countryId']
+        if 'countryName' in kwargs:
+            country_name = kwargs['countryName']
+        if 'languageId' in kwargs:
+            language_id = kwargs['languageId']
+
         _setter("ascii3country_code", ascii3country_code)
         _setter("country_code", country_code)
         _setter("country_id", country_id)
@@ -3446,7 +3752,17 @@ class GetInvoiceCurrencyResult(dict):
              name: str,
              round_decimal_point: float,
              usd_conversion: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+        if 'roundDecimalPoint' in kwargs:
+            round_decimal_point = kwargs['roundDecimalPoint']
+        if 'usdConversion' in kwargs:
+            usd_conversion = kwargs['usdConversion']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("name", name)
@@ -3561,7 +3877,37 @@ class GetInvoiceLastPaymentDetailResult(dict):
              routing_number: str,
              time_expiration: str,
              time_paid_on: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountNumber' in kwargs:
+            account_number = kwargs['accountNumber']
+        if 'amountPaid' in kwargs:
+            amount_paid = kwargs['amountPaid']
+        if 'cardType' in kwargs:
+            card_type = kwargs['cardType']
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'echeckRouting' in kwargs:
+            echeck_routing = kwargs['echeckRouting']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paidBy' in kwargs:
+            paid_by = kwargs['paidBy']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'paypalId' in kwargs:
+            paypal_id = kwargs['paypalId']
+        if 'paypalReference' in kwargs:
+            paypal_reference = kwargs['paypalReference']
+        if 'routingNumber' in kwargs:
+            routing_number = kwargs['routingNumber']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'timePaidOn' in kwargs:
+            time_paid_on = kwargs['timePaidOn']
+
         _setter("account_number", account_number)
         _setter("amount_paid", amount_paid)
         _setter("card_type", card_type)
@@ -3711,7 +4057,9 @@ class GetInvoicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3748,7 +4096,9 @@ class GetInvoicesInvoiceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInvoicesInvoiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3883,7 +4233,65 @@ class GetInvoicesInvoiceCollectionItemResult(dict):
              tax: float,
              time_invoice: str,
              time_invoice_due: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billToAddresses' in kwargs:
+            bill_to_addresses = kwargs['billToAddresses']
+        if 'internalInvoiceId' in kwargs:
+            internal_invoice_id = kwargs['internalInvoiceId']
+        if 'invoiceAmount' in kwargs:
+            invoice_amount = kwargs['invoiceAmount']
+        if 'invoiceAmountAdjusted' in kwargs:
+            invoice_amount_adjusted = kwargs['invoiceAmountAdjusted']
+        if 'invoiceAmountApplied' in kwargs:
+            invoice_amount_applied = kwargs['invoiceAmountApplied']
+        if 'invoiceAmountCredited' in kwargs:
+            invoice_amount_credited = kwargs['invoiceAmountCredited']
+        if 'invoiceAmountDue' in kwargs:
+            invoice_amount_due = kwargs['invoiceAmountDue']
+        if 'invoiceAmountInDispute' in kwargs:
+            invoice_amount_in_dispute = kwargs['invoiceAmountInDispute']
+        if 'invoiceId' in kwargs:
+            invoice_id = kwargs['invoiceId']
+        if 'invoiceNumber' in kwargs:
+            invoice_number = kwargs['invoiceNumber']
+        if 'invoicePoNumber' in kwargs:
+            invoice_po_number = kwargs['invoicePoNumber']
+        if 'invoiceRefNumber' in kwargs:
+            invoice_ref_number = kwargs['invoiceRefNumber']
+        if 'invoiceStatus' in kwargs:
+            invoice_status = kwargs['invoiceStatus']
+        if 'invoiceType' in kwargs:
+            invoice_type = kwargs['invoiceType']
+        if 'isCreditCardPayable' in kwargs:
+            is_credit_card_payable = kwargs['isCreditCardPayable']
+        if 'isDisplayDownloadPdf' in kwargs:
+            is_display_download_pdf = kwargs['isDisplayDownloadPdf']
+        if 'isDisplayViewPdf' in kwargs:
+            is_display_view_pdf = kwargs['isDisplayViewPdf']
+        if 'isPaid' in kwargs:
+            is_paid = kwargs['isPaid']
+        if 'isPayable' in kwargs:
+            is_payable = kwargs['isPayable']
+        if 'isPaymentFailed' in kwargs:
+            is_payment_failed = kwargs['isPaymentFailed']
+        if 'isPdfEmailAvailable' in kwargs:
+            is_pdf_email_available = kwargs['isPdfEmailAvailable']
+        if 'lastPaymentDetails' in kwargs:
+            last_payment_details = kwargs['lastPaymentDetails']
+        if 'partyName' in kwargs:
+            party_name = kwargs['partyName']
+        if 'paymentTerms' in kwargs:
+            payment_terms = kwargs['paymentTerms']
+        if 'preferredEmail' in kwargs:
+            preferred_email = kwargs['preferredEmail']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'timeInvoice' in kwargs:
+            time_invoice = kwargs['timeInvoice']
+        if 'timeInvoiceDue' in kwargs:
+            time_invoice_due = kwargs['timeInvoiceDue']
+
         _setter("bill_to_addresses", bill_to_addresses)
         _setter("currencies", currencies)
         _setter("internal_invoice_id", internal_invoice_id)
@@ -4208,7 +4616,27 @@ class GetInvoicesInvoiceCollectionItemBillToAddressResult(dict):
              state: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLine1' in kwargs:
+            address_line1 = kwargs['addressLine1']
+        if 'addressLine2' in kwargs:
+            address_line2 = kwargs['addressLine2']
+        if 'addressLine3' in kwargs:
+            address_line3 = kwargs['addressLine3']
+        if 'addressLine4' in kwargs:
+            address_line4 = kwargs['addressLine4']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contactName' in kwargs:
+            contact_name = kwargs['contactName']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_line1", address_line1)
         _setter("address_line2", address_line2)
         _setter("address_line3", address_line3)
@@ -4368,7 +4796,19 @@ class GetInvoicesInvoiceCollectionItemBillToAddressCountryResult(dict):
              country_id: float,
              country_name: str,
              language_id: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ascii3countryCode' in kwargs:
+            ascii3country_code = kwargs['ascii3countryCode']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'countryId' in kwargs:
+            country_id = kwargs['countryId']
+        if 'countryName' in kwargs:
+            country_name = kwargs['countryName']
+        if 'languageId' in kwargs:
+            language_id = kwargs['languageId']
+
         _setter("ascii3country_code", ascii3country_code)
         _setter("country_code", country_code)
         _setter("country_id", country_id)
@@ -4447,7 +4887,17 @@ class GetInvoicesInvoiceCollectionItemCurrencyResult(dict):
              name: str,
              round_decimal_point: float,
              usd_conversion: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+        if 'roundDecimalPoint' in kwargs:
+            round_decimal_point = kwargs['roundDecimalPoint']
+        if 'usdConversion' in kwargs:
+            usd_conversion = kwargs['usdConversion']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("name", name)
@@ -4562,7 +5012,37 @@ class GetInvoicesInvoiceCollectionItemLastPaymentDetailResult(dict):
              routing_number: str,
              time_expiration: str,
              time_paid_on: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountNumber' in kwargs:
+            account_number = kwargs['accountNumber']
+        if 'amountPaid' in kwargs:
+            amount_paid = kwargs['amountPaid']
+        if 'cardType' in kwargs:
+            card_type = kwargs['cardType']
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'echeckRouting' in kwargs:
+            echeck_routing = kwargs['echeckRouting']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paidBy' in kwargs:
+            paid_by = kwargs['paidBy']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'paypalId' in kwargs:
+            paypal_id = kwargs['paypalId']
+        if 'paypalReference' in kwargs:
+            paypal_reference = kwargs['paypalReference']
+        if 'routingNumber' in kwargs:
+            routing_number = kwargs['routingNumber']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'timePaidOn' in kwargs:
+            time_paid_on = kwargs['timePaidOn']
+
         _setter("account_number", account_number)
         _setter("amount_paid", amount_paid)
         _setter("card_type", card_type)
@@ -4738,7 +5218,21 @@ class GetInvoicesInvoiceLineItemResult(dict):
              time_end: str,
              time_start: str,
              total_price: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'orderNo' in kwargs:
+            order_no = kwargs['orderNo']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalPrice' in kwargs:
+            total_price = kwargs['totalPrice']
+
         _setter("currencies", currencies)
         _setter("net_unit_price", net_unit_price)
         _setter("order_no", order_no)
@@ -4853,7 +5347,17 @@ class GetInvoicesInvoiceLineItemCurrencyResult(dict):
              name: str,
              round_decimal_point: float,
              usd_conversion: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+        if 'roundDecimalPoint' in kwargs:
+            round_decimal_point = kwargs['roundDecimalPoint']
+        if 'usdConversion' in kwargs:
+            usd_conversion = kwargs['usdConversion']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("name", name)
@@ -4922,7 +5426,9 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4962,7 +5468,9 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5021,7 +5529,21 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult(dict):
              time_end: str,
              time_start: str,
              total_price: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'orderNo' in kwargs:
+            order_no = kwargs['orderNo']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalPrice' in kwargs:
+            total_price = kwargs['totalPrice']
+
         _setter("currencies", currencies)
         _setter("net_unit_price", net_unit_price)
         _setter("order_no", order_no)
@@ -5136,7 +5658,17 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult(dict):
              name: str,
              round_decimal_point: float,
              usd_conversion: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+        if 'roundDecimalPoint' in kwargs:
+            round_decimal_point = kwargs['roundDecimalPoint']
+        if 'usdConversion' in kwargs:
+            usd_conversion = kwargs['usdConversion']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("name", name)
@@ -5299,7 +5831,43 @@ class GetSubscriptionBillingAddressResult(dict):
              state_inscription: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_key", address_key)
         _setter("city", city)
         _setter("company_name", company_name)
@@ -5551,7 +6119,11 @@ class GetSubscriptionPaymentGatewayResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
@@ -5582,7 +6154,13 @@ class GetSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
              _setter: Callable[[Any, Any], None],
              cloud_account_name: str,
              promo_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         _setter("cloud_account_name", cloud_account_name)
         _setter("promo_type", promo_type)
 
@@ -5658,7 +6236,31 @@ class GetSubscriptionPaymentOptionResult(dict):
              time_expiration: str,
              wallet_instrument_id: str,
              wallet_transaction_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("credit_card_type", credit_card_type)
         _setter("email_address", email_address)
         _setter("ext_billing_agreement_id", ext_billing_agreement_id)
@@ -5855,7 +6457,49 @@ class GetSubscriptionSubscriptionResult(dict):
              time_start: str,
              upgrade_state: str,
              upgrade_state_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'paymentGateways' in kwargs:
+            payment_gateways = kwargs['paymentGateways']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'taxInfos' in kwargs:
+            tax_infos = kwargs['taxInfos']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         _setter("account_type", account_type)
         _setter("bill_to_cust_account_id", bill_to_cust_account_id)
         _setter("billing_addresses", billing_addresses)
@@ -6162,7 +6806,43 @@ class GetSubscriptionSubscriptionBillingAddressResult(dict):
              state_inscription: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_key", address_key)
         _setter("city", city)
         _setter("company_name", company_name)
@@ -6414,7 +7094,11 @@ class GetSubscriptionSubscriptionPaymentGatewayResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
@@ -6445,7 +7129,13 @@ class GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
              _setter: Callable[[Any, Any], None],
              cloud_account_name: str,
              promo_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         _setter("cloud_account_name", cloud_account_name)
         _setter("promo_type", promo_type)
 
@@ -6521,7 +7211,31 @@ class GetSubscriptionSubscriptionPaymentOptionResult(dict):
              time_expiration: str,
              wallet_instrument_id: str,
              wallet_transaction_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("credit_card_type", credit_card_type)
         _setter("email_address", email_address)
         _setter("ext_billing_agreement_id", ext_billing_agreement_id)
@@ -6654,7 +7368,19 @@ class GetSubscriptionSubscriptionTaxInfoResult(dict):
              tax_cnpj: str,
              tax_payer_id: str,
              tax_reg_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         _setter("no_tax_reason_code", no_tax_reason_code)
         _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         _setter("tax_cnpj", tax_cnpj)
@@ -6733,7 +7459,19 @@ class GetSubscriptionTaxInfoResult(dict):
              tax_cnpj: str,
              tax_payer_id: str,
              tax_reg_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         _setter("no_tax_reason_code", no_tax_reason_code)
         _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         _setter("tax_cnpj", tax_cnpj)
@@ -6799,7 +7537,9 @@ class GetSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6833,7 +7573,9 @@ class GetSubscriptionsSubscriptionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6954,7 +7696,55 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
              time_start: str,
              upgrade_state: str,
              upgrade_state_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'ospHomeRegion' in kwargs:
+            osp_home_region = kwargs['ospHomeRegion']
+        if 'paymentGateways' in kwargs:
+            payment_gateways = kwargs['paymentGateways']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'taxInfos' in kwargs:
+            tax_infos = kwargs['taxInfos']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         _setter("account_type", account_type)
         _setter("bill_to_cust_account_id", bill_to_cust_account_id)
         _setter("billing_addresses", billing_addresses)
@@ -7297,7 +8087,43 @@ class GetSubscriptionsSubscriptionCollectionItemBillingAddressResult(dict):
              state_inscription: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_key", address_key)
         _setter("city", city)
         _setter("company_name", company_name)
@@ -7549,7 +8375,11 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
@@ -7580,7 +8410,13 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDat
              _setter: Callable[[Any, Any], None],
              cloud_account_name: str,
              promo_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         _setter("cloud_account_name", cloud_account_name)
         _setter("promo_type", promo_type)
 
@@ -7656,7 +8492,31 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult(dict):
              time_expiration: str,
              wallet_instrument_id: str,
              wallet_transaction_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("credit_card_type", credit_card_type)
         _setter("email_address", email_address)
         _setter("ext_billing_agreement_id", ext_billing_agreement_id)
@@ -7853,7 +8713,49 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
              time_start: str,
              upgrade_state: str,
              upgrade_state_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'paymentGateways' in kwargs:
+            payment_gateways = kwargs['paymentGateways']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'taxInfos' in kwargs:
+            tax_infos = kwargs['taxInfos']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         _setter("account_type", account_type)
         _setter("bill_to_cust_account_id", bill_to_cust_account_id)
         _setter("billing_addresses", billing_addresses)
@@ -8160,7 +9062,43 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult
              state_inscription: str,
              street_name: str,
              street_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("address_key", address_key)
         _setter("city", city)
         _setter("company_name", company_name)
@@ -8412,7 +9350,11 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
@@ -8443,7 +9385,13 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMercha
              _setter: Callable[[Any, Any], None],
              cloud_account_name: str,
              promo_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         _setter("cloud_account_name", cloud_account_name)
         _setter("promo_type", promo_type)
 
@@ -8519,7 +9467,31 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult(
              time_expiration: str,
              wallet_instrument_id: str,
              wallet_transaction_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("credit_card_type", credit_card_type)
         _setter("email_address", email_address)
         _setter("ext_billing_agreement_id", ext_billing_agreement_id)
@@ -8652,7 +9624,19 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult(dict):
              tax_cnpj: str,
              tax_payer_id: str,
              tax_reg_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         _setter("no_tax_reason_code", no_tax_reason_code)
         _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         _setter("tax_cnpj", tax_cnpj)
@@ -8731,7 +9715,19 @@ class GetSubscriptionsSubscriptionCollectionItemTaxInfoResult(dict):
              tax_cnpj: str,
              tax_payer_id: str,
              tax_reg_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         _setter("no_tax_reason_code", no_tax_reason_code)
         _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         _setter("tax_cnpj", tax_cnpj)

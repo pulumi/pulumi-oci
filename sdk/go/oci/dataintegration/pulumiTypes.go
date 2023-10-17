@@ -1630,6 +1630,190 @@ func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) WorkspaceId() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
+type WorkspaceExportRequestExportedItem struct {
+	// Aggregator key
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier *string `pulumi:"identifier"`
+	// Export object request key
+	Key *string `pulumi:"key"`
+	// Name of the export request.
+	Name *string `pulumi:"name"`
+	// Object name path
+	NamePath *string `pulumi:"namePath"`
+	// Object type
+	ObjectType *string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion *string `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
+}
+
+// WorkspaceExportRequestExportedItemInput is an input type that accepts WorkspaceExportRequestExportedItemArgs and WorkspaceExportRequestExportedItemOutput values.
+// You can construct a concrete instance of `WorkspaceExportRequestExportedItemInput` via:
+//
+//	WorkspaceExportRequestExportedItemArgs{...}
+type WorkspaceExportRequestExportedItemInput interface {
+	pulumi.Input
+
+	ToWorkspaceExportRequestExportedItemOutput() WorkspaceExportRequestExportedItemOutput
+	ToWorkspaceExportRequestExportedItemOutputWithContext(context.Context) WorkspaceExportRequestExportedItemOutput
+}
+
+type WorkspaceExportRequestExportedItemArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// Export object request key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Name of the export request.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
+	// Object type
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (WorkspaceExportRequestExportedItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (i WorkspaceExportRequestExportedItemArgs) ToWorkspaceExportRequestExportedItemOutput() WorkspaceExportRequestExportedItemOutput {
+	return i.ToWorkspaceExportRequestExportedItemOutputWithContext(context.Background())
+}
+
+func (i WorkspaceExportRequestExportedItemArgs) ToWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceExportRequestExportedItemOutput)
+}
+
+func (i WorkspaceExportRequestExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceExportRequestExportedItem] {
+	return pulumix.Output[WorkspaceExportRequestExportedItem]{
+		OutputState: i.ToWorkspaceExportRequestExportedItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// WorkspaceExportRequestExportedItemArrayInput is an input type that accepts WorkspaceExportRequestExportedItemArray and WorkspaceExportRequestExportedItemArrayOutput values.
+// You can construct a concrete instance of `WorkspaceExportRequestExportedItemArrayInput` via:
+//
+//	WorkspaceExportRequestExportedItemArray{ WorkspaceExportRequestExportedItemArgs{...} }
+type WorkspaceExportRequestExportedItemArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceExportRequestExportedItemArrayOutput() WorkspaceExportRequestExportedItemArrayOutput
+	ToWorkspaceExportRequestExportedItemArrayOutputWithContext(context.Context) WorkspaceExportRequestExportedItemArrayOutput
+}
+
+type WorkspaceExportRequestExportedItemArray []WorkspaceExportRequestExportedItemInput
+
+func (WorkspaceExportRequestExportedItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (i WorkspaceExportRequestExportedItemArray) ToWorkspaceExportRequestExportedItemArrayOutput() WorkspaceExportRequestExportedItemArrayOutput {
+	return i.ToWorkspaceExportRequestExportedItemArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceExportRequestExportedItemArray) ToWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceExportRequestExportedItemArrayOutput)
+}
+
+func (i WorkspaceExportRequestExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceExportRequestExportedItem] {
+	return pulumix.Output[[]WorkspaceExportRequestExportedItem]{
+		OutputState: i.ToWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type WorkspaceExportRequestExportedItemOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceExportRequestExportedItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (o WorkspaceExportRequestExportedItemOutput) ToWorkspaceExportRequestExportedItemOutput() WorkspaceExportRequestExportedItemOutput {
+	return o
+}
+
+func (o WorkspaceExportRequestExportedItemOutput) ToWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemOutput {
+	return o
+}
+
+func (o WorkspaceExportRequestExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceExportRequestExportedItem] {
+	return pulumix.Output[WorkspaceExportRequestExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o WorkspaceExportRequestExportedItemOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// Object identifier
+func (o WorkspaceExportRequestExportedItemOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// Export object request key
+func (o WorkspaceExportRequestExportedItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Name of the export request.
+func (o WorkspaceExportRequestExportedItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Object name path
+func (o WorkspaceExportRequestExportedItemOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.NamePath }).(pulumi.StringPtrOutput)
+}
+
+// Object type
+func (o WorkspaceExportRequestExportedItemOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
+}
+
+// Object version
+func (o WorkspaceExportRequestExportedItemOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.ObjectVersion }).(pulumi.StringPtrOutput)
+}
+
+// time at which this object was last updated.
+func (o WorkspaceExportRequestExportedItemOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceExportRequestExportedItem) *string { return v.TimeUpdatedInMillis }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceExportRequestExportedItemArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceExportRequestExportedItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (o WorkspaceExportRequestExportedItemArrayOutput) ToWorkspaceExportRequestExportedItemArrayOutput() WorkspaceExportRequestExportedItemArrayOutput {
+	return o
+}
+
+func (o WorkspaceExportRequestExportedItemArrayOutput) ToWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemArrayOutput {
+	return o
+}
+
+func (o WorkspaceExportRequestExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceExportRequestExportedItem] {
+	return pulumix.Output[[]WorkspaceExportRequestExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o WorkspaceExportRequestExportedItemArrayOutput) Index(i pulumi.IntInput) WorkspaceExportRequestExportedItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceExportRequestExportedItem {
+		return vs[0].([]WorkspaceExportRequestExportedItem)[vs[1].(int)]
+	}).(WorkspaceExportRequestExportedItemOutput)
+}
+
 type WorkspaceFolderMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -2643,6 +2827,407 @@ func (o WorkspaceFolderRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPt
 		}
 		return v.RegistryVersion
 	}).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceImportRequestImportConflictResolution struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix *string `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix *string `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType string `pulumi:"importConflictResolutionType"`
+}
+
+// WorkspaceImportRequestImportConflictResolutionInput is an input type that accepts WorkspaceImportRequestImportConflictResolutionArgs and WorkspaceImportRequestImportConflictResolutionOutput values.
+// You can construct a concrete instance of `WorkspaceImportRequestImportConflictResolutionInput` via:
+//
+//	WorkspaceImportRequestImportConflictResolutionArgs{...}
+type WorkspaceImportRequestImportConflictResolutionInput interface {
+	pulumi.Input
+
+	ToWorkspaceImportRequestImportConflictResolutionOutput() WorkspaceImportRequestImportConflictResolutionOutput
+	ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(context.Context) WorkspaceImportRequestImportConflictResolutionOutput
+}
+
+type WorkspaceImportRequestImportConflictResolutionArgs struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix pulumi.StringPtrInput `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix pulumi.StringPtrInput `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType pulumi.StringInput `pulumi:"importConflictResolutionType"`
+}
+
+func (WorkspaceImportRequestImportConflictResolutionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportRequestImportConflictResolutionOutput() WorkspaceImportRequestImportConflictResolutionOutput {
+	return i.ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(context.Background())
+}
+
+func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportConflictResolutionOutput)
+}
+
+func (i WorkspaceImportRequestImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[WorkspaceImportRequestImportConflictResolution]{
+		OutputState: i.ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return i.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportConflictResolutionOutput).ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx)
+}
+
+// WorkspaceImportRequestImportConflictResolutionPtrInput is an input type that accepts WorkspaceImportRequestImportConflictResolutionArgs, WorkspaceImportRequestImportConflictResolutionPtr and WorkspaceImportRequestImportConflictResolutionPtrOutput values.
+// You can construct a concrete instance of `WorkspaceImportRequestImportConflictResolutionPtrInput` via:
+//
+//	        WorkspaceImportRequestImportConflictResolutionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceImportRequestImportConflictResolutionPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput
+	ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput
+}
+
+type workspaceImportRequestImportConflictResolutionPtrType WorkspaceImportRequestImportConflictResolutionArgs
+
+func WorkspaceImportRequestImportConflictResolutionPtr(v *WorkspaceImportRequestImportConflictResolutionArgs) WorkspaceImportRequestImportConflictResolutionPtrInput {
+	return (*workspaceImportRequestImportConflictResolutionPtrType)(v)
+}
+
+func (*workspaceImportRequestImportConflictResolutionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (i *workspaceImportRequestImportConflictResolutionPtrType) ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return i.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceImportRequestImportConflictResolutionPtrType) ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportConflictResolutionPtrOutput)
+}
+
+func (i *workspaceImportRequestImportConflictResolutionPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[*WorkspaceImportRequestImportConflictResolution]{
+		OutputState: i.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type WorkspaceImportRequestImportConflictResolutionOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceImportRequestImportConflictResolutionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ToWorkspaceImportRequestImportConflictResolutionOutput() WorkspaceImportRequestImportConflictResolutionOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return o.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceImportRequestImportConflictResolution) *WorkspaceImportRequestImportConflictResolution {
+		return &v
+	}).(WorkspaceImportRequestImportConflictResolutionPtrOutput)
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[WorkspaceImportRequestImportConflictResolution]{
+		OutputState: o.OutputState,
+	}
+}
+
+// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+func (o WorkspaceImportRequestImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportConflictResolution) *string { return v.DuplicatePrefix }).(pulumi.StringPtrOutput)
+}
+
+// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+func (o WorkspaceImportRequestImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportConflictResolution) *string { return v.DuplicateSuffix }).(pulumi.StringPtrOutput)
+}
+
+// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+func (o WorkspaceImportRequestImportConflictResolutionOutput) ImportConflictResolutionType() pulumi.StringOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportConflictResolution) string { return v.ImportConflictResolutionType }).(pulumi.StringOutput)
+}
+
+type WorkspaceImportRequestImportConflictResolutionPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceImportRequestImportConflictResolutionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[*WorkspaceImportRequestImportConflictResolution]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) Elem() WorkspaceImportRequestImportConflictResolutionOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequestImportConflictResolution) WorkspaceImportRequestImportConflictResolution {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceImportRequestImportConflictResolution
+		return ret
+	}).(WorkspaceImportRequestImportConflictResolutionOutput)
+}
+
+// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) DuplicatePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequestImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DuplicatePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) DuplicateSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequestImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DuplicateSuffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ImportConflictResolutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequestImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ImportConflictResolutionType
+	}).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceImportRequestImportedObject struct {
+	// Aggregator key
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier *string `pulumi:"identifier"`
+	// Name of the import request.
+	Name *string `pulumi:"name"`
+	// Object name path
+	NamePath *string `pulumi:"namePath"`
+	// New key of the object
+	NewKey *string `pulumi:"newKey"`
+	// Object type
+	ObjectType *string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion *string `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey *string `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction *string `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
+}
+
+// WorkspaceImportRequestImportedObjectInput is an input type that accepts WorkspaceImportRequestImportedObjectArgs and WorkspaceImportRequestImportedObjectOutput values.
+// You can construct a concrete instance of `WorkspaceImportRequestImportedObjectInput` via:
+//
+//	WorkspaceImportRequestImportedObjectArgs{...}
+type WorkspaceImportRequestImportedObjectInput interface {
+	pulumi.Input
+
+	ToWorkspaceImportRequestImportedObjectOutput() WorkspaceImportRequestImportedObjectOutput
+	ToWorkspaceImportRequestImportedObjectOutputWithContext(context.Context) WorkspaceImportRequestImportedObjectOutput
+}
+
+type WorkspaceImportRequestImportedObjectArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// Name of the import request.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
+	// New key of the object
+	NewKey pulumi.StringPtrInput `pulumi:"newKey"`
+	// Object type
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey pulumi.StringPtrInput `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction pulumi.StringPtrInput `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (WorkspaceImportRequestImportedObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (i WorkspaceImportRequestImportedObjectArgs) ToWorkspaceImportRequestImportedObjectOutput() WorkspaceImportRequestImportedObjectOutput {
+	return i.ToWorkspaceImportRequestImportedObjectOutputWithContext(context.Background())
+}
+
+func (i WorkspaceImportRequestImportedObjectArgs) ToWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportedObjectOutput)
+}
+
+func (i WorkspaceImportRequestImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportedObject] {
+	return pulumix.Output[WorkspaceImportRequestImportedObject]{
+		OutputState: i.ToWorkspaceImportRequestImportedObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
+// WorkspaceImportRequestImportedObjectArrayInput is an input type that accepts WorkspaceImportRequestImportedObjectArray and WorkspaceImportRequestImportedObjectArrayOutput values.
+// You can construct a concrete instance of `WorkspaceImportRequestImportedObjectArrayInput` via:
+//
+//	WorkspaceImportRequestImportedObjectArray{ WorkspaceImportRequestImportedObjectArgs{...} }
+type WorkspaceImportRequestImportedObjectArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceImportRequestImportedObjectArrayOutput() WorkspaceImportRequestImportedObjectArrayOutput
+	ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(context.Context) WorkspaceImportRequestImportedObjectArrayOutput
+}
+
+type WorkspaceImportRequestImportedObjectArray []WorkspaceImportRequestImportedObjectInput
+
+func (WorkspaceImportRequestImportedObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (i WorkspaceImportRequestImportedObjectArray) ToWorkspaceImportRequestImportedObjectArrayOutput() WorkspaceImportRequestImportedObjectArrayOutput {
+	return i.ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceImportRequestImportedObjectArray) ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportedObjectArrayOutput)
+}
+
+func (i WorkspaceImportRequestImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceImportRequestImportedObject] {
+	return pulumix.Output[[]WorkspaceImportRequestImportedObject]{
+		OutputState: i.ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type WorkspaceImportRequestImportedObjectOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceImportRequestImportedObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (o WorkspaceImportRequestImportedObjectOutput) ToWorkspaceImportRequestImportedObjectOutput() WorkspaceImportRequestImportedObjectOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportedObjectOutput) ToWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportedObject] {
+	return pulumix.Output[WorkspaceImportRequestImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o WorkspaceImportRequestImportedObjectOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// Object identifier
+func (o WorkspaceImportRequestImportedObjectOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// Name of the import request.
+func (o WorkspaceImportRequestImportedObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Object name path
+func (o WorkspaceImportRequestImportedObjectOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.NamePath }).(pulumi.StringPtrOutput)
+}
+
+// New key of the object
+func (o WorkspaceImportRequestImportedObjectOutput) NewKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.NewKey }).(pulumi.StringPtrOutput)
+}
+
+// Object type
+func (o WorkspaceImportRequestImportedObjectOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
+}
+
+// Object version
+func (o WorkspaceImportRequestImportedObjectOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.ObjectVersion }).(pulumi.StringPtrOutput)
+}
+
+// Old key of the object
+func (o WorkspaceImportRequestImportedObjectOutput) OldKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.OldKey }).(pulumi.StringPtrOutput)
+}
+
+// Object resolution action
+func (o WorkspaceImportRequestImportedObjectOutput) ResolutionAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.ResolutionAction }).(pulumi.StringPtrOutput)
+}
+
+// time at which this object was last updated.
+func (o WorkspaceImportRequestImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceImportRequestImportedObject) *string { return v.TimeUpdatedInMillis }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceImportRequestImportedObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceImportRequestImportedObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (o WorkspaceImportRequestImportedObjectArrayOutput) ToWorkspaceImportRequestImportedObjectArrayOutput() WorkspaceImportRequestImportedObjectArrayOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportedObjectArrayOutput) ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectArrayOutput {
+	return o
+}
+
+func (o WorkspaceImportRequestImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceImportRequestImportedObject] {
+	return pulumix.Output[[]WorkspaceImportRequestImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o WorkspaceImportRequestImportedObjectArrayOutput) Index(i pulumi.IntInput) WorkspaceImportRequestImportedObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceImportRequestImportedObject {
+		return vs[0].([]WorkspaceImportRequestImportedObject)[vs[1].(int)]
+	}).(WorkspaceImportRequestImportedObjectOutput)
 }
 
 type WorkspaceProjectMetadata struct {
@@ -7230,6 +7815,940 @@ func (o GetWorkspaceApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetW
 	}).(GetWorkspaceApplicationsFilterOutput)
 }
 
+type GetWorkspaceExportRequestExportedItem struct {
+	// Aggregator key
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier string `pulumi:"identifier"`
+	// Export object request key
+	Key string `pulumi:"key"`
+	// Name of the export request.
+	Name string `pulumi:"name"`
+	// Object name path
+	NamePath string `pulumi:"namePath"`
+	// Object type
+	ObjectType string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion string `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+}
+
+// GetWorkspaceExportRequestExportedItemInput is an input type that accepts GetWorkspaceExportRequestExportedItemArgs and GetWorkspaceExportRequestExportedItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestExportedItemInput` via:
+//
+//	GetWorkspaceExportRequestExportedItemArgs{...}
+type GetWorkspaceExportRequestExportedItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestExportedItemOutput() GetWorkspaceExportRequestExportedItemOutput
+	ToGetWorkspaceExportRequestExportedItemOutputWithContext(context.Context) GetWorkspaceExportRequestExportedItemOutput
+}
+
+type GetWorkspaceExportRequestExportedItemArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Export object request key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Name of the export request.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// Object type
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (GetWorkspaceExportRequestExportedItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestExportedItemArgs) ToGetWorkspaceExportRequestExportedItemOutput() GetWorkspaceExportRequestExportedItemOutput {
+	return i.ToGetWorkspaceExportRequestExportedItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestExportedItemArgs) ToGetWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestExportedItemOutput)
+}
+
+func (i GetWorkspaceExportRequestExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestExportedItem] {
+	return pulumix.Output[GetWorkspaceExportRequestExportedItem]{
+		OutputState: i.ToGetWorkspaceExportRequestExportedItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceExportRequestExportedItemArrayInput is an input type that accepts GetWorkspaceExportRequestExportedItemArray and GetWorkspaceExportRequestExportedItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestExportedItemArrayInput` via:
+//
+//	GetWorkspaceExportRequestExportedItemArray{ GetWorkspaceExportRequestExportedItemArgs{...} }
+type GetWorkspaceExportRequestExportedItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestExportedItemArrayOutput() GetWorkspaceExportRequestExportedItemArrayOutput
+	ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(context.Context) GetWorkspaceExportRequestExportedItemArrayOutput
+}
+
+type GetWorkspaceExportRequestExportedItemArray []GetWorkspaceExportRequestExportedItemInput
+
+func (GetWorkspaceExportRequestExportedItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestExportedItemArray) ToGetWorkspaceExportRequestExportedItemArrayOutput() GetWorkspaceExportRequestExportedItemArrayOutput {
+	return i.ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestExportedItemArray) ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestExportedItemArrayOutput)
+}
+
+func (i GetWorkspaceExportRequestExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestExportedItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestExportedItem]{
+		OutputState: i.ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceExportRequestExportedItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestExportedItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestExportedItemOutput) ToGetWorkspaceExportRequestExportedItemOutput() GetWorkspaceExportRequestExportedItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestExportedItemOutput) ToGetWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestExportedItem] {
+	return pulumix.Output[GetWorkspaceExportRequestExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o GetWorkspaceExportRequestExportedItemOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Object identifier
+func (o GetWorkspaceExportRequestExportedItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// Export object request key
+func (o GetWorkspaceExportRequestExportedItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Name of the export request.
+func (o GetWorkspaceExportRequestExportedItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Object name path
+func (o GetWorkspaceExportRequestExportedItemOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.NamePath }).(pulumi.StringOutput)
+}
+
+// Object type
+func (o GetWorkspaceExportRequestExportedItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// Object version
+func (o GetWorkspaceExportRequestExportedItemOutput) ObjectVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.ObjectVersion }).(pulumi.StringOutput)
+}
+
+// time at which this object was last updated.
+func (o GetWorkspaceExportRequestExportedItemOutput) TimeUpdatedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.TimeUpdatedInMillis }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceExportRequestExportedItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestExportedItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestExportedItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToGetWorkspaceExportRequestExportedItemArrayOutput() GetWorkspaceExportRequestExportedItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestExportedItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestExportedItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestExportedItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestExportedItem {
+		return vs[0].([]GetWorkspaceExportRequestExportedItem)[vs[1].(int)]
+	}).(GetWorkspaceExportRequestExportedItemOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollection struct {
+	Items []GetWorkspaceExportRequestsExportRequestSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs and GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs{...}
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs struct {
+	Items GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionArray{ GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs{...} }
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionArray []GetWorkspaceExportRequestsExportRequestSummaryCollectionInput
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) Items() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollection) []GetWorkspaceExportRequestsExportRequestSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsExportRequestSummaryCollection {
+		return vs[0].([]GetWorkspaceExportRequestsExportRequestSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItem struct {
+	// Controls if the references will be exported along with the objects
+	AreReferencesIncluded bool `pulumi:"areReferencesIncluded"`
+	// The name of the Object Storage Bucket where the objects will be exported to
+	Bucket string `pulumi:"bucket"`
+	// Name of the user who initiated export request.
+	CreatedBy string `pulumi:"createdBy"`
+	// Contains key of the error
+	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	// The array of exported object details.
+	ExportedItems []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem `pulumi:"exportedItems"`
+	// Name of the exported zip file.
+	FileName string `pulumi:"fileName"`
+	// Export multiple objects based on filters.
+	Filters []string `pulumi:"filters"`
+	// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
+	IsObjectOverwriteEnabled bool `pulumi:"isObjectOverwriteEnabled"`
+	// Export object request key
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The list of the objects to be exported
+	ObjectKeys []string `pulumi:"objectKeys"`
+	// Region of the object storage (if using object storage of different region)
+	ObjectStorageRegion string `pulumi:"objectStorageRegion"`
+	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+	ObjectStorageTenancyId string `pulumi:"objectStorageTenancyId"`
+	// The array of exported referenced objects.
+	ReferencedItems string `pulumi:"referencedItems"`
+	// Export Objects request status.
+	Status string `pulumi:"status"`
+	// Specifies end time of a copy object request.
+	TimeEndedInMillis string `pulumi:"timeEndedInMillis"`
+	// Specifies start time of a copy object request.
+	TimeStartedInMillis string `pulumi:"timeStartedInMillis"`
+	// Number of objects that are exported.
+	TotalExportedObjectCount int `pulumi:"totalExportedObjectCount"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs{...}
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs struct {
+	// Controls if the references will be exported along with the objects
+	AreReferencesIncluded pulumi.BoolInput `pulumi:"areReferencesIncluded"`
+	// The name of the Object Storage Bucket where the objects will be exported to
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Name of the user who initiated export request.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Contains key of the error
+	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	// The array of exported object details.
+	ExportedItems GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput `pulumi:"exportedItems"`
+	// Name of the exported zip file.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+	// Export multiple objects based on filters.
+	Filters pulumi.StringArrayInput `pulumi:"filters"`
+	// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
+	IsObjectOverwriteEnabled pulumi.BoolInput `pulumi:"isObjectOverwriteEnabled"`
+	// Export object request key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The list of the objects to be exported
+	ObjectKeys pulumi.StringArrayInput `pulumi:"objectKeys"`
+	// Region of the object storage (if using object storage of different region)
+	ObjectStorageRegion pulumi.StringInput `pulumi:"objectStorageRegion"`
+	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+	ObjectStorageTenancyId pulumi.StringInput `pulumi:"objectStorageTenancyId"`
+	// The array of exported referenced objects.
+	ReferencedItems pulumi.StringInput `pulumi:"referencedItems"`
+	// Export Objects request status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Specifies end time of a copy object request.
+	TimeEndedInMillis pulumi.StringInput `pulumi:"timeEndedInMillis"`
+	// Specifies start time of a copy object request.
+	TimeStartedInMillis pulumi.StringInput `pulumi:"timeStartedInMillis"`
+	// Number of objects that are exported.
+	TotalExportedObjectCount pulumi.IntInput `pulumi:"totalExportedObjectCount"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray{ GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs{...} }
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Controls if the references will be exported along with the objects
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) AreReferencesIncluded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) bool {
+		return v.AreReferencesIncluded
+	}).(pulumi.BoolOutput)
+}
+
+// The name of the Object Storage Bucket where the objects will be exported to
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Name of the user who initiated export request.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Contains key of the error
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) map[string]interface{} {
+		return v.ErrorMessages
+	}).(pulumi.MapOutput)
+}
+
+// The array of exported object details.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ExportedItems() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem {
+		return v.ExportedItems
+	}).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput)
+}
+
+// Name of the exported zip file.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+// Export multiple objects based on filters.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Filters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) []string { return v.Filters }).(pulumi.StringArrayOutput)
+}
+
+// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) IsObjectOverwriteEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) bool {
+		return v.IsObjectOverwriteEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Export object request key
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The list of the objects to be exported
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) []string { return v.ObjectKeys }).(pulumi.StringArrayOutput)
+}
+
+// Region of the object storage (if using object storage of different region)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+		return v.ObjectStorageRegion
+	}).(pulumi.StringOutput)
+}
+
+// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+		return v.ObjectStorageTenancyId
+	}).(pulumi.StringOutput)
+}
+
+// The array of exported referenced objects.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ReferencedItems() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.ReferencedItems }).(pulumi.StringOutput)
+}
+
+// Export Objects request status.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Specifies end time of a copy object request.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+		return v.TimeEndedInMillis
+	}).(pulumi.StringOutput)
+}
+
+// Specifies start time of a copy object request.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+		return v.TimeStartedInMillis
+	}).(pulumi.StringOutput)
+}
+
+// Number of objects that are exported.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TotalExportedObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) int {
+		return v.TotalExportedObjectCount
+	}).(pulumi.IntOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsExportRequestSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem struct {
+	// Aggregator key
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier string `pulumi:"identifier"`
+	// Export object request key
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// Object name path
+	NamePath string `pulumi:"namePath"`
+	// Object type
+	ObjectType string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion string `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs{...}
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Export object request key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// Object type
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput` via:
+//
+//	GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray{ GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs{...} }
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput
+	ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
+	return i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput)
+}
+
+func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
+		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
+	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// Object identifier
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// Export object request key
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Object name path
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.NamePath
+	}).(pulumi.StringOutput)
+}
+
+// Object type
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// Object version
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.ObjectVersion
+	}).(pulumi.StringOutput)
+}
+
+// time at which this object was last updated.
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) TimeUpdatedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+		return v.TimeUpdatedInMillis
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem {
+		return vs[0].([]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem)[vs[1].(int)]
+	}).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput)
+}
+
+type GetWorkspaceExportRequestsFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceExportRequestsFilterInput is an input type that accepts GetWorkspaceExportRequestsFilterArgs and GetWorkspaceExportRequestsFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsFilterInput` via:
+//
+//	GetWorkspaceExportRequestsFilterArgs{...}
+type GetWorkspaceExportRequestsFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsFilterOutput() GetWorkspaceExportRequestsFilterOutput
+	ToGetWorkspaceExportRequestsFilterOutputWithContext(context.Context) GetWorkspaceExportRequestsFilterOutput
+}
+
+type GetWorkspaceExportRequestsFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceExportRequestsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsFilterArgs) ToGetWorkspaceExportRequestsFilterOutput() GetWorkspaceExportRequestsFilterOutput {
+	return i.ToGetWorkspaceExportRequestsFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsFilterArgs) ToGetWorkspaceExportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsFilterOutput)
+}
+
+func (i GetWorkspaceExportRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsFilter] {
+	return pulumix.Output[GetWorkspaceExportRequestsFilter]{
+		OutputState: i.ToGetWorkspaceExportRequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceExportRequestsFilterArrayInput is an input type that accepts GetWorkspaceExportRequestsFilterArray and GetWorkspaceExportRequestsFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceExportRequestsFilterArrayInput` via:
+//
+//	GetWorkspaceExportRequestsFilterArray{ GetWorkspaceExportRequestsFilterArgs{...} }
+type GetWorkspaceExportRequestsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceExportRequestsFilterArrayOutput() GetWorkspaceExportRequestsFilterArrayOutput
+	ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(context.Context) GetWorkspaceExportRequestsFilterArrayOutput
+}
+
+type GetWorkspaceExportRequestsFilterArray []GetWorkspaceExportRequestsFilterInput
+
+func (GetWorkspaceExportRequestsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceExportRequestsFilterArray) ToGetWorkspaceExportRequestsFilterArrayOutput() GetWorkspaceExportRequestsFilterArrayOutput {
+	return i.ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceExportRequestsFilterArray) ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsFilterArrayOutput)
+}
+
+func (i GetWorkspaceExportRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsFilter] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsFilter]{
+		OutputState: i.ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceExportRequestsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceExportRequestsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsFilterOutput) ToGetWorkspaceExportRequestsFilterOutput() GetWorkspaceExportRequestsFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsFilterOutput) ToGetWorkspaceExportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsFilter] {
+	return pulumix.Output[GetWorkspaceExportRequestsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceExportRequestsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceExportRequestsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceExportRequestsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceExportRequestsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceExportRequestsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceExportRequestsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceExportRequestsFilterArrayOutput) ToGetWorkspaceExportRequestsFilterArrayOutput() GetWorkspaceExportRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsFilterArrayOutput) ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceExportRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsFilter] {
+	return pulumix.Output[[]GetWorkspaceExportRequestsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceExportRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsFilter {
+		return vs[0].([]GetWorkspaceExportRequestsFilter)[vs[1].(int)]
+	}).(GetWorkspaceExportRequestsFilterOutput)
+}
+
 type GetWorkspaceFolderMetadata struct {
 	// The owning object key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -9553,6 +11072,1186 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) La
 // The registry version of the object.
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceImportRequestImportConflictResolution struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix string `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix string `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType string `pulumi:"importConflictResolutionType"`
+}
+
+// GetWorkspaceImportRequestImportConflictResolutionInput is an input type that accepts GetWorkspaceImportRequestImportConflictResolutionArgs and GetWorkspaceImportRequestImportConflictResolutionOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestImportConflictResolutionInput` via:
+//
+//	GetWorkspaceImportRequestImportConflictResolutionArgs{...}
+type GetWorkspaceImportRequestImportConflictResolutionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestImportConflictResolutionOutput() GetWorkspaceImportRequestImportConflictResolutionOutput
+	ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(context.Context) GetWorkspaceImportRequestImportConflictResolutionOutput
+}
+
+type GetWorkspaceImportRequestImportConflictResolutionArgs struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix pulumi.StringInput `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix pulumi.StringInput `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType pulumi.StringInput `pulumi:"importConflictResolutionType"`
+}
+
+func (GetWorkspaceImportRequestImportConflictResolutionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToGetWorkspaceImportRequestImportConflictResolutionOutput() GetWorkspaceImportRequestImportConflictResolutionOutput {
+	return i.ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportConflictResolutionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportConflictResolutionOutput)
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[GetWorkspaceImportRequestImportConflictResolution]{
+		OutputState: i.ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestImportConflictResolutionArrayInput is an input type that accepts GetWorkspaceImportRequestImportConflictResolutionArray and GetWorkspaceImportRequestImportConflictResolutionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestImportConflictResolutionArrayInput` via:
+//
+//	GetWorkspaceImportRequestImportConflictResolutionArray{ GetWorkspaceImportRequestImportConflictResolutionArgs{...} }
+type GetWorkspaceImportRequestImportConflictResolutionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestImportConflictResolutionArrayOutput() GetWorkspaceImportRequestImportConflictResolutionArrayOutput
+	ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(context.Context) GetWorkspaceImportRequestImportConflictResolutionArrayOutput
+}
+
+type GetWorkspaceImportRequestImportConflictResolutionArray []GetWorkspaceImportRequestImportConflictResolutionInput
+
+func (GetWorkspaceImportRequestImportConflictResolutionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArray) ToGetWorkspaceImportRequestImportConflictResolutionArrayOutput() GetWorkspaceImportRequestImportConflictResolutionArrayOutput {
+	return i.ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArray) ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportConflictResolutionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportConflictResolutionArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestImportConflictResolutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution]{
+		OutputState: i.ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestImportConflictResolutionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestImportConflictResolutionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ToGetWorkspaceImportRequestImportConflictResolutionOutput() GetWorkspaceImportRequestImportConflictResolutionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportConflictResolutionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[GetWorkspaceImportRequestImportConflictResolution]{
+		OutputState: o.OutputState,
+	}
+}
+
+// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string { return v.DuplicatePrefix }).(pulumi.StringOutput)
+}
+
+// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string { return v.DuplicateSuffix }).(pulumi.StringOutput)
+}
+
+// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ImportConflictResolutionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string {
+		return v.ImportConflictResolutionType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceImportRequestImportConflictResolutionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestImportConflictResolution)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ToGetWorkspaceImportRequestImportConflictResolutionArrayOutput() GetWorkspaceImportRequestImportConflictResolutionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportConflictResolutionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution] {
+	return pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestImportConflictResolutionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestImportConflictResolution {
+		return vs[0].([]GetWorkspaceImportRequestImportConflictResolution)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestImportConflictResolutionOutput)
+}
+
+type GetWorkspaceImportRequestImportedObject struct {
+	// Aggregator key
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier string `pulumi:"identifier"`
+	// Name of the import request.
+	Name string `pulumi:"name"`
+	// Object name path
+	NamePath string `pulumi:"namePath"`
+	// New key of the object
+	NewKey string `pulumi:"newKey"`
+	// Object type
+	ObjectType string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion string `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey string `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction string `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+}
+
+// GetWorkspaceImportRequestImportedObjectInput is an input type that accepts GetWorkspaceImportRequestImportedObjectArgs and GetWorkspaceImportRequestImportedObjectOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestImportedObjectInput` via:
+//
+//	GetWorkspaceImportRequestImportedObjectArgs{...}
+type GetWorkspaceImportRequestImportedObjectInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestImportedObjectOutput() GetWorkspaceImportRequestImportedObjectOutput
+	ToGetWorkspaceImportRequestImportedObjectOutputWithContext(context.Context) GetWorkspaceImportRequestImportedObjectOutput
+}
+
+type GetWorkspaceImportRequestImportedObjectArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Name of the import request.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// New key of the object
+	NewKey pulumi.StringInput `pulumi:"newKey"`
+	// Object type
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey pulumi.StringInput `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction pulumi.StringInput `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (GetWorkspaceImportRequestImportedObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArgs) ToGetWorkspaceImportRequestImportedObjectOutput() GetWorkspaceImportRequestImportedObjectOutput {
+	return i.ToGetWorkspaceImportRequestImportedObjectOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArgs) ToGetWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportedObjectOutput)
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportedObject] {
+	return pulumix.Output[GetWorkspaceImportRequestImportedObject]{
+		OutputState: i.ToGetWorkspaceImportRequestImportedObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestImportedObjectArrayInput is an input type that accepts GetWorkspaceImportRequestImportedObjectArray and GetWorkspaceImportRequestImportedObjectArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestImportedObjectArrayInput` via:
+//
+//	GetWorkspaceImportRequestImportedObjectArray{ GetWorkspaceImportRequestImportedObjectArgs{...} }
+type GetWorkspaceImportRequestImportedObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestImportedObjectArrayOutput() GetWorkspaceImportRequestImportedObjectArrayOutput
+	ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(context.Context) GetWorkspaceImportRequestImportedObjectArrayOutput
+}
+
+type GetWorkspaceImportRequestImportedObjectArray []GetWorkspaceImportRequestImportedObjectInput
+
+func (GetWorkspaceImportRequestImportedObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArray) ToGetWorkspaceImportRequestImportedObjectArrayOutput() GetWorkspaceImportRequestImportedObjectArrayOutput {
+	return i.ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArray) ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportedObjectArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportedObject] {
+	return pulumix.Output[[]GetWorkspaceImportRequestImportedObject]{
+		OutputState: i.ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestImportedObjectOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestImportedObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestImportedObjectOutput) ToGetWorkspaceImportRequestImportedObjectOutput() GetWorkspaceImportRequestImportedObjectOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportedObjectOutput) ToGetWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportedObject] {
+	return pulumix.Output[GetWorkspaceImportRequestImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o GetWorkspaceImportRequestImportedObjectOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Object identifier
+func (o GetWorkspaceImportRequestImportedObjectOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// Name of the import request.
+func (o GetWorkspaceImportRequestImportedObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Object name path
+func (o GetWorkspaceImportRequestImportedObjectOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.NamePath }).(pulumi.StringOutput)
+}
+
+// New key of the object
+func (o GetWorkspaceImportRequestImportedObjectOutput) NewKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.NewKey }).(pulumi.StringOutput)
+}
+
+// Object type
+func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+// Object version
+func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ObjectVersion }).(pulumi.StringOutput)
+}
+
+// Old key of the object
+func (o GetWorkspaceImportRequestImportedObjectOutput) OldKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.OldKey }).(pulumi.StringOutput)
+}
+
+// Object resolution action
+func (o GetWorkspaceImportRequestImportedObjectOutput) ResolutionAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ResolutionAction }).(pulumi.StringOutput)
+}
+
+// time at which this object was last updated.
+func (o GetWorkspaceImportRequestImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.TimeUpdatedInMillis }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceImportRequestImportedObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestImportedObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestImportedObject)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToGetWorkspaceImportRequestImportedObjectArrayOutput() GetWorkspaceImportRequestImportedObjectArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportedObject] {
+	return pulumix.Output[[]GetWorkspaceImportRequestImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestImportedObjectArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestImportedObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestImportedObject {
+		return vs[0].([]GetWorkspaceImportRequestImportedObject)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestImportedObjectOutput)
+}
+
+type GetWorkspaceImportRequestsFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceImportRequestsFilterInput is an input type that accepts GetWorkspaceImportRequestsFilterArgs and GetWorkspaceImportRequestsFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsFilterInput` via:
+//
+//	GetWorkspaceImportRequestsFilterArgs{...}
+type GetWorkspaceImportRequestsFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsFilterOutput() GetWorkspaceImportRequestsFilterOutput
+	ToGetWorkspaceImportRequestsFilterOutputWithContext(context.Context) GetWorkspaceImportRequestsFilterOutput
+}
+
+type GetWorkspaceImportRequestsFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceImportRequestsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsFilterArgs) ToGetWorkspaceImportRequestsFilterOutput() GetWorkspaceImportRequestsFilterOutput {
+	return i.ToGetWorkspaceImportRequestsFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsFilterArgs) ToGetWorkspaceImportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsFilterOutput)
+}
+
+func (i GetWorkspaceImportRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsFilter] {
+	return pulumix.Output[GetWorkspaceImportRequestsFilter]{
+		OutputState: i.ToGetWorkspaceImportRequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestsFilterArrayInput is an input type that accepts GetWorkspaceImportRequestsFilterArray and GetWorkspaceImportRequestsFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsFilterArrayInput` via:
+//
+//	GetWorkspaceImportRequestsFilterArray{ GetWorkspaceImportRequestsFilterArgs{...} }
+type GetWorkspaceImportRequestsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsFilterArrayOutput() GetWorkspaceImportRequestsFilterArrayOutput
+	ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(context.Context) GetWorkspaceImportRequestsFilterArrayOutput
+}
+
+type GetWorkspaceImportRequestsFilterArray []GetWorkspaceImportRequestsFilterInput
+
+func (GetWorkspaceImportRequestsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsFilterArray) ToGetWorkspaceImportRequestsFilterArrayOutput() GetWorkspaceImportRequestsFilterArrayOutput {
+	return i.ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsFilterArray) ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsFilterArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsFilter] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsFilter]{
+		OutputState: i.ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsFilterOutput) ToGetWorkspaceImportRequestsFilterOutput() GetWorkspaceImportRequestsFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsFilterOutput) ToGetWorkspaceImportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsFilter] {
+	return pulumix.Output[GetWorkspaceImportRequestsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceImportRequestsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceImportRequestsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceImportRequestsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceImportRequestsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsFilterArrayOutput) ToGetWorkspaceImportRequestsFilterArrayOutput() GetWorkspaceImportRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsFilterArrayOutput) ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsFilter] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsFilter {
+		return vs[0].([]GetWorkspaceImportRequestsFilter)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestsFilterOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollection struct {
+	Items []GetWorkspaceImportRequestsImportRequestSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs and GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs{...}
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs struct {
+	Items GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionArray{ GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs{...} }
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionArray []GetWorkspaceImportRequestsImportRequestSummaryCollectionInput
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) Items() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollection) []GetWorkspaceImportRequestsImportRequestSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollection {
+		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItem struct {
+	// The name of the Object Storage Bucket where the objects will be imported from
+	Bucket string `pulumi:"bucket"`
+	// Name of the user who initiated import request.
+	CreatedBy string `pulumi:"createdBy"`
+	// Contains key of the error
+	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	// Name of the zip file from which objects will be imported.
+	FileName string `pulumi:"fileName"`
+	// Import Objects Conflict resolution.
+	ImportConflictResolution GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution `pulumi:"importConflictResolution"`
+	// The array of imported object details.
+	ImportedObjects []GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject `pulumi:"importedObjects"`
+	// Import object request key
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// Key of the object inside which all the objects will be imported
+	ObjectKeyForImport string `pulumi:"objectKeyForImport"`
+	// Region of the object storage (if using object storage of different region)
+	ObjectStorageRegion string `pulumi:"objectStorageRegion"`
+	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+	ObjectStorageTenancyId string `pulumi:"objectStorageTenancyId"`
+	// Import Objects request status.
+	Status string `pulumi:"status"`
+	// Specifies end time of a copy object request.
+	TimeEndedInMillis string `pulumi:"timeEndedInMillis"`
+	// Specifies start time of a copy object request.
+	TimeStartedInMillis string `pulumi:"timeStartedInMillis"`
+	// Number of objects that are imported.
+	TotalImportedObjectCount int `pulumi:"totalImportedObjectCount"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs{...}
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs struct {
+	// The name of the Object Storage Bucket where the objects will be imported from
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Name of the user who initiated import request.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Contains key of the error
+	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	// Name of the zip file from which objects will be imported.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+	// Import Objects Conflict resolution.
+	ImportConflictResolution GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput `pulumi:"importConflictResolution"`
+	// The array of imported object details.
+	ImportedObjects GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput `pulumi:"importedObjects"`
+	// Import object request key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Key of the object inside which all the objects will be imported
+	ObjectKeyForImport pulumi.StringInput `pulumi:"objectKeyForImport"`
+	// Region of the object storage (if using object storage of different region)
+	ObjectStorageRegion pulumi.StringInput `pulumi:"objectStorageRegion"`
+	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+	ObjectStorageTenancyId pulumi.StringInput `pulumi:"objectStorageTenancyId"`
+	// Import Objects request status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Specifies end time of a copy object request.
+	TimeEndedInMillis pulumi.StringInput `pulumi:"timeEndedInMillis"`
+	// Specifies start time of a copy object request.
+	TimeStartedInMillis pulumi.StringInput `pulumi:"timeStartedInMillis"`
+	// Number of objects that are imported.
+	TotalImportedObjectCount pulumi.IntInput `pulumi:"totalImportedObjectCount"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray{ GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs{...} }
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray []GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The name of the Object Storage Bucket where the objects will be imported from
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Name of the user who initiated import request.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Contains key of the error
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) map[string]interface{} {
+		return v.ErrorMessages
+	}).(pulumi.MapOutput)
+}
+
+// Name of the zip file from which objects will be imported.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+// Import Objects Conflict resolution.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ImportConflictResolution() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
+		return v.ImportConflictResolution
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput)
+}
+
+// The array of imported object details.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ImportedObjects() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) []GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject {
+		return v.ImportedObjects
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput)
+}
+
+// Import object request key
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Key of the object inside which all the objects will be imported
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectKeyForImport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+		return v.ObjectKeyForImport
+	}).(pulumi.StringOutput)
+}
+
+// Region of the object storage (if using object storage of different region)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+		return v.ObjectStorageRegion
+	}).(pulumi.StringOutput)
+}
+
+// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+		return v.ObjectStorageTenancyId
+	}).(pulumi.StringOutput)
+}
+
+// Import Objects request status.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Specifies end time of a copy object request.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+		return v.TimeEndedInMillis
+	}).(pulumi.StringOutput)
+}
+
+// Specifies start time of a copy object request.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+		return v.TimeStartedInMillis
+	}).(pulumi.StringOutput)
+}
+
+// Number of objects that are imported.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TotalImportedObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) int {
+		return v.TotalImportedObjectCount
+	}).(pulumi.IntOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix string `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix string `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType string `pulumi:"importConflictResolutionType"`
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs{...}
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs struct {
+	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+	DuplicatePrefix pulumi.StringInput `pulumi:"duplicatePrefix"`
+	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+	DuplicateSuffix pulumi.StringInput `pulumi:"duplicateSuffix"`
+	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+	ImportConflictResolutionType pulumi.StringInput `pulumi:"importConflictResolutionType"`
+}
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution]{
+		OutputState: o.OutputState,
+	}
+}
+
+// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) string {
+		return v.DuplicatePrefix
+	}).(pulumi.StringOutput)
+}
+
+// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) string {
+		return v.DuplicateSuffix
+	}).(pulumi.StringOutput)
+}
+
+// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ImportConflictResolutionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) string {
+		return v.ImportConflictResolutionType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject struct {
+	// Aggregator key
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier string `pulumi:"identifier"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// Object name path
+	NamePath string `pulumi:"namePath"`
+	// New key of the object
+	NewKey string `pulumi:"newKey"`
+	// Object type
+	ObjectType string `pulumi:"objectType"`
+	// Object version
+	ObjectVersion string `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey string `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction string `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs{...}
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs struct {
+	// Aggregator key
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Object identifier
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Object name path
+	NamePath pulumi.StringInput `pulumi:"namePath"`
+	// New key of the object
+	NewKey pulumi.StringInput `pulumi:"newKey"`
+	// Object type
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// Object version
+	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	// Old key of the object
+	OldKey pulumi.StringInput `pulumi:"oldKey"`
+	// Object resolution action
+	ResolutionAction pulumi.StringInput `pulumi:"resolutionAction"`
+	// time at which this object was last updated.
+	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+}
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput` via:
+//
+//	GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray{ GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs{...} }
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray []GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)(nil)).Elem()
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput)
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
+		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
+	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Aggregator key
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// Object identifier
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Object name path
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NamePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.NamePath
+	}).(pulumi.StringOutput)
+}
+
+// New key of the object
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NewKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.NewKey
+	}).(pulumi.StringOutput)
+}
+
+// Object type
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// Object version
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.ObjectVersion
+	}).(pulumi.StringOutput)
+}
+
+// Old key of the object
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) OldKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.OldKey
+	}).(pulumi.StringOutput)
+}
+
+// Object resolution action
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ResolutionAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.ResolutionAction
+	}).(pulumi.StringOutput)
+}
+
+// time at which this object was last updated.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+		return v.TimeUpdatedInMillis
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
+	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject {
+		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)[vs[1].(int)]
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput)
 }
 
 type GetWorkspaceProjectMetadata struct {
@@ -12331,6 +15030,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceApplicationRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationSourceApplicationInfoInput)(nil)).Elem(), WorkspaceApplicationSourceApplicationInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceApplicationSourceApplicationInfoPtrInput)(nil)).Elem(), WorkspaceApplicationSourceApplicationInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceExportRequestExportedItemInput)(nil)).Elem(), WorkspaceExportRequestExportedItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceExportRequestExportedItemArrayInput)(nil)).Elem(), WorkspaceExportRequestExportedItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataInput)(nil)).Elem(), WorkspaceFolderMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataArrayInput)(nil)).Elem(), WorkspaceFolderMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataAggregatorInput)(nil)).Elem(), WorkspaceFolderMetadataAggregatorArgs{})
@@ -12343,6 +15044,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderParentRefArrayInput)(nil)).Elem(), WorkspaceFolderParentRefArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderRegistryMetadataInput)(nil)).Elem(), WorkspaceFolderRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceFolderRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceImportRequestImportConflictResolutionInput)(nil)).Elem(), WorkspaceImportRequestImportConflictResolutionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceImportRequestImportConflictResolutionPtrInput)(nil)).Elem(), WorkspaceImportRequestImportConflictResolutionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceImportRequestImportedObjectInput)(nil)).Elem(), WorkspaceImportRequestImportedObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceImportRequestImportedObjectArrayInput)(nil)).Elem(), WorkspaceImportRequestImportedObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataInput)(nil)).Elem(), WorkspaceProjectMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataArrayInput)(nil)).Elem(), WorkspaceProjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataAggregatorInput)(nil)).Elem(), WorkspaceProjectMetadataAggregatorArgs{})
@@ -12397,6 +15102,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayInput)(nil)).Elem(), GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationsFilterInput)(nil)).Elem(), GetWorkspaceApplicationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceApplicationsFilterArrayInput)(nil)).Elem(), GetWorkspaceApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestExportedItemInput)(nil)).Elem(), GetWorkspaceExportRequestExportedItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestExportedItemArrayInput)(nil)).Elem(), GetWorkspaceExportRequestExportedItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput)(nil)).Elem(), GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsFilterInput)(nil)).Elem(), GetWorkspaceExportRequestsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceExportRequestsFilterArrayInput)(nil)).Elem(), GetWorkspaceExportRequestsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataInput)(nil)).Elem(), GetWorkspaceFolderMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataArrayInput)(nil)).Elem(), GetWorkspaceFolderMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceFolderMetadataAggregatorArgs{})
@@ -12426,6 +15141,19 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestImportConflictResolutionInput)(nil)).Elem(), GetWorkspaceImportRequestImportConflictResolutionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestImportConflictResolutionArrayInput)(nil)).Elem(), GetWorkspaceImportRequestImportConflictResolutionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestImportedObjectInput)(nil)).Elem(), GetWorkspaceImportRequestImportedObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestImportedObjectArrayInput)(nil)).Elem(), GetWorkspaceImportRequestImportedObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsFilterInput)(nil)).Elem(), GetWorkspaceImportRequestsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsFilterArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataInput)(nil)).Elem(), GetWorkspaceProjectMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceProjectMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceProjectMetadataAggregatorArgs{})
@@ -12477,6 +15205,8 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceApplicationRegistryMetadataPtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationSourceApplicationInfoOutput{})
 	pulumi.RegisterOutputType(WorkspaceApplicationSourceApplicationInfoPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceExportRequestExportedItemOutput{})
+	pulumi.RegisterOutputType(WorkspaceExportRequestExportedItemArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceFolderMetadataOutput{})
 	pulumi.RegisterOutputType(WorkspaceFolderMetadataArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceFolderMetadataAggregatorOutput{})
@@ -12489,6 +15219,10 @@ func init() {
 	pulumi.RegisterOutputType(WorkspaceFolderParentRefArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceFolderRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(WorkspaceFolderRegistryMetadataPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceImportRequestImportConflictResolutionOutput{})
+	pulumi.RegisterOutputType(WorkspaceImportRequestImportConflictResolutionPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceImportRequestImportedObjectOutput{})
+	pulumi.RegisterOutputType(WorkspaceImportRequestImportedObjectArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceProjectMetadataOutput{})
 	pulumi.RegisterOutputType(WorkspaceProjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceProjectMetadataAggregatorOutput{})
@@ -12543,6 +15277,16 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationsFilterOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestExportedItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestExportedItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceExportRequestsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataAggregatorOutput{})
@@ -12572,6 +15316,19 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestImportConflictResolutionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestImportConflictResolutionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestImportedObjectOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestImportedObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataAggregatorOutput{})

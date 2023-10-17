@@ -146,7 +146,69 @@ class AutonomousContainerDatabaseArgs:
              standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              version_preference: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'patchModel' in kwargs:
+            patch_model = kwargs['patchModel']
+        if 'autonomousExadataInfrastructureId' in kwargs:
+            autonomous_exadata_infrastructure_id = kwargs['autonomousExadataInfrastructureId']
+        if 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if 'backupConfig' in kwargs:
+            backup_config = kwargs['backupConfig']
+        if 'cloudAutonomousVmClusterId' in kwargs:
+            cloud_autonomous_vm_cluster_id = kwargs['cloudAutonomousVmClusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+            fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutomaticFailoverEnabled' in kwargs:
+            is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
+            peer_autonomous_container_database_backup_config = kwargs['peerAutonomousContainerDatabaseBackupConfig']
+        if 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
+            peer_autonomous_container_database_compartment_id = kwargs['peerAutonomousContainerDatabaseCompartmentId']
+        if 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
+            peer_autonomous_container_database_display_name = kwargs['peerAutonomousContainerDatabaseDisplayName']
+        if 'peerAutonomousExadataInfrastructureId' in kwargs:
+            peer_autonomous_exadata_infrastructure_id = kwargs['peerAutonomousExadataInfrastructureId']
+        if 'peerAutonomousVmClusterId' in kwargs:
+            peer_autonomous_vm_cluster_id = kwargs['peerAutonomousVmClusterId']
+        if 'peerCloudAutonomousVmClusterId' in kwargs:
+            peer_cloud_autonomous_vm_cluster_id = kwargs['peerCloudAutonomousVmClusterId']
+        if 'peerDbUniqueName' in kwargs:
+            peer_db_unique_name = kwargs['peerDbUniqueName']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'rotateKeyTrigger' in kwargs:
+            rotate_key_trigger = kwargs['rotateKeyTrigger']
+        if 'serviceLevelAgreementType' in kwargs:
+            service_level_agreement_type = kwargs['serviceLevelAgreementType']
+        if 'standbyMaintenanceBufferInDays' in kwargs:
+            standby_maintenance_buffer_in_days = kwargs['standbyMaintenanceBufferInDays']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if 'versionPreference' in kwargs:
+            version_preference = kwargs['versionPreference']
+
         _setter("display_name", display_name)
         _setter("patch_model", patch_model)
         if autonomous_exadata_infrastructure_id is not None:
@@ -658,6 +720,9 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
         :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
@@ -670,7 +735,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
@@ -784,7 +849,109 @@ class _AutonomousContainerDatabaseState:
              total_cpus: Optional[pulumi.Input[int]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              version_preference: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousExadataInfrastructureId' in kwargs:
+            autonomous_exadata_infrastructure_id = kwargs['autonomousExadataInfrastructureId']
+        if 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'availableCpus' in kwargs:
+            available_cpus = kwargs['availableCpus']
+        if 'backupConfig' in kwargs:
+            backup_config = kwargs['backupConfig']
+        if 'cloudAutonomousVmClusterId' in kwargs:
+            cloud_autonomous_vm_cluster_id = kwargs['cloudAutonomousVmClusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+            fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if 'isAutomaticFailoverEnabled' in kwargs:
+            is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
+        if 'keyHistoryEntries' in kwargs:
+            key_history_entries = kwargs['keyHistoryEntries']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'largestProvisionableAutonomousDatabaseInCpus' in kwargs:
+            largest_provisionable_autonomous_database_in_cpus = kwargs['largestProvisionableAutonomousDatabaseInCpus']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'patchId' in kwargs:
+            patch_id = kwargs['patchId']
+        if 'patchModel' in kwargs:
+            patch_model = kwargs['patchModel']
+        if 'peerAutonomousContainerDatabaseBackupConfig' in kwargs:
+            peer_autonomous_container_database_backup_config = kwargs['peerAutonomousContainerDatabaseBackupConfig']
+        if 'peerAutonomousContainerDatabaseCompartmentId' in kwargs:
+            peer_autonomous_container_database_compartment_id = kwargs['peerAutonomousContainerDatabaseCompartmentId']
+        if 'peerAutonomousContainerDatabaseDisplayName' in kwargs:
+            peer_autonomous_container_database_display_name = kwargs['peerAutonomousContainerDatabaseDisplayName']
+        if 'peerAutonomousExadataInfrastructureId' in kwargs:
+            peer_autonomous_exadata_infrastructure_id = kwargs['peerAutonomousExadataInfrastructureId']
+        if 'peerAutonomousVmClusterId' in kwargs:
+            peer_autonomous_vm_cluster_id = kwargs['peerAutonomousVmClusterId']
+        if 'peerCloudAutonomousVmClusterId' in kwargs:
+            peer_cloud_autonomous_vm_cluster_id = kwargs['peerCloudAutonomousVmClusterId']
+        if 'peerDbUniqueName' in kwargs:
+            peer_db_unique_name = kwargs['peerDbUniqueName']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'provisionableCpuses' in kwargs:
+            provisionable_cpuses = kwargs['provisionableCpuses']
+        if 'provisionedCpus' in kwargs:
+            provisioned_cpus = kwargs['provisionedCpus']
+        if 'reclaimableCpus' in kwargs:
+            reclaimable_cpus = kwargs['reclaimableCpus']
+        if 'reservedCpus' in kwargs:
+            reserved_cpus = kwargs['reservedCpus']
+        if 'rotateKeyTrigger' in kwargs:
+            rotate_key_trigger = kwargs['rotateKeyTrigger']
+        if 'serviceLevelAgreementType' in kwargs:
+            service_level_agreement_type = kwargs['serviceLevelAgreementType']
+        if 'standbyMaintenanceBufferInDays' in kwargs:
+            standby_maintenance_buffer_in_days = kwargs['standbyMaintenanceBufferInDays']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeSnapshotStandbyRevert' in kwargs:
+            time_snapshot_standby_revert = kwargs['timeSnapshotStandbyRevert']
+        if 'totalCpus' in kwargs:
+            total_cpus = kwargs['totalCpus']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if 'versionPreference' in kwargs:
+            version_preference = kwargs['versionPreference']
+
         if autonomous_exadata_infrastructure_id is not None:
             _setter("autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
@@ -1367,7 +1534,7 @@ class _AutonomousContainerDatabaseState:
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -1378,6 +1545,11 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        The number of CPUs reserved in an Autonomous Container Database.
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        """
         return pulumi.get(self, "reserved_cpus")
 
     @reserved_cpus.setter
@@ -1476,7 +1648,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "total_cpus")
 
@@ -1848,6 +2020,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
         :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
@@ -1860,7 +2035,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
@@ -2239,13 +2414,18 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         """
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> pulumi.Output[float]:
+        """
+        The number of CPUs reserved in an Autonomous Container Database.
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        """
         return pulumi.get(self, "reserved_cpus")
 
     @property
@@ -2312,7 +2492,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> pulumi.Output[int]:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "total_cpus")
 

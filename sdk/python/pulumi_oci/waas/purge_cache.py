@@ -35,7 +35,11 @@ class PurgeCacheArgs:
              _setter: Callable[[Any, Any], None],
              waas_policy_id: pulumi.Input[str],
              resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         _setter("waas_policy_id", waas_policy_id)
         if resources is not None:
             _setter("resources", resources)
@@ -93,7 +97,11 @@ class _PurgeCacheState:
              _setter: Callable[[Any, Any], None],
              resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              waas_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         if resources is not None:
             _setter("resources", resources)
         if waas_policy_id is not None:

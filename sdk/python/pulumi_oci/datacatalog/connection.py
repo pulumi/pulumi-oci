@@ -58,7 +58,21 @@ class ConnectionArgs:
              description: Optional[pulumi.Input[str]] = None,
              enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_default: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'dataAssetKey' in kwargs:
+            data_asset_key = kwargs['dataAssetKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+        if 'encProperties' in kwargs:
+            enc_properties = kwargs['encProperties']
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("catalog_id", catalog_id)
         _setter("data_asset_key", data_asset_key)
         _setter("display_name", display_name)
@@ -252,7 +266,33 @@ class _ConnectionState:
              type_key: Optional[pulumi.Input[str]] = None,
              updated_by_id: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'createdById' in kwargs:
+            created_by_id = kwargs['createdById']
+        if 'dataAssetKey' in kwargs:
+            data_asset_key = kwargs['dataAssetKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'encProperties' in kwargs:
+            enc_properties = kwargs['encProperties']
+        if 'externalKey' in kwargs:
+            external_key = kwargs['externalKey']
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeStatusUpdated' in kwargs:
+            time_status_updated = kwargs['timeStatusUpdated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+        if 'updatedById' in kwargs:
+            updated_by_id = kwargs['updatedById']
+
         if catalog_id is not None:
             _setter("catalog_id", catalog_id)
         if created_by_id is not None:

@@ -65,7 +65,23 @@ class ModelDeploymentArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'modelDeploymentConfigurationDetails' in kwargs:
+            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'categoryLogDetails' in kwargs:
+            category_log_details = kwargs['categoryLogDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("model_deployment_configuration_details", model_deployment_configuration_details)
         _setter("project_id", project_id)
@@ -263,7 +279,31 @@ class _ModelDeploymentState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryLogDetails' in kwargs:
+            category_log_details = kwargs['categoryLogDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelDeploymentConfigurationDetails' in kwargs:
+            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
+        if 'modelDeploymentUrl' in kwargs:
+            model_deployment_url = kwargs['modelDeploymentUrl']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if category_log_details is not None:
             _setter("category_log_details", category_log_details)
         if compartment_id is not None:

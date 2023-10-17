@@ -45,7 +45,19 @@ class ProcessorJobArgs:
              output_location: pulumi.Input['ProcessorJobOutputLocationArgs'],
              processor_config: pulumi.Input['ProcessorJobProcessorConfigArgs'],
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'inputLocation' in kwargs:
+            input_location = kwargs['inputLocation']
+        if 'outputLocation' in kwargs:
+            output_location = kwargs['outputLocation']
+        if 'processorConfig' in kwargs:
+            processor_config = kwargs['processorConfig']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("compartment_id", compartment_id)
         _setter("input_location", input_location)
         _setter("output_location", output_location)
@@ -170,7 +182,29 @@ class _ProcessorJobState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'inputLocation' in kwargs:
+            input_location = kwargs['inputLocation']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'outputLocation' in kwargs:
+            output_location = kwargs['outputLocation']
+        if 'percentComplete' in kwargs:
+            percent_complete = kwargs['percentComplete']
+        if 'processorConfig' in kwargs:
+            processor_config = kwargs['processorConfig']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if display_name is not None:

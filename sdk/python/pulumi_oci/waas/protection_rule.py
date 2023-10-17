@@ -41,7 +41,11 @@ class ProtectionRuleArgs:
              waas_policy_id: pulumi.Input[str],
              action: Optional[pulumi.Input[str]] = None,
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         _setter("key", key)
         _setter("waas_policy_id", waas_policy_id)
         if action is not None:
@@ -142,7 +146,13 @@ class _ProtectionRuleState:
              mod_security_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              waas_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modSecurityRuleIds' in kwargs:
+            mod_security_rule_ids = kwargs['modSecurityRuleIds']
+        if 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         if action is not None:
             _setter("action", action)
         if description is not None:

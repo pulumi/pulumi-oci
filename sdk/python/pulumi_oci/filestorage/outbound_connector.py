@@ -69,7 +69,27 @@ class OutboundConnectorArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
              password_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'bindDistinguishedName' in kwargs:
+            bind_distinguished_name = kwargs['bindDistinguishedName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'passwordSecretVersion' in kwargs:
+            password_secret_version = kwargs['passwordSecretVersion']
+
         _setter("availability_domain", availability_domain)
         _setter("bind_distinguished_name", bind_distinguished_name)
         _setter("compartment_id", compartment_id)
@@ -275,7 +295,29 @@ class _OutboundConnectorState:
              password_secret_version: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'bindDistinguishedName' in kwargs:
+            bind_distinguished_name = kwargs['bindDistinguishedName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'passwordSecretVersion' in kwargs:
+            password_secret_version = kwargs['passwordSecretVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if bind_distinguished_name is not None:

@@ -414,7 +414,65 @@ class DomainsAuthenticationFactorSettingArgs:
              urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
              user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationFactorSettingId' in kwargs:
+            authentication_factor_setting_id = kwargs['authenticationFactorSettingId']
+        if 'bypassCodeEnabled' in kwargs:
+            bypass_code_enabled = kwargs['bypassCodeEnabled']
+        if 'bypassCodeSettings' in kwargs:
+            bypass_code_settings = kwargs['bypassCodeSettings']
+        if 'clientAppSettings' in kwargs:
+            client_app_settings = kwargs['clientAppSettings']
+        if 'compliancePolicies' in kwargs:
+            compliance_policies = kwargs['compliancePolicies']
+        if 'endpointRestrictions' in kwargs:
+            endpoint_restrictions = kwargs['endpointRestrictions']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'mfaEnrollmentType' in kwargs:
+            mfa_enrollment_type = kwargs['mfaEnrollmentType']
+        if 'notificationSettings' in kwargs:
+            notification_settings = kwargs['notificationSettings']
+        if 'pushEnabled' in kwargs:
+            push_enabled = kwargs['pushEnabled']
+        if 'securityQuestionsEnabled' in kwargs:
+            security_questions_enabled = kwargs['securityQuestionsEnabled']
+        if 'smsEnabled' in kwargs:
+            sms_enabled = kwargs['smsEnabled']
+        if 'totpEnabled' in kwargs:
+            totp_enabled = kwargs['totpEnabled']
+        if 'totpSettings' in kwargs:
+            totp_settings = kwargs['totpSettings']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'autoEnrollEmailFactorDisabled' in kwargs:
+            auto_enroll_email_factor_disabled = kwargs['autoEnrollEmailFactorDisabled']
+        if 'emailEnabled' in kwargs:
+            email_enabled = kwargs['emailEnabled']
+        if 'emailSettings' in kwargs:
+            email_settings = kwargs['emailSettings']
+        if 'fidoAuthenticatorEnabled' in kwargs:
+            fido_authenticator_enabled = kwargs['fidoAuthenticatorEnabled']
+        if 'hideBackupFactorEnabled' in kwargs:
+            hide_backup_factor_enabled = kwargs['hideBackupFactorEnabled']
+        if 'identityStoreSettings' in kwargs:
+            identity_store_settings = kwargs['identityStoreSettings']
+        if 'phoneCallEnabled' in kwargs:
+            phone_call_enabled = kwargs['phoneCallEnabled']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'thirdPartyFactor' in kwargs:
+            third_party_factor = kwargs['thirdPartyFactor']
+        if 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings']
+        if 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings']
+        if 'userEnrollmentDisabledFactors' in kwargs:
+            user_enrollment_disabled_factors = kwargs['userEnrollmentDisabledFactors']
+        if 'yubicoOtpEnabled' in kwargs:
+            yubico_otp_enabled = kwargs['yubicoOtpEnabled']
+
         _setter("authentication_factor_setting_id", authentication_factor_setting_id)
         _setter("bypass_code_enabled", bypass_code_enabled)
         _setter("bypass_code_settings", bypass_code_settings)
@@ -1658,7 +1716,83 @@ class _DomainsAuthenticationFactorSettingState:
              urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
              user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'authenticationFactorSettingId' in kwargs:
+            authentication_factor_setting_id = kwargs['authenticationFactorSettingId']
+        if 'autoEnrollEmailFactorDisabled' in kwargs:
+            auto_enroll_email_factor_disabled = kwargs['autoEnrollEmailFactorDisabled']
+        if 'bypassCodeEnabled' in kwargs:
+            bypass_code_enabled = kwargs['bypassCodeEnabled']
+        if 'bypassCodeSettings' in kwargs:
+            bypass_code_settings = kwargs['bypassCodeSettings']
+        if 'clientAppSettings' in kwargs:
+            client_app_settings = kwargs['clientAppSettings']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'compliancePolicies' in kwargs:
+            compliance_policies = kwargs['compliancePolicies']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'emailEnabled' in kwargs:
+            email_enabled = kwargs['emailEnabled']
+        if 'emailSettings' in kwargs:
+            email_settings = kwargs['emailSettings']
+        if 'endpointRestrictions' in kwargs:
+            endpoint_restrictions = kwargs['endpointRestrictions']
+        if 'fidoAuthenticatorEnabled' in kwargs:
+            fido_authenticator_enabled = kwargs['fidoAuthenticatorEnabled']
+        if 'hideBackupFactorEnabled' in kwargs:
+            hide_backup_factor_enabled = kwargs['hideBackupFactorEnabled']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'identityStoreSettings' in kwargs:
+            identity_store_settings = kwargs['identityStoreSettings']
+        if 'mfaEnabledCategory' in kwargs:
+            mfa_enabled_category = kwargs['mfaEnabledCategory']
+        if 'mfaEnrollmentType' in kwargs:
+            mfa_enrollment_type = kwargs['mfaEnrollmentType']
+        if 'notificationSettings' in kwargs:
+            notification_settings = kwargs['notificationSettings']
+        if 'phoneCallEnabled' in kwargs:
+            phone_call_enabled = kwargs['phoneCallEnabled']
+        if 'pushEnabled' in kwargs:
+            push_enabled = kwargs['pushEnabled']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'securityQuestionsEnabled' in kwargs:
+            security_questions_enabled = kwargs['securityQuestionsEnabled']
+        if 'smsEnabled' in kwargs:
+            sms_enabled = kwargs['smsEnabled']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'thirdPartyFactor' in kwargs:
+            third_party_factor = kwargs['thirdPartyFactor']
+        if 'totpEnabled' in kwargs:
+            totp_enabled = kwargs['totpEnabled']
+        if 'totpSettings' in kwargs:
+            totp_settings = kwargs['totpSettings']
+        if 'urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings']
+        if 'urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = kwargs['urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings']
+        if 'userEnrollmentDisabledFactors' in kwargs:
+            user_enrollment_disabled_factors = kwargs['userEnrollmentDisabledFactors']
+        if 'yubicoOtpEnabled' in kwargs:
+            yubico_otp_enabled = kwargs['yubicoOtpEnabled']
+
         if attribute_sets is not None:
             _setter("attribute_sets", attribute_sets)
         if attributes is not None:

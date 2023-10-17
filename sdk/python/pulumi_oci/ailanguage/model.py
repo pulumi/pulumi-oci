@@ -61,7 +61,25 @@ class ModelArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              test_strategy: Optional[pulumi.Input['ModelTestStrategyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'modelDetails' in kwargs:
+            model_details = kwargs['modelDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'testStrategy' in kwargs:
+            test_strategy = kwargs['testStrategy']
+
         _setter("compartment_id", compartment_id)
         _setter("model_details", model_details)
         _setter("project_id", project_id)
@@ -262,7 +280,35 @@ class _ModelState:
              time_updated: Optional[pulumi.Input[str]] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'evaluationResults' in kwargs:
+            evaluation_results = kwargs['evaluationResults']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelDetails' in kwargs:
+            model_details = kwargs['modelDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'testStrategy' in kwargs:
+            test_strategy = kwargs['testStrategy']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

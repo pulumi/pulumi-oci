@@ -79,7 +79,33 @@ class SensitiveTypeArgs:
              parent_category_id: Optional[pulumi.Input[str]] = None,
              search_type: Optional[pulumi.Input[str]] = None,
              short_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'commentPattern' in kwargs:
+            comment_pattern = kwargs['commentPattern']
+        if 'dataPattern' in kwargs:
+            data_pattern = kwargs['dataPattern']
+        if 'defaultMaskingFormatId' in kwargs:
+            default_masking_format_id = kwargs['defaultMaskingFormatId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'namePattern' in kwargs:
+            name_pattern = kwargs['namePattern']
+        if 'parentCategoryId' in kwargs:
+            parent_category_id = kwargs['parentCategoryId']
+        if 'searchType' in kwargs:
+            search_type = kwargs['searchType']
+        if 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+
         _setter("compartment_id", compartment_id)
         _setter("entity_type", entity_type)
         if comment_pattern is not None:
@@ -354,7 +380,39 @@ class _SensitiveTypeState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commentPattern' in kwargs:
+            comment_pattern = kwargs['commentPattern']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataPattern' in kwargs:
+            data_pattern = kwargs['dataPattern']
+        if 'defaultMaskingFormatId' in kwargs:
+            default_masking_format_id = kwargs['defaultMaskingFormatId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'namePattern' in kwargs:
+            name_pattern = kwargs['namePattern']
+        if 'parentCategoryId' in kwargs:
+            parent_category_id = kwargs['parentCategoryId']
+        if 'searchType' in kwargs:
+            search_type = kwargs['searchType']
+        if 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if comment_pattern is not None:
             _setter("comment_pattern", comment_pattern)
         if compartment_id is not None:

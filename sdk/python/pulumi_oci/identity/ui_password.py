@@ -31,7 +31,11 @@ class UiPasswordArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("user_id", user_id)
 
     @property
@@ -87,7 +91,15 @@ class _UiPasswordState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'inactiveStatus' in kwargs:
+            inactive_status = kwargs['inactiveStatus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if inactive_status is not None:
             _setter("inactive_status", inactive_status)
         if password is not None:

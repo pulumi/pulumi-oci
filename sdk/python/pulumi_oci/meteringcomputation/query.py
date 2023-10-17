@@ -33,7 +33,13 @@ class QueryArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              query_definition: pulumi.Input['QueryQueryDefinitionArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'queryDefinition' in kwargs:
+            query_definition = kwargs['queryDefinition']
+
         _setter("compartment_id", compartment_id)
         _setter("query_definition", query_definition)
 
@@ -82,7 +88,13 @@ class _QueryState:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'queryDefinition' in kwargs:
+            query_definition = kwargs['queryDefinition']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if query_definition is not None:

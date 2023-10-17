@@ -51,7 +51,17 @@ class SnapshotArgs:
              expiration_time: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'expirationTime' in kwargs:
+            expiration_time = kwargs['expirationTime']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("file_system_id", file_system_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -206,7 +216,31 @@ class _SnapshotState:
              snapshot_type: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'expirationTime' in kwargs:
+            expiration_time = kwargs['expirationTime']
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'filesystemSnapshotPolicyId' in kwargs:
+            filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCloneSource' in kwargs:
+            is_clone_source = kwargs['isCloneSource']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'provenanceId' in kwargs:
+            provenance_id = kwargs['provenanceId']
+        if 'snapshotTime' in kwargs:
+            snapshot_time = kwargs['snapshotTime']
+        if 'snapshotType' in kwargs:
+            snapshot_type = kwargs['snapshotType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if expiration_time is not None:

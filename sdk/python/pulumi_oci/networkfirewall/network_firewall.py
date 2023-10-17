@@ -67,7 +67,25 @@ class NetworkFirewallArgs:
              ipv4address: Optional[pulumi.Input[str]] = None,
              ipv6address: Optional[pulumi.Input[str]] = None,
              network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+
         _setter("compartment_id", compartment_id)
         _setter("network_firewall_policy_id", network_firewall_policy_id)
         _setter("subnet_id", subnet_id)
@@ -287,7 +305,33 @@ class _NetworkFirewallState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

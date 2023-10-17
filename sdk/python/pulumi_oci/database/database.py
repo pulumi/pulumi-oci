@@ -73,7 +73,25 @@ class DatabaseArgs:
              kms_key_rotation: Optional[pulumi.Input[int]] = None,
              kms_key_version_id: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbHomeId' in kwargs:
+            db_home_id = kwargs['dbHomeId']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyMigration' in kwargs:
+            kms_key_migration = kwargs['kmsKeyMigration']
+        if 'kmsKeyRotation' in kwargs:
+            kms_key_rotation = kwargs['kmsKeyRotation']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("database", database)
         _setter("db_home_id", db_home_id)
         _setter("source", source)
@@ -385,7 +403,73 @@ class _DatabaseState:
              time_created: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if 'databaseManagementConfigs' in kwargs:
+            database_management_configs = kwargs['databaseManagementConfigs']
+        if 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if 'dbBackupConfigs' in kwargs:
+            db_backup_configs = kwargs['dbBackupConfigs']
+        if 'dbHomeId' in kwargs:
+            db_home_id = kwargs['dbHomeId']
+        if 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCdb' in kwargs:
+            is_cdb = kwargs['isCdb']
+        if 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyMigration' in kwargs:
+            kms_key_migration = kwargs['kmsKeyMigration']
+        if 'kmsKeyRotation' in kwargs:
+            kms_key_rotation = kwargs['kmsKeyRotation']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'lastBackupDurationInSeconds' in kwargs:
+            last_backup_duration_in_seconds = kwargs['lastBackupDurationInSeconds']
+        if 'lastBackupTimestamp' in kwargs:
+            last_backup_timestamp = kwargs['lastBackupTimestamp']
+        if 'lastFailedBackupTimestamp' in kwargs:
+            last_failed_backup_timestamp = kwargs['lastFailedBackupTimestamp']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if 'sidPrefix' in kwargs:
+            sid_prefix = kwargs['sidPrefix']
+        if 'sourceDatabasePointInTimeRecoveryTimestamp' in kwargs:
+            source_database_point_in_time_recovery_timestamp = kwargs['sourceDatabasePointInTimeRecoveryTimestamp']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         if character_set is not None:
             _setter("character_set", character_set)
         if compartment_id is not None:
@@ -949,6 +1033,7 @@ class Database(pulumi.CustomResource):
                 kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
                 ncharacter_set=var["database_database_ncharacter_set"],
                 pdb_name=var["database_database_pdb_name"],
+                pluggable_databases=var["database_database_pluggable_databases"],
                 sid_prefix=var["database_database_sid_prefix"],
                 tde_wallet_password=var["database_database_tde_wallet_password"],
                 vault_id=oci_kms_vault["test_vault"]["id"],
@@ -1038,6 +1123,7 @@ class Database(pulumi.CustomResource):
                 kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
                 ncharacter_set=var["database_database_ncharacter_set"],
                 pdb_name=var["database_database_pdb_name"],
+                pluggable_databases=var["database_database_pluggable_databases"],
                 sid_prefix=var["database_database_sid_prefix"],
                 tde_wallet_password=var["database_database_tde_wallet_password"],
                 vault_id=oci_kms_vault["test_vault"]["id"],

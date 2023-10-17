@@ -37,7 +37,13 @@ class OsnArgs:
              ad: pulumi.Input[str],
              blockchain_platform_id: pulumi.Input[str],
              ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+
         _setter("ad", ad)
         _setter("blockchain_platform_id", blockchain_platform_id)
         if ocpu_allocation_param is not None:
@@ -112,7 +118,15 @@ class _OsnState:
              ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None,
              osn_key: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         if ad is not None:
             _setter("ad", ad)
         if blockchain_platform_id is not None:

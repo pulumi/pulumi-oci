@@ -44,7 +44,9 @@ class ProfileLevelsConfigurationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -80,7 +82,11 @@ class ProfileLevelsConfigurationItemArgs:
              _setter: Callable[[Any, Any], None],
              level: Optional[pulumi.Input[str]] = None,
              recommendation_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+
         if level is not None:
             _setter("level", level)
         if recommendation_id is not None:
@@ -126,7 +132,9 @@ class ProfileTargetCompartmentsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -157,7 +165,9 @@ class ProfileTargetTagsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -208,7 +218,17 @@ class ProfileTargetTagsItemArgs:
              tag_namespace_name: pulumi.Input[str],
              tag_value_type: pulumi.Input[str],
              tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if 'tagNamespaceName' in kwargs:
+            tag_namespace_name = kwargs['tagNamespaceName']
+        if 'tagValueType' in kwargs:
+            tag_value_type = kwargs['tagValueType']
+        if 'tagValues' in kwargs:
+            tag_values = kwargs['tagValues']
+
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
         _setter("tag_value_type", tag_value_type)
@@ -291,7 +311,9 @@ class RecommendationResourceCountArgs:
              _setter: Callable[[Any, Any], None],
              count: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if count is not None:
             _setter("count", count)
         if status is not None:
@@ -337,7 +359,9 @@ class RecommendationSupportedLevelArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -369,7 +393,9 @@ class RecommendationSupportedLevelItemArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -409,7 +435,9 @@ class ResourceActionActionArgs:
              description: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if type is not None:
@@ -475,7 +503,9 @@ class GetCategoriesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -530,7 +560,9 @@ class GetEnrollmentStatusesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -585,7 +617,9 @@ class GetHistoriesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -643,7 +677,9 @@ class GetProfileLevelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -701,7 +737,9 @@ class GetProfilesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -759,7 +797,9 @@ class GetRecommendationStrategiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -817,7 +857,9 @@ class GetRecommendationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -875,7 +917,9 @@ class GetResourceActionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

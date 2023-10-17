@@ -159,7 +159,21 @@ class DomainsCustomerSecretKeyArgs:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsCustomerSecretKeyTagArgs']]]] = None,
              urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
              user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'expiresOn' in kwargs:
+            expires_on = kwargs['expiresOn']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("schemas", schemas)
         if attribute_sets is not None:
@@ -712,7 +726,39 @@ class _DomainsCustomerSecretKeyState:
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
              user: Optional[pulumi.Input['DomainsCustomerSecretKeyUserArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKey' in kwargs:
+            access_key = kwargs['accessKey']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'expiresOn' in kwargs:
+            expires_on = kwargs['expiresOn']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+
         if access_key is not None:
             _setter("access_key", access_key)
         if attribute_sets is not None:

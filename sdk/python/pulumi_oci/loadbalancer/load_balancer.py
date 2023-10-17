@@ -95,7 +95,29 @@ class LoadBalancerArgs:
              network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
              shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipMode' in kwargs:
+            ip_mode = kwargs['ipMode']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+        if 'shapeDetails' in kwargs:
+            shape_details = kwargs['shapeDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("shape", shape)
@@ -376,7 +398,37 @@ class _LoadBalancerState:
              subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddressDetails' in kwargs:
+            ip_address_details = kwargs['ipAddressDetails']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'ipMode' in kwargs:
+            ip_mode = kwargs['ipMode']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+        if 'shapeDetails' in kwargs:
+            shape_details = kwargs['shapeDetails']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

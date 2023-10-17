@@ -196,7 +196,41 @@ class DataAssetDataSourceDetails(dict):
              user_name: Optional[str] = None,
              version_specific_details: Optional['outputs.DataAssetDataSourceDetailsVersionSpecificDetails'] = None,
              wallet_password_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataSourceType' in kwargs:
+            data_source_type = kwargs['dataSourceType']
+        if 'atpPasswordSecretId' in kwargs:
+            atp_password_secret_id = kwargs['atpPasswordSecretId']
+        if 'atpUserName' in kwargs:
+            atp_user_name = kwargs['atpUserName']
+        if 'cwalletFileSecretId' in kwargs:
+            cwallet_file_secret_id = kwargs['cwalletFileSecretId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'ewalletFileSecretId' in kwargs:
+            ewallet_file_secret_id = kwargs['ewalletFileSecretId']
+        if 'keyStoreFileSecretId' in kwargs:
+            key_store_file_secret_id = kwargs['keyStoreFileSecretId']
+        if 'measurementName' in kwargs:
+            measurement_name = kwargs['measurementName']
+        if 'ojdbcFileSecretId' in kwargs:
+            ojdbc_file_secret_id = kwargs['ojdbcFileSecretId']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tnsnamesFileSecretId' in kwargs:
+            tnsnames_file_secret_id = kwargs['tnsnamesFileSecretId']
+        if 'truststoreFileSecretId' in kwargs:
+            truststore_file_secret_id = kwargs['truststoreFileSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'versionSpecificDetails' in kwargs:
+            version_specific_details = kwargs['versionSpecificDetails']
+        if 'walletPasswordSecretId' in kwargs:
+            wallet_password_secret_id = kwargs['walletPasswordSecretId']
+
         _setter("data_source_type", data_source_type)
         if atp_password_secret_id is not None:
             _setter("atp_password_secret_id", atp_password_secret_id)
@@ -452,7 +486,17 @@ class DataAssetDataSourceDetailsVersionSpecificDetails(dict):
              database_name: Optional[str] = None,
              organization_name: Optional[str] = None,
              retention_policy_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'influxVersion' in kwargs:
+            influx_version = kwargs['influxVersion']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'organizationName' in kwargs:
+            organization_name = kwargs['organizationName']
+        if 'retentionPolicyName' in kwargs:
+            retention_policy_name = kwargs['retentionPolicyName']
+
         _setter("influx_version", influx_version)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -564,7 +608,17 @@ class DetectAnomalyJobInputDetails(dict):
              message: Optional[str] = None,
              object_locations: Optional[Sequence['outputs.DetectAnomalyJobInputDetailsObjectLocation']] = None,
              signal_names: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'inputType' in kwargs:
+            input_type = kwargs['inputType']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if 'signalNames' in kwargs:
+            signal_names = kwargs['signalNames']
+
         _setter("input_type", input_type)
         if content is not None:
             _setter("content", content)
@@ -649,7 +703,9 @@ class DetectAnomalyJobInputDetailsData(dict):
              _setter: Callable[[Any, Any], None],
              timestamp: Optional[str] = None,
              values: Optional[Sequence[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if timestamp is not None:
             _setter("timestamp", timestamp)
         if values is not None:
@@ -695,7 +751,9 @@ class DetectAnomalyJobInputDetailsObjectLocation(dict):
              bucket: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -772,7 +830,11 @@ class DetectAnomalyJobOutputDetails(dict):
              namespace: str,
              output_type: str,
              prefix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'outputType' in kwargs:
+            output_type = kwargs['outputType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("output_type", output_type)
@@ -868,7 +930,19 @@ class ModelModelTrainingDetails(dict):
              target_fap: Optional[float] = None,
              training_fraction: Optional[float] = None,
              window_size: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataAssetIds' in kwargs:
+            data_asset_ids = kwargs['dataAssetIds']
+        if 'algorithmHint' in kwargs:
+            algorithm_hint = kwargs['algorithmHint']
+        if 'targetFap' in kwargs:
+            target_fap = kwargs['targetFap']
+        if 'trainingFraction' in kwargs:
+            training_fraction = kwargs['trainingFraction']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
             _setter("algorithm_hint", algorithm_hint)
@@ -995,7 +1069,21 @@ class ModelModelTrainingResult(dict):
              signal_details: Optional[Sequence['outputs.ModelModelTrainingResultSignalDetail']] = None,
              warning: Optional[str] = None,
              window_size: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTrainingGoalAchieved' in kwargs:
+            is_training_goal_achieved = kwargs['isTrainingGoalAchieved']
+        if 'maxInferenceSyncRows' in kwargs:
+            max_inference_sync_rows = kwargs['maxInferenceSyncRows']
+        if 'multivariateFap' in kwargs:
+            multivariate_fap = kwargs['multivariateFap']
+        if 'rowReductionDetails' in kwargs:
+            row_reduction_details = kwargs['rowReductionDetails']
+        if 'signalDetails' in kwargs:
+            signal_details = kwargs['signalDetails']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         if fap is not None:
             _setter("fap", fap)
         if is_training_goal_achieved is not None:
@@ -1135,7 +1223,15 @@ class ModelModelTrainingResultRowReductionDetail(dict):
              is_reduction_enabled: Optional[bool] = None,
              reduction_method: Optional[str] = None,
              reduction_percentage: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReductionEnabled' in kwargs:
+            is_reduction_enabled = kwargs['isReductionEnabled']
+        if 'reductionMethod' in kwargs:
+            reduction_method = kwargs['reductionMethod']
+        if 'reductionPercentage' in kwargs:
+            reduction_percentage = kwargs['reductionPercentage']
+
         if is_reduction_enabled is not None:
             _setter("is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
@@ -1241,7 +1337,15 @@ class ModelModelTrainingResultSignalDetail(dict):
              signal_name: Optional[str] = None,
              status: Optional[str] = None,
              std: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isQuantized' in kwargs:
+            is_quantized = kwargs['isQuantized']
+        if 'mviRatio' in kwargs:
+            mvi_ratio = kwargs['mviRatio']
+        if 'signalName' in kwargs:
+            signal_name = kwargs['signalName']
+
         if details is not None:
             _setter("details", details)
         if fap is not None:
@@ -1349,7 +1453,9 @@ class GetAiPrivateEndpointsAiPrivateEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1421,7 +1527,31 @@ class GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedDataAssets' in kwargs:
+            attached_data_assets = kwargs['attachedDataAssets']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsZones' in kwargs:
+            dns_zones = kwargs['dnsZones']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("attached_data_assets", attached_data_assets)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1559,7 +1689,9 @@ class GetAiPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1616,7 +1748,17 @@ class GetDetectAnomalyJobInputDetailResult(dict):
              message: str,
              object_locations: Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult'],
              signal_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'inputType' in kwargs:
+            input_type = kwargs['inputType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if 'signalNames' in kwargs:
+            signal_names = kwargs['signalNames']
+
         _setter("content", content)
         _setter("content_type", content_type)
         _setter("datas", datas)
@@ -1685,7 +1827,9 @@ class GetDetectAnomalyJobInputDetailDataResult(dict):
              _setter: Callable[[Any, Any], None],
              timestamp: str,
              values: Sequence[float],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("timestamp", timestamp)
         _setter("values", values)
 
@@ -1723,7 +1867,9 @@ class GetDetectAnomalyJobInputDetailObjectLocationResult(dict):
              bucket: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -1780,7 +1926,11 @@ class GetDetectAnomalyJobOutputDetailResult(dict):
              namespace: str,
              output_type: str,
              prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'outputType' in kwargs:
+            output_type = kwargs['outputType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("output_type", output_type)
@@ -1831,7 +1981,9 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1919,7 +2071,35 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult(dict):
              time_accepted: str,
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inputDetails' in kwargs:
+            input_details = kwargs['inputDetails']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'outputDetails' in kwargs:
+            output_details = kwargs['outputDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -2110,7 +2290,17 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult(dict):
              message: str,
              object_locations: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult'],
              signal_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'inputType' in kwargs:
+            input_type = kwargs['inputType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if 'signalNames' in kwargs:
+            signal_names = kwargs['signalNames']
+
         _setter("content", content)
         _setter("content_type", content_type)
         _setter("datas", datas)
@@ -2179,7 +2369,9 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult(di
              _setter: Callable[[Any, Any], None],
              timestamp: str,
              values: Sequence[float],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("timestamp", timestamp)
         _setter("values", values)
 
@@ -2217,7 +2409,9 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocatio
              bucket: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -2274,7 +2468,11 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult(dict)
              namespace: str,
              output_type: str,
              prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'outputType' in kwargs:
+            output_type = kwargs['outputType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("output_type", output_type)
@@ -2331,7 +2529,9 @@ class GetDetectAnomalyJobsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2444,7 +2644,41 @@ class GetDetectionDataAssetDataSourceDetailResult(dict):
              user_name: str,
              version_specific_details: Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult'],
              wallet_password_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'atpPasswordSecretId' in kwargs:
+            atp_password_secret_id = kwargs['atpPasswordSecretId']
+        if 'atpUserName' in kwargs:
+            atp_user_name = kwargs['atpUserName']
+        if 'cwalletFileSecretId' in kwargs:
+            cwallet_file_secret_id = kwargs['cwalletFileSecretId']
+        if 'dataSourceType' in kwargs:
+            data_source_type = kwargs['dataSourceType']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'ewalletFileSecretId' in kwargs:
+            ewallet_file_secret_id = kwargs['ewalletFileSecretId']
+        if 'keyStoreFileSecretId' in kwargs:
+            key_store_file_secret_id = kwargs['keyStoreFileSecretId']
+        if 'measurementName' in kwargs:
+            measurement_name = kwargs['measurementName']
+        if 'ojdbcFileSecretId' in kwargs:
+            ojdbc_file_secret_id = kwargs['ojdbcFileSecretId']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tnsnamesFileSecretId' in kwargs:
+            tnsnames_file_secret_id = kwargs['tnsnamesFileSecretId']
+        if 'truststoreFileSecretId' in kwargs:
+            truststore_file_secret_id = kwargs['truststoreFileSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'versionSpecificDetails' in kwargs:
+            version_specific_details = kwargs['versionSpecificDetails']
+        if 'walletPasswordSecretId' in kwargs:
+            wallet_password_secret_id = kwargs['walletPasswordSecretId']
+
         _setter("atp_password_secret_id", atp_password_secret_id)
         _setter("atp_user_name", atp_user_name)
         _setter("bucket", bucket)
@@ -2658,7 +2892,17 @@ class GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult(dict):
              influx_version: str,
              organization_name: str,
              retention_policy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'influxVersion' in kwargs:
+            influx_version = kwargs['influxVersion']
+        if 'organizationName' in kwargs:
+            organization_name = kwargs['organizationName']
+        if 'retentionPolicyName' in kwargs:
+            retention_policy_name = kwargs['retentionPolicyName']
+
         _setter("bucket", bucket)
         _setter("database_name", database_name)
         _setter("influx_version", influx_version)
@@ -2718,7 +2962,9 @@ class GetDetectionDataAssetsDataAssetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2790,7 +3036,29 @@ class GetDetectionDataAssetsDataAssetCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataSourceDetails' in kwargs:
+            data_source_details = kwargs['dataSourceDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("data_source_details", data_source_details)
         _setter("defined_tags", defined_tags)
@@ -3001,7 +3269,41 @@ class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult(dict):
              user_name: str,
              version_specific_details: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult'],
              wallet_password_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'atpPasswordSecretId' in kwargs:
+            atp_password_secret_id = kwargs['atpPasswordSecretId']
+        if 'atpUserName' in kwargs:
+            atp_user_name = kwargs['atpUserName']
+        if 'cwalletFileSecretId' in kwargs:
+            cwallet_file_secret_id = kwargs['cwalletFileSecretId']
+        if 'dataSourceType' in kwargs:
+            data_source_type = kwargs['dataSourceType']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'ewalletFileSecretId' in kwargs:
+            ewallet_file_secret_id = kwargs['ewalletFileSecretId']
+        if 'keyStoreFileSecretId' in kwargs:
+            key_store_file_secret_id = kwargs['keyStoreFileSecretId']
+        if 'measurementName' in kwargs:
+            measurement_name = kwargs['measurementName']
+        if 'ojdbcFileSecretId' in kwargs:
+            ojdbc_file_secret_id = kwargs['ojdbcFileSecretId']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tnsnamesFileSecretId' in kwargs:
+            tnsnames_file_secret_id = kwargs['tnsnamesFileSecretId']
+        if 'truststoreFileSecretId' in kwargs:
+            truststore_file_secret_id = kwargs['truststoreFileSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'versionSpecificDetails' in kwargs:
+            version_specific_details = kwargs['versionSpecificDetails']
+        if 'walletPasswordSecretId' in kwargs:
+            wallet_password_secret_id = kwargs['walletPasswordSecretId']
+
         _setter("atp_password_secret_id", atp_password_secret_id)
         _setter("atp_user_name", atp_user_name)
         _setter("bucket", bucket)
@@ -3215,7 +3517,17 @@ class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecif
              influx_version: str,
              organization_name: str,
              retention_policy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'influxVersion' in kwargs:
+            influx_version = kwargs['influxVersion']
+        if 'organizationName' in kwargs:
+            organization_name = kwargs['organizationName']
+        if 'retentionPolicyName' in kwargs:
+            retention_policy_name = kwargs['retentionPolicyName']
+
         _setter("bucket", bucket)
         _setter("database_name", database_name)
         _setter("influx_version", influx_version)
@@ -3281,7 +3593,9 @@ class GetDetectionDataAssetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3334,7 +3648,19 @@ class GetDetectionModelModelTrainingDetailResult(dict):
              target_fap: float,
              training_fraction: float,
              window_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'algorithmHint' in kwargs:
+            algorithm_hint = kwargs['algorithmHint']
+        if 'dataAssetIds' in kwargs:
+            data_asset_ids = kwargs['dataAssetIds']
+        if 'targetFap' in kwargs:
+            target_fap = kwargs['targetFap']
+        if 'trainingFraction' in kwargs:
+            training_fraction = kwargs['trainingFraction']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("algorithm_hint", algorithm_hint)
         _setter("data_asset_ids", data_asset_ids)
         _setter("target_fap", target_fap)
@@ -3430,7 +3756,21 @@ class GetDetectionModelModelTrainingResultResult(dict):
              signal_details: Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult'],
              warning: str,
              window_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTrainingGoalAchieved' in kwargs:
+            is_training_goal_achieved = kwargs['isTrainingGoalAchieved']
+        if 'maxInferenceSyncRows' in kwargs:
+            max_inference_sync_rows = kwargs['maxInferenceSyncRows']
+        if 'multivariateFap' in kwargs:
+            multivariate_fap = kwargs['multivariateFap']
+        if 'rowReductionDetails' in kwargs:
+            row_reduction_details = kwargs['rowReductionDetails']
+        if 'signalDetails' in kwargs:
+            signal_details = kwargs['signalDetails']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("fap", fap)
         _setter("is_training_goal_achieved", is_training_goal_achieved)
         _setter("mae", mae)
@@ -3539,7 +3879,15 @@ class GetDetectionModelModelTrainingResultRowReductionDetailResult(dict):
              is_reduction_enabled: bool,
              reduction_method: str,
              reduction_percentage: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReductionEnabled' in kwargs:
+            is_reduction_enabled = kwargs['isReductionEnabled']
+        if 'reductionMethod' in kwargs:
+            reduction_method = kwargs['reductionMethod']
+        if 'reductionPercentage' in kwargs:
+            reduction_percentage = kwargs['reductionPercentage']
+
         _setter("is_reduction_enabled", is_reduction_enabled)
         _setter("reduction_method", reduction_method)
         _setter("reduction_percentage", reduction_percentage)
@@ -3621,7 +3969,15 @@ class GetDetectionModelModelTrainingResultSignalDetailResult(dict):
              signal_name: str,
              status: str,
              std: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isQuantized' in kwargs:
+            is_quantized = kwargs['isQuantized']
+        if 'mviRatio' in kwargs:
+            mvi_ratio = kwargs['mviRatio']
+        if 'signalName' in kwargs:
+            signal_name = kwargs['signalName']
+
         _setter("details", details)
         _setter("fap", fap)
         _setter("is_quantized", is_quantized)
@@ -3726,7 +4082,9 @@ class GetDetectionModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3760,7 +4118,9 @@ class GetDetectionModelsModelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDetectionModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3836,7 +4196,31 @@ class GetDetectionModelsModelCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelTrainingDetails' in kwargs:
+            model_training_details = kwargs['modelTrainingDetails']
+        if 'modelTrainingResults' in kwargs:
+            model_training_results = kwargs['modelTrainingResults']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3996,7 +4380,19 @@ class GetDetectionModelsModelCollectionItemModelTrainingDetailResult(dict):
              target_fap: float,
              training_fraction: float,
              window_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'algorithmHint' in kwargs:
+            algorithm_hint = kwargs['algorithmHint']
+        if 'dataAssetIds' in kwargs:
+            data_asset_ids = kwargs['dataAssetIds']
+        if 'targetFap' in kwargs:
+            target_fap = kwargs['targetFap']
+        if 'trainingFraction' in kwargs:
+            training_fraction = kwargs['trainingFraction']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("algorithm_hint", algorithm_hint)
         _setter("data_asset_ids", data_asset_ids)
         _setter("target_fap", target_fap)
@@ -4092,7 +4488,21 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultResult(dict):
              signal_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult'],
              warning: str,
              window_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTrainingGoalAchieved' in kwargs:
+            is_training_goal_achieved = kwargs['isTrainingGoalAchieved']
+        if 'maxInferenceSyncRows' in kwargs:
+            max_inference_sync_rows = kwargs['maxInferenceSyncRows']
+        if 'multivariateFap' in kwargs:
+            multivariate_fap = kwargs['multivariateFap']
+        if 'rowReductionDetails' in kwargs:
+            row_reduction_details = kwargs['rowReductionDetails']
+        if 'signalDetails' in kwargs:
+            signal_details = kwargs['signalDetails']
+        if 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         _setter("fap", fap)
         _setter("is_training_goal_achieved", is_training_goal_achieved)
         _setter("mae", mae)
@@ -4201,7 +4611,15 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail
              is_reduction_enabled: bool,
              reduction_method: str,
              reduction_percentage: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReductionEnabled' in kwargs:
+            is_reduction_enabled = kwargs['isReductionEnabled']
+        if 'reductionMethod' in kwargs:
+            reduction_method = kwargs['reductionMethod']
+        if 'reductionPercentage' in kwargs:
+            reduction_percentage = kwargs['reductionPercentage']
+
         _setter("is_reduction_enabled", is_reduction_enabled)
         _setter("reduction_method", reduction_method)
         _setter("reduction_percentage", reduction_percentage)
@@ -4283,7 +4701,15 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult
              signal_name: str,
              status: str,
              std: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isQuantized' in kwargs:
+            is_quantized = kwargs['isQuantized']
+        if 'mviRatio' in kwargs:
+            mvi_ratio = kwargs['mviRatio']
+        if 'signalName' in kwargs:
+            signal_name = kwargs['signalName']
+
         _setter("details", details)
         _setter("fap", fap)
         _setter("is_quantized", is_quantized)
@@ -4388,7 +4814,9 @@ class GetDetectionProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4422,7 +4850,9 @@ class GetDetectionProjectsProjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4482,7 +4912,23 @@ class GetDetectionProjectsProjectCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

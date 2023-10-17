@@ -49,7 +49,19 @@ class VolumeBackupPolicyArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              schedules: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBackupPolicyScheduleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'destinationRegion' in kwargs:
+            destination_region = kwargs['destinationRegion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -175,7 +187,21 @@ class _VolumeBackupPolicyState:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              schedules: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBackupPolicyScheduleArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'destinationRegion' in kwargs:
+            destination_region = kwargs['destinationRegion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

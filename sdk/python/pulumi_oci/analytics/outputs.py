@@ -66,7 +66,13 @@ class AnalyticsInstanceCapacity(dict):
              _setter: Callable[[Any, Any], None],
              capacity_type: str,
              capacity_value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityType' in kwargs:
+            capacity_type = kwargs['capacityType']
+        if 'capacityValue' in kwargs:
+            capacity_value = kwargs['capacityValue']
+
         _setter("capacity_type", capacity_type)
         _setter("capacity_value", capacity_value)
 
@@ -155,7 +161,23 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
              whitelisted_ips: Optional[Sequence[str]] = None,
              whitelisted_services: Optional[Sequence[str]] = None,
              whitelisted_vcns: Optional[Sequence['outputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEndpointType' in kwargs:
+            network_endpoint_type = kwargs['networkEndpointType']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+        if 'whitelistedServices' in kwargs:
+            whitelisted_services = kwargs['whitelistedServices']
+        if 'whitelistedVcns' in kwargs:
+            whitelisted_vcns = kwargs['whitelistedVcns']
+
         _setter("network_endpoint_type", network_endpoint_type)
         if network_security_group_ids is not None:
             _setter("network_security_group_ids", network_security_group_ids)
@@ -263,7 +285,11 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn(dict):
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
              whitelisted_ips: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
         if id is not None:
             _setter("id", id)
         if whitelisted_ips is not None:
@@ -322,7 +348,11 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
              _setter: Callable[[Any, Any], None],
              dns_zone: str,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsZone' in kwargs:
+            dns_zone = kwargs['dnsZone']
+
         _setter("dns_zone", dns_zone)
         if description is not None:
             _setter("description", description)
@@ -386,7 +416,13 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
              scan_hostname: str,
              scan_port: int,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanHostname' in kwargs:
+            scan_hostname = kwargs['scanHostname']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+
         _setter("scan_hostname", scan_hostname)
         _setter("scan_port", scan_port)
         if description is not None:
@@ -436,7 +472,13 @@ class GetAnalyticsInstanceCapacityResult(dict):
              _setter: Callable[[Any, Any], None],
              capacity_type: str,
              capacity_value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityType' in kwargs:
+            capacity_type = kwargs['capacityType']
+        if 'capacityValue' in kwargs:
+            capacity_value = kwargs['capacityValue']
+
         _setter("capacity_type", capacity_type)
         _setter("capacity_value", capacity_value)
 
@@ -496,7 +538,23 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
              whitelisted_ips: Sequence[str],
              whitelisted_services: Sequence[str],
              whitelisted_vcns: Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEndpointType' in kwargs:
+            network_endpoint_type = kwargs['networkEndpointType']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+        if 'whitelistedServices' in kwargs:
+            whitelisted_services = kwargs['whitelistedServices']
+        if 'whitelistedVcns' in kwargs:
+            whitelisted_vcns = kwargs['whitelistedVcns']
+
         _setter("network_endpoint_type", network_endpoint_type)
         _setter("network_security_group_ids", network_security_group_ids)
         _setter("subnet_id", subnet_id)
@@ -581,7 +639,11 @@ class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              whitelisted_ips: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
         _setter("id", id)
         _setter("whitelisted_ips", whitelisted_ips)
 
@@ -621,7 +683,11 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              dns_zone: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsZone' in kwargs:
+            dns_zone = kwargs['dnsZone']
+
         _setter("description", description)
         _setter("dns_zone", dns_zone)
 
@@ -665,7 +731,13 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
              description: str,
              scan_hostname: str,
              scan_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanHostname' in kwargs:
+            scan_hostname = kwargs['scanHostname']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+
         _setter("description", description)
         _setter("scan_hostname", scan_hostname)
         _setter("scan_port", scan_port)
@@ -773,7 +845,33 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailNotification' in kwargs:
+            email_notification = kwargs['emailNotification']
+        if 'featureSet' in kwargs:
+            feature_set = kwargs['featureSet']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'networkEndpointDetails' in kwargs:
+            network_endpoint_details = kwargs['networkEndpointDetails']
+        if 'serviceUrl' in kwargs:
+            service_url = kwargs['serviceUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("capacities", capacities)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -945,7 +1043,13 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
              _setter: Callable[[Any, Any], None],
              capacity_type: str,
              capacity_value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityType' in kwargs:
+            capacity_type = kwargs['capacityType']
+        if 'capacityValue' in kwargs:
+            capacity_value = kwargs['capacityValue']
+
         _setter("capacity_type", capacity_type)
         _setter("capacity_value", capacity_value)
 
@@ -1005,7 +1109,23 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
              whitelisted_ips: Sequence[str],
              whitelisted_services: Sequence[str],
              whitelisted_vcns: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEndpointType' in kwargs:
+            network_endpoint_type = kwargs['networkEndpointType']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+        if 'whitelistedServices' in kwargs:
+            whitelisted_services = kwargs['whitelistedServices']
+        if 'whitelistedVcns' in kwargs:
+            whitelisted_vcns = kwargs['whitelistedVcns']
+
         _setter("network_endpoint_type", network_endpoint_type)
         _setter("network_security_group_ids", network_security_group_ids)
         _setter("subnet_id", subnet_id)
@@ -1090,7 +1210,11 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
              _setter: Callable[[Any, Any], None],
              id: str,
              whitelisted_ips: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
         _setter("id", id)
         _setter("whitelisted_ips", whitelisted_ips)
 
@@ -1132,7 +1256,9 @@ class GetAnalyticsInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

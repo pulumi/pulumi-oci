@@ -65,7 +65,19 @@ class VirtualServiceArgs:
              hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              mtls: Optional[pulumi.Input['VirtualServiceMtlsArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'meshId' in kwargs:
+            mesh_id = kwargs['meshId']
+        if 'defaultRoutingPolicy' in kwargs:
+            default_routing_policy = kwargs['defaultRoutingPolicy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("mesh_id", mesh_id)
         if default_routing_policy is not None:
@@ -268,7 +280,27 @@ class _VirtualServiceState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultRoutingPolicy' in kwargs:
+            default_routing_policy = kwargs['defaultRoutingPolicy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'meshId' in kwargs:
+            mesh_id = kwargs['meshId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if default_routing_policy is not None:

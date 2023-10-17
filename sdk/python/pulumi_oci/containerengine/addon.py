@@ -49,7 +49,15 @@ class AddonArgs:
              remove_addon_resources_on_delete: pulumi.Input[bool],
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addonName' in kwargs:
+            addon_name = kwargs['addonName']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'removeAddonResourcesOnDelete' in kwargs:
+            remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
+
         _setter("addon_name", addon_name)
         _setter("cluster_id", cluster_id)
         _setter("remove_addon_resources_on_delete", remove_addon_resources_on_delete)
@@ -175,7 +183,21 @@ class _AddonState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addonErrors' in kwargs:
+            addon_errors = kwargs['addonErrors']
+        if 'addonName' in kwargs:
+            addon_name = kwargs['addonName']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'currentInstalledVersion' in kwargs:
+            current_installed_version = kwargs['currentInstalledVersion']
+        if 'removeAddonResourcesOnDelete' in kwargs:
+            remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if addon_errors is not None:
             _setter("addon_errors", addon_errors)
         if addon_name is not None:

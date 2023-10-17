@@ -43,7 +43,17 @@ class DbNodeConsoleConnectionArgs:
              public_key: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("db_node_id", db_node_id)
         _setter("public_key", public_key)
         if defined_tags is not None:
@@ -160,7 +170,25 @@ class _DbNodeConsoleConnectionState:
              public_key: Optional[pulumi.Input[str]] = None,
              service_host_key_fingerprint: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'serviceHostKeyFingerprint' in kwargs:
+            service_host_key_fingerprint = kwargs['serviceHostKeyFingerprint']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_string is not None:

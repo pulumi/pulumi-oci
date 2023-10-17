@@ -47,7 +47,17 @@ class ClusterWorkloadMappingArgs:
              namespace: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'mappedCompartmentId' in kwargs:
+            mapped_compartment_id = kwargs['mappedCompartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("cluster_id", cluster_id)
         _setter("mapped_compartment_id", mapped_compartment_id)
         _setter("namespace", namespace)
@@ -169,7 +179,21 @@ class _ClusterWorkloadMappingState:
              namespace: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mappedCompartmentId' in kwargs:
+            mapped_compartment_id = kwargs['mappedCompartmentId']
+        if 'mappedTenancyId' in kwargs:
+            mapped_tenancy_id = kwargs['mappedTenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if cluster_id is not None:
             _setter("cluster_id", cluster_id)
         if defined_tags is not None:

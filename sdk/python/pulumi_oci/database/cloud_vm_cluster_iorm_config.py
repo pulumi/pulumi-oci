@@ -37,7 +37,13 @@ class CloudVmClusterIormConfigArgs:
              cloud_vm_cluster_id: pulumi.Input[str],
              db_plans: pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]],
              objective: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+
         _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         _setter("db_plans", db_plans)
         if objective is not None:
@@ -112,7 +118,15 @@ class _CloudVmClusterIormConfigState:
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              objective: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if cloud_vm_cluster_id is not None:
             _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         if db_plans is not None:

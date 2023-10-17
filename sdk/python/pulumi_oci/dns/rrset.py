@@ -59,7 +59,15 @@ class RrsetArgs:
              items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'zoneNameOrId' in kwargs:
+            zone_name_or_id = kwargs['zoneNameOrId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("domain", domain)
         _setter("rtype", rtype)
         _setter("zone_name_or_id", zone_name_or_id)
@@ -209,7 +217,15 @@ class _RrsetState:
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
              zone_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+        if 'zoneNameOrId' in kwargs:
+            zone_name_or_id = kwargs['zoneNameOrId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if domain is not None:

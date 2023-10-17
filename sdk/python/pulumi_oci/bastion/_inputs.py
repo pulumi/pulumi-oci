@@ -31,7 +31,11 @@ class SessionKeyDetailsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              public_key_content: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'publicKeyContent' in kwargs:
+            public_key_content = kwargs['publicKeyContent']
+
         _setter("public_key_content", public_key_content)
 
     @property
@@ -90,7 +94,23 @@ class SessionTargetResourceDetailsArgs:
              target_resource_operating_system_user_name: Optional[pulumi.Input[str]] = None,
              target_resource_port: Optional[pulumi.Input[int]] = None,
              target_resource_private_ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sessionType' in kwargs:
+            session_type = kwargs['sessionType']
+        if 'targetResourceDisplayName' in kwargs:
+            target_resource_display_name = kwargs['targetResourceDisplayName']
+        if 'targetResourceFqdn' in kwargs:
+            target_resource_fqdn = kwargs['targetResourceFqdn']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceOperatingSystemUserName' in kwargs:
+            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
+        if 'targetResourcePort' in kwargs:
+            target_resource_port = kwargs['targetResourcePort']
+        if 'targetResourcePrivateIpAddress' in kwargs:
+            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+
         _setter("session_type", session_type)
         if target_resource_display_name is not None:
             _setter("target_resource_display_name", target_resource_display_name)
@@ -215,7 +235,9 @@ class GetBastionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -270,7 +292,9 @@ class GetSessionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

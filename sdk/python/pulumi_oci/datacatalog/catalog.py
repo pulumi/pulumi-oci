@@ -47,7 +47,19 @@ class CatalogArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'attachedCatalogPrivateEndpoints' in kwargs:
+            attached_catalog_private_endpoints = kwargs['attachedCatalogPrivateEndpoints']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         if attached_catalog_private_endpoints is not None:
             _setter("attached_catalog_private_endpoints", attached_catalog_private_endpoints)
@@ -187,7 +199,31 @@ class _CatalogState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedCatalogPrivateEndpoints' in kwargs:
+            attached_catalog_private_endpoints = kwargs['attachedCatalogPrivateEndpoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'numberOfObjects' in kwargs:
+            number_of_objects = kwargs['numberOfObjects']
+        if 'serviceApiUrl' in kwargs:
+            service_api_url = kwargs['serviceApiUrl']
+        if 'serviceConsoleUrl' in kwargs:
+            service_console_url = kwargs['serviceConsoleUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if attached_catalog_private_endpoints is not None:
             _setter("attached_catalog_private_endpoints", attached_catalog_private_endpoints)
         if compartment_id is not None:

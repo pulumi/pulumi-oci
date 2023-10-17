@@ -47,7 +47,15 @@ class TagDefaultArgs:
              tag_definition_id: pulumi.Input[str],
              value: pulumi.Input[str],
              is_required: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'tagDefinitionId' in kwargs:
+            tag_definition_id = kwargs['tagDefinitionId']
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("compartment_id", compartment_id)
         _setter("tag_definition_id", tag_definition_id)
         _setter("value", value)
@@ -163,7 +171,21 @@ class _TagDefaultState:
              tag_namespace_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if 'tagDefinitionId' in kwargs:
+            tag_definition_id = kwargs['tagDefinitionId']
+        if 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if 'tagNamespaceId' in kwargs:
+            tag_namespace_id = kwargs['tagNamespaceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if is_required is not None:

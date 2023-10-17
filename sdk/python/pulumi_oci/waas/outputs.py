@@ -169,7 +169,11 @@ class CertificateExtension(dict):
              is_critical: Optional[bool] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCritical' in kwargs:
+            is_critical = kwargs['isCritical']
+
         if is_critical is not None:
             _setter("is_critical", is_critical)
         if name is not None:
@@ -264,7 +268,17 @@ class CertificateIssuerName(dict):
              organization: Optional[str] = None,
              organizational_unit: Optional[str] = None,
              state_province: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -377,7 +391,11 @@ class CertificatePublicKeyInfo(dict):
              algorithm: Optional[str] = None,
              exponent: Optional[int] = None,
              key_size: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if exponent is not None:
@@ -472,7 +490,17 @@ class CertificateSubjectName(dict):
              organization: Optional[str] = None,
              organizational_unit: Optional[str] = None,
              state_province: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -580,7 +608,9 @@ class HttpRedirectTarget(dict):
              protocol: str,
              query: str,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("protocol", protocol)
@@ -684,7 +714,15 @@ class PolicyOrigin(dict):
              custom_headers: Optional[Sequence['outputs.PolicyOriginCustomHeader']] = None,
              http_port: Optional[int] = None,
              https_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+
         _setter("label", label)
         _setter("uri", uri)
         if custom_headers is not None:
@@ -755,7 +793,9 @@ class PolicyOriginCustomHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -812,7 +852,11 @@ class PolicyOriginGroup(dict):
              _setter: Callable[[Any, Any], None],
              label: str,
              origin_groups: Sequence['outputs.PolicyOriginGroupOriginGroup'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+
         _setter("label", label)
         _setter("origin_groups", origin_groups)
 
@@ -845,7 +889,9 @@ class PolicyOriginGroupOriginGroup(dict):
              _setter: Callable[[Any, Any], None],
              origin: str,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("origin", origin)
         if weight is not None:
             _setter("weight", weight)
@@ -992,7 +1038,37 @@ class PolicyPolicyConfig(dict):
              load_balancing_method: Optional['outputs.PolicyPolicyConfigLoadBalancingMethod'] = None,
              tls_protocols: Optional[Sequence[str]] = None,
              websocket_path_prefixes: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'cipherGroup' in kwargs:
+            cipher_group = kwargs['cipherGroup']
+        if 'clientAddressHeader' in kwargs:
+            client_address_header = kwargs['clientAddressHeader']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'isBehindCdn' in kwargs:
+            is_behind_cdn = kwargs['isBehindCdn']
+        if 'isCacheControlRespected' in kwargs:
+            is_cache_control_respected = kwargs['isCacheControlRespected']
+        if 'isHttpsEnabled' in kwargs:
+            is_https_enabled = kwargs['isHttpsEnabled']
+        if 'isHttpsForced' in kwargs:
+            is_https_forced = kwargs['isHttpsForced']
+        if 'isOriginCompressionEnabled' in kwargs:
+            is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
+        if 'isResponseBufferingEnabled' in kwargs:
+            is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
+        if 'isSniEnabled' in kwargs:
+            is_sni_enabled = kwargs['isSniEnabled']
+        if 'loadBalancingMethod' in kwargs:
+            load_balancing_method = kwargs['loadBalancingMethod']
+        if 'tlsProtocols' in kwargs:
+            tls_protocols = kwargs['tlsProtocols']
+        if 'websocketPathPrefixes' in kwargs:
+            websocket_path_prefixes = kwargs['websocketPathPrefixes']
+
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
         if cipher_group is not None:
@@ -1248,7 +1324,25 @@ class PolicyPolicyConfigHealthChecks(dict):
              path: Optional[str] = None,
              timeout_in_seconds: Optional[int] = None,
              unhealthy_threshold: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expectedResponseCodeGroups' in kwargs:
+            expected_response_code_groups = kwargs['expectedResponseCodeGroups']
+        if 'expectedResponseText' in kwargs:
+            expected_response_text = kwargs['expectedResponseText']
+        if 'healthyThreshold' in kwargs:
+            healthy_threshold = kwargs['healthyThreshold']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isResponseTextCheckEnabled' in kwargs:
+            is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'unhealthyThreshold' in kwargs:
+            unhealthy_threshold = kwargs['unhealthyThreshold']
+
         if expected_response_code_groups is not None:
             _setter("expected_response_code_groups", expected_response_code_groups)
         if expected_response_text is not None:
@@ -1421,7 +1515,11 @@ class PolicyPolicyConfigLoadBalancingMethod(dict):
              domain: Optional[str] = None,
              expiration_time_in_seconds: Optional[int] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expirationTimeInSeconds' in kwargs:
+            expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+
         _setter("method", method)
         if domain is not None:
             _setter("domain", domain)
@@ -1562,7 +1660,27 @@ class PolicyWafConfig(dict):
              origin_groups: Optional[Sequence[str]] = None,
              protection_settings: Optional['outputs.PolicyWafConfigProtectionSettings'] = None,
              whitelists: Optional[Sequence['outputs.PolicyWafConfigWhitelist']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessRules' in kwargs:
+            access_rules = kwargs['accessRules']
+        if 'addressRateLimiting' in kwargs:
+            address_rate_limiting = kwargs['addressRateLimiting']
+        if 'cachingRules' in kwargs:
+            caching_rules = kwargs['cachingRules']
+        if 'customProtectionRules' in kwargs:
+            custom_protection_rules = kwargs['customProtectionRules']
+        if 'deviceFingerprintChallenge' in kwargs:
+            device_fingerprint_challenge = kwargs['deviceFingerprintChallenge']
+        if 'humanInteractionChallenge' in kwargs:
+            human_interaction_challenge = kwargs['humanInteractionChallenge']
+        if 'jsChallenge' in kwargs:
+            js_challenge = kwargs['jsChallenge']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'protectionSettings' in kwargs:
+            protection_settings = kwargs['protectionSettings']
+
         if access_rules is not None:
             _setter("access_rules", access_rules)
         if address_rate_limiting is not None:
@@ -1811,7 +1929,35 @@ class PolicyWafConfigAccessRule(dict):
              redirect_response_code: Optional[str] = None,
              redirect_url: Optional[str] = None,
              response_header_manipulations: Optional[Sequence['outputs.PolicyWafConfigAccessRuleResponseHeaderManipulation']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'bypassChallenges' in kwargs:
+            bypass_challenges = kwargs['bypassChallenges']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+        if 'redirectResponseCode' in kwargs:
+            redirect_response_code = kwargs['redirectResponseCode']
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+        if 'responseHeaderManipulations' in kwargs:
+            response_header_manipulations = kwargs['responseHeaderManipulations']
+
         _setter("action", action)
         _setter("criterias", criterias)
         _setter("name", name)
@@ -2046,7 +2192,11 @@ class PolicyWafConfigAccessRuleCriteria(dict):
              condition: str,
              value: str,
              is_case_sensitive: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("value", value)
         if is_case_sensitive is not None:
@@ -2125,7 +2275,9 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulation(dict):
              action: str,
              header: str,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("header", header)
         if value is not None:
@@ -2206,7 +2358,17 @@ class PolicyWafConfigAddressRateLimiting(dict):
              allowed_rate_per_address: Optional[int] = None,
              block_response_code: Optional[int] = None,
              max_delayed_count_per_address: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'allowedRatePerAddress' in kwargs:
+            allowed_rate_per_address = kwargs['allowedRatePerAddress']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'maxDelayedCountPerAddress' in kwargs:
+            max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+
         _setter("is_enabled", is_enabled)
         if allowed_rate_per_address is not None:
             _setter("allowed_rate_per_address", allowed_rate_per_address)
@@ -2312,7 +2474,15 @@ class PolicyWafConfigCachingRule(dict):
              client_caching_duration: Optional[str] = None,
              is_client_caching_enabled: Optional[bool] = None,
              key: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cachingDuration' in kwargs:
+            caching_duration = kwargs['cachingDuration']
+        if 'clientCachingDuration' in kwargs:
+            client_caching_duration = kwargs['clientCachingDuration']
+        if 'isClientCachingEnabled' in kwargs:
+            is_client_caching_enabled = kwargs['isClientCachingEnabled']
+
         _setter("action", action)
         _setter("criterias", criterias)
         _setter("name", name)
@@ -2430,7 +2600,9 @@ class PolicyWafConfigCachingRuleCriteria(dict):
              _setter: Callable[[Any, Any], None],
              condition: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("condition", condition)
         _setter("value", value)
 
@@ -2540,7 +2712,19 @@ class PolicyWafConfigCaptcha(dict):
              url: str,
              footer_text: Optional[str] = None,
              header_text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureMessage' in kwargs:
+            failure_message = kwargs['failureMessage']
+        if 'sessionExpirationInSeconds' in kwargs:
+            session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
+        if 'submitLabel' in kwargs:
+            submit_label = kwargs['submitLabel']
+        if 'footerText' in kwargs:
+            footer_text = kwargs['footerText']
+        if 'headerText' in kwargs:
+            header_text = kwargs['headerText']
+
         _setter("failure_message", failure_message)
         _setter("session_expiration_in_seconds", session_expiration_in_seconds)
         _setter("submit_label", submit_label)
@@ -2631,7 +2815,9 @@ class PolicyWafConfigCustomProtectionRule(dict):
              action: Optional[str] = None,
              exclusions: Optional[Sequence['outputs.PolicyWafConfigCustomProtectionRuleExclusion']] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if action is not None:
             _setter("action", action)
         if exclusions is not None:
@@ -2683,7 +2869,9 @@ class PolicyWafConfigCustomProtectionRuleExclusion(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[Sequence[str]] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if target is not None:
@@ -2778,7 +2966,23 @@ class PolicyWafConfigDeviceFingerprintChallenge(dict):
              failure_threshold_expiration_in_seconds: Optional[int] = None,
              max_address_count: Optional[int] = None,
              max_address_count_expiration_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'maxAddressCount' in kwargs:
+            max_address_count = kwargs['maxAddressCount']
+        if 'maxAddressCountExpirationInSeconds' in kwargs:
+            max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -2940,7 +3144,27 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3117,7 +3341,27 @@ class PolicyWafConfigHumanInteractionChallenge(dict):
              is_nat_enabled: Optional[bool] = None,
              recording_period_in_seconds: Optional[int] = None,
              set_http_header: Optional['outputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeader'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'interactionThreshold' in kwargs:
+            interaction_threshold = kwargs['interactionThreshold']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'recordingPeriodInSeconds' in kwargs:
+            recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -3299,7 +3543,27 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3415,7 +3679,9 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3516,7 +3782,23 @@ class PolicyWafConfigJsChallenge(dict):
              failure_threshold: Optional[int] = None,
              is_nat_enabled: Optional[bool] = None,
              set_http_header: Optional['outputs.PolicyWafConfigJsChallengeSetHttpHeader'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'areRedirectsChallenged' in kwargs:
+            are_redirects_challenged = kwargs['areRedirectsChallenged']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -3688,7 +3970,27 @@ class PolicyWafConfigJsChallengeChallengeSettings(dict):
              captcha_header: Optional[str] = None,
              captcha_submit_label: Optional[str] = None,
              captcha_title: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3846,7 +4148,11 @@ class PolicyWafConfigJsChallengeCriteria(dict):
              condition: str,
              value: str,
              is_case_sensitive: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("value", value)
         if is_case_sensitive is not None:
@@ -3925,7 +4231,9 @@ class PolicyWafConfigJsChallengeSetHttpHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -4078,7 +4386,35 @@ class PolicyWafConfigProtectionSettings(dict):
              max_total_name_length_of_arguments: Optional[int] = None,
              media_types: Optional[Sequence[str]] = None,
              recommendations_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isResponseInspected' in kwargs:
+            is_response_inspected = kwargs['isResponseInspected']
+        if 'maxArgumentCount' in kwargs:
+            max_argument_count = kwargs['maxArgumentCount']
+        if 'maxNameLengthPerArgument' in kwargs:
+            max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
+        if 'maxResponseSizeInKiB' in kwargs:
+            max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
+        if 'maxTotalNameLengthOfArguments' in kwargs:
+            max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
+        if 'mediaTypes' in kwargs:
+            media_types = kwargs['mediaTypes']
+        if 'recommendationsPeriodInDays' in kwargs:
+            recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+
         if allowed_http_methods is not None:
             _setter("allowed_http_methods", allowed_http_methods)
         if block_action is not None:
@@ -4279,7 +4615,11 @@ class PolicyWafConfigWhitelist(dict):
              name: str,
              address_lists: Optional[Sequence[str]] = None,
              addresses: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLists' in kwargs:
+            address_lists = kwargs['addressLists']
+
         _setter("name", name)
         if address_lists is not None:
             _setter("address_lists", address_lists)
@@ -4337,7 +4677,9 @@ class ProtectionRuleExclusion(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[Sequence[str]] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if target is not None:
@@ -4410,7 +4752,21 @@ class GetAddressListsAddressListResult(dict):
              id: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressCount' in kwargs:
+            address_count = kwargs['addressCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("address_count", address_count)
         _setter("addresses", addresses)
         _setter("compartment_id", compartment_id)
@@ -4512,7 +4868,9 @@ class GetAddressListsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4557,7 +4915,11 @@ class GetCertificateExtensionResult(dict):
              is_critical: bool,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCritical' in kwargs:
+            is_critical = kwargs['isCritical']
+
         _setter("is_critical", is_critical)
         _setter("name", name)
         _setter("value", value)
@@ -4626,7 +4988,17 @@ class GetCertificateIssuerNameResult(dict):
              organization: str,
              organizational_unit: str,
              state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("email_address", email_address)
@@ -4715,7 +5087,11 @@ class GetCertificatePublicKeyInfoResult(dict):
              algorithm: str,
              exponent: int,
              key_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         _setter("algorithm", algorithm)
         _setter("exponent", exponent)
         _setter("key_size", key_size)
@@ -4784,7 +5160,17 @@ class GetCertificateSubjectNameResult(dict):
              organization: str,
              organizational_unit: str,
              state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("email_address", email_address)
@@ -4939,7 +5325,41 @@ class GetCertificatesCertificateResult(dict):
              time_not_valid_after: str,
              time_not_valid_before: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateData' in kwargs:
+            certificate_data = kwargs['certificateData']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isTrustVerificationDisabled' in kwargs:
+            is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
+        if 'issuedBy' in kwargs:
+            issued_by = kwargs['issuedBy']
+        if 'issuerNames' in kwargs:
+            issuer_names = kwargs['issuerNames']
+        if 'privateKeyData' in kwargs:
+            private_key_data = kwargs['privateKeyData']
+        if 'publicKeyInfos' in kwargs:
+            public_key_infos = kwargs['publicKeyInfos']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if 'timeNotValidBefore' in kwargs:
+            time_not_valid_before = kwargs['timeNotValidBefore']
+
         _setter("certificate_data", certificate_data)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -5139,7 +5559,11 @@ class GetCertificatesCertificateExtensionResult(dict):
              is_critical: bool,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCritical' in kwargs:
+            is_critical = kwargs['isCritical']
+
         _setter("is_critical", is_critical)
         _setter("name", name)
         _setter("value", value)
@@ -5208,7 +5632,17 @@ class GetCertificatesCertificateIssuerNameResult(dict):
              organization: str,
              organizational_unit: str,
              state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("email_address", email_address)
@@ -5297,7 +5731,11 @@ class GetCertificatesCertificatePublicKeyInfoResult(dict):
              algorithm: str,
              exponent: int,
              key_size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         _setter("algorithm", algorithm)
         _setter("exponent", exponent)
         _setter("key_size", key_size)
@@ -5366,7 +5804,17 @@ class GetCertificatesCertificateSubjectNameResult(dict):
              organization: str,
              organizational_unit: str,
              state_province: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("email_address", email_address)
@@ -5453,7 +5901,9 @@ class GetCertificatesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5529,7 +5979,21 @@ class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
              state: str,
              template: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'modSecurityRuleIds' in kwargs:
+            mod_security_rule_ids = kwargs['modSecurityRuleIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -5640,7 +6104,9 @@ class GetCustomProtectionRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5685,7 +6151,11 @@ class GetEdgeSubnetsEdgeSubnetResult(dict):
              cidr: str,
              region: str,
              time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("cidr", cidr)
         _setter("region", region)
         _setter("time_modified", time_modified)
@@ -5733,7 +6203,9 @@ class GetEdgeSubnetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5786,7 +6258,9 @@ class GetHttpRedirectTargetResult(dict):
              port: int,
              protocol: str,
              query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("port", port)
@@ -5852,7 +6326,9 @@ class GetHttpRedirectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5925,7 +6401,21 @@ class GetHttpRedirectsHttpRedirectResult(dict):
              state: str,
              targets: Sequence['outputs.GetHttpRedirectsHttpRedirectTargetResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -6049,7 +6539,9 @@ class GetHttpRedirectsHttpRedirectTargetResult(dict):
              port: int,
              protocol: str,
              query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("port", port)
@@ -6116,7 +6608,9 @@ class GetProtectionRuleExclusionResult(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Sequence[str],
              target: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("exclusions", exclusions)
         _setter("target", target)
 
@@ -6158,7 +6652,9 @@ class GetProtectionRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6226,7 +6722,13 @@ class GetProtectionRulesProtectionRuleResult(dict):
              mod_security_rule_ids: Sequence[str],
              name: str,
              waas_policy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modSecurityRuleIds' in kwargs:
+            mod_security_rule_ids = kwargs['modSecurityRuleIds']
+        if 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         _setter("action", action)
         _setter("description", description)
         _setter("exclusions", exclusions)
@@ -6320,7 +6822,9 @@ class GetProtectionRulesProtectionRuleExclusionResult(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Sequence[str],
              target: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("exclusions", exclusions)
         _setter("target", target)
 
@@ -6362,7 +6866,9 @@ class GetWaasPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6454,7 +6960,27 @@ class GetWaasPoliciesWaasPolicyResult(dict):
              state: str,
              time_created: str,
              waf_configs: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDomains' in kwargs:
+            additional_domains = kwargs['additionalDomains']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'policyConfigs' in kwargs:
+            policy_configs = kwargs['policyConfigs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'wafConfigs' in kwargs:
+            waf_configs = kwargs['wafConfigs']
+
         _setter("additional_domains", additional_domains)
         _setter("cname", cname)
         _setter("compartment_id", compartment_id)
@@ -6613,7 +7139,15 @@ class GetWaasPoliciesWaasPolicyOriginResult(dict):
              https_port: int,
              label: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+
         _setter("custom_headers", custom_headers)
         _setter("http_port", http_port)
         _setter("https_port", https_port)
@@ -6677,7 +7211,9 @@ class GetWaasPoliciesWaasPolicyOriginCustomHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -6713,7 +7249,11 @@ class GetWaasPoliciesWaasPolicyOriginGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              label: str,
              origin_groups: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupOriginGroupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+
         _setter("label", label)
         _setter("origin_groups", origin_groups)
 
@@ -6746,7 +7286,9 @@ class GetWaasPoliciesWaasPolicyOriginGroupOriginGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              origin: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("origin", origin)
         _setter("weight", weight)
 
@@ -6836,7 +7378,37 @@ class GetWaasPoliciesWaasPolicyPolicyConfigResult(dict):
              load_balancing_methods: Sequence['outputs.GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodResult'],
              tls_protocols: Sequence[str],
              websocket_path_prefixes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'cipherGroup' in kwargs:
+            cipher_group = kwargs['cipherGroup']
+        if 'clientAddressHeader' in kwargs:
+            client_address_header = kwargs['clientAddressHeader']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'isBehindCdn' in kwargs:
+            is_behind_cdn = kwargs['isBehindCdn']
+        if 'isCacheControlRespected' in kwargs:
+            is_cache_control_respected = kwargs['isCacheControlRespected']
+        if 'isHttpsEnabled' in kwargs:
+            is_https_enabled = kwargs['isHttpsEnabled']
+        if 'isHttpsForced' in kwargs:
+            is_https_forced = kwargs['isHttpsForced']
+        if 'isOriginCompressionEnabled' in kwargs:
+            is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
+        if 'isResponseBufferingEnabled' in kwargs:
+            is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
+        if 'isSniEnabled' in kwargs:
+            is_sni_enabled = kwargs['isSniEnabled']
+        if 'loadBalancingMethods' in kwargs:
+            load_balancing_methods = kwargs['loadBalancingMethods']
+        if 'tlsProtocols' in kwargs:
+            tls_protocols = kwargs['tlsProtocols']
+        if 'websocketPathPrefixes' in kwargs:
+            websocket_path_prefixes = kwargs['websocketPathPrefixes']
+
         _setter("certificate_id", certificate_id)
         _setter("cipher_group", cipher_group)
         _setter("client_address_header", client_address_header)
@@ -7032,7 +7604,25 @@ class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult(dict):
              path: str,
              timeout_in_seconds: int,
              unhealthy_threshold: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expectedResponseCodeGroups' in kwargs:
+            expected_response_code_groups = kwargs['expectedResponseCodeGroups']
+        if 'expectedResponseText' in kwargs:
+            expected_response_text = kwargs['expectedResponseText']
+        if 'healthyThreshold' in kwargs:
+            healthy_threshold = kwargs['healthyThreshold']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isResponseTextCheckEnabled' in kwargs:
+            is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'unhealthyThreshold' in kwargs:
+            unhealthy_threshold = kwargs['unhealthyThreshold']
+
         _setter("expected_response_code_groups", expected_response_code_groups)
         _setter("expected_response_text", expected_response_text)
         _setter("headers", headers)
@@ -7171,7 +7761,11 @@ class GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodResult(dict):
              expiration_time_in_seconds: int,
              method: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expirationTimeInSeconds' in kwargs:
+            expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+
         _setter("domain", domain)
         _setter("expiration_time_in_seconds", expiration_time_in_seconds)
         _setter("method", method)
@@ -7272,7 +7866,27 @@ class GetWaasPoliciesWaasPolicyWafConfigResult(dict):
              origin_groups: Sequence[str],
              protection_settings: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigProtectionSettingResult'],
              whitelists: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigWhitelistResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessRules' in kwargs:
+            access_rules = kwargs['accessRules']
+        if 'addressRateLimitings' in kwargs:
+            address_rate_limitings = kwargs['addressRateLimitings']
+        if 'cachingRules' in kwargs:
+            caching_rules = kwargs['cachingRules']
+        if 'customProtectionRules' in kwargs:
+            custom_protection_rules = kwargs['customProtectionRules']
+        if 'deviceFingerprintChallenges' in kwargs:
+            device_fingerprint_challenges = kwargs['deviceFingerprintChallenges']
+        if 'humanInteractionChallenges' in kwargs:
+            human_interaction_challenges = kwargs['humanInteractionChallenges']
+        if 'jsChallenges' in kwargs:
+            js_challenges = kwargs['jsChallenges']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'protectionSettings' in kwargs:
+            protection_settings = kwargs['protectionSettings']
+
         _setter("access_rules", access_rules)
         _setter("address_rate_limitings", address_rate_limitings)
         _setter("caching_rules", caching_rules)
@@ -7464,7 +8078,35 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResult(dict):
              redirect_response_code: str,
              redirect_url: str,
              response_header_manipulations: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'bypassChallenges' in kwargs:
+            bypass_challenges = kwargs['bypassChallenges']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+        if 'redirectResponseCode' in kwargs:
+            redirect_response_code = kwargs['redirectResponseCode']
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+        if 'responseHeaderManipulations' in kwargs:
+            response_header_manipulations = kwargs['responseHeaderManipulations']
+
         _setter("action", action)
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -7656,7 +8298,11 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaResult(dict):
              condition: str,
              is_case_sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
         _setter("value", value)
@@ -7725,7 +8371,9 @@ class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResu
              action: str,
              header: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("header", header)
         _setter("value", value)
@@ -7782,7 +8430,17 @@ class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingResult(dict):
              block_response_code: int,
              is_enabled: bool,
              max_delayed_count_per_address: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedRatePerAddress' in kwargs:
+            allowed_rate_per_address = kwargs['allowedRatePerAddress']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxDelayedCountPerAddress' in kwargs:
+            max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+
         _setter("allowed_rate_per_address", allowed_rate_per_address)
         _setter("block_response_code", block_response_code)
         _setter("is_enabled", is_enabled)
@@ -7860,7 +8518,15 @@ class GetWaasPoliciesWaasPolicyWafConfigCachingRuleResult(dict):
              is_client_caching_enabled: bool,
              key: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cachingDuration' in kwargs:
+            caching_duration = kwargs['cachingDuration']
+        if 'clientCachingDuration' in kwargs:
+            client_caching_duration = kwargs['clientCachingDuration']
+        if 'isClientCachingEnabled' in kwargs:
+            is_client_caching_enabled = kwargs['isClientCachingEnabled']
+
         _setter("action", action)
         _setter("caching_duration", caching_duration)
         _setter("client_caching_duration", client_caching_duration)
@@ -7961,7 +8627,9 @@ class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaResult(dict):
              _setter: Callable[[Any, Any], None],
              condition: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("condition", condition)
         _setter("value", value)
 
@@ -8037,7 +8705,19 @@ class GetWaasPoliciesWaasPolicyWafConfigCaptchaResult(dict):
              submit_label: str,
              title: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureMessage' in kwargs:
+            failure_message = kwargs['failureMessage']
+        if 'footerText' in kwargs:
+            footer_text = kwargs['footerText']
+        if 'headerText' in kwargs:
+            header_text = kwargs['headerText']
+        if 'sessionExpirationInSeconds' in kwargs:
+            session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
+        if 'submitLabel' in kwargs:
+            submit_label = kwargs['submitLabel']
+
         _setter("failure_message", failure_message)
         _setter("footer_text", footer_text)
         _setter("header_text", header_text)
@@ -8126,7 +8806,9 @@ class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleResult(dict):
              action: str,
              exclusions: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionResult'],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("exclusions", exclusions)
         _setter("id", id)
@@ -8175,7 +8857,9 @@ class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionResult(dict
              _setter: Callable[[Any, Any], None],
              exclusions: Sequence[str],
              target: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("exclusions", exclusions)
         _setter("target", target)
 
@@ -8239,7 +8923,23 @@ class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeResult(dict):
              is_enabled: bool,
              max_address_count: int,
              max_address_count_expiration_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxAddressCount' in kwargs:
+            max_address_count = kwargs['maxAddressCount']
+        if 'maxAddressCountExpirationInSeconds' in kwargs:
+            max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("challenge_settings", challenge_settings)
@@ -8361,7 +9061,27 @@ class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetti
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -8496,7 +9216,27 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeResult(dict):
              is_nat_enabled: bool,
              recording_period_in_seconds: int,
              set_http_headers: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'interactionThreshold' in kwargs:
+            interaction_threshold = kwargs['interactionThreshold']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'recordingPeriodInSeconds' in kwargs:
+            recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
+        if 'setHttpHeaders' in kwargs:
+            set_http_headers = kwargs['setHttpHeaders']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("challenge_settings", challenge_settings)
@@ -8636,7 +9376,27 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettin
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -8739,7 +9499,9 @@ class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderRe
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -8807,7 +9569,23 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeResult(dict):
              is_enabled: bool,
              is_nat_enabled: bool,
              set_http_headers: Sequence['outputs.GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'areRedirectsChallenged' in kwargs:
+            are_redirects_challenged = kwargs['areRedirectsChallenged']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'setHttpHeaders' in kwargs:
+            set_http_headers = kwargs['setHttpHeaders']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("are_redirects_challenged", are_redirects_challenged)
@@ -8938,7 +9716,27 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingResult(dict):
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -9061,7 +9859,11 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaResult(dict):
              condition: str,
              is_case_sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
         _setter("value", value)
@@ -9126,7 +9928,9 @@ class GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -9210,7 +10014,35 @@ class GetWaasPoliciesWaasPolicyWafConfigProtectionSettingResult(dict):
              max_total_name_length_of_arguments: int,
              media_types: Sequence[str],
              recommendations_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isResponseInspected' in kwargs:
+            is_response_inspected = kwargs['isResponseInspected']
+        if 'maxArgumentCount' in kwargs:
+            max_argument_count = kwargs['maxArgumentCount']
+        if 'maxNameLengthPerArgument' in kwargs:
+            max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
+        if 'maxResponseSizeInKiB' in kwargs:
+            max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
+        if 'maxTotalNameLengthOfArguments' in kwargs:
+            max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
+        if 'mediaTypes' in kwargs:
+            media_types = kwargs['mediaTypes']
+        if 'recommendationsPeriodInDays' in kwargs:
+            recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -9353,7 +10185,11 @@ class GetWaasPoliciesWaasPolicyWafConfigWhitelistResult(dict):
              address_lists: Sequence[str],
              addresses: Sequence[str],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLists' in kwargs:
+            address_lists = kwargs['addressLists']
+
         _setter("address_lists", address_lists)
         _setter("addresses", addresses)
         _setter("name", name)
@@ -9413,7 +10249,15 @@ class GetWaasPolicyOriginResult(dict):
              uri: str,
              http_port: Optional[int] = None,
              https_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+
         _setter("custom_headers", custom_headers)
         _setter("label", label)
         _setter("uri", uri)
@@ -9479,7 +10323,9 @@ class GetWaasPolicyOriginCustomHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -9515,7 +10361,11 @@ class GetWaasPolicyOriginGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              label: str,
              origin_groups: Sequence['outputs.GetWaasPolicyOriginGroupOriginGroupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+
         _setter("label", label)
         _setter("origin_groups", origin_groups)
 
@@ -9548,7 +10398,9 @@ class GetWaasPolicyOriginGroupOriginGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              origin: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("origin", origin)
         _setter("weight", weight)
 
@@ -9638,7 +10490,37 @@ class GetWaasPolicyPolicyConfigResult(dict):
              load_balancing_method: 'outputs.GetWaasPolicyPolicyConfigLoadBalancingMethodResult',
              tls_protocols: Sequence[str],
              websocket_path_prefixes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'cipherGroup' in kwargs:
+            cipher_group = kwargs['cipherGroup']
+        if 'clientAddressHeader' in kwargs:
+            client_address_header = kwargs['clientAddressHeader']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'isBehindCdn' in kwargs:
+            is_behind_cdn = kwargs['isBehindCdn']
+        if 'isCacheControlRespected' in kwargs:
+            is_cache_control_respected = kwargs['isCacheControlRespected']
+        if 'isHttpsEnabled' in kwargs:
+            is_https_enabled = kwargs['isHttpsEnabled']
+        if 'isHttpsForced' in kwargs:
+            is_https_forced = kwargs['isHttpsForced']
+        if 'isOriginCompressionEnabled' in kwargs:
+            is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
+        if 'isResponseBufferingEnabled' in kwargs:
+            is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
+        if 'isSniEnabled' in kwargs:
+            is_sni_enabled = kwargs['isSniEnabled']
+        if 'loadBalancingMethod' in kwargs:
+            load_balancing_method = kwargs['loadBalancingMethod']
+        if 'tlsProtocols' in kwargs:
+            tls_protocols = kwargs['tlsProtocols']
+        if 'websocketPathPrefixes' in kwargs:
+            websocket_path_prefixes = kwargs['websocketPathPrefixes']
+
         _setter("certificate_id", certificate_id)
         _setter("cipher_group", cipher_group)
         _setter("client_address_header", client_address_header)
@@ -9834,7 +10716,25 @@ class GetWaasPolicyPolicyConfigHealthChecksResult(dict):
              path: str,
              timeout_in_seconds: int,
              unhealthy_threshold: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expectedResponseCodeGroups' in kwargs:
+            expected_response_code_groups = kwargs['expectedResponseCodeGroups']
+        if 'expectedResponseText' in kwargs:
+            expected_response_text = kwargs['expectedResponseText']
+        if 'healthyThreshold' in kwargs:
+            healthy_threshold = kwargs['healthyThreshold']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isResponseTextCheckEnabled' in kwargs:
+            is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'unhealthyThreshold' in kwargs:
+            unhealthy_threshold = kwargs['unhealthyThreshold']
+
         _setter("expected_response_code_groups", expected_response_code_groups)
         _setter("expected_response_text", expected_response_text)
         _setter("headers", headers)
@@ -9973,7 +10873,11 @@ class GetWaasPolicyPolicyConfigLoadBalancingMethodResult(dict):
              expiration_time_in_seconds: int,
              method: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expirationTimeInSeconds' in kwargs:
+            expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+
         _setter("domain", domain)
         _setter("expiration_time_in_seconds", expiration_time_in_seconds)
         _setter("method", method)
@@ -10074,7 +10978,27 @@ class GetWaasPolicyWafConfigResult(dict):
              origin_groups: Sequence[str],
              protection_settings: 'outputs.GetWaasPolicyWafConfigProtectionSettingsResult',
              whitelists: Sequence['outputs.GetWaasPolicyWafConfigWhitelistResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessRules' in kwargs:
+            access_rules = kwargs['accessRules']
+        if 'addressRateLimiting' in kwargs:
+            address_rate_limiting = kwargs['addressRateLimiting']
+        if 'cachingRules' in kwargs:
+            caching_rules = kwargs['cachingRules']
+        if 'customProtectionRules' in kwargs:
+            custom_protection_rules = kwargs['customProtectionRules']
+        if 'deviceFingerprintChallenge' in kwargs:
+            device_fingerprint_challenge = kwargs['deviceFingerprintChallenge']
+        if 'humanInteractionChallenge' in kwargs:
+            human_interaction_challenge = kwargs['humanInteractionChallenge']
+        if 'jsChallenge' in kwargs:
+            js_challenge = kwargs['jsChallenge']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'protectionSettings' in kwargs:
+            protection_settings = kwargs['protectionSettings']
+
         _setter("access_rules", access_rules)
         _setter("address_rate_limiting", address_rate_limiting)
         _setter("caching_rules", caching_rules)
@@ -10266,7 +11190,35 @@ class GetWaasPolicyWafConfigAccessRuleResult(dict):
              redirect_response_code: str,
              redirect_url: str,
              response_header_manipulations: Sequence['outputs.GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'bypassChallenges' in kwargs:
+            bypass_challenges = kwargs['bypassChallenges']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+        if 'redirectResponseCode' in kwargs:
+            redirect_response_code = kwargs['redirectResponseCode']
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+        if 'responseHeaderManipulations' in kwargs:
+            response_header_manipulations = kwargs['responseHeaderManipulations']
+
         _setter("action", action)
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -10458,7 +11410,11 @@ class GetWaasPolicyWafConfigAccessRuleCriteriaResult(dict):
              condition: str,
              is_case_sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
         _setter("value", value)
@@ -10527,7 +11483,9 @@ class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult(dict):
              action: str,
              header: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("header", header)
         _setter("value", value)
@@ -10584,7 +11542,17 @@ class GetWaasPolicyWafConfigAddressRateLimitingResult(dict):
              block_response_code: int,
              is_enabled: bool,
              max_delayed_count_per_address: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedRatePerAddress' in kwargs:
+            allowed_rate_per_address = kwargs['allowedRatePerAddress']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxDelayedCountPerAddress' in kwargs:
+            max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+
         _setter("allowed_rate_per_address", allowed_rate_per_address)
         _setter("block_response_code", block_response_code)
         _setter("is_enabled", is_enabled)
@@ -10662,7 +11630,15 @@ class GetWaasPolicyWafConfigCachingRuleResult(dict):
              is_client_caching_enabled: bool,
              key: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cachingDuration' in kwargs:
+            caching_duration = kwargs['cachingDuration']
+        if 'clientCachingDuration' in kwargs:
+            client_caching_duration = kwargs['clientCachingDuration']
+        if 'isClientCachingEnabled' in kwargs:
+            is_client_caching_enabled = kwargs['isClientCachingEnabled']
+
         _setter("action", action)
         _setter("caching_duration", caching_duration)
         _setter("client_caching_duration", client_caching_duration)
@@ -10763,7 +11739,9 @@ class GetWaasPolicyWafConfigCachingRuleCriteriaResult(dict):
              _setter: Callable[[Any, Any], None],
              condition: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("condition", condition)
         _setter("value", value)
 
@@ -10839,7 +11817,19 @@ class GetWaasPolicyWafConfigCaptchaResult(dict):
              submit_label: str,
              title: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureMessage' in kwargs:
+            failure_message = kwargs['failureMessage']
+        if 'footerText' in kwargs:
+            footer_text = kwargs['footerText']
+        if 'headerText' in kwargs:
+            header_text = kwargs['headerText']
+        if 'sessionExpirationInSeconds' in kwargs:
+            session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
+        if 'submitLabel' in kwargs:
+            submit_label = kwargs['submitLabel']
+
         _setter("failure_message", failure_message)
         _setter("footer_text", footer_text)
         _setter("header_text", header_text)
@@ -10928,7 +11918,9 @@ class GetWaasPolicyWafConfigCustomProtectionRuleResult(dict):
              action: str,
              exclusions: Sequence['outputs.GetWaasPolicyWafConfigCustomProtectionRuleExclusionResult'],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("exclusions", exclusions)
         _setter("id", id)
@@ -10977,7 +11969,9 @@ class GetWaasPolicyWafConfigCustomProtectionRuleExclusionResult(dict):
              _setter: Callable[[Any, Any], None],
              exclusions: Sequence[str],
              target: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("exclusions", exclusions)
         _setter("target", target)
 
@@ -11041,7 +12035,23 @@ class GetWaasPolicyWafConfigDeviceFingerprintChallengeResult(dict):
              is_enabled: bool,
              max_address_count: int,
              max_address_count_expiration_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxAddressCount' in kwargs:
+            max_address_count = kwargs['maxAddressCount']
+        if 'maxAddressCountExpirationInSeconds' in kwargs:
+            max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("challenge_settings", challenge_settings)
@@ -11163,7 +12173,27 @@ class GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult(di
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -11298,7 +12328,27 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeResult(dict):
              is_nat_enabled: bool,
              recording_period_in_seconds: int,
              set_http_header: 'outputs.GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'interactionThreshold' in kwargs:
+            interaction_threshold = kwargs['interactionThreshold']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'recordingPeriodInSeconds' in kwargs:
+            recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("challenge_settings", challenge_settings)
@@ -11438,7 +12488,27 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsResult(dic
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -11541,7 +12611,9 @@ class GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -11609,7 +12681,23 @@ class GetWaasPolicyWafConfigJsChallengeResult(dict):
              is_enabled: bool,
              is_nat_enabled: bool,
              set_http_header: 'outputs.GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'areRedirectsChallenged' in kwargs:
+            are_redirects_challenged = kwargs['areRedirectsChallenged']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("action", action)
         _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         _setter("are_redirects_challenged", are_redirects_challenged)
@@ -11740,7 +12828,27 @@ class GetWaasPolicyWafConfigJsChallengeChallengeSettingsResult(dict):
              captcha_header: str,
              captcha_submit_label: str,
              captcha_title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
         _setter("block_error_page_description", block_error_page_description)
@@ -11863,7 +12971,11 @@ class GetWaasPolicyWafConfigJsChallengeCriteriaResult(dict):
              condition: str,
              is_case_sensitive: bool,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("is_case_sensitive", is_case_sensitive)
         _setter("value", value)
@@ -11928,7 +13040,9 @@ class GetWaasPolicyWafConfigJsChallengeSetHttpHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -12012,7 +13126,35 @@ class GetWaasPolicyWafConfigProtectionSettingsResult(dict):
              max_total_name_length_of_arguments: int,
              media_types: Sequence[str],
              recommendations_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isResponseInspected' in kwargs:
+            is_response_inspected = kwargs['isResponseInspected']
+        if 'maxArgumentCount' in kwargs:
+            max_argument_count = kwargs['maxArgumentCount']
+        if 'maxNameLengthPerArgument' in kwargs:
+            max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
+        if 'maxResponseSizeInKiB' in kwargs:
+            max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
+        if 'maxTotalNameLengthOfArguments' in kwargs:
+            max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
+        if 'mediaTypes' in kwargs:
+            media_types = kwargs['mediaTypes']
+        if 'recommendationsPeriodInDays' in kwargs:
+            recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("block_action", block_action)
         _setter("block_error_page_code", block_error_page_code)
@@ -12155,7 +13297,11 @@ class GetWaasPolicyWafConfigWhitelistResult(dict):
              address_lists: Sequence[str],
              addresses: Sequence[str],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLists' in kwargs:
+            address_lists = kwargs['addressLists']
+
         _setter("address_lists", address_lists)
         _setter("addresses", addresses)
         _setter("name", name)

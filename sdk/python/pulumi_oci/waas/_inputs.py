@@ -76,7 +76,11 @@ class CertificateExtensionArgs:
              is_critical: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCritical' in kwargs:
+            is_critical = kwargs['isCritical']
+
         if is_critical is not None:
             _setter("is_critical", is_critical)
         if name is not None:
@@ -160,7 +164,17 @@ class CertificateIssuerNameArgs:
              organization: Optional[pulumi.Input[str]] = None,
              organizational_unit: Optional[pulumi.Input[str]] = None,
              state_province: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -284,7 +298,11 @@ class CertificatePublicKeyInfoArgs:
              algorithm: Optional[pulumi.Input[str]] = None,
              exponent: Optional[pulumi.Input[int]] = None,
              key_size: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         if algorithm is not None:
             _setter("algorithm", algorithm)
         if exponent is not None:
@@ -368,7 +386,17 @@ class CertificateSubjectNameArgs:
              organization: Optional[pulumi.Input[str]] = None,
              organizational_unit: Optional[pulumi.Input[str]] = None,
              state_province: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'stateProvince' in kwargs:
+            state_province = kwargs['stateProvince']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -504,7 +532,9 @@ class HttpRedirectTargetArgs:
              protocol: pulumi.Input[str],
              query: pulumi.Input[str],
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("protocol", protocol)
@@ -607,7 +637,15 @@ class PolicyOriginArgs:
              custom_headers: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]] = None,
              http_port: Optional[pulumi.Input[int]] = None,
              https_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customHeaders' in kwargs:
+            custom_headers = kwargs['customHeaders']
+        if 'httpPort' in kwargs:
+            http_port = kwargs['httpPort']
+        if 'httpsPort' in kwargs:
+            https_port = kwargs['httpsPort']
+
         _setter("label", label)
         _setter("uri", uri)
         if custom_headers is not None:
@@ -698,7 +736,9 @@ class PolicyOriginCustomHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -746,7 +786,11 @@ class PolicyOriginGroupArgs:
              _setter: Callable[[Any, Any], None],
              label: pulumi.Input[str],
              origin_groups: pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupOriginGroupArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+
         _setter("label", label)
         _setter("origin_groups", origin_groups)
 
@@ -787,7 +831,9 @@ class PolicyOriginGroupOriginGroupArgs:
              _setter: Callable[[Any, Any], None],
              origin: pulumi.Input[str],
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("origin", origin)
         if weight is not None:
             _setter("weight", weight)
@@ -899,7 +945,37 @@ class PolicyPolicyConfigArgs:
              load_balancing_method: Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']] = None,
              tls_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              websocket_path_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'cipherGroup' in kwargs:
+            cipher_group = kwargs['cipherGroup']
+        if 'clientAddressHeader' in kwargs:
+            client_address_header = kwargs['clientAddressHeader']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'isBehindCdn' in kwargs:
+            is_behind_cdn = kwargs['isBehindCdn']
+        if 'isCacheControlRespected' in kwargs:
+            is_cache_control_respected = kwargs['isCacheControlRespected']
+        if 'isHttpsEnabled' in kwargs:
+            is_https_enabled = kwargs['isHttpsEnabled']
+        if 'isHttpsForced' in kwargs:
+            is_https_forced = kwargs['isHttpsForced']
+        if 'isOriginCompressionEnabled' in kwargs:
+            is_origin_compression_enabled = kwargs['isOriginCompressionEnabled']
+        if 'isResponseBufferingEnabled' in kwargs:
+            is_response_buffering_enabled = kwargs['isResponseBufferingEnabled']
+        if 'isSniEnabled' in kwargs:
+            is_sni_enabled = kwargs['isSniEnabled']
+        if 'loadBalancingMethod' in kwargs:
+            load_balancing_method = kwargs['loadBalancingMethod']
+        if 'tlsProtocols' in kwargs:
+            tls_protocols = kwargs['tlsProtocols']
+        if 'websocketPathPrefixes' in kwargs:
+            websocket_path_prefixes = kwargs['websocketPathPrefixes']
+
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
         if cipher_group is not None:
@@ -1180,7 +1256,25 @@ class PolicyPolicyConfigHealthChecksArgs:
              path: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              unhealthy_threshold: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expectedResponseCodeGroups' in kwargs:
+            expected_response_code_groups = kwargs['expectedResponseCodeGroups']
+        if 'expectedResponseText' in kwargs:
+            expected_response_text = kwargs['expectedResponseText']
+        if 'healthyThreshold' in kwargs:
+            healthy_threshold = kwargs['healthyThreshold']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isResponseTextCheckEnabled' in kwargs:
+            is_response_text_check_enabled = kwargs['isResponseTextCheckEnabled']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'unhealthyThreshold' in kwargs:
+            unhealthy_threshold = kwargs['unhealthyThreshold']
+
         if expected_response_code_groups is not None:
             _setter("expected_response_code_groups", expected_response_code_groups)
         if expected_response_text is not None:
@@ -1380,7 +1474,11 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
              domain: Optional[pulumi.Input[str]] = None,
              expiration_time_in_seconds: Optional[pulumi.Input[int]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'expirationTimeInSeconds' in kwargs:
+            expiration_time_in_seconds = kwargs['expirationTimeInSeconds']
+
         _setter("method", method)
         if domain is not None:
             _setter("domain", domain)
@@ -1504,7 +1602,27 @@ class PolicyWafConfigArgs:
              origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              protection_settings: Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']] = None,
              whitelists: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessRules' in kwargs:
+            access_rules = kwargs['accessRules']
+        if 'addressRateLimiting' in kwargs:
+            address_rate_limiting = kwargs['addressRateLimiting']
+        if 'cachingRules' in kwargs:
+            caching_rules = kwargs['cachingRules']
+        if 'customProtectionRules' in kwargs:
+            custom_protection_rules = kwargs['customProtectionRules']
+        if 'deviceFingerprintChallenge' in kwargs:
+            device_fingerprint_challenge = kwargs['deviceFingerprintChallenge']
+        if 'humanInteractionChallenge' in kwargs:
+            human_interaction_challenge = kwargs['humanInteractionChallenge']
+        if 'jsChallenge' in kwargs:
+            js_challenge = kwargs['jsChallenge']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'protectionSettings' in kwargs:
+            protection_settings = kwargs['protectionSettings']
+
         if access_rules is not None:
             _setter("access_rules", access_rules)
         if address_rate_limiting is not None:
@@ -1760,7 +1878,35 @@ class PolicyWafConfigAccessRuleArgs:
              redirect_response_code: Optional[pulumi.Input[str]] = None,
              redirect_url: Optional[pulumi.Input[str]] = None,
              response_header_manipulations: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'bypassChallenges' in kwargs:
+            bypass_challenges = kwargs['bypassChallenges']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+        if 'redirectResponseCode' in kwargs:
+            redirect_response_code = kwargs['redirectResponseCode']
+        if 'redirectUrl' in kwargs:
+            redirect_url = kwargs['redirectUrl']
+        if 'responseHeaderManipulations' in kwargs:
+            response_header_manipulations = kwargs['responseHeaderManipulations']
+
         _setter("action", action)
         _setter("criterias", criterias)
         _setter("name", name)
@@ -2042,7 +2188,11 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
              condition: pulumi.Input[str],
              value: pulumi.Input[str],
              is_case_sensitive: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("value", value)
         if is_case_sensitive is not None:
@@ -2133,7 +2283,9 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
              action: pulumi.Input[str],
              header: pulumi.Input[str],
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("header", header)
         if value is not None:
@@ -2203,7 +2355,17 @@ class PolicyWafConfigAddressRateLimitingArgs:
              allowed_rate_per_address: Optional[pulumi.Input[int]] = None,
              block_response_code: Optional[pulumi.Input[int]] = None,
              max_delayed_count_per_address: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'allowedRatePerAddress' in kwargs:
+            allowed_rate_per_address = kwargs['allowedRatePerAddress']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'maxDelayedCountPerAddress' in kwargs:
+            max_delayed_count_per_address = kwargs['maxDelayedCountPerAddress']
+
         _setter("is_enabled", is_enabled)
         if allowed_rate_per_address is not None:
             _setter("allowed_rate_per_address", allowed_rate_per_address)
@@ -2304,7 +2466,15 @@ class PolicyWafConfigCachingRuleArgs:
              client_caching_duration: Optional[pulumi.Input[str]] = None,
              is_client_caching_enabled: Optional[pulumi.Input[bool]] = None,
              key: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cachingDuration' in kwargs:
+            caching_duration = kwargs['cachingDuration']
+        if 'clientCachingDuration' in kwargs:
+            client_caching_duration = kwargs['clientCachingDuration']
+        if 'isClientCachingEnabled' in kwargs:
+            is_client_caching_enabled = kwargs['isClientCachingEnabled']
+
         _setter("action", action)
         _setter("criterias", criterias)
         _setter("name", name)
@@ -2450,7 +2620,9 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
              _setter: Callable[[Any, Any], None],
              condition: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("condition", condition)
         _setter("value", value)
 
@@ -2543,7 +2715,19 @@ class PolicyWafConfigCaptchaArgs:
              url: pulumi.Input[str],
              footer_text: Optional[pulumi.Input[str]] = None,
              header_text: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureMessage' in kwargs:
+            failure_message = kwargs['failureMessage']
+        if 'sessionExpirationInSeconds' in kwargs:
+            session_expiration_in_seconds = kwargs['sessionExpirationInSeconds']
+        if 'submitLabel' in kwargs:
+            submit_label = kwargs['submitLabel']
+        if 'footerText' in kwargs:
+            footer_text = kwargs['footerText']
+        if 'headerText' in kwargs:
+            header_text = kwargs['headerText']
+
         _setter("failure_message", failure_message)
         _setter("session_expiration_in_seconds", session_expiration_in_seconds)
         _setter("submit_label", submit_label)
@@ -2662,7 +2846,9 @@ class PolicyWafConfigCustomProtectionRuleArgs:
              action: Optional[pulumi.Input[str]] = None,
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if action is not None:
             _setter("action", action)
         if exclusions is not None:
@@ -2726,7 +2912,9 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              target: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if target is not None:
@@ -2800,7 +2988,23 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
              failure_threshold_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
              max_address_count: Optional[pulumi.Input[int]] = None,
              max_address_count_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'maxAddressCount' in kwargs:
+            max_address_count = kwargs['maxAddressCount']
+        if 'maxAddressCountExpirationInSeconds' in kwargs:
+            max_address_count_expiration_in_seconds = kwargs['maxAddressCountExpirationInSeconds']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -2961,7 +3165,27 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
              captcha_header: Optional[pulumi.Input[str]] = None,
              captcha_submit_label: Optional[pulumi.Input[str]] = None,
              captcha_title: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3141,7 +3365,27 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
              is_nat_enabled: Optional[pulumi.Input[bool]] = None,
              recording_period_in_seconds: Optional[pulumi.Input[int]] = None,
              set_http_header: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'failureThresholdExpirationInSeconds' in kwargs:
+            failure_threshold_expiration_in_seconds = kwargs['failureThresholdExpirationInSeconds']
+        if 'interactionThreshold' in kwargs:
+            interaction_threshold = kwargs['interactionThreshold']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'recordingPeriodInSeconds' in kwargs:
+            recording_period_in_seconds = kwargs['recordingPeriodInSeconds']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -3330,7 +3574,27 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
              captcha_header: Optional[pulumi.Input[str]] = None,
              captcha_submit_label: Optional[pulumi.Input[str]] = None,
              captcha_title: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3482,7 +3746,9 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3562,7 +3828,23 @@ class PolicyWafConfigJsChallengeArgs:
              failure_threshold: Optional[pulumi.Input[int]] = None,
              is_nat_enabled: Optional[pulumi.Input[bool]] = None,
              set_http_header: Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'actionExpirationInSeconds' in kwargs:
+            action_expiration_in_seconds = kwargs['actionExpirationInSeconds']
+        if 'areRedirectsChallenged' in kwargs:
+            are_redirects_challenged = kwargs['areRedirectsChallenged']
+        if 'challengeSettings' in kwargs:
+            challenge_settings = kwargs['challengeSettings']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'isNatEnabled' in kwargs:
+            is_nat_enabled = kwargs['isNatEnabled']
+        if 'setHttpHeader' in kwargs:
+            set_http_header = kwargs['setHttpHeader']
+
         _setter("is_enabled", is_enabled)
         if action is not None:
             _setter("action", action)
@@ -3737,7 +4019,27 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
              captcha_header: Optional[pulumi.Input[str]] = None,
              captcha_submit_label: Optional[pulumi.Input[str]] = None,
              captcha_title: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'captchaFooter' in kwargs:
+            captcha_footer = kwargs['captchaFooter']
+        if 'captchaHeader' in kwargs:
+            captcha_header = kwargs['captchaHeader']
+        if 'captchaSubmitLabel' in kwargs:
+            captcha_submit_label = kwargs['captchaSubmitLabel']
+        if 'captchaTitle' in kwargs:
+            captcha_title = kwargs['captchaTitle']
+
         if block_action is not None:
             _setter("block_action", block_action)
         if block_error_page_code is not None:
@@ -3914,7 +4216,11 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
              condition: pulumi.Input[str],
              value: pulumi.Input[str],
              is_case_sensitive: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCaseSensitive' in kwargs:
+            is_case_sensitive = kwargs['isCaseSensitive']
+
         _setter("condition", condition)
         _setter("value", value)
         if is_case_sensitive is not None:
@@ -4005,7 +4311,9 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -4125,7 +4433,35 @@ class PolicyWafConfigProtectionSettingsArgs:
              max_total_name_length_of_arguments: Optional[pulumi.Input[int]] = None,
              media_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              recommendations_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'blockAction' in kwargs:
+            block_action = kwargs['blockAction']
+        if 'blockErrorPageCode' in kwargs:
+            block_error_page_code = kwargs['blockErrorPageCode']
+        if 'blockErrorPageDescription' in kwargs:
+            block_error_page_description = kwargs['blockErrorPageDescription']
+        if 'blockErrorPageMessage' in kwargs:
+            block_error_page_message = kwargs['blockErrorPageMessage']
+        if 'blockResponseCode' in kwargs:
+            block_response_code = kwargs['blockResponseCode']
+        if 'isResponseInspected' in kwargs:
+            is_response_inspected = kwargs['isResponseInspected']
+        if 'maxArgumentCount' in kwargs:
+            max_argument_count = kwargs['maxArgumentCount']
+        if 'maxNameLengthPerArgument' in kwargs:
+            max_name_length_per_argument = kwargs['maxNameLengthPerArgument']
+        if 'maxResponseSizeInKiB' in kwargs:
+            max_response_size_in_ki_b = kwargs['maxResponseSizeInKiB']
+        if 'maxTotalNameLengthOfArguments' in kwargs:
+            max_total_name_length_of_arguments = kwargs['maxTotalNameLengthOfArguments']
+        if 'mediaTypes' in kwargs:
+            media_types = kwargs['mediaTypes']
+        if 'recommendationsPeriodInDays' in kwargs:
+            recommendations_period_in_days = kwargs['recommendationsPeriodInDays']
+
         if allowed_http_methods is not None:
             _setter("allowed_http_methods", allowed_http_methods)
         if block_action is not None:
@@ -4361,7 +4697,11 @@ class PolicyWafConfigWhitelistArgs:
              name: pulumi.Input[str],
              address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressLists' in kwargs:
+            address_lists = kwargs['addressLists']
+
         _setter("name", name)
         if address_lists is not None:
             _setter("address_lists", address_lists)
@@ -4431,7 +4771,9 @@ class ProtectionRuleExclusionArgs:
              _setter: Callable[[Any, Any], None],
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              target: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if target is not None:
@@ -4483,7 +4825,9 @@ class GetAddressListsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4538,7 +4882,9 @@ class GetCertificatesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4593,7 +4939,9 @@ class GetCustomProtectionRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4645,7 +4993,9 @@ class GetEdgeSubnetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4697,7 +5047,9 @@ class GetHttpRedirectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4752,7 +5104,9 @@ class GetProtectionRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4810,7 +5164,9 @@ class GetWaasPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

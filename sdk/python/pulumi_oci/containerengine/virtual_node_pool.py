@@ -77,7 +77,29 @@ class VirtualNodePoolArgs:
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              taints: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]]] = None,
              virtual_node_tags: Optional[pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'podConfiguration' in kwargs:
+            pod_configuration = kwargs['podConfiguration']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialVirtualNodeLabels' in kwargs:
+            initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'virtualNodeTags' in kwargs:
+            virtual_node_tags = kwargs['virtualNodeTags']
+
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -334,7 +356,39 @@ class _VirtualNodePoolState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              virtual_node_tags: Optional[pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialVirtualNodeLabels' in kwargs:
+            initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'podConfiguration' in kwargs:
+            pod_configuration = kwargs['podConfiguration']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualNodeTags' in kwargs:
+            virtual_node_tags = kwargs['virtualNodeTags']
+
         if cluster_id is not None:
             _setter("cluster_id", cluster_id)
         if compartment_id is not None:

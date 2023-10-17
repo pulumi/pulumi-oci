@@ -61,7 +61,25 @@ class AgentArgs:
              os_version: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentType' in kwargs:
+            agent_type = kwargs['agentType']
+        if 'agentVersion' in kwargs:
+            agent_version = kwargs['agentVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("agent_type", agent_type)
         _setter("agent_version", agent_version)
         _setter("compartment_id", compartment_id)
@@ -262,7 +280,43 @@ class _AgentState:
              time_expire_agent_key_in_ms: Optional[pulumi.Input[str]] = None,
              time_last_sync_received: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentPubKey' in kwargs:
+            agent_pub_key = kwargs['agentPubKey']
+        if 'agentType' in kwargs:
+            agent_type = kwargs['agentType']
+        if 'agentVersion' in kwargs:
+            agent_version = kwargs['agentVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'heartBeatStatus' in kwargs:
+            heart_beat_status = kwargs['heartBeatStatus']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'pluginLists' in kwargs:
+            plugin_lists = kwargs['pluginLists']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpireAgentKeyInMs' in kwargs:
+            time_expire_agent_key_in_ms = kwargs['timeExpireAgentKeyInMs']
+        if 'timeLastSyncReceived' in kwargs:
+            time_last_sync_received = kwargs['timeLastSyncReceived']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_pub_key is not None:
             _setter("agent_pub_key", agent_pub_key)
         if agent_type is not None:

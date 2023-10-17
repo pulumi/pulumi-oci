@@ -57,7 +57,23 @@ class DiscoveryJobArgs:
              discovery_type: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'discoveryDetails' in kwargs:
+            discovery_details = kwargs['discoveryDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryClient' in kwargs:
+            discovery_client = kwargs['discoveryClient']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'shouldPropagateTagsToDiscoveredResources' in kwargs:
+            should_propagate_tags_to_discovered_resources = kwargs['shouldPropagateTagsToDiscoveredResources']
+
         _setter("compartment_id", compartment_id)
         _setter("discovery_details", discovery_details)
         if defined_tags is not None:
@@ -232,7 +248,33 @@ class _DiscoveryJobState:
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryClient' in kwargs:
+            discovery_client = kwargs['discoveryClient']
+        if 'discoveryDetails' in kwargs:
+            discovery_details = kwargs['discoveryDetails']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'shouldPropagateTagsToDiscoveredResources' in kwargs:
+            should_propagate_tags_to_discovered_resources = kwargs['shouldPropagateTagsToDiscoveredResources']
+        if 'statusMessage' in kwargs:
+            status_message = kwargs['statusMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

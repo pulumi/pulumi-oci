@@ -57,7 +57,19 @@ class DetectAnomalyJobArgs:
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              sensitivity: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'inputDetails' in kwargs:
+            input_details = kwargs['inputDetails']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'outputDetails' in kwargs:
+            output_details = kwargs['outputDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("compartment_id", compartment_id)
         _setter("input_details", input_details)
         _setter("model_id", model_id)
@@ -238,7 +250,35 @@ class _DetectAnomalyJobState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inputDetails' in kwargs:
+            input_details = kwargs['inputDetails']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'outputDetails' in kwargs:
+            output_details = kwargs['outputDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

@@ -97,7 +97,33 @@ class MonitoredResourceArgs:
              name: Optional[pulumi.Input[str]] = None,
              properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
              resource_time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'additionalAliases' in kwargs:
+            additional_aliases = kwargs['additionalAliases']
+        if 'additionalCredentials' in kwargs:
+            additional_credentials = kwargs['additionalCredentials']
+        if 'databaseConnectionDetails' in kwargs:
+            database_connection_details = kwargs['databaseConnectionDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'externalResourceId' in kwargs:
+            external_resource_id = kwargs['externalResourceId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+
         _setter("compartment_id", compartment_id)
         _setter("type", type)
         if additional_aliases is not None:
@@ -444,7 +470,41 @@ class _MonitoredResourceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalAliases' in kwargs:
+            additional_aliases = kwargs['additionalAliases']
+        if 'additionalCredentials' in kwargs:
+            additional_credentials = kwargs['additionalCredentials']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseConnectionDetails' in kwargs:
+            database_connection_details = kwargs['databaseConnectionDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'externalResourceId' in kwargs:
+            external_resource_id = kwargs['externalResourceId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_aliases is not None:
             _setter("additional_aliases", additional_aliases)
         if additional_credentials is not None:

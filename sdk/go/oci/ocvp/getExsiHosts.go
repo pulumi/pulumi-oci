@@ -99,7 +99,7 @@ type GetExsiHostsResult struct {
 	Id                  string `pulumi:"id"`
 	IsBillingDonorsOnly *bool  `pulumi:"isBillingDonorsOnly"`
 	IsSwapBillingOnly   *bool  `pulumi:"isSwapBillingOnly"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 	SddcId *string `pulumi:"sddcId"`
 	// The current state of the ESXi host.
 	State *string `pulumi:"state"`
@@ -199,7 +199,7 @@ func (o GetExsiHostsResultOutput) IsSwapBillingOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetExsiHostsResult) *bool { return v.IsSwapBillingOnly }).(pulumi.BoolPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 func (o GetExsiHostsResultOutput) SddcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExsiHostsResult) *string { return v.SddcId }).(pulumi.StringPtrOutput)
 }

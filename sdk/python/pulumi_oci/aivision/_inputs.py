@@ -52,7 +52,15 @@ class ModelTestingDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace_name: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -163,7 +171,15 @@ class ModelTrainingDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace_name: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -274,7 +290,15 @@ class ModelValidationDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace_name: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -368,7 +392,9 @@ class GetModelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -420,7 +446,9 @@ class GetProjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

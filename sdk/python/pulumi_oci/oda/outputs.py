@@ -68,7 +68,13 @@ class OdaInstanceRestrictedOperation(dict):
              _setter: Callable[[Any, Any], None],
              operation_name: Optional[str] = None,
              restricting_service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'restrictingService' in kwargs:
+            restricting_service = kwargs['restrictingService']
+
         if operation_name is not None:
             _setter("operation_name", operation_name)
         if restricting_service is not None:
@@ -135,7 +141,15 @@ class OdaPrivateEndpointScanProxyScanListenerInfo(dict):
              scan_listener_fqdn: Optional[str] = None,
              scan_listener_ip: Optional[str] = None,
              scan_listener_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanListenerFqdn' in kwargs:
+            scan_listener_fqdn = kwargs['scanListenerFqdn']
+        if 'scanListenerIp' in kwargs:
+            scan_listener_ip = kwargs['scanListenerIp']
+        if 'scanListenerPort' in kwargs:
+            scan_listener_port = kwargs['scanListenerPort']
+
         if scan_listener_fqdn is not None:
             _setter("scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
@@ -187,7 +201,13 @@ class GetOdaInstanceRestrictedOperationResult(dict):
              _setter: Callable[[Any, Any], None],
              operation_name: str,
              restricting_service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'restrictingService' in kwargs:
+            restricting_service = kwargs['restrictingService']
+
         _setter("operation_name", operation_name)
         _setter("restricting_service", restricting_service)
 
@@ -226,7 +246,9 @@ class GetOdaInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -351,7 +373,49 @@ class GetOdaInstancesOdaInstanceResult(dict):
              time_created: str,
              time_updated: str,
              web_app_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentIds' in kwargs:
+            attachment_ids = kwargs['attachmentIds']
+        if 'attachmentTypes' in kwargs:
+            attachment_types = kwargs['attachmentTypes']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectorUrl' in kwargs:
+            connector_url = kwargs['connectorUrl']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'identityAppConsoleUrl' in kwargs:
+            identity_app_console_url = kwargs['identityAppConsoleUrl']
+        if 'identityAppGuid' in kwargs:
+            identity_app_guid = kwargs['identityAppGuid']
+        if 'identityDomain' in kwargs:
+            identity_domain = kwargs['identityDomain']
+        if 'importedPackageIds' in kwargs:
+            imported_package_ids = kwargs['importedPackageIds']
+        if 'importedPackageNames' in kwargs:
+            imported_package_names = kwargs['importedPackageNames']
+        if 'isRoleBasedAccess' in kwargs:
+            is_role_based_access = kwargs['isRoleBasedAccess']
+        if 'lifecycleSubState' in kwargs:
+            lifecycle_sub_state = kwargs['lifecycleSubState']
+        if 'restrictedOperations' in kwargs:
+            restricted_operations = kwargs['restrictedOperations']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'webAppUrl' in kwargs:
+            web_app_url = kwargs['webAppUrl']
+
         _setter("attachment_ids", attachment_ids)
         _setter("attachment_types", attachment_types)
         _setter("compartment_id", compartment_id)
@@ -580,7 +644,13 @@ class GetOdaInstancesOdaInstanceRestrictedOperationResult(dict):
              _setter: Callable[[Any, Any], None],
              operation_name: str,
              restricting_service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'restrictingService' in kwargs:
+            restricting_service = kwargs['restrictingService']
+
         _setter("operation_name", operation_name)
         _setter("restricting_service", restricting_service)
 
@@ -619,7 +689,9 @@ class GetOdaPrivateEndpointAttachmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -653,7 +725,9 @@ class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -701,7 +775,19 @@ class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'odaInstanceId' in kwargs:
+            oda_instance_id = kwargs['odaInstanceId']
+        if 'odaPrivateEndpointId' in kwargs:
+            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("oda_instance_id", oda_instance_id)
@@ -785,7 +871,9 @@ class GetOdaPrivateEndpointScanProxiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -819,7 +907,9 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -867,7 +957,17 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemR
              scan_listener_type: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'odaPrivateEndpointId' in kwargs:
+            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
+        if 'scanListenerInfos' in kwargs:
+            scan_listener_infos = kwargs['scanListenerInfos']
+        if 'scanListenerType' in kwargs:
+            scan_listener_type = kwargs['scanListenerType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("id", id)
         _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         _setter("protocol", protocol)
@@ -956,7 +1056,15 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemS
              scan_listener_fqdn: str,
              scan_listener_ip: str,
              scan_listener_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanListenerFqdn' in kwargs:
+            scan_listener_fqdn = kwargs['scanListenerFqdn']
+        if 'scanListenerIp' in kwargs:
+            scan_listener_ip = kwargs['scanListenerIp']
+        if 'scanListenerPort' in kwargs:
+            scan_listener_port = kwargs['scanListenerPort']
+
         _setter("scan_listener_fqdn", scan_listener_fqdn)
         _setter("scan_listener_ip", scan_listener_ip)
         _setter("scan_listener_port", scan_listener_port)
@@ -1009,7 +1117,15 @@ class GetOdaPrivateEndpointScanProxyScanListenerInfoResult(dict):
              scan_listener_fqdn: str,
              scan_listener_ip: str,
              scan_listener_port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanListenerFqdn' in kwargs:
+            scan_listener_fqdn = kwargs['scanListenerFqdn']
+        if 'scanListenerIp' in kwargs:
+            scan_listener_ip = kwargs['scanListenerIp']
+        if 'scanListenerPort' in kwargs:
+            scan_listener_port = kwargs['scanListenerPort']
+
         _setter("scan_listener_fqdn", scan_listener_fqdn)
         _setter("scan_listener_ip", scan_listener_ip)
         _setter("scan_listener_port", scan_listener_port)
@@ -1057,7 +1173,9 @@ class GetOdaPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1091,7 +1209,9 @@ class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1155,7 +1275,25 @@ class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

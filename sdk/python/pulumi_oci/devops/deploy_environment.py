@@ -69,7 +69,27 @@ class DeployEnvironmentArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
              network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentType' in kwargs:
+            deploy_environment_type = kwargs['deployEnvironmentType']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'computeInstanceGroupSelectors' in kwargs:
+            compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'networkChannel' in kwargs:
+            network_channel = kwargs['networkChannel']
+
         _setter("deploy_environment_type", deploy_environment_type)
         _setter("project_id", project_id)
         if cluster_id is not None:
@@ -294,7 +314,37 @@ class _DeployEnvironmentState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeInstanceGroupSelectors' in kwargs:
+            compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployEnvironmentType' in kwargs:
+            deploy_environment_type = kwargs['deployEnvironmentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkChannel' in kwargs:
+            network_channel = kwargs['networkChannel']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_id is not None:
             _setter("cluster_id", cluster_id)
         if compartment_id is not None:

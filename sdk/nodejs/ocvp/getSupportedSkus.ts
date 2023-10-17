@@ -7,7 +7,8 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
+ * !> **WARNING:** This data source is deprecated and will be removed, please use "ociOcvpSupportedCommitments" instead.
  *
  * Lists supported SKUs.
  *
@@ -65,7 +66,8 @@ export interface GetSupportedSkusResult {
     readonly items: outputs.Ocvp.GetSupportedSkusItem[];
 }
 /**
- * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
+ * !> **WARNING:** This data source is deprecated and will be removed, please use "ociOcvpSupportedCommitments" instead.
  *
  * Lists supported SKUs.
  *

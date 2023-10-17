@@ -41,7 +41,17 @@ class ExternalDbSystemDiscoveryArgs:
              compartment_id: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
              patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'patchOperations' in kwargs:
+            patch_operations = kwargs['patchOperations']
+
         _setter("agent_id", agent_id)
         _setter("compartment_id", compartment_id)
         if display_name is not None:
@@ -157,7 +167,31 @@ class _ExternalDbSystemDiscoveryState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'discoveredComponents' in kwargs:
+            discovered_components = kwargs['discoveredComponents']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDbSystemDiscoveryId' in kwargs:
+            external_db_system_discovery_id = kwargs['externalDbSystemDiscoveryId']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'patchOperations' in kwargs:
+            patch_operations = kwargs['patchOperations']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if compartment_id is not None:

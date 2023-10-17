@@ -6,7 +6,9 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteCloneConnectionStringArgs;
+import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs;
+import com.pulumi.oci.Database.inputs.PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -187,6 +189,21 @@ public final class PluggableDatabasesRemoteCloneState extends com.pulumi.resourc
     }
 
     /**
+     * Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    @Import(name="pdbNodeLevelDetails")
+    private @Nullable Output<List<PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs>> pdbNodeLevelDetails;
+
+    /**
+     * @return Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+     * 
+     */
+    public Optional<Output<List<PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs>>> pdbNodeLevelDetails() {
+        return Optional.ofNullable(this.pdbNodeLevelDetails);
+    }
+
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -214,6 +231,21 @@ public final class PluggableDatabasesRemoteCloneState extends com.pulumi.resourc
      */
     public Optional<Output<List<PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs>>> pluggableDatabaseManagementConfigs() {
         return Optional.ofNullable(this.pluggableDatabaseManagementConfigs);
+    }
+
+    /**
+     * Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    @Import(name="refreshableCloneConfigs")
+    private @Nullable Output<List<PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs>> refreshableCloneConfigs;
+
+    /**
+     * @return Pluggable Database Refreshable Clone Configuration.
+     * 
+     */
+    public Optional<Output<List<PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs>>> refreshableCloneConfigs() {
+        return Optional.ofNullable(this.refreshableCloneConfigs);
     }
 
     /**
@@ -326,8 +358,10 @@ public final class PluggableDatabasesRemoteCloneState extends com.pulumi.resourc
         this.openMode = $.openMode;
         this.pdbAdminPassword = $.pdbAdminPassword;
         this.pdbName = $.pdbName;
+        this.pdbNodeLevelDetails = $.pdbNodeLevelDetails;
         this.pluggableDatabaseId = $.pluggableDatabaseId;
         this.pluggableDatabaseManagementConfigs = $.pluggableDatabaseManagementConfigs;
+        this.refreshableCloneConfigs = $.refreshableCloneConfigs;
         this.shouldPdbAdminAccountBeLocked = $.shouldPdbAdminAccountBeLocked;
         this.sourceContainerDbAdminPassword = $.sourceContainerDbAdminPassword;
         this.state = $.state;
@@ -596,6 +630,37 @@ public final class PluggableDatabasesRemoteCloneState extends com.pulumi.resourc
         }
 
         /**
+         * @param pdbNodeLevelDetails Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pdbNodeLevelDetails(@Nullable Output<List<PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs>> pdbNodeLevelDetails) {
+            $.pdbNodeLevelDetails = pdbNodeLevelDetails;
+            return this;
+        }
+
+        /**
+         * @param pdbNodeLevelDetails Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pdbNodeLevelDetails(List<PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs> pdbNodeLevelDetails) {
+            return pdbNodeLevelDetails(Output.of(pdbNodeLevelDetails));
+        }
+
+        /**
+         * @param pdbNodeLevelDetails Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pdbNodeLevelDetails(PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs... pdbNodeLevelDetails) {
+            return pdbNodeLevelDetails(List.of(pdbNodeLevelDetails));
+        }
+
+        /**
          * @param pluggableDatabaseId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -645,6 +710,37 @@ public final class PluggableDatabasesRemoteCloneState extends com.pulumi.resourc
          */
         public Builder pluggableDatabaseManagementConfigs(PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs... pluggableDatabaseManagementConfigs) {
             return pluggableDatabaseManagementConfigs(List.of(pluggableDatabaseManagementConfigs));
+        }
+
+        /**
+         * @param refreshableCloneConfigs Pluggable Database Refreshable Clone Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshableCloneConfigs(@Nullable Output<List<PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs>> refreshableCloneConfigs) {
+            $.refreshableCloneConfigs = refreshableCloneConfigs;
+            return this;
+        }
+
+        /**
+         * @param refreshableCloneConfigs Pluggable Database Refreshable Clone Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshableCloneConfigs(List<PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs> refreshableCloneConfigs) {
+            return refreshableCloneConfigs(Output.of(refreshableCloneConfigs));
+        }
+
+        /**
+         * @param refreshableCloneConfigs Pluggable Database Refreshable Clone Configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshableCloneConfigs(PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs... refreshableCloneConfigs) {
+            return refreshableCloneConfigs(List.of(refreshableCloneConfigs));
         }
 
         /**

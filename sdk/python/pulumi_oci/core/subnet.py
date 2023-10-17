@@ -120,7 +120,39 @@ class SubnetArgs:
              prohibit_public_ip_on_vnic: Optional[pulumi.Input[bool]] = None,
              route_table_id: Optional[pulumi.Input[str]] = None,
              security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dhcpOptionsId' in kwargs:
+            dhcp_options_id = kwargs['dhcpOptionsId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsLabel' in kwargs:
+            dns_label = kwargs['dnsLabel']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+        if 'ipv6cidrBlocks' in kwargs:
+            ipv6cidr_blocks = kwargs['ipv6cidrBlocks']
+        if 'prohibitInternetIngress' in kwargs:
+            prohibit_internet_ingress = kwargs['prohibitInternetIngress']
+        if 'prohibitPublicIpOnVnic' in kwargs:
+            prohibit_public_ip_on_vnic = kwargs['prohibitPublicIpOnVnic']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'securityListIds' in kwargs:
+            security_list_ids = kwargs['securityListIds']
+
         _setter("cidr_block", cidr_block)
         _setter("compartment_id", compartment_id)
         _setter("vcn_id", vcn_id)
@@ -500,7 +532,49 @@ class _SubnetState:
              vcn_id: Optional[pulumi.Input[str]] = None,
              virtual_router_ip: Optional[pulumi.Input[str]] = None,
              virtual_router_mac: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dhcpOptionsId' in kwargs:
+            dhcp_options_id = kwargs['dhcpOptionsId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsLabel' in kwargs:
+            dns_label = kwargs['dnsLabel']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+        if 'ipv6cidrBlocks' in kwargs:
+            ipv6cidr_blocks = kwargs['ipv6cidrBlocks']
+        if 'ipv6virtualRouterIp' in kwargs:
+            ipv6virtual_router_ip = kwargs['ipv6virtualRouterIp']
+        if 'prohibitInternetIngress' in kwargs:
+            prohibit_internet_ingress = kwargs['prohibitInternetIngress']
+        if 'prohibitPublicIpOnVnic' in kwargs:
+            prohibit_public_ip_on_vnic = kwargs['prohibitPublicIpOnVnic']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'securityListIds' in kwargs:
+            security_list_ids = kwargs['securityListIds']
+        if 'subnetDomainName' in kwargs:
+            subnet_domain_name = kwargs['subnetDomainName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'virtualRouterIp' in kwargs:
+            virtual_router_ip = kwargs['virtualRouterIp']
+        if 'virtualRouterMac' in kwargs:
+            virtual_router_mac = kwargs['virtualRouterMac']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if cidr_block is not None:

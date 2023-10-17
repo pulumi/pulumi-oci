@@ -59,7 +59,25 @@ class OneoffPatchArgs:
              download_oneoff_patch_trigger: Optional[pulumi.Input[int]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'releaseUpdate' in kwargs:
+            release_update = kwargs['releaseUpdate']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'downloadOneoffPatchTrigger' in kwargs:
+            download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'oneOffPatches' in kwargs:
+            one_off_patches = kwargs['oneOffPatches']
+
         _setter("compartment_id", compartment_id)
         _setter("db_version", db_version)
         _setter("display_name", display_name)
@@ -250,7 +268,35 @@ class _OneoffPatchState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_expiration: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'downloadOneoffPatchTrigger' in kwargs:
+            download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'oneOffPatches' in kwargs:
+            one_off_patches = kwargs['oneOffPatches']
+        if 'releaseUpdate' in kwargs:
+            release_update = kwargs['releaseUpdate']
+        if 'sizeInKbs' in kwargs:
+            size_in_kbs = kwargs['sizeInKbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if db_version is not None:

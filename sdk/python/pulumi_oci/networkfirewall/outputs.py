@@ -90,7 +90,13 @@ class NetworkFirewallPolicyApplicationList(dict):
              _setter: Callable[[Any, Any], None],
              application_list_name: str,
              application_values: Optional[Sequence['outputs.NetworkFirewallPolicyApplicationListApplicationValue']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationListName' in kwargs:
+            application_list_name = kwargs['applicationListName']
+        if 'applicationValues' in kwargs:
+            application_values = kwargs['applicationValues']
+
         _setter("application_list_name", application_list_name)
         if application_values is not None:
             _setter("application_values", application_values)
@@ -166,7 +172,17 @@ class NetworkFirewallPolicyApplicationListApplicationValue(dict):
              icmp_type: Optional[int] = None,
              maximum_port: Optional[int] = None,
              minimum_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'maximumPort' in kwargs:
+            maximum_port = kwargs['maximumPort']
+        if 'minimumPort' in kwargs:
+            minimum_port = kwargs['minimumPort']
+
         _setter("type", type)
         if icmp_code is not None:
             _setter("icmp_code", icmp_code)
@@ -306,7 +322,27 @@ class NetworkFirewallPolicyDecryptionProfile(dict):
              is_unsupported_cipher_blocked: Optional[bool] = None,
              is_unsupported_version_blocked: Optional[bool] = None,
              is_untrusted_issuer_blocked: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+
         _setter("key", key)
         _setter("type", type)
         if are_certificate_extensions_restricted is not None:
@@ -469,7 +505,11 @@ class NetworkFirewallPolicyDecryptionRule(dict):
              name: str,
              decryption_profile: Optional[str] = None,
              secret: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'decryptionProfile' in kwargs:
+            decryption_profile = kwargs['decryptionProfile']
+
         _setter("action", action)
         _setter("condition", condition)
         _setter("name", name)
@@ -542,7 +582,9 @@ class NetworkFirewallPolicyDecryptionRuleCondition(dict):
              _setter: Callable[[Any, Any], None],
              destinations: Optional[Sequence[str]] = None,
              sources: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if destinations is not None:
             _setter("destinations", destinations)
         if sources is not None:
@@ -603,7 +645,13 @@ class NetworkFirewallPolicyIpAddressList(dict):
              _setter: Callable[[Any, Any], None],
              ip_address_list_name: str,
              ip_address_list_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddressListName' in kwargs:
+            ip_address_list_name = kwargs['ipAddressListName']
+        if 'ipAddressListValues' in kwargs:
+            ip_address_list_values = kwargs['ipAddressListValues']
+
         _setter("ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
             _setter("ip_address_list_values", ip_address_list_values)
@@ -671,7 +719,13 @@ class NetworkFirewallPolicyMappedSecret(dict):
              type: str,
              vault_secret_id: Optional[str] = None,
              version_number: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("key", key)
         _setter("type", type)
         if vault_secret_id is not None:
@@ -745,7 +799,9 @@ class NetworkFirewallPolicySecurityRule(dict):
              condition: 'outputs.NetworkFirewallPolicySecurityRuleCondition',
              name: str,
              inspection: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("condition", condition)
         _setter("name", name)
@@ -818,7 +874,9 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
              destinations: Optional[Sequence[str]] = None,
              sources: Optional[Sequence[str]] = None,
              urls: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if applications is not None:
             _setter("applications", applications)
         if destinations is not None:
@@ -899,7 +957,13 @@ class NetworkFirewallPolicyUrlList(dict):
              _setter: Callable[[Any, Any], None],
              url_list_name: str,
              url_list_values: Optional[Sequence['outputs.NetworkFirewallPolicyUrlListUrlListValue']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlListName' in kwargs:
+            url_list_name = kwargs['urlListName']
+        if 'urlListValues' in kwargs:
+            url_list_values = kwargs['urlListValues']
+
         _setter("url_list_name", url_list_name)
         if url_list_values is not None:
             _setter("url_list_values", url_list_values)
@@ -944,7 +1008,9 @@ class NetworkFirewallPolicyUrlListUrlListValue(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              pattern: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if pattern is not None:
             _setter("pattern", pattern)
@@ -991,7 +1057,9 @@ class GetNetworkFirewallPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1028,7 +1096,9 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1120,7 +1190,41 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
              time_created: str,
              time_updated: str,
              url_lists: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationLists' in kwargs:
+            application_lists = kwargs['applicationLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'decryptionProfiles' in kwargs:
+            decryption_profiles = kwargs['decryptionProfiles']
+        if 'decryptionRules' in kwargs:
+            decryption_rules = kwargs['decryptionRules']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddressLists' in kwargs:
+            ip_address_lists = kwargs['ipAddressLists']
+        if 'isFirewallAttached' in kwargs:
+            is_firewall_attached = kwargs['isFirewallAttached']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mappedSecrets' in kwargs:
+            mapped_secrets = kwargs['mappedSecrets']
+        if 'securityRules' in kwargs:
+            security_rules = kwargs['securityRules']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'urlLists' in kwargs:
+            url_lists = kwargs['urlLists']
+
         _setter("application_lists", application_lists)
         _setter("compartment_id", compartment_id)
         _setter("decryption_profiles", decryption_profiles)
@@ -1300,7 +1404,13 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
              _setter: Callable[[Any, Any], None],
              application_list_name: str,
              application_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationListName' in kwargs:
+            application_list_name = kwargs['applicationListName']
+        if 'applicationValues' in kwargs:
+            application_values = kwargs['applicationValues']
+
         _setter("application_list_name", application_list_name)
         _setter("application_values", application_values)
 
@@ -1342,7 +1452,17 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
              maximum_port: int,
              minimum_port: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'maximumPort' in kwargs:
+            maximum_port = kwargs['maximumPort']
+        if 'minimumPort' in kwargs:
+            minimum_port = kwargs['minimumPort']
+
         _setter("icmp_code", icmp_code)
         _setter("icmp_type", icmp_type)
         _setter("maximum_port", maximum_port)
@@ -1432,7 +1552,27 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
              is_untrusted_issuer_blocked: bool,
              key: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+
         _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
@@ -1566,7 +1706,11 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
              decryption_profile: str,
              name: str,
              secret: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'decryptionProfile' in kwargs:
+            decryption_profile = kwargs['decryptionProfile']
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("decryption_profile", decryption_profile)
@@ -1637,7 +1781,9 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
              _setter: Callable[[Any, Any], None],
              destinations: Sequence[str],
              sources: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destinations", destinations)
         _setter("sources", sources)
 
@@ -1673,7 +1819,13 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddr
              _setter: Callable[[Any, Any], None],
              ip_address_list_name: str,
              ip_address_list_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddressListName' in kwargs:
+            ip_address_list_name = kwargs['ipAddressListName']
+        if 'ipAddressListValues' in kwargs:
+            ip_address_list_values = kwargs['ipAddressListValues']
+
         _setter("ip_address_list_name", ip_address_list_name)
         _setter("ip_address_list_values", ip_address_list_values)
 
@@ -1714,7 +1866,13 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapped
              type: str,
              vault_secret_id: str,
              version_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("key", key)
         _setter("type", type)
         _setter("vault_secret_id", vault_secret_id)
@@ -1783,7 +1941,9 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecuri
              conditions: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionResult'],
              inspection: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("inspection", inspection)
@@ -1855,7 +2015,9 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecuri
              destinations: Sequence[str],
              sources: Sequence[str],
              urls: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("applications", applications)
         _setter("destinations", destinations)
         _setter("sources", sources)
@@ -1909,7 +2071,13 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
              _setter: Callable[[Any, Any], None],
              url_list_name: str,
              url_list_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlListName' in kwargs:
+            url_list_name = kwargs['urlListName']
+        if 'urlListValues' in kwargs:
+            url_list_values = kwargs['urlListValues']
+
         _setter("url_list_name", url_list_name)
         _setter("url_list_values", url_list_values)
 
@@ -1942,7 +2110,9 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
              _setter: Callable[[Any, Any], None],
              pattern: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("pattern", pattern)
         _setter("type", type)
 
@@ -1975,7 +2145,13 @@ class GetNetworkFirewallPolicyApplicationListResult(dict):
              _setter: Callable[[Any, Any], None],
              application_list_name: str,
              application_values: Sequence['outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationListName' in kwargs:
+            application_list_name = kwargs['applicationListName']
+        if 'applicationValues' in kwargs:
+            application_values = kwargs['applicationValues']
+
         _setter("application_list_name", application_list_name)
         _setter("application_values", application_values)
 
@@ -2017,7 +2193,17 @@ class GetNetworkFirewallPolicyApplicationListApplicationValueResult(dict):
              maximum_port: int,
              minimum_port: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'maximumPort' in kwargs:
+            maximum_port = kwargs['maximumPort']
+        if 'minimumPort' in kwargs:
+            minimum_port = kwargs['minimumPort']
+
         _setter("icmp_code", icmp_code)
         _setter("icmp_type", icmp_type)
         _setter("maximum_port", maximum_port)
@@ -2107,7 +2293,27 @@ class GetNetworkFirewallPolicyDecryptionProfileResult(dict):
              is_untrusted_issuer_blocked: bool,
              key: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+
         _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
@@ -2241,7 +2447,11 @@ class GetNetworkFirewallPolicyDecryptionRuleResult(dict):
              decryption_profile: str,
              name: str,
              secret: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'decryptionProfile' in kwargs:
+            decryption_profile = kwargs['decryptionProfile']
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("decryption_profile", decryption_profile)
@@ -2312,7 +2522,9 @@ class GetNetworkFirewallPolicyDecryptionRuleConditionResult(dict):
              _setter: Callable[[Any, Any], None],
              destinations: Sequence[str],
              sources: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destinations", destinations)
         _setter("sources", sources)
 
@@ -2348,7 +2560,13 @@ class GetNetworkFirewallPolicyIpAddressListResult(dict):
              _setter: Callable[[Any, Any], None],
              ip_address_list_name: str,
              ip_address_list_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddressListName' in kwargs:
+            ip_address_list_name = kwargs['ipAddressListName']
+        if 'ipAddressListValues' in kwargs:
+            ip_address_list_values = kwargs['ipAddressListValues']
+
         _setter("ip_address_list_name", ip_address_list_name)
         _setter("ip_address_list_values", ip_address_list_values)
 
@@ -2389,7 +2607,13 @@ class GetNetworkFirewallPolicyMappedSecretResult(dict):
              type: str,
              vault_secret_id: str,
              version_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("key", key)
         _setter("type", type)
         _setter("vault_secret_id", vault_secret_id)
@@ -2458,7 +2682,9 @@ class GetNetworkFirewallPolicySecurityRuleResult(dict):
              conditions: Sequence['outputs.GetNetworkFirewallPolicySecurityRuleConditionResult'],
              inspection: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("inspection", inspection)
@@ -2530,7 +2756,9 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
              destinations: Sequence[str],
              sources: Sequence[str],
              urls: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("applications", applications)
         _setter("destinations", destinations)
         _setter("sources", sources)
@@ -2584,7 +2812,13 @@ class GetNetworkFirewallPolicyUrlListResult(dict):
              _setter: Callable[[Any, Any], None],
              url_list_name: str,
              url_list_values: Sequence['outputs.GetNetworkFirewallPolicyUrlListUrlListValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlListName' in kwargs:
+            url_list_name = kwargs['urlListName']
+        if 'urlListValues' in kwargs:
+            url_list_values = kwargs['urlListValues']
+
         _setter("url_list_name", url_list_name)
         _setter("url_list_values", url_list_values)
 
@@ -2617,7 +2851,9 @@ class GetNetworkFirewallPolicyUrlListUrlListValueResult(dict):
              _setter: Callable[[Any, Any], None],
              pattern: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("pattern", pattern)
         _setter("type", type)
 
@@ -2653,7 +2889,9 @@ class GetNetworkFirewallsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2687,7 +2925,9 @@ class GetNetworkFirewallsNetworkFirewallCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2771,7 +3011,33 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

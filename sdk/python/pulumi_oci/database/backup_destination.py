@@ -65,7 +65,25 @@ class BackupDestinationArgs:
              local_mount_point_path: Optional[pulumi.Input[str]] = None,
              mount_type_details: Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']] = None,
              vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'localMountPointPath' in kwargs:
+            local_mount_point_path = kwargs['localMountPointPath']
+        if 'mountTypeDetails' in kwargs:
+            mount_type_details = kwargs['mountTypeDetails']
+        if 'vpcUsers' in kwargs:
+            vpc_users = kwargs['vpcUsers']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("type", type)
@@ -281,7 +299,37 @@ class _BackupDestinationState:
              time_created: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedDatabases' in kwargs:
+            associated_databases = kwargs['associatedDatabases']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'localMountPointPath' in kwargs:
+            local_mount_point_path = kwargs['localMountPointPath']
+        if 'mountTypeDetails' in kwargs:
+            mount_type_details = kwargs['mountTypeDetails']
+        if 'nfsMountType' in kwargs:
+            nfs_mount_type = kwargs['nfsMountType']
+        if 'nfsServerExport' in kwargs:
+            nfs_server_export = kwargs['nfsServerExport']
+        if 'nfsServers' in kwargs:
+            nfs_servers = kwargs['nfsServers']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vpcUsers' in kwargs:
+            vpc_users = kwargs['vpcUsers']
+
         if associated_databases is not None:
             _setter("associated_databases", associated_databases)
         if compartment_id is not None:

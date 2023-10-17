@@ -67,7 +67,19 @@ class RuleArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              message: Optional[pulumi.Input[str]] = None,
              recipients: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'budgetId' in kwargs:
+            budget_id = kwargs['budgetId']
+        if 'thresholdType' in kwargs:
+            threshold_type = kwargs['thresholdType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("budget_id", budget_id)
         _setter("threshold", threshold)
         _setter("threshold_type", threshold_type)
@@ -282,7 +294,23 @@ class _RuleState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'budgetId' in kwargs:
+            budget_id = kwargs['budgetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'thresholdType' in kwargs:
+            threshold_type = kwargs['thresholdType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if budget_id is not None:
             _setter("budget_id", budget_id)
         if defined_tags is not None:

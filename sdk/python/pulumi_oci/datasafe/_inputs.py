@@ -112,7 +112,17 @@ class AuditPolicyAuditConditionArgs:
              enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]] = None,
              is_data_safe_service_account_audited: Optional[pulumi.Input[bool]] = None,
              is_priv_users_managed_by_data_safe: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'enableConditions' in kwargs:
+            enable_conditions = kwargs['enableConditions']
+        if 'isDataSafeServiceAccountAudited' in kwargs:
+            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
+        if 'isPrivUsersManagedByDataSafe' in kwargs:
+            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
+
         if audit_policy_name is not None:
             _setter("audit_policy_name", audit_policy_name)
         if enable_conditions is not None:
@@ -198,7 +208,17 @@ class AuditPolicyAuditConditionEnableConditionArgs:
              entity_selection: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              operation_status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityNames' in kwargs:
+            entity_names = kwargs['entityNames']
+        if 'entitySelection' in kwargs:
+            entity_selection = kwargs['entitySelection']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+
         if entity_names is not None:
             _setter("entity_names", entity_names)
         if entity_selection is not None:
@@ -312,7 +332,31 @@ class AuditPolicyAuditSpecificationArgs:
              is_seeded_in_target: Optional[pulumi.Input[bool]] = None,
              is_view_only: Optional[pulumi.Input[bool]] = None,
              partially_enabled_msg: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyCategory' in kwargs:
+            audit_policy_category = kwargs['auditPolicyCategory']
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'databasePolicyNames' in kwargs:
+            database_policy_names = kwargs['databasePolicyNames']
+        if 'enableStatus' in kwargs:
+            enable_status = kwargs['enableStatus']
+        if 'enabledEntities' in kwargs:
+            enabled_entities = kwargs['enabledEntities']
+        if 'isCreated' in kwargs:
+            is_created = kwargs['isCreated']
+        if 'isEnabledForAllUsers' in kwargs:
+            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
+        if 'isSeededInDataSafe' in kwargs:
+            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
+        if 'isSeededInTarget' in kwargs:
+            is_seeded_in_target = kwargs['isSeededInTarget']
+        if 'isViewOnly' in kwargs:
+            is_view_only = kwargs['isViewOnly']
+        if 'partiallyEnabledMsg' in kwargs:
+            partially_enabled_msg = kwargs['partiallyEnabledMsg']
+
         if audit_policy_category is not None:
             _setter("audit_policy_category", audit_policy_category)
         if audit_policy_name is not None:
@@ -556,7 +600,39 @@ class AuditProfileAuditTrailArgs:
              time_updated: Optional[pulumi.Input[str]] = None,
              trail_location: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectionStartTime' in kwargs:
+            audit_collection_start_time = kwargs['auditCollectionStartTime']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoPurgeEnabled' in kwargs:
+            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastCollected' in kwargs:
+            time_last_collected = kwargs['timeLastCollected']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if audit_collection_start_time is not None:
             _setter("audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
@@ -848,7 +924,15 @@ class DataSafeConfigurationGlobalSettingArgs:
              is_paid_usage: Optional[pulumi.Input[bool]] = None,
              offline_retention_period: Optional[pulumi.Input[int]] = None,
              online_retention_period: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPaidUsage' in kwargs:
+            is_paid_usage = kwargs['isPaidUsage']
+        if 'offlineRetentionPeriod' in kwargs:
+            offline_retention_period = kwargs['offlineRetentionPeriod']
+        if 'onlineRetentionPeriod' in kwargs:
+            online_retention_period = kwargs['onlineRetentionPeriod']
+
         if is_paid_usage is not None:
             _setter("is_paid_usage", is_paid_usage)
         if offline_retention_period is not None:
@@ -912,7 +996,13 @@ class DiscoveryJobsResultModifiedAttributeArgs:
              _setter: Callable[[Any, Any], None],
              app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+
         if app_defined_child_column_keys is not None:
             _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if db_defined_child_column_keys is not None:
@@ -1050,7 +1140,49 @@ class LibraryMasingFormatFormatEntryArgs:
              start_value: Optional[pulumi.Input[float]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              user_defined_function: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("type", type)
         if column_name is not None:
             _setter("column_name", column_name)
@@ -1401,7 +1533,11 @@ class MaskingPoliciesMaskingColumnMaskingFormatArgs:
              format_entries: pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs']]],
              condition: Optional[pulumi.Input[str]] = None,
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatEntries' in kwargs:
+            format_entries = kwargs['formatEntries']
+
         _setter("format_entries", format_entries)
         if condition is not None:
             _setter("condition", condition)
@@ -1552,7 +1688,49 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
              start_value: Optional[pulumi.Input[float]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              user_defined_function: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("type", type)
         if column_name is not None:
             _setter("column_name", column_name)
@@ -1903,7 +2081,15 @@ class MaskingPolicyColumnSourceArgs:
              column_source: pulumi.Input[str],
              sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnSource' in kwargs:
+            column_source = kwargs['columnSource']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("column_source", column_source)
         if sensitive_data_model_id is not None:
             _setter("sensitive_data_model_id", sensitive_data_model_id)
@@ -1978,7 +2164,15 @@ class ReportDefinitionColumnFilterArgs:
              is_enabled: pulumi.Input[bool],
              is_hidden: pulumi.Input[bool],
              operator: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("expressions", expressions)
         _setter("field_name", field_name)
         _setter("is_enabled", is_enabled)
@@ -2077,7 +2271,19 @@ class ReportDefinitionColumnInfoArgs:
              field_name: pulumi.Input[str],
              is_hidden: pulumi.Input[bool],
              data_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         _setter("display_name", display_name)
         _setter("display_order", display_order)
         _setter("field_name", field_name)
@@ -2169,7 +2375,15 @@ class ReportDefinitionColumnSortingArgs:
              field_name: pulumi.Input[str],
              is_ascending: pulumi.Input[bool],
              sorting_order: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isAscending' in kwargs:
+            is_ascending = kwargs['isAscending']
+        if 'sortingOrder' in kwargs:
+            sorting_order = kwargs['sortingOrder']
+
         _setter("field_name", field_name)
         _setter("is_ascending", is_ascending)
         _setter("sorting_order", sorting_order)
@@ -2250,7 +2464,19 @@ class ReportDefinitionSummaryArgs:
              group_by_field_name: Optional[pulumi.Input[str]] = None,
              is_hidden: Optional[pulumi.Input[bool]] = None,
              scim_filter: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'countOf' in kwargs:
+            count_of = kwargs['countOf']
+        if 'groupByFieldName' in kwargs:
+            group_by_field_name = kwargs['groupByFieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+
         _setter("display_order", display_order)
         _setter("name", name)
         if count_of is not None:
@@ -2378,7 +2604,17 @@ class SecurityAssessmentStatisticArgs:
              medium_risks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]] = None,
              passes: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'highRisks' in kwargs:
+            high_risks = kwargs['highRisks']
+        if 'lowRisks' in kwargs:
+            low_risks = kwargs['lowRisks']
+        if 'mediumRisks' in kwargs:
+            medium_risks = kwargs['mediumRisks']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+
         if advisories is not None:
             _setter("advisories", advisories)
         if evaluates is not None:
@@ -2522,7 +2758,25 @@ class SecurityAssessmentStatisticAdvisoryArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2680,7 +2934,25 @@ class SecurityAssessmentStatisticEvaluateArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2838,7 +3110,25 @@ class SecurityAssessmentStatisticHighRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2996,7 +3286,25 @@ class SecurityAssessmentStatisticLowRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3154,7 +3462,25 @@ class SecurityAssessmentStatisticMediumRiskArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3312,7 +3638,25 @@ class SecurityAssessmentStatisticPassArgs:
              privileges_and_roles_findings_count: Optional[pulumi.Input[int]] = None,
              targets_count: Optional[pulumi.Input[int]] = None,
              user_accounts_findings_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3452,7 +3796,15 @@ class TargetDatabaseConnectionOptionArgs:
              connection_type: pulumi.Input[str],
              datasafe_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              on_prem_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'datasafePrivateEndpointId' in kwargs:
+            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
+        if 'onPremConnectorId' in kwargs:
+            on_prem_connector_id = kwargs['onPremConnectorId']
+
         _setter("connection_type", connection_type)
         if datasafe_private_endpoint_id is not None:
             _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
@@ -3517,7 +3869,11 @@ class TargetDatabaseCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              user_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("password", password)
         _setter("user_name", user_name)
 
@@ -3593,7 +3949,27 @@ class TargetDatabaseDatabaseDetailsArgs:
              listener_port: Optional[pulumi.Input[int]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         _setter("database_type", database_type)
         _setter("infrastructure_type", infrastructure_type)
         if autonomous_database_id is not None:
@@ -3755,7 +4131,17 @@ class TargetDatabaseTlsConfigArgs:
              key_store_content: Optional[pulumi.Input[str]] = None,
              store_password: Optional[pulumi.Input[str]] = None,
              trust_store_content: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateStoreType' in kwargs:
+            certificate_store_type = kwargs['certificateStoreType']
+        if 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if 'storePassword' in kwargs:
+            store_password = kwargs['storePassword']
+        if 'trustStoreContent' in kwargs:
+            trust_store_content = kwargs['trustStoreContent']
+
         _setter("status", status)
         if certificate_store_type is not None:
             _setter("certificate_store_type", certificate_store_type)
@@ -3856,7 +4242,15 @@ class UserAssessmentIgnoredTargetArgs:
              lifecycle_state: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleState' in kwargs:
+            lifecycle_state = kwargs['lifecycleState']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         if lifecycle_state is not None:
             _setter("lifecycle_state", lifecycle_state)
         if target_id is not None:
@@ -3917,7 +4311,9 @@ class GetAlertPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3969,7 +4365,9 @@ class GetAlertPolicyRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4021,7 +4419,9 @@ class GetAlertsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4073,7 +4473,9 @@ class GetAuditArchiveRetrievalsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4125,7 +4527,9 @@ class GetAuditEventsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4177,7 +4581,9 @@ class GetAuditPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4229,7 +4635,9 @@ class GetAuditProfileAvailableAuditVolumesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4281,7 +4689,9 @@ class GetAuditProfileCollectedAuditVolumesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4333,7 +4743,9 @@ class GetAuditProfilesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4385,7 +4797,9 @@ class GetAuditTrailsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4437,7 +4851,9 @@ class GetDataSafePrivateEndpointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4489,7 +4905,9 @@ class GetDiscoveryAnalyticsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4541,7 +4959,9 @@ class GetDiscoveryJobsResultsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4593,7 +5013,9 @@ class GetLibraryMaskingFormatsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4645,7 +5067,9 @@ class GetListUserGrantsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4697,7 +5121,9 @@ class GetMaskingAnalyticsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4749,7 +5175,9 @@ class GetMaskingPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4801,7 +5229,9 @@ class GetMaskingPoliciesMaskingColumnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4853,7 +5283,9 @@ class GetMaskingPolicyMaskingObjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4905,7 +5337,9 @@ class GetMaskingPolicyMaskingSchemasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4957,7 +5391,9 @@ class GetMaskingReportMaskedColumnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5009,7 +5445,9 @@ class GetMaskingReportsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5061,7 +5499,9 @@ class GetOnpremConnectorsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5116,7 +5556,9 @@ class GetReportDefinitionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5171,7 +5613,9 @@ class GetReportsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5223,7 +5667,9 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5275,7 +5721,9 @@ class GetSdmMaskingPolicyDifferencesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5327,7 +5775,9 @@ class GetSecurityAssessmentFindingFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5379,7 +5829,9 @@ class GetSecurityAssessmentFindingsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5431,7 +5883,9 @@ class GetSecurityAssessmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5483,7 +5937,9 @@ class GetSensitiveDataModelSensitiveObjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5535,7 +5991,9 @@ class GetSensitiveDataModelSensitiveSchemasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5587,7 +6045,9 @@ class GetSensitiveDataModelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5639,7 +6099,9 @@ class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5691,7 +6153,9 @@ class GetSensitiveTypesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5743,7 +6207,9 @@ class GetTargetAlertPolicyAssociationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5795,7 +6261,9 @@ class GetTargetDatabaseRoleFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5847,7 +6315,9 @@ class GetTargetDatabaseRolesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5899,7 +6369,9 @@ class GetTargetDatabasesColumnsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5951,7 +6423,9 @@ class GetTargetDatabasesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6003,7 +6477,9 @@ class GetTargetDatabasesSchemasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6055,7 +6531,9 @@ class GetTargetDatabasesTablesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6107,7 +6585,9 @@ class GetUserAssessmentProfileAnalyticsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6159,7 +6639,9 @@ class GetUserAssessmentProfilesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6211,7 +6693,9 @@ class GetUserAssessmentUserAnalyticsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6263,7 +6747,9 @@ class GetUserAssessmentUsersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6315,7 +6801,9 @@ class GetUserAssessmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

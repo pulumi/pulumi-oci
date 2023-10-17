@@ -85,7 +85,37 @@ class SqlEndpointArgs:
              executor_shape_config: Optional[pulumi.Input['SqlEndpointExecutorShapeConfigArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              spark_advanced_configurations: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'maxExecutorCount' in kwargs:
+            max_executor_count = kwargs['maxExecutorCount']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'minExecutorCount' in kwargs:
+            min_executor_count = kwargs['minExecutorCount']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'sqlEndpointVersion' in kwargs:
+            sql_endpoint_version = kwargs['sqlEndpointVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sparkAdvancedConfigurations' in kwargs:
+            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("driver_shape", driver_shape)
@@ -401,7 +431,53 @@ class _SqlEndpointState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jdbcEndpointUrl' in kwargs:
+            jdbc_endpoint_url = kwargs['jdbcEndpointUrl']
+        if 'lakeId' in kwargs:
+            lake_id = kwargs['lakeId']
+        if 'lastAcceptedRequestToken' in kwargs:
+            last_accepted_request_token = kwargs['lastAcceptedRequestToken']
+        if 'maxExecutorCount' in kwargs:
+            max_executor_count = kwargs['maxExecutorCount']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'minExecutorCount' in kwargs:
+            min_executor_count = kwargs['minExecutorCount']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'sparkAdvancedConfigurations' in kwargs:
+            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
+        if 'sqlEndpointVersion' in kwargs:
+            sql_endpoint_version = kwargs['sqlEndpointVersion']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

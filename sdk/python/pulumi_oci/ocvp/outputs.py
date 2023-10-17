@@ -77,7 +77,13 @@ class SddcDatastore(dict):
              block_volume_ids: Sequence[str],
              datastore_type: str,
              capacity: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+
         _setter("block_volume_ids", block_volume_ids)
         _setter("datastore_type", datastore_type)
         if capacity is not None:
@@ -150,7 +156,13 @@ class SddcHcxOnPremLicense(dict):
              activation_key: Optional[str] = None,
              status: Optional[str] = None,
              system_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         if activation_key is not None:
             _setter("activation_key", activation_key)
         if status is not None:
@@ -221,7 +233,13 @@ class SddcUpgradeLicense(dict):
              _setter: Callable[[Any, Any], None],
              license_key: Optional[str] = None,
              license_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         if license_key is not None:
             _setter("license_key", license_key)
         if license_type is not None:
@@ -282,7 +300,13 @@ class SddcVsphereUpgradeObject(dict):
              _setter: Callable[[Any, Any], None],
              download_link: Optional[str] = None,
              link_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         if download_link is not None:
             _setter("download_link", download_link)
         if link_description is not None:
@@ -342,7 +366,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         :param str compute_availability_domain: The availability domain of the ESXi host.
         :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-        :param str current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param str current_sku: (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
@@ -353,7 +377,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         :param bool is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param bool is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
-        :param str next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param str next_sku: (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param str non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         :param str replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -424,7 +448,59 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
              time_updated: str,
              upgraded_replacement_esxi_host_id: str,
              vmware_software_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingContractEndDate' in kwargs:
+            billing_contract_end_date = kwargs['billingContractEndDate']
+        if 'billingDonorHostId' in kwargs:
+            billing_donor_host_id = kwargs['billingDonorHostId']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if 'computeInstanceId' in kwargs:
+            compute_instance_id = kwargs['computeInstanceId']
+        if 'currentSku' in kwargs:
+            current_sku = kwargs['currentSku']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'failedEsxiHostId' in kwargs:
+            failed_esxi_host_id = kwargs['failedEsxiHostId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gracePeriodEndDate' in kwargs:
+            grace_period_end_date = kwargs['gracePeriodEndDate']
+        if 'hostOcpuCount' in kwargs:
+            host_ocpu_count = kwargs['hostOcpuCount']
+        if 'hostShapeName' in kwargs:
+            host_shape_name = kwargs['hostShapeName']
+        if 'isBillingContinuationInProgress' in kwargs:
+            is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
+        if 'isBillingSwappingInProgress' in kwargs:
+            is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
+        if 'nextSku' in kwargs:
+            next_sku = kwargs['nextSku']
+        if 'nonUpgradedEsxiHostId' in kwargs:
+            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
+        if 'replacementEsxiHostId' in kwargs:
+            replacement_esxi_host_id = kwargs['replacementEsxiHostId']
+        if 'sddcId' in kwargs:
+            sddc_id = kwargs['sddcId']
+        if 'swapBillingHostId' in kwargs:
+            swap_billing_host_id = kwargs['swapBillingHostId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradedReplacementEsxiHostId' in kwargs:
+            upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
+        if 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+
         _setter("billing_contract_end_date", billing_contract_end_date)
         _setter("billing_donor_host_id", billing_donor_host_id)
         _setter("capacity_reservation_id", capacity_reservation_id)
@@ -467,6 +543,9 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
+        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "billing_donor_host_id")
 
     @property
@@ -505,8 +584,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> str:
         """
-        The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "current_sku")
 
     @property
@@ -531,6 +613,9 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         """
+        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "failed_esxi_host_id")
 
     @property
@@ -593,8 +678,11 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> str:
         """
-        The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "next_sku")
 
     @property
@@ -603,6 +691,9 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         """
+        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @property
@@ -619,6 +710,9 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         """
+        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
+
         return pulumi.get(self, "sddc_id")
 
     @property
@@ -688,7 +782,9 @@ class GetExsiHostsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -733,7 +829,13 @@ class GetSddcDatastoreResult(dict):
              block_volume_ids: Sequence[str],
              capacity: float,
              datastore_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+
         _setter("block_volume_ids", block_volume_ids)
         _setter("capacity", capacity)
         _setter("datastore_type", datastore_type)
@@ -786,7 +888,13 @@ class GetSddcHcxOnPremLicenseResult(dict):
              activation_key: str,
              status: str,
              system_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         _setter("activation_key", activation_key)
         _setter("status", status)
         _setter("system_name", system_name)
@@ -835,7 +943,13 @@ class GetSddcUpgradeLicenseResult(dict):
              _setter: Callable[[Any, Any], None],
              license_key: str,
              license_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         _setter("license_key", license_key)
         _setter("license_type", license_type)
 
@@ -875,7 +989,13 @@ class GetSddcVsphereUpgradeObjectResult(dict):
              _setter: Callable[[Any, Any], None],
              download_link: str,
              link_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         _setter("download_link", download_link)
         _setter("link_description", link_description)
 
@@ -914,7 +1034,9 @@ class GetSddcsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -999,62 +1121,62 @@ class GetSddcsSddcCollectionResult(dict):
                  vsphere_vlan_id: str,
                  workload_network_cidr: str):
         """
-        :param int actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
-        :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param int actual_esxi_hosts_count: (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+        :param str capacity_reservation_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
-        :param Sequence['GetSddcsSddcCollectionDatastoreArgs'] datastores: Datastores used for the Sddc.
+        :param Sequence['GetSddcsSddcCollectionDatastoreArgs'] datastores: (**Deprecated**) Datastores used for the Sddc.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param int esxi_hosts_count: The number of ESXi hosts in the SDDC.
+        :param int esxi_hosts_count: (**Deprecated**) The number of ESXi hosts in the SDDC.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hcx_fqdn: The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-        :param str hcx_initial_password: The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
-        :param str hcx_on_prem_key: The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+        :param str hcx_initial_password: (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+        :param str hcx_on_prem_key: (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
         :param Sequence['GetSddcsSddcCollectionHcxOnPremLicenseArgs'] hcx_on_prem_licenses: The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
         :param str hcx_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-        :param str hcx_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
+        :param str hcx_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-        :param float initial_host_ocpu_count: The initial OCPU count of the SDDC's ESXi hosts.
-        :param str initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param str initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        :param str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
-        :param bool is_hcx_enabled: Indicates whether HCX is enabled for this SDDC.
-        :param bool is_hcx_enterprise_enabled: Indicates whether HCX Enterprise is enabled for this SDDC.
+        :param float initial_host_ocpu_count: (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
+        :param str initial_host_shape_name: (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        :param str initial_sku: (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param str instance_display_name_prefix: (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+        :param bool is_hcx_enabled: (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
+        :param bool is_hcx_enterprise_enabled: (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
         :param bool is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-        :param bool is_shielded_instance_enabled: Indicates whether shielded instance is enabled at the SDDC level.
+        :param bool is_shielded_instance_enabled: (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
         :param bool is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
-        :param str nsx_edge_uplink1vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
-        :param str nsx_edge_uplink2vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+        :param str nsx_edge_uplink1vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+        :param str nsx_edge_uplink2vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
         :param str nsx_edge_uplink_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-        :param str nsx_edge_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+        :param str nsx_edge_vtep_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
         :param str nsx_manager_fqdn: The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-        :param str nsx_manager_initial_password: The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+        :param str nsx_manager_initial_password: (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
         :param str nsx_manager_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
         :param str nsx_manager_username: The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-        :param str nsx_overlay_segment_name: The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
-        :param str nsx_vtep_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
-        :param str provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
-        :param str provisioning_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
-        :param str replication_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+        :param str nsx_overlay_segment_name: (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+        :param str nsx_vtep_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+        :param str provisioning_subnet_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
+        :param str provisioning_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+        :param str replication_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
         :param str ssh_authorized_keys: One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
         :param str state: The lifecycle state of the resource.
         :param str time_created: The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param Sequence['GetSddcsSddcCollectionUpgradeLicenseArgs'] upgrade_licenses: The vSphere licenses to use when upgrading the SDDC.
+        :param Sequence['GetSddcsSddcCollectionUpgradeLicenseArgs'] upgrade_licenses: (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
         :param str vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-        :param str vcenter_initial_password: The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+        :param str vcenter_initial_password: (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         :param str vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
         :param str vcenter_username: The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-        :param str vmotion_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+        :param str vmotion_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
         :param str vmware_software_version: In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-        :param str vsan_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
-        :param str vsphere_upgrade_guide: The link to guidance for upgrading vSphere.
-        :param Sequence['GetSddcsSddcCollectionVsphereUpgradeObjectArgs'] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
-        :param str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
-        :param str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        :param str vsan_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+        :param str vsphere_upgrade_guide: (**Deprecated**) The link to guidance for upgrading vSphere.
+        :param Sequence['GetSddcsSddcCollectionVsphereUpgradeObjectArgs'] vsphere_upgrade_objects: (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+        :param str vsphere_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+        :param str workload_network_cidr: (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
         GetSddcsSddcCollectionResult._configure(
             lambda key, value: pulumi.set(__self__, key, value),
@@ -1180,7 +1302,121 @@ class GetSddcsSddcCollectionResult(dict):
              vsphere_upgrade_objects: Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult'],
              vsphere_vlan_id: str,
              workload_network_cidr: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actualEsxiHostsCount' in kwargs:
+            actual_esxi_hosts_count = kwargs['actualEsxiHostsCount']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'esxiHostsCount' in kwargs:
+            esxi_hosts_count = kwargs['esxiHostsCount']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hcxAction' in kwargs:
+            hcx_action = kwargs['hcxAction']
+        if 'hcxFqdn' in kwargs:
+            hcx_fqdn = kwargs['hcxFqdn']
+        if 'hcxInitialPassword' in kwargs:
+            hcx_initial_password = kwargs['hcxInitialPassword']
+        if 'hcxOnPremKey' in kwargs:
+            hcx_on_prem_key = kwargs['hcxOnPremKey']
+        if 'hcxOnPremLicenses' in kwargs:
+            hcx_on_prem_licenses = kwargs['hcxOnPremLicenses']
+        if 'hcxPrivateIpId' in kwargs:
+            hcx_private_ip_id = kwargs['hcxPrivateIpId']
+        if 'hcxVlanId' in kwargs:
+            hcx_vlan_id = kwargs['hcxVlanId']
+        if 'initialHostOcpuCount' in kwargs:
+            initial_host_ocpu_count = kwargs['initialHostOcpuCount']
+        if 'initialHostShapeName' in kwargs:
+            initial_host_shape_name = kwargs['initialHostShapeName']
+        if 'initialSku' in kwargs:
+            initial_sku = kwargs['initialSku']
+        if 'instanceDisplayNamePrefix' in kwargs:
+            instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
+        if 'isHcxEnabled' in kwargs:
+            is_hcx_enabled = kwargs['isHcxEnabled']
+        if 'isHcxEnterpriseEnabled' in kwargs:
+            is_hcx_enterprise_enabled = kwargs['isHcxEnterpriseEnabled']
+        if 'isHcxPendingDowngrade' in kwargs:
+            is_hcx_pending_downgrade = kwargs['isHcxPendingDowngrade']
+        if 'isShieldedInstanceEnabled' in kwargs:
+            is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
+        if 'isSingleHostSddc' in kwargs:
+            is_single_host_sddc = kwargs['isSingleHostSddc']
+        if 'nsxEdgeUplink1vlanId' in kwargs:
+            nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
+        if 'nsxEdgeUplink2vlanId' in kwargs:
+            nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
+        if 'nsxEdgeUplinkIpId' in kwargs:
+            nsx_edge_uplink_ip_id = kwargs['nsxEdgeUplinkIpId']
+        if 'nsxEdgeVtepVlanId' in kwargs:
+            nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
+        if 'nsxManagerFqdn' in kwargs:
+            nsx_manager_fqdn = kwargs['nsxManagerFqdn']
+        if 'nsxManagerInitialPassword' in kwargs:
+            nsx_manager_initial_password = kwargs['nsxManagerInitialPassword']
+        if 'nsxManagerPrivateIpId' in kwargs:
+            nsx_manager_private_ip_id = kwargs['nsxManagerPrivateIpId']
+        if 'nsxManagerUsername' in kwargs:
+            nsx_manager_username = kwargs['nsxManagerUsername']
+        if 'nsxOverlaySegmentName' in kwargs:
+            nsx_overlay_segment_name = kwargs['nsxOverlaySegmentName']
+        if 'nsxVtepVlanId' in kwargs:
+            nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
+        if 'provisioningSubnetId' in kwargs:
+            provisioning_subnet_id = kwargs['provisioningSubnetId']
+        if 'provisioningVlanId' in kwargs:
+            provisioning_vlan_id = kwargs['provisioningVlanId']
+        if 'refreshHcxLicenseStatus' in kwargs:
+            refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
+        if 'replicationVlanId' in kwargs:
+            replication_vlan_id = kwargs['replicationVlanId']
+        if 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+            reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
+        if 'sshAuthorizedKeys' in kwargs:
+            ssh_authorized_keys = kwargs['sshAuthorizedKeys']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeHcxBillingCycleEnd' in kwargs:
+            time_hcx_billing_cycle_end = kwargs['timeHcxBillingCycleEnd']
+        if 'timeHcxLicenseStatusUpdated' in kwargs:
+            time_hcx_license_status_updated = kwargs['timeHcxLicenseStatusUpdated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradeLicenses' in kwargs:
+            upgrade_licenses = kwargs['upgradeLicenses']
+        if 'vcenterFqdn' in kwargs:
+            vcenter_fqdn = kwargs['vcenterFqdn']
+        if 'vcenterInitialPassword' in kwargs:
+            vcenter_initial_password = kwargs['vcenterInitialPassword']
+        if 'vcenterPrivateIpId' in kwargs:
+            vcenter_private_ip_id = kwargs['vcenterPrivateIpId']
+        if 'vcenterUsername' in kwargs:
+            vcenter_username = kwargs['vcenterUsername']
+        if 'vmotionVlanId' in kwargs:
+            vmotion_vlan_id = kwargs['vmotionVlanId']
+        if 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if 'vsanVlanId' in kwargs:
+            vsan_vlan_id = kwargs['vsanVlanId']
+        if 'vsphereUpgradeGuide' in kwargs:
+            vsphere_upgrade_guide = kwargs['vsphereUpgradeGuide']
+        if 'vsphereUpgradeObjects' in kwargs:
+            vsphere_upgrade_objects = kwargs['vsphereUpgradeObjects']
+        if 'vsphereVlanId' in kwargs:
+            vsphere_vlan_id = kwargs['vsphereVlanId']
+        if 'workloadNetworkCidr' in kwargs:
+            workload_network_cidr = kwargs['workloadNetworkCidr']
+
         _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
         _setter("capacity_reservation_id", capacity_reservation_id)
         _setter("compartment_id", compartment_id)
@@ -1245,16 +1481,22 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="actualEsxiHostsCount")
     def actual_esxi_hosts_count(self) -> int:
         """
-        The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+        (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         """
+        warnings.warn("""The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""actual_esxi_hosts_count is deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
+        warnings.warn("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""capacity_reservation_id is deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "capacity_reservation_id")
 
     @property
@@ -1271,14 +1513,20 @@ class GetSddcsSddcCollectionResult(dict):
         """
         The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         """
+        warnings.warn("""The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""compute_availability_domain is deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "compute_availability_domain")
 
     @property
     @pulumi.getter
     def datastores(self) -> Sequence['outputs.GetSddcsSddcCollectionDatastoreResult']:
         """
-        Datastores used for the Sddc.
+        (**Deprecated**) Datastores used for the Sddc.
         """
+        warnings.warn("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""datastores is deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "datastores")
 
     @property
@@ -1301,8 +1549,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="esxiHostsCount")
     def esxi_hosts_count(self) -> int:
         """
-        The number of ESXi hosts in the SDDC.
+        (**Deprecated**) The number of ESXi hosts in the SDDC.
         """
+        warnings.warn("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""esxi_hosts_count is deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "esxi_hosts_count")
 
     @property
@@ -1330,16 +1581,22 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="hcxInitialPassword")
     def hcx_initial_password(self) -> str:
         """
-        The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+        (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
         """
+        warnings.warn("""The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
+        pulumi.log.warn("""hcx_initial_password is deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
+
         return pulumi.get(self, "hcx_initial_password")
 
     @property
     @pulumi.getter(name="hcxOnPremKey")
     def hcx_on_prem_key(self) -> str:
         """
-        The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+        (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
         """
+        warnings.warn("""The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""hcx_on_prem_key is deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "hcx_on_prem_key")
 
     @property
@@ -1362,8 +1619,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="hcxVlanId")
     def hcx_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
         """
+        warnings.warn("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""hcx_vlan_id is deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "hcx_vlan_id")
 
     @property
@@ -1378,48 +1638,66 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="initialHostOcpuCount")
     def initial_host_ocpu_count(self) -> float:
         """
-        The initial OCPU count of the SDDC's ESXi hosts.
+        (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
         """
+        warnings.warn("""The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_host_ocpu_count is deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "initial_host_ocpu_count")
 
     @property
     @pulumi.getter(name="initialHostShapeName")
     def initial_host_shape_name(self) -> str:
         """
-        The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         """
+        warnings.warn("""The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_host_shape_name is deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "initial_host_shape_name")
 
     @property
     @pulumi.getter(name="initialSku")
     def initial_sku(self) -> str:
         """
-        The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_sku is deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "initial_sku")
 
     @property
     @pulumi.getter(name="instanceDisplayNamePrefix")
     def instance_display_name_prefix(self) -> str:
         """
-        A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+        (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
         """
+        warnings.warn("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""instance_display_name_prefix is deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "instance_display_name_prefix")
 
     @property
     @pulumi.getter(name="isHcxEnabled")
     def is_hcx_enabled(self) -> bool:
         """
-        Indicates whether HCX is enabled for this SDDC.
+        (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
         """
+        warnings.warn("""The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_hcx_enabled is deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""")
+
         return pulumi.get(self, "is_hcx_enabled")
 
     @property
     @pulumi.getter(name="isHcxEnterpriseEnabled")
     def is_hcx_enterprise_enabled(self) -> bool:
         """
-        Indicates whether HCX Enterprise is enabled for this SDDC.
+        (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
         """
+        warnings.warn("""The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_hcx_enterprise_enabled is deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.""")
+
         return pulumi.get(self, "is_hcx_enterprise_enabled")
 
     @property
@@ -1434,8 +1712,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="isShieldedInstanceEnabled")
     def is_shielded_instance_enabled(self) -> bool:
         """
-        Indicates whether shielded instance is enabled at the SDDC level.
+        (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
         """
+        warnings.warn("""The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""is_shielded_instance_enabled is deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "is_shielded_instance_enabled")
 
     @property
@@ -1450,16 +1731,22 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxEdgeUplink1vlanId")
     def nsx_edge_uplink1vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
         """
+        warnings.warn("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_edge_uplink1vlan_id is deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "nsx_edge_uplink1vlan_id")
 
     @property
     @pulumi.getter(name="nsxEdgeUplink2vlanId")
     def nsx_edge_uplink2vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
         """
+        warnings.warn("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_edge_uplink2vlan_id is deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
     @property
@@ -1474,8 +1761,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxEdgeVtepVlanId")
     def nsx_edge_vtep_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
         """
+        warnings.warn("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_edge_vtep_vlan_id is deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "nsx_edge_vtep_vlan_id")
 
     @property
@@ -1490,8 +1780,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxManagerInitialPassword")
     def nsx_manager_initial_password(self) -> str:
         """
-        The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+        (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
         """
+        warnings.warn("""The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_manager_initial_password is deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
+
         return pulumi.get(self, "nsx_manager_initial_password")
 
     @property
@@ -1514,32 +1807,44 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="nsxOverlaySegmentName")
     def nsx_overlay_segment_name(self) -> str:
         """
-        The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+        (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
         """
+        warnings.warn("""The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_overlay_segment_name is deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "nsx_overlay_segment_name")
 
     @property
     @pulumi.getter(name="nsxVtepVlanId")
     def nsx_vtep_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
         """
+        warnings.warn("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""nsx_vtep_vlan_id is deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "nsx_vtep_vlan_id")
 
     @property
     @pulumi.getter(name="provisioningSubnetId")
     def provisioning_subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
         """
+        warnings.warn("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""provisioning_subnet_id is deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "provisioning_subnet_id")
 
     @property
     @pulumi.getter(name="provisioningVlanId")
     def provisioning_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
         """
+        warnings.warn("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""provisioning_vlan_id is deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "provisioning_vlan_id")
 
     @property
@@ -1551,8 +1856,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="replicationVlanId")
     def replication_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
         """
+        warnings.warn("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""replication_vlan_id is deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "replication_vlan_id")
 
     @property
@@ -1612,8 +1920,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="upgradeLicenses")
     def upgrade_licenses(self) -> Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult']:
         """
-        The vSphere licenses to use when upgrading the SDDC.
+        (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
         """
+        warnings.warn("""The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""upgrade_licenses is deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
+
         return pulumi.get(self, "upgrade_licenses")
 
     @property
@@ -1628,8 +1939,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vcenterInitialPassword")
     def vcenter_initial_password(self) -> str:
         """
-        The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+        (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         """
+        warnings.warn("""The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
+        pulumi.log.warn("""vcenter_initial_password is deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
+
         return pulumi.get(self, "vcenter_initial_password")
 
     @property
@@ -1652,8 +1966,11 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vmotionVlanId")
     def vmotion_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
         """
+        warnings.warn("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""vmotion_vlan_id is deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "vmotion_vlan_id")
 
     @property
@@ -1668,40 +1985,55 @@ class GetSddcsSddcCollectionResult(dict):
     @pulumi.getter(name="vsanVlanId")
     def vsan_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
         """
+        warnings.warn("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""vsan_vlan_id is deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "vsan_vlan_id")
 
     @property
     @pulumi.getter(name="vsphereUpgradeGuide")
     def vsphere_upgrade_guide(self) -> str:
         """
-        The link to guidance for upgrading vSphere.
+        (**Deprecated**) The link to guidance for upgrading vSphere.
         """
+        warnings.warn("""The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+        pulumi.log.warn("""vsphere_upgrade_guide is deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.""")
+
         return pulumi.get(self, "vsphere_upgrade_guide")
 
     @property
     @pulumi.getter(name="vsphereUpgradeObjects")
     def vsphere_upgrade_objects(self) -> Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult']:
         """
-        The links to binary objects needed to upgrade vSphere.
+        (**Deprecated**) The links to binary objects needed to upgrade vSphere.
         """
+        warnings.warn("""The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""vsphere_upgrade_objects is deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
+
         return pulumi.get(self, "vsphere_upgrade_objects")
 
     @property
     @pulumi.getter(name="vsphereVlanId")
     def vsphere_vlan_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         """
+        warnings.warn("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""vsphere_vlan_id is deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "vsphere_vlan_id")
 
     @property
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> str:
         """
-        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
+        warnings.warn("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
+        pulumi.log.warn("""workload_network_cidr is deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
+
         return pulumi.get(self, "workload_network_cidr")
 
 
@@ -1728,7 +2060,13 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
              block_volume_ids: Sequence[str],
              capacity: float,
              datastore_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+
         _setter("block_volume_ids", block_volume_ids)
         _setter("capacity", capacity)
         _setter("datastore_type", datastore_type)
@@ -1781,7 +2119,13 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
              activation_key: str,
              status: str,
              system_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         _setter("activation_key", activation_key)
         _setter("status", status)
         _setter("system_name", system_name)
@@ -1830,7 +2174,13 @@ class GetSddcsSddcCollectionUpgradeLicenseResult(dict):
              _setter: Callable[[Any, Any], None],
              license_key: str,
              license_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         _setter("license_key", license_key)
         _setter("license_type", license_type)
 
@@ -1870,7 +2220,13 @@ class GetSddcsSddcCollectionVsphereUpgradeObjectResult(dict):
              _setter: Callable[[Any, Any], None],
              download_link: str,
              link_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         _setter("download_link", download_link)
         _setter("link_description", link_description)
 
@@ -1912,7 +2268,9 @@ class GetSupportedHostShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1988,7 +2346,25 @@ class GetSupportedHostShapesItemResult(dict):
              supported_operations: Sequence[str],
              supported_sddc_types: Sequence[str],
              supported_vmware_software_versions: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultOcpuCount' in kwargs:
+            default_ocpu_count = kwargs['defaultOcpuCount']
+        if 'isSupportMonthlySku' in kwargs:
+            is_support_monthly_sku = kwargs['isSupportMonthlySku']
+        if 'isSupportShieldedInstances' in kwargs:
+            is_support_shielded_instances = kwargs['isSupportShieldedInstances']
+        if 'shapeFamily' in kwargs:
+            shape_family = kwargs['shapeFamily']
+        if 'supportedOcpuCounts' in kwargs:
+            supported_ocpu_counts = kwargs['supportedOcpuCounts']
+        if 'supportedOperations' in kwargs:
+            supported_operations = kwargs['supportedOperations']
+        if 'supportedSddcTypes' in kwargs:
+            supported_sddc_types = kwargs['supportedSddcTypes']
+        if 'supportedVmwareSoftwareVersions' in kwargs:
+            supported_vmware_software_versions = kwargs['supportedVmwareSoftwareVersions']
+
         _setter("default_ocpu_count", default_ocpu_count)
         _setter("description", description)
         _setter("is_support_monthly_sku", is_support_monthly_sku)
@@ -2070,6 +2446,9 @@ class GetSupportedHostShapesItemResult(dict):
         """
         The supported SDDC types for the shape.
         """
+        warnings.warn("""The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""", DeprecationWarning)
+        pulumi.log.warn("""supported_sddc_types is deprecated: The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""")
+
         return pulumi.get(self, "supported_sddc_types")
 
     @property
@@ -2102,7 +2481,9 @@ class GetSupportedSkusFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2142,7 +2523,9 @@ class GetSupportedSkusItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -2172,7 +2555,9 @@ class GetSupportedVmwareSoftwareVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2213,7 +2598,9 @@ class GetSupportedVmwareSoftwareVersionsItemResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("version", version)
 

@@ -84,7 +84,33 @@ class ModelArgs:
              input_schema: Optional[pulumi.Input[str]] = None,
              output_schema: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'modelArtifact' in kwargs:
+            model_artifact = kwargs['modelArtifact']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'customMetadataLists' in kwargs:
+            custom_metadata_lists = kwargs['customMetadataLists']
+        if 'definedMetadataLists' in kwargs:
+            defined_metadata_lists = kwargs['definedMetadataLists']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inputSchema' in kwargs:
+            input_schema = kwargs['inputSchema']
+        if 'outputSchema' in kwargs:
+            output_schema = kwargs['outputSchema']
+
         _setter("artifact_content_length", artifact_content_length)
         _setter("compartment_id", compartment_id)
         _setter("model_artifact", model_artifact)
@@ -370,7 +396,43 @@ class _ModelState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'customMetadataLists' in kwargs:
+            custom_metadata_lists = kwargs['customMetadataLists']
+        if 'definedMetadataLists' in kwargs:
+            defined_metadata_lists = kwargs['definedMetadataLists']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'emptyModel' in kwargs:
+            empty_model = kwargs['emptyModel']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inputSchema' in kwargs:
+            input_schema = kwargs['inputSchema']
+        if 'modelArtifact' in kwargs:
+            model_artifact = kwargs['modelArtifact']
+        if 'outputSchema' in kwargs:
+            output_schema = kwargs['outputSchema']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if artifact_content_disposition is not None:
             _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_length is not None:

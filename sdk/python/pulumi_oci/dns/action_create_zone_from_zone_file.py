@@ -45,7 +45,15 @@ class ActionCreateZoneFromZoneFileArgs:
              create_zone_from_zone_file_details: pulumi.Input[str],
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createZoneFromZoneFileDetails' in kwargs:
+            create_zone_from_zone_file_details = kwargs['createZoneFromZoneFileDetails']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("compartment_id", compartment_id)
         _setter("create_zone_from_zone_file_details", create_zone_from_zone_file_details)
         if scope is not None:
@@ -194,7 +202,31 @@ class _ActionCreateZoneFromZoneFileState:
              view_id: Optional[pulumi.Input[str]] = None,
              zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileZoneTransferServerArgs']]]] = None,
              zone_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createZoneFromZoneFileDetails' in kwargs:
+            create_zone_from_zone_file_details = kwargs['createZoneFromZoneFileDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalDownstreams' in kwargs:
+            external_downstreams = kwargs['externalDownstreams']
+        if 'externalMasters' in kwargs:
+            external_masters = kwargs['externalMasters']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+        if 'zoneTransferServers' in kwargs:
+            zone_transfer_servers = kwargs['zoneTransferServers']
+        if 'zoneType' in kwargs:
+            zone_type = kwargs['zoneType']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if create_zone_from_zone_file_details is not None:

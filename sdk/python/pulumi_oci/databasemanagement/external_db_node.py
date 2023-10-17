@@ -35,7 +35,13 @@ class ExternalDbNodeArgs:
              _setter: Callable[[Any, Any], None],
              external_db_node_id: pulumi.Input[str],
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+
         _setter("external_db_node_id", external_db_node_id)
         if external_connector_id is not None:
             _setter("external_connector_id", external_connector_id)
@@ -145,7 +151,37 @@ class _ExternalDbNodeState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if compartment_id is not None:

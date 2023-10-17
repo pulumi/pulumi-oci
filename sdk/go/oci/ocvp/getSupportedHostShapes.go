@@ -60,7 +60,9 @@ type GetSupportedHostShapesArgs struct {
 	Filters       []GetSupportedHostShapesFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given name exactly.
 	Name *string `pulumi:"name"`
-	// A filter to return only resources that match the given SDDC type exactly.
+	// (Optional) A filter to return only resources that match the given SDDC type exactly.
+	//
+	// Deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 	SddcType *string `pulumi:"sddcType"`
 }
 
@@ -73,7 +75,8 @@ type GetSupportedHostShapesResult struct {
 	// A list of the supported compute shapes for ESXi hosts.
 	Items []GetSupportedHostShapesItem `pulumi:"items"`
 	// The name of the supported compute shape.
-	Name     *string `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// Deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 	SddcType *string `pulumi:"sddcType"`
 }
 
@@ -97,7 +100,9 @@ type GetSupportedHostShapesOutputArgs struct {
 	Filters       GetSupportedHostShapesFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given name exactly.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// A filter to return only resources that match the given SDDC type exactly.
+	// (Optional) A filter to return only resources that match the given SDDC type exactly.
+	//
+	// Deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 	SddcType pulumi.StringPtrInput `pulumi:"sddcType"`
 }
 
@@ -149,6 +154,7 @@ func (o GetSupportedHostShapesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 func (o GetSupportedHostShapesResultOutput) SddcType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) *string { return v.SddcType }).(pulumi.StringPtrOutput)
 }

@@ -65,7 +65,25 @@ class AtCustomerCccInfrastructureArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'cccUpgradeScheduleId' in kwargs:
+            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'connectionState' in kwargs:
+            connection_state = kwargs['connectionState']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("subnet_id", subnet_id)
@@ -291,7 +309,45 @@ class _AtCustomerCccInfrastructureState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cccUpgradeScheduleId' in kwargs:
+            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'connectionState' in kwargs:
+            connection_state = kwargs['connectionState']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureInventories' in kwargs:
+            infrastructure_inventories = kwargs['infrastructureInventories']
+        if 'infrastructureNetworkConfigurations' in kwargs:
+            infrastructure_network_configurations = kwargs['infrastructureNetworkConfigurations']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'provisioningFingerprint' in kwargs:
+            provisioning_fingerprint = kwargs['provisioningFingerprint']
+        if 'provisioningPin' in kwargs:
+            provisioning_pin = kwargs['provisioningPin']
+        if 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradeInformations' in kwargs:
+            upgrade_informations = kwargs['upgradeInformations']
+
         if ccc_upgrade_schedule_id is not None:
             _setter("ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
         if compartment_id is not None:

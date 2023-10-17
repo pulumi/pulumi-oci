@@ -113,6 +113,11 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable String pdbName;
     /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    private @Nullable List<String> pluggableDatabases;
+    /**
      * @return The current state of the DB system.
      * 
      */
@@ -276,6 +281,13 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.pdbName);
     }
     /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
+    }
+    /**
      * @return The current state of the DB system.
      * 
      */
@@ -340,6 +352,7 @@ public final class DbSystemDbHomeDatabase {
         private @Nullable String lifecycleDetails;
         private @Nullable String ncharacterSet;
         private @Nullable String pdbName;
+        private @Nullable List<String> pluggableDatabases;
         private @Nullable String state;
         private @Nullable String tdeWalletPassword;
         private @Nullable String timeCreated;
@@ -368,6 +381,7 @@ public final class DbSystemDbHomeDatabase {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
@@ -479,6 +493,14 @@ public final class DbSystemDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -525,6 +547,7 @@ public final class DbSystemDbHomeDatabase {
             o.lifecycleDetails = lifecycleDetails;
             o.ncharacterSet = ncharacterSet;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;
             o.timeCreated = timeCreated;

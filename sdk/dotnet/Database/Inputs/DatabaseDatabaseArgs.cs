@@ -138,6 +138,18 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("pdbName")]
         public Input<string>? PdbName { get; set; }
 
+        [Input("pluggableDatabases")]
+        private InputList<string>? _pluggableDatabases;
+
+        /// <summary>
+        /// The list of pluggable databases that needs to be restored into new database.
+        /// </summary>
+        public InputList<string> PluggableDatabases
+        {
+            get => _pluggableDatabases ?? (_pluggableDatabases = new InputList<string>());
+            set => _pluggableDatabases = value;
+        }
+
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>

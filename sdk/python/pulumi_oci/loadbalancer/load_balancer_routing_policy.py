@@ -45,7 +45,13 @@ class LoadBalancerRoutingPolicyArgs:
              load_balancer_id: pulumi.Input[str],
              rules: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionLanguageVersion' in kwargs:
+            condition_language_version = kwargs['conditionLanguageVersion']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("condition_language_version", condition_language_version)
         _setter("load_balancer_id", load_balancer_id)
         _setter("rules", rules)
@@ -140,7 +146,13 @@ class _LoadBalancerRoutingPolicyState:
              name: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionLanguageVersion' in kwargs:
+            condition_language_version = kwargs['conditionLanguageVersion']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if condition_language_version is not None:
             _setter("condition_language_version", condition_language_version)
         if load_balancer_id is not None:

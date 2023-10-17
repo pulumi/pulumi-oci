@@ -105,7 +105,47 @@ class AutonomousVmClusterArgs:
              scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
              total_container_databases: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'vmClusterNetworkId' in kwargs:
+            vm_cluster_network_id = kwargs['vmClusterNetworkId']
+        if 'autonomousDataStorageSizeInTbs' in kwargs:
+            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
+        if 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if 'cpuCoreCountPerNode' in kwargs:
+            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if 'isMtlsEnabled' in kwargs:
+            is_mtls_enabled = kwargs['isMtlsEnabled']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if 'scanListenerPortNonTls' in kwargs:
+            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
+        if 'scanListenerPortTls' in kwargs:
+            scan_listener_port_tls = kwargs['scanListenerPortTls']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'totalContainerDatabases' in kwargs:
+            total_container_databases = kwargs['totalContainerDatabases']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("exadata_infrastructure_id", exadata_infrastructure_id)
@@ -377,6 +417,7 @@ class AutonomousVmClusterArgs:
 @pulumi.input_type
 class _AutonomousVmClusterState:
     def __init__(__self__, *,
+                 autonomous_data_storage_percentage: Optional[pulumi.Input[float]] = None,
                  autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  available_container_databases: Optional[pulumi.Input[int]] = None,
@@ -385,6 +426,7 @@ class _AutonomousVmClusterState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_model: Optional[pulumi.Input[str]] = None,
                  cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+                 cpu_percentage: Optional[pulumi.Input[float]] = None,
                  cpus_enabled: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
@@ -405,8 +447,12 @@ class _AutonomousVmClusterState:
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
+                 non_provisionable_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
                  ocpus_enabled: Optional[pulumi.Input[float]] = None,
+                 provisioned_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
+                 provisioned_cpus: Optional[pulumi.Input[float]] = None,
                  reclaimable_cpus: Optional[pulumi.Input[int]] = None,
+                 reserved_cpus: Optional[pulumi.Input[float]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -414,6 +460,7 @@ class _AutonomousVmClusterState:
                  time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
                  time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
+                 total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
                  total_container_databases: Optional[pulumi.Input[int]] = None,
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None):
         """
@@ -465,6 +512,7 @@ class _AutonomousVmClusterState:
         """
         _AutonomousVmClusterState._configure(
             lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_data_storage_percentage=autonomous_data_storage_percentage,
             autonomous_data_storage_size_in_tbs=autonomous_data_storage_size_in_tbs,
             available_autonomous_data_storage_size_in_tbs=available_autonomous_data_storage_size_in_tbs,
             available_container_databases=available_container_databases,
@@ -473,6 +521,7 @@ class _AutonomousVmClusterState:
             compartment_id=compartment_id,
             compute_model=compute_model,
             cpu_core_count_per_node=cpu_core_count_per_node,
+            cpu_percentage=cpu_percentage,
             cpus_enabled=cpus_enabled,
             data_storage_size_in_gb=data_storage_size_in_gb,
             data_storage_size_in_tbs=data_storage_size_in_tbs,
@@ -493,8 +542,12 @@ class _AutonomousVmClusterState:
             memory_size_in_gbs=memory_size_in_gbs,
             next_maintenance_run_id=next_maintenance_run_id,
             node_count=node_count,
+            non_provisionable_autonomous_container_databases=non_provisionable_autonomous_container_databases,
             ocpus_enabled=ocpus_enabled,
+            provisioned_autonomous_container_databases=provisioned_autonomous_container_databases,
+            provisioned_cpus=provisioned_cpus,
             reclaimable_cpus=reclaimable_cpus,
+            reserved_cpus=reserved_cpus,
             scan_listener_port_non_tls=scan_listener_port_non_tls,
             scan_listener_port_tls=scan_listener_port_tls,
             state=state,
@@ -502,12 +555,14 @@ class _AutonomousVmClusterState:
             time_database_ssl_certificate_expires=time_database_ssl_certificate_expires,
             time_ords_certificate_expires=time_ords_certificate_expires,
             time_zone=time_zone,
+            total_autonomous_data_storage_in_tbs=total_autonomous_data_storage_in_tbs,
             total_container_databases=total_container_databases,
             vm_cluster_network_id=vm_cluster_network_id,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
+             autonomous_data_storage_percentage: Optional[pulumi.Input[float]] = None,
              autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
              available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
              available_container_databases: Optional[pulumi.Input[int]] = None,
@@ -516,6 +571,7 @@ class _AutonomousVmClusterState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              compute_model: Optional[pulumi.Input[str]] = None,
              cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+             cpu_percentage: Optional[pulumi.Input[float]] = None,
              cpus_enabled: Optional[pulumi.Input[int]] = None,
              data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
              data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
@@ -536,8 +592,12 @@ class _AutonomousVmClusterState:
              memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
              next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
              node_count: Optional[pulumi.Input[int]] = None,
+             non_provisionable_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
              ocpus_enabled: Optional[pulumi.Input[float]] = None,
+             provisioned_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
+             provisioned_cpus: Optional[pulumi.Input[float]] = None,
              reclaimable_cpus: Optional[pulumi.Input[int]] = None,
+             reserved_cpus: Optional[pulumi.Input[float]] = None,
              scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
              scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
@@ -545,9 +605,104 @@ class _AutonomousVmClusterState:
              time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
              time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
+             total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
              total_container_databases: Optional[pulumi.Input[int]] = None,
              vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDataStoragePercentage' in kwargs:
+            autonomous_data_storage_percentage = kwargs['autonomousDataStoragePercentage']
+        if 'autonomousDataStorageSizeInTbs' in kwargs:
+            autonomous_data_storage_size_in_tbs = kwargs['autonomousDataStorageSizeInTbs']
+        if 'availableAutonomousDataStorageSizeInTbs' in kwargs:
+            available_autonomous_data_storage_size_in_tbs = kwargs['availableAutonomousDataStorageSizeInTbs']
+        if 'availableContainerDatabases' in kwargs:
+            available_container_databases = kwargs['availableContainerDatabases']
+        if 'availableCpus' in kwargs:
+            available_cpus = kwargs['availableCpus']
+        if 'availableDataStorageSizeInTbs' in kwargs:
+            available_data_storage_size_in_tbs = kwargs['availableDataStorageSizeInTbs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if 'cpuCoreCountPerNode' in kwargs:
+            cpu_core_count_per_node = kwargs['cpuCoreCountPerNode']
+        if 'cpuPercentage' in kwargs:
+            cpu_percentage = kwargs['cpuPercentage']
+        if 'cpusEnabled' in kwargs:
+            cpus_enabled = kwargs['cpusEnabled']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if 'isMtlsEnabled' in kwargs:
+            is_mtls_enabled = kwargs['isMtlsEnabled']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nonProvisionableAutonomousContainerDatabases' in kwargs:
+            non_provisionable_autonomous_container_databases = kwargs['nonProvisionableAutonomousContainerDatabases']
+        if 'ocpusEnabled' in kwargs:
+            ocpus_enabled = kwargs['ocpusEnabled']
+        if 'provisionedAutonomousContainerDatabases' in kwargs:
+            provisioned_autonomous_container_databases = kwargs['provisionedAutonomousContainerDatabases']
+        if 'provisionedCpus' in kwargs:
+            provisioned_cpus = kwargs['provisionedCpus']
+        if 'reclaimableCpus' in kwargs:
+            reclaimable_cpus = kwargs['reclaimableCpus']
+        if 'reservedCpus' in kwargs:
+            reserved_cpus = kwargs['reservedCpus']
+        if 'scanListenerPortNonTls' in kwargs:
+            scan_listener_port_non_tls = kwargs['scanListenerPortNonTls']
+        if 'scanListenerPortTls' in kwargs:
+            scan_listener_port_tls = kwargs['scanListenerPortTls']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeDatabaseSslCertificateExpires' in kwargs:
+            time_database_ssl_certificate_expires = kwargs['timeDatabaseSslCertificateExpires']
+        if 'timeOrdsCertificateExpires' in kwargs:
+            time_ords_certificate_expires = kwargs['timeOrdsCertificateExpires']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'totalAutonomousDataStorageInTbs' in kwargs:
+            total_autonomous_data_storage_in_tbs = kwargs['totalAutonomousDataStorageInTbs']
+        if 'totalContainerDatabases' in kwargs:
+            total_container_databases = kwargs['totalContainerDatabases']
+        if 'vmClusterNetworkId' in kwargs:
+            vm_cluster_network_id = kwargs['vmClusterNetworkId']
+
+        if autonomous_data_storage_percentage is not None:
+            _setter("autonomous_data_storage_percentage", autonomous_data_storage_percentage)
         if autonomous_data_storage_size_in_tbs is not None:
             _setter("autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if available_autonomous_data_storage_size_in_tbs is not None:
@@ -564,6 +719,8 @@ class _AutonomousVmClusterState:
             _setter("compute_model", compute_model)
         if cpu_core_count_per_node is not None:
             _setter("cpu_core_count_per_node", cpu_core_count_per_node)
+        if cpu_percentage is not None:
+            _setter("cpu_percentage", cpu_percentage)
         if cpus_enabled is not None:
             _setter("cpus_enabled", cpus_enabled)
         if data_storage_size_in_gb is not None:
@@ -604,10 +761,18 @@ class _AutonomousVmClusterState:
             _setter("next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
             _setter("node_count", node_count)
+        if non_provisionable_autonomous_container_databases is not None:
+            _setter("non_provisionable_autonomous_container_databases", non_provisionable_autonomous_container_databases)
         if ocpus_enabled is not None:
             _setter("ocpus_enabled", ocpus_enabled)
+        if provisioned_autonomous_container_databases is not None:
+            _setter("provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
+        if provisioned_cpus is not None:
+            _setter("provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus is not None:
             _setter("reclaimable_cpus", reclaimable_cpus)
+        if reserved_cpus is not None:
+            _setter("reserved_cpus", reserved_cpus)
         if scan_listener_port_non_tls is not None:
             _setter("scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
@@ -622,10 +787,21 @@ class _AutonomousVmClusterState:
             _setter("time_ords_certificate_expires", time_ords_certificate_expires)
         if time_zone is not None:
             _setter("time_zone", time_zone)
+        if total_autonomous_data_storage_in_tbs is not None:
+            _setter("total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
         if total_container_databases is not None:
             _setter("total_container_databases", total_container_databases)
         if vm_cluster_network_id is not None:
             _setter("vm_cluster_network_id", vm_cluster_network_id)
+
+    @property
+    @pulumi.getter(name="autonomousDataStoragePercentage")
+    def autonomous_data_storage_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "autonomous_data_storage_percentage")
+
+    @autonomous_data_storage_percentage.setter
+    def autonomous_data_storage_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "autonomous_data_storage_percentage", value)
 
     @property
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
@@ -722,6 +898,15 @@ class _AutonomousVmClusterState:
     @cpu_core_count_per_node.setter
     def cpu_core_count_per_node(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "cpu_core_count_per_node", value)
+
+    @property
+    @pulumi.getter(name="cpuPercentage")
+    def cpu_percentage(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "cpu_percentage")
+
+    @cpu_percentage.setter
+    def cpu_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "cpu_percentage", value)
 
     @property
     @pulumi.getter(name="cpusEnabled")
@@ -961,6 +1146,15 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "node_count", value)
 
     @property
+    @pulumi.getter(name="nonProvisionableAutonomousContainerDatabases")
+    def non_provisionable_autonomous_container_databases(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "non_provisionable_autonomous_container_databases")
+
+    @non_provisionable_autonomous_container_databases.setter
+    def non_provisionable_autonomous_container_databases(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "non_provisionable_autonomous_container_databases", value)
+
+    @property
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> Optional[pulumi.Input[float]]:
         """
@@ -971,6 +1165,24 @@ class _AutonomousVmClusterState:
     @ocpus_enabled.setter
     def ocpus_enabled(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus_enabled", value)
+
+    @property
+    @pulumi.getter(name="provisionedAutonomousContainerDatabases")
+    def provisioned_autonomous_container_databases(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "provisioned_autonomous_container_databases")
+
+    @provisioned_autonomous_container_databases.setter
+    def provisioned_autonomous_container_databases(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "provisioned_autonomous_container_databases", value)
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "provisioned_cpus")
+
+    @provisioned_cpus.setter
+    def provisioned_cpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "provisioned_cpus", value)
 
     @property
     @pulumi.getter(name="reclaimableCpus")
@@ -985,6 +1197,15 @@ class _AutonomousVmClusterState:
     @reclaimable_cpus.setter
     def reclaimable_cpus(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "reclaimable_cpus", value)
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "reserved_cpus")
+
+    @reserved_cpus.setter
+    def reserved_cpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "reserved_cpus", value)
 
     @property
     @pulumi.getter(name="scanListenerPortNonTls")
@@ -1069,6 +1290,15 @@ class _AutonomousVmClusterState:
     @time_zone.setter
     def time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_zone", value)
+
+    @property
+    @pulumi.getter(name="totalAutonomousDataStorageInTbs")
+    def total_autonomous_data_storage_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
+
+    @total_autonomous_data_storage_in_tbs.setter
+    def total_autonomous_data_storage_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "total_autonomous_data_storage_in_tbs", value)
 
     @property
     @pulumi.getter(name="totalContainerDatabases")
@@ -1340,10 +1570,12 @@ class AutonomousVmCluster(pulumi.CustomResource):
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
             __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
+            __props__.__dict__["autonomous_data_storage_percentage"] = None
             __props__.__dict__["available_autonomous_data_storage_size_in_tbs"] = None
             __props__.__dict__["available_container_databases"] = None
             __props__.__dict__["available_cpus"] = None
             __props__.__dict__["available_data_storage_size_in_tbs"] = None
+            __props__.__dict__["cpu_percentage"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["data_storage_size_in_gb"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
@@ -1354,12 +1586,17 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["node_count"] = None
+            __props__.__dict__["non_provisionable_autonomous_container_databases"] = None
             __props__.__dict__["ocpus_enabled"] = None
+            __props__.__dict__["provisioned_autonomous_container_databases"] = None
+            __props__.__dict__["provisioned_cpus"] = None
             __props__.__dict__["reclaimable_cpus"] = None
+            __props__.__dict__["reserved_cpus"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_database_ssl_certificate_expires"] = None
             __props__.__dict__["time_ords_certificate_expires"] = None
+            __props__.__dict__["total_autonomous_data_storage_in_tbs"] = None
         super(AutonomousVmCluster, __self__).__init__(
             'oci:Database/autonomousVmCluster:AutonomousVmCluster',
             resource_name,
@@ -1370,6 +1607,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_data_storage_percentage: Optional[pulumi.Input[float]] = None,
             autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             available_container_databases: Optional[pulumi.Input[int]] = None,
@@ -1378,6 +1616,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_model: Optional[pulumi.Input[str]] = None,
             cpu_core_count_per_node: Optional[pulumi.Input[int]] = None,
+            cpu_percentage: Optional[pulumi.Input[float]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
@@ -1398,8 +1637,12 @@ class AutonomousVmCluster(pulumi.CustomResource):
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
+            non_provisionable_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
             ocpus_enabled: Optional[pulumi.Input[float]] = None,
+            provisioned_autonomous_container_databases: Optional[pulumi.Input[int]] = None,
+            provisioned_cpus: Optional[pulumi.Input[float]] = None,
             reclaimable_cpus: Optional[pulumi.Input[int]] = None,
+            reserved_cpus: Optional[pulumi.Input[float]] = None,
             scan_listener_port_non_tls: Optional[pulumi.Input[int]] = None,
             scan_listener_port_tls: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1407,6 +1650,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             time_database_ssl_certificate_expires: Optional[pulumi.Input[str]] = None,
             time_ords_certificate_expires: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
+            total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
             total_container_databases: Optional[pulumi.Input[int]] = None,
             vm_cluster_network_id: Optional[pulumi.Input[str]] = None) -> 'AutonomousVmCluster':
         """
@@ -1465,6 +1709,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
 
         __props__ = _AutonomousVmClusterState.__new__(_AutonomousVmClusterState)
 
+        __props__.__dict__["autonomous_data_storage_percentage"] = autonomous_data_storage_percentage
         __props__.__dict__["autonomous_data_storage_size_in_tbs"] = autonomous_data_storage_size_in_tbs
         __props__.__dict__["available_autonomous_data_storage_size_in_tbs"] = available_autonomous_data_storage_size_in_tbs
         __props__.__dict__["available_container_databases"] = available_container_databases
@@ -1473,6 +1718,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count_per_node"] = cpu_core_count_per_node
+        __props__.__dict__["cpu_percentage"] = cpu_percentage
         __props__.__dict__["cpus_enabled"] = cpus_enabled
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
@@ -1493,8 +1739,12 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
+        __props__.__dict__["non_provisionable_autonomous_container_databases"] = non_provisionable_autonomous_container_databases
         __props__.__dict__["ocpus_enabled"] = ocpus_enabled
+        __props__.__dict__["provisioned_autonomous_container_databases"] = provisioned_autonomous_container_databases
+        __props__.__dict__["provisioned_cpus"] = provisioned_cpus
         __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
+        __props__.__dict__["reserved_cpus"] = reserved_cpus
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
         __props__.__dict__["state"] = state
@@ -1502,9 +1752,15 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
         __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
         __props__.__dict__["time_zone"] = time_zone
+        __props__.__dict__["total_autonomous_data_storage_in_tbs"] = total_autonomous_data_storage_in_tbs
         __props__.__dict__["total_container_databases"] = total_container_databases
         __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
         return AutonomousVmCluster(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="autonomousDataStoragePercentage")
+    def autonomous_data_storage_percentage(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "autonomous_data_storage_percentage")
 
     @property
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
@@ -1569,6 +1825,11 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The number of CPU cores to enable per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
+
+    @property
+    @pulumi.getter(name="cpuPercentage")
+    def cpu_percentage(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "cpu_percentage")
 
     @property
     @pulumi.getter(name="cpusEnabled")
@@ -1728,12 +1989,27 @@ class AutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "node_count")
 
     @property
+    @pulumi.getter(name="nonProvisionableAutonomousContainerDatabases")
+    def non_provisionable_autonomous_container_databases(self) -> pulumi.Output[int]:
+        return pulumi.get(self, "non_provisionable_autonomous_container_databases")
+
+    @property
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> pulumi.Output[float]:
         """
         The number of enabled OCPU cores.
         """
         return pulumi.get(self, "ocpus_enabled")
+
+    @property
+    @pulumi.getter(name="provisionedAutonomousContainerDatabases")
+    def provisioned_autonomous_container_databases(self) -> pulumi.Output[int]:
+        return pulumi.get(self, "provisioned_autonomous_container_databases")
+
+    @property
+    @pulumi.getter(name="provisionedCpus")
+    def provisioned_cpus(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
@@ -1744,6 +2020,11 @@ class AutonomousVmCluster(pulumi.CustomResource):
         * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="reservedCpus")
+    def reserved_cpus(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter(name="scanListenerPortNonTls")
@@ -1800,6 +2081,11 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="totalAutonomousDataStorageInTbs")
+    def total_autonomous_data_storage_in_tbs(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
 
     @property
     @pulumi.getter(name="totalContainerDatabases")

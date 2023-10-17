@@ -39,7 +39,13 @@ class NamespaceIngestTimeRulesManagementArgs:
              enable_ingest_time_rule: pulumi.Input[bool],
              ingest_time_rule_id: pulumi.Input[str],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableIngestTimeRule' in kwargs:
+            enable_ingest_time_rule = kwargs['enableIngestTimeRule']
+        if 'ingestTimeRuleId' in kwargs:
+            ingest_time_rule_id = kwargs['ingestTimeRuleId']
+
         _setter("enable_ingest_time_rule", enable_ingest_time_rule)
         _setter("ingest_time_rule_id", ingest_time_rule_id)
         _setter("namespace", namespace)
@@ -113,7 +119,13 @@ class _NamespaceIngestTimeRulesManagementState:
              enable_ingest_time_rule: Optional[pulumi.Input[bool]] = None,
              ingest_time_rule_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableIngestTimeRule' in kwargs:
+            enable_ingest_time_rule = kwargs['enableIngestTimeRule']
+        if 'ingestTimeRuleId' in kwargs:
+            ingest_time_rule_id = kwargs['ingestTimeRuleId']
+
         if enable_ingest_time_rule is not None:
             _setter("enable_ingest_time_rule", enable_ingest_time_rule)
         if ingest_time_rule_id is not None:

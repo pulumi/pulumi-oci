@@ -114,7 +114,7 @@ class GetExsiHostsResult:
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         """
         return pulumi.get(self, "sddc_id")
 

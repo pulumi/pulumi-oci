@@ -61,7 +61,23 @@ class CpeArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_private: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'cpeDeviceShapeId' in kwargs:
+            cpe_device_shape_id = kwargs['cpeDeviceShapeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+
         _setter("compartment_id", compartment_id)
         _setter("ip_address", ip_address)
         if cpe_device_shape_id is not None:
@@ -224,7 +240,25 @@ class _CpeState:
              ip_address: Optional[pulumi.Input[str]] = None,
              is_private: Optional[pulumi.Input[bool]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpeDeviceShapeId' in kwargs:
+            cpe_device_shape_id = kwargs['cpeDeviceShapeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if cpe_device_shape_id is not None:

@@ -35,7 +35,13 @@ class ConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              retention_period_days: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'retentionPeriodDays' in kwargs:
+            retention_period_days = kwargs['retentionPeriodDays']
+
         _setter("compartment_id", compartment_id)
         _setter("retention_period_days", retention_period_days)
 
@@ -92,7 +98,13 @@ class _ConfigurationState:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              retention_period_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'retentionPeriodDays' in kwargs:
+            retention_period_days = kwargs['retentionPeriodDays']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if retention_period_days is not None:

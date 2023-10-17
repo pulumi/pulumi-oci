@@ -47,7 +47,19 @@ class ManagementAgentInstallKeyArgs:
              allowed_key_install_count: Optional[pulumi.Input[int]] = None,
              is_unlimited: Optional[pulumi.Input[bool]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'allowedKeyInstallCount' in kwargs:
+            allowed_key_install_count = kwargs['allowedKeyInstallCount']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if allowed_key_install_count is not None:
@@ -186,7 +198,29 @@ class _ManagementAgentInstallKeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedKeyInstallCount' in kwargs:
+            allowed_key_install_count = kwargs['allowedKeyInstallCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdByPrincipalId' in kwargs:
+            created_by_principal_id = kwargs['createdByPrincipalId']
+        if 'currentKeyInstallCount' in kwargs:
+            current_key_install_count = kwargs['currentKeyInstallCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if allowed_key_install_count is not None:
             _setter("allowed_key_install_count", allowed_key_install_count)
         if compartment_id is not None:

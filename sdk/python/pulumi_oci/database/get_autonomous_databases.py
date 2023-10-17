@@ -227,6 +227,18 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
+    ## 
+
+    ***
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
     This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
 
     Gets a list of Autonomous Databases based on the query parameters specified.
@@ -316,6 +328,18 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
+    ## 
+
+    ***
+    subcategory: "Database"
+    layout: "oci"
+    page_title: "Oracle Cloud Infrastructure: database_get_autonomous_databases"
+    sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+    description: |-
+      Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+    ---
+
+    # Data Source: database_get_autonomous_databases
     This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
 
     Gets a list of Autonomous Databases based on the query parameters specified.

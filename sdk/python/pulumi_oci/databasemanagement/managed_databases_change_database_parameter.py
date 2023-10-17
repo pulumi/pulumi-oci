@@ -47,7 +47,11 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
              managed_database_id: pulumi.Input[str],
              parameters: pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]],
              scope: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedDatabaseId' in kwargs:
+            managed_database_id = kwargs['managedDatabaseId']
+
         _setter("credentials", credentials)
         _setter("managed_database_id", managed_database_id)
         _setter("parameters", parameters)
@@ -142,7 +146,11 @@ class _ManagedDatabasesChangeDatabaseParameterState:
              managed_database_id: Optional[pulumi.Input[str]] = None,
              parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedDatabaseId' in kwargs:
+            managed_database_id = kwargs['managedDatabaseId']
+
         if credentials is not None:
             _setter("credentials", credentials)
         if managed_database_id is not None:

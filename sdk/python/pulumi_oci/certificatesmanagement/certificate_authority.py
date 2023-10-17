@@ -65,7 +65,23 @@ class CertificateAuthorityArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityConfig' in kwargs:
+            certificate_authority_config = kwargs['certificateAuthorityConfig']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'certificateAuthorityRules' in kwargs:
+            certificate_authority_rules = kwargs['certificateAuthorityRules']
+        if 'certificateRevocationListDetails' in kwargs:
+            certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("certificate_authority_config", certificate_authority_config)
         _setter("compartment_id", compartment_id)
         _setter("kms_key_id", kms_key_id)
@@ -283,7 +299,37 @@ class _CertificateAuthorityState:
              subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityConfig' in kwargs:
+            certificate_authority_config = kwargs['certificateAuthorityConfig']
+        if 'certificateAuthorityRules' in kwargs:
+            certificate_authority_rules = kwargs['certificateAuthorityRules']
+        if 'certificateRevocationListDetails' in kwargs:
+            certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'currentVersions' in kwargs:
+            current_versions = kwargs['currentVersions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         if certificate_authority_config is not None:
             _setter("certificate_authority_config", certificate_authority_config)
         if certificate_authority_rules is not None:

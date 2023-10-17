@@ -44,7 +44,13 @@ class SddcDatastoreArgs:
              block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
              datastore_type: pulumi.Input[str],
              capacity: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+
         _setter("block_volume_ids", block_volume_ids)
         _setter("datastore_type", datastore_type)
         if capacity is not None:
@@ -110,7 +116,13 @@ class SddcHcxOnPremLicenseArgs:
              activation_key: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              system_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         if activation_key is not None:
             _setter("activation_key", activation_key)
         if status is not None:
@@ -174,7 +186,13 @@ class SddcUpgradeLicenseArgs:
              _setter: Callable[[Any, Any], None],
              license_key: Optional[pulumi.Input[str]] = None,
              license_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         if license_key is not None:
             _setter("license_key", license_key)
         if license_type is not None:
@@ -224,7 +242,13 @@ class SddcVsphereUpgradeObjectArgs:
              _setter: Callable[[Any, Any], None],
              download_link: Optional[pulumi.Input[str]] = None,
              link_description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         if download_link is not None:
             _setter("download_link", download_link)
         if link_description is not None:
@@ -273,7 +297,9 @@ class GetExsiHostsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -325,7 +351,9 @@ class GetSddcsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -380,7 +408,9 @@ class GetSupportedHostShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -438,7 +468,9 @@ class GetSupportedSkusFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -493,7 +525,9 @@ class GetSupportedVmwareSoftwareVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -61,7 +61,23 @@ class ProfileArgs:
              name: Optional[pulumi.Input[str]] = None,
              target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
              target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'levelsConfiguration' in kwargs:
+            levels_configuration = kwargs['levelsConfiguration']
+        if 'aggregationIntervalInDays' in kwargs:
+            aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'targetCompartments' in kwargs:
+            target_compartments = kwargs['targetCompartments']
+        if 'targetTags' in kwargs:
+            target_tags = kwargs['targetTags']
+
         _setter("compartment_id", compartment_id)
         _setter("description", description)
         _setter("levels_configuration", levels_configuration)
@@ -247,7 +263,27 @@ class _ProfileState:
              target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregationIntervalInDays' in kwargs:
+            aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'levelsConfiguration' in kwargs:
+            levels_configuration = kwargs['levelsConfiguration']
+        if 'targetCompartments' in kwargs:
+            target_compartments = kwargs['targetCompartments']
+        if 'targetTags' in kwargs:
+            target_tags = kwargs['targetTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if aggregation_interval_in_days is not None:
             _setter("aggregation_interval_in_days", aggregation_interval_in_days)
         if compartment_id is not None:

@@ -35,7 +35,11 @@ class EnrollmentStatusArgs:
              _setter: Callable[[Any, Any], None],
              enrollment_status_id: pulumi.Input[str],
              status: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enrollmentStatusId' in kwargs:
+            enrollment_status_id = kwargs['enrollmentStatusId']
+
         _setter("enrollment_status_id", enrollment_status_id)
         _setter("status", status)
 
@@ -112,7 +116,19 @@ class _EnrollmentStatusState:
              status_reason: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enrollmentStatusId' in kwargs:
+            enrollment_status_id = kwargs['enrollmentStatusId']
+        if 'statusReason' in kwargs:
+            status_reason = kwargs['statusReason']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if enrollment_status_id is not None:

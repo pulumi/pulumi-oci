@@ -46,7 +46,15 @@ class DataAssetArgs:
              type_key: pulumi.Input[str],
              description: Optional[pulumi.Input[str]] = None,
              properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+
         _setter("catalog_id", catalog_id)
         _setter("display_name", display_name)
         _setter("type_key", type_key)
@@ -192,7 +200,29 @@ class _DataAssetState:
              type_key: Optional[pulumi.Input[str]] = None,
              updated_by_id: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'createdById' in kwargs:
+            created_by_id = kwargs['createdById']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKey' in kwargs:
+            external_key = kwargs['externalKey']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeHarvested' in kwargs:
+            time_harvested = kwargs['timeHarvested']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+        if 'updatedById' in kwargs:
+            updated_by_id = kwargs['updatedById']
+
         if catalog_id is not None:
             _setter("catalog_id", catalog_id)
         if created_by_id is not None:

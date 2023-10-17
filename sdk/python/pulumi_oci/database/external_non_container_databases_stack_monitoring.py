@@ -39,7 +39,15 @@ class ExternalNonContainerDatabasesStackMonitoringArgs:
              enable_stack_monitoring: pulumi.Input[bool],
              external_database_connector_id: pulumi.Input[str],
              external_non_container_database_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableStackMonitoring' in kwargs:
+            enable_stack_monitoring = kwargs['enableStackMonitoring']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'externalNonContainerDatabaseId' in kwargs:
+            external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+
         _setter("enable_stack_monitoring", enable_stack_monitoring)
         _setter("external_database_connector_id", external_database_connector_id)
         _setter("external_non_container_database_id", external_non_container_database_id)
@@ -113,7 +121,15 @@ class _ExternalNonContainerDatabasesStackMonitoringState:
              enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableStackMonitoring' in kwargs:
+            enable_stack_monitoring = kwargs['enableStackMonitoring']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'externalNonContainerDatabaseId' in kwargs:
+            external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+
         if enable_stack_monitoring is not None:
             _setter("enable_stack_monitoring", enable_stack_monitoring)
         if external_database_connector_id is not None:

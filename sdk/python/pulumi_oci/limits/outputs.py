@@ -70,7 +70,13 @@ class QuotaLock(dict):
              message: Optional[str] = None,
              related_resource_id: Optional[str] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'relatedResourceId' in kwargs:
+            related_resource_id = kwargs['relatedResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("type", type)
         if message is not None:
             _setter("message", message)
@@ -133,7 +139,9 @@ class GetLimitDefinitionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -205,7 +213,23 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
              name: str,
              scope_type: str,
              service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areQuotasSupported' in kwargs:
+            are_quotas_supported = kwargs['areQuotasSupported']
+        if 'isDeprecated' in kwargs:
+            is_deprecated = kwargs['isDeprecated']
+        if 'isDynamic' in kwargs:
+            is_dynamic = kwargs['isDynamic']
+        if 'isEligibleForLimitIncrease' in kwargs:
+            is_eligible_for_limit_increase = kwargs['isEligibleForLimitIncrease']
+        if 'isResourceAvailabilitySupported' in kwargs:
+            is_resource_availability_supported = kwargs['isResourceAvailabilitySupported']
+        if 'scopeType' in kwargs:
+            scope_type = kwargs['scopeType']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("are_quotas_supported", are_quotas_supported)
         _setter("description", description)
         _setter("is_deprecated", is_deprecated)
@@ -310,7 +334,9 @@ class GetLimitValuesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -362,7 +388,13 @@ class GetLimitValuesLimitValueResult(dict):
              name: str,
              scope_type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'scopeType' in kwargs:
+            scope_type = kwargs['scopeType']
+
         _setter("availability_domain", availability_domain)
         _setter("name", name)
         _setter("scope_type", scope_type)
@@ -428,7 +460,13 @@ class GetQuotaLockResult(dict):
              related_resource_id: str,
              time_created: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'relatedResourceId' in kwargs:
+            related_resource_id = kwargs['relatedResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("message", message)
         _setter("related_resource_id", related_resource_id)
         _setter("time_created", time_created)
@@ -488,7 +526,9 @@ class GetQuotasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -567,7 +607,19 @@ class GetQuotasQuotaResult(dict):
              state: str,
              statements: Sequence[str],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isLockOverride' in kwargs:
+            is_lock_override = kwargs['isLockOverride']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -693,7 +745,13 @@ class GetQuotasQuotaLockResult(dict):
              related_resource_id: str,
              time_created: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'relatedResourceId' in kwargs:
+            related_resource_id = kwargs['relatedResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("message", message)
         _setter("related_resource_id", related_resource_id)
         _setter("time_created", time_created)
@@ -753,7 +811,9 @@ class GetServicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -797,7 +857,9 @@ class GetServicesServiceResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("name", name)
 

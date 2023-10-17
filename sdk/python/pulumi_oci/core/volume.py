@@ -89,7 +89,41 @@ class VolumeArgs:
              source_details: Optional[pulumi.Input['VolumeSourceDetailsArgs']] = None,
              volume_backup_id: Optional[pulumi.Input[str]] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'autotunePolicies' in kwargs:
+            autotune_policies = kwargs['autotunePolicies']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'blockVolumeReplicas' in kwargs:
+            block_volume_replicas = kwargs['blockVolumeReplicas']
+        if 'blockVolumeReplicasDeletion' in kwargs:
+            block_volume_replicas_deletion = kwargs['blockVolumeReplicasDeletion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoTuneEnabled' in kwargs:
+            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'volumeBackupId' in kwargs:
+            volume_backup_id = kwargs['volumeBackupId']
+        if 'vpusPerGb' in kwargs:
+            vpus_per_gb = kwargs['vpusPerGb']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         if autotune_policies is not None:
@@ -422,7 +456,51 @@ class _VolumeState:
              volume_backup_id: Optional[pulumi.Input[str]] = None,
              volume_group_id: Optional[pulumi.Input[str]] = None,
              vpus_per_gb: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoTunedVpusPerGb' in kwargs:
+            auto_tuned_vpus_per_gb = kwargs['autoTunedVpusPerGb']
+        if 'autotunePolicies' in kwargs:
+            autotune_policies = kwargs['autotunePolicies']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'blockVolumeReplicas' in kwargs:
+            block_volume_replicas = kwargs['blockVolumeReplicas']
+        if 'blockVolumeReplicasDeletion' in kwargs:
+            block_volume_replicas_deletion = kwargs['blockVolumeReplicasDeletion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoTuneEnabled' in kwargs:
+            is_auto_tune_enabled = kwargs['isAutoTuneEnabled']
+        if 'isHydrated' in kwargs:
+            is_hydrated = kwargs['isHydrated']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'volumeBackupId' in kwargs:
+            volume_backup_id = kwargs['volumeBackupId']
+        if 'volumeGroupId' in kwargs:
+            volume_group_id = kwargs['volumeGroupId']
+        if 'vpusPerGb' in kwargs:
+            vpus_per_gb = kwargs['vpusPerGb']
+
         if auto_tuned_vpus_per_gb is not None:
             _setter("auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
         if autotune_policies is not None:

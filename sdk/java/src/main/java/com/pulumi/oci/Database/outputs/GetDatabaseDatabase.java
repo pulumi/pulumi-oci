@@ -76,6 +76,7 @@ public final class GetDatabaseDatabase {
      * 
      */
     private String pdbName;
+    private List<String> pluggableDatabases;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
@@ -182,6 +183,9 @@ public final class GetDatabaseDatabase {
     public String pdbName() {
         return this.pdbName;
     }
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases;
+    }
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
@@ -224,6 +228,7 @@ public final class GetDatabaseDatabase {
         private String kmsKeyVersionId;
         private String ncharacterSet;
         private String pdbName;
+        private List<String> pluggableDatabases;
         private String sidPrefix;
         private String tdeWalletPassword;
         private String vaultId;
@@ -245,6 +250,7 @@ public final class GetDatabaseDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.vaultId = defaults.vaultId;
@@ -329,6 +335,14 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(List<String> pluggableDatabases) {
+            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
@@ -360,6 +374,7 @@ public final class GetDatabaseDatabase {
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.ncharacterSet = ncharacterSet;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.sidPrefix = sidPrefix;
             o.tdeWalletPassword = tdeWalletPassword;
             o.vaultId = vaultId;

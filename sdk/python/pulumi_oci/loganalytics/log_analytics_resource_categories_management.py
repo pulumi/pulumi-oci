@@ -43,7 +43,15 @@ class LogAnalyticsResourceCategoriesManagementArgs:
              resource_categories: pulumi.Input[Sequence[pulumi.Input[str]]],
              resource_id: pulumi.Input[str],
              resource_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resourceCategories' in kwargs:
+            resource_categories = kwargs['resourceCategories']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("namespace", namespace)
         _setter("resource_categories", resource_categories)
         _setter("resource_id", resource_id)
@@ -134,7 +142,15 @@ class _LogAnalyticsResourceCategoriesManagementState:
              resource_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              resource_id: Optional[pulumi.Input[str]] = None,
              resource_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resourceCategories' in kwargs:
+            resource_categories = kwargs['resourceCategories']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         if namespace is not None:
             _setter("namespace", namespace)
         if resource_categories is not None:

@@ -84,7 +84,15 @@ class ModelTestingDataset(dict):
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -196,7 +204,15 @@ class ModelTrainingDataset(dict):
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -308,7 +324,15 @@ class ModelValidationDataset(dict):
              dataset_id: Optional[str] = None,
              namespace_name: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -395,7 +419,15 @@ class GetModelTestingDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -474,7 +506,15 @@ class GetModelTrainingDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -553,7 +593,15 @@ class GetModelValidationDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -619,7 +667,9 @@ class GetModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -653,7 +703,9 @@ class GetModelsModelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -781,7 +833,51 @@ class GetModelsModelCollectionItemResult(dict):
              trained_duration_in_hours: float,
              training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
              validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'averagePrecision' in kwargs:
+            average_precision = kwargs['averagePrecision']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'confidenceThreshold' in kwargs:
+            confidence_threshold = kwargs['confidenceThreshold']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxTrainingDurationInHours' in kwargs:
+            max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'testImageCount' in kwargs:
+            test_image_count = kwargs['testImageCount']
+        if 'testingDatasets' in kwargs:
+            testing_datasets = kwargs['testingDatasets']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalImageCount' in kwargs:
+            total_image_count = kwargs['totalImageCount']
+        if 'trainedDurationInHours' in kwargs:
+            trained_duration_in_hours = kwargs['trainedDurationInHours']
+        if 'trainingDatasets' in kwargs:
+            training_datasets = kwargs['trainingDatasets']
+        if 'validationDatasets' in kwargs:
+            validation_datasets = kwargs['validationDatasets']
+
         _setter("average_precision", average_precision)
         _setter("compartment_id", compartment_id)
         _setter("confidence_threshold", confidence_threshold)
@@ -1057,7 +1153,15 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -1132,7 +1236,15 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -1207,7 +1319,15 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
              dataset_type: str,
              namespace_name: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -1270,7 +1390,9 @@ class GetProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1304,7 +1426,9 @@ class GetProjectsProjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1368,7 +1492,25 @@ class GetProjectsProjectCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

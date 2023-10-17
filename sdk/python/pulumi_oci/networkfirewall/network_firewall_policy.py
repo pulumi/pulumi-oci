@@ -69,7 +69,31 @@ class NetworkFirewallPolicyArgs:
              mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
              security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
              url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'applicationLists' in kwargs:
+            application_lists = kwargs['applicationLists']
+        if 'decryptionProfiles' in kwargs:
+            decryption_profiles = kwargs['decryptionProfiles']
+        if 'decryptionRules' in kwargs:
+            decryption_rules = kwargs['decryptionRules']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddressLists' in kwargs:
+            ip_address_lists = kwargs['ipAddressLists']
+        if 'mappedSecrets' in kwargs:
+            mapped_secrets = kwargs['mappedSecrets']
+        if 'securityRules' in kwargs:
+            security_rules = kwargs['securityRules']
+        if 'urlLists' in kwargs:
+            url_lists = kwargs['urlLists']
+
         _setter("compartment_id", compartment_id)
         if application_lists is not None:
             _setter("application_lists", application_lists)
@@ -305,7 +329,41 @@ class _NetworkFirewallPolicyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationLists' in kwargs:
+            application_lists = kwargs['applicationLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'decryptionProfiles' in kwargs:
+            decryption_profiles = kwargs['decryptionProfiles']
+        if 'decryptionRules' in kwargs:
+            decryption_rules = kwargs['decryptionRules']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddressLists' in kwargs:
+            ip_address_lists = kwargs['ipAddressLists']
+        if 'isFirewallAttached' in kwargs:
+            is_firewall_attached = kwargs['isFirewallAttached']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mappedSecrets' in kwargs:
+            mapped_secrets = kwargs['mappedSecrets']
+        if 'securityRules' in kwargs:
+            security_rules = kwargs['securityRules']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'urlLists' in kwargs:
+            url_lists = kwargs['urlLists']
+
         if application_lists is not None:
             _setter("application_lists", application_lists)
         if compartment_id is not None:

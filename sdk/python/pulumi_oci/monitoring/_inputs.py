@@ -48,7 +48,13 @@ class AlarmSuppressionArgs:
              time_suppress_from: pulumi.Input[str],
              time_suppress_until: pulumi.Input[str],
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
         if description is not None:
@@ -117,7 +123,9 @@ class GetAlarmStatusesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -169,7 +177,9 @@ class GetAlarmsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -224,7 +234,9 @@ class GetMetricDataFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -282,7 +294,9 @@ class GetMetricsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

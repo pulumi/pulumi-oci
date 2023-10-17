@@ -40,7 +40,13 @@ class VbInstanceAlternateCustomEndpointArgs:
              hostname: pulumi.Input[str],
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if certificate_secret_id is not None:
             _setter("certificate_secret_id", certificate_secret_id)
@@ -116,7 +122,19 @@ class VbInstanceAttachmentArgs:
              target_instance_url: Optional[pulumi.Input[str]] = None,
              target_role: Optional[pulumi.Input[str]] = None,
              target_service_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
             _setter("is_implicit", is_implicit)
         if target_id is not None:
@@ -213,7 +231,13 @@ class VbInstanceCustomEndpointArgs:
              hostname: pulumi.Input[str],
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if certificate_secret_id is not None:
             _setter("certificate_secret_id", certificate_secret_id)
@@ -288,7 +312,19 @@ class VbInstanceIdcsInfoArgs:
              idcs_app_location_url: Optional[pulumi.Input[str]] = None,
              idcs_app_name: Optional[pulumi.Input[str]] = None,
              instance_primary_audience_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppDisplayName' in kwargs:
+            idcs_app_display_name = kwargs['idcsAppDisplayName']
+        if 'idcsAppId' in kwargs:
+            idcs_app_id = kwargs['idcsAppId']
+        if 'idcsAppLocationUrl' in kwargs:
+            idcs_app_location_url = kwargs['idcsAppLocationUrl']
+        if 'idcsAppName' in kwargs:
+            idcs_app_name = kwargs['idcsAppName']
+        if 'instancePrimaryAudienceUrl' in kwargs:
+            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
+
         if idcs_app_display_name is not None:
             _setter("idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
@@ -379,7 +415,9 @@ class GetVbInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

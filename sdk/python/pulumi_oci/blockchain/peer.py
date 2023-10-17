@@ -49,7 +49,13 @@ class PeerArgs:
              ocpu_allocation_param: pulumi.Input['PeerOcpuAllocationParamArgs'],
              role: pulumi.Input[str],
              alias: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+
         _setter("ad", ad)
         _setter("blockchain_platform_id", blockchain_platform_id)
         _setter("ocpu_allocation_param", ocpu_allocation_param)
@@ -170,7 +176,15 @@ class _PeerState:
              peer_key: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         if ad is not None:
             _setter("ad", ad)
         if alias is not None:

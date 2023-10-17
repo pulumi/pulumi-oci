@@ -75,7 +75,27 @@ class InstancePoolArgs:
              instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
              load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceDisplayNameFormatter' in kwargs:
+            instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
+        if 'instanceHostnameFormatter' in kwargs:
+            instance_hostname_formatter = kwargs['instanceHostnameFormatter']
+        if 'loadBalancers' in kwargs:
+            load_balancers = kwargs['loadBalancers']
+
         _setter("compartment_id", compartment_id)
         _setter("instance_configuration_id", instance_configuration_id)
         _setter("placement_configurations", placement_configurations)
@@ -304,7 +324,31 @@ class _InstancePoolState:
              size: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actualSize' in kwargs:
+            actual_size = kwargs['actualSize']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'instanceDisplayNameFormatter' in kwargs:
+            instance_display_name_formatter = kwargs['instanceDisplayNameFormatter']
+        if 'instanceHostnameFormatter' in kwargs:
+            instance_hostname_formatter = kwargs['instanceHostnameFormatter']
+        if 'loadBalancers' in kwargs:
+            load_balancers = kwargs['loadBalancers']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if actual_size is not None:
             _setter("actual_size", actual_size)
         if compartment_id is not None:

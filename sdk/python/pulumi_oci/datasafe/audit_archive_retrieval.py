@@ -59,7 +59,23 @@ class AuditArchiveRetrievalArgs:
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("end_date", end_date)
         _setter("start_date", start_date)
@@ -254,7 +270,37 @@ class _AuditArchiveRetrievalState:
              time_completed: Optional[pulumi.Input[str]] = None,
              time_of_expiry: Optional[pulumi.Input[str]] = None,
              time_requested: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditEventCount' in kwargs:
+            audit_event_count = kwargs['auditEventCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'errorInfo' in kwargs:
+            error_info = kwargs['errorInfo']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if 'timeOfExpiry' in kwargs:
+            time_of_expiry = kwargs['timeOfExpiry']
+        if 'timeRequested' in kwargs:
+            time_requested = kwargs['timeRequested']
+
         if audit_event_count is not None:
             _setter("audit_event_count", audit_event_count)
         if compartment_id is not None:

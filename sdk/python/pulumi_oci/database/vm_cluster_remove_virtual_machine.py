@@ -37,7 +37,13 @@ class VmClusterRemoveVirtualMachineArgs:
              _setter: Callable[[Any, Any], None],
              db_servers: pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]],
              vm_cluster_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         _setter("db_servers", db_servers)
         _setter("vm_cluster_id", vm_cluster_id)
 
@@ -190,7 +196,57 @@ class _VmClusterRemoveVirtualMachineState:
              time_zone: Optional[pulumi.Input[str]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
              vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpusEnabled' in kwargs:
+            cpus_enabled = kwargs['cpusEnabled']
+        if 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'giVersion' in kwargs:
+            gi_version = kwargs['giVersion']
+        if 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if 'isSparseDiskgroupEnabled' in kwargs:
+            is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
+        if 'lastPatchHistoryEntryId' in kwargs:
+            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'systemVersion' in kwargs:
+            system_version = kwargs['systemVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+        if 'vmClusterNetworkId' in kwargs:
+            vm_cluster_network_id = kwargs['vmClusterNetworkId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

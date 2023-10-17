@@ -50,7 +50,13 @@ class ApplicationImagePolicyConfigArgs:
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: pulumi.Input[bool],
              key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         _setter("is_policy_enabled", is_policy_enabled)
         if key_details is not None:
             _setter("key_details", key_details)
@@ -95,7 +101,11 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("kms_key_id", kms_key_id)
 
     @property
@@ -134,7 +144,13 @@ class ApplicationTraceConfigArgs:
              _setter: Callable[[Any, Any], None],
              domain_id: Optional[pulumi.Input[str]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if domain_id is not None:
             _setter("domain_id", domain_id)
         if is_enabled is not None:
@@ -188,7 +204,9 @@ class FunctionProvisionedConcurrencyConfigArgs:
              _setter: Callable[[Any, Any], None],
              strategy: pulumi.Input[str],
              count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("strategy", strategy)
         if count is not None:
             _setter("count", count)
@@ -237,7 +255,13 @@ class FunctionSourceDetailsArgs:
              _setter: Callable[[Any, Any], None],
              pbf_listing_id: pulumi.Input[str],
              source_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pbfListingId' in kwargs:
+            pbf_listing_id = kwargs['pbfListingId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
 
@@ -285,7 +309,11 @@ class FunctionTraceConfigArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -324,7 +352,9 @@ class GetApplicationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -376,7 +406,9 @@ class GetFunctionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -428,7 +460,9 @@ class GetFusionEnvironmentAdminUsersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -480,7 +514,9 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -532,7 +568,9 @@ class GetFusionEnvironmentFamiliesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -584,7 +622,9 @@ class GetFusionEnvironmentRefreshActivitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -636,7 +676,9 @@ class GetFusionEnvironmentScheduledActivitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -688,7 +730,9 @@ class GetFusionEnvironmentServiceAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -740,7 +784,9 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -792,7 +838,9 @@ class GetFusionEnvironmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -847,7 +895,9 @@ class GetPbfListingTriggersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -905,7 +955,9 @@ class GetPbfListingVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -963,7 +1015,9 @@ class GetPbfListingsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

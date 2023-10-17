@@ -13,34 +13,8 @@ namespace Pulumi.Oci.Database
     /// This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
     /// 
     /// Creates and starts a pluggable database in the specified container database.
+    /// Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
     /// Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testPluggableDatabase = new Oci.Database.PluggableDatabase("testPluggableDatabase", new()
-    ///     {
-    ///         ContainerDatabaseId = oci_database_database.Test_database.Id,
-    ///         PdbName = @var.Pluggable_database_pdb_name,
-    ///         DefinedTags = @var.Pluggable_database_defined_tags,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         PdbAdminPassword = @var.Pluggable_database_pdb_admin_password,
-    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_database_should_pdb_admin_account_be_locked,
-    ///         TdeWalletPassword = @var.Pluggable_database_tde_wallet_password,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -66,10 +40,22 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.PluggableDatabaseConnectionString>> ConnectionStrings { get; private set; } = null!;
 
         /// <summary>
+        /// The DB system administrator password of the Container Database.
+        /// </summary>
+        [Output("containerDatabaseAdminPassword")]
+        public Output<string> ContainerDatabaseAdminPassword { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
         /// </summary>
         [Output("containerDatabaseId")]
         public Output<string> ContainerDatabaseId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+        /// </summary>
+        [Output("convertToRegularTrigger")]
+        public Output<int?> ConvertToRegularTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -108,16 +94,42 @@ namespace Pulumi.Oci.Database
         public Output<string> PdbAdminPassword { get; private set; } = null!;
 
         /// <summary>
+        /// The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+        /// 
+        /// Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+        /// </summary>
+        [Output("pdbCreationTypeDetails")]
+        public Output<Outputs.PluggableDatabasePdbCreationTypeDetails> PdbCreationTypeDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
         [Output("pdbName")]
         public Output<string> PdbName { get; private set; } = null!;
 
         /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        [Output("pdbNodeLevelDetails")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasePdbNodeLevelDetail>> PdbNodeLevelDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The configuration of the Pluggable Database Management service.
         /// </summary>
         [Output("pluggableDatabaseManagementConfigs")]
         public Output<ImmutableArray<Outputs.PluggableDatabasePluggableDatabaseManagementConfig>> PluggableDatabaseManagementConfigs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Output("refreshTrigger")]
+        public Output<int?> RefreshTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        [Output("refreshableCloneConfigs")]
+        public Output<ImmutableArray<Outputs.PluggableDatabaseRefreshableCloneConfig>> RefreshableCloneConfigs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
@@ -128,6 +140,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("rotateKeyTrigger")]
         public Output<int?> RotateKeyTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether to take Pluggable Database Backup after the operation.
+        /// </summary>
+        [Output("shouldCreatePdbBackup")]
+        public Output<bool> ShouldCreatePdbBackup { get; private set; } = null!;
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
@@ -178,6 +196,7 @@ namespace Pulumi.Oci.Database
                 Version = Utilities.Version,
                 AdditionalSecretOutputs =
                 {
+                    "containerDatabaseAdminPassword",
                     "pdbAdminPassword",
                     "tdeWalletPassword",
                 },
@@ -204,11 +223,33 @@ namespace Pulumi.Oci.Database
 
     public sealed class PluggableDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        [Input("containerDatabaseAdminPassword")]
+        private Input<string>? _containerDatabaseAdminPassword;
+
+        /// <summary>
+        /// The DB system administrator password of the Container Database.
+        /// </summary>
+        public Input<string>? ContainerDatabaseAdminPassword
+        {
+            get => _containerDatabaseAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _containerDatabaseAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
         /// </summary>
         [Input("containerDatabaseId", required: true)]
         public Input<string> ContainerDatabaseId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+        /// </summary>
+        [Input("convertToRegularTrigger")]
+        public Input<int>? ConvertToRegularTrigger { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -251,10 +292,24 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+        /// 
+        /// Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+        /// </summary>
+        [Input("pdbCreationTypeDetails")]
+        public Input<Inputs.PluggableDatabasePdbCreationTypeDetailsArgs>? PdbCreationTypeDetails { get; set; }
+
+        /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
         [Input("pdbName", required: true)]
         public Input<string> PdbName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
@@ -265,6 +320,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<int>? RotateKeyTrigger { get; set; }
+
+        /// <summary>
+        /// Indicates whether to take Pluggable Database Backup after the operation.
+        /// </summary>
+        [Input("shouldCreatePdbBackup")]
+        public Input<bool>? ShouldCreatePdbBackup { get; set; }
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
@@ -314,11 +375,33 @@ namespace Pulumi.Oci.Database
             set => _connectionStrings = value;
         }
 
+        [Input("containerDatabaseAdminPassword")]
+        private Input<string>? _containerDatabaseAdminPassword;
+
+        /// <summary>
+        /// The DB system administrator password of the Container Database.
+        /// </summary>
+        public Input<string>? ContainerDatabaseAdminPassword
+        {
+            get => _containerDatabaseAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _containerDatabaseAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
         /// </summary>
         [Input("containerDatabaseId")]
         public Input<string>? ContainerDatabaseId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+        /// </summary>
+        [Input("convertToRegularTrigger")]
+        public Input<int>? ConvertToRegularTrigger { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -379,10 +462,30 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+        /// 
+        /// Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+        /// </summary>
+        [Input("pdbCreationTypeDetails")]
+        public Input<Inputs.PluggableDatabasePdbCreationTypeDetailsGetArgs>? PdbCreationTypeDetails { get; set; }
+
+        /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         /// </summary>
         [Input("pdbName")]
         public Input<string>? PdbName { get; set; }
+
+        [Input("pdbNodeLevelDetails")]
+        private InputList<Inputs.PluggableDatabasePdbNodeLevelDetailGetArgs>? _pdbNodeLevelDetails;
+
+        /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasePdbNodeLevelDetailGetArgs> PdbNodeLevelDetails
+        {
+            get => _pdbNodeLevelDetails ?? (_pdbNodeLevelDetails = new InputList<Inputs.PluggableDatabasePdbNodeLevelDetailGetArgs>());
+            set => _pdbNodeLevelDetails = value;
+        }
 
         [Input("pluggableDatabaseManagementConfigs")]
         private InputList<Inputs.PluggableDatabasePluggableDatabaseManagementConfigGetArgs>? _pluggableDatabaseManagementConfigs;
@@ -397,6 +500,24 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        [Input("refreshableCloneConfigs")]
+        private InputList<Inputs.PluggableDatabaseRefreshableCloneConfigGetArgs>? _refreshableCloneConfigs;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        public InputList<Inputs.PluggableDatabaseRefreshableCloneConfigGetArgs> RefreshableCloneConfigs
+        {
+            get => _refreshableCloneConfigs ?? (_refreshableCloneConfigs = new InputList<Inputs.PluggableDatabaseRefreshableCloneConfigGetArgs>());
+            set => _refreshableCloneConfigs = value;
+        }
+
+        /// <summary>
         /// (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
         /// 
         /// 
@@ -405,6 +526,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<int>? RotateKeyTrigger { get; set; }
+
+        /// <summary>
+        /// Indicates whether to take Pluggable Database Backup after the operation.
+        /// </summary>
+        [Input("shouldCreatePdbBackup")]
+        public Input<bool>? ShouldCreatePdbBackup { get; set; }
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.

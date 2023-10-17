@@ -51,7 +51,17 @@ class AlertArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alertId' in kwargs:
+            alert_id = kwargs['alertId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("alert_id", alert_id)
         if comment is not None:
             _setter("comment", comment)
@@ -245,7 +255,41 @@ class _AlertState:
              target_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alertId' in kwargs:
+            alert_id = kwargs['alertId']
+        if 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'featureDetails' in kwargs:
+            feature_details = kwargs['featureDetails']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+        if 'operationTime' in kwargs:
+            operation_time = kwargs['operationTime']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'targetNames' in kwargs:
+            target_names = kwargs['targetNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if alert_id is not None:
             _setter("alert_id", alert_id)
         if alert_type is not None:

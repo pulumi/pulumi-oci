@@ -23,6 +23,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
 
     public static final AutonomousVmClusterState Empty = new AutonomousVmClusterState();
 
+    @Import(name="autonomousDataStoragePercentage")
+    private @Nullable Output<Double> autonomousDataStoragePercentage;
+
+    public Optional<Output<Double>> autonomousDataStoragePercentage() {
+        return Optional.ofNullable(this.autonomousDataStoragePercentage);
+    }
+
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
@@ -141,6 +148,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Integer>> cpuCoreCountPerNode() {
         return Optional.ofNullable(this.cpuCoreCountPerNode);
+    }
+
+    @Import(name="cpuPercentage")
+    private @Nullable Output<Double> cpuPercentage;
+
+    public Optional<Output<Double>> cpuPercentage() {
+        return Optional.ofNullable(this.cpuPercentage);
     }
 
     /**
@@ -435,6 +449,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.nodeCount);
     }
 
+    @Import(name="nonProvisionableAutonomousContainerDatabases")
+    private @Nullable Output<Integer> nonProvisionableAutonomousContainerDatabases;
+
+    public Optional<Output<Integer>> nonProvisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.nonProvisionableAutonomousContainerDatabases);
+    }
+
     /**
      * The number of enabled OCPU cores.
      * 
@@ -448,6 +469,20 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Double>> ocpusEnabled() {
         return Optional.ofNullable(this.ocpusEnabled);
+    }
+
+    @Import(name="provisionedAutonomousContainerDatabases")
+    private @Nullable Output<Integer> provisionedAutonomousContainerDatabases;
+
+    public Optional<Output<Integer>> provisionedAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionedAutonomousContainerDatabases);
+    }
+
+    @Import(name="provisionedCpus")
+    private @Nullable Output<Double> provisionedCpus;
+
+    public Optional<Output<Double>> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
 
     /**
@@ -467,6 +502,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Integer>> reclaimableCpus() {
         return Optional.ofNullable(this.reclaimableCpus);
+    }
+
+    @Import(name="reservedCpus")
+    private @Nullable Output<Double> reservedCpus;
+
+    public Optional<Output<Double>> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
 
     /**
@@ -574,6 +616,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.timeZone);
     }
 
+    @Import(name="totalAutonomousDataStorageInTbs")
+    private @Nullable Output<Double> totalAutonomousDataStorageInTbs;
+
+    public Optional<Output<Double>> totalAutonomousDataStorageInTbs() {
+        return Optional.ofNullable(this.totalAutonomousDataStorageInTbs);
+    }
+
     /**
      * The total number of Autonomous Container Databases that can be created.
      * 
@@ -613,6 +662,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     private AutonomousVmClusterState() {}
 
     private AutonomousVmClusterState(AutonomousVmClusterState $) {
+        this.autonomousDataStoragePercentage = $.autonomousDataStoragePercentage;
         this.autonomousDataStorageSizeInTbs = $.autonomousDataStorageSizeInTbs;
         this.availableAutonomousDataStorageSizeInTbs = $.availableAutonomousDataStorageSizeInTbs;
         this.availableContainerDatabases = $.availableContainerDatabases;
@@ -621,6 +671,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
         this.cpuCoreCountPerNode = $.cpuCoreCountPerNode;
+        this.cpuPercentage = $.cpuPercentage;
         this.cpusEnabled = $.cpusEnabled;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
@@ -641,8 +692,12 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.nodeCount = $.nodeCount;
+        this.nonProvisionableAutonomousContainerDatabases = $.nonProvisionableAutonomousContainerDatabases;
         this.ocpusEnabled = $.ocpusEnabled;
+        this.provisionedAutonomousContainerDatabases = $.provisionedAutonomousContainerDatabases;
+        this.provisionedCpus = $.provisionedCpus;
         this.reclaimableCpus = $.reclaimableCpus;
+        this.reservedCpus = $.reservedCpus;
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
         this.state = $.state;
@@ -650,6 +705,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.timeDatabaseSslCertificateExpires = $.timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = $.timeOrdsCertificateExpires;
         this.timeZone = $.timeZone;
+        this.totalAutonomousDataStorageInTbs = $.totalAutonomousDataStorageInTbs;
         this.totalContainerDatabases = $.totalContainerDatabases;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
     }
@@ -670,6 +726,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
 
         public Builder(AutonomousVmClusterState defaults) {
             $ = new AutonomousVmClusterState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder autonomousDataStoragePercentage(@Nullable Output<Double> autonomousDataStoragePercentage) {
+            $.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+            return this;
+        }
+
+        public Builder autonomousDataStoragePercentage(Double autonomousDataStoragePercentage) {
+            return autonomousDataStoragePercentage(Output.of(autonomousDataStoragePercentage));
         }
 
         /**
@@ -838,6 +903,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
             return cpuCoreCountPerNode(Output.of(cpuCoreCountPerNode));
+        }
+
+        public Builder cpuPercentage(@Nullable Output<Double> cpuPercentage) {
+            $.cpuPercentage = cpuPercentage;
+            return this;
+        }
+
+        public Builder cpuPercentage(Double cpuPercentage) {
+            return cpuPercentage(Output.of(cpuPercentage));
         }
 
         /**
@@ -1278,6 +1352,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
             return nodeCount(Output.of(nodeCount));
         }
 
+        public Builder nonProvisionableAutonomousContainerDatabases(@Nullable Output<Integer> nonProvisionableAutonomousContainerDatabases) {
+            $.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
+            return this;
+        }
+
+        public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
+            return nonProvisionableAutonomousContainerDatabases(Output.of(nonProvisionableAutonomousContainerDatabases));
+        }
+
         /**
          * @param ocpusEnabled The number of enabled OCPU cores.
          * 
@@ -1297,6 +1380,24 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder ocpusEnabled(Double ocpusEnabled) {
             return ocpusEnabled(Output.of(ocpusEnabled));
+        }
+
+        public Builder provisionedAutonomousContainerDatabases(@Nullable Output<Integer> provisionedAutonomousContainerDatabases) {
+            $.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            return this;
+        }
+
+        public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
+            return provisionedAutonomousContainerDatabases(Output.of(provisionedAutonomousContainerDatabases));
+        }
+
+        public Builder provisionedCpus(@Nullable Output<Double> provisionedCpus) {
+            $.provisionedCpus = provisionedCpus;
+            return this;
+        }
+
+        public Builder provisionedCpus(Double provisionedCpus) {
+            return provisionedCpus(Output.of(provisionedCpus));
         }
 
         /**
@@ -1322,6 +1423,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder reclaimableCpus(Integer reclaimableCpus) {
             return reclaimableCpus(Output.of(reclaimableCpus));
+        }
+
+        public Builder reservedCpus(@Nullable Output<Double> reservedCpus) {
+            $.reservedCpus = reservedCpus;
+            return this;
+        }
+
+        public Builder reservedCpus(Double reservedCpus) {
+            return reservedCpus(Output.of(reservedCpus));
         }
 
         /**
@@ -1469,6 +1579,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
+        }
+
+        public Builder totalAutonomousDataStorageInTbs(@Nullable Output<Double> totalAutonomousDataStorageInTbs) {
+            $.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
+            return this;
+        }
+
+        public Builder totalAutonomousDataStorageInTbs(Double totalAutonomousDataStorageInTbs) {
+            return totalAutonomousDataStorageInTbs(Output.of(totalAutonomousDataStorageInTbs));
         }
 
         /**

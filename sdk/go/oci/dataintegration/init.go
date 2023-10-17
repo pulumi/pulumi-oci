@@ -25,8 +25,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Workspace{}
 	case "oci:DataIntegration/workspaceApplication:WorkspaceApplication":
 		r = &WorkspaceApplication{}
+	case "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest":
+		r = &WorkspaceExportRequest{}
 	case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
 		r = &WorkspaceFolder{}
+	case "oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest":
+		r = &WorkspaceImportRequest{}
 	case "oci:DataIntegration/workspaceProject:WorkspaceProject":
 		r = &WorkspaceProject{}
 	default:
@@ -54,7 +58,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataIntegration/workspaceExportRequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataIntegration/workspaceFolder",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataIntegration/workspaceImportRequest",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

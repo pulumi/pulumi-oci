@@ -53,7 +53,21 @@ class ExternalExadataInfrastructureArgs:
              discovery_key: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
              storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbSystemIds' in kwargs:
+            db_system_ids = kwargs['dbSystemIds']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'discoveryKey' in kwargs:
+            discovery_key = kwargs['discoveryKey']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'storageServerNames' in kwargs:
+            storage_server_names = kwargs['storageServerNames']
+
         _setter("compartment_id", compartment_id)
         _setter("db_system_ids", db_system_ids)
         _setter("display_name", display_name)
@@ -229,7 +243,39 @@ class _ExternalExadataInfrastructureState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseCompartments' in kwargs:
+            database_compartments = kwargs['databaseCompartments']
+        if 'databaseSystems' in kwargs:
+            database_systems = kwargs['databaseSystems']
+        if 'dbSystemIds' in kwargs:
+            db_system_ids = kwargs['dbSystemIds']
+        if 'discoveryKey' in kwargs:
+            discovery_key = kwargs['discoveryKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'rackSize' in kwargs:
+            rack_size = kwargs['rackSize']
+        if 'storageGrids' in kwargs:
+            storage_grids = kwargs['storageGrids']
+        if 'storageServerNames' in kwargs:
+            storage_server_names = kwargs['storageServerNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if compartment_id is not None:

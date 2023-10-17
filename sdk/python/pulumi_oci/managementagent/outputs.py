@@ -57,7 +57,9 @@ class ManagementAgentManagementAgentProperty(dict):
              name: Optional[str] = None,
              units: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if units is not None:
@@ -158,7 +160,23 @@ class ManagementAgentPluginList(dict):
              plugin_status: Optional[str] = None,
              plugin_status_message: Optional[str] = None,
              plugin_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pluginDisplayName' in kwargs:
+            plugin_display_name = kwargs['pluginDisplayName']
+        if 'pluginId' in kwargs:
+            plugin_id = kwargs['pluginId']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'pluginStatus' in kwargs:
+            plugin_status = kwargs['pluginStatus']
+        if 'pluginStatusMessage' in kwargs:
+            plugin_status_message = kwargs['pluginStatusMessage']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
         if plugin_display_name is not None:
@@ -258,7 +276,17 @@ class GetManagementAgentAvailableHistoriesAvailabilityHistoryResult(dict):
              management_agent_id: str,
              time_availability_status_ended: str,
              time_availability_status_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityStatus' in kwargs:
+            availability_status = kwargs['availabilityStatus']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'timeAvailabilityStatusEnded' in kwargs:
+            time_availability_status_ended = kwargs['timeAvailabilityStatusEnded']
+        if 'timeAvailabilityStatusStarted' in kwargs:
+            time_availability_status_started = kwargs['timeAvailabilityStatusStarted']
+
         _setter("availability_status", availability_status)
         _setter("management_agent_id", management_agent_id)
         _setter("time_availability_status_ended", time_availability_status_ended)
@@ -315,7 +343,9 @@ class GetManagementAgentAvailableHistoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -356,7 +386,9 @@ class GetManagementAgentCountItemResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              dimensions: Sequence['outputs.GetManagementAgentCountItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("dimensions", dimensions)
 
@@ -408,7 +440,17 @@ class GetManagementAgentCountItemDimensionResult(dict):
              install_type: str,
              platform_type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityStatus' in kwargs:
+            availability_status = kwargs['availabilityStatus']
+        if 'hasPlugins' in kwargs:
+            has_plugins = kwargs['hasPlugins']
+        if 'installType' in kwargs:
+            install_type = kwargs['installType']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("availability_status", availability_status)
         _setter("has_plugins", has_plugins)
         _setter("install_type", install_type)
@@ -477,7 +519,9 @@ class GetManagementAgentImagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -557,7 +601,21 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
              size: float,
              state: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageObjectStorageDetails' in kwargs:
+            image_object_storage_details = kwargs['imageObjectStorageDetails']
+        if 'objectUrl' in kwargs:
+            object_url = kwargs['objectUrl']
+        if 'packageArchitectureType' in kwargs:
+            package_architecture_type = kwargs['packageArchitectureType']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'platformName' in kwargs:
+            platform_name = kwargs['platformName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("checksum", checksum)
         _setter("id", id)
         _setter("image_object_storage_details", image_object_storage_details)
@@ -690,7 +748,15 @@ class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult
              object_bucket: str,
              object_namespace: str,
              object_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectBucket' in kwargs:
+            object_bucket = kwargs['objectBucket']
+        if 'objectNamespace' in kwargs:
+            object_namespace = kwargs['objectNamespace']
+        if 'objectUrl' in kwargs:
+            object_url = kwargs['objectUrl']
+
         _setter("checksum", checksum)
         _setter("object", object)
         _setter("object_bucket", object_bucket)
@@ -756,7 +822,9 @@ class GetManagementAgentInstallKeysFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -841,7 +909,29 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
              time_created: str,
              time_expires: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedKeyInstallCount' in kwargs:
+            allowed_key_install_count = kwargs['allowedKeyInstallCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdByPrincipalId' in kwargs:
+            created_by_principal_id = kwargs['createdByPrincipalId']
+        if 'currentKeyInstallCount' in kwargs:
+            current_key_install_count = kwargs['currentKeyInstallCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("allowed_key_install_count", allowed_key_install_count)
         _setter("compartment_id", compartment_id)
         _setter("created_by_principal_id", created_by_principal_id)
@@ -984,7 +1074,9 @@ class GetManagementAgentManagementAgentPropertyResult(dict):
              name: str,
              units: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("units", units)
         _setter("values", values)
@@ -1033,7 +1125,9 @@ class GetManagementAgentPluginCountItemResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              dimensions: Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("dimensions", dimensions)
 
@@ -1073,7 +1167,13 @@ class GetManagementAgentPluginCountItemDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              plugin_display_name: str,
              plugin_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pluginDisplayName' in kwargs:
+            plugin_display_name = kwargs['pluginDisplayName']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+
         _setter("plugin_display_name", plugin_display_name)
         _setter("plugin_name", plugin_name)
 
@@ -1133,7 +1233,23 @@ class GetManagementAgentPluginListResult(dict):
              plugin_status: str,
              plugin_status_message: str,
              plugin_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pluginDisplayName' in kwargs:
+            plugin_display_name = kwargs['pluginDisplayName']
+        if 'pluginId' in kwargs:
+            plugin_id = kwargs['pluginId']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'pluginStatus' in kwargs:
+            plugin_status = kwargs['pluginStatus']
+        if 'pluginStatusMessage' in kwargs:
+            plugin_status_message = kwargs['pluginStatusMessage']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+
         _setter("is_enabled", is_enabled)
         _setter("plugin_display_name", plugin_display_name)
         _setter("plugin_id", plugin_id)
@@ -1220,7 +1336,9 @@ class GetManagementAgentPluginsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1288,7 +1406,15 @@ class GetManagementAgentPluginsManagementAgentPluginResult(dict):
              state: str,
              supported_platform_types: Sequence[str],
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isConsoleDeployable' in kwargs:
+            is_console_deployable = kwargs['isConsoleDeployable']
+        if 'supportedPlatformTypes' in kwargs:
+            supported_platform_types = kwargs['supportedPlatformTypes']
+
         _setter("description", description)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -1385,7 +1511,9 @@ class GetManagementAgentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1530,7 +1658,55 @@ class GetManagementAgentsManagementAgentResult(dict):
              time_last_heartbeat: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityStatus' in kwargs:
+            availability_status = kwargs['availabilityStatus']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployPluginsIds' in kwargs:
+            deploy_plugins_ids = kwargs['deployPluginsIds']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostId' in kwargs:
+            host_id = kwargs['hostId']
+        if 'installKeyId' in kwargs:
+            install_key_id = kwargs['installKeyId']
+        if 'installPath' in kwargs:
+            install_path = kwargs['installPath']
+        if 'installType' in kwargs:
+            install_type = kwargs['installType']
+        if 'isAgentAutoUpgradable' in kwargs:
+            is_agent_auto_upgradable = kwargs['isAgentAutoUpgradable']
+        if 'isCustomerDeployed' in kwargs:
+            is_customer_deployed = kwargs['isCustomerDeployed']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedAgentId' in kwargs:
+            managed_agent_id = kwargs['managedAgentId']
+        if 'managementAgentProperties' in kwargs:
+            management_agent_properties = kwargs['managementAgentProperties']
+        if 'platformName' in kwargs:
+            platform_name = kwargs['platformName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'pluginLists' in kwargs:
+            plugin_lists = kwargs['pluginLists']
+        if 'resourceArtifactVersion' in kwargs:
+            resource_artifact_version = kwargs['resourceArtifactVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastHeartbeat' in kwargs:
+            time_last_heartbeat = kwargs['timeLastHeartbeat']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("availability_status", availability_status)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1793,7 +1969,9 @@ class GetManagementAgentsManagementAgentManagementAgentPropertyResult(dict):
              name: str,
              units: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("units", units)
         _setter("values", values)
@@ -1862,7 +2040,23 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
              plugin_status: str,
              plugin_status_message: str,
              plugin_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pluginDisplayName' in kwargs:
+            plugin_display_name = kwargs['pluginDisplayName']
+        if 'pluginId' in kwargs:
+            plugin_id = kwargs['pluginId']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'pluginStatus' in kwargs:
+            plugin_status = kwargs['pluginStatus']
+        if 'pluginStatusMessage' in kwargs:
+            plugin_status_message = kwargs['pluginStatusMessage']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+
         _setter("is_enabled", is_enabled)
         _setter("plugin_display_name", plugin_display_name)
         _setter("plugin_id", plugin_id)

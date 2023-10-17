@@ -76,7 +76,15 @@ class IndexKey(dict):
              column_name: str,
              json_field_type: Optional[str] = None,
              json_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+
         _setter("column_name", column_name)
         if json_field_type is not None:
             _setter("json_field_type", json_field_type)
@@ -158,7 +166,13 @@ class TableSchema(dict):
              primary_keys: Optional[Sequence[str]] = None,
              shard_keys: Optional[Sequence[str]] = None,
              ttl: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+
         if columns is not None:
             _setter("columns", columns)
         if identities is not None:
@@ -269,7 +283,17 @@ class TableSchemaColumn(dict):
              is_nullable: Optional[bool] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+
         if default_value is not None:
             _setter("default_value", default_value)
         if is_as_uuid is not None:
@@ -376,7 +400,15 @@ class TableSchemaIdentity(dict):
              column_name: Optional[str] = None,
              is_always: Optional[bool] = None,
              is_null: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+
         if column_name is not None:
             _setter("column_name", column_name)
         if is_always is not None:
@@ -463,7 +495,17 @@ class TableTableLimits(dict):
              max_storage_in_gbs: int,
              max_write_units: int,
              capacity_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+
         _setter("max_read_units", max_read_units)
         _setter("max_storage_in_gbs", max_storage_in_gbs)
         _setter("max_write_units", max_write_units)
@@ -530,7 +572,15 @@ class GetIndexKeyResult(dict):
              column_name: str,
              json_field_type: str,
              json_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+
         _setter("column_name", column_name)
         _setter("json_field_type", json_field_type)
         _setter("json_path", json_path)
@@ -581,7 +631,9 @@ class GetIndexesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -655,7 +707,21 @@ class GetIndexesIndexCollectionResult(dict):
              table_id: str,
              table_name: str,
              table_name_or_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isIfNotExists' in kwargs:
+            is_if_not_exists = kwargs['isIfNotExists']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("is_if_not_exists", is_if_not_exists)
@@ -765,7 +831,15 @@ class GetIndexesIndexCollectionKeyResult(dict):
              column_name: str,
              json_field_type: str,
              json_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+
         _setter("column_name", column_name)
         _setter("json_field_type", json_field_type)
         _setter("json_path", json_path)
@@ -826,7 +900,13 @@ class GetTableSchemaResult(dict):
              primary_keys: Sequence[str],
              shard_keys: Sequence[str],
              ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+
         _setter("columns", columns)
         _setter("identities", identities)
         _setter("primary_keys", primary_keys)
@@ -909,7 +989,17 @@ class GetTableSchemaColumnResult(dict):
              is_nullable: bool,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+
         _setter("default_value", default_value)
         _setter("is_as_uuid", is_as_uuid)
         _setter("is_generated", is_generated)
@@ -989,7 +1079,15 @@ class GetTableSchemaIdentityResult(dict):
              column_name: str,
              is_always: bool,
              is_null: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+
         _setter("column_name", column_name)
         _setter("is_always", is_always)
         _setter("is_null", is_null)
@@ -1046,7 +1144,17 @@ class GetTableTableLimitResult(dict):
              max_read_units: int,
              max_storage_in_gbs: int,
              max_write_units: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+
         _setter("capacity_mode", capacity_mode)
         _setter("max_read_units", max_read_units)
         _setter("max_storage_in_gbs", max_storage_in_gbs)
@@ -1106,7 +1214,9 @@ class GetTablesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1200,7 +1310,31 @@ class GetTablesTableCollectionResult(dict):
              time_created: str,
              time_of_expiration: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("ddl_statement", ddl_statement)
         _setter("defined_tags", defined_tags)
@@ -1356,7 +1490,13 @@ class GetTablesTableCollectionSchemaResult(dict):
              primary_keys: Sequence[str],
              shard_keys: Sequence[str],
              ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+
         _setter("columns", columns)
         _setter("identities", identities)
         _setter("primary_keys", primary_keys)
@@ -1419,7 +1559,17 @@ class GetTablesTableCollectionSchemaColumnResult(dict):
              is_nullable: bool,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+
         _setter("default_value", default_value)
         _setter("is_as_uuid", is_as_uuid)
         _setter("is_generated", is_generated)
@@ -1479,7 +1629,15 @@ class GetTablesTableCollectionSchemaIdentityResult(dict):
              column_name: str,
              is_always: bool,
              is_null: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+
         _setter("column_name", column_name)
         _setter("is_always", is_always)
         _setter("is_null", is_null)
@@ -1527,7 +1685,17 @@ class GetTablesTableCollectionTableLimitResult(dict):
              max_read_units: int,
              max_storage_in_gbs: int,
              max_write_units: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+
         _setter("capacity_mode", capacity_mode)
         _setter("max_read_units", max_read_units)
         _setter("max_storage_in_gbs", max_storage_in_gbs)

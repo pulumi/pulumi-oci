@@ -62,6 +62,7 @@ public final class GetDbHomeDatabase {
      */
     private List<String> oneOffPatches;
     private String pdbName;
+    private List<String> pluggableDatabases;
     private String sidPrefix;
     /**
      * @return The current state of the Database Home.
@@ -166,6 +167,9 @@ public final class GetDbHomeDatabase {
     public String pdbName() {
         return this.pdbName;
     }
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases;
+    }
     public String sidPrefix() {
         return this.sidPrefix;
     }
@@ -222,6 +226,7 @@ public final class GetDbHomeDatabase {
         private String ncharacterSet;
         private List<String> oneOffPatches;
         private String pdbName;
+        private List<String> pluggableDatabases;
         private String sidPrefix;
         private String state;
         private String tdeWalletPassword;
@@ -251,6 +256,7 @@ public final class GetDbHomeDatabase {
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -369,6 +375,14 @@ public final class GetDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(List<String> pluggableDatabases) {
+            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
@@ -420,6 +434,7 @@ public final class GetDbHomeDatabase {
             o.ncharacterSet = ncharacterSet;
             o.oneOffPatches = oneOffPatches;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.sidPrefix = sidPrefix;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

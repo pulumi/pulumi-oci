@@ -46,7 +46,23 @@ class DefaultSecurityListArgs:
              egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'egressSecurityRules' in kwargs:
+            egress_security_rules = kwargs['egressSecurityRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ingressSecurityRules' in kwargs:
+            ingress_security_rules = kwargs['ingressSecurityRules']
+
         _setter("manage_default_resource_id", manage_default_resource_id)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -164,7 +180,25 @@ class _DefaultSecurityListState:
              manage_default_resource_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'egressSecurityRules' in kwargs:
+            egress_security_rules = kwargs['egressSecurityRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ingressSecurityRules' in kwargs:
+            ingress_security_rules = kwargs['ingressSecurityRules']
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

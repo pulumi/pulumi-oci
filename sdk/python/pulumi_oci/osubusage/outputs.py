@@ -75,7 +75,29 @@ class GetCommitmentAggregatedsComputedUsageAggregatedResult(dict):
              subscription_id: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatedComputedUsages' in kwargs:
+            aggregated_computed_usages = kwargs['aggregatedComputedUsages']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'parentProducts' in kwargs:
+            parent_products = kwargs['parentProducts']
+        if 'parentSubscribedServiceId' in kwargs:
+            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
+        if 'planNumber' in kwargs:
+            plan_number = kwargs['planNumber']
+        if 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if 'rateCardId' in kwargs:
+            rate_card_id = kwargs['rateCardId']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("aggregated_computed_usages", aggregated_computed_usages)
         _setter("currency_code", currency_code)
         _setter("parent_products", parent_products)
@@ -211,7 +233,17 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResu
              quantity: str,
              time_metered_on: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costUnrounded' in kwargs:
+            cost_unrounded = kwargs['costUnrounded']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'timeMeteredOn' in kwargs:
+            time_metered_on = kwargs['timeMeteredOn']
+
         _setter("cost", cost)
         _setter("cost_unrounded", cost_unrounded)
         _setter("data_center", data_center)
@@ -325,7 +357,21 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProd
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -430,7 +476,21 @@ class GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -517,7 +577,9 @@ class GetCommitmentAggregatedsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -581,7 +643,21 @@ class GetComputedUsageParentProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -686,7 +762,21 @@ class GetComputedUsageProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -866,7 +956,51 @@ class GetComputedUsagesComputedUsageResult(dict):
              type: str,
              unit_of_measure: str,
              usage_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitmentServiceId' in kwargs:
+            commitment_service_id = kwargs['commitmentServiceId']
+        if 'computeSource' in kwargs:
+            compute_source = kwargs['computeSource']
+        if 'computedUsageId' in kwargs:
+            computed_usage_id = kwargs['computedUsageId']
+        if 'costRounded' in kwargs:
+            cost_rounded = kwargs['costRounded']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'isInvoiced' in kwargs:
+            is_invoiced = kwargs['isInvoiced']
+        if 'mqsMessageId' in kwargs:
+            mqs_message_id = kwargs['mqsMessageId']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'originalUsageNumber' in kwargs:
+            original_usage_number = kwargs['originalUsageNumber']
+        if 'parentProducts' in kwargs:
+            parent_products = kwargs['parentProducts']
+        if 'parentSubscribedServiceId' in kwargs:
+            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
+        if 'planNumber' in kwargs:
+            plan_number = kwargs['planNumber']
+        if 'rateCardId' in kwargs:
+            rate_card_id = kwargs['rateCardId']
+        if 'rateCardTierdId' in kwargs:
+            rate_card_tierd_id = kwargs['rateCardTierdId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeMeteredOn' in kwargs:
+            time_metered_on = kwargs['timeMeteredOn']
+        if 'timeOfArrival' in kwargs:
+            time_of_arrival = kwargs['timeOfArrival']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+        if 'usageNumber' in kwargs:
+            usage_number = kwargs['usageNumber']
+
         _setter("commitment_service_id", commitment_service_id)
         _setter("compute_source", compute_source)
         _setter("computed_usage_id", computed_usage_id)
@@ -1139,7 +1273,21 @@ class GetComputedUsagesComputedUsageParentProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1244,7 +1392,21 @@ class GetComputedUsagesComputedUsageProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1331,7 +1493,9 @@ class GetComputedUsagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

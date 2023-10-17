@@ -26,31 +26,47 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     public static final SddcState Empty = new SddcState();
 
     /**
-     * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * 
+     * @deprecated
+     * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="actualEsxiHostsCount")
     private @Nullable Output<Integer> actualEsxiHostsCount;
 
     /**
-     * @return The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * 
+     * @deprecated
+     * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<Integer>> actualEsxiHostsCount() {
         return Optional.ofNullable(this.actualEsxiHostsCount);
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     * @deprecated
+     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="capacityReservationId")
     private @Nullable Output<String> capacityReservationId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     * @deprecated
+     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
     }
@@ -71,31 +87,47 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * 
+     * @deprecated
+     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="computeAvailabilityDomain")
     private @Nullable Output<String> computeAvailabilityDomain;
 
     /**
-     * @return The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * @return (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * 
+     * @deprecated
+     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> computeAvailabilityDomain() {
         return Optional.ofNullable(this.computeAvailabilityDomain);
     }
 
     /**
-     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     * @deprecated
+     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="datastores")
     private @Nullable Output<List<SddcDatastoreArgs>> datastores;
 
     /**
-     * @return A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * @return (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     * @deprecated
+     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<List<SddcDatastoreArgs>>> datastores() {
         return Optional.ofNullable(this.datastores);
     }
@@ -131,20 +163,28 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
+     * @deprecated
+     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="esxiHostsCount")
     private @Nullable Output<Integer> esxiHostsCount;
 
     /**
-     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * @return (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
+     * @deprecated
+     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<Integer>> esxiHostsCount() {
         return Optional.ofNullable(this.esxiHostsCount);
     }
@@ -195,31 +235,47 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Import(name="hcxInitialPassword")
     private @Nullable Output<String> hcxInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     public Optional<Output<String>> hcxInitialPassword() {
         return Optional.ofNullable(this.hcxInitialPassword);
     }
 
     /**
-     * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * 
+     * @deprecated
+     * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="hcxOnPremKey")
     private @Nullable Output<String> hcxOnPremKey;
 
     /**
-     * @return The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * 
+     * @deprecated
+     * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> hcxOnPremKey() {
         return Optional.ofNullable(this.hcxOnPremKey);
     }
@@ -255,61 +311,93 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * 
+     * @deprecated
+     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="hcxVlanId")
     private @Nullable Output<String> hcxVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * 
+     * @deprecated
+     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> hcxVlanId() {
         return Optional.ofNullable(this.hcxVlanId);
     }
 
     /**
-     * The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     * @deprecated
+     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="initialHostOcpuCount")
     private @Nullable Output<Double> initialHostOcpuCount;
 
     /**
-     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     * @deprecated
+     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<Double>> initialHostOcpuCount() {
         return Optional.ofNullable(this.initialHostOcpuCount);
     }
 
     /**
-     * The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     * @deprecated
+     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="initialHostShapeName")
     private @Nullable Output<String> initialHostShapeName;
 
     /**
-     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     * @deprecated
+     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> initialHostShapeName() {
         return Optional.ofNullable(this.initialHostShapeName);
     }
 
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="initialSku")
     private @Nullable Output<String> initialSku;
 
     /**
-     * @return The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> initialSku() {
         return Optional.ofNullable(this.initialSku);
     }
@@ -319,7 +407,11 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
      * 
+     * @deprecated
+     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="instanceDisplayNamePrefix")
     private @Nullable Output<String> instanceDisplayNamePrefix;
 
@@ -328,37 +420,57 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
      * 
+     * @deprecated
+     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> instanceDisplayNamePrefix() {
         return Optional.ofNullable(this.instanceDisplayNamePrefix);
     }
 
     /**
-     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
     @Import(name="isHcxEnabled")
     private @Nullable Output<Boolean> isHcxEnabled;
 
     /**
-     * @return For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * @return (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
     public Optional<Output<Boolean>> isHcxEnabled() {
         return Optional.ofNullable(this.isHcxEnabled);
     }
 
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;actual_hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
     @Import(name="isHcxEnterpriseEnabled")
     private @Nullable Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;actual_hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
     public Optional<Output<Boolean>> isHcxEnterpriseEnabled() {
         return Optional.ofNullable(this.isHcxEnterpriseEnabled);
     }
@@ -379,16 +491,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether shielded instance is enabled for this SDDC.
+     * (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="isShieldedInstanceEnabled")
     private @Nullable Output<Boolean> isShieldedInstanceEnabled;
 
     /**
-     * @return Indicates whether shielded instance is enabled for this SDDC.
+     * @return (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<Boolean>> isShieldedInstanceEnabled() {
         return Optional.ofNullable(this.isShieldedInstanceEnabled);
     }
@@ -409,48 +529,64 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="nsxEdgeUplink1vlanId")
     private @Nullable Output<String> nsxEdgeUplink1vlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> nsxEdgeUplink1vlanId() {
         return Optional.ofNullable(this.nsxEdgeUplink1vlanId);
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="nsxEdgeUplink2vlanId")
     private @Nullable Output<String> nsxEdgeUplink2vlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> nsxEdgeUplink2vlanId() {
         return Optional.ofNullable(this.nsxEdgeUplink2vlanId);
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
     @Import(name="nsxEdgeUplinkIpId")
     private @Nullable Output<String> nsxEdgeUplinkIpId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
     public Optional<Output<String>> nsxEdgeUplinkIpId() {
@@ -458,16 +594,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="nsxEdgeVtepVlanId")
     private @Nullable Output<String> nsxEdgeVtepVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> nsxEdgeVtepVlanId() {
         return Optional.ofNullable(this.nsxEdgeVtepVlanId);
     }
@@ -488,16 +632,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Import(name="nsxManagerInitialPassword")
     private @Nullable Output<String> nsxManagerInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     public Optional<Output<String>> nsxManagerInitialPassword() {
         return Optional.ofNullable(this.nsxManagerInitialPassword);
     }
@@ -533,61 +685,93 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * 
+     * @deprecated
+     * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="nsxOverlaySegmentName")
     private @Nullable Output<String> nsxOverlaySegmentName;
 
     /**
-     * @return The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * @return (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * 
+     * @deprecated
+     * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> nsxOverlaySegmentName() {
         return Optional.ofNullable(this.nsxOverlaySegmentName);
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="nsxVtepVlanId")
     private @Nullable Output<String> nsxVtepVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> nsxVtepVlanId() {
         return Optional.ofNullable(this.nsxVtepVlanId);
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * 
+     * @deprecated
+     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="provisioningSubnetId")
     private @Nullable Output<String> provisioningSubnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * @return (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * 
+     * @deprecated
+     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> provisioningSubnetId() {
         return Optional.ofNullable(this.provisioningSubnetId);
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="provisioningVlanId")
     private @Nullable Output<String> provisioningVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> provisioningVlanId() {
         return Optional.ofNullable(this.provisioningVlanId);
     }
@@ -608,16 +792,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="replicationVlanId")
     private @Nullable Output<String> replicationVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> replicationVlanId() {
         return Optional.ofNullable(this.replicationVlanId);
     }
@@ -728,16 +920,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The vSphere licenses to use when upgrading the SDDC.
+     * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     @Import(name="upgradeLicenses")
     private @Nullable Output<List<SddcUpgradeLicenseArgs>> upgradeLicenses;
 
     /**
-     * @return The vSphere licenses to use when upgrading the SDDC.
+     * @return (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     public Optional<Output<List<SddcUpgradeLicenseArgs>>> upgradeLicenses() {
         return Optional.ofNullable(this.upgradeLicenses);
     }
@@ -758,16 +958,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * 
+     * @deprecated
+     * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Import(name="vcenterInitialPassword")
     private @Nullable Output<String> vcenterInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * 
+     * @deprecated
+     * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     public Optional<Output<String>> vcenterInitialPassword() {
         return Optional.ofNullable(this.vcenterInitialPassword);
     }
@@ -803,16 +1011,24 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="vmotionVlanId")
     private @Nullable Output<String> vmotionVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> vmotionVlanId() {
         return Optional.ofNullable(this.vmotionVlanId);
     }
@@ -833,82 +1049,122 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="vsanVlanId")
     private @Nullable Output<String> vsanVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> vsanVlanId() {
         return Optional.ofNullable(this.vsanVlanId);
     }
 
     /**
-     * The link to guidance for upgrading vSphere.
+     * (**Deprecated**) The link to guidance for upgrading vSphere.
+     * 
+     * @deprecated
+     * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="vsphereUpgradeGuide")
     private @Nullable Output<String> vsphereUpgradeGuide;
 
     /**
-     * @return The link to guidance for upgrading vSphere.
+     * @return (**Deprecated**) The link to guidance for upgrading vSphere.
+     * 
+     * @deprecated
+     * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> vsphereUpgradeGuide() {
         return Optional.ofNullable(this.vsphereUpgradeGuide);
     }
 
     /**
-     * The links to binary objects needed to upgrade vSphere.
+     * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     @Import(name="vsphereUpgradeObjects")
     private @Nullable Output<List<SddcVsphereUpgradeObjectArgs>> vsphereUpgradeObjects;
 
     /**
-     * @return The links to binary objects needed to upgrade vSphere.
+     * @return (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     public Optional<Output<List<SddcVsphereUpgradeObjectArgs>>> vsphereUpgradeObjects() {
         return Optional.ofNullable(this.vsphereUpgradeObjects);
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="vsphereVlanId")
     private @Nullable Output<String> vsphereVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> vsphereVlanId() {
         return Optional.ofNullable(this.vsphereVlanId);
     }
 
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
     @Import(name="workloadNetworkCidr")
     private @Nullable Output<String> workloadNetworkCidr;
 
     /**
-     * @return The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * @return (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
     public Optional<Output<String>> workloadNetworkCidr() {
         return Optional.ofNullable(this.workloadNetworkCidr);
     }
@@ -995,43 +1251,59 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actualEsxiHostsCount The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+         * @param actualEsxiHostsCount (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder actualEsxiHostsCount(@Nullable Output<Integer> actualEsxiHostsCount) {
             $.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
 
         /**
-         * @param actualEsxiHostsCount The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+         * @param actualEsxiHostsCount (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
             return actualEsxiHostsCount(Output.of(actualEsxiHostsCount));
         }
 
         /**
-         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * @param capacityReservationId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
             $.capacityReservationId = capacityReservationId;
             return this;
         }
 
         /**
-         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * @param capacityReservationId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
         }
@@ -1058,53 +1330,73 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param computeAvailabilityDomain The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+         * @param computeAvailabilityDomain (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder computeAvailabilityDomain(@Nullable Output<String> computeAvailabilityDomain) {
             $.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
 
         /**
-         * @param computeAvailabilityDomain The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+         * @param computeAvailabilityDomain (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
         }
 
         /**
-         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * @param datastores (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder datastores(@Nullable Output<List<SddcDatastoreArgs>> datastores) {
             $.datastores = datastores;
             return this;
         }
 
         /**
-         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * @param datastores (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder datastores(List<SddcDatastoreArgs> datastores) {
             return datastores(Output.of(datastores));
         }
 
         /**
-         * @param datastores A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+         * @param datastores (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder datastores(SddcDatastoreArgs... datastores) {
             return datastores(List.of(datastores));
         }
@@ -1152,26 +1444,34 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+         * @param esxiHostsCount (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * 
          * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder esxiHostsCount(@Nullable Output<Integer> esxiHostsCount) {
             $.esxiHostsCount = esxiHostsCount;
             return this;
         }
 
         /**
-         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+         * @param esxiHostsCount (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * 
          * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder esxiHostsCount(Integer esxiHostsCount) {
             return esxiHostsCount(Output.of(esxiHostsCount));
         }
@@ -1240,43 +1540,59 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hcxInitialPassword The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+         * @param hcxInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder hcxInitialPassword(@Nullable Output<String> hcxInitialPassword) {
             $.hcxInitialPassword = hcxInitialPassword;
             return this;
         }
 
         /**
-         * @param hcxInitialPassword The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+         * @param hcxInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder hcxInitialPassword(String hcxInitialPassword) {
             return hcxInitialPassword(Output.of(hcxInitialPassword));
         }
 
         /**
-         * @param hcxOnPremKey The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+         * @param hcxOnPremKey (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder hcxOnPremKey(@Nullable Output<String> hcxOnPremKey) {
             $.hcxOnPremKey = hcxOnPremKey;
             return this;
         }
 
         /**
-         * @param hcxOnPremKey The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+         * @param hcxOnPremKey (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder hcxOnPremKey(String hcxOnPremKey) {
             return hcxOnPremKey(Output.of(hcxOnPremKey));
         }
@@ -1334,85 +1650,117 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hcxVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+         * @param hcxVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder hcxVlanId(@Nullable Output<String> hcxVlanId) {
             $.hcxVlanId = hcxVlanId;
             return this;
         }
 
         /**
-         * @param hcxVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+         * @param hcxVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder hcxVlanId(String hcxVlanId) {
             return hcxVlanId(Output.of(hcxVlanId));
         }
 
         /**
-         * @param initialHostOcpuCount The initial OCPU count of the SDDC&#39;s ESXi hosts.
+         * @param initialHostOcpuCount (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialHostOcpuCount(@Nullable Output<Double> initialHostOcpuCount) {
             $.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
 
         /**
-         * @param initialHostOcpuCount The initial OCPU count of the SDDC&#39;s ESXi hosts.
+         * @param initialHostOcpuCount (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
             return initialHostOcpuCount(Output.of(initialHostOcpuCount));
         }
 
         /**
-         * @param initialHostShapeName The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * @param initialHostShapeName (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialHostShapeName(@Nullable Output<String> initialHostShapeName) {
             $.initialHostShapeName = initialHostShapeName;
             return this;
         }
 
         /**
-         * @param initialHostShapeName The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * @param initialHostShapeName (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialHostShapeName(String initialHostShapeName) {
             return initialHostShapeName(Output.of(initialHostShapeName));
         }
 
         /**
-         * @param initialSku The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param initialSku (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialSku(@Nullable Output<String> initialSku) {
             $.initialSku = initialSku;
             return this;
         }
 
         /**
-         * @param initialSku The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param initialSku (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder initialSku(String initialSku) {
             return initialSku(Output.of(initialSku));
         }
@@ -1424,7 +1772,11 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder instanceDisplayNamePrefix(@Nullable Output<String> instanceDisplayNamePrefix) {
             $.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
@@ -1437,49 +1789,69 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             return instanceDisplayNamePrefix(Output.of(instanceDisplayNamePrefix));
         }
 
         /**
-         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+         * @param isHcxEnabled (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;hcx_mode&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
         public Builder isHcxEnabled(@Nullable Output<Boolean> isHcxEnabled) {
             $.isHcxEnabled = isHcxEnabled;
             return this;
         }
 
         /**
-         * @param isHcxEnabled For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+         * @param isHcxEnabled (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;hcx_mode&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
         public Builder isHcxEnabled(Boolean isHcxEnabled) {
             return isHcxEnabled(Output.of(isHcxEnabled));
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
+         * @param isHcxEnterpriseEnabled (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;actual_hcx_mode&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
         public Builder isHcxEnterpriseEnabled(@Nullable Output<Boolean> isHcxEnterpriseEnabled) {
             $.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
             return this;
         }
 
         /**
-         * @param isHcxEnterpriseEnabled Indicates whether HCX Enterprise is enabled for this SDDC.
+         * @param isHcxEnterpriseEnabled (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;actual_hcx_mode&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
         public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
             return isHcxEnterpriseEnabled(Output.of(isHcxEnterpriseEnabled));
         }
@@ -1506,22 +1878,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isShieldedInstanceEnabled Indicates whether shielded instance is enabled for this SDDC.
+         * @param isShieldedInstanceEnabled (Optional) Indicates whether shielded instance is enabled for this SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder isShieldedInstanceEnabled(@Nullable Output<Boolean> isShieldedInstanceEnabled) {
             $.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
 
         /**
-         * @param isShieldedInstanceEnabled Indicates whether shielded instance is enabled for this SDDC.
+         * @param isShieldedInstanceEnabled (Optional) Indicates whether shielded instance is enabled for this SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
             return isShieldedInstanceEnabled(Output.of(isShieldedInstanceEnabled));
         }
@@ -1548,53 +1928,69 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsxEdgeUplink1vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+         * @param nsxEdgeUplink1vlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeUplink1vlanId(@Nullable Output<String> nsxEdgeUplink1vlanId) {
             $.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
         }
 
         /**
-         * @param nsxEdgeUplink1vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+         * @param nsxEdgeUplink1vlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
             return nsxEdgeUplink1vlanId(Output.of(nsxEdgeUplink1vlanId));
         }
 
         /**
-         * @param nsxEdgeUplink2vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+         * @param nsxEdgeUplink2vlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
          * 
          * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeUplink2vlanId(@Nullable Output<String> nsxEdgeUplink2vlanId) {
             $.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
         }
 
         /**
-         * @param nsxEdgeUplink2vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+         * @param nsxEdgeUplink2vlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
          * 
          * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
             return nsxEdgeUplink2vlanId(Output.of(nsxEdgeUplink2vlanId));
         }
 
         /**
-         * @param nsxEdgeUplinkIpId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+         * @param nsxEdgeUplinkIpId (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
          * 
          * @return builder
          * 
@@ -1605,7 +2001,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsxEdgeUplinkIpId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+         * @param nsxEdgeUplinkIpId (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
          * 
          * @return builder
          * 
@@ -1615,22 +2011,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsxEdgeVtepVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+         * @param nsxEdgeVtepVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeVtepVlanId(@Nullable Output<String> nsxEdgeVtepVlanId) {
             $.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
         }
 
         /**
-         * @param nsxEdgeVtepVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+         * @param nsxEdgeVtepVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
             return nsxEdgeVtepVlanId(Output.of(nsxEdgeVtepVlanId));
         }
@@ -1657,22 +2061,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsxManagerInitialPassword The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+         * @param nsxManagerInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder nsxManagerInitialPassword(@Nullable Output<String> nsxManagerInitialPassword) {
             $.nsxManagerInitialPassword = nsxManagerInitialPassword;
             return this;
         }
 
         /**
-         * @param nsxManagerInitialPassword The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+         * @param nsxManagerInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder nsxManagerInitialPassword(String nsxManagerInitialPassword) {
             return nsxManagerInitialPassword(Output.of(nsxManagerInitialPassword));
         }
@@ -1720,85 +2132,117 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsxOverlaySegmentName The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+         * @param nsxOverlaySegmentName (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder nsxOverlaySegmentName(@Nullable Output<String> nsxOverlaySegmentName) {
             $.nsxOverlaySegmentName = nsxOverlaySegmentName;
             return this;
         }
 
         /**
-         * @param nsxOverlaySegmentName The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+         * @param nsxOverlaySegmentName (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder nsxOverlaySegmentName(String nsxOverlaySegmentName) {
             return nsxOverlaySegmentName(Output.of(nsxOverlaySegmentName));
         }
 
         /**
-         * @param nsxVtepVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+         * @param nsxVtepVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxVtepVlanId(@Nullable Output<String> nsxVtepVlanId) {
             $.nsxVtepVlanId = nsxVtepVlanId;
             return this;
         }
 
         /**
-         * @param nsxVtepVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+         * @param nsxVtepVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
             return nsxVtepVlanId(Output.of(nsxVtepVlanId));
         }
 
         /**
-         * @param provisioningSubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+         * @param provisioningSubnetId (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder provisioningSubnetId(@Nullable Output<String> provisioningSubnetId) {
             $.provisioningSubnetId = provisioningSubnetId;
             return this;
         }
 
         /**
-         * @param provisioningSubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+         * @param provisioningSubnetId (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder provisioningSubnetId(String provisioningSubnetId) {
             return provisioningSubnetId(Output.of(provisioningSubnetId));
         }
 
         /**
-         * @param provisioningVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+         * @param provisioningVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder provisioningVlanId(@Nullable Output<String> provisioningVlanId) {
             $.provisioningVlanId = provisioningVlanId;
             return this;
         }
 
         /**
-         * @param provisioningVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+         * @param provisioningVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder provisioningVlanId(String provisioningVlanId) {
             return provisioningVlanId(Output.of(provisioningVlanId));
         }
@@ -1825,22 +2269,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param replicationVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+         * @param replicationVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder replicationVlanId(@Nullable Output<String> replicationVlanId) {
             $.replicationVlanId = replicationVlanId;
             return this;
         }
 
         /**
-         * @param replicationVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+         * @param replicationVlanId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder replicationVlanId(String replicationVlanId) {
             return replicationVlanId(Output.of(replicationVlanId));
         }
@@ -2003,32 +2455,44 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
+         * @param upgradeLicenses (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder upgradeLicenses(@Nullable Output<List<SddcUpgradeLicenseArgs>> upgradeLicenses) {
             $.upgradeLicenses = upgradeLicenses;
             return this;
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
+         * @param upgradeLicenses (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder upgradeLicenses(List<SddcUpgradeLicenseArgs> upgradeLicenses) {
             return upgradeLicenses(Output.of(upgradeLicenses));
         }
 
         /**
-         * @param upgradeLicenses The vSphere licenses to use when upgrading the SDDC.
+         * @param upgradeLicenses (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder upgradeLicenses(SddcUpgradeLicenseArgs... upgradeLicenses) {
             return upgradeLicenses(List.of(upgradeLicenses));
         }
@@ -2055,22 +2519,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vcenterInitialPassword The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+         * @param vcenterInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder vcenterInitialPassword(@Nullable Output<String> vcenterInitialPassword) {
             $.vcenterInitialPassword = vcenterInitialPassword;
             return this;
         }
 
         /**
-         * @param vcenterInitialPassword The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+         * @param vcenterInitialPassword (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
+         * 
          */
+        @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
         public Builder vcenterInitialPassword(String vcenterInitialPassword) {
             return vcenterInitialPassword(Output.of(vcenterInitialPassword));
         }
@@ -2118,22 +2590,30 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vmotionVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+         * @param vmotionVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vmotionVlanId(@Nullable Output<String> vmotionVlanId) {
             $.vmotionVlanId = vmotionVlanId;
             return this;
         }
 
         /**
-         * @param vmotionVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+         * @param vmotionVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vmotionVlanId(String vmotionVlanId) {
             return vmotionVlanId(Output.of(vmotionVlanId));
         }
@@ -2160,122 +2640,166 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vsanVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+         * @param vsanVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vsanVlanId(@Nullable Output<String> vsanVlanId) {
             $.vsanVlanId = vsanVlanId;
             return this;
         }
 
         /**
-         * @param vsanVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+         * @param vsanVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vsanVlanId(String vsanVlanId) {
             return vsanVlanId(Output.of(vsanVlanId));
         }
 
         /**
-         * @param vsphereUpgradeGuide The link to guidance for upgrading vSphere.
+         * @param vsphereUpgradeGuide (**Deprecated**) The link to guidance for upgrading vSphere.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder vsphereUpgradeGuide(@Nullable Output<String> vsphereUpgradeGuide) {
             $.vsphereUpgradeGuide = vsphereUpgradeGuide;
             return this;
         }
 
         /**
-         * @param vsphereUpgradeGuide The link to guidance for upgrading vSphere.
+         * @param vsphereUpgradeGuide (**Deprecated**) The link to guidance for upgrading vSphere.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * 
          */
+        @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
             return vsphereUpgradeGuide(Output.of(vsphereUpgradeGuide));
         }
 
         /**
-         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
+         * @param vsphereUpgradeObjects (**Deprecated**) The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder vsphereUpgradeObjects(@Nullable Output<List<SddcVsphereUpgradeObjectArgs>> vsphereUpgradeObjects) {
             $.vsphereUpgradeObjects = vsphereUpgradeObjects;
             return this;
         }
 
         /**
-         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
+         * @param vsphereUpgradeObjects (**Deprecated**) The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder vsphereUpgradeObjects(List<SddcVsphereUpgradeObjectArgs> vsphereUpgradeObjects) {
             return vsphereUpgradeObjects(Output.of(vsphereUpgradeObjects));
         }
 
         /**
-         * @param vsphereUpgradeObjects The links to binary objects needed to upgrade vSphere.
+         * @param vsphereUpgradeObjects (**Deprecated**) The links to binary objects needed to upgrade vSphere.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+         * 
          */
+        @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
         public Builder vsphereUpgradeObjects(SddcVsphereUpgradeObjectArgs... vsphereUpgradeObjects) {
             return vsphereUpgradeObjects(List.of(vsphereUpgradeObjects));
         }
 
         /**
-         * @param vsphereVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+         * @param vsphereVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vsphereVlanId(@Nullable Output<String> vsphereVlanId) {
             $.vsphereVlanId = vsphereVlanId;
             return this;
         }
 
         /**
-         * @param vsphereVlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+         * @param vsphereVlanId (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder vsphereVlanId(String vsphereVlanId) {
             return vsphereVlanId(Output.of(vsphereVlanId));
         }
 
         /**
-         * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+         * @param workloadNetworkCidr (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder workloadNetworkCidr(@Nullable Output<String> workloadNetworkCidr) {
             $.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }
 
         /**
-         * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+         * @param workloadNetworkCidr (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * 
          */
+        @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
             return workloadNetworkCidr(Output.of(workloadNetworkCidr));
         }

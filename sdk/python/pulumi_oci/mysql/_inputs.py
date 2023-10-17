@@ -92,7 +92,17 @@ class ChannelSourceArgs:
              anonymous_transactions_handling: Optional[pulumi.Input['ChannelSourceAnonymousTransactionsHandlingArgs']] = None,
              port: Optional[pulumi.Input[int]] = None,
              ssl_ca_certificate: Optional[pulumi.Input['ChannelSourceSslCaCertificateArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if 'anonymousTransactionsHandling' in kwargs:
+            anonymous_transactions_handling = kwargs['anonymousTransactionsHandling']
+        if 'sslCaCertificate' in kwargs:
+            ssl_ca_certificate = kwargs['sslCaCertificate']
+
         _setter("hostname", hostname)
         _setter("password", password)
         _setter("source_type", source_type)
@@ -229,7 +239,13 @@ class ChannelSourceAnonymousTransactionsHandlingArgs:
              last_configured_log_filename: Optional[pulumi.Input[str]] = None,
              last_configured_log_offset: Optional[pulumi.Input[str]] = None,
              uuid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+
         _setter("policy", policy)
         if last_configured_log_filename is not None:
             _setter("last_configured_log_filename", last_configured_log_filename)
@@ -306,7 +322,11 @@ class ChannelSourceSslCaCertificateArgs:
              _setter: Callable[[Any, Any], None],
              certificate_type: pulumi.Input[str],
              contents: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+
         _setter("certificate_type", certificate_type)
         _setter("contents", contents)
 
@@ -378,7 +398,21 @@ class ChannelTargetArgs:
              delay_in_seconds: Optional[pulumi.Input[int]] = None,
              filters: Optional[pulumi.Input[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]] = None,
              tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+
         _setter("db_system_id", db_system_id)
         _setter("target_type", target_type)
         if applier_username is not None:
@@ -502,7 +536,9 @@ class ChannelTargetFilterArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -563,7 +599,15 @@ class HeatWaveClusterClusterNodeArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if node_id is not None:
             _setter("node_id", node_id)
         if state is not None:
@@ -732,7 +776,47 @@ class MysqlBackupDbSystemSnapshotArgs:
              port_x: Optional[pulumi.Input[int]] = None,
              shape_name: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicies' in kwargs:
+            backup_policies = kwargs['backupPolicies']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if admin_username is not None:
             _setter("admin_username", admin_username)
         if availability_domain is not None:
@@ -1110,7 +1194,21 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
              pitr_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]] = None,
              retention_in_days: Optional[pulumi.Input[int]] = None,
              window_start_time: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -1216,7 +1314,11 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -1256,7 +1358,15 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
              automatic_backup_retention: Optional[pulumi.Input[str]] = None,
              final_backup: Optional[pulumi.Input[str]] = None,
              is_delete_protected: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+
         if automatic_backup_retention is not None:
             _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
@@ -1348,7 +1458,19 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
              resource_type: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              status_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+
         if hostname is not None:
             _setter("hostname", hostname)
         if ip_address is not None:
@@ -1492,7 +1614,11 @@ class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              window_start_time: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if window_start_time is not None:
             _setter("window_start_time", window_start_time)
 
@@ -1530,7 +1656,11 @@ class MysqlConfigurationInitVariablesArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              lower_case_table_names: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lowerCaseTableNames' in kwargs:
+            lower_case_table_names = kwargs['lowerCaseTableNames']
+
         if lower_case_table_names is not None:
             _setter("lower_case_table_names", lower_case_table_names)
 
@@ -1972,7 +2102,165 @@ class MysqlConfigurationVariablesArgs:
              tmp_table_size: Optional[pulumi.Input[str]] = None,
              transaction_isolation: Optional[pulumi.Input[str]] = None,
              wait_timeout: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bigTables' in kwargs:
+            big_tables = kwargs['bigTables']
+        if 'binlogExpireLogsSeconds' in kwargs:
+            binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
+        if 'binlogRowMetadata' in kwargs:
+            binlog_row_metadata = kwargs['binlogRowMetadata']
+        if 'binlogRowValueOptions' in kwargs:
+            binlog_row_value_options = kwargs['binlogRowValueOptions']
+        if 'binlogTransactionCompression' in kwargs:
+            binlog_transaction_compression = kwargs['binlogTransactionCompression']
+        if 'completionType' in kwargs:
+            completion_type = kwargs['completionType']
+        if 'connectTimeout' in kwargs:
+            connect_timeout = kwargs['connectTimeout']
+        if 'connectionMemoryChunkSize' in kwargs:
+            connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
+        if 'connectionMemoryLimit' in kwargs:
+            connection_memory_limit = kwargs['connectionMemoryLimit']
+        if 'cteMaxRecursionDepth' in kwargs:
+            cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
+        if 'defaultAuthenticationPlugin' in kwargs:
+            default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
+        if 'foreignKeyChecks' in kwargs:
+            foreign_key_checks = kwargs['foreignKeyChecks']
+        if 'generatedRandomPasswordLength' in kwargs:
+            generated_random_password_length = kwargs['generatedRandomPasswordLength']
+        if 'globalConnectionMemoryLimit' in kwargs:
+            global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
+        if 'globalConnectionMemoryTracking' in kwargs:
+            global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
+        if 'groupReplicationConsistency' in kwargs:
+            group_replication_consistency = kwargs['groupReplicationConsistency']
+        if 'informationSchemaStatsExpiry' in kwargs:
+            information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
+        if 'innodbBufferPoolDumpPct' in kwargs:
+            innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
+        if 'innodbBufferPoolInstances' in kwargs:
+            innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
+        if 'innodbBufferPoolSize' in kwargs:
+            innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
+        if 'innodbDdlBufferSize' in kwargs:
+            innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
+        if 'innodbDdlThreads' in kwargs:
+            innodb_ddl_threads = kwargs['innodbDdlThreads']
+        if 'innodbFtEnableStopword' in kwargs:
+            innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
+        if 'innodbFtMaxTokenSize' in kwargs:
+            innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
+        if 'innodbFtMinTokenSize' in kwargs:
+            innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
+        if 'innodbFtNumWordOptimize' in kwargs:
+            innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
+        if 'innodbFtResultCacheLimit' in kwargs:
+            innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
+        if 'innodbFtServerStopwordTable' in kwargs:
+            innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
+        if 'innodbLockWaitTimeout' in kwargs:
+            innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
+        if 'innodbLogWriterThreads' in kwargs:
+            innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
+        if 'innodbMaxPurgeLag' in kwargs:
+            innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
+        if 'innodbMaxPurgeLagDelay' in kwargs:
+            innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
+        if 'innodbStatsPersistentSamplePages' in kwargs:
+            innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
+        if 'innodbStatsTransientSamplePages' in kwargs:
+            innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
+        if 'interactiveTimeout' in kwargs:
+            interactive_timeout = kwargs['interactiveTimeout']
+        if 'localInfile' in kwargs:
+            local_infile = kwargs['localInfile']
+        if 'mandatoryRoles' in kwargs:
+            mandatory_roles = kwargs['mandatoryRoles']
+        if 'maxAllowedPacket' in kwargs:
+            max_allowed_packet = kwargs['maxAllowedPacket']
+        if 'maxBinlogCacheSize' in kwargs:
+            max_binlog_cache_size = kwargs['maxBinlogCacheSize']
+        if 'maxConnectErrors' in kwargs:
+            max_connect_errors = kwargs['maxConnectErrors']
+        if 'maxConnections' in kwargs:
+            max_connections = kwargs['maxConnections']
+        if 'maxExecutionTime' in kwargs:
+            max_execution_time = kwargs['maxExecutionTime']
+        if 'maxHeapTableSize' in kwargs:
+            max_heap_table_size = kwargs['maxHeapTableSize']
+        if 'maxPreparedStmtCount' in kwargs:
+            max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
+        if 'mysqlFirewallMode' in kwargs:
+            mysql_firewall_mode = kwargs['mysqlFirewallMode']
+        if 'mysqlZstdDefaultCompressionLevel' in kwargs:
+            mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
+        if 'mysqlxConnectTimeout' in kwargs:
+            mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
+        if 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+            mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
+        if 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+            mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
+        if 'mysqlxDocumentIdUniquePrefix' in kwargs:
+            mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
+        if 'mysqlxEnableHelloNotice' in kwargs:
+            mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
+        if 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+            mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
+        if 'mysqlxInteractiveTimeout' in kwargs:
+            mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
+        if 'mysqlxLz4defaultCompressionLevel' in kwargs:
+            mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
+        if 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+            mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
+        if 'mysqlxMaxAllowedPacket' in kwargs:
+            mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
+        if 'mysqlxMinWorkerThreads' in kwargs:
+            mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
+        if 'mysqlxReadTimeout' in kwargs:
+            mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
+        if 'mysqlxWaitTimeout' in kwargs:
+            mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
+        if 'mysqlxWriteTimeout' in kwargs:
+            mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
+        if 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+            mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
+        if 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+            mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
+        if 'netReadTimeout' in kwargs:
+            net_read_timeout = kwargs['netReadTimeout']
+        if 'netWriteTimeout' in kwargs:
+            net_write_timeout = kwargs['netWriteTimeout']
+        if 'parserMaxMemSize' in kwargs:
+            parser_max_mem_size = kwargs['parserMaxMemSize']
+        if 'queryAllocBlockSize' in kwargs:
+            query_alloc_block_size = kwargs['queryAllocBlockSize']
+        if 'queryPreallocSize' in kwargs:
+            query_prealloc_size = kwargs['queryPreallocSize']
+        if 'regexpTimeLimit' in kwargs:
+            regexp_time_limit = kwargs['regexpTimeLimit']
+        if 'sortBufferSize' in kwargs:
+            sort_buffer_size = kwargs['sortBufferSize']
+        if 'sqlMode' in kwargs:
+            sql_mode = kwargs['sqlMode']
+        if 'sqlRequirePrimaryKey' in kwargs:
+            sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
+        if 'sqlWarnings' in kwargs:
+            sql_warnings = kwargs['sqlWarnings']
+        if 'threadPoolDedicatedListeners' in kwargs:
+            thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
+        if 'threadPoolMaxTransactionsLimit' in kwargs:
+            thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'tmpTableSize' in kwargs:
+            tmp_table_size = kwargs['tmpTableSize']
+        if 'transactionIsolation' in kwargs:
+            transaction_isolation = kwargs['transactionIsolation']
+        if 'waitTimeout' in kwargs:
+            wait_timeout = kwargs['waitTimeout']
+
         if autocommit is not None:
             _setter("autocommit", autocommit)
         if big_tables is not None:
@@ -3258,7 +3546,21 @@ class MysqlDbSystemBackupPolicyArgs:
              pitr_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']] = None,
              retention_in_days: Optional[pulumi.Input[int]] = None,
              window_start_time: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'pitrPolicy' in kwargs:
+            pitr_policy = kwargs['pitrPolicy']
+        if 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -3368,7 +3670,11 @@ class MysqlDbSystemBackupPolicyPitrPolicyArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -3444,7 +3750,25 @@ class MysqlDbSystemChannelArgs:
              targets: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -3654,7 +3978,17 @@ class MysqlDbSystemChannelSourceArgs:
              ssl_ca_certificates: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgs']]]] = None,
              ssl_mode: Optional[pulumi.Input[str]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+
         if anonymous_transactions_handlings is not None:
             _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
@@ -3782,7 +4116,13 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs:
              last_configured_log_offset: Optional[pulumi.Input[str]] = None,
              policy: Optional[pulumi.Input[str]] = None,
              uuid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+
         if last_configured_log_filename is not None:
             _setter("last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
@@ -3860,7 +4200,11 @@ class MysqlDbSystemChannelSourceSslCaCertificateArgs:
              _setter: Callable[[Any, Any], None],
              certificate_type: Optional[pulumi.Input[str]] = None,
              contents: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+
         if certificate_type is not None:
             _setter("certificate_type", certificate_type)
         if contents is not None:
@@ -3930,7 +4274,21 @@ class MysqlDbSystemChannelTargetArgs:
              filters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]] = None,
              tables_without_primary_key_handling: Optional[pulumi.Input[str]] = None,
              target_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+
         if applier_username is not None:
             _setter("applier_username", applier_username)
         if channel_name is not None:
@@ -4050,7 +4408,9 @@ class MysqlDbSystemChannelTargetFilterArgs:
              _setter: Callable[[Any, Any], None],
              type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
             _setter("type", type)
         if value is not None:
@@ -4108,7 +4468,13 @@ class MysqlDbSystemCurrentPlacementArgs:
              _setter: Callable[[Any, Any], None],
              availability_domain: Optional[pulumi.Input[str]] = None,
              fault_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if fault_domain is not None:
@@ -4170,7 +4536,15 @@ class MysqlDbSystemDeletionPolicyArgs:
              automatic_backup_retention: Optional[pulumi.Input[str]] = None,
              final_backup: Optional[pulumi.Input[str]] = None,
              is_delete_protected: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+
         if automatic_backup_retention is not None:
             _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
@@ -4262,7 +4636,19 @@ class MysqlDbSystemEndpointArgs:
              resource_type: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              status_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+
         if hostname is not None:
             _setter("hostname", hostname)
         if ip_address is not None:
@@ -4427,7 +4813,19 @@ class MysqlDbSystemHeatWaveClusterArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_size is not None:
             _setter("cluster_size", cluster_size)
         if is_lakehouse_enabled is not None:
@@ -4538,7 +4936,11 @@ class MysqlDbSystemMaintenanceArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              window_start_time: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         _setter("window_start_time", window_start_time)
 
     @property
@@ -4581,7 +4983,13 @@ class MysqlDbSystemPointInTimeRecoveryDetailArgs:
              _setter: Callable[[Any, Any], None],
              time_earliest_recovery_point: Optional[pulumi.Input[str]] = None,
              time_latest_recovery_point: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeEarliestRecoveryPoint' in kwargs:
+            time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
+        if 'timeLatestRecoveryPoint' in kwargs:
+            time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+
         if time_earliest_recovery_point is not None:
             _setter("time_earliest_recovery_point", time_earliest_recovery_point)
         if time_latest_recovery_point is not None:
@@ -4643,7 +5051,19 @@ class MysqlDbSystemSourceArgs:
              db_system_id: Optional[pulumi.Input[str]] = None,
              recovery_point: Optional[pulumi.Input[str]] = None,
              source_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'recoveryPoint' in kwargs:
+            recovery_point = kwargs['recoveryPoint']
+        if 'sourceUrl' in kwargs:
+            source_url = kwargs['sourceUrl']
+
         _setter("source_type", source_type)
         if backup_id is not None:
             _setter("backup_id", backup_id)
@@ -4742,7 +5162,15 @@ class ReplicaReplicaOverridesArgs:
              configuration_id: Optional[pulumi.Input[str]] = None,
              mysql_version: Optional[pulumi.Input[str]] = None,
              shape_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         if configuration_id is not None:
             _setter("configuration_id", configuration_id)
         if mysql_version is not None:
@@ -4809,7 +5237,9 @@ class GetChannelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4861,7 +5291,9 @@ class GetMysqlBackupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4913,7 +5345,9 @@ class GetMysqlConfigurationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4965,7 +5399,9 @@ class GetMysqlDbSystemsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5017,7 +5453,9 @@ class GetMysqlVersionFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5069,7 +5507,9 @@ class GetReplicasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5124,7 +5564,9 @@ class GetShapesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

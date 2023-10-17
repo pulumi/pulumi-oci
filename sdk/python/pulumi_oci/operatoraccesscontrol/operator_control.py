@@ -75,7 +75,31 @@ class OperatorControlArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              system_message: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approverGroupsLists' in kwargs:
+            approver_groups_lists = kwargs['approverGroupsLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isFullyPreApproved' in kwargs:
+            is_fully_pre_approved = kwargs['isFullyPreApproved']
+        if 'operatorControlName' in kwargs:
+            operator_control_name = kwargs['operatorControlName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'approversLists' in kwargs:
+            approvers_lists = kwargs['approversLists']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailIdLists' in kwargs:
+            email_id_lists = kwargs['emailIdLists']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'preApprovedOpActionLists' in kwargs:
+            pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
+        if 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+
         _setter("approver_groups_lists", approver_groups_lists)
         _setter("compartment_id", compartment_id)
         _setter("is_fully_pre_approved", is_fully_pre_approved)
@@ -337,7 +361,43 @@ class _OperatorControlState:
              time_of_creation: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              time_of_modification: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalRequiredOpActionLists' in kwargs:
+            approval_required_op_action_lists = kwargs['approvalRequiredOpActionLists']
+        if 'approverGroupsLists' in kwargs:
+            approver_groups_lists = kwargs['approverGroupsLists']
+        if 'approversLists' in kwargs:
+            approvers_lists = kwargs['approversLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailIdLists' in kwargs:
+            email_id_lists = kwargs['emailIdLists']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDefaultOperatorControl' in kwargs:
+            is_default_operator_control = kwargs['isDefaultOperatorControl']
+        if 'isFullyPreApproved' in kwargs:
+            is_fully_pre_approved = kwargs['isFullyPreApproved']
+        if 'lastModifiedInfo' in kwargs:
+            last_modified_info = kwargs['lastModifiedInfo']
+        if 'operatorControlName' in kwargs:
+            operator_control_name = kwargs['operatorControlName']
+        if 'preApprovedOpActionLists' in kwargs:
+            pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+        if 'timeOfCreation' in kwargs:
+            time_of_creation = kwargs['timeOfCreation']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'timeOfModification' in kwargs:
+            time_of_modification = kwargs['timeOfModification']
+
         if approval_required_op_action_lists is not None:
             _setter("approval_required_op_action_lists", approval_required_op_action_lists)
         if approver_groups_lists is not None:

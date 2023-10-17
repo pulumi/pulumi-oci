@@ -101,7 +101,15 @@ class ConnectorSource(dict):
              log_sources: Optional[Sequence['outputs.ConnectorSourceLogSource']] = None,
              monitoring_sources: Optional[Sequence['outputs.ConnectorSourceMonitoringSource']] = None,
              stream_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+
         _setter("kind", kind)
         if cursor is not None:
             _setter("cursor", cursor)
@@ -168,7 +176,9 @@ class ConnectorSourceCursor(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if kind is not None:
             _setter("kind", kind)
 
@@ -225,7 +235,15 @@ class ConnectorSourceLogSource(dict):
              compartment_id: Optional[str] = None,
              log_group_id: Optional[str] = None,
              log_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if log_group_id is not None:
@@ -296,7 +314,13 @@ class ConnectorSourceMonitoringSource(dict):
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[str] = None,
              namespace_details: Optional['outputs.ConnectorSourceMonitoringSourceNamespaceDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if namespace_details is not None:
@@ -338,7 +362,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetails(dict):
              _setter: Callable[[Any, Any], None],
              kind: str,
              namespaces: Sequence['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespace'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("namespaces", namespaces)
 
@@ -378,7 +404,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace(dict):
              _setter: Callable[[Any, Any], None],
              metrics: 'outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics',
              namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metrics", metrics)
         _setter("namespace", namespace)
 
@@ -414,7 +442,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -538,7 +568,31 @@ class ConnectorTarget(dict):
              object_name_prefix: Optional[str] = None,
              stream_id: Optional[str] = None,
              topic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("kind", kind)
         if batch_rollover_size_in_mbs is not None:
             _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
@@ -736,7 +790,11 @@ class ConnectorTargetDimension(dict):
              _setter: Callable[[Any, Any], None],
              dimension_value: Optional['outputs.ConnectorTargetDimensionDimensionValue'] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionValue' in kwargs:
+            dimension_value = kwargs['dimensionValue']
+
         if dimension_value is not None:
             _setter("dimension_value", dimension_value)
         if name is not None:
@@ -782,7 +840,9 @@ class ConnectorTargetDimensionDimensionValue(dict):
              kind: str,
              path: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         if path is not None:
             _setter("path", path)
@@ -866,7 +926,15 @@ class ConnectorTask(dict):
              batch_time_in_sec: Optional[int] = None,
              condition: Optional[str] = None,
              function_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+
         _setter("kind", kind)
         if batch_size_in_kbs is not None:
             _setter("batch_size_in_kbs", batch_size_in_kbs)
@@ -949,7 +1017,15 @@ class GetServiceConnectorSourceResult(dict):
              log_sources: Sequence['outputs.GetServiceConnectorSourceLogSourceResult'],
              monitoring_sources: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceResult'],
              stream_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+
         _setter("cursors", cursors)
         _setter("kind", kind)
         _setter("log_sources", log_sources)
@@ -1012,7 +1088,9 @@ class GetServiceConnectorSourceCursorResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -1047,7 +1125,15 @@ class GetServiceConnectorSourceLogSourceResult(dict):
              compartment_id: str,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("compartment_id", compartment_id)
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -1096,7 +1182,13 @@ class GetServiceConnectorSourceMonitoringSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              compartment_id: str,
              namespace_details: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("namespace_details", namespace_details)
 
@@ -1136,7 +1228,9 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              kind: str,
              namespaces: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("namespaces", namespaces)
 
@@ -1176,7 +1270,9 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult(di
              _setter: Callable[[Any, Any], None],
              metrics: Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult'],
              namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metrics", metrics)
         _setter("namespace", namespace)
 
@@ -1212,7 +1308,9 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricRes
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -1299,7 +1397,31 @@ class GetServiceConnectorTargetResult(dict):
              object_name_prefix: str,
              stream_id: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
         _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
         _setter("bucket", bucket)
@@ -1465,7 +1587,11 @@ class GetServiceConnectorTargetDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              dimension_values: Sequence['outputs.GetServiceConnectorTargetDimensionDimensionValueResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionValues' in kwargs:
+            dimension_values = kwargs['dimensionValues']
+
         _setter("dimension_values", dimension_values)
         _setter("name", name)
 
@@ -1509,7 +1635,9 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
              kind: str,
              path: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("path", path)
         _setter("value", value)
@@ -1570,7 +1698,15 @@ class GetServiceConnectorTaskResult(dict):
              condition: str,
              function_id: str,
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+
         _setter("batch_size_in_kbs", batch_size_in_kbs)
         _setter("batch_time_in_sec", batch_time_in_sec)
         _setter("condition", condition)
@@ -1639,7 +1775,9 @@ class GetServiceConnectorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1676,7 +1814,9 @@ class GetServiceConnectorsServiceConnectorCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1752,7 +1892,25 @@ class GetServiceConnectorsServiceConnectorCollectionItemResult(dict):
              tasks: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskResult'],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1912,7 +2070,15 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
              log_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult'],
              monitoring_sources: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult'],
              stream_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+
         _setter("cursors", cursors)
         _setter("kind", kind)
         _setter("log_sources", log_sources)
@@ -1975,7 +2141,9 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -2010,7 +2178,15 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult(di
              compartment_id: str,
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("compartment_id", compartment_id)
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
@@ -2059,7 +2235,13 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceRe
              _setter: Callable[[Any, Any], None],
              compartment_id: str,
              namespace_details: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("namespace_details", namespace_details)
 
@@ -2099,7 +2281,9 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
              _setter: Callable[[Any, Any], None],
              kind: str,
              namespaces: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("namespaces", namespaces)
 
@@ -2139,7 +2323,9 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
              _setter: Callable[[Any, Any], None],
              metrics: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult'],
              namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metrics", metrics)
         _setter("namespace", namespace)
 
@@ -2175,7 +2361,9 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -2262,7 +2450,31 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
              object_name_prefix: str,
              stream_id: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
         _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
         _setter("bucket", bucket)
@@ -2428,7 +2640,11 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult(di
              _setter: Callable[[Any, Any], None],
              dimension_values: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionValues' in kwargs:
+            dimension_values = kwargs['dimensionValues']
+
         _setter("dimension_values", dimension_values)
         _setter("name", name)
 
@@ -2472,7 +2688,9 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
              kind: str,
              path: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("path", path)
         _setter("value", value)
@@ -2533,7 +2751,15 @@ class GetServiceConnectorsServiceConnectorCollectionItemTaskResult(dict):
              condition: str,
              function_id: str,
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+
         _setter("batch_size_in_kbs", batch_size_in_kbs)
         _setter("batch_time_in_sec", batch_time_in_sec)
         _setter("condition", condition)

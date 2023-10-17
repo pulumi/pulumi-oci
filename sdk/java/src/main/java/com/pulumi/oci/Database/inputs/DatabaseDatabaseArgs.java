@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -252,6 +253,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    @Import(name="pluggableDatabases")
+    private @Nullable Output<List<String>> pluggableDatabases;
+
+    /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    public Optional<Output<List<String>>> pluggableDatabases() {
+        return Optional.ofNullable(this.pluggableDatabases);
+    }
+
+    /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -314,6 +330,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.ncharacterSet = $.ncharacterSet;
         this.pdbName = $.pdbName;
+        this.pluggableDatabases = $.pluggableDatabases;
         this.sidPrefix = $.sidPrefix;
         this.tdeWalletPassword = $.tdeWalletPassword;
         this.vaultId = $.vaultId;
@@ -658,6 +675,37 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder pdbName(String pdbName) {
             return pdbName(Output.of(pdbName));
+        }
+
+        /**
+         * @param pluggableDatabases The list of pluggable databases that needs to be restored into new database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabases(@Nullable Output<List<String>> pluggableDatabases) {
+            $.pluggableDatabases = pluggableDatabases;
+            return this;
+        }
+
+        /**
+         * @param pluggableDatabases The list of pluggable databases that needs to be restored into new database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabases(List<String> pluggableDatabases) {
+            return pluggableDatabases(Output.of(pluggableDatabases));
+        }
+
+        /**
+         * @param pluggableDatabases The list of pluggable databases that needs to be restored into new database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
         }
 
         /**

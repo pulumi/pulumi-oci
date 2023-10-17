@@ -32,7 +32,13 @@ class VaultVerificationArgs:
              _setter: Callable[[Any, Any], None],
              replica_region: pulumi.Input[str],
              vault_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicaRegion' in kwargs:
+            replica_region = kwargs['replicaRegion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("replica_region", replica_region)
         _setter("vault_id", vault_id)
 
@@ -83,7 +89,13 @@ class _VaultVerificationState:
              _setter: Callable[[Any, Any], None],
              replica_region: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicaRegion' in kwargs:
+            replica_region = kwargs['replicaRegion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if replica_region is not None:
             _setter("replica_region", replica_region)
         if vault_id is not None:

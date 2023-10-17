@@ -63,7 +63,25 @@ class OperationsInsightsWarehouseUserArgs:
              is_em_data_access: Optional[pulumi.Input[bool]] = None,
              is_opsi_data_access: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionPassword' in kwargs:
+            connection_password = kwargs['connectionPassword']
+        if 'isAwrDataAccess' in kwargs:
+            is_awr_data_access = kwargs['isAwrDataAccess']
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEmDataAccess' in kwargs:
+            is_em_data_access = kwargs['isEmDataAccess']
+        if 'isOpsiDataAccess' in kwargs:
+            is_opsi_data_access = kwargs['isOpsiDataAccess']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_password", connection_password)
         _setter("is_awr_data_access", is_awr_data_access)
@@ -264,7 +282,33 @@ class _OperationsInsightsWarehouseUserState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionPassword' in kwargs:
+            connection_password = kwargs['connectionPassword']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAwrDataAccess' in kwargs:
+            is_awr_data_access = kwargs['isAwrDataAccess']
+        if 'isEmDataAccess' in kwargs:
+            is_em_data_access = kwargs['isEmDataAccess']
+        if 'isOpsiDataAccess' in kwargs:
+            is_opsi_data_access = kwargs['isOpsiDataAccess']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_password is not None:

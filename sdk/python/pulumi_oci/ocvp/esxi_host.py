@@ -14,7 +14,6 @@ __all__ = ['EsxiHostArgs', 'EsxiHost']
 @pulumi.input_type
 class EsxiHostArgs:
     def __init__(__self__, *,
-                 sddc_id: pulumi.Input[str],
                  billing_donor_host_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
@@ -27,34 +26,34 @@ class EsxiHostArgs:
                  host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
+                 sddc_id: Optional[pulumi.Input[str]] = None,
                  swap_billing_host_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
-        :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        :param pulumi.Input[str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
                If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         EsxiHostArgs._configure(
             lambda key, value: pulumi.set(__self__, key, value),
-            sddc_id=sddc_id,
             billing_donor_host_id=billing_donor_host_id,
             capacity_reservation_id=capacity_reservation_id,
             compute_availability_domain=compute_availability_domain,
@@ -67,12 +66,12 @@ class EsxiHostArgs:
             host_shape_name=host_shape_name,
             next_sku=next_sku,
             non_upgraded_esxi_host_id=non_upgraded_esxi_host_id,
+            sddc_id=sddc_id,
             swap_billing_host_id=swap_billing_host_id,
         )
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             sddc_id: pulumi.Input[str],
              billing_donor_host_id: Optional[pulumi.Input[str]] = None,
              capacity_reservation_id: Optional[pulumi.Input[str]] = None,
              compute_availability_domain: Optional[pulumi.Input[str]] = None,
@@ -85,9 +84,42 @@ class EsxiHostArgs:
              host_shape_name: Optional[pulumi.Input[str]] = None,
              next_sku: Optional[pulumi.Input[str]] = None,
              non_upgraded_esxi_host_id: Optional[pulumi.Input[str]] = None,
+             sddc_id: Optional[pulumi.Input[str]] = None,
              swap_billing_host_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
-        _setter("sddc_id", sddc_id)
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingDonorHostId' in kwargs:
+            billing_donor_host_id = kwargs['billingDonorHostId']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if 'currentSku' in kwargs:
+            current_sku = kwargs['currentSku']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'failedEsxiHostId' in kwargs:
+            failed_esxi_host_id = kwargs['failedEsxiHostId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostOcpuCount' in kwargs:
+            host_ocpu_count = kwargs['hostOcpuCount']
+        if 'hostShapeName' in kwargs:
+            host_shape_name = kwargs['hostShapeName']
+        if 'nextSku' in kwargs:
+            next_sku = kwargs['nextSku']
+        if 'nonUpgradedEsxiHostId' in kwargs:
+            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
+        if 'sddcId' in kwargs:
+            sddc_id = kwargs['sddcId']
+        if 'swapBillingHostId' in kwargs:
+            swap_billing_host_id = kwargs['swapBillingHostId']
+
+        if billing_donor_host_id is not None:
+            warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
         if billing_donor_host_id is not None:
             _setter("billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
@@ -95,11 +127,17 @@ class EsxiHostArgs:
         if compute_availability_domain is not None:
             _setter("compute_availability_domain", compute_availability_domain)
         if current_sku is not None:
+            warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+        if current_sku is not None:
             _setter("current_sku", current_sku)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
             _setter("display_name", display_name)
+        if failed_esxi_host_id is not None:
+            warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
         if failed_esxi_host_id is not None:
             _setter("failed_esxi_host_id", failed_esxi_host_id)
         if freeform_tags is not None:
@@ -109,34 +147,32 @@ class EsxiHostArgs:
         if host_shape_name is not None:
             _setter("host_shape_name", host_shape_name)
         if next_sku is not None:
+            warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+        if next_sku is not None:
             _setter("next_sku", next_sku)
         if non_upgraded_esxi_host_id is not None:
+            warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
+        if non_upgraded_esxi_host_id is not None:
             _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        if sddc_id is not None:
+            warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
+        if sddc_id is not None:
+            _setter("sddc_id", sddc_id)
         if swap_billing_host_id is not None:
             _setter("swap_billing_host_id", swap_billing_host_id)
-
-    @property
-    @pulumi.getter(name="sddcId")
-    def sddc_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "sddc_id")
-
-    @sddc_id.setter
-    def sddc_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "sddc_id", value)
 
     @property
     @pulumi.getter(name="billingDonorHostId")
     def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
+        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
@@ -171,8 +207,11 @@ class EsxiHostArgs:
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
@@ -211,8 +250,11 @@ class EsxiHostArgs:
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
+        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
@@ -258,6 +300,9 @@ class EsxiHostArgs:
     @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -268,13 +313,35 @@ class EsxiHostArgs:
     @pulumi.getter(name="nonUpgradedEsxiHostId")
     def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
+        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
     def non_upgraded_esxi_host_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "non_upgraded_esxi_host_id", value)
+
+    @property
+    @pulumi.getter(name="sddcId")
+    def sddc_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
+
+        return pulumi.get(self, "sddc_id")
+
+    @sddc_id.setter
+    def sddc_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sddc_id", value)
 
     @property
     @pulumi.getter(name="swapBillingHostId")
@@ -321,28 +388,28 @@ class _EsxiHostState:
         """
         Input properties used for looking up and filtering EsxiHost resources.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        :param pulumi.Input[str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
                If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
-        :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-        :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
+        :param pulumi.Input[str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
                
                
                ** IMPORTANT **
@@ -412,9 +479,64 @@ class _EsxiHostState:
              time_updated: Optional[pulumi.Input[str]] = None,
              upgraded_replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
              vmware_software_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingContractEndDate' in kwargs:
+            billing_contract_end_date = kwargs['billingContractEndDate']
+        if 'billingDonorHostId' in kwargs:
+            billing_donor_host_id = kwargs['billingDonorHostId']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if 'computeInstanceId' in kwargs:
+            compute_instance_id = kwargs['computeInstanceId']
+        if 'currentSku' in kwargs:
+            current_sku = kwargs['currentSku']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'failedEsxiHostId' in kwargs:
+            failed_esxi_host_id = kwargs['failedEsxiHostId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gracePeriodEndDate' in kwargs:
+            grace_period_end_date = kwargs['gracePeriodEndDate']
+        if 'hostOcpuCount' in kwargs:
+            host_ocpu_count = kwargs['hostOcpuCount']
+        if 'hostShapeName' in kwargs:
+            host_shape_name = kwargs['hostShapeName']
+        if 'isBillingContinuationInProgress' in kwargs:
+            is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
+        if 'isBillingSwappingInProgress' in kwargs:
+            is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
+        if 'nextSku' in kwargs:
+            next_sku = kwargs['nextSku']
+        if 'nonUpgradedEsxiHostId' in kwargs:
+            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
+        if 'replacementEsxiHostId' in kwargs:
+            replacement_esxi_host_id = kwargs['replacementEsxiHostId']
+        if 'sddcId' in kwargs:
+            sddc_id = kwargs['sddcId']
+        if 'swapBillingHostId' in kwargs:
+            swap_billing_host_id = kwargs['swapBillingHostId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradedReplacementEsxiHostId' in kwargs:
+            upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
+        if 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+
         if billing_contract_end_date is not None:
             _setter("billing_contract_end_date", billing_contract_end_date)
+        if billing_donor_host_id is not None:
+            warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
         if billing_donor_host_id is not None:
             _setter("billing_donor_host_id", billing_donor_host_id)
         if capacity_reservation_id is not None:
@@ -426,11 +548,17 @@ class _EsxiHostState:
         if compute_instance_id is not None:
             _setter("compute_instance_id", compute_instance_id)
         if current_sku is not None:
+            warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+        if current_sku is not None:
             _setter("current_sku", current_sku)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
             _setter("display_name", display_name)
+        if failed_esxi_host_id is not None:
+            warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
         if failed_esxi_host_id is not None:
             _setter("failed_esxi_host_id", failed_esxi_host_id)
         if freeform_tags is not None:
@@ -446,11 +574,20 @@ class _EsxiHostState:
         if is_billing_swapping_in_progress is not None:
             _setter("is_billing_swapping_in_progress", is_billing_swapping_in_progress)
         if next_sku is not None:
+            warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+        if next_sku is not None:
             _setter("next_sku", next_sku)
+        if non_upgraded_esxi_host_id is not None:
+            warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+            pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
         if non_upgraded_esxi_host_id is not None:
             _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         if replacement_esxi_host_id is not None:
             _setter("replacement_esxi_host_id", replacement_esxi_host_id)
+        if sddc_id is not None:
+            warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+            pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
         if sddc_id is not None:
             _setter("sddc_id", sddc_id)
         if state is not None:
@@ -482,8 +619,11 @@ class _EsxiHostState:
     @pulumi.getter(name="billingDonorHostId")
     def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
+        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
@@ -542,8 +682,11 @@ class _EsxiHostState:
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
-        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
@@ -582,8 +725,11 @@ class _EsxiHostState:
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
+        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
@@ -665,6 +811,9 @@ class _EsxiHostState:
     @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -675,8 +824,11 @@ class _EsxiHostState:
     @pulumi.getter(name="nonUpgradedEsxiHostId")
     def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
+        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
@@ -699,12 +851,15 @@ class _EsxiHostState:
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
+
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
@@ -824,22 +979,22 @@ class EsxiHost(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        :param pulumi.Input[str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
                If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-        :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
-        :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
+        :param pulumi.Input[str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
                
                
                ** IMPORTANT **
@@ -850,7 +1005,7 @@ class EsxiHost(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: EsxiHostArgs,
+                 args: Optional[EsxiHostArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -924,8 +1079,6 @@ class EsxiHost(pulumi.CustomResource):
             __props__.__dict__["host_shape_name"] = host_shape_name
             __props__.__dict__["next_sku"] = next_sku
             __props__.__dict__["non_upgraded_esxi_host_id"] = non_upgraded_esxi_host_id
-            if sddc_id is None and not opts.urn:
-                raise TypeError("Missing required property 'sddc_id'")
             __props__.__dict__["sddc_id"] = sddc_id
             __props__.__dict__["swap_billing_host_id"] = swap_billing_host_id
             __props__.__dict__["billing_contract_end_date"] = None
@@ -984,28 +1137,28 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] billing_donor_host_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        :param pulumi.Input[str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param pulumi.Input[str] current_sku: (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
                
                If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
         :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[bool] is_billing_continuation_in_progress: Indicates whether this host is in the progress of billing continuation.
         :param pulumi.Input[bool] is_billing_swapping_in_progress: Indicates whether this host is in the progress of swapping billing.
-        :param pulumi.Input[str] non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        :param pulumi.Input[str] non_upgraded_esxi_host_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-        :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
+        :param pulumi.Input[str] sddc_id: (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
                
                
                ** IMPORTANT **
@@ -1061,8 +1214,11 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="billingDonorHostId")
     def billing_donor_host_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+        (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
+        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "billing_donor_host_id")
 
     @property
@@ -1101,8 +1257,11 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> pulumi.Output[str]:
         """
-        The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
+        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "current_sku")
 
     @property
@@ -1129,8 +1288,11 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
+        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "failed_esxi_host_id")
 
     @property
@@ -1184,14 +1346,20 @@ class EsxiHost(pulumi.CustomResource):
     @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> pulumi.Output[str]:
+        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
+        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
+
         return pulumi.get(self, "next_sku")
 
     @property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
     def non_upgraded_esxi_host_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
+        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
+        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
+
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @property
@@ -1204,14 +1372,17 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sddcId")
-    def sddc_id(self) -> pulumi.Output[str]:
+    def sddc_id(self) -> pulumi.Output[Optional[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. 
+        (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
+        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
+
         return pulumi.get(self, "sddc_id")
 
     @property

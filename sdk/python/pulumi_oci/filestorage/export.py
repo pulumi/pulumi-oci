@@ -60,7 +60,17 @@ class ExportArgs:
              path: pulumi.Input[str],
              export_options: Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]] = None,
              is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exportSetId' in kwargs:
+            export_set_id = kwargs['exportSetId']
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'exportOptions' in kwargs:
+            export_options = kwargs['exportOptions']
+        if 'isIdmapGroupsForSysAuth' in kwargs:
+            is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
+
         _setter("export_set_id", export_set_id)
         _setter("file_system_id", file_system_id)
         _setter("path", path)
@@ -200,7 +210,19 @@ class _ExportState:
              path: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exportOptions' in kwargs:
+            export_options = kwargs['exportOptions']
+        if 'exportSetId' in kwargs:
+            export_set_id = kwargs['exportSetId']
+        if 'fileSystemId' in kwargs:
+            file_system_id = kwargs['fileSystemId']
+        if 'isIdmapGroupsForSysAuth' in kwargs:
+            is_idmap_groups_for_sys_auth = kwargs['isIdmapGroupsForSysAuth']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if export_options is not None:
             _setter("export_options", export_options)
         if export_set_id is not None:

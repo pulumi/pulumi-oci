@@ -41,7 +41,19 @@ class ModelArtifactExportArgs:
              source_bucket: pulumi.Input[str],
              source_object_name: pulumi.Input[str],
              source_region: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactSourceType' in kwargs:
+            artifact_source_type = kwargs['artifactSourceType']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'sourceBucket' in kwargs:
+            source_bucket = kwargs['sourceBucket']
+        if 'sourceObjectName' in kwargs:
+            source_object_name = kwargs['sourceObjectName']
+        if 'sourceRegion' in kwargs:
+            source_region = kwargs['sourceRegion']
+
         _setter("artifact_source_type", artifact_source_type)
         _setter("model_id", model_id)
         _setter("namespace", namespace)
@@ -134,7 +146,19 @@ class _ModelArtifactExportState:
              source_bucket: Optional[pulumi.Input[str]] = None,
              source_object_name: Optional[pulumi.Input[str]] = None,
              source_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactSourceType' in kwargs:
+            artifact_source_type = kwargs['artifactSourceType']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'sourceBucket' in kwargs:
+            source_bucket = kwargs['sourceBucket']
+        if 'sourceObjectName' in kwargs:
+            source_object_name = kwargs['sourceObjectName']
+        if 'sourceRegion' in kwargs:
+            source_region = kwargs['sourceRegion']
+
         if artifact_source_type is not None:
             _setter("artifact_source_type", artifact_source_type)
         if model_id is not None:

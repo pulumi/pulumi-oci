@@ -44,7 +44,17 @@ class KeyVersionArgs:
              management_endpoint: pulumi.Input[str],
              external_key_version_id: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         _setter("key_id", key_id)
         _setter("management_endpoint", management_endpoint)
         if external_key_version_id is not None:
@@ -177,7 +187,37 @@ class _KeyVersionState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'externalKeyReferenceDetails' in kwargs:
+            external_key_reference_details = kwargs['externalKeyReferenceDetails']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoredFromKeyId' in kwargs:
+            restored_from_key_id = kwargs['restoredFromKeyId']
+        if 'restoredFromKeyVersionId' in kwargs:
+            restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if external_key_reference_details is not None:

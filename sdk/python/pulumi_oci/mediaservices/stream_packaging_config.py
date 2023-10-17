@@ -57,7 +57,21 @@ class StreamPackagingConfigArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              encryption: Optional[pulumi.Input['StreamPackagingConfigEncryptionArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if 'segmentTimeInSeconds' in kwargs:
+            segment_time_in_seconds = kwargs['segmentTimeInSeconds']
+        if 'streamPackagingFormat' in kwargs:
+            stream_packaging_format = kwargs['streamPackagingFormat']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("display_name", display_name)
         _setter("distribution_channel_id", distribution_channel_id)
         _setter("segment_time_in_seconds", segment_time_in_seconds)
@@ -222,7 +236,29 @@ class _StreamPackagingConfigState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'segmentTimeInSeconds' in kwargs:
+            segment_time_in_seconds = kwargs['segmentTimeInSeconds']
+        if 'streamPackagingFormat' in kwargs:
+            stream_packaging_format = kwargs['streamPackagingFormat']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

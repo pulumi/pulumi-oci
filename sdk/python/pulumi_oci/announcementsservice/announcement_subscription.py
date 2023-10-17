@@ -65,7 +65,25 @@ class AnnouncementSubscriptionArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              preferred_language: Optional[pulumi.Input[str]] = None,
              preferred_time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'filterGroups' in kwargs:
+            filter_groups = kwargs['filterGroups']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'preferredTimeZone' in kwargs:
+            preferred_time_zone = kwargs['preferredTimeZone']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("ons_topic_id", ons_topic_id)
@@ -267,7 +285,33 @@ class _AnnouncementSubscriptionState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterGroups' in kwargs:
+            filter_groups = kwargs['filterGroups']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'preferredTimeZone' in kwargs:
+            preferred_time_zone = kwargs['preferredTimeZone']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

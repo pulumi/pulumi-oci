@@ -73,7 +73,25 @@ class UsageArgs:
              group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
              is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
              query_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+
         _setter("granularity", granularity)
         _setter("tenant_id", tenant_id)
         _setter("time_usage_ended", time_usage_ended)
@@ -294,7 +312,25 @@ class _UsageState:
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_usage_ended: Optional[pulumi.Input[str]] = None,
              time_usage_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         if compartment_depth is not None:
             _setter("compartment_depth", compartment_depth)
         if filter is not None:

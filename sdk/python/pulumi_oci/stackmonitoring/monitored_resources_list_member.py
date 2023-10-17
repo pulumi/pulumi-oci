@@ -41,7 +41,15 @@ class MonitoredResourcesListMemberArgs:
              monitored_resource_id: pulumi.Input[str],
              destination_resource_id: Optional[pulumi.Input[str]] = None,
              limit_level: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'monitoredResourceId' in kwargs:
+            monitored_resource_id = kwargs['monitoredResourceId']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'limitLevel' in kwargs:
+            limit_level = kwargs['limitLevel']
+
         _setter("monitored_resource_id", monitored_resource_id)
         if destination_resource_id is not None:
             _setter("destination_resource_id", destination_resource_id)
@@ -121,7 +129,15 @@ class _MonitoredResourcesListMemberState:
              items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]] = None,
              limit_level: Optional[pulumi.Input[int]] = None,
              monitored_resource_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'limitLevel' in kwargs:
+            limit_level = kwargs['limitLevel']
+        if 'monitoredResourceId' in kwargs:
+            monitored_resource_id = kwargs['monitoredResourceId']
+
         if destination_resource_id is not None:
             _setter("destination_resource_id", destination_resource_id)
         if items is not None:

@@ -57,7 +57,23 @@ class VolumeBackupArgs:
              source_details: Optional[pulumi.Input['VolumeBackupSourceDetailsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -260,7 +276,43 @@ class _VolumeBackupState:
              unique_size_in_gbs: Optional[pulumi.Input[str]] = None,
              unique_size_in_mbs: Optional[pulumi.Input[str]] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'expirationTime' in kwargs:
+            expiration_time = kwargs['expirationTime']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'sourceVolumeBackupId' in kwargs:
+            source_volume_backup_id = kwargs['sourceVolumeBackupId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeRequestReceived' in kwargs:
+            time_request_received = kwargs['timeRequestReceived']
+        if 'uniqueSizeInGbs' in kwargs:
+            unique_size_in_gbs = kwargs['uniqueSizeInGbs']
+        if 'uniqueSizeInMbs' in kwargs:
+            unique_size_in_mbs = kwargs['uniqueSizeInMbs']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

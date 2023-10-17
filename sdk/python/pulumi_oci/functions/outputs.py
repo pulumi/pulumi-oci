@@ -146,7 +146,13 @@ class ApplicationImagePolicyConfig(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: bool,
              key_details: Optional[Sequence['outputs.ApplicationImagePolicyConfigKeyDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         _setter("is_policy_enabled", is_policy_enabled)
         if key_details is not None:
             _setter("key_details", key_details)
@@ -200,7 +206,11 @@ class ApplicationImagePolicyConfigKeyDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("kms_key_id", kms_key_id)
 
     @property
@@ -254,7 +264,13 @@ class ApplicationTraceConfig(dict):
              _setter: Callable[[Any, Any], None],
              domain_id: Optional[str] = None,
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if domain_id is not None:
             _setter("domain_id", domain_id)
         if is_enabled is not None:
@@ -300,7 +316,9 @@ class FunctionProvisionedConcurrencyConfig(dict):
              _setter: Callable[[Any, Any], None],
              strategy: str,
              count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("strategy", strategy)
         if count is not None:
             _setter("count", count)
@@ -360,7 +378,13 @@ class FunctionSourceDetails(dict):
              _setter: Callable[[Any, Any], None],
              pbf_listing_id: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pbfListingId' in kwargs:
+            pbf_listing_id = kwargs['pbfListingId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
 
@@ -417,7 +441,11 @@ class FunctionTraceConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -453,7 +481,13 @@ class GetApplicationImagePolicyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: bool,
              key_details: Sequence['outputs.GetApplicationImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
 
@@ -489,7 +523,11 @@ class GetApplicationImagePolicyConfigKeyDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("kms_key_id", kms_key_id)
 
     @property
@@ -520,7 +558,13 @@ class GetApplicationTraceConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              domain_id: str,
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("domain_id", domain_id)
         _setter("is_enabled", is_enabled)
 
@@ -612,7 +656,31 @@ class GetApplicationsApplicationResult(dict):
              time_created: str,
              time_updated: str,
              trace_configs: Sequence['outputs.GetApplicationsApplicationTraceConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfigs' in kwargs:
+            image_policy_configs = kwargs['imagePolicyConfigs']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'syslogUrl' in kwargs:
+            syslog_url = kwargs['syslogUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'traceConfigs' in kwargs:
+            trace_configs = kwargs['traceConfigs']
+
         _setter("compartment_id", compartment_id)
         _setter("config", config)
         _setter("defined_tags", defined_tags)
@@ -769,7 +837,13 @@ class GetApplicationsApplicationImagePolicyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: bool,
              key_details: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
 
@@ -805,7 +879,11 @@ class GetApplicationsApplicationImagePolicyConfigKeyDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("kms_key_id", kms_key_id)
 
     @property
@@ -836,7 +914,13 @@ class GetApplicationsApplicationTraceConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              domain_id: str,
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("domain_id", domain_id)
         _setter("is_enabled", is_enabled)
 
@@ -875,7 +959,9 @@ class GetApplicationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -916,7 +1002,9 @@ class GetFunctionProvisionedConcurrencyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              strategy: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("strategy", strategy)
 
@@ -956,7 +1044,13 @@ class GetFunctionSourceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              pbf_listing_id: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pbfListingId' in kwargs:
+            pbf_listing_id = kwargs['pbfListingId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
 
@@ -992,7 +1086,11 @@ class GetFunctionTraceConfigResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -1022,7 +1120,9 @@ class GetFunctionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1131,7 +1231,37 @@ class GetFunctionsFunctionResult(dict):
              time_updated: str,
              timeout_in_seconds: int,
              trace_configs: Sequence['outputs.GetFunctionsFunctionTraceConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'invokeEndpoint' in kwargs:
+            invoke_endpoint = kwargs['invokeEndpoint']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'provisionedConcurrencyConfigs' in kwargs:
+            provisioned_concurrency_configs = kwargs['provisionedConcurrencyConfigs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'traceConfigs' in kwargs:
+            trace_configs = kwargs['traceConfigs']
+
         _setter("application_id", application_id)
         _setter("compartment_id", compartment_id)
         _setter("config", config)
@@ -1324,7 +1454,9 @@ class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              strategy: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("strategy", strategy)
 
@@ -1364,7 +1496,13 @@ class GetFunctionsFunctionSourceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              pbf_listing_id: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'pbfListingId' in kwargs:
+            pbf_listing_id = kwargs['pbfListingId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("pbf_listing_id", pbf_listing_id)
         _setter("source_type", source_type)
 
@@ -1400,7 +1538,11 @@ class GetFunctionsFunctionTraceConfigResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -1439,7 +1581,15 @@ class GetFusionEnvironmentAdminUserItemResult(dict):
              first_name: str,
              last_name: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -1493,7 +1643,9 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1546,7 +1698,17 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
              last_name: str,
              password: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("fusion_environment_id", fusion_environment_id)
@@ -1642,7 +1804,15 @@ class GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult(dict):
              first_name: str,
              last_name: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -1699,7 +1869,9 @@ class GetFusionEnvironmentAdminUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1745,7 +1917,15 @@ class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult(dict):
              last_name: str,
              password: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -1790,7 +1970,9 @@ class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1833,7 +2015,17 @@ class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem
              state: str,
              time_masking_finish: str,
              time_masking_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'isResumeDataMasking' in kwargs:
+            is_resume_data_masking = kwargs['isResumeDataMasking']
+        if 'timeMaskingFinish' in kwargs:
+            time_masking_finish = kwargs['timeMaskingFinish']
+        if 'timeMaskingStart' in kwargs:
+            time_masking_start = kwargs['timeMaskingStart']
+
         _setter("fusion_environment_id", fusion_environment_id)
         _setter("id", id)
         _setter("is_resume_data_masking", is_resume_data_masking)
@@ -1905,7 +2097,9 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1945,7 +2139,9 @@ class GetFusionEnvironmentFamiliesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1979,7 +2175,9 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2050,7 +2248,31 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(di
              system_name: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'familyMaintenancePolicies' in kwargs:
+            family_maintenance_policies = kwargs['familyMaintenancePolicies']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSubscriptionUpdateNeeded' in kwargs:
+            is_subscription_update_needed = kwargs['isSubscriptionUpdateNeeded']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2190,7 +2412,15 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMai
              concurrent_maintenance: str,
              is_monthly_patching_enabled: bool,
              quarterly_upgrade_begin_times: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'concurrentMaintenance' in kwargs:
+            concurrent_maintenance = kwargs['concurrentMaintenance']
+        if 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         _setter("concurrent_maintenance", concurrent_maintenance)
         _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
@@ -2243,7 +2473,15 @@ class GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult(dict):
              concurrent_maintenance: str,
              is_monthly_patching_enabled: bool,
              quarterly_upgrade_begin_times: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'concurrentMaintenance' in kwargs:
+            concurrent_maintenance = kwargs['concurrentMaintenance']
+        if 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         _setter("concurrent_maintenance", concurrent_maintenance)
         _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
@@ -2291,7 +2529,9 @@ class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult(dic
              _setter: Callable[[Any, Any], None],
              limit: int,
              usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("limit", limit)
         _setter("usage", usage)
 
@@ -2327,7 +2567,9 @@ class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult(dict
              _setter: Callable[[Any, Any], None],
              limit: int,
              usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("limit", limit)
         _setter("usage", usage)
 
@@ -2363,7 +2605,9 @@ class GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult(dict):
              _setter: Callable[[Any, Any], None],
              limit: int,
              usage: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("limit", limit)
         _setter("usage", usage)
 
@@ -2408,7 +2652,13 @@ class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult(dict):
              id: str,
              service_name: str,
              skuses: Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classicSubscriptionId' in kwargs:
+            classic_subscription_id = kwargs['classicSubscriptionId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("classic_subscription_id", classic_subscription_id)
         _setter("id", id)
         _setter("service_name", service_name)
@@ -2478,7 +2728,13 @@ class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult(dict):
              metric_name: str,
              quantity: int,
              sku: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licensePartDescription' in kwargs:
+            license_part_description = kwargs['licensePartDescription']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+
         _setter("description", description)
         _setter("license_part_description", license_part_description)
         _setter("metric_name", metric_name)
@@ -2556,7 +2812,23 @@ class GetFusionEnvironmentKmsKeyInfoResult(dict):
              scheduled_key_status: str,
              scheduled_key_version: str,
              scheduled_lifecycle_state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeKeyId' in kwargs:
+            active_key_id = kwargs['activeKeyId']
+        if 'activeKeyVersion' in kwargs:
+            active_key_version = kwargs['activeKeyVersion']
+        if 'currentKeyLifecycleState' in kwargs:
+            current_key_lifecycle_state = kwargs['currentKeyLifecycleState']
+        if 'scheduledKeyId' in kwargs:
+            scheduled_key_id = kwargs['scheduledKeyId']
+        if 'scheduledKeyStatus' in kwargs:
+            scheduled_key_status = kwargs['scheduledKeyStatus']
+        if 'scheduledKeyVersion' in kwargs:
+            scheduled_key_version = kwargs['scheduledKeyVersion']
+        if 'scheduledLifecycleState' in kwargs:
+            scheduled_lifecycle_state = kwargs['scheduledLifecycleState']
+
         _setter("active_key_id", active_key_id)
         _setter("active_key_version", active_key_version)
         _setter("current_key_lifecycle_state", current_key_lifecycle_state)
@@ -2624,7 +2896,15 @@ class GetFusionEnvironmentMaintenancePolicyResult(dict):
              environment_maintenance_override: str,
              monthly_patching_override: str,
              quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentMaintenanceOverride' in kwargs:
+            environment_maintenance_override = kwargs['environmentMaintenanceOverride']
+        if 'monthlyPatchingOverride' in kwargs:
+            monthly_patching_override = kwargs['monthlyPatchingOverride']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         _setter("environment_maintenance_override", environment_maintenance_override)
         _setter("monthly_patching_override", monthly_patching_override)
         _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
@@ -2673,7 +2953,13 @@ class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult(dict)
              _setter: Callable[[Any, Any], None],
              begin_times_value: str,
              override_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beginTimesValue' in kwargs:
+            begin_times_value = kwargs['beginTimesValue']
+        if 'overrideType' in kwargs:
+            override_type = kwargs['overrideType']
+
         _setter("begin_times_value", begin_times_value)
         _setter("override_type", override_type)
 
@@ -2717,7 +3003,15 @@ class GetFusionEnvironmentRefreshResult(dict):
              source_fusion_environment_id: str,
              time_finished: str,
              time_of_restoration_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceFusionEnvironmentId' in kwargs:
+            source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeOfRestorationPoint' in kwargs:
+            time_of_restoration_point = kwargs['timeOfRestorationPoint']
+
         _setter("source_fusion_environment_id", source_fusion_environment_id)
         _setter("time_finished", time_finished)
         _setter("time_of_restoration_point", time_of_restoration_point)
@@ -2765,7 +3059,9 @@ class GetFusionEnvironmentRefreshActivitiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2799,7 +3095,9 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2874,7 +3172,33 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(d
              time_finished: str,
              time_of_restoration_point: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'refreshActivityId' in kwargs:
+            refresh_activity_id = kwargs['refreshActivityId']
+        if 'refreshIssueDetailsLists' in kwargs:
+            refresh_issue_details_lists = kwargs['refreshIssueDetailsLists']
+        if 'serviceAvailability' in kwargs:
+            service_availability = kwargs['serviceAvailability']
+        if 'sourceFusionEnvironmentId' in kwargs:
+            source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeExpectedFinish' in kwargs:
+            time_expected_finish = kwargs['timeExpectedFinish']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeOfRestorationPoint' in kwargs:
+            time_of_restoration_point = kwargs['timeOfRestorationPoint']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("display_name", display_name)
         _setter("fusion_environment_id", fusion_environment_id)
         _setter("id", id)
@@ -3015,7 +3339,11 @@ class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshI
     def _configure(
              _setter: Callable[[Any, Any], None],
              refresh_issues: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refreshIssues' in kwargs:
+            refresh_issues = kwargs['refreshIssues']
+
         _setter("refresh_issues", refresh_issues)
 
     @property
@@ -3042,7 +3370,11 @@ class GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              refresh_issues: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refreshIssues' in kwargs:
+            refresh_issues = kwargs['refreshIssues']
+
         _setter("refresh_issues", refresh_issues)
 
     @property
@@ -3076,7 +3408,9 @@ class GetFusionEnvironmentRuleResult(dict):
              action: str,
              conditions: Sequence['outputs.GetFusionEnvironmentRuleConditionResult'],
              description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("description", description)
@@ -3122,7 +3456,13 @@ class GetFusionEnvironmentRuleConditionResult(dict):
              _setter: Callable[[Any, Any], None],
              attribute_name: str,
              attribute_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
 
@@ -3161,7 +3501,9 @@ class GetFusionEnvironmentScheduledActivitiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3195,7 +3537,9 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3273,7 +3617,33 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResu
              time_finished: str,
              time_scheduled_start: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'delayInHours' in kwargs:
+            delay_in_hours = kwargs['delayInHours']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'runCycle' in kwargs:
+            run_cycle = kwargs['runCycle']
+        if 'serviceAvailability' in kwargs:
+            service_availability = kwargs['serviceAvailability']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeExpectedFinish' in kwargs:
+            time_expected_finish = kwargs['timeExpectedFinish']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeScheduledStart' in kwargs:
+            time_scheduled_start = kwargs['timeScheduledStart']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("actions", actions)
         _setter("delay_in_hours", delay_in_hours)
         _setter("display_name", display_name)
@@ -3452,7 +3822,13 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActi
              reference_key: str,
              state: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'referenceKey' in kwargs:
+            reference_key = kwargs['referenceKey']
+
         _setter("action_type", action_type)
         _setter("artifact", artifact)
         _setter("category", category)
@@ -3583,7 +3959,13 @@ class GetFusionEnvironmentScheduledActivityActionResult(dict):
              reference_key: str,
              state: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'referenceKey' in kwargs:
+            reference_key = kwargs['referenceKey']
+
         _setter("action_type", action_type)
         _setter("artifact", artifact)
         _setter("category", category)
@@ -3685,7 +4067,9 @@ class GetFusionEnvironmentServiceAttachmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3719,7 +4103,9 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3791,7 +4177,31 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if 'isSkuBased' in kwargs:
+            is_sku_based = kwargs['isSkuBased']
+        if 'serviceInstanceId' in kwargs:
+            service_instance_id = kwargs['serviceInstanceId']
+        if 'serviceInstanceType' in kwargs:
+            service_instance_type = kwargs['serviceInstanceType']
+        if 'serviceUrl' in kwargs:
+            service_url = kwargs['serviceUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -3926,7 +4336,11 @@ class GetFusionEnvironmentTimeAvailableForRefreshItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              time_available_for_refresh: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAvailableForRefresh' in kwargs:
+            time_available_for_refresh = kwargs['timeAvailableForRefresh']
+
         _setter("time_available_for_refresh", time_available_for_refresh)
 
     @property
@@ -3956,7 +4370,9 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3993,7 +4409,9 @@ class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollect
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4020,7 +4438,11 @@ class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollect
     def _configure(
              _setter: Callable[[Any, Any], None],
              time_available_for_refresh: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAvailableForRefresh' in kwargs:
+            time_available_for_refresh = kwargs['timeAvailableForRefresh']
+
         _setter("time_available_for_refresh", time_available_for_refresh)
 
     @property
@@ -4050,7 +4472,9 @@ class GetFusionEnvironmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4084,7 +4508,9 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4219,7 +4645,57 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
              time_upcoming_maintenance: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalLanguagePacks' in kwargs:
+            additional_language_packs = kwargs['additionalLanguagePacks']
+        if 'appliedPatchBundles' in kwargs:
+            applied_patch_bundles = kwargs['appliedPatchBundles']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+            create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsPrefix' in kwargs:
+            dns_prefix = kwargs['dnsPrefix']
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fusionEnvironmentFamilyId' in kwargs:
+            fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
+        if 'fusionEnvironmentType' in kwargs:
+            fusion_environment_type = kwargs['fusionEnvironmentType']
+        if 'idcsDomainUrl' in kwargs:
+            idcs_domain_url = kwargs['idcsDomainUrl']
+        if 'isBreakGlassEnabled' in kwargs:
+            is_break_glass_enabled = kwargs['isBreakGlassEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyInfos' in kwargs:
+            kms_key_infos = kwargs['kmsKeyInfos']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lockboxId' in kwargs:
+            lockbox_id = kwargs['lockboxId']
+        if 'maintenancePolicies' in kwargs:
+            maintenance_policies = kwargs['maintenancePolicies']
+        if 'publicUrl' in kwargs:
+            public_url = kwargs['publicUrl']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpcomingMaintenance' in kwargs:
+            time_upcoming_maintenance = kwargs['timeUpcomingMaintenance']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_language_packs", additional_language_packs)
         _setter("applied_patch_bundles", applied_patch_bundles)
         _setter("compartment_id", compartment_id)
@@ -4504,7 +4980,15 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmen
              last_name: str,
              password: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -4567,7 +5051,23 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoResult(dict)
              scheduled_key_status: str,
              scheduled_key_version: str,
              scheduled_lifecycle_state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeKeyId' in kwargs:
+            active_key_id = kwargs['activeKeyId']
+        if 'activeKeyVersion' in kwargs:
+            active_key_version = kwargs['activeKeyVersion']
+        if 'currentKeyLifecycleState' in kwargs:
+            current_key_lifecycle_state = kwargs['currentKeyLifecycleState']
+        if 'scheduledKeyId' in kwargs:
+            scheduled_key_id = kwargs['scheduledKeyId']
+        if 'scheduledKeyStatus' in kwargs:
+            scheduled_key_status = kwargs['scheduledKeyStatus']
+        if 'scheduledKeyVersion' in kwargs:
+            scheduled_key_version = kwargs['scheduledKeyVersion']
+        if 'scheduledLifecycleState' in kwargs:
+            scheduled_lifecycle_state = kwargs['scheduledLifecycleState']
+
         _setter("active_key_id", active_key_id)
         _setter("active_key_version", active_key_version)
         _setter("current_key_lifecycle_state", current_key_lifecycle_state)
@@ -4635,7 +5135,15 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResul
              environment_maintenance_override: str,
              monthly_patching_override: str,
              quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentMaintenanceOverride' in kwargs:
+            environment_maintenance_override = kwargs['environmentMaintenanceOverride']
+        if 'monthlyPatchingOverride' in kwargs:
+            monthly_patching_override = kwargs['monthlyPatchingOverride']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         _setter("environment_maintenance_override", environment_maintenance_override)
         _setter("monthly_patching_override", monthly_patching_override)
         _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
@@ -4684,7 +5192,13 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuart
              _setter: Callable[[Any, Any], None],
              begin_times_value: str,
              override_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beginTimesValue' in kwargs:
+            begin_times_value = kwargs['beginTimesValue']
+        if 'overrideType' in kwargs:
+            override_type = kwargs['overrideType']
+
         _setter("begin_times_value", begin_times_value)
         _setter("override_type", override_type)
 
@@ -4728,7 +5242,15 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult(dict):
              source_fusion_environment_id: str,
              time_finished: str,
              time_of_restoration_point: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceFusionEnvironmentId' in kwargs:
+            source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeOfRestorationPoint' in kwargs:
+            time_of_restoration_point = kwargs['timeOfRestorationPoint']
+
         _setter("source_fusion_environment_id", source_fusion_environment_id)
         _setter("time_finished", time_finished)
         _setter("time_of_restoration_point", time_of_restoration_point)
@@ -4780,7 +5302,9 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult(dict):
              action: str,
              conditions: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult'],
              description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("conditions", conditions)
         _setter("description", description)
@@ -4826,7 +5350,13 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult(di
              _setter: Callable[[Any, Any], None],
              attribute_name: str,
              attribute_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
 
@@ -4862,7 +5392,9 @@ class GetPbfListingPublisherDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4889,7 +5421,9 @@ class GetPbfListingTriggerResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4922,7 +5456,9 @@ class GetPbfListingTriggersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4962,7 +5498,9 @@ class GetPbfListingTriggersTriggersCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPbfListingTriggersTriggersCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4989,7 +5527,9 @@ class GetPbfListingTriggersTriggersCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -5024,7 +5564,11 @@ class GetPbfListingVersionConfigResult(dict):
              description: str,
              is_optional: bool,
              key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOptional' in kwargs:
+            is_optional = kwargs['isOptional']
+
         _setter("description", description)
         _setter("is_optional", is_optional)
         _setter("key", key)
@@ -5073,7 +5617,11 @@ class GetPbfListingVersionRequirementResult(dict):
              _setter: Callable[[Any, Any], None],
              min_memory_required_in_mbs: str,
              policies: Sequence['outputs.GetPbfListingVersionRequirementPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'minMemoryRequiredInMbs' in kwargs:
+            min_memory_required_in_mbs = kwargs['minMemoryRequiredInMbs']
+
         _setter("min_memory_required_in_mbs", min_memory_required_in_mbs)
         _setter("policies", policies)
 
@@ -5113,7 +5661,9 @@ class GetPbfListingVersionRequirementPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              policy: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("policy", policy)
 
@@ -5149,7 +5699,9 @@ class GetPbfListingVersionTriggerResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -5182,7 +5734,9 @@ class GetPbfListingVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5222,7 +5776,9 @@ class GetPbfListingVersionsPbfListingVersionsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5297,7 +5853,23 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              triggers: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'changeSummary' in kwargs:
+            change_summary = kwargs['changeSummary']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'pbfListingId' in kwargs:
+            pbf_listing_id = kwargs['pbfListingId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("change_summary", change_summary)
         _setter("configs", configs)
         _setter("defined_tags", defined_tags)
@@ -5440,7 +6012,11 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult(dict):
              description: str,
              is_optional: bool,
              key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOptional' in kwargs:
+            is_optional = kwargs['isOptional']
+
         _setter("description", description)
         _setter("is_optional", is_optional)
         _setter("key", key)
@@ -5489,7 +6065,11 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult(dic
              _setter: Callable[[Any, Any], None],
              min_memory_required_in_mbs: str,
              policies: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'minMemoryRequiredInMbs' in kwargs:
+            min_memory_required_in_mbs = kwargs['minMemoryRequiredInMbs']
+
         _setter("min_memory_required_in_mbs", min_memory_required_in_mbs)
         _setter("policies", policies)
 
@@ -5529,7 +6109,9 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResu
              _setter: Callable[[Any, Any], None],
              description: str,
              policy: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("policy", policy)
 
@@ -5565,7 +6147,9 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -5598,7 +6182,9 @@ class GetPbfListingsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5638,7 +6224,9 @@ class GetPbfListingsPbfListingsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5705,7 +6293,21 @@ class GetPbfListingsPbfListingsCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              triggers: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'publisherDetails' in kwargs:
+            publisher_details = kwargs['publisherDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("defined_tags", defined_tags)
         _setter("description", description)
         _setter("freeform_tags", freeform_tags)
@@ -5822,7 +6424,9 @@ class GetPbfListingsPbfListingsCollectionItemPublisherDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -5849,7 +6453,9 @@ class GetPbfListingsPbfListingsCollectionItemTriggerResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property

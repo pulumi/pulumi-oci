@@ -77,7 +77,31 @@ class VolumeAttachmentArgs:
              is_read_only: Optional[pulumi.Input[bool]] = None,
              is_shareable: Optional[pulumi.Input[bool]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentType' in kwargs:
+            attachment_type = kwargs['attachmentType']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'encryptionInTransitType' in kwargs:
+            encryption_in_transit_type = kwargs['encryptionInTransitType']
+        if 'isAgentAutoIscsiLoginEnabled' in kwargs:
+            is_agent_auto_iscsi_login_enabled = kwargs['isAgentAutoIscsiLoginEnabled']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'isShareable' in kwargs:
+            is_shareable = kwargs['isShareable']
+        if 'useChap' in kwargs:
+            use_chap = kwargs['useChap']
+
         _setter("attachment_type", attachment_type)
         _setter("instance_id", instance_id)
         _setter("volume_id", volume_id)
@@ -363,7 +387,45 @@ class _VolumeAttachmentState:
              time_created: Optional[pulumi.Input[str]] = None,
              use_chap: Optional[pulumi.Input[bool]] = None,
              volume_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentType' in kwargs:
+            attachment_type = kwargs['attachmentType']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'chapSecret' in kwargs:
+            chap_secret = kwargs['chapSecret']
+        if 'chapUsername' in kwargs:
+            chap_username = kwargs['chapUsername']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'encryptionInTransitType' in kwargs:
+            encryption_in_transit_type = kwargs['encryptionInTransitType']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'isAgentAutoIscsiLoginEnabled' in kwargs:
+            is_agent_auto_iscsi_login_enabled = kwargs['isAgentAutoIscsiLoginEnabled']
+        if 'isMultipath' in kwargs:
+            is_multipath = kwargs['isMultipath']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'isShareable' in kwargs:
+            is_shareable = kwargs['isShareable']
+        if 'iscsiLoginState' in kwargs:
+            iscsi_login_state = kwargs['iscsiLoginState']
+        if 'multipathDevices' in kwargs:
+            multipath_devices = kwargs['multipathDevices']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'useChap' in kwargs:
+            use_chap = kwargs['useChap']
+        if 'volumeId' in kwargs:
+            volume_id = kwargs['volumeId']
+
         if attachment_type is not None:
             _setter("attachment_type", attachment_type)
         if availability_domain is not None:

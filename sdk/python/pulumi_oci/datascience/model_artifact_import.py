@@ -41,7 +41,19 @@ class ModelArtifactImportArgs:
              destination_region: pulumi.Input[str],
              model_id: pulumi.Input[str],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactSourceType' in kwargs:
+            artifact_source_type = kwargs['artifactSourceType']
+        if 'destinationBucket' in kwargs:
+            destination_bucket = kwargs['destinationBucket']
+        if 'destinationObjectName' in kwargs:
+            destination_object_name = kwargs['destinationObjectName']
+        if 'destinationRegion' in kwargs:
+            destination_region = kwargs['destinationRegion']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         _setter("artifact_source_type", artifact_source_type)
         _setter("destination_bucket", destination_bucket)
         _setter("destination_object_name", destination_object_name)
@@ -134,7 +146,19 @@ class _ModelArtifactImportState:
              destination_region: Optional[pulumi.Input[str]] = None,
              model_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactSourceType' in kwargs:
+            artifact_source_type = kwargs['artifactSourceType']
+        if 'destinationBucket' in kwargs:
+            destination_bucket = kwargs['destinationBucket']
+        if 'destinationObjectName' in kwargs:
+            destination_object_name = kwargs['destinationObjectName']
+        if 'destinationRegion' in kwargs:
+            destination_region = kwargs['destinationRegion']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         if artifact_source_type is not None:
             _setter("artifact_source_type", artifact_source_type)
         if destination_bucket is not None:

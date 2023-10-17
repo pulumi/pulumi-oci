@@ -55,7 +55,19 @@ class StreamArgs:
              name: Optional[pulumi.Input[str]] = None,
              retention_in_hours: Optional[pulumi.Input[int]] = None,
              stream_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'retentionInHours' in kwargs:
+            retention_in_hours = kwargs['retentionInHours']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+
         _setter("partitions", partitions)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -219,7 +231,25 @@ class _StreamState:
              state: Optional[pulumi.Input[str]] = None,
              stream_pool_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'messagesEndpoint' in kwargs:
+            messages_endpoint = kwargs['messagesEndpoint']
+        if 'retentionInHours' in kwargs:
+            retention_in_hours = kwargs['retentionInHours']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

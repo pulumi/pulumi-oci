@@ -147,7 +147,51 @@ class MysqlDbSystemArgs:
              shutdown_type: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'backupPolicy' in kwargs:
+            backup_policy = kwargs['backupPolicy']
+        if 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'shutdownType' in kwargs:
+            shutdown_type = kwargs['shutdownType']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("shape_name", shape_name)
@@ -698,7 +742,65 @@ class _MysqlDbSystemState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicy' in kwargs:
+            backup_policy = kwargs['backupPolicy']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if 'currentPlacements' in kwargs:
+            current_placements = kwargs['currentPlacements']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'heatWaveClusters' in kwargs:
+            heat_wave_clusters = kwargs['heatWaveClusters']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isHeatWaveClusterAttached' in kwargs:
+            is_heat_wave_cluster_attached = kwargs['isHeatWaveClusterAttached']
+        if 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if 'pointInTimeRecoveryDetails' in kwargs:
+            point_in_time_recovery_details = kwargs['pointInTimeRecoveryDetails']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'shutdownType' in kwargs:
+            shutdown_type = kwargs['shutdownType']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if admin_password is not None:
             _setter("admin_password", admin_password)
         if admin_username is not None:

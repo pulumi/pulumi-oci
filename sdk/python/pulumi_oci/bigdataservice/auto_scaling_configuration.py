@@ -63,7 +63,21 @@ class AutoScalingConfigurationArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
              policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'nodeType' in kwargs:
+            node_type = kwargs['nodeType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'policyDetails' in kwargs:
+            policy_details = kwargs['policyDetails']
+
         _setter("bds_instance_id", bds_instance_id)
         _setter("cluster_admin_password", cluster_admin_password)
         _setter("is_enabled", is_enabled)
@@ -232,7 +246,25 @@ class _AutoScalingConfigurationState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'nodeType' in kwargs:
+            node_type = kwargs['nodeType']
+        if 'policyDetails' in kwargs:
+            policy_details = kwargs['policyDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bds_instance_id is not None:
             _setter("bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:

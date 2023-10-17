@@ -85,7 +85,27 @@ class WorkspaceApplicationArgs:
              registry_metadata: Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']] = None,
              source_application_info: Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+        if 'sourceApplicationInfo' in kwargs:
+            source_application_info = kwargs['sourceApplicationInfo']
+
         _setter("identifier", identifier)
         _setter("model_type", model_type)
         _setter("workspace_id", workspace_id)
@@ -401,7 +421,47 @@ class _WorkspaceApplicationState:
              time_patched: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationVersion' in kwargs:
+            application_version = kwargs['applicationVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dependentObjectMetadatas' in kwargs:
+            dependent_object_metadatas = kwargs['dependentObjectMetadatas']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyMap' in kwargs:
+            key_map = kwargs['keyMap']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+        if 'parentReves' in kwargs:
+            parent_reves = kwargs['parentReves']
+        if 'publishedObjectMetadatas' in kwargs:
+            published_object_metadatas = kwargs['publishedObjectMetadatas']
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+        if 'sourceApplicationInfo' in kwargs:
+            source_application_info = kwargs['sourceApplicationInfo']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timePatched' in kwargs:
+            time_patched = kwargs['timePatched']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if application_version is not None:
             _setter("application_version", application_version)
         if compartment_id is not None:

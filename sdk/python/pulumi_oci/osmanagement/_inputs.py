@@ -42,7 +42,11 @@ class ManagedInstanceAutonomouseArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_auto_update_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+
         if is_auto_update_enabled is not None:
             _setter("is_auto_update_enabled", is_auto_update_enabled)
 
@@ -78,7 +82,9 @@ class ManagedInstanceChildSoftwareSourceArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -128,7 +134,11 @@ class ManagedInstanceGroupManagedInstanceArgs:
              _setter: Callable[[Any, Any], None],
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -178,7 +188,11 @@ class ManagedInstanceManagedInstanceGroupArgs:
              _setter: Callable[[Any, Any], None],
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -232,7 +246,9 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -286,7 +302,11 @@ class ManagedInstanceManagementManagedInstanceGroupArgs:
              _setter: Callable[[Any, Any], None],
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -340,7 +360,9 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -394,7 +416,9 @@ class ManagedInstanceParentSoftwareSourceArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
         if name is not None:
@@ -444,7 +468,11 @@ class SoftwareSourceAssociatedManagedInstanceArgs:
              _setter: Callable[[Any, Any], None],
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -493,7 +521,9 @@ class GetManagedInstanceGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -545,7 +575,9 @@ class GetManagedInstanceModuleStreamsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -597,7 +629,9 @@ class GetManagedInstanceStreamProfileFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -652,7 +686,9 @@ class GetManagedInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -707,7 +743,9 @@ class GetSoftwareSourceStreamProfileFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -759,7 +797,9 @@ class GetSoftwareSourcesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

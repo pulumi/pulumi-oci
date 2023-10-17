@@ -39,7 +39,15 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
              autonomous_database_id: pulumi.Input[str],
              grace_period: Optional[pulumi.Input[int]] = None,
              should_rotate: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'gracePeriod' in kwargs:
+            grace_period = kwargs['gracePeriod']
+        if 'shouldRotate' in kwargs:
+            should_rotate = kwargs['shouldRotate']
+
         _setter("autonomous_database_id", autonomous_database_id)
         if grace_period is not None:
             _setter("grace_period", grace_period)
@@ -123,7 +131,17 @@ class _AutonomousDatabaseInstanceWalletManagementState:
              should_rotate: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_rotated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'gracePeriod' in kwargs:
+            grace_period = kwargs['gracePeriod']
+        if 'shouldRotate' in kwargs:
+            should_rotate = kwargs['shouldRotate']
+        if 'timeRotated' in kwargs:
+            time_rotated = kwargs['timeRotated']
+
         if autonomous_database_id is not None:
             _setter("autonomous_database_id", autonomous_database_id)
         if grace_period is not None:

@@ -132,7 +132,15 @@ class PublicationIcon(dict):
              file_extension: Optional[str] = None,
              mime_type: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         if content_url is not None:
             _setter("content_url", content_url)
         if file_extension is not None:
@@ -229,7 +237,17 @@ class PublicationPackageDetails(dict):
              package_type: str,
              package_version: str,
              image_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+
         _setter("eulas", eulas)
         _setter("operating_system", operating_system)
         _setter("package_type", package_type)
@@ -316,7 +334,13 @@ class PublicationPackageDetailsEula(dict):
              _setter: Callable[[Any, Any], None],
              eula_type: str,
              license_text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eulaType' in kwargs:
+            eula_type = kwargs['eulaType']
+        if 'licenseText' in kwargs:
+            license_text = kwargs['licenseText']
+
         _setter("eula_type", eula_type)
         if license_text is not None:
             _setter("license_text", license_text)
@@ -353,7 +377,9 @@ class PublicationPackageDetailsOperatingSystem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -397,7 +423,9 @@ class PublicationSupportContact(dict):
              name: Optional[str] = None,
              phone: Optional[str] = None,
              subject: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if email is not None:
             _setter("email", email)
         if name is not None:
@@ -459,7 +487,9 @@ class PublicationSupportedOperatingSystem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -522,7 +552,25 @@ class GetAcceptedAgreementsAcceptedAgreementResult(dict):
              package_version: str,
              signature: str,
              time_accepted: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+
         _setter("agreement_id", agreement_id)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -630,7 +678,9 @@ class GetAcceptedAgreementsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -667,7 +717,9 @@ class GetCategoriesCategoryResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -700,7 +752,9 @@ class GetCategoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -752,7 +806,15 @@ class GetListingBannerResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -814,7 +876,11 @@ class GetListingDocumentationLinkResult(dict):
              document_category: str,
              name: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'documentCategory' in kwargs:
+            document_category = kwargs['documentCategory']
+
         _setter("document_category", document_category)
         _setter("name", name)
         _setter("url", url)
@@ -871,7 +937,15 @@ class GetListingIconResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -929,7 +1003,9 @@ class GetListingLanguageResult(dict):
              _setter: Callable[[Any, Any], None],
              code: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("name", name)
 
@@ -969,7 +1045,9 @@ class GetListingLinkResult(dict):
              _setter: Callable[[Any, Any], None],
              href: str,
              rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("href", href)
         _setter("rel", rel)
 
@@ -1017,7 +1095,11 @@ class GetListingPackageAgreementsAgreementResult(dict):
              content_url: str,
              id: str,
              prompt: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+
         _setter("author", author)
         _setter("content_url", content_url)
         _setter("id", id)
@@ -1074,7 +1156,9 @@ class GetListingPackageAgreementsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1111,7 +1195,9 @@ class GetListingPackageOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -1154,7 +1240,13 @@ class GetListingPackagePricingResult(dict):
              pay_go_strategy: str,
              rate: float,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'internationalMarketPrices' in kwargs:
+            international_market_prices = kwargs['internationalMarketPrices']
+        if 'payGoStrategy' in kwargs:
+            pay_go_strategy = kwargs['payGoStrategy']
+
         _setter("currency", currency)
         _setter("international_market_prices", international_market_prices)
         _setter("pay_go_strategy", pay_go_strategy)
@@ -1225,7 +1317,13 @@ class GetListingPackagePricingInternationalMarketPriceResult(dict):
              currency_code: str,
              currency_symbol: str,
              rate: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("rate", rate)
@@ -1278,7 +1376,9 @@ class GetListingPackageRegionResult(dict):
              code: str,
              countries: Sequence['outputs.GetListingPackageRegionCountryResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("countries", countries)
         _setter("name", name)
@@ -1327,7 +1427,9 @@ class GetListingPackageRegionCountryResult(dict):
              _setter: Callable[[Any, Any], None],
              code: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("name", name)
 
@@ -1383,7 +1485,17 @@ class GetListingPackageVariableResult(dict):
              hint_message: str,
              is_mandatory: bool,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'hintMessage' in kwargs:
+            hint_message = kwargs['hintMessage']
+        if 'isMandatory' in kwargs:
+            is_mandatory = kwargs['isMandatory']
+
         _setter("data_type", data_type)
         _setter("default_value", default_value)
         _setter("description", description)
@@ -1461,7 +1573,9 @@ class GetListingPackagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1529,7 +1643,21 @@ class GetListingPackagesListingPackageResult(dict):
              regions: Sequence['outputs.GetListingPackagesListingPackageRegionResult'],
              resource_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("listing_id", listing_id)
         _setter("operating_systems", operating_systems)
         _setter("package_type", package_type)
@@ -1619,7 +1747,9 @@ class GetListingPackagesListingPackageOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -1662,7 +1792,13 @@ class GetListingPackagesListingPackagePricingResult(dict):
              pay_go_strategy: str,
              rate: float,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'internationalMarketPrices' in kwargs:
+            international_market_prices = kwargs['internationalMarketPrices']
+        if 'payGoStrategy' in kwargs:
+            pay_go_strategy = kwargs['payGoStrategy']
+
         _setter("currency", currency)
         _setter("international_market_prices", international_market_prices)
         _setter("pay_go_strategy", pay_go_strategy)
@@ -1733,7 +1869,13 @@ class GetListingPackagesListingPackagePricingInternationalMarketPriceResult(dict
              currency_code: str,
              currency_symbol: str,
              rate: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'currencySymbol' in kwargs:
+            currency_symbol = kwargs['currencySymbol']
+
         _setter("currency_code", currency_code)
         _setter("currency_symbol", currency_symbol)
         _setter("rate", rate)
@@ -1786,7 +1928,9 @@ class GetListingPackagesListingPackageRegionResult(dict):
              code: str,
              countries: Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("countries", countries)
         _setter("name", name)
@@ -1835,7 +1979,9 @@ class GetListingPackagesListingPackageRegionCountryResult(dict):
              _setter: Callable[[Any, Any], None],
              code: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("name", name)
 
@@ -1907,7 +2053,19 @@ class GetListingPublisherResult(dict):
              name: str,
              website_url: str,
              year_founded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contactEmail' in kwargs:
+            contact_email = kwargs['contactEmail']
+        if 'contactPhone' in kwargs:
+            contact_phone = kwargs['contactPhone']
+        if 'hqAddress' in kwargs:
+            hq_address = kwargs['hqAddress']
+        if 'websiteUrl' in kwargs:
+            website_url = kwargs['websiteUrl']
+        if 'yearFounded' in kwargs:
+            year_founded = kwargs['yearFounded']
+
         _setter("contact_email", contact_email)
         _setter("contact_phone", contact_phone)
         _setter("description", description)
@@ -2019,7 +2177,9 @@ class GetListingPublisherLinkResult(dict):
              _setter: Callable[[Any, Any], None],
              href: str,
              rel: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("href", href)
         _setter("rel", rel)
 
@@ -2067,7 +2227,15 @@ class GetListingPublisherLogoResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -2129,7 +2297,9 @@ class GetListingRegionResult(dict):
              code: str,
              countries: Sequence['outputs.GetListingRegionCountryResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("countries", countries)
         _setter("name", name)
@@ -2178,7 +2348,9 @@ class GetListingRegionCountryResult(dict):
              _setter: Callable[[Any, Any], None],
              code: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("name", name)
 
@@ -2230,7 +2402,15 @@ class GetListingScreenshotResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("description", description)
         _setter("file_extension", file_extension)
@@ -2305,7 +2485,9 @@ class GetListingSupportContactResult(dict):
              name: str,
              phone: str,
              subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("email", email)
         _setter("name", name)
         _setter("phone", phone)
@@ -2363,7 +2545,9 @@ class GetListingSupportLinkResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("url", url)
 
@@ -2399,7 +2583,9 @@ class GetListingSupportedOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -2432,7 +2618,9 @@ class GetListingTaxesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2484,7 +2672,9 @@ class GetListingTaxesTaxResult(dict):
              country: str,
              name: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("country", country)
         _setter("name", name)
@@ -2542,7 +2732,9 @@ class GetListingVideoResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("url", url)
 
@@ -2584,7 +2776,9 @@ class GetListingsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2683,7 +2877,27 @@ class GetListingsListingResult(dict):
              regions: Sequence['outputs.GetListingsListingRegionResult'],
              short_description: str,
              supported_operating_systems: Sequence['outputs.GetListingsListingSupportedOperatingSystemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compatibleArchitectures' in kwargs:
+            compatible_architectures = kwargs['compatibleArchitectures']
+        if 'defaultPackageVersion' in kwargs:
+            default_package_version = kwargs['defaultPackageVersion']
+        if 'documentationLinks' in kwargs:
+            documentation_links = kwargs['documentationLinks']
+        if 'isFeatured' in kwargs:
+            is_featured = kwargs['isFeatured']
+        if 'listingType' in kwargs:
+            listing_type = kwargs['listingType']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'pricingTypes' in kwargs:
+            pricing_types = kwargs['pricingTypes']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'supportedOperatingSystems' in kwargs:
+            supported_operating_systems = kwargs['supportedOperatingSystems']
+
         _setter("banners", banners)
         _setter("categories", categories)
         _setter("compatible_architectures", compatible_architectures)
@@ -2854,7 +3068,15 @@ class GetListingsListingBannerResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -2916,7 +3138,11 @@ class GetListingsListingDocumentationLinkResult(dict):
              document_category: str,
              name: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'documentCategory' in kwargs:
+            document_category = kwargs['documentCategory']
+
         _setter("document_category", document_category)
         _setter("name", name)
         _setter("url", url)
@@ -2973,7 +3199,15 @@ class GetListingsListingIconResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -3035,7 +3269,9 @@ class GetListingsListingPublisherResult(dict):
              description: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("id", id)
         _setter("name", name)
@@ -3088,7 +3324,9 @@ class GetListingsListingRegionResult(dict):
              code: str,
              countries: Sequence['outputs.GetListingsListingRegionCountryResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("countries", countries)
         _setter("name", name)
@@ -3137,7 +3375,9 @@ class GetListingsListingRegionCountryResult(dict):
              _setter: Callable[[Any, Any], None],
              code: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("name", name)
 
@@ -3173,7 +3413,9 @@ class GetListingsListingSupportedOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3212,7 +3454,15 @@ class GetPublicationIconResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -3278,7 +3528,17 @@ class GetPublicationPackageDetailResult(dict):
              operating_systems: Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult'],
              package_type: str,
              package_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         _setter("eulas", eulas)
         _setter("image_id", image_id)
         _setter("operating_systems", operating_systems)
@@ -3329,7 +3589,13 @@ class GetPublicationPackageDetailEulaResult(dict):
              _setter: Callable[[Any, Any], None],
              eula_type: str,
              license_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eulaType' in kwargs:
+            eula_type = kwargs['eulaType']
+        if 'licenseText' in kwargs:
+            license_text = kwargs['licenseText']
+
         _setter("eula_type", eula_type)
         _setter("license_text", license_text)
 
@@ -3359,7 +3625,9 @@ class GetPublicationPackageDetailOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3386,7 +3654,9 @@ class GetPublicationPackageOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3433,7 +3703,17 @@ class GetPublicationPackageVariableResult(dict):
              hint_message: str,
              is_mandatory: bool,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'hintMessage' in kwargs:
+            hint_message = kwargs['hintMessage']
+        if 'isMandatory' in kwargs:
+            is_mandatory = kwargs['isMandatory']
+
         _setter("data_type", data_type)
         _setter("default_value", default_value)
         _setter("description", description)
@@ -3511,7 +3791,9 @@ class GetPublicationPackagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3567,7 +3849,19 @@ class GetPublicationPackagesPublicationPackageResult(dict):
              package_version: str,
              resource_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("listing_id", listing_id)
         _setter("package_type", package_type)
         _setter("package_version", package_version)
@@ -3642,7 +3936,9 @@ class GetPublicationSupportContactResult(dict):
              name: str,
              phone: str,
              subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("email", email)
         _setter("name", name)
         _setter("phone", phone)
@@ -3696,7 +3992,9 @@ class GetPublicationSupportedOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3729,7 +4027,9 @@ class GetPublicationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3827,7 +4127,33 @@ class GetPublicationsPublicationResult(dict):
              support_contacts: Sequence['outputs.GetPublicationsPublicationSupportContactResult'],
              supported_operating_systems: Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAgreementAcknowledged' in kwargs:
+            is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
+        if 'listingType' in kwargs:
+            listing_type = kwargs['listingType']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'supportContacts' in kwargs:
+            support_contacts = kwargs['supportContacts']
+        if 'supportedOperatingSystems' in kwargs:
+            supported_operating_systems = kwargs['supportedOperatingSystems']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -3995,7 +4321,15 @@ class GetPublicationsPublicationIconResult(dict):
              file_extension: str,
              mime_type: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("file_extension", file_extension)
         _setter("mime_type", mime_type)
@@ -4061,7 +4395,17 @@ class GetPublicationsPublicationPackageDetailResult(dict):
              operating_systems: Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult'],
              package_type: str,
              package_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         _setter("eulas", eulas)
         _setter("image_id", image_id)
         _setter("operating_systems", operating_systems)
@@ -4112,7 +4456,13 @@ class GetPublicationsPublicationPackageDetailEulaResult(dict):
              _setter: Callable[[Any, Any], None],
              eula_type: str,
              license_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eulaType' in kwargs:
+            eula_type = kwargs['eulaType']
+        if 'licenseText' in kwargs:
+            license_text = kwargs['licenseText']
+
         _setter("eula_type", eula_type)
         _setter("license_text", license_text)
 
@@ -4142,7 +4492,9 @@ class GetPublicationsPublicationPackageDetailOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4181,7 +4533,9 @@ class GetPublicationsPublicationSupportContactResult(dict):
              name: str,
              phone: str,
              subject: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("email", email)
         _setter("name", name)
         _setter("phone", phone)
@@ -4235,7 +4589,9 @@ class GetPublicationsPublicationSupportedOperatingSystemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4268,7 +4624,9 @@ class GetPublishersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4316,7 +4674,9 @@ class GetPublishersPublisherResult(dict):
              description: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("id", id)
         _setter("name", name)

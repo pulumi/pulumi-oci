@@ -83,6 +83,7 @@ type LookupDbNodeResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+	// **Note:** Applies only to Exadata Cloud Service.
 	HostIpId string `pulumi:"hostIpId"`
 	// The host name for the database node.
 	Hostname string `pulumi:"hostname"`
@@ -214,6 +215,7 @@ func (o LookupDbNodeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
+// **Note:** Applies only to Exadata Cloud Service.
 func (o LookupDbNodeResultOutput) HostIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeResult) string { return v.HostIpId }).(pulumi.StringOutput)
 }

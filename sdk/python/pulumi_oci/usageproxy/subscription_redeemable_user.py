@@ -45,7 +45,15 @@ class SubscriptionRedeemableUserArgs:
              subscription_id: pulumi.Input[str],
              tenancy_id: pulumi.Input[str],
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("items", items)
         _setter("subscription_id", subscription_id)
         _setter("tenancy_id", tenancy_id)
@@ -137,7 +145,15 @@ class _SubscriptionRedeemableUserState:
              subscription_id: Optional[pulumi.Input[str]] = None,
              tenancy_id: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if items is not None:
             _setter("items", items)
         if subscription_id is not None:

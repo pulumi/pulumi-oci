@@ -79,7 +79,13 @@ class VulnerabilityAuditApplicationDependency(dict):
              gav: str,
              node_id: str,
              application_dependency_node_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+
         _setter("gav", gav)
         _setter("node_id", node_id)
         if application_dependency_node_ids is not None:
@@ -152,7 +158,13 @@ class VulnerabilityAuditConfiguration(dict):
              exclusions: Optional[Sequence[str]] = None,
              max_permissible_cvss_v2score: Optional[float] = None,
              max_permissible_cvss_v3score: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if max_permissible_cvss_v2score is not None:
@@ -229,7 +241,11 @@ class VulnerabilityAuditSource(dict):
              type: str,
              description: Optional[str] = None,
              oci_resource_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociResourceId' in kwargs:
+            oci_resource_id = kwargs['ociResourceId']
+
         _setter("type", type)
         if description is not None:
             _setter("description", description)
@@ -313,7 +329,15 @@ class VulnerabilityAuditVulnerability(dict):
              cvss_v3score: Optional[float] = None,
              id: Optional[str] = None,
              is_ignored: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         if cvss_v2score is not None:
             _setter("cvss_v2score", cvss_v2score)
         if cvss_v3score is not None:
@@ -374,7 +398,9 @@ class GetKnowledgebasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -408,7 +434,9 @@ class GetKnowledgebasesKnowledgeBaseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetKnowledgebasesKnowledgeBaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -464,7 +492,23 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -566,7 +610,13 @@ class GetVulnerabilityAuditApplicationDependencyResult(dict):
              application_dependency_node_ids: Sequence[str],
              gav: str,
              node_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
         _setter("node_id", node_id)
@@ -602,7 +652,9 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -645,7 +697,15 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
              is_found_in_knowledge_base: bool,
              node_id: str,
              vulnerabilities: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+        if 'isFoundInKnowledgeBase' in kwargs:
+            is_found_in_knowledge_base = kwargs['isFoundInKnowledgeBase']
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
         _setter("is_found_in_knowledge_base", is_found_in_knowledge_base)
@@ -720,7 +780,15 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
              cvss_v3score: float,
              id: str,
              is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
         _setter("id", id)
@@ -777,7 +845,9 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterResult(dict
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -830,7 +900,15 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemResult(dict):
              is_found_in_knowledge_base: bool,
              node_id: str,
              vulnerabilities: Sequence['outputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+        if 'isFoundInKnowledgeBase' in kwargs:
+            is_found_in_knowledge_base = kwargs['isFoundInKnowledgeBase']
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
         _setter("is_found_in_knowledge_base", is_found_in_knowledge_base)
@@ -905,7 +983,15 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
              cvss_v3score: float,
              id: str,
              is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
         _setter("id", id)
@@ -967,7 +1053,13 @@ class GetVulnerabilityAuditConfigurationResult(dict):
              exclusions: Sequence[str],
              max_permissible_cvss_v2score: float,
              max_permissible_cvss_v3score: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+
         _setter("exclusions", exclusions)
         _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
         _setter("max_permissible_cvss_v3score", max_permissible_cvss_v3score)
@@ -1020,7 +1112,11 @@ class GetVulnerabilityAuditSourceResult(dict):
              description: str,
              oci_resource_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociResourceId' in kwargs:
+            oci_resource_id = kwargs['ociResourceId']
+
         _setter("description", description)
         _setter("oci_resource_id", oci_resource_id)
         _setter("type", type)
@@ -1077,7 +1173,15 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
              cvss_v3score: float,
              id: str,
              is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
         _setter("id", id)
@@ -1134,7 +1238,9 @@ class GetVulnerabilityAuditsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1168,7 +1274,9 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1275,7 +1383,43 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
              vulnerabilities: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult'],
              vulnerable_artifacts_count: int,
              vulnerable_artifacts_count_with_ignored: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationDependencies' in kwargs:
+            application_dependencies = kwargs['applicationDependencies']
+        if 'buildType' in kwargs:
+            build_type = kwargs['buildType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSuccess' in kwargs:
+            is_success = kwargs['isSuccess']
+        if 'knowledgeBaseId' in kwargs:
+            knowledge_base_id = kwargs['knowledgeBaseId']
+        if 'maxObservedCvssV2score' in kwargs:
+            max_observed_cvss_v2score = kwargs['maxObservedCvssV2score']
+        if 'maxObservedCvssV2scoreWithIgnored' in kwargs:
+            max_observed_cvss_v2score_with_ignored = kwargs['maxObservedCvssV2scoreWithIgnored']
+        if 'maxObservedCvssV3score' in kwargs:
+            max_observed_cvss_v3score = kwargs['maxObservedCvssV3score']
+        if 'maxObservedCvssV3scoreWithIgnored' in kwargs:
+            max_observed_cvss_v3score_with_ignored = kwargs['maxObservedCvssV3scoreWithIgnored']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vulnerableArtifactsCount' in kwargs:
+            vulnerable_artifacts_count = kwargs['vulnerableArtifactsCount']
+        if 'vulnerableArtifactsCountWithIgnored' in kwargs:
+            vulnerable_artifacts_count_with_ignored = kwargs['vulnerableArtifactsCountWithIgnored']
+
         _setter("application_dependencies", application_dependencies)
         _setter("build_type", build_type)
         _setter("compartment_id", compartment_id)
@@ -1491,7 +1635,13 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependenc
              application_dependency_node_ids: Sequence[str],
              gav: str,
              node_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+
         _setter("application_dependency_node_ids", application_dependency_node_ids)
         _setter("gav", gav)
         _setter("node_id", node_id)
@@ -1535,7 +1685,13 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult(
              exclusions: Sequence[str],
              max_permissible_cvss_v2score: float,
              max_permissible_cvss_v3score: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+
         _setter("exclusions", exclusions)
         _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
         _setter("max_permissible_cvss_v3score", max_permissible_cvss_v3score)
@@ -1588,7 +1744,11 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
              description: str,
              oci_resource_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociResourceId' in kwargs:
+            oci_resource_id = kwargs['ociResourceId']
+
         _setter("description", description)
         _setter("oci_resource_id", oci_resource_id)
         _setter("type", type)
@@ -1645,7 +1805,15 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
              cvss_v3score: float,
              id: str,
              is_ignored: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         _setter("cvss_v2score", cvss_v2score)
         _setter("cvss_v3score", cvss_v3score)
         _setter("id", id)

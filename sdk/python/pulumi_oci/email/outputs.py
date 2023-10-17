@@ -35,7 +35,9 @@ class GetDkimsDkimCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDkimsDkimCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -115,7 +117,31 @@ class GetDkimsDkimCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              txt_record_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cnameRecordValue' in kwargs:
+            cname_record_value = kwargs['cnameRecordValue']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsSubdomainName' in kwargs:
+            dns_subdomain_name = kwargs['dnsSubdomainName']
+        if 'emailDomainId' in kwargs:
+            email_domain_id = kwargs['emailDomainId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'txtRecordValue' in kwargs:
+            txt_record_value = kwargs['txtRecordValue']
+
         _setter("cname_record_value", cname_record_value)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -274,7 +300,9 @@ class GetDkimsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -311,7 +339,9 @@ class GetEmailDomainsEmailDomainCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -375,7 +405,23 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
              state: str,
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeDkimId' in kwargs:
+            active_dkim_id = kwargs['activeDkimId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSpf' in kwargs:
+            is_spf = kwargs['isSpf']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("active_dkim_id", active_dkim_id)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -498,7 +544,9 @@ class GetEmailDomainsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -541,7 +589,9 @@ class GetSendersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -610,7 +660,23 @@ class GetSendersSenderResult(dict):
              is_spf: bool,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'emailDomainId' in kwargs:
+            email_domain_id = kwargs['emailDomainId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSpf' in kwargs:
+            is_spf = kwargs['isSpf']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("email_address", email_address)
@@ -712,7 +778,9 @@ class GetSuppressionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -781,7 +849,23 @@ class GetSuppressionsSuppressionResult(dict):
              reason: str,
              time_created: str,
              time_last_suppressed: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'errorDetail' in kwargs:
+            error_detail = kwargs['errorDetail']
+        if 'errorSource' in kwargs:
+            error_source = kwargs['errorSource']
+        if 'messageId' in kwargs:
+            message_id = kwargs['messageId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastSuppressed' in kwargs:
+            time_last_suppressed = kwargs['timeLastSuppressed']
+
         _setter("compartment_id", compartment_id)
         _setter("email_address", email_address)
         _setter("error_detail", error_detail)

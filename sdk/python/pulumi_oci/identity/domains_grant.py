@@ -176,7 +176,21 @@ class DomainsGrantArgs:
              ocid: Optional[pulumi.Input[str]] = None,
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'appEntitlementCollection' in kwargs:
+            app_entitlement_collection = kwargs['appEntitlementCollection']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'grantedAttributeValuesJson' in kwargs:
+            granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+
         _setter("grant_mechanism", grant_mechanism)
         _setter("grantee", grantee)
         _setter("idcs_endpoint", idcs_endpoint)
@@ -796,7 +810,41 @@ class _DomainsGrantState:
              schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appEntitlementCollection' in kwargs:
+            app_entitlement_collection = kwargs['appEntitlementCollection']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'compositeKey' in kwargs:
+            composite_key = kwargs['compositeKey']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'grantMechanism' in kwargs:
+            grant_mechanism = kwargs['grantMechanism']
+        if 'grantedAttributeValuesJson' in kwargs:
+            granted_attribute_values_json = kwargs['grantedAttributeValuesJson']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'isFulfilled' in kwargs:
+            is_fulfilled = kwargs['isFulfilled']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+
         if app is not None:
             _setter("app", app)
         if app_entitlement_collection is not None:

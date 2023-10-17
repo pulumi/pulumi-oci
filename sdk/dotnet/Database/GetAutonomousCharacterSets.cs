@@ -31,7 +31,6 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
         ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
         ///         IsShared = @var.Autonomous_database_character_set_is_shared,
         ///     });
         /// 
@@ -63,7 +62,6 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
         ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
         ///         IsShared = @var.Autonomous_database_character_set_is_shared,
         ///     });
         /// 
@@ -100,7 +98,7 @@ namespace Pulumi.Oci.Database
         public bool? IsDedicated { get; set; }
 
         /// <summary>
-        /// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("isShared")]
         public bool? IsShared { get; set; }
@@ -134,7 +132,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDedicated { get; set; }
 
         /// <summary>
-        /// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("isShared")]
         public Input<bool>? IsShared { get; set; }

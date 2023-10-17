@@ -56,7 +56,23 @@ class ProtectedDatabaseMetricArgs:
              is_redo_logs_enabled: Optional[pulumi.Input[bool]] = None,
              retention_period_in_days: Optional[pulumi.Input[float]] = None,
              unprotected_window_in_seconds: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+
         if backup_space_estimate_in_gbs is not None:
             _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
@@ -180,7 +196,11 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
              _setter: Callable[[Any, Any], None],
              recovery_service_subnet_id: pulumi.Input[str],
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+
         _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
             _setter("state", state)
@@ -232,7 +252,9 @@ class GetProtectedDatabasesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -284,7 +306,9 @@ class GetProtectionPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -336,7 +360,9 @@ class GetRecoveryServiceSubnetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -51,7 +51,21 @@ class Ipv6Args:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              ip_address: Optional[pulumi.Input[str]] = None,
              ipv6subnet_cidr: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+
         _setter("vnic_id", vnic_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -197,7 +211,27 @@ class _Ipv6State:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipv6subnetCidr' in kwargs:
+            ipv6subnet_cidr = kwargs['ipv6subnetCidr']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

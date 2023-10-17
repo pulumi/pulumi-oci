@@ -35,7 +35,13 @@ class ClusterStartCredentialRotationManagementArgs:
              _setter: Callable[[Any, Any], None],
              auto_completion_delay_duration: pulumi.Input[str],
              cluster_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoCompletionDelayDuration' in kwargs:
+            auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+
         _setter("auto_completion_delay_duration", auto_completion_delay_duration)
         _setter("cluster_id", cluster_id)
 
@@ -92,7 +98,13 @@ class _ClusterStartCredentialRotationManagementState:
              _setter: Callable[[Any, Any], None],
              auto_completion_delay_duration: Optional[pulumi.Input[str]] = None,
              cluster_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoCompletionDelayDuration' in kwargs:
+            auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+
         if auto_completion_delay_duration is not None:
             _setter("auto_completion_delay_duration", auto_completion_delay_duration)
         if cluster_id is not None:

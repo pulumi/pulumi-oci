@@ -96,7 +96,39 @@ class DeploymentArgs:
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isAutoScalingEnabled' in kwargs:
+            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentBackupId' in kwargs:
+            deployment_backup_id = kwargs['deploymentBackupId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'maintenanceConfiguration' in kwargs:
+            maintenance_configuration = kwargs['maintenanceConfiguration']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'oggData' in kwargs:
+            ogg_data = kwargs['oggData']
+
         _setter("compartment_id", compartment_id)
         _setter("cpu_core_count", cpu_core_count)
         _setter("deployment_type", deployment_type)
@@ -496,7 +528,75 @@ class _DeploymentState:
              time_ogg_version_supported_until: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              time_upgrade_required: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentBackupId' in kwargs:
+            deployment_backup_id = kwargs['deploymentBackupId']
+        if 'deploymentDiagnosticDatas' in kwargs:
+            deployment_diagnostic_datas = kwargs['deploymentDiagnosticDatas']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'deploymentUrl' in kwargs:
+            deployment_url = kwargs['deploymentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoScalingEnabled' in kwargs:
+            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
+        if 'isHealthy' in kwargs:
+            is_healthy = kwargs['isHealthy']
+        if 'isLatestVersion' in kwargs:
+            is_latest_version = kwargs['isLatestVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'isStorageUtilizationLimitExceeded' in kwargs:
+            is_storage_utilization_limit_exceeded = kwargs['isStorageUtilizationLimitExceeded']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lifecycleSubState' in kwargs:
+            lifecycle_sub_state = kwargs['lifecycleSubState']
+        if 'maintenanceConfiguration' in kwargs:
+            maintenance_configuration = kwargs['maintenanceConfiguration']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'nextMaintenanceActionType' in kwargs:
+            next_maintenance_action_type = kwargs['nextMaintenanceActionType']
+        if 'nextMaintenanceDescription' in kwargs:
+            next_maintenance_description = kwargs['nextMaintenanceDescription']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'oggData' in kwargs:
+            ogg_data = kwargs['oggData']
+        if 'privateIpAddress' in kwargs:
+            private_ip_address = kwargs['privateIpAddress']
+        if 'publicIpAddress' in kwargs:
+            public_ip_address = kwargs['publicIpAddress']
+        if 'storageUtilizationInBytes' in kwargs:
+            storage_utilization_in_bytes = kwargs['storageUtilizationInBytes']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfNextMaintenance' in kwargs:
+            time_of_next_maintenance = kwargs['timeOfNextMaintenance']
+        if 'timeOggVersionSupportedUntil' in kwargs:
+            time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeUpgradeRequired' in kwargs:
+            time_upgrade_required = kwargs['timeUpgradeRequired']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if cpu_core_count is not None:

@@ -90,7 +90,15 @@ class SubscriptionRedeemableUserItem(dict):
              email_id: str,
              first_name: Optional[str] = None,
              last_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailId' in kwargs:
+            email_id = kwargs['emailId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_id", email_id)
         if first_name is not None:
             _setter("first_name", first_name)
@@ -143,7 +151,9 @@ class GetResourceQuotasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -187,7 +197,11 @@ class GetResourceQuotasResourceQuotumCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              is_allowed: bool,
              items: Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isAllowed' in kwargs:
+            is_allowed = kwargs['isAllowed']
+
         _setter("is_allowed", is_allowed)
         _setter("items", items)
 
@@ -251,7 +265,19 @@ class GetResourceQuotasResourceQuotumCollectionItemResult(dict):
              name: str,
              purchased_limit: float,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'affectedResource' in kwargs:
+            affected_resource = kwargs['affectedResource']
+        if 'isAllowed' in kwargs:
+            is_allowed = kwargs['isAllowed']
+        if 'isDependency' in kwargs:
+            is_dependency = kwargs['isDependency']
+        if 'isOverage' in kwargs:
+            is_overage = kwargs['isOverage']
+        if 'purchasedLimit' in kwargs:
+            purchased_limit = kwargs['purchasedLimit']
+
         _setter("affected_resource", affected_resource)
         _setter("balance", balance)
         _setter("is_allowed", is_allowed)
@@ -347,7 +373,9 @@ class GetResourcesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -387,7 +415,9 @@ class GetResourcesResourcesCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetResourcesResourcesCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -454,7 +484,23 @@ class GetResourcesResourcesCollectionItemResult(dict):
              servicename: str,
              skuses: Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult'],
              usage_data_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'childResources' in kwargs:
+            child_resources = kwargs['childResources']
+        if 'dailyUnitDisplayName' in kwargs:
+            daily_unit_display_name = kwargs['dailyUnitDisplayName']
+        if 'hourlyUnitDisplayName' in kwargs:
+            hourly_unit_display_name = kwargs['hourlyUnitDisplayName']
+        if 'instanceType' in kwargs:
+            instance_type = kwargs['instanceType']
+        if 'isPurchased' in kwargs:
+            is_purchased = kwargs['isPurchased']
+        if 'rawUnitDisplayName' in kwargs:
+            raw_unit_display_name = kwargs['rawUnitDisplayName']
+        if 'usageDataType' in kwargs:
+            usage_data_type = kwargs['usageDataType']
+
         _setter("child_resources", child_resources)
         _setter("daily_unit_display_name", daily_unit_display_name)
         _setter("description", description)
@@ -579,7 +625,15 @@ class GetResourcesResourcesCollectionItemSkusResult(dict):
              cloud_credit_type: str,
              sku_id: str,
              sku_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudCreditType' in kwargs:
+            cloud_credit_type = kwargs['cloudCreditType']
+        if 'skuId' in kwargs:
+            sku_id = kwargs['skuId']
+        if 'skuType' in kwargs:
+            sku_type = kwargs['skuType']
+
         _setter("cloud_credit_type", cloud_credit_type)
         _setter("sku_id", sku_id)
         _setter("sku_type", sku_type)
@@ -640,7 +694,19 @@ class GetSubscriptionProductItemResult(dict):
              product_name: str,
              product_number: str,
              usage_amount: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'earnedRewards' in kwargs:
+            earned_rewards = kwargs['earnedRewards']
+        if 'isEligibleToEarnRewards' in kwargs:
+            is_eligible_to_earn_rewards = kwargs['isEligibleToEarnRewards']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+        if 'productNumber' in kwargs:
+            product_number = kwargs['productNumber']
+        if 'usageAmount' in kwargs:
+            usage_amount = kwargs['usageAmount']
+
         _setter("earned_rewards", earned_rewards)
         _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
         _setter("product_name", product_name)
@@ -706,7 +772,9 @@ class GetSubscriptionProductsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -743,7 +811,9 @@ class GetSubscriptionProductsProductCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -770,7 +840,9 @@ class GetSubscriptionProductsProductCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -813,7 +885,19 @@ class GetSubscriptionProductsProductCollectionItemItemResult(dict):
              product_name: str,
              product_number: str,
              usage_amount: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'earnedRewards' in kwargs:
+            earned_rewards = kwargs['earnedRewards']
+        if 'isEligibleToEarnRewards' in kwargs:
+            is_eligible_to_earn_rewards = kwargs['isEligibleToEarnRewards']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+        if 'productNumber' in kwargs:
+            product_number = kwargs['productNumber']
+        if 'usageAmount' in kwargs:
+            usage_amount = kwargs['usageAmount']
+
         _setter("earned_rewards", earned_rewards)
         _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
         _setter("product_name", product_name)
@@ -884,7 +968,15 @@ class GetSubscriptionRedeemableUserItemResult(dict):
              email_id: str,
              first_name: str,
              last_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailId' in kwargs:
+            email_id = kwargs['emailId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_id", email_id)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -932,7 +1024,9 @@ class GetSubscriptionRedeemableUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -969,7 +1063,9 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1007,7 +1103,15 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
              subscription_id: str,
              tenancy_id: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("items", items)
         _setter("subscription_id", subscription_id)
         _setter("tenancy_id", tenancy_id)
@@ -1066,7 +1170,15 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult(dict)
              email_id: str,
              first_name: str,
              last_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailId' in kwargs:
+            email_id = kwargs['emailId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_id", email_id)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -1147,7 +1259,29 @@ class GetSubscriptionRedemptionItemResult(dict):
              redemption_email: str,
              time_invoiced: str,
              time_redeemed: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRewards' in kwargs:
+            base_rewards = kwargs['baseRewards']
+        if 'fxRate' in kwargs:
+            fx_rate = kwargs['fxRate']
+        if 'invoiceCurrency' in kwargs:
+            invoice_currency = kwargs['invoiceCurrency']
+        if 'invoiceNumber' in kwargs:
+            invoice_number = kwargs['invoiceNumber']
+        if 'invoiceTotalAmount' in kwargs:
+            invoice_total_amount = kwargs['invoiceTotalAmount']
+        if 'redeemedRewards' in kwargs:
+            redeemed_rewards = kwargs['redeemedRewards']
+        if 'redemptionCode' in kwargs:
+            redemption_code = kwargs['redemptionCode']
+        if 'redemptionEmail' in kwargs:
+            redemption_email = kwargs['redemptionEmail']
+        if 'timeInvoiced' in kwargs:
+            time_invoiced = kwargs['timeInvoiced']
+        if 'timeRedeemed' in kwargs:
+            time_redeemed = kwargs['timeRedeemed']
+
         _setter("base_rewards", base_rewards)
         _setter("fx_rate", fx_rate)
         _setter("invoice_currency", invoice_currency)
@@ -1258,7 +1392,9 @@ class GetSubscriptionRedemptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1295,7 +1431,9 @@ class GetSubscriptionRedemptionsRedemptionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1322,7 +1460,9 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1385,7 +1525,29 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(dict):
              redemption_email: str,
              time_invoiced: str,
              time_redeemed: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRewards' in kwargs:
+            base_rewards = kwargs['baseRewards']
+        if 'fxRate' in kwargs:
+            fx_rate = kwargs['fxRate']
+        if 'invoiceCurrency' in kwargs:
+            invoice_currency = kwargs['invoiceCurrency']
+        if 'invoiceNumber' in kwargs:
+            invoice_number = kwargs['invoiceNumber']
+        if 'invoiceTotalAmount' in kwargs:
+            invoice_total_amount = kwargs['invoiceTotalAmount']
+        if 'redeemedRewards' in kwargs:
+            redeemed_rewards = kwargs['redeemedRewards']
+        if 'redemptionCode' in kwargs:
+            redemption_code = kwargs['redemptionCode']
+        if 'redemptionEmail' in kwargs:
+            redemption_email = kwargs['redemptionEmail']
+        if 'timeInvoiced' in kwargs:
+            time_invoiced = kwargs['timeInvoiced']
+        if 'timeRedeemed' in kwargs:
+            time_redeemed = kwargs['timeRedeemed']
+
         _setter("base_rewards", base_rewards)
         _setter("fx_rate", fx_rate)
         _setter("invoice_currency", invoice_currency)
@@ -1537,7 +1699,33 @@ class GetSubscriptionRewardItemResult(dict):
              time_usage_started: str,
              usage_amount: float,
              usage_period_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableRewards' in kwargs:
+            available_rewards = kwargs['availableRewards']
+        if 'earnedRewards' in kwargs:
+            earned_rewards = kwargs['earnedRewards']
+        if 'eligibleUsageAmount' in kwargs:
+            eligible_usage_amount = kwargs['eligibleUsageAmount']
+        if 'ineligibleUsageAmount' in kwargs:
+            ineligible_usage_amount = kwargs['ineligibleUsageAmount']
+        if 'isManual' in kwargs:
+            is_manual = kwargs['isManual']
+        if 'redeemedRewards' in kwargs:
+            redeemed_rewards = kwargs['redeemedRewards']
+        if 'timeRewardsEarned' in kwargs:
+            time_rewards_earned = kwargs['timeRewardsEarned']
+        if 'timeRewardsExpired' in kwargs:
+            time_rewards_expired = kwargs['timeRewardsExpired']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+        if 'usageAmount' in kwargs:
+            usage_amount = kwargs['usageAmount']
+        if 'usagePeriodKey' in kwargs:
+            usage_period_key = kwargs['usagePeriodKey']
+
         _setter("available_rewards", available_rewards)
         _setter("earned_rewards", earned_rewards)
         _setter("eligible_usage_amount", eligible_usage_amount)
@@ -1683,7 +1871,19 @@ class GetSubscriptionRewardSummaryResult(dict):
              subscription_id: str,
              tenancy_id: str,
              total_rewards_available: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'redemptionCode' in kwargs:
+            redemption_code = kwargs['redemptionCode']
+        if 'rewardsRate' in kwargs:
+            rewards_rate = kwargs['rewardsRate']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'totalRewardsAvailable' in kwargs:
+            total_rewards_available = kwargs['totalRewardsAvailable']
+
         _setter("currency", currency)
         _setter("redemption_code", redemption_code)
         _setter("rewards_rate", rewards_rate)
@@ -1758,7 +1958,9 @@ class GetSubscriptionRewardsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1795,7 +1997,9 @@ class GetSubscriptionRewardsRewardCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1826,7 +2030,9 @@ class GetSubscriptionRewardsRewardCollectionItemResult(dict):
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult'],
              summaries: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("summaries", summaries)
 
@@ -1906,7 +2112,33 @@ class GetSubscriptionRewardsRewardCollectionItemItemResult(dict):
              time_usage_started: str,
              usage_amount: float,
              usage_period_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableRewards' in kwargs:
+            available_rewards = kwargs['availableRewards']
+        if 'earnedRewards' in kwargs:
+            earned_rewards = kwargs['earnedRewards']
+        if 'eligibleUsageAmount' in kwargs:
+            eligible_usage_amount = kwargs['eligibleUsageAmount']
+        if 'ineligibleUsageAmount' in kwargs:
+            ineligible_usage_amount = kwargs['ineligibleUsageAmount']
+        if 'isManual' in kwargs:
+            is_manual = kwargs['isManual']
+        if 'redeemedRewards' in kwargs:
+            redeemed_rewards = kwargs['redeemedRewards']
+        if 'timeRewardsEarned' in kwargs:
+            time_rewards_earned = kwargs['timeRewardsEarned']
+        if 'timeRewardsExpired' in kwargs:
+            time_rewards_expired = kwargs['timeRewardsExpired']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+        if 'usageAmount' in kwargs:
+            usage_amount = kwargs['usageAmount']
+        if 'usagePeriodKey' in kwargs:
+            usage_period_key = kwargs['usagePeriodKey']
+
         _setter("available_rewards", available_rewards)
         _setter("earned_rewards", earned_rewards)
         _setter("eligible_usage_amount", eligible_usage_amount)
@@ -2052,7 +2284,19 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
              subscription_id: str,
              tenancy_id: str,
              total_rewards_available: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'redemptionCode' in kwargs:
+            redemption_code = kwargs['redemptionCode']
+        if 'rewardsRate' in kwargs:
+            rewards_rate = kwargs['rewardsRate']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'totalRewardsAvailable' in kwargs:
+            total_rewards_available = kwargs['totalRewardsAvailable']
+
         _setter("currency", currency)
         _setter("redemption_code", redemption_code)
         _setter("rewards_rate", rewards_rate)
@@ -2127,7 +2371,9 @@ class GetUsagelimitsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2164,7 +2410,9 @@ class GetUsagelimitsUsageLimitCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2250,7 +2498,33 @@ class GetUsagelimitsUsageLimitCollectionItemResult(dict):
              time_created: str,
              time_modified: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alertLevel' in kwargs:
+            alert_level = kwargs['alertLevel']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'entitlementId' in kwargs:
+            entitlement_id = kwargs['entitlementId']
+        if 'limitType' in kwargs:
+            limit_type = kwargs['limitType']
+        if 'maxHardLimit' in kwargs:
+            max_hard_limit = kwargs['maxHardLimit']
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'skuPartId' in kwargs:
+            sku_part_id = kwargs['skuPartId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("action", action)
         _setter("alert_level", alert_level)
         _setter("created_by", created_by)

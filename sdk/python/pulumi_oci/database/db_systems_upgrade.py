@@ -49,7 +49,17 @@ class DbSystemsUpgradeArgs:
              is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
              new_gi_version: Optional[pulumi.Input[str]] = None,
              snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'isSnapshotRetentionDaysForceUpdated' in kwargs:
+            is_snapshot_retention_days_force_updated = kwargs['isSnapshotRetentionDaysForceUpdated']
+        if 'newGiVersion' in kwargs:
+            new_gi_version = kwargs['newGiVersion']
+        if 'snapshotRetentionPeriodInDays' in kwargs:
+            snapshot_retention_period_in_days = kwargs['snapshotRetentionPeriodInDays']
+
         _setter("action", action)
         _setter("db_system_id", db_system_id)
         if is_snapshot_retention_days_force_updated is not None:
@@ -339,7 +349,95 @@ class _DbSystemsUpgradeState:
              version: Optional[pulumi.Input[str]] = None,
              vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'dbSystemOptions' in kwargs:
+            db_system_options = kwargs['dbSystemOptions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'diskRedundancy' in kwargs:
+            disk_redundancy = kwargs['diskRedundancy']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'iormConfigCaches' in kwargs:
+            iorm_config_caches = kwargs['iormConfigCaches']
+        if 'isSnapshotRetentionDaysForceUpdated' in kwargs:
+            is_snapshot_retention_days_force_updated = kwargs['isSnapshotRetentionDaysForceUpdated']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'lastPatchHistoryEntryId' in kwargs:
+            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'newGiVersion' in kwargs:
+            new_gi_version = kwargs['newGiVersion']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'pointInTimeDataDiskCloneTimestamp' in kwargs:
+            point_in_time_data_disk_clone_timestamp = kwargs['pointInTimeDataDiskCloneTimestamp']
+        if 'recoStorageSizeInGb' in kwargs:
+            reco_storage_size_in_gb = kwargs['recoStorageSizeInGb']
+        if 'scanDnsName' in kwargs:
+            scan_dns_name = kwargs['scanDnsName']
+        if 'scanDnsRecordId' in kwargs:
+            scan_dns_record_id = kwargs['scanDnsRecordId']
+        if 'scanIpIds' in kwargs:
+            scan_ip_ids = kwargs['scanIpIds']
+        if 'snapshotRetentionPeriodInDays' in kwargs:
+            snapshot_retention_period_in_days = kwargs['snapshotRetentionPeriodInDays']
+        if 'sourceDbSystemId' in kwargs:
+            source_db_system_id = kwargs['sourceDbSystemId']
+        if 'sparseDiskgroup' in kwargs:
+            sparse_diskgroup = kwargs['sparseDiskgroup']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'vipIds' in kwargs:
+            vip_ids = kwargs['vipIds']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if action is not None:
             _setter("action", action)
         if availability_domain is not None:

@@ -37,7 +37,13 @@ class AnalyticsInstanceCapacityArgs:
              _setter: Callable[[Any, Any], None],
              capacity_type: pulumi.Input[str],
              capacity_value: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityType' in kwargs:
+            capacity_type = kwargs['capacityType']
+        if 'capacityValue' in kwargs:
+            capacity_value = kwargs['capacityValue']
+
         _setter("capacity_type", capacity_type)
         _setter("capacity_value", capacity_value)
 
@@ -105,7 +111,23 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              whitelisted_services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              whitelisted_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEndpointType' in kwargs:
+            network_endpoint_type = kwargs['networkEndpointType']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+        if 'whitelistedServices' in kwargs:
+            whitelisted_services = kwargs['whitelistedServices']
+        if 'whitelistedVcns' in kwargs:
+            whitelisted_vcns = kwargs['whitelistedVcns']
+
         _setter("network_endpoint_type", network_endpoint_type)
         if network_security_group_ids is not None:
             _setter("network_security_group_ids", network_security_group_ids)
@@ -224,7 +246,11 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
              whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
         if id is not None:
             _setter("id", id)
         if whitelisted_ips is not None:
@@ -274,7 +300,11 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
              _setter: Callable[[Any, Any], None],
              dns_zone: pulumi.Input[str],
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsZone' in kwargs:
+            dns_zone = kwargs['dnsZone']
+
         _setter("dns_zone", dns_zone)
         if description is not None:
             _setter("description", description)
@@ -327,7 +357,13 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
              scan_hostname: pulumi.Input[str],
              scan_port: pulumi.Input[int],
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scanHostname' in kwargs:
+            scan_hostname = kwargs['scanHostname']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+
         _setter("scan_hostname", scan_hostname)
         _setter("scan_port", scan_port)
         if description is not None:
@@ -391,7 +427,9 @@ class GetAnalyticsInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

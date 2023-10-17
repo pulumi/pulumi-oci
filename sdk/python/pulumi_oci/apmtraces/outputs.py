@@ -42,7 +42,9 @@ class GetQueryQuickPicksFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -83,7 +85,13 @@ class GetQueryQuickPicksQuickPickResult(dict):
              _setter: Callable[[Any, Any], None],
              quick_pick_name: str,
              quick_pick_query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'quickPickName' in kwargs:
+            quick_pick_name = kwargs['quickPickName']
+        if 'quickPickQuery' in kwargs:
+            quick_pick_query = kwargs['quickPickQuery']
+
         _setter("quick_pick_name", quick_pick_name)
         _setter("quick_pick_query", quick_pick_query)
 
@@ -123,7 +131,9 @@ class GetTraceAggregatedSnapshotDataDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -167,7 +177,15 @@ class GetTraceServiceSummaryResult(dict):
              error_spans: str,
              span_service_name: str,
              total_spans: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorSpans' in kwargs:
+            error_spans = kwargs['errorSpans']
+        if 'spanServiceName' in kwargs:
+            span_service_name = kwargs['spanServiceName']
+        if 'totalSpans' in kwargs:
+            total_spans = kwargs['totalSpans']
+
         _setter("error_spans", error_spans)
         _setter("span_service_name", span_service_name)
         _setter("total_spans", total_spans)
@@ -216,7 +234,9 @@ class GetTraceSnapshotDataTraceSnapshotDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -296,7 +316,25 @@ class GetTraceSpanResult(dict):
              time_ended: str,
              time_started: str,
              trace_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'durationInMs' in kwargs:
+            duration_in_ms = kwargs['durationInMs']
+        if 'isError' in kwargs:
+            is_error = kwargs['isError']
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'parentSpanKey' in kwargs:
+            parent_span_key = kwargs['parentSpanKey']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'traceKey' in kwargs:
+            trace_key = kwargs['traceKey']
+
         _setter("duration_in_ms", duration_in_ms)
         _setter("is_error", is_error)
         _setter("key", key)
@@ -426,7 +464,13 @@ class GetTraceSpanLogResult(dict):
              _setter: Callable[[Any, Any], None],
              span_logs: Sequence['outputs.GetTraceSpanLogSpanLogResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'spanLogs' in kwargs:
+            span_logs = kwargs['spanLogs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("span_logs", span_logs)
         _setter("time_created", time_created)
 
@@ -466,7 +510,13 @@ class GetTraceSpanLogSpanLogResult(dict):
              _setter: Callable[[Any, Any], None],
              log_key: str,
              log_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logKey' in kwargs:
+            log_key = kwargs['logKey']
+        if 'logValue' in kwargs:
+            log_value = kwargs['logValue']
+
         _setter("log_key", log_key)
         _setter("log_value", log_value)
 
@@ -562,7 +612,39 @@ class GetTraceSpanSummaryResult(dict):
              trace_error_code: str,
              trace_error_type: str,
              trace_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorSpanCount' in kwargs:
+            error_span_count = kwargs['errorSpanCount']
+        if 'isFault' in kwargs:
+            is_fault = kwargs['isFault']
+        if 'rootSpanDurationInMs' in kwargs:
+            root_span_duration_in_ms = kwargs['rootSpanDurationInMs']
+        if 'rootSpanOperationName' in kwargs:
+            root_span_operation_name = kwargs['rootSpanOperationName']
+        if 'rootSpanServiceName' in kwargs:
+            root_span_service_name = kwargs['rootSpanServiceName']
+        if 'serviceSummaries' in kwargs:
+            service_summaries = kwargs['serviceSummaries']
+        if 'spanCount' in kwargs:
+            span_count = kwargs['spanCount']
+        if 'timeEarliestSpanStarted' in kwargs:
+            time_earliest_span_started = kwargs['timeEarliestSpanStarted']
+        if 'timeLatestSpanEnded' in kwargs:
+            time_latest_span_ended = kwargs['timeLatestSpanEnded']
+        if 'timeRootSpanEnded' in kwargs:
+            time_root_span_ended = kwargs['timeRootSpanEnded']
+        if 'timeRootSpanStarted' in kwargs:
+            time_root_span_started = kwargs['timeRootSpanStarted']
+        if 'traceDurationInMs' in kwargs:
+            trace_duration_in_ms = kwargs['traceDurationInMs']
+        if 'traceErrorCode' in kwargs:
+            trace_error_code = kwargs['traceErrorCode']
+        if 'traceErrorType' in kwargs:
+            trace_error_type = kwargs['traceErrorType']
+        if 'traceStatus' in kwargs:
+            trace_status = kwargs['traceStatus']
+
         _setter("error_span_count", error_span_count)
         _setter("is_fault", is_fault)
         _setter("key", key)
@@ -732,7 +814,15 @@ class GetTraceSpanSummaryServiceSummaryResult(dict):
              error_spans: str,
              span_service_name: str,
              total_spans: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorSpans' in kwargs:
+            error_spans = kwargs['errorSpans']
+        if 'spanServiceName' in kwargs:
+            span_service_name = kwargs['spanServiceName']
+        if 'totalSpans' in kwargs:
+            total_spans = kwargs['totalSpans']
+
         _setter("error_spans", error_spans)
         _setter("span_service_name", span_service_name)
         _setter("total_spans", total_spans)
@@ -781,7 +871,13 @@ class GetTraceSpanTagResult(dict):
              _setter: Callable[[Any, Any], None],
              tag_name: str,
              tag_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagName' in kwargs:
+            tag_name = kwargs['tagName']
+        if 'tagValue' in kwargs:
+            tag_value = kwargs['tagValue']
+
         _setter("tag_name", tag_name)
         _setter("tag_value", tag_value)
 

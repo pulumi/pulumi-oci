@@ -77,7 +77,13 @@ class AlarmSuppression(dict):
              time_suppress_from: str,
              time_suppress_until: str,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
         if description is not None:
@@ -139,7 +145,11 @@ class GetAlarmHistoryCollectionEntryResult(dict):
              summary: str,
              timestamp: str,
              timestamp_triggered: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timestampTriggered' in kwargs:
+            timestamp_triggered = kwargs['timestampTriggered']
+
         _setter("summary", summary)
         _setter("timestamp", timestamp)
         _setter("timestamp_triggered", timestamp_triggered)
@@ -204,7 +214,13 @@ class GetAlarmStatusesAlarmStatusResult(dict):
              status: str,
              suppressions: Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult'],
              timestamp_triggered: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timestampTriggered' in kwargs:
+            timestamp_triggered = kwargs['timestampTriggered']
+
         _setter("display_name", display_name)
         _setter("id", id)
         _setter("severity", severity)
@@ -284,7 +300,13 @@ class GetAlarmStatusesAlarmStatusSuppressionResult(dict):
              description: str,
              time_suppress_from: str,
              time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
@@ -332,7 +354,9 @@ class GetAlarmStatusesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -377,7 +401,13 @@ class GetAlarmSuppressionResult(dict):
              description: str,
              time_suppress_from: str,
              time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
@@ -510,7 +540,37 @@ class GetAlarmsAlarmResult(dict):
              suppressions: Sequence['outputs.GetAlarmsAlarmSuppressionResult'],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("body", body)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -743,7 +803,13 @@ class GetAlarmsAlarmSuppressionResult(dict):
              description: str,
              time_suppress_from: str,
              time_suppress_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+
         _setter("description", description)
         _setter("time_suppress_from", time_suppress_from)
         _setter("time_suppress_until", time_suppress_until)
@@ -791,7 +857,9 @@ class GetAlarmsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -834,7 +902,9 @@ class GetMetricDataFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -924,7 +994,21 @@ class GetMetricDataMetricDataResult(dict):
              resolution: str,
              resource_group: str,
              start_time: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatedDatapoints' in kwargs:
+            aggregated_datapoints = kwargs['aggregatedDatapoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'endTime' in kwargs:
+            end_time = kwargs['endTime']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+
         _setter("aggregated_datapoints", aggregated_datapoints)
         _setter("compartment_id", compartment_id)
         _setter("compartment_id_in_subtree", compartment_id_in_subtree)
@@ -1060,7 +1144,9 @@ class GetMetricDataMetricDataAggregatedDatapointResult(dict):
              _setter: Callable[[Any, Any], None],
              timestamp: str,
              value: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("timestamp", timestamp)
         _setter("value", value)
 
@@ -1102,7 +1188,9 @@ class GetMetricsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1172,7 +1260,19 @@ class GetMetricsMetricResult(dict):
              name: str,
              namespace: str,
              resource_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'dimensionFilters' in kwargs:
+            dimension_filters = kwargs['dimensionFilters']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("compartment_id_in_subtree", compartment_id_in_subtree)
         _setter("dimension_filters", dimension_filters)

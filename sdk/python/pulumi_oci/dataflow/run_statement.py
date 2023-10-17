@@ -37,7 +37,11 @@ class RunStatementArgs:
              _setter: Callable[[Any, Any], None],
              code: pulumi.Input[str],
              run_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'runId' in kwargs:
+            run_id = kwargs['runId']
+
         _setter("code", code)
         _setter("run_id", run_id)
 
@@ -114,7 +118,15 @@ class _RunStatementState:
              state: Optional[pulumi.Input[str]] = None,
              time_completed: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'runId' in kwargs:
+            run_id = kwargs['runId']
+        if 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if code is not None:
             _setter("code", code)
         if outputs is not None:

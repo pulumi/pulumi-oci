@@ -53,7 +53,21 @@ class ExternalPluggableDatabaseArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              source_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalContainerDatabaseId' in kwargs:
+            external_container_database_id = kwargs['externalContainerDatabaseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("external_container_database_id", external_container_database_id)
@@ -241,7 +255,49 @@ class _ExternalPluggableDatabaseState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseConfiguration' in kwargs:
+            database_configuration = kwargs['databaseConfiguration']
+        if 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if 'databaseManagementConfigs' in kwargs:
+            database_management_configs = kwargs['databaseManagementConfigs']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbPacks' in kwargs:
+            db_packs = kwargs['dbPacks']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalContainerDatabaseId' in kwargs:
+            external_container_database_id = kwargs['externalContainerDatabaseId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if 'operationsInsightsConfigs' in kwargs:
+            operations_insights_configs = kwargs['operationsInsightsConfigs']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'stackMonitoringConfigs' in kwargs:
+            stack_monitoring_configs = kwargs['stackMonitoringConfigs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         if character_set is not None:
             _setter("character_set", character_set)
         if compartment_id is not None:

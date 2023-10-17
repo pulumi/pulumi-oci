@@ -71,7 +71,23 @@ class AgentDependencyArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dependencyName' in kwargs:
+            dependency_name = kwargs['dependencyName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dependencyVersion' in kwargs:
+            dependency_version = kwargs['dependencyVersion']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("bucket", bucket)
         _setter("compartment_id", compartment_id)
         _setter("dependency_name", dependency_name)
@@ -306,7 +322,29 @@ class _AgentDependencyState:
              state: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dependencyName' in kwargs:
+            dependency_name = kwargs['dependencyName']
+        if 'dependencyVersion' in kwargs:
+            dependency_version = kwargs['dependencyVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'eTag' in kwargs:
+            e_tag = kwargs['eTag']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if checksum is not None:

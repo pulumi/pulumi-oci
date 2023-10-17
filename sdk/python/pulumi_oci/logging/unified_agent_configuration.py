@@ -57,7 +57,23 @@ class UnifiedAgentConfigurationArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'serviceConfiguration' in kwargs:
+            service_configuration = kwargs['serviceConfiguration']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'groupAssociation' in kwargs:
+            group_association = kwargs['groupAssociation']
+
         _setter("compartment_id", compartment_id)
         _setter("is_enabled", is_enabled)
         _setter("service_configuration", service_configuration)
@@ -229,7 +245,29 @@ class _UnifiedAgentConfigurationState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_modified: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationState' in kwargs:
+            configuration_state = kwargs['configurationState']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'groupAssociation' in kwargs:
+            group_association = kwargs['groupAssociation']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'serviceConfiguration' in kwargs:
+            service_configuration = kwargs['serviceConfiguration']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if configuration_state is not None:

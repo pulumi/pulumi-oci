@@ -55,7 +55,17 @@ class AnalyticsInstanceVanityUrlArgs:
              public_certificate: pulumi.Input[str],
              description: Optional[pulumi.Input[str]] = None,
              passphrase: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if 'caCertificate' in kwargs:
+            ca_certificate = kwargs['caCertificate']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'publicCertificate' in kwargs:
+            public_certificate = kwargs['publicCertificate']
+
         _setter("analytics_instance_id", analytics_instance_id)
         _setter("ca_certificate", ca_certificate)
         _setter("hosts", hosts)
@@ -199,7 +209,17 @@ class _AnalyticsInstanceVanityUrlState:
              passphrase: Optional[pulumi.Input[str]] = None,
              private_key: Optional[pulumi.Input[str]] = None,
              public_certificate: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if 'caCertificate' in kwargs:
+            ca_certificate = kwargs['caCertificate']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'publicCertificate' in kwargs:
+            public_certificate = kwargs['publicCertificate']
+
         if analytics_instance_id is not None:
             _setter("analytics_instance_id", analytics_instance_id)
         if ca_certificate is not None:

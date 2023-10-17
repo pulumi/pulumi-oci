@@ -44,7 +44,13 @@ class NetworkFirewallPolicyApplicationListArgs:
              _setter: Callable[[Any, Any], None],
              application_list_name: pulumi.Input[str],
              application_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationListName' in kwargs:
+            application_list_name = kwargs['applicationListName']
+        if 'applicationValues' in kwargs:
+            application_values = kwargs['applicationValues']
+
         _setter("application_list_name", application_list_name)
         if application_values is not None:
             _setter("application_values", application_values)
@@ -105,7 +111,17 @@ class NetworkFirewallPolicyApplicationListApplicationValueArgs:
              icmp_type: Optional[pulumi.Input[int]] = None,
              maximum_port: Optional[pulumi.Input[int]] = None,
              minimum_port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'maximumPort' in kwargs:
+            maximum_port = kwargs['maximumPort']
+        if 'minimumPort' in kwargs:
+            minimum_port = kwargs['minimumPort']
+
         _setter("type", type)
         if icmp_code is not None:
             _setter("icmp_code", icmp_code)
@@ -232,7 +248,27 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
              is_unsupported_cipher_blocked: Optional[pulumi.Input[bool]] = None,
              is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
              is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+
         _setter("key", key)
         _setter("type", type)
         if are_certificate_extensions_restricted is not None:
@@ -422,7 +458,11 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
              name: pulumi.Input[str],
              decryption_profile: Optional[pulumi.Input[str]] = None,
              secret: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'decryptionProfile' in kwargs:
+            decryption_profile = kwargs['decryptionProfile']
+
         _setter("action", action)
         _setter("condition", condition)
         _setter("name", name)
@@ -515,7 +555,9 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
              _setter: Callable[[Any, Any], None],
              destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if destinations is not None:
             _setter("destinations", destinations)
         if sources is not None:
@@ -565,7 +607,13 @@ class NetworkFirewallPolicyIpAddressListArgs:
              _setter: Callable[[Any, Any], None],
              ip_address_list_name: pulumi.Input[str],
              ip_address_list_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddressListName' in kwargs:
+            ip_address_list_name = kwargs['ipAddressListName']
+        if 'ipAddressListValues' in kwargs:
+            ip_address_list_values = kwargs['ipAddressListValues']
+
         _setter("ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
             _setter("ip_address_list_values", ip_address_list_values)
@@ -622,7 +670,13 @@ class NetworkFirewallPolicyMappedSecretArgs:
              type: pulumi.Input[str],
              vault_secret_id: Optional[pulumi.Input[str]] = None,
              version_number: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("key", key)
         _setter("type", type)
         if vault_secret_id is not None:
@@ -712,7 +766,9 @@ class NetworkFirewallPolicySecurityRuleArgs:
              condition: pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'],
              name: pulumi.Input[str],
              inspection: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("condition", condition)
         _setter("name", name)
@@ -801,7 +857,9 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
              destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              urls: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if applications is not None:
             _setter("applications", applications)
         if destinations is not None:
@@ -879,7 +937,13 @@ class NetworkFirewallPolicyUrlListArgs:
              _setter: Callable[[Any, Any], None],
              url_list_name: pulumi.Input[str],
              url_list_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'urlListName' in kwargs:
+            url_list_name = kwargs['urlListName']
+        if 'urlListValues' in kwargs:
+            url_list_values = kwargs['urlListValues']
+
         _setter("url_list_name", url_list_name)
         if url_list_values is not None:
             _setter("url_list_values", url_list_values)
@@ -932,7 +996,9 @@ class NetworkFirewallPolicyUrlListUrlListValueArgs:
              _setter: Callable[[Any, Any], None],
              type: pulumi.Input[str],
              pattern: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if pattern is not None:
             _setter("pattern", pattern)
@@ -987,7 +1053,9 @@ class GetNetworkFirewallPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1042,7 +1110,9 @@ class GetNetworkFirewallsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

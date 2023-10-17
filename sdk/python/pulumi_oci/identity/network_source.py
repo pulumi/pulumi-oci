@@ -61,7 +61,19 @@ class NetworkSourceArgs:
              public_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'publicSourceLists' in kwargs:
+            public_source_lists = kwargs['publicSourceLists']
+        if 'virtualSourceLists' in kwargs:
+            virtual_source_lists = kwargs['virtualSourceLists']
+
         _setter("compartment_id", compartment_id)
         _setter("description", description)
         if defined_tags is not None:
@@ -238,7 +250,23 @@ class _NetworkSourceState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              virtual_source_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'publicSourceLists' in kwargs:
+            public_source_lists = kwargs['publicSourceLists']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'virtualSourceLists' in kwargs:
+            virtual_source_lists = kwargs['virtualSourceLists']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

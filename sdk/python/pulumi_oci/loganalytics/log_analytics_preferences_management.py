@@ -37,7 +37,9 @@ class LogAnalyticsPreferencesManagementArgs:
              _setter: Callable[[Any, Any], None],
              namespace: pulumi.Input[str],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("namespace", namespace)
         if items is not None:
             _setter("items", items)
@@ -95,7 +97,9 @@ class _LogAnalyticsPreferencesManagementState:
              _setter: Callable[[Any, Any], None],
              items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
         if namespace is not None:

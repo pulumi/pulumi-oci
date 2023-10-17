@@ -73,7 +73,31 @@ class DeploymentArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              previous_deployment_id: Optional[pulumi.Input[str]] = None,
              trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactOverrideArguments' in kwargs:
+            deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'deployStageOverrideArguments' in kwargs:
+            deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
+        if 'deploymentArguments' in kwargs:
+            deployment_arguments = kwargs['deploymentArguments']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'previousDeploymentId' in kwargs:
+            previous_deployment_id = kwargs['previousDeploymentId']
+        if 'triggerNewDevopsDeployment' in kwargs:
+            trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
+
         _setter("deploy_pipeline_id", deploy_pipeline_id)
         _setter("deployment_type", deployment_type)
         if defined_tags is not None:
@@ -332,7 +356,49 @@ class _DeploymentState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactOverrideArguments' in kwargs:
+            deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
+        if 'deployPipelineArtifacts' in kwargs:
+            deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
+        if 'deployPipelineEnvironments' in kwargs:
+            deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'deployStageOverrideArguments' in kwargs:
+            deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
+        if 'deploymentArguments' in kwargs:
+            deployment_arguments = kwargs['deploymentArguments']
+        if 'deploymentExecutionProgresses' in kwargs:
+            deployment_execution_progresses = kwargs['deploymentExecutionProgresses']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'previousDeploymentId' in kwargs:
+            previous_deployment_id = kwargs['previousDeploymentId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggerNewDevopsDeployment' in kwargs:
+            trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

@@ -71,7 +71,31 @@ class DatabaseSoftwareImageArgs:
              ls_inventory: Optional[pulumi.Input[str]] = None,
              patch_set: Optional[pulumi.Input[str]] = None,
              source_db_home_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'databaseSoftwareImageOneOffPatches' in kwargs:
+            database_software_image_one_off_patches = kwargs['databaseSoftwareImageOneOffPatches']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageShapeFamily' in kwargs:
+            image_shape_family = kwargs['imageShapeFamily']
+        if 'imageType' in kwargs:
+            image_type = kwargs['imageType']
+        if 'lsInventory' in kwargs:
+            ls_inventory = kwargs['lsInventory']
+        if 'patchSet' in kwargs:
+            patch_set = kwargs['patchSet']
+        if 'sourceDbHomeId' in kwargs:
+            source_db_home_id = kwargs['sourceDbHomeId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if database_software_image_one_off_patches is not None:
@@ -314,7 +338,41 @@ class _DatabaseSoftwareImageState:
              source_db_home_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSoftwareImageIncludedPatches' in kwargs:
+            database_software_image_included_patches = kwargs['databaseSoftwareImageIncludedPatches']
+        if 'databaseSoftwareImageOneOffPatches' in kwargs:
+            database_software_image_one_off_patches = kwargs['databaseSoftwareImageOneOffPatches']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageShapeFamily' in kwargs:
+            image_shape_family = kwargs['imageShapeFamily']
+        if 'imageType' in kwargs:
+            image_type = kwargs['imageType']
+        if 'includedPatchesSummary' in kwargs:
+            included_patches_summary = kwargs['includedPatchesSummary']
+        if 'isUpgradeSupported' in kwargs:
+            is_upgrade_supported = kwargs['isUpgradeSupported']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lsInventory' in kwargs:
+            ls_inventory = kwargs['lsInventory']
+        if 'patchSet' in kwargs:
+            patch_set = kwargs['patchSet']
+        if 'sourceDbHomeId' in kwargs:
+            source_db_home_id = kwargs['sourceDbHomeId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database_software_image_included_patches is not None:

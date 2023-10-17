@@ -99,7 +99,45 @@ class VtapArgs:
              target_type: Optional[pulumi.Input[str]] = None,
              traffic_mode: Optional[pulumi.Input[str]] = None,
              vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'captureFilterId' in kwargs:
+            capture_filter_id = kwargs['captureFilterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'encapsulationProtocol' in kwargs:
+            encapsulation_protocol = kwargs['encapsulationProtocol']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isVtapEnabled' in kwargs:
+            is_vtap_enabled = kwargs['isVtapEnabled']
+        if 'maxPacketSize' in kwargs:
+            max_packet_size = kwargs['maxPacketSize']
+        if 'sourcePrivateEndpointIp' in kwargs:
+            source_private_endpoint_ip = kwargs['sourcePrivateEndpointIp']
+        if 'sourcePrivateEndpointSubnetId' in kwargs:
+            source_private_endpoint_subnet_id = kwargs['sourcePrivateEndpointSubnetId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetIp' in kwargs:
+            target_ip = kwargs['targetIp']
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'trafficMode' in kwargs:
+            traffic_mode = kwargs['trafficMode']
+        if 'vxlanNetworkIdentifier' in kwargs:
+            vxlan_network_identifier = kwargs['vxlanNetworkIdentifier']
+
         _setter("capture_filter_id", capture_filter_id)
         _setter("compartment_id", compartment_id)
         _setter("source_id", source_id)
@@ -454,7 +492,49 @@ class _VtapState:
              traffic_mode: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
              vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'captureFilterId' in kwargs:
+            capture_filter_id = kwargs['captureFilterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'encapsulationProtocol' in kwargs:
+            encapsulation_protocol = kwargs['encapsulationProtocol']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isVtapEnabled' in kwargs:
+            is_vtap_enabled = kwargs['isVtapEnabled']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'maxPacketSize' in kwargs:
+            max_packet_size = kwargs['maxPacketSize']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'sourcePrivateEndpointIp' in kwargs:
+            source_private_endpoint_ip = kwargs['sourcePrivateEndpointIp']
+        if 'sourcePrivateEndpointSubnetId' in kwargs:
+            source_private_endpoint_subnet_id = kwargs['sourcePrivateEndpointSubnetId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetIp' in kwargs:
+            target_ip = kwargs['targetIp']
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'trafficMode' in kwargs:
+            traffic_mode = kwargs['trafficMode']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'vxlanNetworkIdentifier' in kwargs:
+            vxlan_network_identifier = kwargs['vxlanNetworkIdentifier']
+
         if capture_filter_id is not None:
             _setter("capture_filter_id", capture_filter_id)
         if compartment_id is not None:

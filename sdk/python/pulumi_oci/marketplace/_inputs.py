@@ -54,7 +54,15 @@ class PublicationIconArgs:
              file_extension: Optional[pulumi.Input[str]] = None,
              mime_type: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'fileExtension' in kwargs:
+            file_extension = kwargs['fileExtension']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         if content_url is not None:
             _setter("content_url", content_url)
         if file_extension is not None:
@@ -144,7 +152,17 @@ class PublicationPackageDetailsArgs:
              package_type: pulumi.Input[str],
              package_version: pulumi.Input[str],
              image_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+
         _setter("eulas", eulas)
         _setter("operating_system", operating_system)
         _setter("package_type", package_type)
@@ -232,7 +250,13 @@ class PublicationPackageDetailsEulaArgs:
              _setter: Callable[[Any, Any], None],
              eula_type: pulumi.Input[str],
              license_text: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'eulaType' in kwargs:
+            eula_type = kwargs['eulaType']
+        if 'licenseText' in kwargs:
+            license_text = kwargs['licenseText']
+
         _setter("eula_type", eula_type)
         if license_text is not None:
             _setter("license_text", license_text)
@@ -277,7 +301,9 @@ class PublicationPackageDetailsOperatingSystemArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -325,7 +351,9 @@ class PublicationSupportContactArgs:
              name: Optional[pulumi.Input[str]] = None,
              phone: Optional[pulumi.Input[str]] = None,
              subject: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if email is not None:
             _setter("email", email)
         if name is not None:
@@ -403,7 +431,9 @@ class PublicationSupportedOperatingSystemArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -438,7 +468,9 @@ class GetAcceptedAgreementsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -493,7 +525,9 @@ class GetCategoriesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -548,7 +582,9 @@ class GetListingPackageAgreementsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -603,7 +639,9 @@ class GetListingPackagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -661,7 +699,9 @@ class GetListingTaxesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -719,7 +759,9 @@ class GetListingsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -777,7 +819,9 @@ class GetPublicationPackagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -835,7 +879,9 @@ class GetPublicationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -893,7 +939,9 @@ class GetPublishersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

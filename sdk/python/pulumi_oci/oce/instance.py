@@ -95,7 +95,39 @@ class InstanceArgs:
              name: Optional[pulumi.Input[str]] = None,
              upgrade_schedule: Optional[pulumi.Input[str]] = None,
              waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminEmail' in kwargs:
+            admin_email = kwargs['adminEmail']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'tenancyName' in kwargs:
+            tenancy_name = kwargs['tenancyName']
+        if 'addOnFeatures' in kwargs:
+            add_on_features = kwargs['addOnFeatures']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'drRegion' in kwargs:
+            dr_region = kwargs['drRegion']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'instanceAccessType' in kwargs:
+            instance_access_type = kwargs['instanceAccessType']
+        if 'instanceLicenseType' in kwargs:
+            instance_license_type = kwargs['instanceLicenseType']
+        if 'instanceUsageType' in kwargs:
+            instance_usage_type = kwargs['instanceUsageType']
+        if 'upgradeSchedule' in kwargs:
+            upgrade_schedule = kwargs['upgradeSchedule']
+        if 'wafPrimaryDomain' in kwargs:
+            waf_primary_domain = kwargs['wafPrimaryDomain']
+
         _setter("admin_email", admin_email)
         _setter("compartment_id", compartment_id)
         _setter("idcs_access_token", idcs_access_token)
@@ -454,7 +486,51 @@ class _InstanceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              upgrade_schedule: Optional[pulumi.Input[str]] = None,
              waf_primary_domain: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addOnFeatures' in kwargs:
+            add_on_features = kwargs['addOnFeatures']
+        if 'adminEmail' in kwargs:
+            admin_email = kwargs['adminEmail']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'drRegion' in kwargs:
+            dr_region = kwargs['drRegion']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'idcsTenancy' in kwargs:
+            idcs_tenancy = kwargs['idcsTenancy']
+        if 'instanceAccessType' in kwargs:
+            instance_access_type = kwargs['instanceAccessType']
+        if 'instanceLicenseType' in kwargs:
+            instance_license_type = kwargs['instanceLicenseType']
+        if 'instanceUsageType' in kwargs:
+            instance_usage_type = kwargs['instanceUsageType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'tenancyName' in kwargs:
+            tenancy_name = kwargs['tenancyName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradeSchedule' in kwargs:
+            upgrade_schedule = kwargs['upgradeSchedule']
+        if 'wafPrimaryDomain' in kwargs:
+            waf_primary_domain = kwargs['wafPrimaryDomain']
+
         if add_on_features is not None:
             _setter("add_on_features", add_on_features)
         if admin_email is not None:

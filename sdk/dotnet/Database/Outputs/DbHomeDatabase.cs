@@ -92,6 +92,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? PdbName;
         /// <summary>
+        /// The list of pluggable databases that needs to be restored into new database.
+        /// </summary>
+        public readonly ImmutableArray<string> PluggableDatabases;
+        /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string? SidPrefix;
@@ -158,6 +162,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? pdbName,
 
+            ImmutableArray<string> pluggableDatabases,
+
             string? sidPrefix,
 
             string? state,
@@ -190,6 +196,7 @@ namespace Pulumi.Oci.Database.Outputs
             NcharacterSet = ncharacterSet;
             OneOffPatches = oneOffPatches;
             PdbName = pdbName;
+            PluggableDatabases = pluggableDatabases;
             SidPrefix = sidPrefix;
             State = state;
             TdeWalletPassword = tdeWalletPassword;

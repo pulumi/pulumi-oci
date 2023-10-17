@@ -75,7 +75,33 @@ class DiscoveryModArgs:
              is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
              schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
+        if 'isIncludeAllSchemas' in kwargs:
+            is_include_all_schemas = kwargs['isIncludeAllSchemas']
+        if 'isIncludeAllSensitiveTypes' in kwargs:
+            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
+        if 'isSampleDataCollectionEnabled' in kwargs:
+            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
+        if 'schemasForDiscoveries' in kwargs:
+            schemas_for_discoveries = kwargs['schemasForDiscoveries']
+        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
+
         _setter("compartment_id", compartment_id)
         _setter("sensitive_data_model_id", sensitive_data_model_id)
         if defined_tags is not None:
@@ -356,7 +382,53 @@ class _DiscoveryModState:
              total_new_sensitive_columns: Optional[pulumi.Input[str]] = None,
              total_objects_scanned: Optional[pulumi.Input[str]] = None,
              total_schemas_scanned: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
+        if 'isIncludeAllSchemas' in kwargs:
+            is_include_all_schemas = kwargs['isIncludeAllSchemas']
+        if 'isIncludeAllSensitiveTypes' in kwargs:
+            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
+        if 'isSampleDataCollectionEnabled' in kwargs:
+            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
+        if 'schemasForDiscoveries' in kwargs:
+            schemas_for_discoveries = kwargs['schemasForDiscoveries']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'totalColumnsScanned' in kwargs:
+            total_columns_scanned = kwargs['totalColumnsScanned']
+        if 'totalDeletedSensitiveColumns' in kwargs:
+            total_deleted_sensitive_columns = kwargs['totalDeletedSensitiveColumns']
+        if 'totalModifiedSensitiveColumns' in kwargs:
+            total_modified_sensitive_columns = kwargs['totalModifiedSensitiveColumns']
+        if 'totalNewSensitiveColumns' in kwargs:
+            total_new_sensitive_columns = kwargs['totalNewSensitiveColumns']
+        if 'totalObjectsScanned' in kwargs:
+            total_objects_scanned = kwargs['totalObjectsScanned']
+        if 'totalSchemasScanned' in kwargs:
+            total_schemas_scanned = kwargs['totalSchemasScanned']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

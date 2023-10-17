@@ -65,7 +65,23 @@ class OdaInstanceArgs:
              identity_domain: Optional[pulumi.Input[str]] = None,
              is_role_based_access: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'identityDomain' in kwargs:
+            identity_domain = kwargs['identityDomain']
+        if 'isRoleBasedAccess' in kwargs:
+            is_role_based_access = kwargs['isRoleBasedAccess']
+
         _setter("compartment_id", compartment_id)
         _setter("shape_name", shape_name)
         if defined_tags is not None:
@@ -300,7 +316,49 @@ class _OdaInstanceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              web_app_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentIds' in kwargs:
+            attachment_ids = kwargs['attachmentIds']
+        if 'attachmentTypes' in kwargs:
+            attachment_types = kwargs['attachmentTypes']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectorUrl' in kwargs:
+            connector_url = kwargs['connectorUrl']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'identityAppConsoleUrl' in kwargs:
+            identity_app_console_url = kwargs['identityAppConsoleUrl']
+        if 'identityAppGuid' in kwargs:
+            identity_app_guid = kwargs['identityAppGuid']
+        if 'identityDomain' in kwargs:
+            identity_domain = kwargs['identityDomain']
+        if 'importedPackageIds' in kwargs:
+            imported_package_ids = kwargs['importedPackageIds']
+        if 'importedPackageNames' in kwargs:
+            imported_package_names = kwargs['importedPackageNames']
+        if 'isRoleBasedAccess' in kwargs:
+            is_role_based_access = kwargs['isRoleBasedAccess']
+        if 'lifecycleSubState' in kwargs:
+            lifecycle_sub_state = kwargs['lifecycleSubState']
+        if 'restrictedOperations' in kwargs:
+            restricted_operations = kwargs['restrictedOperations']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'webAppUrl' in kwargs:
+            web_app_url = kwargs['webAppUrl']
+
         if attachment_ids is not None:
             _setter("attachment_ids", attachment_ids)
         if attachment_types is not None:

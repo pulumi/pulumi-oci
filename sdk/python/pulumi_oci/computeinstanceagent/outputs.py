@@ -37,7 +37,9 @@ class GetInstanceAgentPluginsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -89,7 +91,11 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
              name: str,
              status: str,
              time_last_updated_utc: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeLastUpdatedUtc' in kwargs:
+            time_last_updated_utc = kwargs['timeLastUpdatedUtc']
+
         _setter("message", message)
         _setter("name", name)
         _setter("status", status)
@@ -155,7 +161,13 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
              is_supported: bool,
              name: str,
              summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabledByDefault' in kwargs:
+            is_enabled_by_default = kwargs['isEnabledByDefault']
+        if 'isSupported' in kwargs:
+            is_supported = kwargs['isSupported']
+
         _setter("is_enabled_by_default", is_enabled_by_default)
         _setter("is_supported", is_supported)
         _setter("name", name)
@@ -215,7 +227,9 @@ class GetInstanceAvailablePluginFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

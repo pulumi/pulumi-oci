@@ -71,7 +71,31 @@ class VolumeGroupArgs:
              volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
              volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
              volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'preserveVolumeReplica' in kwargs:
+            preserve_volume_replica = kwargs['preserveVolumeReplica']
+        if 'volumeGroupReplicas' in kwargs:
+            volume_group_replicas = kwargs['volumeGroupReplicas']
+        if 'volumeGroupReplicasDeletion' in kwargs:
+            volume_group_replicas_deletion = kwargs['volumeGroupReplicasDeletion']
+        if 'volumeIds' in kwargs:
+            volume_ids = kwargs['volumeIds']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("source_details", source_details)
@@ -301,7 +325,39 @@ class _VolumeGroupState:
              volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
              volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
              volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isHydrated' in kwargs:
+            is_hydrated = kwargs['isHydrated']
+        if 'preserveVolumeReplica' in kwargs:
+            preserve_volume_replica = kwargs['preserveVolumeReplica']
+        if 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'volumeGroupReplicas' in kwargs:
+            volume_group_replicas = kwargs['volumeGroupReplicas']
+        if 'volumeGroupReplicasDeletion' in kwargs:
+            volume_group_replicas_deletion = kwargs['volumeGroupReplicasDeletion']
+        if 'volumeIds' in kwargs:
+            volume_ids = kwargs['volumeIds']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if backup_policy_id is not None:

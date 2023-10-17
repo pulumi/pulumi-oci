@@ -43,7 +43,13 @@ class GetServiceEnvironmentServiceDefinitionResult(dict):
              display_name: str,
              short_display_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'shortDisplayName' in kwargs:
+            short_display_name = kwargs['shortDisplayName']
+
         _setter("display_name", display_name)
         _setter("short_display_name", short_display_name)
         _setter("type", type)
@@ -96,7 +102,11 @@ class GetServiceEnvironmentServiceEnvironmentEndpointResult(dict):
              description: str,
              environment_type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentType' in kwargs:
+            environment_type = kwargs['environmentType']
+
         _setter("description", description)
         _setter("environment_type", environment_type)
         _setter("url", url)
@@ -144,7 +154,9 @@ class GetServiceEnvironmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -178,7 +190,9 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -232,7 +246,23 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
              service_environment_endpoints: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult'],
              status: str,
              subscription_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'consoleUrl' in kwargs:
+            console_url = kwargs['consoleUrl']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'serviceDefinitions' in kwargs:
+            service_definitions = kwargs['serviceDefinitions']
+        if 'serviceEnvironmentEndpoints' in kwargs:
+            service_environment_endpoints = kwargs['serviceEnvironmentEndpoints']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+
         _setter("compartment_id", compartment_id)
         _setter("console_url", console_url)
         _setter("defined_tags", defined_tags)
@@ -333,7 +363,13 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionRes
              display_name: str,
              short_display_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'shortDisplayName' in kwargs:
+            short_display_name = kwargs['shortDisplayName']
+
         _setter("display_name", display_name)
         _setter("short_display_name", short_display_name)
         _setter("type", type)
@@ -386,7 +422,11 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEn
              description: str,
              environment_type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentType' in kwargs:
+            environment_type = kwargs['environmentType']
+
         _setter("description", description)
         _setter("environment_type", environment_type)
         _setter("url", url)

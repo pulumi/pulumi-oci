@@ -22,7 +22,7 @@ class GetCaptureFilterResult:
     """
     A collection of values returned by getCaptureFilter.
     """
-    def __init__(__self__, capture_filter_id=None, compartment_id=None, defined_tags=None, display_name=None, filter_type=None, freeform_tags=None, id=None, state=None, time_created=None, vtap_capture_filter_rules=None):
+    def __init__(__self__, capture_filter_id=None, compartment_id=None, defined_tags=None, display_name=None, filter_type=None, flow_log_capture_filter_rules=None, freeform_tags=None, id=None, state=None, time_created=None, vtap_capture_filter_rules=None):
         if capture_filter_id and not isinstance(capture_filter_id, str):
             raise TypeError("Expected argument 'capture_filter_id' to be a str")
         pulumi.set(__self__, "capture_filter_id", capture_filter_id)
@@ -38,6 +38,9 @@ class GetCaptureFilterResult:
         if filter_type and not isinstance(filter_type, str):
             raise TypeError("Expected argument 'filter_type' to be a str")
         pulumi.set(__self__, "filter_type", filter_type)
+        if flow_log_capture_filter_rules and not isinstance(flow_log_capture_filter_rules, list):
+            raise TypeError("Expected argument 'flow_log_capture_filter_rules' to be a list")
+        pulumi.set(__self__, "flow_log_capture_filter_rules", flow_log_capture_filter_rules)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -92,6 +95,14 @@ class GetCaptureFilterResult:
         return pulumi.get(self, "filter_type")
 
     @property
+    @pulumi.getter(name="flowLogCaptureFilterRules")
+    def flow_log_capture_filter_rules(self) -> Sequence['outputs.GetCaptureFilterFlowLogCaptureFilterRuleResult']:
+        """
+        The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        """
+        return pulumi.get(self, "flow_log_capture_filter_rules")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -143,6 +154,7 @@ class AwaitableGetCaptureFilterResult(GetCaptureFilterResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             filter_type=self.filter_type,
+            flow_log_capture_filter_rules=self.flow_log_capture_filter_rules,
             freeform_tags=self.freeform_tags,
             id=self.id,
             state=self.state,
@@ -180,6 +192,7 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filter_type=pulumi.get(__ret__, 'filter_type'),
+        flow_log_capture_filter_rules=pulumi.get(__ret__, 'flow_log_capture_filter_rules'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),

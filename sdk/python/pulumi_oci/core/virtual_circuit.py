@@ -105,7 +105,43 @@ class VirtualCircuitArgs:
              public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
              region: Optional[pulumi.Input[str]] = None,
              routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'bandwidthShapeName' in kwargs:
+            bandwidth_shape_name = kwargs['bandwidthShapeName']
+        if 'bgpAdminState' in kwargs:
+            bgp_admin_state = kwargs['bgpAdminState']
+        if 'crossConnectMappings' in kwargs:
+            cross_connect_mappings = kwargs['crossConnectMappings']
+        if 'customerAsn' in kwargs:
+            customer_asn = kwargs['customerAsn']
+        if 'customerBgpAsn' in kwargs:
+            customer_bgp_asn = kwargs['customerBgpAsn']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gatewayId' in kwargs:
+            gateway_id = kwargs['gatewayId']
+        if 'ipMtu' in kwargs:
+            ip_mtu = kwargs['ipMtu']
+        if 'isBfdEnabled' in kwargs:
+            is_bfd_enabled = kwargs['isBfdEnabled']
+        if 'isTransportMode' in kwargs:
+            is_transport_mode = kwargs['isTransportMode']
+        if 'providerServiceId' in kwargs:
+            provider_service_id = kwargs['providerServiceId']
+        if 'providerServiceKeyName' in kwargs:
+            provider_service_key_name = kwargs['providerServiceKeyName']
+        if 'publicPrefixes' in kwargs:
+            public_prefixes = kwargs['publicPrefixes']
+        if 'routingPolicies' in kwargs:
+            routing_policies = kwargs['routingPolicies']
+
         _setter("compartment_id", compartment_id)
         _setter("type", type)
         if bandwidth_shape_name is not None:
@@ -510,7 +546,59 @@ class _VirtualCircuitState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bandwidthShapeName' in kwargs:
+            bandwidth_shape_name = kwargs['bandwidthShapeName']
+        if 'bgpAdminState' in kwargs:
+            bgp_admin_state = kwargs['bgpAdminState']
+        if 'bgpIpv6sessionState' in kwargs:
+            bgp_ipv6session_state = kwargs['bgpIpv6sessionState']
+        if 'bgpManagement' in kwargs:
+            bgp_management = kwargs['bgpManagement']
+        if 'bgpSessionState' in kwargs:
+            bgp_session_state = kwargs['bgpSessionState']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'crossConnectMappings' in kwargs:
+            cross_connect_mappings = kwargs['crossConnectMappings']
+        if 'customerAsn' in kwargs:
+            customer_asn = kwargs['customerAsn']
+        if 'customerBgpAsn' in kwargs:
+            customer_bgp_asn = kwargs['customerBgpAsn']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gatewayId' in kwargs:
+            gateway_id = kwargs['gatewayId']
+        if 'ipMtu' in kwargs:
+            ip_mtu = kwargs['ipMtu']
+        if 'isBfdEnabled' in kwargs:
+            is_bfd_enabled = kwargs['isBfdEnabled']
+        if 'isTransportMode' in kwargs:
+            is_transport_mode = kwargs['isTransportMode']
+        if 'oracleBgpAsn' in kwargs:
+            oracle_bgp_asn = kwargs['oracleBgpAsn']
+        if 'providerServiceId' in kwargs:
+            provider_service_id = kwargs['providerServiceId']
+        if 'providerServiceKeyName' in kwargs:
+            provider_service_key_name = kwargs['providerServiceKeyName']
+        if 'providerState' in kwargs:
+            provider_state = kwargs['providerState']
+        if 'publicPrefixes' in kwargs:
+            public_prefixes = kwargs['publicPrefixes']
+        if 'referenceComment' in kwargs:
+            reference_comment = kwargs['referenceComment']
+        if 'routingPolicies' in kwargs:
+            routing_policies = kwargs['routingPolicies']
+        if 'serviceType' in kwargs:
+            service_type = kwargs['serviceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if bandwidth_shape_name is not None:
             _setter("bandwidth_shape_name", bandwidth_shape_name)
         if bgp_admin_state is not None:

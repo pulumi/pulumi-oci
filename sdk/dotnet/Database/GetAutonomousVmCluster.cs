@@ -107,6 +107,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetAutonomousVmClusterResult
     {
+        public readonly double AutonomousDataStoragePercentage;
         /// <summary>
         /// The data disk group size allocated for Autonomous Databases, in TBs.
         /// </summary>
@@ -140,6 +141,7 @@ namespace Pulumi.Oci.Database
         /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
         public readonly int CpuCoreCountPerNode;
+        public readonly double CpuPercentage;
         /// <summary>
         /// The number of enabled CPU cores.
         /// </summary>
@@ -221,16 +223,20 @@ namespace Pulumi.Oci.Database
         /// The number of nodes in the Autonomous VM Cluster.
         /// </summary>
         public readonly int NodeCount;
+        public readonly int NonProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The number of enabled OCPU cores.
         /// </summary>
         public readonly double OcpusEnabled;
+        public readonly int ProvisionedAutonomousContainerDatabases;
+        public readonly double ProvisionedCpus;
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         public readonly int ReclaimableCpus;
+        public readonly double ReservedCpus;
         /// <summary>
         /// The SCAN Listener Non TLS port number. Default value is 1521.
         /// </summary>
@@ -259,6 +265,7 @@ namespace Pulumi.Oci.Database
         /// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
+        public readonly double TotalAutonomousDataStorageInTbs;
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
         /// </summary>
@@ -270,6 +277,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetAutonomousVmClusterResult(
+            double autonomousDataStoragePercentage,
+
             double autonomousDataStorageSizeInTbs,
 
             string autonomousVmClusterId,
@@ -287,6 +296,8 @@ namespace Pulumi.Oci.Database
             string computeModel,
 
             int cpuCoreCountPerNode,
+
+            double cpuPercentage,
 
             int cpusEnabled,
 
@@ -330,9 +341,17 @@ namespace Pulumi.Oci.Database
 
             int nodeCount,
 
+            int nonProvisionableAutonomousContainerDatabases,
+
             double ocpusEnabled,
 
+            int provisionedAutonomousContainerDatabases,
+
+            double provisionedCpus,
+
             int reclaimableCpus,
+
+            double reservedCpus,
 
             int scanListenerPortNonTls,
 
@@ -348,10 +367,13 @@ namespace Pulumi.Oci.Database
 
             string timeZone,
 
+            double totalAutonomousDataStorageInTbs,
+
             int totalContainerDatabases,
 
             string vmClusterNetworkId)
         {
+            AutonomousDataStoragePercentage = autonomousDataStoragePercentage;
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             AutonomousVmClusterId = autonomousVmClusterId;
             AvailableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
@@ -361,6 +383,7 @@ namespace Pulumi.Oci.Database
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
             CpuCoreCountPerNode = cpuCoreCountPerNode;
+            CpuPercentage = cpuPercentage;
             CpusEnabled = cpusEnabled;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
@@ -382,8 +405,12 @@ namespace Pulumi.Oci.Database
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
+            NonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             OcpusEnabled = ocpusEnabled;
+            ProvisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;
+            ReservedCpus = reservedCpus;
             ScanListenerPortNonTls = scanListenerPortNonTls;
             ScanListenerPortTls = scanListenerPortTls;
             State = state;
@@ -391,6 +418,7 @@ namespace Pulumi.Oci.Database
             TimeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             TimeOrdsCertificateExpires = timeOrdsCertificateExpires;
             TimeZone = timeZone;
+            TotalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             TotalContainerDatabases = totalContainerDatabases;
             VmClusterNetworkId = vmClusterNetworkId;
         }

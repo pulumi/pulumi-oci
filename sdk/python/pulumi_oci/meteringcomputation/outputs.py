@@ -123,7 +123,19 @@ class CustomTableSavedCustomTable(dict):
              group_by_tags: Optional[Sequence['outputs.CustomTableSavedCustomTableGroupByTag']] = None,
              row_group_bies: Optional[Sequence[str]] = None,
              version: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'columnGroupBies' in kwargs:
+            column_group_bies = kwargs['columnGroupBies']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'rowGroupBies' in kwargs:
+            row_group_bies = kwargs['rowGroupBies']
+
         _setter("display_name", display_name)
         if column_group_bies is not None:
             _setter("column_group_bies", column_group_bies)
@@ -208,7 +220,9 @@ class CustomTableSavedCustomTableGroupByTag(dict):
              key: Optional[str] = None,
              namespace: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if namespace is not None:
@@ -293,7 +307,15 @@ class QueryQueryDefinition(dict):
              display_name: str,
              report_query: 'outputs.QueryQueryDefinitionReportQuery',
              version: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costAnalysisUi' in kwargs:
+            cost_analysis_ui = kwargs['costAnalysisUi']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'reportQuery' in kwargs:
+            report_query = kwargs['reportQuery']
+
         _setter("cost_analysis_ui", cost_analysis_ui)
         _setter("display_name", display_name)
         _setter("report_query", report_query)
@@ -372,7 +394,11 @@ class QueryQueryDefinitionCostAnalysisUi(dict):
              _setter: Callable[[Any, Any], None],
              graph: Optional[str] = None,
              is_cumulative_graph: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCumulativeGraph' in kwargs:
+            is_cumulative_graph = kwargs['isCumulativeGraph']
+
         if graph is not None:
             _setter("graph", graph)
         if is_cumulative_graph is not None:
@@ -487,7 +513,27 @@ class QueryQueryDefinitionReportQuery(dict):
              query_type: Optional[str] = None,
              time_usage_ended: Optional[str] = None,
              time_usage_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'dateRangeName' in kwargs:
+            date_range_name = kwargs['dateRangeName']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("granularity", granularity)
         _setter("tenant_id", tenant_id)
         if compartment_depth is not None:
@@ -652,7 +698,15 @@ class QueryQueryDefinitionReportQueryForecast(dict):
              time_forecast_ended: str,
              forecast_type: Optional[str] = None,
              time_forecast_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeForecastEnded' in kwargs:
+            time_forecast_ended = kwargs['timeForecastEnded']
+        if 'forecastType' in kwargs:
+            forecast_type = kwargs['forecastType']
+        if 'timeForecastStarted' in kwargs:
+            time_forecast_started = kwargs['timeForecastStarted']
+
         _setter("time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             _setter("forecast_type", forecast_type)
@@ -707,7 +761,9 @@ class QueryQueryDefinitionReportQueryGroupByTag(dict):
              key: Optional[str] = None,
              namespace: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if namespace is not None:
@@ -810,7 +866,21 @@ class ScheduleQueryProperties(dict):
              group_by_tags: Optional[Sequence['outputs.ScheduleQueryPropertiesGroupByTag']] = None,
              is_aggregate_by_time: Optional[bool] = None,
              query_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateRange' in kwargs:
+            date_range = kwargs['dateRange']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+
         _setter("date_range", date_range)
         _setter("granularity", granularity)
         if compartment_depth is not None:
@@ -940,7 +1010,17 @@ class ScheduleQueryPropertiesDateRange(dict):
              dynamic_date_range_type: Optional[str] = None,
              time_usage_ended: Optional[str] = None,
              time_usage_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateRangeType' in kwargs:
+            date_range_type = kwargs['dateRangeType']
+        if 'dynamicDateRangeType' in kwargs:
+            dynamic_date_range_type = kwargs['dynamicDateRangeType']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("date_range_type", date_range_type)
         if dynamic_date_range_type is not None:
             _setter("dynamic_date_range_type", dynamic_date_range_type)
@@ -1002,7 +1082,9 @@ class ScheduleQueryPropertiesGroupByTag(dict):
              key: Optional[str] = None,
              namespace: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if namespace is not None:
@@ -1079,7 +1161,11 @@ class ScheduleResultLocation(dict):
              location_type: str,
              namespace: str,
              region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -1162,7 +1248,15 @@ class UsageForecast(dict):
              time_forecast_ended: str,
              forecast_type: Optional[str] = None,
              time_forecast_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeForecastEnded' in kwargs:
+            time_forecast_ended = kwargs['timeForecastEnded']
+        if 'forecastType' in kwargs:
+            forecast_type = kwargs['forecastType']
+        if 'timeForecastStarted' in kwargs:
+            time_forecast_started = kwargs['timeForecastStarted']
+
         _setter("time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             _setter("forecast_type", forecast_type)
@@ -1217,7 +1311,9 @@ class UsageGroupByTag(dict):
              key: Optional[str] = None,
              namespace: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if namespace is not None:
@@ -1432,7 +1528,45 @@ class UsageItem(dict):
              unit: Optional[str] = None,
              unit_price: Optional[float] = None,
              weight: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if 'compartmentPath' in kwargs:
+            compartment_path = kwargs['compartmentPath']
+        if 'computedAmount' in kwargs:
+            computed_amount = kwargs['computedAmount']
+        if 'computedQuantity' in kwargs:
+            computed_quantity = kwargs['computedQuantity']
+        if 'isForecast' in kwargs:
+            is_forecast = kwargs['isForecast']
+        if 'listRate' in kwargs:
+            list_rate = kwargs['listRate']
+        if 'overagesFlag' in kwargs:
+            overages_flag = kwargs['overagesFlag']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'skuName' in kwargs:
+            sku_name = kwargs['skuName']
+        if 'skuPartNumber' in kwargs:
+            sku_part_number = kwargs['skuPartNumber']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'tenantName' in kwargs:
+            tenant_name = kwargs['tenantName']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+        if 'unitPrice' in kwargs:
+            unit_price = kwargs['unitPrice']
+
         if ad is not None:
             _setter("ad", ad)
         if compartment_id is not None:
@@ -1752,7 +1886,9 @@ class UsageItemTag(dict):
              key: Optional[str] = None,
              namespace: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if namespace is not None:
@@ -1804,7 +1940,9 @@ class GetConfigurationItemResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("values", values)
 
@@ -1860,7 +1998,19 @@ class GetCustomTableSavedCustomTableResult(dict):
              group_by_tags: Sequence['outputs.GetCustomTableSavedCustomTableGroupByTagResult'],
              row_group_bies: Sequence[str],
              version: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnGroupBies' in kwargs:
+            column_group_bies = kwargs['columnGroupBies']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'rowGroupBies' in kwargs:
+            row_group_bies = kwargs['rowGroupBies']
+
         _setter("column_group_bies", column_group_bies)
         _setter("compartment_depth", compartment_depth)
         _setter("display_name", display_name)
@@ -1940,7 +2090,9 @@ class GetCustomTableSavedCustomTableGroupByTagResult(dict):
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -1982,7 +2134,9 @@ class GetCustomTablesCustomTableCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCustomTablesCustomTableCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2018,7 +2172,15 @@ class GetCustomTablesCustomTableCollectionItemResult(dict):
              id: str,
              saved_custom_tables: Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult'],
              saved_report_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'savedCustomTables' in kwargs:
+            saved_custom_tables = kwargs['savedCustomTables']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("saved_custom_tables", saved_custom_tables)
@@ -2092,7 +2254,19 @@ class GetCustomTablesCustomTableCollectionItemSavedCustomTableResult(dict):
              group_by_tags: Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult'],
              row_group_bies: Sequence[str],
              version: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnGroupBies' in kwargs:
+            column_group_bies = kwargs['columnGroupBies']
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'rowGroupBies' in kwargs:
+            row_group_bies = kwargs['rowGroupBies']
+
         _setter("column_group_bies", column_group_bies)
         _setter("compartment_depth", compartment_depth)
         _setter("display_name", display_name)
@@ -2172,7 +2346,9 @@ class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult(d
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -2220,7 +2396,9 @@ class GetCustomTablesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2260,7 +2438,9 @@ class GetQueriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2294,7 +2474,9 @@ class GetQueriesQueryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetQueriesQueryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2326,7 +2508,13 @@ class GetQueriesQueryCollectionItemResult(dict):
              compartment_id: str,
              id: str,
              query_definitions: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'queryDefinitions' in kwargs:
+            query_definitions = kwargs['queryDefinitions']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("query_definitions", query_definitions)
@@ -2383,7 +2571,15 @@ class GetQueriesQueryCollectionItemQueryDefinitionResult(dict):
              display_name: str,
              report_queries: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult'],
              version: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costAnalysisUis' in kwargs:
+            cost_analysis_uis = kwargs['costAnalysisUis']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'reportQueries' in kwargs:
+            report_queries = kwargs['reportQueries']
+
         _setter("cost_analysis_uis", cost_analysis_uis)
         _setter("display_name", display_name)
         _setter("report_queries", report_queries)
@@ -2441,7 +2637,11 @@ class GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult(dict):
              _setter: Callable[[Any, Any], None],
              graph: str,
              is_cumulative_graph: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCumulativeGraph' in kwargs:
+            is_cumulative_graph = kwargs['isCumulativeGraph']
+
         _setter("graph", graph)
         _setter("is_cumulative_graph", is_cumulative_graph)
 
@@ -2521,7 +2721,27 @@ class GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult(dict):
              tenant_id: str,
              time_usage_ended: str,
              time_usage_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'dateRangeName' in kwargs:
+            date_range_name = kwargs['dateRangeName']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("compartment_depth", compartment_depth)
         _setter("date_range_name", date_range_name)
         _setter("filter", filter)
@@ -2655,7 +2875,15 @@ class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult(dict
              forecast_type: str,
              time_forecast_ended: str,
              time_forecast_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forecastType' in kwargs:
+            forecast_type = kwargs['forecastType']
+        if 'timeForecastEnded' in kwargs:
+            time_forecast_ended = kwargs['timeForecastEnded']
+        if 'timeForecastStarted' in kwargs:
+            time_forecast_started = kwargs['timeForecastStarted']
+
         _setter("forecast_type", forecast_type)
         _setter("time_forecast_ended", time_forecast_ended)
         _setter("time_forecast_started", time_forecast_started)
@@ -2708,7 +2936,9 @@ class GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult(di
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -2765,7 +2995,15 @@ class GetQueryQueryDefinitionResult(dict):
              display_name: str,
              report_queries: Sequence['outputs.GetQueryQueryDefinitionReportQueryResult'],
              version: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costAnalysisUis' in kwargs:
+            cost_analysis_uis = kwargs['costAnalysisUis']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'reportQueries' in kwargs:
+            report_queries = kwargs['reportQueries']
+
         _setter("cost_analysis_uis", cost_analysis_uis)
         _setter("display_name", display_name)
         _setter("report_queries", report_queries)
@@ -2823,7 +3061,11 @@ class GetQueryQueryDefinitionCostAnalysisUiResult(dict):
              _setter: Callable[[Any, Any], None],
              graph: str,
              is_cumulative_graph: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isCumulativeGraph' in kwargs:
+            is_cumulative_graph = kwargs['isCumulativeGraph']
+
         _setter("graph", graph)
         _setter("is_cumulative_graph", is_cumulative_graph)
 
@@ -2903,7 +3145,27 @@ class GetQueryQueryDefinitionReportQueryResult(dict):
              tenant_id: str,
              time_usage_ended: str,
              time_usage_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'dateRangeName' in kwargs:
+            date_range_name = kwargs['dateRangeName']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("compartment_depth", compartment_depth)
         _setter("date_range_name", date_range_name)
         _setter("filter", filter)
@@ -3037,7 +3299,15 @@ class GetQueryQueryDefinitionReportQueryForecastResult(dict):
              forecast_type: str,
              time_forecast_ended: str,
              time_forecast_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'forecastType' in kwargs:
+            forecast_type = kwargs['forecastType']
+        if 'timeForecastEnded' in kwargs:
+            time_forecast_ended = kwargs['timeForecastEnded']
+        if 'timeForecastStarted' in kwargs:
+            time_forecast_started = kwargs['timeForecastStarted']
+
         _setter("forecast_type", forecast_type)
         _setter("time_forecast_ended", time_forecast_ended)
         _setter("time_forecast_started", time_forecast_started)
@@ -3090,7 +3360,9 @@ class GetQueryQueryDefinitionReportQueryGroupByTagResult(dict):
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -3163,7 +3435,21 @@ class GetScheduleQueryPropertyResult(dict):
              group_by_tags: Sequence['outputs.GetScheduleQueryPropertyGroupByTagResult'],
              is_aggregate_by_time: bool,
              query_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'dateRanges' in kwargs:
+            date_ranges = kwargs['dateRanges']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+
         _setter("compartment_depth", compartment_depth)
         _setter("date_ranges", date_ranges)
         _setter("filter", filter)
@@ -3264,7 +3550,17 @@ class GetScheduleQueryPropertyDateRangeResult(dict):
              dynamic_date_range_type: str,
              time_usage_ended: str,
              time_usage_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateRangeType' in kwargs:
+            date_range_type = kwargs['dateRangeType']
+        if 'dynamicDateRangeType' in kwargs:
+            dynamic_date_range_type = kwargs['dynamicDateRangeType']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("date_range_type", date_range_type)
         _setter("dynamic_date_range_type", dynamic_date_range_type)
         _setter("time_usage_ended", time_usage_ended)
@@ -3323,7 +3619,9 @@ class GetScheduleQueryPropertyGroupByTagResult(dict):
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -3380,7 +3678,11 @@ class GetScheduleResultLocationResult(dict):
              location_type: str,
              namespace: str,
              region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -3437,7 +3739,9 @@ class GetScheduledRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3471,7 +3775,9 @@ class GetScheduledRunsScheduledRunCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetScheduledRunsScheduledRunCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3515,7 +3821,17 @@ class GetScheduledRunsScheduledRunCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_finished: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'scheduleId' in kwargs:
+            schedule_id = kwargs['scheduleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+
         _setter("id", id)
         _setter("lifecycle_details", lifecycle_details)
         _setter("schedule_id", schedule_id)
@@ -3593,7 +3909,9 @@ class GetSchedulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3630,7 +3948,9 @@ class GetSchedulesScheduleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSchedulesScheduleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3714,7 +4034,33 @@ class GetSchedulesScheduleCollectionItemResult(dict):
              time_created: str,
              time_next_run: str,
              time_scheduled: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'outputFileFormat' in kwargs:
+            output_file_format = kwargs['outputFileFormat']
+        if 'queryProperties' in kwargs:
+            query_properties = kwargs['queryProperties']
+        if 'resultLocations' in kwargs:
+            result_locations = kwargs['resultLocations']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+        if 'scheduleRecurrences' in kwargs:
+            schedule_recurrences = kwargs['scheduleRecurrences']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNextRun' in kwargs:
+            time_next_run = kwargs['timeNextRun']
+        if 'timeScheduled' in kwargs:
+            time_scheduled = kwargs['timeScheduled']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3904,7 +4250,21 @@ class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
              group_by_tags: Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult'],
              is_aggregate_by_time: bool,
              query_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if 'dateRanges' in kwargs:
+            date_ranges = kwargs['dateRanges']
+        if 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+
         _setter("compartment_depth", compartment_depth)
         _setter("date_ranges", date_ranges)
         _setter("filter", filter)
@@ -4005,7 +4365,17 @@ class GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult(dict):
              dynamic_date_range_type: str,
              time_usage_ended: str,
              time_usage_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dateRangeType' in kwargs:
+            date_range_type = kwargs['dateRangeType']
+        if 'dynamicDateRangeType' in kwargs:
+            dynamic_date_range_type = kwargs['dynamicDateRangeType']
+        if 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         _setter("date_range_type", date_range_type)
         _setter("dynamic_date_range_type", dynamic_date_range_type)
         _setter("time_usage_ended", time_usage_ended)
@@ -4064,7 +4434,9 @@ class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult(dict):
              key: str,
              namespace: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("namespace", namespace)
         _setter("value", value)
@@ -4121,7 +4493,11 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
              location_type: str,
              namespace: str,
              region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)

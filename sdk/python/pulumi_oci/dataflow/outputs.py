@@ -129,7 +129,13 @@ class ApplicationApplicationLogConfig(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -186,7 +192,11 @@ class ApplicationDriverShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -245,7 +255,11 @@ class ApplicationExecutorShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -287,7 +301,9 @@ class ApplicationParameter(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -346,7 +362,13 @@ class InvokeRunApplicationLogConfig(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -403,7 +425,11 @@ class InvokeRunDriverShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -462,7 +488,11 @@ class InvokeRunExecutorShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -504,7 +534,9 @@ class InvokeRunParameter(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -569,7 +601,11 @@ class PoolConfiguration(dict):
              min: Optional[int] = None,
              shape: Optional[str] = None,
              shape_config: Optional['outputs.PoolConfigurationShapeConfig'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+
         if max is not None:
             _setter("max", max)
         if min is not None:
@@ -648,7 +684,11 @@ class PoolConfigurationShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -733,7 +773,21 @@ class PoolPoolMetric(dict):
              time_last_started: Optional[str] = None,
              time_last_stopped: Optional[str] = None,
              time_last_used: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+
         if active_runs_count is not None:
             _setter("active_runs_count", active_runs_count)
         if actively_used_node_counts is not None:
@@ -834,7 +888,13 @@ class PoolPoolMetricActivelyUsedNodeCount(dict):
              _setter: Callable[[Any, Any], None],
              logical_shape: Optional[str] = None,
              pool_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+
         if logical_shape is not None:
             _setter("logical_shape", logical_shape)
         if pool_count is not None:
@@ -901,7 +961,15 @@ class PoolSchedule(dict):
              day_of_week: Optional[str] = None,
              start_time: Optional[int] = None,
              stop_time: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+
         if day_of_week is not None:
             _setter("day_of_week", day_of_week)
         if start_time is not None:
@@ -953,7 +1021,9 @@ class PrivateEndpointScanDetail(dict):
              _setter: Callable[[Any, Any], None],
              fqdn: Optional[str] = None,
              port: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if fqdn is not None:
             _setter("fqdn", fqdn)
         if port is not None:
@@ -1026,7 +1096,13 @@ class RunStatementOutput(dict):
              error_value: Optional[str] = None,
              status: Optional[str] = None,
              tracebacks: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+
         if datas is not None:
             _setter("datas", datas)
         if error_name is not None:
@@ -1098,7 +1174,9 @@ class RunStatementOutputData(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
             _setter("type", type)
         if value is not None:
@@ -1157,7 +1235,11 @@ class SqlEndpointDriverShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1216,7 +1298,11 @@ class SqlEndpointExecutorShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1307,7 +1393,23 @@ class SqlEndpointNetworkConfiguration(dict):
              public_endpoint_ip: Optional[str] = None,
              subnet_id: Optional[str] = None,
              vcn_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("network_type", network_type)
         if access_control_rules is not None:
             _setter("access_control_rules", access_control_rules)
@@ -1421,7 +1523,13 @@ class SqlEndpointNetworkConfigurationAccessControlRule(dict):
              ip_notation: Optional[str] = None,
              value: Optional[str] = None,
              vcn_ips: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+
         if ip_notation is not None:
             _setter("ip_notation", ip_notation)
         if value is not None:
@@ -1473,7 +1581,13 @@ class GetApplicationApplicationLogConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -1513,7 +1627,11 @@ class GetApplicationDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -1553,7 +1671,11 @@ class GetApplicationExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -1593,7 +1715,9 @@ class GetApplicationParameterResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -1761,7 +1885,59 @@ class GetApplicationsApplicationResult(dict):
              time_updated: str,
              type: str,
              warehouse_bucket_uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationLogConfigs' in kwargs:
+            application_log_configs = kwargs['applicationLogConfigs']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'className' in kwargs:
+            class_name = kwargs['className']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         _setter("application_log_configs", application_log_configs)
         _setter("archive_uri", archive_uri)
         _setter("arguments", arguments)
@@ -2089,7 +2265,13 @@ class GetApplicationsApplicationApplicationLogConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -2129,7 +2311,11 @@ class GetApplicationsApplicationDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -2169,7 +2355,11 @@ class GetApplicationsApplicationExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -2209,7 +2399,9 @@ class GetApplicationsApplicationParameterResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -2251,7 +2443,9 @@ class GetApplicationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2295,7 +2489,13 @@ class GetInvokeRunApplicationLogConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -2335,7 +2535,11 @@ class GetInvokeRunDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -2375,7 +2579,11 @@ class GetInvokeRunExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -2415,7 +2623,9 @@ class GetInvokeRunParameterResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -2457,7 +2667,9 @@ class GetInvokeRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2672,7 +2884,81 @@ class GetInvokeRunsRunResult(dict):
              total_ocpu: int,
              type: str,
              warehouse_bucket_uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'applicationLogConfigs' in kwargs:
+            application_log_configs = kwargs['applicationLogConfigs']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'className' in kwargs:
+            class_name = kwargs['className']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if 'dataWrittenInBytes' in kwargs:
+            data_written_in_bytes = kwargs['dataWrittenInBytes']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'opcRequestId' in kwargs:
+            opc_request_id = kwargs['opcRequestId']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'privateEndpointDnsZones' in kwargs:
+            private_endpoint_dns_zones = kwargs['privateEndpointDnsZones']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'privateEndpointMaxHostCount' in kwargs:
+            private_endpoint_max_host_count = kwargs['privateEndpointMaxHostCount']
+        if 'privateEndpointNsgIds' in kwargs:
+            private_endpoint_nsg_ids = kwargs['privateEndpointNsgIds']
+        if 'privateEndpointSubnetId' in kwargs:
+            private_endpoint_subnet_id = kwargs['privateEndpointSubnetId']
+        if 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalOcpu' in kwargs:
+            total_ocpu = kwargs['totalOcpu']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         _setter("application_id", application_id)
         _setter("application_log_configs", application_log_configs)
         _setter("archive_uri", archive_uri)
@@ -3096,7 +3382,13 @@ class GetInvokeRunsRunApplicationLogConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -3136,7 +3428,11 @@ class GetInvokeRunsRunDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -3176,7 +3472,11 @@ class GetInvokeRunsRunExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -3216,7 +3516,9 @@ class GetInvokeRunsRunParameterResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3264,7 +3566,11 @@ class GetPoolConfigurationResult(dict):
              min: int,
              shape: str,
              shape_configs: Sequence['outputs.GetPoolConfigurationShapeConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+
         _setter("max", max)
         _setter("min", min)
         _setter("shape", shape)
@@ -3322,7 +3628,11 @@ class GetPoolConfigurationShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -3378,7 +3688,21 @@ class GetPoolPoolMetricResult(dict):
              time_last_started: str,
              time_last_stopped: str,
              time_last_used: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+
         _setter("active_runs_count", active_runs_count)
         _setter("actively_used_node_counts", actively_used_node_counts)
         _setter("time_last_metrics_updated", time_last_metrics_updated)
@@ -3454,7 +3778,13 @@ class GetPoolPoolMetricActivelyUsedNodeCountResult(dict):
              _setter: Callable[[Any, Any], None],
              logical_shape: str,
              pool_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+
         _setter("logical_shape", logical_shape)
         _setter("pool_count", pool_count)
 
@@ -3498,7 +3828,15 @@ class GetPoolScheduleResult(dict):
              day_of_week: str,
              start_time: int,
              stop_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+
         _setter("day_of_week", day_of_week)
         _setter("start_time", start_time)
         _setter("stop_time", stop_time)
@@ -3546,7 +3884,9 @@ class GetPoolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3580,7 +3920,9 @@ class GetPoolsPoolCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPoolsPoolCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3664,7 +4006,31 @@ class GetPoolsPoolCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'poolMetrics' in kwargs:
+            pool_metrics = kwargs['poolMetrics']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("configurations", configurations)
         _setter("defined_tags", defined_tags)
@@ -3838,7 +4204,11 @@ class GetPoolsPoolCollectionItemConfigurationResult(dict):
              min: int,
              shape: str,
              shape_configs: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+
         _setter("max", max)
         _setter("min", min)
         _setter("shape", shape)
@@ -3896,7 +4266,11 @@ class GetPoolsPoolCollectionItemConfigurationShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -3952,7 +4326,21 @@ class GetPoolsPoolCollectionItemPoolMetricResult(dict):
              time_last_started: str,
              time_last_stopped: str,
              time_last_used: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+
         _setter("active_runs_count", active_runs_count)
         _setter("actively_used_node_counts", actively_used_node_counts)
         _setter("time_last_metrics_updated", time_last_metrics_updated)
@@ -4028,7 +4416,13 @@ class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult(dict):
              _setter: Callable[[Any, Any], None],
              logical_shape: str,
              pool_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+
         _setter("logical_shape", logical_shape)
         _setter("pool_count", pool_count)
 
@@ -4072,7 +4466,15 @@ class GetPoolsPoolCollectionItemScheduleResult(dict):
              day_of_week: str,
              start_time: int,
              stop_time: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+
         _setter("day_of_week", day_of_week)
         _setter("start_time", start_time)
         _setter("stop_time", stop_time)
@@ -4121,7 +4523,9 @@ class GetPrivateEndpointScanDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              fqdn: str,
              port: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("fqdn", fqdn)
         _setter("port", port)
 
@@ -4160,7 +4564,9 @@ class GetPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4194,7 +4600,9 @@ class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4282,7 +4690,37 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsZones' in kwargs:
+            dns_zones = kwargs['dnsZones']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxHostCount' in kwargs:
+            max_host_count = kwargs['maxHostCount']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'scanDetails' in kwargs:
+            scan_details = kwargs['scanDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -4457,7 +4895,9 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              fqdn: str,
              port: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("fqdn", fqdn)
         _setter("port", port)
 
@@ -4496,7 +4936,9 @@ class GetRunLogsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4548,7 +4990,15 @@ class GetRunLogsRunLogResult(dict):
              source: str,
              time_created: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'runId' in kwargs:
+            run_id = kwargs['runId']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("name", name)
         _setter("run_id", run_id)
         _setter("size_in_bytes", size_in_bytes)
@@ -4621,7 +5071,13 @@ class GetRunStatementOutputResult(dict):
              error_value: str,
              status: str,
              tracebacks: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+
         _setter("datas", datas)
         _setter("error_name", error_name)
         _setter("error_value", error_value)
@@ -4688,7 +5144,9 @@ class GetRunStatementOutputDataResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -4727,7 +5185,9 @@ class GetRunStatementsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4761,7 +5221,9 @@ class GetRunStatementsStatementCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRunStatementsStatementCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4813,7 +5275,15 @@ class GetRunStatementsStatementCollectionItemResult(dict):
              state: str,
              time_completed: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'runId' in kwargs:
+            run_id = kwargs['runId']
+        if 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("code", code)
         _setter("id", id)
         _setter("outputs", outputs)
@@ -4919,7 +5389,13 @@ class GetRunStatementsStatementCollectionItemOutputResult(dict):
              error_value: str,
              status: str,
              tracebacks: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+
         _setter("datas", datas)
         _setter("error_name", error_name)
         _setter("error_value", error_value)
@@ -4986,7 +5462,9 @@ class GetRunStatementsStatementCollectionItemOutputDataResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -5026,7 +5504,11 @@ class GetSqlEndpointDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -5066,7 +5548,11 @@ class GetSqlEndpointExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -5126,7 +5612,23 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
              public_endpoint_ip: str,
              subnet_id: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("access_control_rules", access_control_rules)
         _setter("host_name_prefix", host_name_prefix)
         _setter("network_type", network_type)
@@ -5215,7 +5717,13 @@ class GetSqlEndpointNetworkConfigurationAccessControlRuleResult(dict):
              ip_notation: str,
              value: str,
              vcn_ips: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+
         _setter("ip_notation", ip_notation)
         _setter("value", value)
         _setter("vcn_ips", vcn_ips)
@@ -5263,7 +5771,9 @@ class GetSqlEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5297,7 +5807,9 @@ class GetSqlEndpointsSqlEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5417,7 +5929,53 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              warehouse_bucket_uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jdbcEndpointUrl' in kwargs:
+            jdbc_endpoint_url = kwargs['jdbcEndpointUrl']
+        if 'lakeId' in kwargs:
+            lake_id = kwargs['lakeId']
+        if 'lastAcceptedRequestToken' in kwargs:
+            last_accepted_request_token = kwargs['lastAcceptedRequestToken']
+        if 'maxExecutorCount' in kwargs:
+            max_executor_count = kwargs['maxExecutorCount']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'minExecutorCount' in kwargs:
+            min_executor_count = kwargs['minExecutorCount']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'sparkAdvancedConfigurations' in kwargs:
+            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
+        if 'sqlEndpointVersion' in kwargs:
+            sql_endpoint_version = kwargs['sqlEndpointVersion']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -5664,7 +6222,11 @@ class GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -5704,7 +6266,11 @@ class GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -5764,7 +6330,23 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
              public_endpoint_ip: str,
              subnet_id: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("access_control_rules", access_control_rules)
         _setter("host_name_prefix", host_name_prefix)
         _setter("network_type", network_type)
@@ -5853,7 +6435,13 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlR
              ip_notation: str,
              value: str,
              vcn_ips: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+
         _setter("ip_notation", ip_notation)
         _setter("value", value)
         _setter("vcn_ips", vcn_ips)

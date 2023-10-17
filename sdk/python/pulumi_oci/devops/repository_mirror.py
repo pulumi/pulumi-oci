@@ -31,7 +31,11 @@ class RepositoryMirrorArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              repository_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         _setter("repository_id", repository_id)
 
     @property
@@ -71,7 +75,11 @@ class _RepositoryMirrorState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              repository_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         if repository_id is not None:
             _setter("repository_id", repository_id)
 

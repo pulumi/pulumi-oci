@@ -84,7 +84,37 @@ class ModelArgs:
              testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'componentModels' in kwargs:
+            component_models = kwargs['componentModels']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'maxTrainingTimeInHours' in kwargs:
+            max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         _setter("compartment_id", compartment_id)
         _setter("model_type", model_type)
         _setter("project_id", project_id)
@@ -402,7 +432,51 @@ class _ModelState:
              trained_time_in_hours: Optional[pulumi.Input[float]] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentModels' in kwargs:
+            component_models = kwargs['componentModels']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isComposedModel' in kwargs:
+            is_composed_model = kwargs['isComposedModel']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxTrainingTimeInHours' in kwargs:
+            max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trainedTimeInHours' in kwargs:
+            trained_time_in_hours = kwargs['trainedTimeInHours']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if component_models is not None:

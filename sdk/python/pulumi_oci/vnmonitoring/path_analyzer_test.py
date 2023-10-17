@@ -61,7 +61,25 @@ class PathAnalyzerTestArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              protocol_parameters: Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']] = None,
              query_options: Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+
         _setter("compartment_id", compartment_id)
         _setter("destination_endpoint", destination_endpoint)
         _setter("protocol", protocol)
@@ -250,7 +268,31 @@ class _PathAnalyzerTestState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

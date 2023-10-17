@@ -35,7 +35,11 @@ class SmtpCredentialArgs:
              _setter: Callable[[Any, Any], None],
              description: pulumi.Input[str],
              user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("description", description)
         _setter("user_id", user_id)
 
@@ -116,7 +120,17 @@ class _SmtpCredentialState:
              time_expires: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if description is not None:
             _setter("description", description)
         if inactive_state is not None:

@@ -35,7 +35,13 @@ class ExternalClusterInstanceArgs:
              _setter: Callable[[Any, Any], None],
              external_cluster_instance_id: pulumi.Input[str],
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalClusterInstanceId' in kwargs:
+            external_cluster_instance_id = kwargs['externalClusterInstanceId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+
         _setter("external_cluster_instance_id", external_cluster_instance_id)
         if external_connector_id is not None:
             _setter("external_connector_id", external_connector_id)
@@ -149,7 +155,39 @@ class _ExternalClusterInstanceState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if 'externalClusterInstanceId' in kwargs:
+            external_cluster_instance_id = kwargs['externalClusterInstanceId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if adr_home_directory is not None:
             _setter("adr_home_directory", adr_home_directory)
         if compartment_id is not None:

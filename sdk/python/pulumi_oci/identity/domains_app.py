@@ -1187,7 +1187,175 @@ class DomainsAppArgs:
              urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'basedOnTemplate' in kwargs:
+            based_on_template = kwargs['basedOnTemplate']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'accessTokenExpiry' in kwargs:
+            access_token_expiry = kwargs['accessTokenExpiry']
+        if 'aliasApps' in kwargs:
+            alias_apps = kwargs['aliasApps']
+        if 'allUrlSchemesAllowed' in kwargs:
+            all_url_schemes_allowed = kwargs['allUrlSchemesAllowed']
+        if 'allowAccessControl' in kwargs:
+            allow_access_control = kwargs['allowAccessControl']
+        if 'allowOffline' in kwargs:
+            allow_offline = kwargs['allowOffline']
+        if 'allowedGrants' in kwargs:
+            allowed_grants = kwargs['allowedGrants']
+        if 'allowedOperations' in kwargs:
+            allowed_operations = kwargs['allowedOperations']
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+        if 'allowedTags' in kwargs:
+            allowed_tags = kwargs['allowedTags']
+        if 'appIcon' in kwargs:
+            app_icon = kwargs['appIcon']
+        if 'appSignonPolicy' in kwargs:
+            app_signon_policy = kwargs['appSignonPolicy']
+        if 'appThumbnail' in kwargs:
+            app_thumbnail = kwargs['appThumbnail']
+        if 'appsNetworkPerimeters' in kwargs:
+            apps_network_perimeters = kwargs['appsNetworkPerimeters']
+        if 'asOpcService' in kwargs:
+            as_opc_service = kwargs['asOpcService']
+        if 'attrRenderingMetadatas' in kwargs:
+            attr_rendering_metadatas = kwargs['attrRenderingMetadatas']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'bypassConsent' in kwargs:
+            bypass_consent = kwargs['bypassConsent']
+        if 'clientIpChecking' in kwargs:
+            client_ip_checking = kwargs['clientIpChecking']
+        if 'clientType' in kwargs:
+            client_type = kwargs['clientType']
+        if 'contactEmailAddress' in kwargs:
+            contact_email_address = kwargs['contactEmailAddress']
+        if 'delegatedServiceNames' in kwargs:
+            delegated_service_names = kwargs['delegatedServiceNames']
+        if 'disableKmsiTokenAuthentication' in kwargs:
+            disable_kmsi_token_authentication = kwargs['disableKmsiTokenAuthentication']
+        if 'errorPageUrl' in kwargs:
+            error_page_url = kwargs['errorPageUrl']
+        if 'homePageUrl' in kwargs:
+            home_page_url = kwargs['homePageUrl']
+        if 'idTokenEncAlgo' in kwargs:
+            id_token_enc_algo = kwargs['idTokenEncAlgo']
+        if 'identityProviders' in kwargs:
+            identity_providers = kwargs['identityProviders']
+        if 'idpPolicy' in kwargs:
+            idp_policy = kwargs['idpPolicy']
+        if 'isAliasApp' in kwargs:
+            is_alias_app = kwargs['isAliasApp']
+        if 'isEnterpriseApp' in kwargs:
+            is_enterprise_app = kwargs['isEnterpriseApp']
+        if 'isFormFill' in kwargs:
+            is_form_fill = kwargs['isFormFill']
+        if 'isKerberosRealm' in kwargs:
+            is_kerberos_realm = kwargs['isKerberosRealm']
+        if 'isLoginTarget' in kwargs:
+            is_login_target = kwargs['isLoginTarget']
+        if 'isMobileTarget' in kwargs:
+            is_mobile_target = kwargs['isMobileTarget']
+        if 'isMulticloudServiceApp' in kwargs:
+            is_multicloud_service_app = kwargs['isMulticloudServiceApp']
+        if 'isOauthClient' in kwargs:
+            is_oauth_client = kwargs['isOauthClient']
+        if 'isOauthResource' in kwargs:
+            is_oauth_resource = kwargs['isOauthResource']
+        if 'isObligationCapable' in kwargs:
+            is_obligation_capable = kwargs['isObligationCapable']
+        if 'isRadiusApp' in kwargs:
+            is_radius_app = kwargs['isRadiusApp']
+        if 'isSamlServiceProvider' in kwargs:
+            is_saml_service_provider = kwargs['isSamlServiceProvider']
+        if 'isUnmanagedApp' in kwargs:
+            is_unmanaged_app = kwargs['isUnmanagedApp']
+        if 'isWebTierPolicy' in kwargs:
+            is_web_tier_policy = kwargs['isWebTierPolicy']
+        if 'landingPageUrl' in kwargs:
+            landing_page_url = kwargs['landingPageUrl']
+        if 'linkingCallbackUrl' in kwargs:
+            linking_callback_url = kwargs['linkingCallbackUrl']
+        if 'loginMechanism' in kwargs:
+            login_mechanism = kwargs['loginMechanism']
+        if 'loginPageUrl' in kwargs:
+            login_page_url = kwargs['loginPageUrl']
+        if 'logoutPageUrl' in kwargs:
+            logout_page_url = kwargs['logoutPageUrl']
+        if 'logoutUri' in kwargs:
+            logout_uri = kwargs['logoutUri']
+        if 'postLogoutRedirectUris' in kwargs:
+            post_logout_redirect_uris = kwargs['postLogoutRedirectUris']
+        if 'privacyPolicyUrl' in kwargs:
+            privacy_policy_url = kwargs['privacyPolicyUrl']
+        if 'productLogoUrl' in kwargs:
+            product_logo_url = kwargs['productLogoUrl']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+        if 'protectableSecondaryAudiences' in kwargs:
+            protectable_secondary_audiences = kwargs['protectableSecondaryAudiences']
+        if 'radiusPolicy' in kwargs:
+            radius_policy = kwargs['radiusPolicy']
+        if 'redirectUris' in kwargs:
+            redirect_uris = kwargs['redirectUris']
+        if 'refreshTokenExpiry' in kwargs:
+            refresh_token_expiry = kwargs['refreshTokenExpiry']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'samlServiceProvider' in kwargs:
+            saml_service_provider = kwargs['samlServiceProvider']
+        if 'secondaryAudiences' in kwargs:
+            secondary_audiences = kwargs['secondaryAudiences']
+        if 'serviceParams' in kwargs:
+            service_params = kwargs['serviceParams']
+        if 'serviceTypeUrn' in kwargs:
+            service_type_urn = kwargs['serviceTypeUrn']
+        if 'serviceTypeVersion' in kwargs:
+            service_type_version = kwargs['serviceTypeVersion']
+        if 'showInMyApps' in kwargs:
+            show_in_my_apps = kwargs['showInMyApps']
+        if 'signonPolicy' in kwargs:
+            signon_policy = kwargs['signonPolicy']
+        if 'termsOfServiceUrl' in kwargs:
+            terms_of_service_url = kwargs['termsOfServiceUrl']
+        if 'termsOfUse' in kwargs:
+            terms_of_use = kwargs['termsOfUse']
+        if 'trustPolicies' in kwargs:
+            trust_policies = kwargs['trustPolicies']
+        if 'trustScope' in kwargs:
+            trust_scope = kwargs['trustScope']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']
+        if 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmanagedappApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app = kwargs['urnietfparamsscimschemasoracleidcsextensionopcServiceApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionradiusAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = kwargs['urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = kwargs['urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']
+
         _setter("based_on_template", based_on_template)
         _setter("display_name", display_name)
         _setter("idcs_endpoint", idcs_endpoint)
@@ -4833,7 +5001,217 @@ class _DomainsAppState:
              urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
              user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessTokenExpiry' in kwargs:
+            access_token_expiry = kwargs['accessTokenExpiry']
+        if 'adminRoles' in kwargs:
+            admin_roles = kwargs['adminRoles']
+        if 'aliasApps' in kwargs:
+            alias_apps = kwargs['aliasApps']
+        if 'allUrlSchemesAllowed' in kwargs:
+            all_url_schemes_allowed = kwargs['allUrlSchemesAllowed']
+        if 'allowAccessControl' in kwargs:
+            allow_access_control = kwargs['allowAccessControl']
+        if 'allowOffline' in kwargs:
+            allow_offline = kwargs['allowOffline']
+        if 'allowedGrants' in kwargs:
+            allowed_grants = kwargs['allowedGrants']
+        if 'allowedOperations' in kwargs:
+            allowed_operations = kwargs['allowedOperations']
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+        if 'allowedTags' in kwargs:
+            allowed_tags = kwargs['allowedTags']
+        if 'appIcon' in kwargs:
+            app_icon = kwargs['appIcon']
+        if 'appSignonPolicy' in kwargs:
+            app_signon_policy = kwargs['appSignonPolicy']
+        if 'appThumbnail' in kwargs:
+            app_thumbnail = kwargs['appThumbnail']
+        if 'appsNetworkPerimeters' in kwargs:
+            apps_network_perimeters = kwargs['appsNetworkPerimeters']
+        if 'asOpcService' in kwargs:
+            as_opc_service = kwargs['asOpcService']
+        if 'attrRenderingMetadatas' in kwargs:
+            attr_rendering_metadatas = kwargs['attrRenderingMetadatas']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'basedOnTemplate' in kwargs:
+            based_on_template = kwargs['basedOnTemplate']
+        if 'bypassConsent' in kwargs:
+            bypass_consent = kwargs['bypassConsent']
+        if 'callbackServiceUrl' in kwargs:
+            callback_service_url = kwargs['callbackServiceUrl']
+        if 'clientIpChecking' in kwargs:
+            client_ip_checking = kwargs['clientIpChecking']
+        if 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if 'clientType' in kwargs:
+            client_type = kwargs['clientType']
+        if 'cloudControlProperties' in kwargs:
+            cloud_control_properties = kwargs['cloudControlProperties']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'contactEmailAddress' in kwargs:
+            contact_email_address = kwargs['contactEmailAddress']
+        if 'delegatedServiceNames' in kwargs:
+            delegated_service_names = kwargs['delegatedServiceNames']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'disableKmsiTokenAuthentication' in kwargs:
+            disable_kmsi_token_authentication = kwargs['disableKmsiTokenAuthentication']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'editableAttributes' in kwargs:
+            editable_attributes = kwargs['editableAttributes']
+        if 'errorPageUrl' in kwargs:
+            error_page_url = kwargs['errorPageUrl']
+        if 'grantedAppRoles' in kwargs:
+            granted_app_roles = kwargs['grantedAppRoles']
+        if 'hashedClientSecret' in kwargs:
+            hashed_client_secret = kwargs['hashedClientSecret']
+        if 'homePageUrl' in kwargs:
+            home_page_url = kwargs['homePageUrl']
+        if 'idTokenEncAlgo' in kwargs:
+            id_token_enc_algo = kwargs['idTokenEncAlgo']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'identityProviders' in kwargs:
+            identity_providers = kwargs['identityProviders']
+        if 'idpPolicy' in kwargs:
+            idp_policy = kwargs['idpPolicy']
+        if 'isAliasApp' in kwargs:
+            is_alias_app = kwargs['isAliasApp']
+        if 'isDatabaseService' in kwargs:
+            is_database_service = kwargs['isDatabaseService']
+        if 'isEnterpriseApp' in kwargs:
+            is_enterprise_app = kwargs['isEnterpriseApp']
+        if 'isFormFill' in kwargs:
+            is_form_fill = kwargs['isFormFill']
+        if 'isKerberosRealm' in kwargs:
+            is_kerberos_realm = kwargs['isKerberosRealm']
+        if 'isLoginTarget' in kwargs:
+            is_login_target = kwargs['isLoginTarget']
+        if 'isManagedApp' in kwargs:
+            is_managed_app = kwargs['isManagedApp']
+        if 'isMobileTarget' in kwargs:
+            is_mobile_target = kwargs['isMobileTarget']
+        if 'isMulticloudServiceApp' in kwargs:
+            is_multicloud_service_app = kwargs['isMulticloudServiceApp']
+        if 'isOauthClient' in kwargs:
+            is_oauth_client = kwargs['isOauthClient']
+        if 'isOauthResource' in kwargs:
+            is_oauth_resource = kwargs['isOauthResource']
+        if 'isObligationCapable' in kwargs:
+            is_obligation_capable = kwargs['isObligationCapable']
+        if 'isOpcService' in kwargs:
+            is_opc_service = kwargs['isOpcService']
+        if 'isRadiusApp' in kwargs:
+            is_radius_app = kwargs['isRadiusApp']
+        if 'isSamlServiceProvider' in kwargs:
+            is_saml_service_provider = kwargs['isSamlServiceProvider']
+        if 'isUnmanagedApp' in kwargs:
+            is_unmanaged_app = kwargs['isUnmanagedApp']
+        if 'isWebTierPolicy' in kwargs:
+            is_web_tier_policy = kwargs['isWebTierPolicy']
+        if 'landingPageUrl' in kwargs:
+            landing_page_url = kwargs['landingPageUrl']
+        if 'linkingCallbackUrl' in kwargs:
+            linking_callback_url = kwargs['linkingCallbackUrl']
+        if 'loginMechanism' in kwargs:
+            login_mechanism = kwargs['loginMechanism']
+        if 'loginPageUrl' in kwargs:
+            login_page_url = kwargs['loginPageUrl']
+        if 'logoutPageUrl' in kwargs:
+            logout_page_url = kwargs['logoutPageUrl']
+        if 'logoutUri' in kwargs:
+            logout_uri = kwargs['logoutUri']
+        if 'meterAsOpcService' in kwargs:
+            meter_as_opc_service = kwargs['meterAsOpcService']
+        if 'postLogoutRedirectUris' in kwargs:
+            post_logout_redirect_uris = kwargs['postLogoutRedirectUris']
+        if 'privacyPolicyUrl' in kwargs:
+            privacy_policy_url = kwargs['privacyPolicyUrl']
+        if 'productLogoUrl' in kwargs:
+            product_logo_url = kwargs['productLogoUrl']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+        if 'protectableSecondaryAudiences' in kwargs:
+            protectable_secondary_audiences = kwargs['protectableSecondaryAudiences']
+        if 'radiusPolicy' in kwargs:
+            radius_policy = kwargs['radiusPolicy']
+        if 'readyToUpgrade' in kwargs:
+            ready_to_upgrade = kwargs['readyToUpgrade']
+        if 'redirectUris' in kwargs:
+            redirect_uris = kwargs['redirectUris']
+        if 'refreshTokenExpiry' in kwargs:
+            refresh_token_expiry = kwargs['refreshTokenExpiry']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'samlServiceProvider' in kwargs:
+            saml_service_provider = kwargs['samlServiceProvider']
+        if 'secondaryAudiences' in kwargs:
+            secondary_audiences = kwargs['secondaryAudiences']
+        if 'serviceParams' in kwargs:
+            service_params = kwargs['serviceParams']
+        if 'serviceTypeUrn' in kwargs:
+            service_type_urn = kwargs['serviceTypeUrn']
+        if 'serviceTypeVersion' in kwargs:
+            service_type_version = kwargs['serviceTypeVersion']
+        if 'showInMyApps' in kwargs:
+            show_in_my_apps = kwargs['showInMyApps']
+        if 'signonPolicy' in kwargs:
+            signon_policy = kwargs['signonPolicy']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'termsOfServiceUrl' in kwargs:
+            terms_of_service_url = kwargs['termsOfServiceUrl']
+        if 'termsOfUse' in kwargs:
+            terms_of_use = kwargs['termsOfUse']
+        if 'trustPolicies' in kwargs:
+            trust_policies = kwargs['trustPolicies']
+        if 'trustScope' in kwargs:
+            trust_scope = kwargs['trustScope']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbcsApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = kwargs['urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']
+        if 'urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionmanagedappApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmanagedappApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionopcServiceApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app = kwargs['urnietfparamsscimschemasoracleidcsextensionopcServiceApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionradiusAppApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app = kwargs['urnietfparamsscimschemasoracleidcsextensionradiusAppApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionrequestableApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = kwargs['urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']
+        if 'urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = kwargs['urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']
+        if 'userRoles' in kwargs:
+            user_roles = kwargs['userRoles']
+
         if access_token_expiry is not None:
             _setter("access_token_expiry", access_token_expiry)
         if accounts is not None:

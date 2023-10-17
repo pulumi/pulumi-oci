@@ -55,7 +55,21 @@ class EncryptedDataArgs:
              encryption_algorithm: Optional[pulumi.Input[str]] = None,
              key_version_id: Optional[pulumi.Input[str]] = None,
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if 'encryptionAlgorithm' in kwargs:
+            encryption_algorithm = kwargs['encryptionAlgorithm']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("key_id", key_id)
         _setter("plaintext", plaintext)
@@ -205,7 +219,21 @@ class _EncryptedDataState:
              key_version_id: Optional[pulumi.Input[str]] = None,
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              plaintext: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'encryptionAlgorithm' in kwargs:
+            encryption_algorithm = kwargs['encryptionAlgorithm']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+
         if associated_data is not None:
             _setter("associated_data", associated_data)
         if ciphertext is not None:

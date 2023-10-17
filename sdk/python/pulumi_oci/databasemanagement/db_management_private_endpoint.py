@@ -51,7 +51,17 @@ class DbManagementPrivateEndpointArgs:
              is_cluster: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("compartment_id", compartment_id)
         _setter("subnet_id", subnet_id)
         if description is not None:
@@ -196,7 +206,23 @@ class _DbManagementPrivateEndpointState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if description is not None:

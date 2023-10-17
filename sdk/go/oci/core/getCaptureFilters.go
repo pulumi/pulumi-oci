@@ -33,6 +33,7 @@ import (
 //			_, err := Core.GetCaptureFilters(ctx, &core.GetCaptureFiltersArgs{
 //				CompartmentId: _var.Compartment_id,
 //				DisplayName:   pulumi.StringRef(_var.Capture_filter_display_name),
+//				FilterType:    pulumi.StringRef(_var.Capture_filter_filter_type),
 //				State:         pulumi.StringRef(_var.Capture_filter_state),
 //			}, nil)
 //			if err != nil {
@@ -58,8 +59,10 @@ type GetCaptureFiltersArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName *string                   `pulumi:"displayName"`
-	Filters     []GetCaptureFiltersFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+	FilterType *string                   `pulumi:"filterType"`
+	Filters    []GetCaptureFiltersFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
 }
@@ -71,8 +74,10 @@ type GetCaptureFiltersResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName *string                   `pulumi:"displayName"`
-	Filters     []GetCaptureFiltersFilter `pulumi:"filters"`
+	DisplayName *string `pulumi:"displayName"`
+	// Indicates which service will use this capture filter
+	FilterType *string                   `pulumi:"filterType"`
+	Filters    []GetCaptureFiltersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The capture filter's current administrative state.
@@ -97,8 +102,10 @@ type GetCaptureFiltersOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
-	Filters     GetCaptureFiltersFilterArrayInput `pulumi:"filters"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+	FilterType pulumi.StringPtrInput             `pulumi:"filterType"`
+	Filters    GetCaptureFiltersFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -141,6 +148,11 @@ func (o GetCaptureFiltersResultOutput) CompartmentId() pulumi.StringOutput {
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetCaptureFiltersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCaptureFiltersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Indicates which service will use this capture filter
+func (o GetCaptureFiltersResultOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaptureFiltersResult) *string { return v.FilterType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCaptureFiltersResultOutput) Filters() GetCaptureFiltersFilterArrayOutput {

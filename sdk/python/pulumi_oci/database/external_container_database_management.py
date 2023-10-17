@@ -41,7 +41,17 @@ class ExternalContainerDatabaseManagementArgs:
              external_container_database_id: pulumi.Input[str],
              external_database_connector_id: pulumi.Input[str],
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableManagement' in kwargs:
+            enable_management = kwargs['enableManagement']
+        if 'externalContainerDatabaseId' in kwargs:
+            external_container_database_id = kwargs['externalContainerDatabaseId']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("enable_management", enable_management)
         _setter("external_container_database_id", external_container_database_id)
         _setter("external_database_connector_id", external_database_connector_id)
@@ -127,7 +137,17 @@ class _ExternalContainerDatabaseManagementState:
              external_container_database_id: Optional[pulumi.Input[str]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableManagement' in kwargs:
+            enable_management = kwargs['enableManagement']
+        if 'externalContainerDatabaseId' in kwargs:
+            external_container_database_id = kwargs['externalContainerDatabaseId']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if enable_management is not None:
             _setter("enable_management", enable_management)
         if external_container_database_id is not None:

@@ -47,6 +47,21 @@ public final class GetCaptureFiltersArgs extends com.pulumi.resources.InvokeArgs
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     * 
+     */
+    @Import(name="filterType")
+    private @Nullable Output<String> filterType;
+
+    /**
+     * @return A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     * 
+     */
+    public Optional<Output<String>> filterType() {
+        return Optional.ofNullable(this.filterType);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetCaptureFiltersFilterArgs>> filters;
 
@@ -74,6 +89,7 @@ public final class GetCaptureFiltersArgs extends com.pulumi.resources.InvokeArgs
     private GetCaptureFiltersArgs(GetCaptureFiltersArgs $) {
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.filterType = $.filterType;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -136,6 +152,27 @@ public final class GetCaptureFiltersArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param filterType A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterType(@Nullable Output<String> filterType) {
+            $.filterType = filterType;
+            return this;
+        }
+
+        /**
+         * @param filterType A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterType(String filterType) {
+            return filterType(Output.of(filterType));
         }
 
         public Builder filters(@Nullable Output<List<GetCaptureFiltersFilterArgs>> filters) {

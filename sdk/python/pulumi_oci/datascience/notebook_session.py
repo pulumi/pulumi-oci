@@ -65,7 +65,25 @@ class NotebookSessionArgs:
              notebook_session_configuration_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs']] = None,
              notebook_session_runtime_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("project_id", project_id)
         if defined_tags is not None:
@@ -264,7 +282,33 @@ class _NotebookSessionState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if 'notebookSessionUrl' in kwargs:
+            notebook_session_url = kwargs['notebookSessionUrl']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if created_by is not None:

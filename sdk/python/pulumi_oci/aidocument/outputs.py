@@ -88,7 +88,11 @@ class ModelComponentModel(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              model_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         if model_id is not None:
             _setter("model_id", model_id)
 
@@ -148,7 +152,17 @@ class ModelMetric(dict):
              label_metrics_reports: Optional[Sequence['outputs.ModelMetricLabelMetricsReport']] = None,
              model_type: Optional[str] = None,
              overall_metrics_reports: Optional[Sequence['outputs.ModelMetricOverallMetricsReport']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetSummaries' in kwargs:
+            dataset_summaries = kwargs['datasetSummaries']
+        if 'labelMetricsReports' in kwargs:
+            label_metrics_reports = kwargs['labelMetricsReports']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'overallMetricsReports' in kwargs:
+            overall_metrics_reports = kwargs['overallMetricsReports']
+
         if dataset_summaries is not None:
             _setter("dataset_summaries", dataset_summaries)
         if label_metrics_reports is not None:
@@ -235,7 +249,15 @@ class ModelMetricDatasetSummary(dict):
              test_sample_count: Optional[int] = None,
              training_sample_count: Optional[int] = None,
              validation_sample_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'testSampleCount' in kwargs:
+            test_sample_count = kwargs['testSampleCount']
+        if 'trainingSampleCount' in kwargs:
+            training_sample_count = kwargs['trainingSampleCount']
+        if 'validationSampleCount' in kwargs:
+            validation_sample_count = kwargs['validationSampleCount']
+
         if test_sample_count is not None:
             _setter("test_sample_count", test_sample_count)
         if training_sample_count is not None:
@@ -316,7 +338,15 @@ class ModelMetricLabelMetricsReport(dict):
              document_count: Optional[int] = None,
              label: Optional[str] = None,
              mean_average_precision: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         if confidence_entries is not None:
             _setter("confidence_entries", confidence_entries)
         if document_count is not None:
@@ -390,7 +420,9 @@ class ModelMetricLabelMetricsReportConfidenceEntry(dict):
              precision: Optional[float] = None,
              recall: Optional[float] = None,
              threshold: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if accuracy is not None:
             _setter("accuracy", accuracy)
         if f1score is not None:
@@ -487,7 +519,15 @@ class ModelMetricOverallMetricsReport(dict):
              confidence_entries: Optional[Sequence['outputs.ModelMetricOverallMetricsReportConfidenceEntry']] = None,
              document_count: Optional[int] = None,
              mean_average_precision: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         if confidence_entries is not None:
             _setter("confidence_entries", confidence_entries)
         if document_count is not None:
@@ -551,7 +591,9 @@ class ModelMetricOverallMetricsReportConfidenceEntry(dict):
              precision: Optional[float] = None,
              recall: Optional[float] = None,
              threshold: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if accuracy is not None:
             _setter("accuracy", accuracy)
         if f1score is not None:
@@ -658,7 +700,13 @@ class ModelTestingDataset(dict):
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -768,7 +816,13 @@ class ModelTrainingDataset(dict):
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -878,7 +932,13 @@ class ModelValidationDataset(dict):
              dataset_id: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -976,7 +1036,13 @@ class ProcessorJobInputLocation(dict):
              source_type: str,
              data: Optional[str] = None,
              object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+
         _setter("source_type", source_type)
         if data is not None:
             _setter("data", data)
@@ -1031,7 +1097,9 @@ class ProcessorJobInputLocationObjectLocation(dict):
              bucket: Optional[str] = None,
              namespace: Optional[str] = None,
              object: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -1087,7 +1155,9 @@ class ProcessorJobOutputLocation(dict):
              bucket: str,
              namespace: str,
              prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("prefix", prefix)
@@ -1173,7 +1243,15 @@ class ProcessorJobProcessorConfig(dict):
              document_type: Optional[str] = None,
              is_zip_output_enabled: Optional[bool] = None,
              language: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'processorType' in kwargs:
+            processor_type = kwargs['processorType']
+        if 'documentType' in kwargs:
+            document_type = kwargs['documentType']
+        if 'isZipOutputEnabled' in kwargs:
+            is_zip_output_enabled = kwargs['isZipOutputEnabled']
+
         _setter("features", features)
         _setter("processor_type", processor_type)
         if document_type is not None:
@@ -1284,7 +1362,19 @@ class ProcessorJobProcessorConfigFeature(dict):
              max_results: Optional[int] = None,
              model_id: Optional[str] = None,
              tenancy_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'featureType' in kwargs:
+            feature_type = kwargs['featureType']
+        if 'generateSearchablePdf' in kwargs:
+            generate_searchable_pdf = kwargs['generateSearchablePdf']
+        if 'maxResults' in kwargs:
+            max_results = kwargs['maxResults']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+
         _setter("feature_type", feature_type)
         if generate_searchable_pdf is not None:
             _setter("generate_searchable_pdf", generate_searchable_pdf)
@@ -1351,7 +1441,11 @@ class GetModelComponentModelResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              model_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         _setter("model_id", model_id)
 
     @property
@@ -1390,7 +1484,17 @@ class GetModelMetricResult(dict):
              label_metrics_reports: Sequence['outputs.GetModelMetricLabelMetricsReportResult'],
              model_type: str,
              overall_metrics_reports: Sequence['outputs.GetModelMetricOverallMetricsReportResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetSummaries' in kwargs:
+            dataset_summaries = kwargs['datasetSummaries']
+        if 'labelMetricsReports' in kwargs:
+            label_metrics_reports = kwargs['labelMetricsReports']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'overallMetricsReports' in kwargs:
+            overall_metrics_reports = kwargs['overallMetricsReports']
+
         _setter("dataset_summaries", dataset_summaries)
         _setter("label_metrics_reports", label_metrics_reports)
         _setter("model_type", model_type)
@@ -1452,7 +1556,15 @@ class GetModelMetricDatasetSummaryResult(dict):
              test_sample_count: int,
              training_sample_count: int,
              validation_sample_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'testSampleCount' in kwargs:
+            test_sample_count = kwargs['testSampleCount']
+        if 'trainingSampleCount' in kwargs:
+            training_sample_count = kwargs['trainingSampleCount']
+        if 'validationSampleCount' in kwargs:
+            validation_sample_count = kwargs['validationSampleCount']
+
         _setter("test_sample_count", test_sample_count)
         _setter("training_sample_count", training_sample_count)
         _setter("validation_sample_count", validation_sample_count)
@@ -1509,7 +1621,15 @@ class GetModelMetricLabelMetricsReportResult(dict):
              document_count: int,
              label: str,
              mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
         _setter("label", label)
@@ -1579,7 +1699,9 @@ class GetModelMetricLabelMetricsReportConfidenceEntryResult(dict):
              precision: float,
              recall: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
         _setter("precision", precision)
@@ -1650,7 +1772,15 @@ class GetModelMetricOverallMetricsReportResult(dict):
              confidence_entries: Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult'],
              document_count: int,
              mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
         _setter("mean_average_precision", mean_average_precision)
@@ -1711,7 +1841,9 @@ class GetModelMetricOverallMetricsReportConfidenceEntryResult(dict):
              precision: float,
              recall: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
         _setter("precision", precision)
@@ -1790,7 +1922,13 @@ class GetModelTestingDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -1869,7 +2007,13 @@ class GetModelTrainingDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -1948,7 +2092,13 @@ class GetModelValidationDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -2014,7 +2164,9 @@ class GetModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2048,7 +2200,9 @@ class GetModelsModelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2172,7 +2326,51 @@ class GetModelsModelCollectionItemResult(dict):
              trained_time_in_hours: float,
              training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
              validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentModels' in kwargs:
+            component_models = kwargs['componentModels']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isComposedModel' in kwargs:
+            is_composed_model = kwargs['isComposedModel']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxTrainingTimeInHours' in kwargs:
+            max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'testingDatasets' in kwargs:
+            testing_datasets = kwargs['testingDatasets']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trainedTimeInHours' in kwargs:
+            trained_time_in_hours = kwargs['trainedTimeInHours']
+        if 'trainingDatasets' in kwargs:
+            training_datasets = kwargs['trainingDatasets']
+        if 'validationDatasets' in kwargs:
+            validation_datasets = kwargs['validationDatasets']
+
         _setter("compartment_id", compartment_id)
         _setter("component_models", component_models)
         _setter("defined_tags", defined_tags)
@@ -2424,7 +2622,11 @@ class GetModelsModelCollectionItemComponentModelResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              model_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         _setter("model_id", model_id)
 
     @property
@@ -2463,7 +2665,17 @@ class GetModelsModelCollectionItemMetricResult(dict):
              label_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult'],
              model_type: str,
              overall_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetSummaries' in kwargs:
+            dataset_summaries = kwargs['datasetSummaries']
+        if 'labelMetricsReports' in kwargs:
+            label_metrics_reports = kwargs['labelMetricsReports']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'overallMetricsReports' in kwargs:
+            overall_metrics_reports = kwargs['overallMetricsReports']
+
         _setter("dataset_summaries", dataset_summaries)
         _setter("label_metrics_reports", label_metrics_reports)
         _setter("model_type", model_type)
@@ -2525,7 +2737,15 @@ class GetModelsModelCollectionItemMetricDatasetSummaryResult(dict):
              test_sample_count: int,
              training_sample_count: int,
              validation_sample_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'testSampleCount' in kwargs:
+            test_sample_count = kwargs['testSampleCount']
+        if 'trainingSampleCount' in kwargs:
+            training_sample_count = kwargs['trainingSampleCount']
+        if 'validationSampleCount' in kwargs:
+            validation_sample_count = kwargs['validationSampleCount']
+
         _setter("test_sample_count", test_sample_count)
         _setter("training_sample_count", training_sample_count)
         _setter("validation_sample_count", validation_sample_count)
@@ -2582,7 +2802,15 @@ class GetModelsModelCollectionItemMetricLabelMetricsReportResult(dict):
              document_count: int,
              label: str,
              mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
         _setter("label", label)
@@ -2652,7 +2880,9 @@ class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult(
              precision: float,
              recall: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
         _setter("precision", precision)
@@ -2723,7 +2953,15 @@ class GetModelsModelCollectionItemMetricOverallMetricsReportResult(dict):
              confidence_entries: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult'],
              document_count: int,
              mean_average_precision: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         _setter("confidence_entries", confidence_entries)
         _setter("document_count", document_count)
         _setter("mean_average_precision", mean_average_precision)
@@ -2784,7 +3022,9 @@ class GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResul
              precision: float,
              recall: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("accuracy", accuracy)
         _setter("f1score", f1score)
         _setter("precision", precision)
@@ -2863,7 +3103,13 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -2942,7 +3188,13 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -3021,7 +3273,13 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
              dataset_type: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+
         _setter("bucket", bucket)
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
@@ -3092,7 +3350,13 @@ class GetProcessorJobInputLocationResult(dict):
              data: str,
              object_locations: Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult'],
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("data", data)
         _setter("object_locations", object_locations)
         _setter("source_type", source_type)
@@ -3145,7 +3409,9 @@ class GetProcessorJobInputLocationObjectLocationResult(dict):
              bucket: str,
              namespace: str,
              object: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -3198,7 +3464,9 @@ class GetProcessorJobOutputLocationResult(dict):
              bucket: str,
              namespace: str,
              prefix: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("prefix", prefix)
@@ -3259,7 +3527,15 @@ class GetProcessorJobProcessorConfigResult(dict):
              is_zip_output_enabled: bool,
              language: str,
              processor_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'documentType' in kwargs:
+            document_type = kwargs['documentType']
+        if 'isZipOutputEnabled' in kwargs:
+            is_zip_output_enabled = kwargs['isZipOutputEnabled']
+        if 'processorType' in kwargs:
+            processor_type = kwargs['processorType']
+
         _setter("document_type", document_type)
         _setter("features", features)
         _setter("is_zip_output_enabled", is_zip_output_enabled)
@@ -3338,7 +3614,19 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
              max_results: int,
              model_id: str,
              tenancy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'featureType' in kwargs:
+            feature_type = kwargs['featureType']
+        if 'generateSearchablePdf' in kwargs:
+            generate_searchable_pdf = kwargs['generateSearchablePdf']
+        if 'maxResults' in kwargs:
+            max_results = kwargs['maxResults']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+
         _setter("feature_type", feature_type)
         _setter("generate_searchable_pdf", generate_searchable_pdf)
         _setter("max_results", max_results)
@@ -3404,7 +3692,9 @@ class GetProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3438,7 +3728,9 @@ class GetProjectsProjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3502,7 +3794,25 @@ class GetProjectsProjectCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

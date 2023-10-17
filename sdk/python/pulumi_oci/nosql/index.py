@@ -49,7 +49,15 @@ class IndexArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              is_if_not_exists: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isIfNotExists' in kwargs:
+            is_if_not_exists = kwargs['isIfNotExists']
+
         _setter("keys", keys)
         _setter("table_name_or_id", table_name_or_id)
         if compartment_id is not None:
@@ -176,7 +184,21 @@ class _IndexState:
              table_id: Optional[pulumi.Input[str]] = None,
              table_name: Optional[pulumi.Input[str]] = None,
              table_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isIfNotExists' in kwargs:
+            is_if_not_exists = kwargs['isIfNotExists']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if is_if_not_exists is not None:

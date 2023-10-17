@@ -79,7 +79,31 @@ class SensitiveDataModelsSensitiveColumnArgs:
              relation_type: Optional[pulumi.Input[str]] = None,
              sensitive_type_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
         _setter("column_name", column_name)
         _setter("object", object)
         _setter("schema_name", schema_name)
@@ -368,7 +392,43 @@ class _SensitiveDataModelsSensitiveColumnState:
              status: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'columnGroups' in kwargs:
+            column_groups = kwargs['columnGroups']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if 'estimatedDataValueCount' in kwargs:
+            estimated_data_value_count = kwargs['estimatedDataValueCount']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if 'sampleDataValues' in kwargs:
+            sample_data_values = kwargs['sampleDataValues']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if app_defined_child_column_keys is not None:
             _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if app_name is not None:

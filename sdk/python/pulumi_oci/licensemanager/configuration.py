@@ -35,7 +35,13 @@ class ConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              email_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'emailIds' in kwargs:
+            email_ids = kwargs['emailIds']
+
         _setter("compartment_id", compartment_id)
         _setter("email_ids", email_ids)
 
@@ -100,7 +106,17 @@ class _ConfigurationState:
              email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'emailIds' in kwargs:
+            email_ids = kwargs['emailIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if email_ids is not None:

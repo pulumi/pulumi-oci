@@ -123,6 +123,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string FilterType;
         /// <summary>
+        /// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCaptureFilterFlowLogCaptureFilterRuleResult> FlowLogCaptureFilterRules;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -155,6 +159,8 @@ namespace Pulumi.Oci.Core
 
             string filterType,
 
+            ImmutableArray<Outputs.GetCaptureFilterFlowLogCaptureFilterRuleResult> flowLogCaptureFilterRules,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -170,6 +176,7 @@ namespace Pulumi.Oci.Core
             DefinedTags = definedTags;
             DisplayName = displayName;
             FilterType = filterType;
+            FlowLogCaptureFilterRules = flowLogCaptureFilterRules;
             FreeformTags = freeformTags;
             Id = id;
             State = state;

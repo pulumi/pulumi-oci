@@ -97,7 +97,41 @@ class BuildPipelineStageArgs:
              private_access_config: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']] = None,
              stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildPipelineStagePredecessorCollection' in kwargs:
+            build_pipeline_stage_predecessor_collection = kwargs['buildPipelineStagePredecessorCollection']
+        if 'buildPipelineStageType' in kwargs:
+            build_pipeline_stage_type = kwargs['buildPipelineStageType']
+        if 'buildRunnerShapeConfig' in kwargs:
+            build_runner_shape_config = kwargs['buildRunnerShapeConfig']
+        if 'buildSourceCollection' in kwargs:
+            build_source_collection = kwargs['buildSourceCollection']
+        if 'buildSpecFile' in kwargs:
+            build_spec_file = kwargs['buildSpecFile']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deliverArtifactCollection' in kwargs:
+            deliver_artifact_collection = kwargs['deliverArtifactCollection']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPassAllParametersEnabled' in kwargs:
+            is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
+        if 'primaryBuildSource' in kwargs:
+            primary_build_source = kwargs['primaryBuildSource']
+        if 'privateAccessConfig' in kwargs:
+            private_access_config = kwargs['privateAccessConfig']
+        if 'stageExecutionTimeoutInSeconds' in kwargs:
+            stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
+        if 'waitCriteria' in kwargs:
+            wait_criteria = kwargs['waitCriteria']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
         _setter("build_pipeline_stage_type", build_pipeline_stage_type)
@@ -461,7 +495,53 @@ class _BuildPipelineStageState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildPipelineStagePredecessorCollection' in kwargs:
+            build_pipeline_stage_predecessor_collection = kwargs['buildPipelineStagePredecessorCollection']
+        if 'buildPipelineStageType' in kwargs:
+            build_pipeline_stage_type = kwargs['buildPipelineStageType']
+        if 'buildRunnerShapeConfig' in kwargs:
+            build_runner_shape_config = kwargs['buildRunnerShapeConfig']
+        if 'buildSourceCollection' in kwargs:
+            build_source_collection = kwargs['buildSourceCollection']
+        if 'buildSpecFile' in kwargs:
+            build_spec_file = kwargs['buildSpecFile']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deliverArtifactCollection' in kwargs:
+            deliver_artifact_collection = kwargs['deliverArtifactCollection']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPassAllParametersEnabled' in kwargs:
+            is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'primaryBuildSource' in kwargs:
+            primary_build_source = kwargs['primaryBuildSource']
+        if 'privateAccessConfig' in kwargs:
+            private_access_config = kwargs['privateAccessConfig']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stageExecutionTimeoutInSeconds' in kwargs:
+            stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'waitCriteria' in kwargs:
+            wait_criteria = kwargs['waitCriteria']
+
         if build_pipeline_id is not None:
             _setter("build_pipeline_id", build_pipeline_id)
         if build_pipeline_stage_predecessor_collection is not None:

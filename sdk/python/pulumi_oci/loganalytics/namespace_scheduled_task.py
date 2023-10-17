@@ -69,7 +69,21 @@ class NamespaceScheduledTaskArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              saved_search_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'taskType' in kwargs:
+            task_type = kwargs['taskType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+
         _setter("action", action)
         _setter("compartment_id", compartment_id)
         _setter("kind", kind)
@@ -293,7 +307,33 @@ class _NamespaceScheduledTaskState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'numOccurrences' in kwargs:
+            num_occurrences = kwargs['numOccurrences']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+        if 'scheduledTaskId' in kwargs:
+            scheduled_task_id = kwargs['scheduledTaskId']
+        if 'taskStatus' in kwargs:
+            task_status = kwargs['taskStatus']
+        if 'taskType' in kwargs:
+            task_type = kwargs['taskType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if action is not None:
             _setter("action", action)
         if compartment_id is not None:

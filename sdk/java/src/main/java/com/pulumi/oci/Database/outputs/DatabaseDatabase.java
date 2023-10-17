@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -93,6 +94,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String pdbName;
+    /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    private @Nullable List<String> pluggableDatabases;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
@@ -220,6 +226,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.pdbName);
     }
     /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -265,6 +278,7 @@ public final class DatabaseDatabase {
         private @Nullable String kmsKeyVersionId;
         private @Nullable String ncharacterSet;
         private @Nullable String pdbName;
+        private @Nullable List<String> pluggableDatabases;
         private @Nullable String sidPrefix;
         private @Nullable String tdeWalletPassword;
         private @Nullable String vaultId;
@@ -286,6 +300,7 @@ public final class DatabaseDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.vaultId = defaults.vaultId;
@@ -367,6 +382,14 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
             this.sidPrefix = sidPrefix;
             return this;
@@ -398,6 +421,7 @@ public final class DatabaseDatabase {
             o.kmsKeyVersionId = kmsKeyVersionId;
             o.ncharacterSet = ncharacterSet;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.sidPrefix = sidPrefix;
             o.tdeWalletPassword = tdeWalletPassword;
             o.vaultId = vaultId;

@@ -208,7 +208,71 @@ class DbSystemArgs:
              sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
              storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbHome' in kwargs:
+            db_home = kwargs['dbHome']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if 'dbSystemOptions' in kwargs:
+            db_system_options = kwargs['dbSystemOptions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'diskRedundancy' in kwargs:
+            disk_redundancy = kwargs['diskRedundancy']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'recoStorageSizeInGb' in kwargs:
+            reco_storage_size_in_gb = kwargs['recoStorageSizeInGb']
+        if 'sourceDbSystemId' in kwargs:
+            source_db_system_id = kwargs['sourceDbSystemId']
+        if 'sparseDiskgroup' in kwargs:
+            sparse_diskgroup = kwargs['sparseDiskgroup']
+        if 'storageVolumePerformanceMode' in kwargs:
+            storage_volume_performance_mode = kwargs['storageVolumePerformanceMode']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("db_home", db_home)
@@ -1004,7 +1068,103 @@ class _DbSystemState:
              version: Optional[pulumi.Input[str]] = None,
              vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if 'dbHome' in kwargs:
+            db_home = kwargs['dbHome']
+        if 'dbSystemOptions' in kwargs:
+            db_system_options = kwargs['dbSystemOptions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'diskRedundancy' in kwargs:
+            disk_redundancy = kwargs['diskRedundancy']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'iormConfigCaches' in kwargs:
+            iorm_config_caches = kwargs['iormConfigCaches']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'lastMaintenanceRunId' in kwargs:
+            last_maintenance_run_id = kwargs['lastMaintenanceRunId']
+        if 'lastPatchHistoryEntryId' in kwargs:
+            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'maintenanceWindowDetails' in kwargs:
+            maintenance_window_details = kwargs['maintenanceWindowDetails']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'nextMaintenanceRunId' in kwargs:
+            next_maintenance_run_id = kwargs['nextMaintenanceRunId']
+        if 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'pointInTimeDataDiskCloneTimestamp' in kwargs:
+            point_in_time_data_disk_clone_timestamp = kwargs['pointInTimeDataDiskCloneTimestamp']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'recoStorageSizeInGb' in kwargs:
+            reco_storage_size_in_gb = kwargs['recoStorageSizeInGb']
+        if 'scanDnsName' in kwargs:
+            scan_dns_name = kwargs['scanDnsName']
+        if 'scanDnsRecordId' in kwargs:
+            scan_dns_record_id = kwargs['scanDnsRecordId']
+        if 'scanIpIds' in kwargs:
+            scan_ip_ids = kwargs['scanIpIds']
+        if 'sourceDbSystemId' in kwargs:
+            source_db_system_id = kwargs['sourceDbSystemId']
+        if 'sparseDiskgroup' in kwargs:
+            sparse_diskgroup = kwargs['sparseDiskgroup']
+        if 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if 'storageVolumePerformanceMode' in kwargs:
+            storage_volume_performance_mode = kwargs['storageVolumePerformanceMode']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'vipIds' in kwargs:
+            vip_ids = kwargs['vipIds']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:

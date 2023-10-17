@@ -85,7 +85,33 @@ class MaskingPolicyArgs:
              post_masking_script: Optional[pulumi.Input[str]] = None,
              pre_masking_script: Optional[pulumi.Input[str]] = None,
              recompile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnSources' in kwargs:
+            column_sources = kwargs['columnSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'addMaskingColumnsFromSdmTrigger' in kwargs:
+            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if 'postMaskingScript' in kwargs:
+            post_masking_script = kwargs['postMaskingScript']
+        if 'preMaskingScript' in kwargs:
+            pre_masking_script = kwargs['preMaskingScript']
+
         _setter("column_sources", column_sources)
         _setter("compartment_id", compartment_id)
         if add_masking_columns_from_sdm_trigger is not None:
@@ -370,7 +396,37 @@ class _MaskingPolicyState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addMaskingColumnsFromSdmTrigger' in kwargs:
+            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
+        if 'columnSources' in kwargs:
+            column_sources = kwargs['columnSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if 'postMaskingScript' in kwargs:
+            post_masking_script = kwargs['postMaskingScript']
+        if 'preMaskingScript' in kwargs:
+            pre_masking_script = kwargs['preMaskingScript']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if add_masking_columns_from_sdm_trigger is not None:
             _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
         if column_sources is not None:

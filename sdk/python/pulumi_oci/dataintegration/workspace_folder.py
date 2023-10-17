@@ -68,7 +68,21 @@ class WorkspaceFolderArgs:
              model_version: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              object_status: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+        if 'categoryName' in kwargs:
+            category_name = kwargs['categoryName']
+        if 'folderKey' in kwargs:
+            folder_key = kwargs['folderKey']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+
         _setter("identifier", identifier)
         _setter("registry_metadata", registry_metadata)
         _setter("workspace_id", workspace_id)
@@ -284,7 +298,29 @@ class _WorkspaceFolderState:
              parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryName' in kwargs:
+            category_name = kwargs['categoryName']
+        if 'folderKey' in kwargs:
+            folder_key = kwargs['folderKey']
+        if 'keyMap' in kwargs:
+            key_map = kwargs['keyMap']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+        if 'parentReves' in kwargs:
+            parent_reves = kwargs['parentReves']
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if category_name is not None:
             _setter("category_name", category_name)
         if description is not None:

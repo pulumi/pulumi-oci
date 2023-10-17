@@ -68,6 +68,8 @@ type LookupCaptureFilterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
 	FilterType string `pulumi:"filterType"`
+	// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+	FlowLogCaptureFilterRules []GetCaptureFilterFlowLogCaptureFilterRule `pulumi:"flowLogCaptureFilterRules"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -146,6 +148,13 @@ func (o LookupCaptureFilterResultOutput) DisplayName() pulumi.StringOutput {
 // Indicates which service will use this capture filter
 func (o LookupCaptureFilterResultOutput) FilterType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.FilterType }).(pulumi.StringOutput)
+}
+
+// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+func (o LookupCaptureFilterResultOutput) FlowLogCaptureFilterRules() GetCaptureFilterFlowLogCaptureFilterRuleArrayOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) []GetCaptureFilterFlowLogCaptureFilterRule {
+		return v.FlowLogCaptureFilterRules
+	}).(GetCaptureFilterFlowLogCaptureFilterRuleArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

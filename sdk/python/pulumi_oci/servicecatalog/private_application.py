@@ -61,7 +61,25 @@ class PrivateApplicationArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
              long_description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'logoFileBase64encoded' in kwargs:
+            logo_file_base64encoded = kwargs['logoFileBase64encoded']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("package_details", package_details)
@@ -244,7 +262,31 @@ class _PrivateApplicationState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'logoFileBase64encoded' in kwargs:
+            logo_file_base64encoded = kwargs['logoFileBase64encoded']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

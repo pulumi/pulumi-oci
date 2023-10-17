@@ -38,7 +38,15 @@ class PublicIpPoolCapacityArgs:
              byoip_id: pulumi.Input[str],
              cidr_block: pulumi.Input[str],
              public_ip_pool_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'byoipId' in kwargs:
+            byoip_id = kwargs['byoipId']
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'publicIpPoolId' in kwargs:
+            public_ip_pool_id = kwargs['publicIpPoolId']
+
         _setter("byoip_id", byoip_id)
         _setter("cidr_block", cidr_block)
         _setter("public_ip_pool_id", public_ip_pool_id)
@@ -110,7 +118,15 @@ class _PublicIpPoolCapacityState:
              byoip_id: Optional[pulumi.Input[str]] = None,
              cidr_block: Optional[pulumi.Input[str]] = None,
              public_ip_pool_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'byoipId' in kwargs:
+            byoip_id = kwargs['byoipId']
+        if 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if 'publicIpPoolId' in kwargs:
+            public_ip_pool_id = kwargs['publicIpPoolId']
+
         if byoip_id is not None:
             _setter("byoip_id", byoip_id)
         if cidr_block is not None:

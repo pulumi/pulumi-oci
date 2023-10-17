@@ -41,7 +41,11 @@ class RuleSetArgs:
              items: pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]],
              load_balancer_id: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("items", items)
         _setter("load_balancer_id", load_balancer_id)
         if name is not None:
@@ -119,7 +123,11 @@ class _RuleSetState:
              load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if items is not None:
             _setter("items", items)
         if load_balancer_id is not None:

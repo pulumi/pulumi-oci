@@ -53,7 +53,21 @@ class ReplicaArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_delete_protected: Optional[pulumi.Input[bool]] = None,
              replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if 'replicaOverrides' in kwargs:
+            replica_overrides = kwargs['replicaOverrides']
+
         _setter("db_system_id", db_system_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -249,7 +263,43 @@ class _ReplicaState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if 'replicaOverrides' in kwargs:
+            replica_overrides = kwargs['replicaOverrides']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

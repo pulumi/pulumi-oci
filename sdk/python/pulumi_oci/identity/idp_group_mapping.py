@@ -39,7 +39,15 @@ class IdpGroupMappingArgs:
              group_id: pulumi.Input[str],
              identity_provider_id: pulumi.Input[str],
              idp_group_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'identityProviderId' in kwargs:
+            identity_provider_id = kwargs['identityProviderId']
+        if 'idpGroupName' in kwargs:
+            idp_group_name = kwargs['idpGroupName']
+
         _setter("group_id", group_id)
         _setter("identity_provider_id", identity_provider_id)
         _setter("idp_group_name", idp_group_name)
@@ -129,7 +137,21 @@ class _IdpGroupMappingState:
              inactive_state: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'identityProviderId' in kwargs:
+            identity_provider_id = kwargs['identityProviderId']
+        if 'idpGroupName' in kwargs:
+            idp_group_name = kwargs['idpGroupName']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if group_id is not None:

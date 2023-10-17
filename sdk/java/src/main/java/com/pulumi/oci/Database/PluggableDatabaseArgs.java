@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.PluggableDatabasePdbCreationTypeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -20,6 +21,21 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
     public static final PluggableDatabaseArgs Empty = new PluggableDatabaseArgs();
 
     /**
+     * The DB system administrator password of the Container Database.
+     * 
+     */
+    @Import(name="containerDatabaseAdminPassword")
+    private @Nullable Output<String> containerDatabaseAdminPassword;
+
+    /**
+     * @return The DB system administrator password of the Container Database.
+     * 
+     */
+    public Optional<Output<String>> containerDatabaseAdminPassword() {
+        return Optional.ofNullable(this.containerDatabaseAdminPassword);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
      * 
      */
@@ -32,6 +48,21 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
      */
     public Output<String> containerDatabaseId() {
         return this.containerDatabaseId;
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+     * 
+     */
+    @Import(name="convertToRegularTrigger")
+    private @Nullable Output<Integer> convertToRegularTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> convertToRegularTrigger() {
+        return Optional.ofNullable(this.convertToRegularTrigger);
     }
 
     /**
@@ -80,6 +111,25 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+     * 
+     * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+     * 
+     */
+    @Import(name="pdbCreationTypeDetails")
+    private @Nullable Output<PluggableDatabasePdbCreationTypeDetailsArgs> pdbCreationTypeDetails;
+
+    /**
+     * @return The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+     * 
+     * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+     * 
+     */
+    public Optional<Output<PluggableDatabasePdbCreationTypeDetailsArgs>> pdbCreationTypeDetails() {
+        return Optional.ofNullable(this.pdbCreationTypeDetails);
+    }
+
+    /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
@@ -92,6 +142,21 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
      */
     public Output<String> pdbName() {
         return this.pdbName;
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
     }
 
     /**
@@ -113,6 +178,21 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<Integer>> rotateKeyTrigger() {
         return Optional.ofNullable(this.rotateKeyTrigger);
+    }
+
+    /**
+     * Indicates whether to take Pluggable Database Backup after the operation.
+     * 
+     */
+    @Import(name="shouldCreatePdbBackup")
+    private @Nullable Output<Boolean> shouldCreatePdbBackup;
+
+    /**
+     * @return Indicates whether to take Pluggable Database Backup after the operation.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldCreatePdbBackup() {
+        return Optional.ofNullable(this.shouldCreatePdbBackup);
     }
 
     /**
@@ -148,12 +228,17 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
     private PluggableDatabaseArgs() {}
 
     private PluggableDatabaseArgs(PluggableDatabaseArgs $) {
+        this.containerDatabaseAdminPassword = $.containerDatabaseAdminPassword;
         this.containerDatabaseId = $.containerDatabaseId;
+        this.convertToRegularTrigger = $.convertToRegularTrigger;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.pdbAdminPassword = $.pdbAdminPassword;
+        this.pdbCreationTypeDetails = $.pdbCreationTypeDetails;
         this.pdbName = $.pdbName;
+        this.refreshTrigger = $.refreshTrigger;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
+        this.shouldCreatePdbBackup = $.shouldCreatePdbBackup;
         this.shouldPdbAdminAccountBeLocked = $.shouldPdbAdminAccountBeLocked;
         this.tdeWalletPassword = $.tdeWalletPassword;
     }
@@ -177,6 +262,27 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param containerDatabaseAdminPassword The DB system administrator password of the Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerDatabaseAdminPassword(@Nullable Output<String> containerDatabaseAdminPassword) {
+            $.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
+            return this;
+        }
+
+        /**
+         * @param containerDatabaseAdminPassword The DB system administrator password of the Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+            return containerDatabaseAdminPassword(Output.of(containerDatabaseAdminPassword));
+        }
+
+        /**
          * @param containerDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
          * 
          * @return builder
@@ -195,6 +301,27 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder containerDatabaseId(String containerDatabaseId) {
             return containerDatabaseId(Output.of(containerDatabaseId));
+        }
+
+        /**
+         * @param convertToRegularTrigger (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder convertToRegularTrigger(@Nullable Output<Integer> convertToRegularTrigger) {
+            $.convertToRegularTrigger = convertToRegularTrigger;
+            return this;
+        }
+
+        /**
+         * @param convertToRegularTrigger (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder convertToRegularTrigger(Integer convertToRegularTrigger) {
+            return convertToRegularTrigger(Output.of(convertToRegularTrigger));
         }
 
         /**
@@ -261,6 +388,31 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param pdbCreationTypeDetails The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+         * 
+         * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pdbCreationTypeDetails(@Nullable Output<PluggableDatabasePdbCreationTypeDetailsArgs> pdbCreationTypeDetails) {
+            $.pdbCreationTypeDetails = pdbCreationTypeDetails;
+            return this;
+        }
+
+        /**
+         * @param pdbCreationTypeDetails The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+         * 
+         * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pdbCreationTypeDetails(PluggableDatabasePdbCreationTypeDetailsArgs pdbCreationTypeDetails) {
+            return pdbCreationTypeDetails(Output.of(pdbCreationTypeDetails));
+        }
+
+        /**
          * @param pdbName The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
          * 
          * @return builder
@@ -279,6 +431,27 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder pdbName(String pdbName) {
             return pdbName(Output.of(pdbName));
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
         }
 
         /**
@@ -306,6 +479,27 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder rotateKeyTrigger(Integer rotateKeyTrigger) {
             return rotateKeyTrigger(Output.of(rotateKeyTrigger));
+        }
+
+        /**
+         * @param shouldCreatePdbBackup Indicates whether to take Pluggable Database Backup after the operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldCreatePdbBackup(@Nullable Output<Boolean> shouldCreatePdbBackup) {
+            $.shouldCreatePdbBackup = shouldCreatePdbBackup;
+            return this;
+        }
+
+        /**
+         * @param shouldCreatePdbBackup Indicates whether to take Pluggable Database Backup after the operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldCreatePdbBackup(Boolean shouldCreatePdbBackup) {
+            return shouldCreatePdbBackup(Output.of(shouldCreatePdbBackup));
         }
 
         /**

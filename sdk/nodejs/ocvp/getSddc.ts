@@ -45,11 +45,15 @@ export interface GetSddcArgs {
  */
 export interface GetSddcResult {
     /**
-     * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     *
+     * @deprecated The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly actualEsxiHostsCount: number;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly capacityReservationId: string;
     /**
@@ -57,11 +61,15 @@ export interface GetSddcResult {
      */
     readonly compartmentId: string;
     /**
-     * The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+     * (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+     *
+     * @deprecated The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly computeAvailabilityDomain: string;
     /**
-     * Datastores used for the Sddc.
+     * (**Deprecated**) Datastores used for the Sddc.
+     *
+     * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly datastores: outputs.Ocvp.GetSddcDatastore[];
     /**
@@ -73,7 +81,9 @@ export interface GetSddcResult {
      */
     readonly displayName: string;
     /**
-     * The number of ESXi hosts in the SDDC.
+     * (**Deprecated**) The number of ESXi hosts in the SDDC.
+     *
+     * @deprecated The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly esxiHostsCount: number;
     /**
@@ -86,11 +96,15 @@ export interface GetSddcResult {
      */
     readonly hcxFqdn: string;
     /**
-     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     *
+     * @deprecated The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     readonly hcxInitialPassword: string;
     /**
-     * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     *
+     * @deprecated The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     readonly hcxOnPremKey: string;
     /**
@@ -102,7 +116,9 @@ export interface GetSddcResult {
      */
     readonly hcxPrivateIpId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
+     *
+     * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly hcxVlanId: string;
     /**
@@ -110,27 +126,39 @@ export interface GetSddcResult {
      */
     readonly id: string;
     /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
+     * (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly initialHostOcpuCount: number;
     /**
-     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     *
+     * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly initialHostShapeName: string;
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly initialSku: string;
     /**
-     * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+     * (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+     *
+     * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly instanceDisplayNamePrefix: string;
     /**
-     * Indicates whether HCX is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
      */
     readonly isHcxEnabled: boolean;
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
      */
     readonly isHcxEnterpriseEnabled: boolean;
     /**
@@ -138,7 +166,9 @@ export interface GetSddcResult {
      */
     readonly isHcxPendingDowngrade: boolean;
     /**
-     * Indicates whether shielded instance is enabled at the SDDC level.
+     * (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
+     *
+     * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly isShieldedInstanceEnabled: boolean;
     /**
@@ -146,11 +176,15 @@ export interface GetSddcResult {
      */
     readonly isSingleHostSddc: boolean;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly nsxEdgeUplink1vlanId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly nsxEdgeUplink2vlanId: string;
     /**
@@ -158,7 +192,9 @@ export interface GetSddcResult {
      */
     readonly nsxEdgeUplinkIpId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly nsxEdgeVtepVlanId: string;
     /**
@@ -166,7 +202,9 @@ export interface GetSddcResult {
      */
     readonly nsxManagerFqdn: string;
     /**
-     * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     *
+     * @deprecated The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     readonly nsxManagerInitialPassword: string;
     /**
@@ -178,24 +216,34 @@ export interface GetSddcResult {
      */
     readonly nsxManagerUsername: string;
     /**
-     * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     *
+     * @deprecated The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     readonly nsxOverlaySegmentName: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly nsxVtepVlanId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
+     *
+     * @deprecated The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly provisioningSubnetId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     *
+     * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly provisioningVlanId: string;
     readonly refreshHcxLicenseStatus: boolean;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     *
+     * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly replicationVlanId: string;
     readonly reservingHcxOnPremiseLicenseKeys: string[];
@@ -225,7 +273,9 @@ export interface GetSddcResult {
      */
     readonly timeUpdated: string;
     /**
-     * The vSphere licenses to use when upgrading the SDDC.
+     * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     readonly upgradeLicenses: outputs.Ocvp.GetSddcUpgradeLicense[];
     /**
@@ -233,7 +283,9 @@ export interface GetSddcResult {
      */
     readonly vcenterFqdn: string;
     /**
-     * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     *
+     * @deprecated The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     readonly vcenterInitialPassword: string;
     /**
@@ -245,7 +297,9 @@ export interface GetSddcResult {
      */
     readonly vcenterUsername: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+     *
+     * @deprecated The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly vmotionVlanId: string;
     /**
@@ -253,23 +307,33 @@ export interface GetSddcResult {
      */
     readonly vmwareSoftwareVersion: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+     *
+     * @deprecated The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly vsanVlanId: string;
     /**
-     * The link to guidance for upgrading vSphere.
+     * (**Deprecated**) The link to guidance for upgrading vSphere.
+     *
+     * @deprecated The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     readonly vsphereUpgradeGuide: string;
     /**
-     * The links to binary objects needed to upgrade vSphere.
+     * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     readonly vsphereUpgradeObjects: outputs.Ocvp.GetSddcVsphereUpgradeObject[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+     *
+     * @deprecated The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly vsphereVlanId: string;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     *
+     * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
     readonly workloadNetworkCidr: string;
 }

@@ -119,7 +119,19 @@ class BackendSetBackend(dict):
              name: Optional[str] = None,
              target_id: Optional[str] = None,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("port", port)
         if ip_address is not None:
             _setter("ip_address", ip_address)
@@ -285,7 +297,23 @@ class BackendSetHealthChecker(dict):
              return_code: Optional[int] = None,
              timeout_in_millis: Optional[int] = None,
              url_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_in_millis is not None:
             _setter("interval_in_millis", interval_in_millis)
@@ -437,7 +465,17 @@ class NetworkLoadBalancerIpAddress(dict):
              ip_version: Optional[str] = None,
              is_public: Optional[bool] = None,
              reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         if ip_address is not None:
             _setter("ip_address", ip_address)
         if ip_version is not None:
@@ -503,7 +541,9 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -547,7 +587,9 @@ class NetworkLoadBalancerReservedIp(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -640,7 +682,19 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
              name: Optional[str] = None,
              target_id: Optional[str] = None,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("port", port)
         if ip_address is not None:
             _setter("ip_address", ip_address)
@@ -806,7 +860,23 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
              return_code: Optional[int] = None,
              timeout_in_millis: Optional[int] = None,
              url_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_in_millis is not None:
             _setter("interval_in_millis", interval_in_millis)
@@ -927,7 +997,11 @@ class GetBackendHealthHealthCheckResultResult(dict):
              _setter: Callable[[Any, Any], None],
              health_check_status: str,
              timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthCheckStatus' in kwargs:
+            health_check_status = kwargs['healthCheckStatus']
+
         _setter("health_check_status", health_check_status)
         _setter("timestamp", timestamp)
 
@@ -991,7 +1065,19 @@ class GetBackendSetBackendResult(dict):
              port: int,
              target_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("ip_address", ip_address)
         _setter("is_backup", is_backup)
         _setter("is_drain", is_drain)
@@ -1117,7 +1203,23 @@ class GetBackendSetHealthCheckerResult(dict):
              return_code: int,
              timeout_in_millis: int,
              url_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("interval_in_millis", interval_in_millis)
         _setter("port", port)
         _setter("protocol", protocol)
@@ -1222,7 +1324,9 @@ class GetBackendSetsBackendSetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBackendSetsBackendSetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1273,7 +1377,17 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
              name: str,
              network_load_balancer_id: str,
              policy: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthCheckers' in kwargs:
+            health_checkers = kwargs['healthCheckers']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPreserveSource' in kwargs:
+            is_preserve_source = kwargs['isPreserveSource']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+
         _setter("backends", backends)
         _setter("health_checkers", health_checkers)
         _setter("id", id)
@@ -1388,7 +1502,19 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
              port: int,
              target_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("ip_address", ip_address)
         _setter("is_backup", is_backup)
         _setter("is_drain", is_drain)
@@ -1514,7 +1640,23 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
              return_code: int,
              timeout_in_millis: int,
              url_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("interval_in_millis", interval_in_millis)
         _setter("port", port)
         _setter("protocol", protocol)
@@ -1628,7 +1770,9 @@ class GetBackendSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1665,7 +1809,9 @@ class GetBackendsBackendCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBackendsBackendCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1728,7 +1874,23 @@ class GetBackendsBackendCollectionItemResult(dict):
              port: int,
              target_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("backend_set_name", backend_set_name)
         _setter("id", id)
         _setter("ip_address", ip_address)
@@ -1848,7 +2010,9 @@ class GetBackendsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1894,7 +2058,9 @@ class GetListenersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1931,7 +2097,9 @@ class GetListenersListenerCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetListenersListenerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1978,7 +2146,15 @@ class GetListenersListenerCollectionItemResult(dict):
              network_load_balancer_id: str,
              port: int,
              protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultBackendSetName' in kwargs:
+            default_backend_set_name = kwargs['defaultBackendSetName']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+
         _setter("default_backend_set_name", default_backend_set_name)
         _setter("id", id)
         _setter("ip_version", ip_version)
@@ -2068,7 +2244,17 @@ class GetNetworkLoadBalancerIpAddressResult(dict):
              ip_version: str,
              is_public: bool,
              reserved_ips: Sequence['outputs.GetNetworkLoadBalancerIpAddressReservedIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         _setter("ip_address", ip_address)
         _setter("ip_version", ip_version)
         _setter("is_public", is_public)
@@ -2122,7 +2308,9 @@ class GetNetworkLoadBalancerIpAddressReservedIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -2149,7 +2337,9 @@ class GetNetworkLoadBalancerReservedIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -2179,7 +2369,9 @@ class GetNetworkLoadBalancersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2213,7 +2405,9 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2300,7 +2494,39 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'isPreserveSourceDestination' in kwargs:
+            is_preserve_source_destination = kwargs['isPreserveSourceDestination']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'nlbIpVersion' in kwargs:
+            nlb_ip_version = kwargs['nlbIpVersion']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2481,7 +2707,17 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult(di
              ip_version: str,
              is_public: bool,
              reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         _setter("ip_address", ip_address)
         _setter("ip_version", ip_version)
         _setter("is_public", is_public)
@@ -2536,7 +2772,9 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedI
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -2563,7 +2801,9 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -2593,7 +2833,9 @@ class GetNetworkLoadBalancersPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2630,7 +2872,9 @@ class GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionResult(
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2660,7 +2904,9 @@ class GetNetworkLoadBalancersProtocolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2697,7 +2943,9 @@ class GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property

@@ -55,7 +55,23 @@ class BdsInstanceMetastoreConfigArgs:
              metastore_id: pulumi.Input[str],
              activate_trigger: Optional[pulumi.Input[int]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsApiKeyId' in kwargs:
+            bds_api_key_id = kwargs['bdsApiKeyId']
+        if 'bdsApiKeyPassphrase' in kwargs:
+            bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'activateTrigger' in kwargs:
+            activate_trigger = kwargs['activateTrigger']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("bds_api_key_id", bds_api_key_id)
         _setter("bds_api_key_passphrase", bds_api_key_passphrase)
         _setter("bds_instance_id", bds_instance_id)
@@ -215,7 +231,29 @@ class _BdsInstanceMetastoreConfigState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activateTrigger' in kwargs:
+            activate_trigger = kwargs['activateTrigger']
+        if 'bdsApiKeyId' in kwargs:
+            bds_api_key_id = kwargs['bdsApiKeyId']
+        if 'bdsApiKeyPassphrase' in kwargs:
+            bds_api_key_passphrase = kwargs['bdsApiKeyPassphrase']
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'metastoreType' in kwargs:
+            metastore_type = kwargs['metastoreType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if activate_trigger is not None:
             _setter("activate_trigger", activate_trigger)
         if bds_api_key_id is not None:

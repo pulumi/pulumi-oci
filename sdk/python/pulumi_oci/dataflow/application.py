@@ -141,7 +141,51 @@ class ApplicationArgs:
              private_endpoint_id: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'className' in kwargs:
+            class_name = kwargs['className']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("driver_shape", driver_shape)
@@ -681,7 +725,59 @@ class _ApplicationState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'className' in kwargs:
+            class_name = kwargs['className']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         if application_log_config is not None:
             _setter("application_log_config", application_log_config)
         if archive_uri is not None:

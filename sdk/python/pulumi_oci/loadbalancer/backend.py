@@ -63,7 +63,15 @@ class BackendArgs:
              drain: Optional[pulumi.Input[bool]] = None,
              offline: Optional[pulumi.Input[bool]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendsetName' in kwargs:
+            backendset_name = kwargs['backendsetName']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backendset_name", backendset_name)
         _setter("ip_address", ip_address)
         _setter("load_balancer_id", load_balancer_id)
@@ -241,7 +249,15 @@ class _BackendState:
              port: Optional[pulumi.Input[int]] = None,
              state: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendsetName' in kwargs:
+            backendset_name = kwargs['backendsetName']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if backendset_name is not None:
             _setter("backendset_name", backendset_name)
         if backup is not None:

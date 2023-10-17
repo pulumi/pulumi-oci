@@ -45,7 +45,15 @@ class OdaPrivateEndpointScanProxyArgs:
              protocol: pulumi.Input[str],
              scan_listener_infos: pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]],
              scan_listener_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'odaPrivateEndpointId' in kwargs:
+            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
+        if 'scanListenerInfos' in kwargs:
+            scan_listener_infos = kwargs['scanListenerInfos']
+        if 'scanListenerType' in kwargs:
+            scan_listener_type = kwargs['scanListenerType']
+
         _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         _setter("protocol", protocol)
         _setter("scan_listener_infos", scan_listener_infos)
@@ -144,7 +152,17 @@ class _OdaPrivateEndpointScanProxyState:
              scan_listener_type: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'odaPrivateEndpointId' in kwargs:
+            oda_private_endpoint_id = kwargs['odaPrivateEndpointId']
+        if 'scanListenerInfos' in kwargs:
+            scan_listener_infos = kwargs['scanListenerInfos']
+        if 'scanListenerType' in kwargs:
+            scan_listener_type = kwargs['scanListenerType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if oda_private_endpoint_id is not None:
             _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         if protocol is not None:

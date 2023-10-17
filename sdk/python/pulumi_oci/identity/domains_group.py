@@ -170,7 +170,31 @@ class DomainsGroupArgs:
              urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'nonUniqueDisplayName' in kwargs:
+            non_unique_display_name = kwargs['nonUniqueDisplayName']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group = kwargs['urnietfparamsscimschemasoracleidcsextensiondynamicGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiongroup_group = kwargs['urnietfparamsscimschemasoracleidcsextensiongroupGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_group = kwargs['urnietfparamsscimschemasoracleidcsextensionposixGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableGroup']
+
         _setter("display_name", display_name)
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("schemas", schemas)
@@ -767,7 +791,49 @@ class _DomainsGroupState:
              urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
              urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'nonUniqueDisplayName' in kwargs:
+            non_unique_display_name = kwargs['nonUniqueDisplayName']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbcsGroups' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondbcs_groups = kwargs['urnietfparamsscimschemasoracleidcsextensiondbcsGroups']
+        if 'urnietfparamsscimschemasoracleidcsextensiondynamicGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group = kwargs['urnietfparamsscimschemasoracleidcsextensiondynamicGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensiongroupGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiongroup_group = kwargs['urnietfparamsscimschemasoracleidcsextensiongroupGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensionposixGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_group = kwargs['urnietfparamsscimschemasoracleidcsextensionposixGroup']
+        if 'urnietfparamsscimschemasoracleidcsextensionrequestableGroup' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group = kwargs['urnietfparamsscimschemasoracleidcsextensionrequestableGroup']
+
         if attribute_sets is not None:
             _setter("attribute_sets", attribute_sets)
         if attributes is not None:

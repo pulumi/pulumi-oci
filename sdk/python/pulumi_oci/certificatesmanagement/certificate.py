@@ -57,7 +57,19 @@ class CertificateArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateConfig' in kwargs:
+            certificate_config = kwargs['certificateConfig']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'certificateRules' in kwargs:
+            certificate_rules = kwargs['certificateRules']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("certificate_config", certificate_config)
         _setter("compartment_id", compartment_id)
         if certificate_rules is not None:
@@ -252,7 +264,39 @@ class _CertificateState:
              subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateConfig' in kwargs:
+            certificate_config = kwargs['certificateConfig']
+        if 'certificateProfileType' in kwargs:
+            certificate_profile_type = kwargs['certificateProfileType']
+        if 'certificateRevocationListDetails' in kwargs:
+            certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
+        if 'certificateRules' in kwargs:
+            certificate_rules = kwargs['certificateRules']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'currentVersions' in kwargs:
+            current_versions = kwargs['currentVersions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'keyAlgorithm' in kwargs:
+            key_algorithm = kwargs['keyAlgorithm']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         if certificate_config is not None:
             _setter("certificate_config", certificate_config)
         if certificate_profile_type is not None:

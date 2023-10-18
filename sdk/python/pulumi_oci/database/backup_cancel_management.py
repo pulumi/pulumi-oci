@@ -35,7 +35,13 @@ class BackupCancelManagementArgs:
              _setter: Callable[[Any, Any], None],
              backup_id: pulumi.Input[str],
              cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if 'cancelBackupTrigger' in kwargs:
+            cancel_backup_trigger = kwargs['cancelBackupTrigger']
+
         _setter("backup_id", backup_id)
         if cancel_backup_trigger is not None:
             _setter("cancel_backup_trigger", cancel_backup_trigger)
@@ -93,7 +99,13 @@ class _BackupCancelManagementState:
              _setter: Callable[[Any, Any], None],
              backup_id: Optional[pulumi.Input[str]] = None,
              cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if 'cancelBackupTrigger' in kwargs:
+            cancel_backup_trigger = kwargs['cancelBackupTrigger']
+
         if backup_id is not None:
             _setter("backup_id", backup_id)
         if cancel_backup_trigger is not None:

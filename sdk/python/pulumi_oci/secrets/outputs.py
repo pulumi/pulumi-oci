@@ -34,7 +34,11 @@ class GetSecretbundleSecretBundleContentResult(dict):
              _setter: Callable[[Any, Any], None],
              content: str,
              content_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+
         _setter("content", content)
         _setter("content_type", content_type)
 
@@ -73,7 +77,9 @@ class GetSecretbundleVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -134,7 +140,21 @@ class GetSecretbundleVersionsSecretBundleVersionResult(dict):
              time_of_expiry: str,
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'timeOfExpiry' in kwargs:
+            time_of_expiry = kwargs['timeOfExpiry']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("secret_id", secret_id)
         _setter("stages", stages)
         _setter("time_created", time_created)

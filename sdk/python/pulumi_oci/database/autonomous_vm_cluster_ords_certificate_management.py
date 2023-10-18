@@ -47,7 +47,19 @@ class AutonomousVmClusterOrdsCertificateManagementArgs:
              ca_bundle_id: Optional[pulumi.Input[str]] = None,
              certificate_authority_id: Optional[pulumi.Input[str]] = None,
              certificate_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if 'certificateGenerationType' in kwargs:
+            certificate_generation_type = kwargs['certificateGenerationType']
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+
         _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         _setter("certificate_generation_type", certificate_generation_type)
         if ca_bundle_id is not None:
@@ -158,7 +170,19 @@ class _AutonomousVmClusterOrdsCertificateManagementState:
              certificate_authority_id: Optional[pulumi.Input[str]] = None,
              certificate_generation_type: Optional[pulumi.Input[str]] = None,
              certificate_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'certificateGenerationType' in kwargs:
+            certificate_generation_type = kwargs['certificateGenerationType']
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+
         if autonomous_vm_cluster_id is not None:
             _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         if ca_bundle_id is not None:

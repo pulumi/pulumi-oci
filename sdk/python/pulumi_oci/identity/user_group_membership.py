@@ -39,7 +39,15 @@ class UserGroupMembershipArgs:
              group_id: pulumi.Input[str],
              user_id: pulumi.Input[str],
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("group_id", group_id)
         _setter("user_id", user_id)
         if compartment_id is not None:
@@ -126,7 +134,19 @@ class _UserGroupMembershipState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if group_id is not None:

@@ -66,6 +66,7 @@ public final class GetDbHomesDbHomeDatabase {
      */
     private List<String> oneOffPatches;
     private String pdbName;
+    private List<String> pluggableDatabases;
     private String sidPrefix;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -174,6 +175,9 @@ public final class GetDbHomesDbHomeDatabase {
     public String pdbName() {
         return this.pdbName;
     }
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases;
+    }
     public String sidPrefix() {
         return this.sidPrefix;
     }
@@ -230,6 +234,7 @@ public final class GetDbHomesDbHomeDatabase {
         private String ncharacterSet;
         private List<String> oneOffPatches;
         private String pdbName;
+        private List<String> pluggableDatabases;
         private String sidPrefix;
         private String state;
         private String tdeWalletPassword;
@@ -259,6 +264,7 @@ public final class GetDbHomesDbHomeDatabase {
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -377,6 +383,14 @@ public final class GetDbHomesDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(List<String> pluggableDatabases) {
+            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
@@ -428,6 +442,7 @@ public final class GetDbHomesDbHomeDatabase {
             o.ncharacterSet = ncharacterSet;
             o.oneOffPatches = oneOffPatches;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.sidPrefix = sidPrefix;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

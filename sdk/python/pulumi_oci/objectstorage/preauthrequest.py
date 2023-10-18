@@ -59,7 +59,17 @@ class PreauthrequestArgs:
              name: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
              object_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'bucketListingAction' in kwargs:
+            bucket_listing_action = kwargs['bucketListingAction']
+        if 'objectName' in kwargs:
+            object_name = kwargs['objectName']
+
         _setter("access_type", access_type)
         _setter("bucket", bucket)
         _setter("namespace", namespace)
@@ -244,7 +254,25 @@ class _PreauthrequestState:
              par_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'accessUri' in kwargs:
+            access_uri = kwargs['accessUri']
+        if 'bucketListingAction' in kwargs:
+            bucket_listing_action = kwargs['bucketListingAction']
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'objectName' in kwargs:
+            object_name = kwargs['objectName']
+        if 'parId' in kwargs:
+            par_id = kwargs['parId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+
         if access_type is not None:
             _setter("access_type", access_type)
         if access_uri is not None:

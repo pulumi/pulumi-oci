@@ -90,7 +90,9 @@ class ConnectionAdditionalAttribute(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -153,7 +155,11 @@ class ConnectionBootstrapServer(dict):
              host: Optional[str] = None,
              port: Optional[int] = None,
              private_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+
         if host is not None:
             _setter("host", host)
         if port is not None:
@@ -218,7 +224,11 @@ class ConnectionIngressIp(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ingress_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressIp' in kwargs:
+            ingress_ip = kwargs['ingressIp']
+
         if ingress_ip is not None:
             _setter("ingress_ip", ingress_ip)
 
@@ -287,7 +297,15 @@ class DeploymentDeploymentDiagnosticData(dict):
              object: Optional[str] = None,
              time_diagnostic_end: Optional[str] = None,
              time_diagnostic_start: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diagnosticState' in kwargs:
+            diagnostic_state = kwargs['diagnosticState']
+        if 'timeDiagnosticEnd' in kwargs:
+            time_diagnostic_end = kwargs['timeDiagnosticEnd']
+        if 'timeDiagnosticStart' in kwargs:
+            time_diagnostic_start = kwargs['timeDiagnosticStart']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if diagnostic_state is not None:
@@ -406,7 +424,19 @@ class DeploymentMaintenanceConfiguration(dict):
              is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
              major_release_upgrade_period_in_days: Optional[int] = None,
              security_patch_upgrade_period_in_days: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bundleReleaseUpgradePeriodInDays' in kwargs:
+            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
+        if 'interimReleaseUpgradePeriodInDays' in kwargs:
+            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
+        if 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
+            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
+        if 'majorReleaseUpgradePeriodInDays' in kwargs:
+            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
+        if 'securityPatchUpgradePeriodInDays' in kwargs:
+            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
+
         if bundle_release_upgrade_period_in_days is not None:
             _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
@@ -495,7 +525,11 @@ class DeploymentMaintenanceWindow(dict):
              _setter: Callable[[Any, Any], None],
              day: str,
              start_hour: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'startHour' in kwargs:
+            start_hour = kwargs['startHour']
+
         _setter("day", day)
         _setter("start_hour", start_hour)
 
@@ -592,7 +626,23 @@ class DeploymentOggData(dict):
              key: Optional[str] = None,
              ogg_version: Optional[str] = None,
              password_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentName' in kwargs:
+            deployment_name = kwargs['deploymentName']
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'credentialStore' in kwargs:
+            credential_store = kwargs['credentialStore']
+        if 'identityDomainId' in kwargs:
+            identity_domain_id = kwargs['identityDomainId']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+
         _setter("deployment_name", deployment_name)
         if admin_password is not None:
             _setter("admin_password", admin_password)
@@ -703,7 +753,9 @@ class GetConnectionAdditionalAttributeResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -736,7 +788,9 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -788,7 +842,21 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionId' in kwargs:
+            connection_id = kwargs['connectionId']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("alias_name", alias_name)
         _setter("compartment_id", compartment_id)
         _setter("connection_id", connection_id)
@@ -884,7 +952,9 @@ class GetConnectionAssignmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -932,7 +1002,11 @@ class GetConnectionBootstrapServerResult(dict):
              host: str,
              port: int,
              private_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+
         _setter("host", host)
         _setter("port", port)
         _setter("private_ip", private_ip)
@@ -977,7 +1051,11 @@ class GetConnectionIngressIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ingress_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressIp' in kwargs:
+            ingress_ip = kwargs['ingressIp']
+
         _setter("ingress_ip", ingress_ip)
 
     @property
@@ -1001,7 +1079,9 @@ class GetConnectionsConnectionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1292,7 +1372,133 @@ class GetConnectionsConnectionCollectionItemResult(dict):
              username: str,
              vault_id: str,
              wallet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if 'additionalAttributes' in kwargs:
+            additional_attributes = kwargs['additionalAttributes']
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'azureTenantId' in kwargs:
+            azure_tenant_id = kwargs['azureTenantId']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionFactory' in kwargs:
+            connection_factory = kwargs['connectionFactory']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'connectionUrl' in kwargs:
+            connection_url = kwargs['connectionUrl']
+        if 'consumerProperties' in kwargs:
+            consumer_properties = kwargs['consumerProperties']
+        if 'coreSiteXml' in kwargs:
+            core_site_xml = kwargs['coreSiteXml']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ingressIps' in kwargs:
+            ingress_ips = kwargs['ingressIps']
+        if 'jndiConnectionFactory' in kwargs:
+            jndi_connection_factory = kwargs['jndiConnectionFactory']
+        if 'jndiInitialContextFactory' in kwargs:
+            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
+        if 'jndiProviderUrl' in kwargs:
+            jndi_provider_url = kwargs['jndiProviderUrl']
+        if 'jndiSecurityCredentials' in kwargs:
+            jndi_security_credentials = kwargs['jndiSecurityCredentials']
+        if 'jndiSecurityPrincipal' in kwargs:
+            jndi_security_principal = kwargs['jndiSecurityPrincipal']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyStore' in kwargs:
+            key_store = kwargs['keyStore']
+        if 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'privateKeyFile' in kwargs:
+            private_key_file = kwargs['privateKeyFile']
+        if 'privateKeyPassphrase' in kwargs:
+            private_key_passphrase = kwargs['privateKeyPassphrase']
+        if 'producerProperties' in kwargs:
+            producer_properties = kwargs['producerProperties']
+        if 'publicKeyFingerprint' in kwargs:
+            public_key_fingerprint = kwargs['publicKeyFingerprint']
+        if 'sasToken' in kwargs:
+            sas_token = kwargs['sasToken']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if 'securityProtocol' in kwargs:
+            security_protocol = kwargs['securityProtocol']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'shouldUseJndi' in kwargs:
+            should_use_jndi = kwargs['shouldUseJndi']
+        if 'shouldValidateServerCertificate' in kwargs:
+            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
+        if 'sslCa' in kwargs:
+            ssl_ca = kwargs['sslCa']
+        if 'sslCert' in kwargs:
+            ssl_cert = kwargs['sslCert']
+        if 'sslCrl' in kwargs:
+            ssl_crl = kwargs['sslCrl']
+        if 'sslKey' in kwargs:
+            ssl_key = kwargs['sslKey']
+        if 'sslKeyPassword' in kwargs:
+            ssl_key_password = kwargs['sslKeyPassword']
+        if 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'technologyType' in kwargs:
+            technology_type = kwargs['technologyType']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trustStore' in kwargs:
+            trust_store = kwargs['trustStore']
+        if 'trustStorePassword' in kwargs:
+            trust_store_password = kwargs['trustStorePassword']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("access_key_id", access_key_id)
         _setter("account_key", account_key)
         _setter("account_name", account_name)
@@ -1908,7 +2114,9 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -1952,7 +2160,11 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
              host: str,
              port: int,
              private_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+
         _setter("host", host)
         _setter("port", port)
         _setter("private_ip", private_ip)
@@ -1997,7 +2209,11 @@ class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ingress_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressIp' in kwargs:
+            ingress_ip = kwargs['ingressIp']
+
         _setter("ingress_ip", ingress_ip)
 
     @property
@@ -2030,7 +2246,9 @@ class GetConnectionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2067,7 +2285,9 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2189,7 +2409,47 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
              username: str,
              vault_id: str,
              wallet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'rcePrivateIp' in kwargs:
+            rce_private_ip = kwargs['rcePrivateIp']
+        if 'secretCompartmentId' in kwargs:
+            secret_compartment_id = kwargs['secretCompartmentId']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("alias_name", alias_name)
         _setter("compartment_id", compartment_id)
         _setter("connection_string", connection_string)
@@ -2438,7 +2698,9 @@ class GetDatabaseRegistrationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2472,7 +2734,9 @@ class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2572,7 +2836,39 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
              time_created: str,
              time_of_backup: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backupType' in kwargs:
+            backup_type = kwargs['backupType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutomatic' in kwargs:
+            is_automatic = kwargs['isAutomatic']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeBackupFinished' in kwargs:
+            time_backup_finished = kwargs['timeBackupFinished']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfBackup' in kwargs:
+            time_of_backup = kwargs['timeOfBackup']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("backup_type", backup_type)
         _setter("bucket", bucket)
         _setter("compartment_id", compartment_id)
@@ -2773,7 +3069,9 @@ class GetDeploymentBackupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2830,7 +3128,15 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
              object: str,
              time_diagnostic_end: str,
              time_diagnostic_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diagnosticState' in kwargs:
+            diagnostic_state = kwargs['diagnosticState']
+        if 'timeDiagnosticEnd' in kwargs:
+            time_diagnostic_end = kwargs['timeDiagnosticEnd']
+        if 'timeDiagnosticStart' in kwargs:
+            time_diagnostic_start = kwargs['timeDiagnosticStart']
+
         _setter("bucket", bucket)
         _setter("diagnostic_state", diagnostic_state)
         _setter("namespace", namespace)
@@ -2918,7 +3224,19 @@ class GetDeploymentMaintenanceConfigurationResult(dict):
              is_interim_release_auto_upgrade_enabled: bool,
              major_release_upgrade_period_in_days: int,
              security_patch_upgrade_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bundleReleaseUpgradePeriodInDays' in kwargs:
+            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
+        if 'interimReleaseUpgradePeriodInDays' in kwargs:
+            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
+        if 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
+            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
+        if 'majorReleaseUpgradePeriodInDays' in kwargs:
+            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
+        if 'securityPatchUpgradePeriodInDays' in kwargs:
+            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
+
         _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
         _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
@@ -2985,7 +3303,11 @@ class GetDeploymentMaintenanceWindowResult(dict):
              _setter: Callable[[Any, Any], None],
              day: str,
              start_hour: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'startHour' in kwargs:
+            start_hour = kwargs['startHour']
+
         _setter("day", day)
         _setter("start_hour", start_hour)
 
@@ -3051,7 +3373,23 @@ class GetDeploymentOggDataResult(dict):
              key: str,
              ogg_version: str,
              password_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'credentialStore' in kwargs:
+            credential_store = kwargs['credentialStore']
+        if 'deploymentName' in kwargs:
+            deployment_name = kwargs['deploymentName']
+        if 'identityDomainId' in kwargs:
+            identity_domain_id = kwargs['identityDomainId']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+
         _setter("admin_password", admin_password)
         _setter("admin_username", admin_username)
         _setter("certificate", certificate)
@@ -3164,7 +3502,19 @@ class GetDeploymentTypeItemResult(dict):
              display_name: str,
              source_technologies: Sequence[str],
              target_technologies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionTypes' in kwargs:
+            connection_types = kwargs['connectionTypes']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'sourceTechnologies' in kwargs:
+            source_technologies = kwargs['sourceTechnologies']
+        if 'targetTechnologies' in kwargs:
+            target_technologies = kwargs['targetTechnologies']
+
         _setter("category", category)
         _setter("connection_types", connection_types)
         _setter("deployment_type", deployment_type)
@@ -3236,7 +3586,9 @@ class GetDeploymentTypesDeploymentTypeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3287,7 +3639,21 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
              ogg_version: str,
              source_technologies: Sequence[str],
              target_technologies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionTypes' in kwargs:
+            connection_types = kwargs['connectionTypes']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'sourceTechnologies' in kwargs:
+            source_technologies = kwargs['sourceTechnologies']
+        if 'targetTechnologies' in kwargs:
+            target_technologies = kwargs['targetTechnologies']
+
         _setter("category", category)
         _setter("connection_types", connection_types)
         _setter("deployment_type", deployment_type)
@@ -3371,7 +3737,9 @@ class GetDeploymentTypesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3405,7 +3773,9 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3543,7 +3913,61 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
              time_snoozed_until: str,
              time_started: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'deploymentUpgradeType' in kwargs:
+            deployment_upgrade_type = kwargs['deploymentUpgradeType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCancelAllowed' in kwargs:
+            is_cancel_allowed = kwargs['isCancelAllowed']
+        if 'isRescheduleAllowed' in kwargs:
+            is_reschedule_allowed = kwargs['isRescheduleAllowed']
+        if 'isRollbackAllowed' in kwargs:
+            is_rollback_allowed = kwargs['isRollbackAllowed']
+        if 'isSecurityFix' in kwargs:
+            is_security_fix = kwargs['isSecurityFix']
+        if 'isSnoozed' in kwargs:
+            is_snoozed = kwargs['isSnoozed']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lifecycleSubState' in kwargs:
+            lifecycle_sub_state = kwargs['lifecycleSubState']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'previousOggVersion' in kwargs:
+            previous_ogg_version = kwargs['previousOggVersion']
+        if 'releaseType' in kwargs:
+            release_type = kwargs['releaseType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeOggVersionSupportedUntil' in kwargs:
+            time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
+        if 'timeReleased' in kwargs:
+            time_released = kwargs['timeReleased']
+        if 'timeSchedule' in kwargs:
+            time_schedule = kwargs['timeSchedule']
+        if 'timeScheduleMax' in kwargs:
+            time_schedule_max = kwargs['timeScheduleMax']
+        if 'timeSnoozedUntil' in kwargs:
+            time_snoozed_until = kwargs['timeSnoozedUntil']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("deployment_id", deployment_id)
@@ -3827,7 +4251,9 @@ class GetDeploymentUpgradesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3864,7 +4290,9 @@ class GetDeploymentVersionsDeploymentVersionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3911,7 +4339,21 @@ class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
              release_type: str,
              time_released: str,
              time_supported_until: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'isSecurityFix' in kwargs:
+            is_security_fix = kwargs['isSecurityFix']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'releaseType' in kwargs:
+            release_type = kwargs['releaseType']
+        if 'timeReleased' in kwargs:
+            time_released = kwargs['timeReleased']
+        if 'timeSupportedUntil' in kwargs:
+            time_supported_until = kwargs['timeSupportedUntil']
+
         _setter("deployment_type", deployment_type)
         _setter("is_security_fix", is_security_fix)
         _setter("ogg_version", ogg_version)
@@ -3986,7 +4428,9 @@ class GetDeploymentVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4020,7 +4464,9 @@ class GetDeploymentsDeploymentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4188,7 +4634,75 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
              time_ogg_version_supported_until: str,
              time_updated: str,
              time_upgrade_required: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentBackupId' in kwargs:
+            deployment_backup_id = kwargs['deploymentBackupId']
+        if 'deploymentDiagnosticDatas' in kwargs:
+            deployment_diagnostic_datas = kwargs['deploymentDiagnosticDatas']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'deploymentUrl' in kwargs:
+            deployment_url = kwargs['deploymentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoScalingEnabled' in kwargs:
+            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
+        if 'isHealthy' in kwargs:
+            is_healthy = kwargs['isHealthy']
+        if 'isLatestVersion' in kwargs:
+            is_latest_version = kwargs['isLatestVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'isStorageUtilizationLimitExceeded' in kwargs:
+            is_storage_utilization_limit_exceeded = kwargs['isStorageUtilizationLimitExceeded']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lifecycleSubState' in kwargs:
+            lifecycle_sub_state = kwargs['lifecycleSubState']
+        if 'maintenanceConfigurations' in kwargs:
+            maintenance_configurations = kwargs['maintenanceConfigurations']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'nextMaintenanceActionType' in kwargs:
+            next_maintenance_action_type = kwargs['nextMaintenanceActionType']
+        if 'nextMaintenanceDescription' in kwargs:
+            next_maintenance_description = kwargs['nextMaintenanceDescription']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'oggDatas' in kwargs:
+            ogg_datas = kwargs['oggDatas']
+        if 'privateIpAddress' in kwargs:
+            private_ip_address = kwargs['privateIpAddress']
+        if 'publicIpAddress' in kwargs:
+            public_ip_address = kwargs['publicIpAddress']
+        if 'storageUtilizationInBytes' in kwargs:
+            storage_utilization_in_bytes = kwargs['storageUtilizationInBytes']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfNextMaintenance' in kwargs:
+            time_of_next_maintenance = kwargs['timeOfNextMaintenance']
+        if 'timeOggVersionSupportedUntil' in kwargs:
+            time_ogg_version_supported_until = kwargs['timeOggVersionSupportedUntil']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeUpgradeRequired' in kwargs:
+            time_upgrade_required = kwargs['timeUpgradeRequired']
+
         _setter("compartment_id", compartment_id)
         _setter("cpu_core_count", cpu_core_count)
         _setter("defined_tags", defined_tags)
@@ -4559,7 +5073,15 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
              object: str,
              time_diagnostic_end: str,
              time_diagnostic_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diagnosticState' in kwargs:
+            diagnostic_state = kwargs['diagnosticState']
+        if 'timeDiagnosticEnd' in kwargs:
+            time_diagnostic_end = kwargs['timeDiagnosticEnd']
+        if 'timeDiagnosticStart' in kwargs:
+            time_diagnostic_start = kwargs['timeDiagnosticStart']
+
         _setter("bucket", bucket)
         _setter("diagnostic_state", diagnostic_state)
         _setter("namespace", namespace)
@@ -4647,7 +5169,19 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict)
              is_interim_release_auto_upgrade_enabled: bool,
              major_release_upgrade_period_in_days: int,
              security_patch_upgrade_period_in_days: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bundleReleaseUpgradePeriodInDays' in kwargs:
+            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
+        if 'interimReleaseUpgradePeriodInDays' in kwargs:
+            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
+        if 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
+            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
+        if 'majorReleaseUpgradePeriodInDays' in kwargs:
+            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
+        if 'securityPatchUpgradePeriodInDays' in kwargs:
+            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
+
         _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
         _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
@@ -4714,7 +5248,11 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult(dict):
              _setter: Callable[[Any, Any], None],
              day: str,
              start_hour: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'startHour' in kwargs:
+            start_hour = kwargs['startHour']
+
         _setter("day", day)
         _setter("start_hour", start_hour)
 
@@ -4780,7 +5318,23 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
              key: str,
              ogg_version: str,
              password_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'credentialStore' in kwargs:
+            credential_store = kwargs['credentialStore']
+        if 'deploymentName' in kwargs:
+            deployment_name = kwargs['deploymentName']
+        if 'identityDomainId' in kwargs:
+            identity_domain_id = kwargs['identityDomainId']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+
         _setter("admin_password", admin_password)
         _setter("admin_username", admin_username)
         _setter("certificate", certificate)
@@ -4876,7 +5430,9 @@ class GetDeploymentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4921,7 +5477,13 @@ class GetMessageItemResult(dict):
              deployment_message: str,
              deployment_message_status: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentMessage' in kwargs:
+            deployment_message = kwargs['deploymentMessage']
+        if 'deploymentMessageStatus' in kwargs:
+            deployment_message_status = kwargs['deploymentMessageStatus']
+
         _setter("deployment_message", deployment_message)
         _setter("deployment_message_status", deployment_message_status)
         _setter("id", id)
@@ -4966,7 +5528,9 @@ class GetMessagesDeploymentMessagesCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5001,7 +5565,13 @@ class GetMessagesDeploymentMessagesCollectionItemResult(dict):
              deployment_message: str,
              deployment_message_status: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentMessage' in kwargs:
+            deployment_message = kwargs['deploymentMessage']
+        if 'deploymentMessageStatus' in kwargs:
+            deployment_message_status = kwargs['deploymentMessageStatus']
+
         _setter("deployment_message", deployment_message)
         _setter("deployment_message_status", deployment_message_status)
         _setter("id", id)
@@ -5049,7 +5619,9 @@ class GetMessagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5118,7 +5690,23 @@ class GetTrailFileItemResult(dict):
              size_in_bytes: float,
              time_last_updated: str,
              trail_file_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'maxSequenceNumber' in kwargs:
+            max_sequence_number = kwargs['maxSequenceNumber']
+        if 'minSequenceNumber' in kwargs:
+            min_sequence_number = kwargs['minSequenceNumber']
+        if 'numberOfSequences' in kwargs:
+            number_of_sequences = kwargs['numberOfSequences']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeLastUpdated' in kwargs:
+            time_last_updated = kwargs['timeLastUpdated']
+        if 'trailFileId' in kwargs:
+            trail_file_id = kwargs['trailFileId']
+
         _setter("consumers", consumers)
         _setter("display_name", display_name)
         _setter("max_sequence_number", max_sequence_number)
@@ -5220,7 +5808,9 @@ class GetTrailFilesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5261,7 +5851,11 @@ class GetTrailFilesTrailFileCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult'],
              time_last_fetched: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeLastFetched' in kwargs:
+            time_last_fetched = kwargs['timeLastFetched']
+
         _setter("items", items)
         _setter("time_last_fetched", time_last_fetched)
 
@@ -5329,7 +5923,23 @@ class GetTrailFilesTrailFileCollectionItemResult(dict):
              size_in_bytes: float,
              time_last_updated: str,
              trail_file_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'maxSequenceNumber' in kwargs:
+            max_sequence_number = kwargs['maxSequenceNumber']
+        if 'minSequenceNumber' in kwargs:
+            min_sequence_number = kwargs['minSequenceNumber']
+        if 'numberOfSequences' in kwargs:
+            number_of_sequences = kwargs['numberOfSequences']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeLastUpdated' in kwargs:
+            time_last_updated = kwargs['timeLastUpdated']
+        if 'trailFileId' in kwargs:
+            trail_file_id = kwargs['trailFileId']
+
         _setter("consumers", consumers)
         _setter("display_name", display_name)
         _setter("max_sequence_number", max_sequence_number)
@@ -5440,7 +6050,17 @@ class GetTrailSequenceItemResult(dict):
              sequence_id: str,
              size_in_bytes: float,
              time_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'sequenceId' in kwargs:
+            sequence_id = kwargs['sequenceId']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeLastUpdated' in kwargs:
+            time_last_updated = kwargs['timeLastUpdated']
+
         _setter("display_name", display_name)
         _setter("sequence_id", sequence_id)
         _setter("size_in_bytes", size_in_bytes)
@@ -5497,7 +6117,9 @@ class GetTrailSequencesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5538,7 +6160,11 @@ class GetTrailSequencesTrailSequenceCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult'],
              time_last_fetched: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeLastFetched' in kwargs:
+            time_last_fetched = kwargs['timeLastFetched']
+
         _setter("items", items)
         _setter("time_last_fetched", time_last_fetched)
 
@@ -5586,7 +6212,17 @@ class GetTrailSequencesTrailSequenceCollectionItemResult(dict):
              sequence_id: str,
              size_in_bytes: float,
              time_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'sequenceId' in kwargs:
+            sequence_id = kwargs['sequenceId']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeLastUpdated' in kwargs:
+            time_last_updated = kwargs['timeLastUpdated']
+
         _setter("display_name", display_name)
         _setter("sequence_id", sequence_id)
         _setter("size_in_bytes", size_in_bytes)

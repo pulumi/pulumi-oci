@@ -292,7 +292,123 @@ class ConnectionArgs:
              username: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'technologyType' in kwargs:
+            technology_type = kwargs['technologyType']
+        if 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if 'additionalAttributes' in kwargs:
+            additional_attributes = kwargs['additionalAttributes']
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'azureTenantId' in kwargs:
+            azure_tenant_id = kwargs['azureTenantId']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if 'connectionFactory' in kwargs:
+            connection_factory = kwargs['connectionFactory']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'connectionUrl' in kwargs:
+            connection_url = kwargs['connectionUrl']
+        if 'consumerProperties' in kwargs:
+            consumer_properties = kwargs['consumerProperties']
+        if 'coreSiteXml' in kwargs:
+            core_site_xml = kwargs['coreSiteXml']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jndiConnectionFactory' in kwargs:
+            jndi_connection_factory = kwargs['jndiConnectionFactory']
+        if 'jndiInitialContextFactory' in kwargs:
+            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
+        if 'jndiProviderUrl' in kwargs:
+            jndi_provider_url = kwargs['jndiProviderUrl']
+        if 'jndiSecurityCredentials' in kwargs:
+            jndi_security_credentials = kwargs['jndiSecurityCredentials']
+        if 'jndiSecurityPrincipal' in kwargs:
+            jndi_security_principal = kwargs['jndiSecurityPrincipal']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyStore' in kwargs:
+            key_store = kwargs['keyStore']
+        if 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'privateKeyFile' in kwargs:
+            private_key_file = kwargs['privateKeyFile']
+        if 'privateKeyPassphrase' in kwargs:
+            private_key_passphrase = kwargs['privateKeyPassphrase']
+        if 'producerProperties' in kwargs:
+            producer_properties = kwargs['producerProperties']
+        if 'publicKeyFingerprint' in kwargs:
+            public_key_fingerprint = kwargs['publicKeyFingerprint']
+        if 'sasToken' in kwargs:
+            sas_token = kwargs['sasToken']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if 'securityProtocol' in kwargs:
+            security_protocol = kwargs['securityProtocol']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'shouldUseJndi' in kwargs:
+            should_use_jndi = kwargs['shouldUseJndi']
+        if 'shouldValidateServerCertificate' in kwargs:
+            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
+        if 'sslCa' in kwargs:
+            ssl_ca = kwargs['sslCa']
+        if 'sslCert' in kwargs:
+            ssl_cert = kwargs['sslCert']
+        if 'sslCrl' in kwargs:
+            ssl_crl = kwargs['sslCrl']
+        if 'sslKey' in kwargs:
+            ssl_key = kwargs['sslKey']
+        if 'sslKeyPassword' in kwargs:
+            ssl_key_password = kwargs['sslKeyPassword']
+        if 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'trustStore' in kwargs:
+            trust_store = kwargs['trustStore']
+        if 'trustStorePassword' in kwargs:
+            trust_store_password = kwargs['trustStorePassword']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_type", connection_type)
         _setter("display_name", display_name)
@@ -1521,7 +1637,133 @@ class _ConnectionState:
              username: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if 'additionalAttributes' in kwargs:
+            additional_attributes = kwargs['additionalAttributes']
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'azureTenantId' in kwargs:
+            azure_tenant_id = kwargs['azureTenantId']
+        if 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionFactory' in kwargs:
+            connection_factory = kwargs['connectionFactory']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'connectionUrl' in kwargs:
+            connection_url = kwargs['connectionUrl']
+        if 'consumerProperties' in kwargs:
+            consumer_properties = kwargs['consumerProperties']
+        if 'coreSiteXml' in kwargs:
+            core_site_xml = kwargs['coreSiteXml']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ingressIps' in kwargs:
+            ingress_ips = kwargs['ingressIps']
+        if 'jndiConnectionFactory' in kwargs:
+            jndi_connection_factory = kwargs['jndiConnectionFactory']
+        if 'jndiInitialContextFactory' in kwargs:
+            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
+        if 'jndiProviderUrl' in kwargs:
+            jndi_provider_url = kwargs['jndiProviderUrl']
+        if 'jndiSecurityCredentials' in kwargs:
+            jndi_security_credentials = kwargs['jndiSecurityCredentials']
+        if 'jndiSecurityPrincipal' in kwargs:
+            jndi_security_principal = kwargs['jndiSecurityPrincipal']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyStore' in kwargs:
+            key_store = kwargs['keyStore']
+        if 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'privateKeyFile' in kwargs:
+            private_key_file = kwargs['privateKeyFile']
+        if 'privateKeyPassphrase' in kwargs:
+            private_key_passphrase = kwargs['privateKeyPassphrase']
+        if 'producerProperties' in kwargs:
+            producer_properties = kwargs['producerProperties']
+        if 'publicKeyFingerprint' in kwargs:
+            public_key_fingerprint = kwargs['publicKeyFingerprint']
+        if 'sasToken' in kwargs:
+            sas_token = kwargs['sasToken']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if 'securityProtocol' in kwargs:
+            security_protocol = kwargs['securityProtocol']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'shouldUseJndi' in kwargs:
+            should_use_jndi = kwargs['shouldUseJndi']
+        if 'shouldValidateServerCertificate' in kwargs:
+            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
+        if 'sslCa' in kwargs:
+            ssl_ca = kwargs['sslCa']
+        if 'sslCert' in kwargs:
+            ssl_cert = kwargs['sslCert']
+        if 'sslCrl' in kwargs:
+            ssl_crl = kwargs['sslCrl']
+        if 'sslKey' in kwargs:
+            ssl_key = kwargs['sslKey']
+        if 'sslKeyPassword' in kwargs:
+            ssl_key_password = kwargs['sslKeyPassword']
+        if 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'technologyType' in kwargs:
+            technology_type = kwargs['technologyType']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trustStore' in kwargs:
+            trust_store = kwargs['trustStore']
+        if 'trustStorePassword' in kwargs:
+            trust_store_password = kwargs['trustStorePassword']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if access_key_id is not None:
             _setter("access_key_id", access_key_id)
         if account_key is not None:

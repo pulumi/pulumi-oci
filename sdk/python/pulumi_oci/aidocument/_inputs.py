@@ -41,7 +41,11 @@ class ModelComponentModelArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              model_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+
         if model_id is not None:
             _setter("model_id", model_id)
 
@@ -82,7 +86,17 @@ class ModelMetricArgs:
              label_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]] = None,
              model_type: Optional[pulumi.Input[str]] = None,
              overall_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetSummaries' in kwargs:
+            dataset_summaries = kwargs['datasetSummaries']
+        if 'labelMetricsReports' in kwargs:
+            label_metrics_reports = kwargs['labelMetricsReports']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'overallMetricsReports' in kwargs:
+            overall_metrics_reports = kwargs['overallMetricsReports']
+
         if dataset_summaries is not None:
             _setter("dataset_summaries", dataset_summaries)
         if label_metrics_reports is not None:
@@ -164,7 +178,15 @@ class ModelMetricDatasetSummaryArgs:
              test_sample_count: Optional[pulumi.Input[int]] = None,
              training_sample_count: Optional[pulumi.Input[int]] = None,
              validation_sample_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'testSampleCount' in kwargs:
+            test_sample_count = kwargs['testSampleCount']
+        if 'trainingSampleCount' in kwargs:
+            training_sample_count = kwargs['trainingSampleCount']
+        if 'validationSampleCount' in kwargs:
+            validation_sample_count = kwargs['validationSampleCount']
+
         if test_sample_count is not None:
             _setter("test_sample_count", test_sample_count)
         if training_sample_count is not None:
@@ -236,7 +258,15 @@ class ModelMetricLabelMetricsReportArgs:
              document_count: Optional[pulumi.Input[int]] = None,
              label: Optional[pulumi.Input[str]] = None,
              mean_average_precision: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         if confidence_entries is not None:
             _setter("confidence_entries", confidence_entries)
         if document_count is not None:
@@ -326,7 +356,9 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgs:
              precision: Optional[pulumi.Input[float]] = None,
              recall: Optional[pulumi.Input[float]] = None,
              threshold: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if accuracy is not None:
             _setter("accuracy", accuracy)
         if f1score is not None:
@@ -422,7 +454,15 @@ class ModelMetricOverallMetricsReportArgs:
              confidence_entries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]] = None,
              document_count: Optional[pulumi.Input[int]] = None,
              mean_average_precision: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'confidenceEntries' in kwargs:
+            confidence_entries = kwargs['confidenceEntries']
+        if 'documentCount' in kwargs:
+            document_count = kwargs['documentCount']
+        if 'meanAveragePrecision' in kwargs:
+            mean_average_precision = kwargs['meanAveragePrecision']
+
         if confidence_entries is not None:
             _setter("confidence_entries", confidence_entries)
         if document_count is not None:
@@ -498,7 +538,9 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgs:
              precision: Optional[pulumi.Input[float]] = None,
              recall: Optional[pulumi.Input[float]] = None,
              threshold: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if accuracy is not None:
             _setter("accuracy", accuracy)
         if f1score is not None:
@@ -606,7 +648,13 @@ class ModelTestingDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -717,7 +765,13 @@ class ModelTrainingDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -828,7 +882,13 @@ class ModelValidationDatasetArgs:
              dataset_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+
         _setter("dataset_type", dataset_type)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -927,7 +987,13 @@ class ProcessorJobInputLocationArgs:
              source_type: pulumi.Input[str],
              data: Optional[pulumi.Input[str]] = None,
              object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+
         _setter("source_type", source_type)
         if data is not None:
             _setter("data", data)
@@ -994,7 +1060,9 @@ class ProcessorJobInputLocationObjectLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -1062,7 +1130,9 @@ class ProcessorJobOutputLocationArgs:
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
              prefix: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("prefix", prefix)
@@ -1139,7 +1209,15 @@ class ProcessorJobProcessorConfigArgs:
              document_type: Optional[pulumi.Input[str]] = None,
              is_zip_output_enabled: Optional[pulumi.Input[bool]] = None,
              language: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'processorType' in kwargs:
+            processor_type = kwargs['processorType']
+        if 'documentType' in kwargs:
+            document_type = kwargs['documentType']
+        if 'isZipOutputEnabled' in kwargs:
+            is_zip_output_enabled = kwargs['isZipOutputEnabled']
+
         _setter("features", features)
         _setter("processor_type", processor_type)
         if document_type is not None:
@@ -1245,7 +1323,19 @@ class ProcessorJobProcessorConfigFeatureArgs:
              max_results: Optional[pulumi.Input[int]] = None,
              model_id: Optional[pulumi.Input[str]] = None,
              tenancy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'featureType' in kwargs:
+            feature_type = kwargs['featureType']
+        if 'generateSearchablePdf' in kwargs:
+            generate_searchable_pdf = kwargs['generateSearchablePdf']
+        if 'maxResults' in kwargs:
+            max_results = kwargs['maxResults']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+
         _setter("feature_type", feature_type)
         if generate_searchable_pdf is not None:
             _setter("generate_searchable_pdf", generate_searchable_pdf)
@@ -1335,7 +1425,9 @@ class GetModelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1387,7 +1479,9 @@ class GetProjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -41,7 +41,15 @@ class ManagedInstanceArgs:
              managed_instance_id: pulumi.Input[str],
              is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
              notification_topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'isDataCollectionAuthorized' in kwargs:
+            is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
+        if 'notificationTopicId' in kwargs:
+            notification_topic_id = kwargs['notificationTopicId']
+
         _setter("managed_instance_id", managed_instance_id)
         if is_data_collection_authorized is not None:
             _setter("is_data_collection_authorized", is_data_collection_authorized)
@@ -209,7 +217,55 @@ class _ManagedInstanceState:
              status: Optional[pulumi.Input[str]] = None,
              updates_available: Optional[pulumi.Input[int]] = None,
              work_request_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bugUpdatesAvailable' in kwargs:
+            bug_updates_available = kwargs['bugUpdatesAvailable']
+        if 'childSoftwareSources' in kwargs:
+            child_software_sources = kwargs['childSoftwareSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'enhancementUpdatesAvailable' in kwargs:
+            enhancement_updates_available = kwargs['enhancementUpdatesAvailable']
+        if 'isDataCollectionAuthorized' in kwargs:
+            is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
+        if 'isRebootRequired' in kwargs:
+            is_reboot_required = kwargs['isRebootRequired']
+        if 'kspliceEffectiveKernelVersion' in kwargs:
+            ksplice_effective_kernel_version = kwargs['kspliceEffectiveKernelVersion']
+        if 'lastBoot' in kwargs:
+            last_boot = kwargs['lastBoot']
+        if 'lastCheckin' in kwargs:
+            last_checkin = kwargs['lastCheckin']
+        if 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'notificationTopicId' in kwargs:
+            notification_topic_id = kwargs['notificationTopicId']
+        if 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if 'osKernelVersion' in kwargs:
+            os_kernel_version = kwargs['osKernelVersion']
+        if 'osName' in kwargs:
+            os_name = kwargs['osName']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'otherUpdatesAvailable' in kwargs:
+            other_updates_available = kwargs['otherUpdatesAvailable']
+        if 'parentSoftwareSources' in kwargs:
+            parent_software_sources = kwargs['parentSoftwareSources']
+        if 'scheduledJobCount' in kwargs:
+            scheduled_job_count = kwargs['scheduledJobCount']
+        if 'securityUpdatesAvailable' in kwargs:
+            security_updates_available = kwargs['securityUpdatesAvailable']
+        if 'updatesAvailable' in kwargs:
+            updates_available = kwargs['updatesAvailable']
+        if 'workRequestCount' in kwargs:
+            work_request_count = kwargs['workRequestCount']
+
         if autonomouses is not None:
             _setter("autonomouses", autonomouses)
         if bug_updates_available is not None:

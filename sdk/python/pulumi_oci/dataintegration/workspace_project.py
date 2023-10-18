@@ -64,7 +64,19 @@ class WorkspaceProjectArgs:
              object_status: Optional[pulumi.Input[int]] = None,
              project_key: Optional[pulumi.Input[str]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+        if 'projectKey' in kwargs:
+            project_key = kwargs['projectKey']
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+
         _setter("identifier", identifier)
         _setter("workspace_id", workspace_id)
         if description is not None:
@@ -263,7 +275,27 @@ class _WorkspaceProjectState:
              project_key: Optional[pulumi.Input[str]] = None,
              registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None,
              workspace_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyMap' in kwargs:
+            key_map = kwargs['keyMap']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'objectStatus' in kwargs:
+            object_status = kwargs['objectStatus']
+        if 'objectVersion' in kwargs:
+            object_version = kwargs['objectVersion']
+        if 'parentReves' in kwargs:
+            parent_reves = kwargs['parentReves']
+        if 'projectKey' in kwargs:
+            project_key = kwargs['projectKey']
+        if 'registryMetadata' in kwargs:
+            registry_metadata = kwargs['registryMetadata']
+        if 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if description is not None:
             _setter("description", description)
         if identifier is not None:

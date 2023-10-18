@@ -51,7 +51,23 @@ class ComputeImageCapabilitySchemaArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
+            compute_global_image_capability_schema_version_name = kwargs['computeGlobalImageCapabilitySchemaVersionName']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'schemaData' in kwargs:
+            schema_data = kwargs['schemaData']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
         _setter("image_id", image_id)
@@ -196,7 +212,27 @@ class _ComputeImageCapabilitySchemaState:
              image_id: Optional[pulumi.Input[str]] = None,
              schema_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeGlobalImageCapabilitySchemaId' in kwargs:
+            compute_global_image_capability_schema_id = kwargs['computeGlobalImageCapabilitySchemaId']
+        if 'computeGlobalImageCapabilitySchemaVersionName' in kwargs:
+            compute_global_image_capability_schema_version_name = kwargs['computeGlobalImageCapabilitySchemaVersionName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'schemaData' in kwargs:
+            schema_data = kwargs['schemaData']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if compute_global_image_capability_schema_id is not None:

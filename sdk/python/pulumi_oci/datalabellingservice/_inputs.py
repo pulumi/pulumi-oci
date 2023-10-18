@@ -42,7 +42,13 @@ class DatasetDatasetFormatDetailsArgs:
              _setter: Callable[[Any, Any], None],
              format_type: pulumi.Input[str],
              text_file_type_metadata: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'textFileTypeMetadata' in kwargs:
+            text_file_type_metadata = kwargs['textFileTypeMetadata']
+
         _setter("format_type", format_type)
         if text_file_type_metadata is not None:
             _setter("text_file_type_metadata", text_file_type_metadata)
@@ -107,7 +113,21 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadataArgs:
              column_name: Optional[pulumi.Input[str]] = None,
              escape_character: Optional[pulumi.Input[str]] = None,
              line_delimiter: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnIndex' in kwargs:
+            column_index = kwargs['columnIndex']
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'columnDelimiter' in kwargs:
+            column_delimiter = kwargs['columnDelimiter']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'escapeCharacter' in kwargs:
+            escape_character = kwargs['escapeCharacter']
+        if 'lineDelimiter' in kwargs:
+            line_delimiter = kwargs['lineDelimiter']
+
         _setter("column_index", column_index)
         _setter("format_type", format_type)
         if column_delimiter is not None:
@@ -219,7 +239,11 @@ class DatasetDatasetSourceDetailsArgs:
              namespace: pulumi.Input[str],
              source_type: pulumi.Input[str],
              prefix: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("source_type", source_type)
@@ -294,7 +318,13 @@ class DatasetInitialImportDatasetConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              import_format: pulumi.Input['DatasetInitialImportDatasetConfigurationImportFormatArgs'],
              import_metadata_path: pulumi.Input['DatasetInitialImportDatasetConfigurationImportMetadataPathArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importFormat' in kwargs:
+            import_format = kwargs['importFormat']
+        if 'importMetadataPath' in kwargs:
+            import_metadata_path = kwargs['importMetadataPath']
+
         _setter("import_format", import_format)
         _setter("import_metadata_path", import_metadata_path)
 
@@ -342,7 +372,9 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if version is not None:
             _setter("version", version)
@@ -399,7 +431,11 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPathArgs:
              namespace: pulumi.Input[str],
              path: pulumi.Input[str],
              source_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("path", path)
@@ -461,8 +497,10 @@ class DatasetInitialRecordGenerationConfigurationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.input_type
@@ -480,7 +518,9 @@ class DatasetLabelSetArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: pulumi.Input[Sequence[pulumi.Input['DatasetLabelSetItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -511,7 +551,9 @@ class DatasetLabelSetItemArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -548,7 +590,9 @@ class GetAnnotationFormatsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -606,7 +650,9 @@ class GetDatasetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

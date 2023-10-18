@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleArgs;
 import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -80,6 +81,21 @@ public final class CaptureFilterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    @Import(name="flowLogCaptureFilterRules")
+    private @Nullable Output<List<CaptureFilterFlowLogCaptureFilterRuleArgs>> flowLogCaptureFilterRules;
+
+    /**
+     * @return (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    public Optional<Output<List<CaptureFilterFlowLogCaptureFilterRuleArgs>>> flowLogCaptureFilterRules() {
+        return Optional.ofNullable(this.flowLogCaptureFilterRules);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -116,6 +132,7 @@ public final class CaptureFilterArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.filterType = $.filterType;
+        this.flowLogCaptureFilterRules = $.flowLogCaptureFilterRules;
         this.freeformTags = $.freeformTags;
         this.vtapCaptureFilterRules = $.vtapCaptureFilterRules;
     }
@@ -220,6 +237,37 @@ public final class CaptureFilterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder filterType(String filterType) {
             return filterType(Output.of(filterType));
+        }
+
+        /**
+         * @param flowLogCaptureFilterRules (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder flowLogCaptureFilterRules(@Nullable Output<List<CaptureFilterFlowLogCaptureFilterRuleArgs>> flowLogCaptureFilterRules) {
+            $.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
+            return this;
+        }
+
+        /**
+         * @param flowLogCaptureFilterRules (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder flowLogCaptureFilterRules(List<CaptureFilterFlowLogCaptureFilterRuleArgs> flowLogCaptureFilterRules) {
+            return flowLogCaptureFilterRules(Output.of(flowLogCaptureFilterRules));
+        }
+
+        /**
+         * @param flowLogCaptureFilterRules (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder flowLogCaptureFilterRules(CaptureFilterFlowLogCaptureFilterRuleArgs... flowLogCaptureFilterRules) {
+            return flowLogCaptureFilterRules(List.of(flowLogCaptureFilterRules));
         }
 
         /**

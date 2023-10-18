@@ -63,7 +63,21 @@ class ResponderRecipeArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'sourceResponderRecipeId' in kwargs:
+            source_responder_recipe_id = kwargs['sourceResponderRecipeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'responderRules' in kwargs:
+            responder_rules = kwargs['responderRules']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("source_responder_recipe_id", source_responder_recipe_id)
@@ -249,7 +263,31 @@ class _ResponderRecipeState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'effectiveResponderRules' in kwargs:
+            effective_responder_rules = kwargs['effectiveResponderRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'responderRules' in kwargs:
+            responder_rules = kwargs['responderRules']
+        if 'sourceResponderRecipeId' in kwargs:
+            source_responder_recipe_id = kwargs['sourceResponderRecipeId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

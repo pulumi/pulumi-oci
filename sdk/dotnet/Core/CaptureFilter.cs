@@ -41,6 +41,51 @@ namespace Pulumi.Oci.Core
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         DisplayName = @var.Capture_filter_display_name,
+    ///         FlowLogCaptureFilterRules = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleArgs
+    ///             {
+    ///                 DestinationCidr = @var.Capture_filter_flow_log_capture_filter_rules_destination_cidr,
+    ///                 FlowLogType = @var.Capture_filter_flow_log_capture_filter_rules_flow_log_type,
+    ///                 IcmpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs
+    ///                 {
+    ///                     Type = @var.Capture_filter_flow_log_capture_filter_rules_icmp_options_type,
+    ///                     Code = @var.Capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+    ///                 },
+    ///                 IsEnabled = @var.Capture_filter_flow_log_capture_filter_rules_is_enabled,
+    ///                 Priority = @var.Capture_filter_flow_log_capture_filter_rules_priority,
+    ///                 Protocol = @var.Capture_filter_flow_log_capture_filter_rules_protocol,
+    ///                 RuleAction = @var.Capture_filter_flow_log_capture_filter_rules_rule_action,
+    ///                 SamplingRate = @var.Capture_filter_flow_log_capture_filter_rules_sampling_rate,
+    ///                 SourceCidr = @var.Capture_filter_flow_log_capture_filter_rules_source_cidr,
+    ///                 TcpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs
+    ///                 {
+    ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs
+    ///                     {
+    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
+    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+    ///                     },
+    ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs
+    ///                     {
+    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
+    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+    ///                     },
+    ///                 },
+    ///                 UdpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs
+    ///                 {
+    ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs
+    ///                     {
+    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
+    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+    ///                     },
+    ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs
+    ///                     {
+    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
+    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -126,6 +171,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("filterType")]
         public Output<string> FilterType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        /// </summary>
+        [Output("flowLogCaptureFilterRules")]
+        public Output<ImmutableArray<Outputs.CaptureFilterFlowLogCaptureFilterRule>> FlowLogCaptureFilterRules { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -227,6 +278,18 @@ namespace Pulumi.Oci.Core
         [Input("filterType", required: true)]
         public Input<string> FilterType { get; set; } = null!;
 
+        [Input("flowLogCaptureFilterRules")]
+        private InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleArgs>? _flowLogCaptureFilterRules;
+
+        /// <summary>
+        /// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        /// </summary>
+        public InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleArgs> FlowLogCaptureFilterRules
+        {
+            get => _flowLogCaptureFilterRules ?? (_flowLogCaptureFilterRules = new InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleArgs>());
+            set => _flowLogCaptureFilterRules = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -288,6 +351,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("filterType")]
         public Input<string>? FilterType { get; set; }
+
+        [Input("flowLogCaptureFilterRules")]
+        private InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleGetArgs>? _flowLogCaptureFilterRules;
+
+        /// <summary>
+        /// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        /// </summary>
+        public InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleGetArgs> FlowLogCaptureFilterRules
+        {
+            get => _flowLogCaptureFilterRules ?? (_flowLogCaptureFilterRules = new InputList<Inputs.CaptureFilterFlowLogCaptureFilterRuleGetArgs>());
+            set => _flowLogCaptureFilterRules = value;
+        }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

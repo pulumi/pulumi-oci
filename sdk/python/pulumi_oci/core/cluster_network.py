@@ -57,7 +57,23 @@ class ClusterNetworkArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'instancePools' in kwargs:
+            instance_pools = kwargs['instancePools']
+        if 'placementConfiguration' in kwargs:
+            placement_configuration = kwargs['placementConfiguration']
+        if 'clusterConfiguration' in kwargs:
+            cluster_configuration = kwargs['clusterConfiguration']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("instance_pools", instance_pools)
         _setter("placement_configuration", placement_configuration)
@@ -223,7 +239,31 @@ class _ClusterNetworkState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterConfiguration' in kwargs:
+            cluster_configuration = kwargs['clusterConfiguration']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hpcIslandId' in kwargs:
+            hpc_island_id = kwargs['hpcIslandId']
+        if 'instancePools' in kwargs:
+            instance_pools = kwargs['instancePools']
+        if 'networkBlockIds' in kwargs:
+            network_block_ids = kwargs['networkBlockIds']
+        if 'placementConfiguration' in kwargs:
+            placement_configuration = kwargs['placementConfiguration']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_configuration is not None:
             _setter("cluster_configuration", cluster_configuration)
         if compartment_id is not None:

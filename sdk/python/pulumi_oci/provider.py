@@ -85,7 +85,29 @@ class ProviderArgs:
              retry_duration_seconds: Optional[pulumi.Input[int]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              user_ocid: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configFileProfile' in kwargs:
+            config_file_profile = kwargs['configFileProfile']
+        if 'disableAutoRetries' in kwargs:
+            disable_auto_retries = kwargs['disableAutoRetries']
+        if 'ignoreDefinedTags' in kwargs:
+            ignore_defined_tags = kwargs['ignoreDefinedTags']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'privateKeyPassword' in kwargs:
+            private_key_password = kwargs['privateKeyPassword']
+        if 'privateKeyPath' in kwargs:
+            private_key_path = kwargs['privateKeyPath']
+        if 'realmSpecificServiceEndpointTemplateEnabled' in kwargs:
+            realm_specific_service_endpoint_template_enabled = kwargs['realmSpecificServiceEndpointTemplateEnabled']
+        if 'retryDurationSeconds' in kwargs:
+            retry_duration_seconds = kwargs['retryDurationSeconds']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'userOcid' in kwargs:
+            user_ocid = kwargs['userOcid']
+
         if auth is not None:
             _setter("auth", auth)
         if config_file_profile is not None:

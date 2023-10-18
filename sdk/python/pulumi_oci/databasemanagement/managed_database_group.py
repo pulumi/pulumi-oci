@@ -41,7 +41,13 @@ class ManagedDatabaseGroupArgs:
              description: Optional[pulumi.Input[str]] = None,
              managed_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'managedDatabases' in kwargs:
+            managed_databases = kwargs['managedDatabases']
+
         _setter("compartment_id", compartment_id)
         if description is not None:
             _setter("description", description)
@@ -139,7 +145,17 @@ class _ManagedDatabaseGroupState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'managedDatabases' in kwargs:
+            managed_databases = kwargs['managedDatabases']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if description is not None:

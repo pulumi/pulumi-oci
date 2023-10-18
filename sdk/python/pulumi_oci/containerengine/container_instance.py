@@ -95,7 +95,31 @@ class ContainerInstanceArgs:
              image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'containerRestartPolicy' in kwargs:
+            container_restart_policy = kwargs['containerRestartPolicy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsConfig' in kwargs:
+            dns_config = kwargs['dnsConfig']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gracefulShutdownTimeoutInSeconds' in kwargs:
+            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
+        if 'imagePullSecrets' in kwargs:
+            image_pull_secrets = kwargs['imagePullSecrets']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("containers", containers)
@@ -428,7 +452,43 @@ class _ContainerInstanceState:
              vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
              volume_count: Optional[pulumi.Input[int]] = None,
              volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerCount' in kwargs:
+            container_count = kwargs['containerCount']
+        if 'containerRestartPolicy' in kwargs:
+            container_restart_policy = kwargs['containerRestartPolicy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsConfig' in kwargs:
+            dns_config = kwargs['dnsConfig']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gracefulShutdownTimeoutInSeconds' in kwargs:
+            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
+        if 'imagePullSecrets' in kwargs:
+            image_pull_secrets = kwargs['imagePullSecrets']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'volumeCount' in kwargs:
+            volume_count = kwargs['volumeCount']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

@@ -57,7 +57,19 @@ class DedicatedVantagePointArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dvpStackDetails' in kwargs:
+            dvp_stack_details = kwargs['dvpStackDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("display_name", display_name)
         _setter("dvp_stack_details", dvp_stack_details)
@@ -218,7 +230,25 @@ class _DedicatedVantagePointState:
              status: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dvpStackDetails' in kwargs:
+            dvp_stack_details = kwargs['dvpStackDetails']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'monitorStatusCountMaps' in kwargs:
+            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if apm_domain_id is not None:
             _setter("apm_domain_id", apm_domain_id)
         if defined_tags is not None:

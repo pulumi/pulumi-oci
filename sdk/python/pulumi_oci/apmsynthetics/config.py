@@ -109,7 +109,43 @@ class ConfigArgs:
              status: Optional[pulumi.Input[str]] = None,
              target: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'monitorType' in kwargs:
+            monitor_type = kwargs['monitorType']
+        if 'repeatIntervalInSeconds' in kwargs:
+            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
+        if 'vantagePoints' in kwargs:
+            vantage_points = kwargs['vantagePoints']
+        if 'availabilityConfiguration' in kwargs:
+            availability_configuration = kwargs['availabilityConfiguration']
+        if 'batchIntervalInSeconds' in kwargs:
+            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isRunNow' in kwargs:
+            is_run_now = kwargs['isRunNow']
+        if 'isRunOnce' in kwargs:
+            is_run_once = kwargs['isRunOnce']
+        if 'maintenanceWindowSchedule' in kwargs:
+            maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
+        if 'schedulingPolicy' in kwargs:
+            scheduling_policy = kwargs['schedulingPolicy']
+        if 'scriptId' in kwargs:
+            script_id = kwargs['scriptId']
+        if 'scriptName' in kwargs:
+            script_name = kwargs['scriptName']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("display_name", display_name)
         _setter("monitor_type", monitor_type)
@@ -499,7 +535,49 @@ class _ConfigState:
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_count: Optional[pulumi.Input[int]] = None,
              vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'availabilityConfiguration' in kwargs:
+            availability_configuration = kwargs['availabilityConfiguration']
+        if 'batchIntervalInSeconds' in kwargs:
+            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isRunNow' in kwargs:
+            is_run_now = kwargs['isRunNow']
+        if 'isRunOnce' in kwargs:
+            is_run_once = kwargs['isRunOnce']
+        if 'maintenanceWindowSchedule' in kwargs:
+            maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
+        if 'monitorType' in kwargs:
+            monitor_type = kwargs['monitorType']
+        if 'repeatIntervalInSeconds' in kwargs:
+            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
+        if 'schedulingPolicy' in kwargs:
+            scheduling_policy = kwargs['schedulingPolicy']
+        if 'scriptId' in kwargs:
+            script_id = kwargs['scriptId']
+        if 'scriptName' in kwargs:
+            script_name = kwargs['scriptName']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointCount' in kwargs:
+            vantage_point_count = kwargs['vantagePointCount']
+        if 'vantagePoints' in kwargs:
+            vantage_points = kwargs['vantagePoints']
+
         if apm_domain_id is not None:
             _setter("apm_domain_id", apm_domain_id)
         if availability_configuration is not None:

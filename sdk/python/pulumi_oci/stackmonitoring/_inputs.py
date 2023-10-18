@@ -74,7 +74,15 @@ class DiscoveryJobDiscoveryDetailsArgs:
              resource_type: pulumi.Input[str],
              credentials: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsArgs']] = None,
              tags: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("agent_id", agent_id)
         _setter("properties", properties)
         _setter("resource_name", resource_name)
@@ -172,7 +180,9 @@ class DiscoveryJobDiscoveryDetailsCredentialsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: pulumi.Input[Sequence[pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsItemArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -211,7 +221,13 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemArgs:
              credential_name: pulumi.Input[str],
              credential_type: pulumi.Input[str],
              properties: pulumi.Input['DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("properties", properties)
@@ -268,7 +284,11 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -300,7 +320,11 @@ class DiscoveryJobDiscoveryDetailsPropertiesArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -332,7 +356,11 @@ class DiscoveryJobDiscoveryDetailsTagsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -372,7 +400,9 @@ class MonitoredResourceAdditionalAliasArgs:
              credential: pulumi.Input['MonitoredResourceAdditionalAliasCredentialArgs'],
              name: pulumi.Input[str],
              source: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credential", credential)
         _setter("name", name)
         _setter("source", source)
@@ -437,7 +467,9 @@ class MonitoredResourceAdditionalAliasCredentialArgs:
              name: pulumi.Input[str],
              service: pulumi.Input[str],
              source: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -525,7 +557,13 @@ class MonitoredResourceAdditionalCredentialArgs:
              properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]]] = None,
              source: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         if credential_type is not None:
             _setter("credential_type", credential_type)
         if description is not None:
@@ -652,7 +690,9 @@ class MonitoredResourceAdditionalCredentialPropertyArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -706,7 +746,9 @@ class MonitoredResourceAliasesArgs:
              credential: pulumi.Input['MonitoredResourceAliasesCredentialArgs'],
              name: pulumi.Input[str],
              source: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credential", credential)
         _setter("name", name)
         _setter("source", source)
@@ -771,7 +813,9 @@ class MonitoredResourceAliasesCredentialArgs:
              name: pulumi.Input[str],
              service: pulumi.Input[str],
              source: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -859,7 +903,13 @@ class MonitoredResourceCredentialsArgs:
              properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]]] = None,
              source: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         if credential_type is not None:
             _setter("credential_type", credential_type)
         if description is not None:
@@ -986,7 +1036,9 @@ class MonitoredResourceCredentialsPropertyArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1056,7 +1108,19 @@ class MonitoredResourceDatabaseConnectionDetailsArgs:
              db_id: Optional[pulumi.Input[str]] = None,
              db_unique_name: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         _setter("port", port)
         _setter("protocol", protocol)
         _setter("service_name", service_name)
@@ -1173,7 +1237,9 @@ class MonitoredResourcePropertyArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1227,7 +1293,11 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1295,7 +1365,11 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1399,7 +1473,31 @@ class MonitoredResourcesListMemberItemArgs:
              resource_type: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'resourceDisplayName' in kwargs:
+            resource_display_name = kwargs['resourceDisplayName']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -1605,7 +1703,21 @@ class MonitoredResourcesSearchAssociationItemArgs:
              source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs']]]] = None,
              source_resource_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'destinationResourceDetails' in kwargs:
+            destination_resource_details = kwargs['destinationResourceDetails']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'sourceResourceDetails' in kwargs:
+            source_resource_details = kwargs['sourceResourceDetails']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if association_type is not None:
             _setter("association_type", association_type)
         if destination_resource_details is not None:
@@ -1715,7 +1827,11 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1783,7 +1899,11 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1899,7 +2019,27 @@ class MonitoredResourcesSearchItemArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
@@ -2121,7 +2261,9 @@ class MonitoredResourcesSearchItemPropertyArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -2170,7 +2312,9 @@ class GetConfigsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2222,7 +2366,9 @@ class GetDiscoveryJobLogsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2277,7 +2423,9 @@ class GetDiscoveryJobsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

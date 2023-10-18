@@ -30,7 +30,9 @@ class RuleActionsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              actions: pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
 
     @property
@@ -100,7 +102,21 @@ class RuleActionsActionArgs:
              state: Optional[pulumi.Input[str]] = None,
              stream_id: Optional[pulumi.Input[str]] = None,
              topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("action_type", action_type)
         _setter("is_enabled", is_enabled)
         if description is not None:
@@ -252,7 +268,9 @@ class GetRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

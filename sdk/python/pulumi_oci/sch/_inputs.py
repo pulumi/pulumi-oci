@@ -55,7 +55,15 @@ class ConnectorSourceArgs:
              log_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]] = None,
              monitoring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]] = None,
              stream_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+
         _setter("kind", kind)
         if cursor is not None:
             _setter("cursor", cursor)
@@ -142,7 +150,9 @@ class ConnectorSourceCursorArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if kind is not None:
             _setter("kind", kind)
 
@@ -182,7 +192,15 @@ class ConnectorSourceLogSourceArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              log_group_id: Optional[pulumi.Input[str]] = None,
              log_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if log_group_id is not None:
@@ -246,7 +264,13 @@ class ConnectorSourceMonitoringSourceArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              namespace_details: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if namespace_details is not None:
@@ -296,7 +320,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
              _setter: Callable[[Any, Any], None],
              kind: pulumi.Input[str],
              namespaces: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         _setter("namespaces", namespaces)
 
@@ -344,7 +370,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
              _setter: Callable[[Any, Any], None],
              metrics: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metrics", metrics)
         _setter("namespace", namespace)
 
@@ -388,7 +416,9 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              kind: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
 
     @property
@@ -479,7 +509,31 @@ class ConnectorTargetArgs:
              object_name_prefix: Optional[pulumi.Input[str]] = None,
              stream_id: Optional[pulumi.Input[str]] = None,
              topic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("kind", kind)
         if batch_rollover_size_in_mbs is not None:
             _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
@@ -724,7 +778,11 @@ class ConnectorTargetDimensionArgs:
              _setter: Callable[[Any, Any], None],
              dimension_value: Optional[pulumi.Input['ConnectorTargetDimensionDimensionValueArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dimensionValue' in kwargs:
+            dimension_value = kwargs['dimensionValue']
+
         if dimension_value is not None:
             _setter("dimension_value", dimension_value)
         if name is not None:
@@ -778,7 +836,9 @@ class ConnectorTargetDimensionDimensionValueArgs:
              kind: pulumi.Input[str],
              path: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         if path is not None:
             _setter("path", path)
@@ -853,7 +913,15 @@ class ConnectorTaskArgs:
              batch_time_in_sec: Optional[pulumi.Input[int]] = None,
              condition: Optional[pulumi.Input[str]] = None,
              function_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+
         _setter("kind", kind)
         if batch_size_in_kbs is not None:
             _setter("batch_size_in_kbs", batch_size_in_kbs)
@@ -946,7 +1014,9 @@ class GetServiceConnectorsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

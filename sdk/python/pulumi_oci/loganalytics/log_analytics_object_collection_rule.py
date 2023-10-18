@@ -117,7 +117,43 @@ class LogAnalyticsObjectCollectionRuleArgs:
              poll_since: Optional[pulumi.Input[str]] = None,
              poll_till: Optional[pulumi.Input[str]] = None,
              timezone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSourceName' in kwargs:
+            log_source_name = kwargs['logSourceName']
+        if 'osBucketName' in kwargs:
+            os_bucket_name = kwargs['osBucketName']
+        if 'osNamespace' in kwargs:
+            os_namespace = kwargs['osNamespace']
+        if 'charEncoding' in kwargs:
+            char_encoding = kwargs['charEncoding']
+        if 'collectionType' in kwargs:
+            collection_type = kwargs['collectionType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logSet' in kwargs:
+            log_set = kwargs['logSet']
+        if 'logSetExtRegex' in kwargs:
+            log_set_ext_regex = kwargs['logSetExtRegex']
+        if 'logSetKey' in kwargs:
+            log_set_key = kwargs['logSetKey']
+        if 'objectNameFilters' in kwargs:
+            object_name_filters = kwargs['objectNameFilters']
+        if 'pollSince' in kwargs:
+            poll_since = kwargs['pollSince']
+        if 'pollTill' in kwargs:
+            poll_till = kwargs['pollTill']
+
         _setter("compartment_id", compartment_id)
         _setter("log_group_id", log_group_id)
         _setter("log_source_name", log_source_name)
@@ -546,7 +582,49 @@ class _LogAnalyticsObjectCollectionRuleState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              timezone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'charEncoding' in kwargs:
+            char_encoding = kwargs['charEncoding']
+        if 'collectionType' in kwargs:
+            collection_type = kwargs['collectionType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSet' in kwargs:
+            log_set = kwargs['logSet']
+        if 'logSetExtRegex' in kwargs:
+            log_set_ext_regex = kwargs['logSetExtRegex']
+        if 'logSetKey' in kwargs:
+            log_set_key = kwargs['logSetKey']
+        if 'logSourceName' in kwargs:
+            log_source_name = kwargs['logSourceName']
+        if 'objectNameFilters' in kwargs:
+            object_name_filters = kwargs['objectNameFilters']
+        if 'osBucketName' in kwargs:
+            os_bucket_name = kwargs['osBucketName']
+        if 'osNamespace' in kwargs:
+            os_namespace = kwargs['osNamespace']
+        if 'pollSince' in kwargs:
+            poll_since = kwargs['pollSince']
+        if 'pollTill' in kwargs:
+            poll_till = kwargs['pollTill']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if char_encoding is not None:
             _setter("char_encoding", char_encoding)
         if collection_type is not None:

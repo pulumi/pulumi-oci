@@ -35,7 +35,13 @@ class VolumeBackupPolicyAssignmentArgs:
              _setter: Callable[[Any, Any], None],
              asset_id: pulumi.Input[str],
              policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetId' in kwargs:
+            asset_id = kwargs['assetId']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+
         _setter("asset_id", asset_id)
         _setter("policy_id", policy_id)
 
@@ -96,7 +102,15 @@ class _VolumeBackupPolicyAssignmentState:
              asset_id: Optional[pulumi.Input[str]] = None,
              policy_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetId' in kwargs:
+            asset_id = kwargs['assetId']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if asset_id is not None:
             _setter("asset_id", asset_id)
         if policy_id is not None:

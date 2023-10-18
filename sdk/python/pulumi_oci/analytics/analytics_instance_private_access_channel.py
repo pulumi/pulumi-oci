@@ -57,7 +57,23 @@ class AnalyticsInstancePrivateAccessChannelArgs:
              vcn_id: pulumi.Input[str],
              network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'privateSourceDnsZones' in kwargs:
+            private_source_dns_zones = kwargs['privateSourceDnsZones']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'privateSourceScanHosts' in kwargs:
+            private_source_scan_hosts = kwargs['privateSourceScanHosts']
+
         _setter("analytics_instance_id", analytics_instance_id)
         _setter("display_name", display_name)
         _setter("private_source_dns_zones", private_source_dns_zones)
@@ -213,7 +229,27 @@ class _AnalyticsInstancePrivateAccessChannelState:
              private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'egressSourceIpAddresses' in kwargs:
+            egress_source_ip_addresses = kwargs['egressSourceIpAddresses']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'privateSourceDnsZones' in kwargs:
+            private_source_dns_zones = kwargs['privateSourceDnsZones']
+        if 'privateSourceScanHosts' in kwargs:
+            private_source_scan_hosts = kwargs['privateSourceScanHosts']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if analytics_instance_id is not None:
             _setter("analytics_instance_id", analytics_instance_id)
         if display_name is not None:

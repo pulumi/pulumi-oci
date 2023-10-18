@@ -32,7 +32,6 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousCharacterSets(ctx, &database.GetAutonomousCharacterSetsArgs{
 //				CharacterSetType: pulumi.StringRef(_var.Autonomous_database_character_set_character_set_type),
-//				IsDedicated:      pulumi.BoolRef(_var.Autonomous_database_character_set_is_dedicated),
 //				IsShared:         pulumi.BoolRef(_var.Autonomous_database_character_set_is_shared),
 //			}, nil)
 //			if err != nil {
@@ -60,7 +59,7 @@ type GetAutonomousCharacterSetsArgs struct {
 	Filters          []GetAutonomousCharacterSetsFilter `pulumi:"filters"`
 	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
 	IsDedicated *bool `pulumi:"isDedicated"`
-	// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
 	IsShared *bool `pulumi:"isShared"`
 }
 
@@ -96,7 +95,7 @@ type GetAutonomousCharacterSetsOutputArgs struct {
 	Filters          GetAutonomousCharacterSetsFilterArrayInput `pulumi:"filters"`
 	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
 	IsDedicated pulumi.BoolPtrInput `pulumi:"isDedicated"`
-	// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
 	IsShared pulumi.BoolPtrInput `pulumi:"isShared"`
 }
 

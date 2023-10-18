@@ -141,7 +141,47 @@ class AddressActionVerificationArgs:
              state_inscription: Optional[pulumi.Input[str]] = None,
              street_name: Optional[pulumi.Input[str]] = None,
              street_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ospHomeRegion' in kwargs:
+            osp_home_region = kwargs['ospHomeRegion']
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         _setter("compartment_id", compartment_id)
         _setter("osp_home_region", osp_home_region)
         if address_key is not None:
@@ -678,7 +718,49 @@ class _AddressActionVerificationState:
              street_name: Optional[pulumi.Input[str]] = None,
              street_number: Optional[pulumi.Input[str]] = None,
              verification_code: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'ospHomeRegion' in kwargs:
+            osp_home_region = kwargs['ospHomeRegion']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+        if 'verificationCode' in kwargs:
+            verification_code = kwargs['verificationCode']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if addresses is not None:

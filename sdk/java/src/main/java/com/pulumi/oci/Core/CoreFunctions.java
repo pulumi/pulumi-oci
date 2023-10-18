@@ -3557,6 +3557,7 @@ public final class CoreFunctions {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.capture_filter_display_name())
+     *             .filterType(var_.capture_filter_filter_type())
      *             .state(var_.capture_filter_state())
      *             .build());
      * 
@@ -3598,6 +3599,7 @@ public final class CoreFunctions {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.capture_filter_display_name())
+     *             .filterType(var_.capture_filter_filter_type())
      *             .state(var_.capture_filter_state())
      *             .build());
      * 
@@ -3639,6 +3641,7 @@ public final class CoreFunctions {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.capture_filter_display_name())
+     *             .filterType(var_.capture_filter_filter_type())
      *             .state(var_.capture_filter_state())
      *             .build());
      * 
@@ -3680,6 +3683,7 @@ public final class CoreFunctions {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.capture_filter_display_name())
+     *             .filterType(var_.capture_filter_filter_type())
      *             .state(var_.capture_filter_state())
      *             .build());
      * 

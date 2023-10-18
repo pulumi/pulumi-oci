@@ -35,7 +35,13 @@ class CompareUserAssessmentArgs:
              _setter: Callable[[Any, Any], None],
              comparison_user_assessment_id: pulumi.Input[str],
              user_assessment_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'comparisonUserAssessmentId' in kwargs:
+            comparison_user_assessment_id = kwargs['comparisonUserAssessmentId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("comparison_user_assessment_id", comparison_user_assessment_id)
         _setter("user_assessment_id", user_assessment_id)
 
@@ -92,7 +98,13 @@ class _CompareUserAssessmentState:
              _setter: Callable[[Any, Any], None],
              comparison_user_assessment_id: Optional[pulumi.Input[str]] = None,
              user_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'comparisonUserAssessmentId' in kwargs:
+            comparison_user_assessment_id = kwargs['comparisonUserAssessmentId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         if comparison_user_assessment_id is not None:
             _setter("comparison_user_assessment_id", comparison_user_assessment_id)
         if user_assessment_id is not None:

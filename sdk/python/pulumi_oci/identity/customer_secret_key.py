@@ -35,7 +35,13 @@ class CustomerSecretKeyArgs:
              _setter: Callable[[Any, Any], None],
              display_name: pulumi.Input[str],
              user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("display_name", display_name)
         _setter("user_id", user_id)
 
@@ -112,7 +118,19 @@ class _CustomerSecretKeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if inactive_state is not None:

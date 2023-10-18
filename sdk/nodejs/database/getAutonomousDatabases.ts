@@ -7,6 +7,18 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * ## 
+ *
+ * ***
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
  * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -172,6 +184,18 @@ export interface GetAutonomousDatabasesResult {
     readonly state?: string;
 }
 /**
+ * ## 
+ *
+ * ***
+ * subcategory: "Database"
+ * layout: "oci"
+ * page_title: "Oracle Cloud Infrastructure: oci.Database.getAutonomousDatabases"
+ * sidebar_current: "docs-oci-datasource-database-autonomous_databases"
+ * description: |-
+ *   Provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service
+ * ---
+ *
+ * # Data Source: oci.Database.getAutonomousDatabases
  * This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of Autonomous Databases based on the query parameters specified.

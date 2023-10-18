@@ -29,6 +29,11 @@ public final class GetCaptureFiltersResult {
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return Indicates which service will use this capture filter
+     * 
+     */
+    private @Nullable String filterType;
     private @Nullable List<GetCaptureFiltersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -63,6 +68,13 @@ public final class GetCaptureFiltersResult {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
+    /**
+     * @return Indicates which service will use this capture filter
+     * 
+     */
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
+    }
     public List<GetCaptureFiltersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -93,6 +105,7 @@ public final class GetCaptureFiltersResult {
         private List<GetCaptureFiltersCaptureFilter> captureFilters;
         private String compartmentId;
         private @Nullable String displayName;
+        private @Nullable String filterType;
         private @Nullable List<GetCaptureFiltersFilter> filters;
         private String id;
         private @Nullable String state;
@@ -102,6 +115,7 @@ public final class GetCaptureFiltersResult {
     	      this.captureFilters = defaults.captureFilters;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
+    	      this.filterType = defaults.filterType;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
@@ -123,6 +137,11 @@ public final class GetCaptureFiltersResult {
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder filterType(@Nullable String filterType) {
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
@@ -148,6 +167,7 @@ public final class GetCaptureFiltersResult {
             o.captureFilters = captureFilters;
             o.compartmentId = compartmentId;
             o.displayName = displayName;
+            o.filterType = filterType;
             o.filters = filters;
             o.id = id;
             o.state = state;

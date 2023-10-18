@@ -65,7 +65,23 @@ class PathAnalysiArgs:
              protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
              query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
              source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if 'pathAnalyzerTestId' in kwargs:
+            path_analyzer_test_id = kwargs['pathAnalyzerTestId']
+        if 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+
         _setter("type", type)
         if cache_control is not None:
             _setter("cache_control", cache_control)
@@ -249,7 +265,23 @@ class _PathAnalysiState:
              query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
              source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if 'pathAnalyzerTestId' in kwargs:
+            path_analyzer_test_id = kwargs['pathAnalyzerTestId']
+        if 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+
         if cache_control is not None:
             _setter("cache_control", cache_control)
         if compartment_id is not None:

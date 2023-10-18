@@ -36,7 +36,11 @@ class ConfigDimensionArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value_source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         if name is not None:
             _setter("name", name)
         if value_source is not None:
@@ -94,7 +98,15 @@ class ConfigInUseByArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
              options_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'optionsGroup' in kwargs:
+            options_group = kwargs['optionsGroup']
+
         if config_type is not None:
             _setter("config_type", config_type)
         if display_name is not None:
@@ -180,7 +192,11 @@ class ConfigMetricArgs:
              name: Optional[pulumi.Input[str]] = None,
              unit: Optional[pulumi.Input[str]] = None,
              value_source: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueSource' in kwargs:
+            value_source = kwargs['valueSource']
+
         if description is not None:
             _setter("description", description)
         if name is not None:
@@ -282,7 +298,21 @@ class ConfigRuleArgs:
              priority: Optional[pulumi.Input[int]] = None,
              satisfied_response_time: Optional[pulumi.Input[int]] = None,
              tolerating_response_time: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterText' in kwargs:
+            filter_text = kwargs['filterText']
+        if 'isApplyToErrorSpans' in kwargs:
+            is_apply_to_error_spans = kwargs['isApplyToErrorSpans']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'satisfiedResponseTime' in kwargs:
+            satisfied_response_time = kwargs['satisfiedResponseTime']
+        if 'toleratingResponseTime' in kwargs:
+            tolerating_response_time = kwargs['toleratingResponseTime']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if filter_text is not None:
@@ -408,7 +438,9 @@ class GetConfigsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

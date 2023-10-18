@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testCaptureFilters = oci.Core.getCaptureFilters({
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.capture_filter_display_name,
+ *     filterType: _var.capture_filter_filter_type,
  *     state: _var.capture_filter_state,
  * });
  * ```
@@ -30,6 +31,7 @@ export function getCaptureFilters(args: GetCaptureFiltersArgs, opts?: pulumi.Inv
     return pulumi.runtime.invoke("oci:Core/getCaptureFilters:getCaptureFilters", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "filterType": args.filterType,
         "filters": args.filters,
         "state": args.state,
     }, opts);
@@ -47,6 +49,10 @@ export interface GetCaptureFiltersArgs {
      * A filter to return only resources that match the given display name exactly.
      */
     displayName?: string;
+    /**
+     * A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     */
+    filterType?: string;
     filters?: inputs.Core.GetCaptureFiltersFilter[];
     /**
      * A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
@@ -70,6 +76,10 @@ export interface GetCaptureFiltersResult {
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName?: string;
+    /**
+     * Indicates which service will use this capture filter
+     */
+    readonly filterType?: string;
     readonly filters?: outputs.Core.GetCaptureFiltersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -94,6 +104,7 @@ export interface GetCaptureFiltersResult {
  * const testCaptureFilters = oci.Core.getCaptureFilters({
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.capture_filter_display_name,
+ *     filterType: _var.capture_filter_filter_type,
  *     state: _var.capture_filter_state,
  * });
  * ```
@@ -114,6 +125,10 @@ export interface GetCaptureFiltersOutputArgs {
      * A filter to return only resources that match the given display name exactly.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     */
+    filterType?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCaptureFiltersFilterArgs>[]>;
     /**
      * A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.

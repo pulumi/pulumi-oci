@@ -12,6 +12,7 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
     /// 
+    /// **Deprecated.** Use [CreatePluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/CreatePluggableDatabase) for Pluggable Database RemoteClone Operation.
     /// Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
     /// For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
     /// 
@@ -113,6 +114,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PdbName { get; private set; } = null!;
 
         /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        [Output("pdbNodeLevelDetails")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasesRemoteClonePdbNodeLevelDetail>> PdbNodeLevelDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("pluggableDatabaseId")]
@@ -123,6 +130,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("pluggableDatabaseManagementConfigs")]
         public Output<ImmutableArray<Outputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>> PluggableDatabaseManagementConfigs { get; private set; } = null!;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        [Output("refreshableCloneConfigs")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasesRemoteCloneRefreshableCloneConfig>> RefreshableCloneConfigs { get; private set; } = null!;
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
@@ -394,6 +407,18 @@ namespace Pulumi.Oci.Database
         [Input("pdbName")]
         public Input<string>? PdbName { get; set; }
 
+        [Input("pdbNodeLevelDetails")]
+        private InputList<Inputs.PluggableDatabasesRemoteClonePdbNodeLevelDetailGetArgs>? _pdbNodeLevelDetails;
+
+        /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasesRemoteClonePdbNodeLevelDetailGetArgs> PdbNodeLevelDetails
+        {
+            get => _pdbNodeLevelDetails ?? (_pdbNodeLevelDetails = new InputList<Inputs.PluggableDatabasesRemoteClonePdbNodeLevelDetailGetArgs>());
+            set => _pdbNodeLevelDetails = value;
+        }
+
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -410,6 +435,18 @@ namespace Pulumi.Oci.Database
         {
             get => _pluggableDatabaseManagementConfigs ?? (_pluggableDatabaseManagementConfigs = new InputList<Inputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigGetArgs>());
             set => _pluggableDatabaseManagementConfigs = value;
+        }
+
+        [Input("refreshableCloneConfigs")]
+        private InputList<Inputs.PluggableDatabasesRemoteCloneRefreshableCloneConfigGetArgs>? _refreshableCloneConfigs;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasesRemoteCloneRefreshableCloneConfigGetArgs> RefreshableCloneConfigs
+        {
+            get => _refreshableCloneConfigs ?? (_refreshableCloneConfigs = new InputList<Inputs.PluggableDatabasesRemoteCloneRefreshableCloneConfigGetArgs>());
+            set => _refreshableCloneConfigs = value;
         }
 
         /// <summary>

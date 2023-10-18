@@ -12,7 +12,8 @@ namespace Pulumi.Oci.Ocvp
     public static class GetSupportedSkus
     {
         /// <summary>
-        /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.  
+        /// !&gt; **WARNING:** This data source is deprecated and will be removed, please use "oci_ocvp_supported_commitments" instead.
         /// 
         /// Lists supported SKUs.
         /// 
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.Ocvp
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedSkusResult>("oci:Ocvp/getSupportedSkus:getSupportedSkus", args ?? new GetSupportedSkusArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+        /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.  
+        /// !&gt; **WARNING:** This data source is deprecated and will be removed, please use "oci_ocvp_supported_commitments" instead.
         /// 
         /// Lists supported SKUs.
         /// 

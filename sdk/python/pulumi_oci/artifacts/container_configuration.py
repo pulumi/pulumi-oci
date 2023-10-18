@@ -30,7 +30,13 @@ class ContainerConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              is_repository_created_on_first_push: pulumi.Input[bool],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isRepositoryCreatedOnFirstPush' in kwargs:
+            is_repository_created_on_first_push = kwargs['isRepositoryCreatedOnFirstPush']
+
         _setter("compartment_id", compartment_id)
         _setter("is_repository_created_on_first_push", is_repository_created_on_first_push)
 
@@ -79,7 +85,13 @@ class _ContainerConfigurationState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              is_repository_created_on_first_push: Optional[pulumi.Input[bool]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isRepositoryCreatedOnFirstPush' in kwargs:
+            is_repository_created_on_first_push = kwargs['isRepositoryCreatedOnFirstPush']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if is_repository_created_on_first_push is not None:

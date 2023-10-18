@@ -365,7 +365,9 @@ class BuildPipelineBuildPipelineParameters(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.BuildPipelineBuildPipelineParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -417,7 +419,11 @@ class BuildPipelineBuildPipelineParametersItem(dict):
              default_value: str,
              name: str,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("default_value", default_value)
         _setter("name", name)
         if description is not None:
@@ -463,7 +469,9 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -490,7 +498,9 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollectionItem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -544,7 +554,13 @@ class BuildPipelineStageBuildRunnerShapeConfig(dict):
              build_runner_type: str,
              memory_in_gbs: Optional[int] = None,
              ocpus: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildRunnerType' in kwargs:
+            build_runner_type = kwargs['buildRunnerType']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("build_runner_type", build_runner_type)
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
@@ -591,7 +607,9 @@ class BuildPipelineStageBuildSourceCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildPipelineStageBuildSourceCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -662,7 +680,17 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
              name: Optional[str] = None,
              repository_id: Optional[str] = None,
              repository_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'connectionId' in kwargs:
+            connection_id = kwargs['connectionId']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("connection_type", connection_type)
         if branch is not None:
             _setter("branch", branch)
@@ -739,7 +767,9 @@ class BuildPipelineStageDeliverArtifactCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildPipelineStageDeliverArtifactCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -790,7 +820,13 @@ class BuildPipelineStageDeliverArtifactCollectionItem(dict):
              _setter: Callable[[Any, Any], None],
              artifact_id: Optional[str] = None,
              artifact_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'artifactName' in kwargs:
+            artifact_name = kwargs['artifactName']
+
         if artifact_id is not None:
             _setter("artifact_id", artifact_id)
         if artifact_name is not None:
@@ -857,7 +893,15 @@ class BuildPipelineStagePrivateAccessConfig(dict):
              network_channel_type: str,
              subnet_id: str,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("network_channel_type", network_channel_type)
         _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -930,7 +974,13 @@ class BuildPipelineStageWaitCriteria(dict):
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -1005,7 +1055,17 @@ class BuildRunBuildOutput(dict):
              delivered_artifacts: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifact']] = None,
              exported_variables: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariable']] = None,
              vulnerability_audit_summary_collections: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollection']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactOverrideParameters' in kwargs:
+            artifact_override_parameters = kwargs['artifactOverrideParameters']
+        if 'deliveredArtifacts' in kwargs:
+            delivered_artifacts = kwargs['deliveredArtifacts']
+        if 'exportedVariables' in kwargs:
+            exported_variables = kwargs['exportedVariables']
+        if 'vulnerabilityAuditSummaryCollections' in kwargs:
+            vulnerability_audit_summary_collections = kwargs['vulnerabilityAuditSummaryCollections']
+
         if artifact_override_parameters is not None:
             _setter("artifact_override_parameters", artifact_override_parameters)
         if delivered_artifacts is not None:
@@ -1063,7 +1123,9 @@ class BuildRunBuildOutputArtifactOverrideParameter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputArtifactOverrideParameterItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -1116,7 +1178,11 @@ class BuildRunBuildOutputArtifactOverrideParameterItem(dict):
              deploy_artifact_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+
         if deploy_artifact_id is not None:
             _setter("deploy_artifact_id", deploy_artifact_id)
         if name is not None:
@@ -1164,7 +1230,9 @@ class BuildRunBuildOutputDeliveredArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -1253,7 +1321,23 @@ class BuildRunBuildOutputDeliveredArtifactItem(dict):
              output_artifact_name: Optional[str] = None,
              path: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactRepositoryId' in kwargs:
+            artifact_repository_id = kwargs['artifactRepositoryId']
+        if 'artifactType' in kwargs:
+            artifact_type = kwargs['artifactType']
+        if 'deliveredArtifactHash' in kwargs:
+            delivered_artifact_hash = kwargs['deliveredArtifactHash']
+        if 'deliveredArtifactId' in kwargs:
+            delivered_artifact_id = kwargs['deliveredArtifactId']
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'imageUri' in kwargs:
+            image_uri = kwargs['imageUri']
+        if 'outputArtifactName' in kwargs:
+            output_artifact_name = kwargs['outputArtifactName']
+
         if artifact_repository_id is not None:
             _setter("artifact_repository_id", artifact_repository_id)
         if artifact_type is not None:
@@ -1361,7 +1445,9 @@ class BuildRunBuildOutputExportedVariable(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariableItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -1393,7 +1479,9 @@ class BuildRunBuildOutputExportedVariableItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1431,7 +1519,9 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -1488,7 +1578,15 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem(dict):
              build_stage_id: Optional[str] = None,
              commit_hash: Optional[str] = None,
              vulnerability_audit_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildStageId' in kwargs:
+            build_stage_id = kwargs['buildStageId']
+        if 'commitHash' in kwargs:
+            commit_hash = kwargs['commitHash']
+        if 'vulnerabilityAuditId' in kwargs:
+            vulnerability_audit_id = kwargs['vulnerabilityAuditId']
+
         if build_stage_id is not None:
             _setter("build_stage_id", build_stage_id)
         if commit_hash is not None:
@@ -1536,7 +1634,9 @@ class BuildRunBuildRunArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.BuildRunBuildRunArgumentsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1567,7 +1667,9 @@ class BuildRunBuildRunArgumentsItem(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -1632,7 +1734,15 @@ class BuildRunBuildRunProgress(dict):
              build_pipeline_stage_run_progress: Optional[Mapping[str, Any]] = None,
              time_finished: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineStageRunProgress' in kwargs:
+            build_pipeline_stage_run_progress = kwargs['buildPipelineStageRunProgress']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if build_pipeline_stage_run_progress is not None:
             _setter("build_pipeline_stage_run_progress", build_pipeline_stage_run_progress)
         if time_finished is not None:
@@ -1715,7 +1825,17 @@ class BuildRunBuildRunSource(dict):
              source_type: Optional[str] = None,
              trigger_id: Optional[str] = None,
              trigger_infos: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfo']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'triggerId' in kwargs:
+            trigger_id = kwargs['triggerId']
+        if 'triggerInfos' in kwargs:
+            trigger_infos = kwargs['triggerInfos']
+
         if repository_id is not None:
             _setter("repository_id", repository_id)
         if source_type is not None:
@@ -1794,7 +1914,11 @@ class BuildRunBuildRunSourceTriggerInfo(dict):
              _setter: Callable[[Any, Any], None],
              actions: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoAction']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if actions is not None:
             _setter("actions", actions)
         if display_name is not None:
@@ -1857,7 +1981,11 @@ class BuildRunBuildRunSourceTriggerInfoAction(dict):
              build_pipeline_id: Optional[str] = None,
              filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilter']] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         if build_pipeline_id is not None:
             _setter("build_pipeline_id", build_pipeline_id)
         if filters is not None:
@@ -1933,7 +2061,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
              excludes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExclude']] = None,
              includes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterInclude']] = None,
              trigger_source: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         if events is not None:
             _setter("events", events)
         if excludes is not None:
@@ -2002,7 +2134,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExclude(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+
         if file_filters is not None:
             _setter("file_filters", file_filters)
 
@@ -2041,7 +2177,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         if file_paths is not None:
             _setter("file_paths", file_paths)
 
@@ -2100,7 +2240,17 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
              file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter']] = None,
              head_ref: Optional[str] = None,
              repository_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+
         if base_ref is not None:
             _setter("base_ref", base_ref)
         if file_filters is not None:
@@ -2169,7 +2319,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         if file_paths is not None:
             _setter("file_paths", file_paths)
 
@@ -2223,7 +2377,15 @@ class BuildRunCommitInfo(dict):
              commit_hash: str,
              repository_branch: str,
              repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitHash' in kwargs:
+            commit_hash = kwargs['commitHash']
+        if 'repositoryBranch' in kwargs:
+            repository_branch = kwargs['repositoryBranch']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
         _setter("repository_url", repository_url)
@@ -2293,7 +2455,11 @@ class ConnectionLastConnectionValidationResult(dict):
              message: Optional[str] = None,
              result: Optional[str] = None,
              time_validated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeValidated' in kwargs:
+            time_validated = kwargs['timeValidated']
+
         if message is not None:
             _setter("message", message)
         if result is not None:
@@ -2364,7 +2530,13 @@ class ConnectionTlsVerifyConfig(dict):
              _setter: Callable[[Any, Any], None],
              ca_certificate_bundle_id: str,
              tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertificateBundleId' in kwargs:
+            ca_certificate_bundle_id = kwargs['caCertificateBundleId']
+        if 'tlsVerifyMode' in kwargs:
+            tls_verify_mode = kwargs['tlsVerifyMode']
+
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
 
@@ -2465,7 +2637,27 @@ class DeployArtifactDeployArtifactSource(dict):
              image_digest: Optional[str] = None,
              image_uri: Optional[str] = None,
              repository_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactSourceType' in kwargs:
+            deploy_artifact_source_type = kwargs['deployArtifactSourceType']
+        if 'base64encodedContent' in kwargs:
+            base64encoded_content = kwargs['base64encodedContent']
+        if 'chartUrl' in kwargs:
+            chart_url = kwargs['chartUrl']
+        if 'deployArtifactPath' in kwargs:
+            deploy_artifact_path = kwargs['deployArtifactPath']
+        if 'deployArtifactVersion' in kwargs:
+            deploy_artifact_version = kwargs['deployArtifactVersion']
+        if 'helmVerificationKeySource' in kwargs:
+            helm_verification_key_source = kwargs['helmVerificationKeySource']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'imageUri' in kwargs:
+            image_uri = kwargs['imageUri']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         _setter("deploy_artifact_source_type", deploy_artifact_source_type)
         if base64encoded_content is not None:
             _setter("base64encoded_content", base64encoded_content)
@@ -2607,7 +2799,17 @@ class DeployArtifactDeployArtifactSourceHelmVerificationKeySource(dict):
              current_public_key: Optional[str] = None,
              previous_public_key: Optional[str] = None,
              vault_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verificationKeySourceType' in kwargs:
+            verification_key_source_type = kwargs['verificationKeySourceType']
+        if 'currentPublicKey' in kwargs:
+            current_public_key = kwargs['currentPublicKey']
+        if 'previousPublicKey' in kwargs:
+            previous_public_key = kwargs['previousPublicKey']
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+
         _setter("verification_key_source_type", verification_key_source_type)
         if current_public_key is not None:
             _setter("current_public_key", current_public_key)
@@ -2664,7 +2866,9 @@ class DeployEnvironmentComputeInstanceGroupSelectors(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployEnvironmentComputeInstanceGroupSelectorsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -2723,7 +2927,13 @@ class DeployEnvironmentComputeInstanceGroupSelectorsItem(dict):
              compute_instance_ids: Optional[Sequence[str]] = None,
              query: Optional[str] = None,
              region: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'selectorType' in kwargs:
+            selector_type = kwargs['selectorType']
+        if 'computeInstanceIds' in kwargs:
+            compute_instance_ids = kwargs['computeInstanceIds']
+
         _setter("selector_type", selector_type)
         if compute_instance_ids is not None:
             _setter("compute_instance_ids", compute_instance_ids)
@@ -2809,7 +3019,15 @@ class DeployEnvironmentNetworkChannel(dict):
              network_channel_type: str,
              subnet_id: str,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("network_channel_type", network_channel_type)
         _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -2855,7 +3073,9 @@ class DeployPipelineDeployPipelineArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -2912,7 +3132,15 @@ class DeployPipelineDeployPipelineArtifactItem(dict):
              deploy_artifact_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_artifact_id is not None:
             _setter("deploy_artifact_id", deploy_artifact_id)
         if deploy_pipeline_stages is not None:
@@ -2960,7 +3188,9 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -3011,7 +3241,13 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_stage_id is not None:
             _setter("deploy_stage_id", deploy_stage_id)
         if display_name is not None:
@@ -3049,7 +3285,9 @@ class DeployPipelineDeployPipelineEnvironment(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -3106,7 +3344,15 @@ class DeployPipelineDeployPipelineEnvironmentItem(dict):
              deploy_environment_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_environment_id is not None:
             _setter("deploy_environment_id", deploy_environment_id)
         if deploy_pipeline_stages is not None:
@@ -3154,7 +3400,9 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -3205,7 +3453,13 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_stage_id is not None:
             _setter("deploy_stage_id", deploy_stage_id)
         if display_name is not None:
@@ -3243,7 +3497,9 @@ class DeployPipelineDeployPipelineParameters(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeployPipelineDeployPipelineParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3295,7 +3551,11 @@ class DeployPipelineDeployPipelineParametersItem(dict):
              name: str,
              default_value: Optional[str] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("name", name)
         if default_value is not None:
             _setter("default_value", default_value)
@@ -3365,7 +3625,13 @@ class DeployStageApprovalPolicy(dict):
              _setter: Callable[[Any, Any], None],
              approval_policy_type: str,
              number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalPolicyType' in kwargs:
+            approval_policy_type = kwargs['approvalPolicyType']
+        if 'numberOfApprovalsRequired' in kwargs:
+            number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
 
@@ -3401,7 +3667,9 @@ class DeployStageBlueBackendIps(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -3464,7 +3732,17 @@ class DeployStageBlueGreenStrategy(dict):
              namespace_a: str,
              namespace_b: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'namespaceA' in kwargs:
+            namespace_a = kwargs['namespaceA']
+        if 'namespaceB' in kwargs:
+            namespace_b = kwargs['namespaceB']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
         _setter("namespace_b", namespace_b)
@@ -3545,7 +3823,13 @@ class DeployStageCanaryStrategy(dict):
              ingress_name: str,
              namespace: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
         _setter("strategy_type", strategy_type)
@@ -3637,7 +3921,21 @@ class DeployStageContainerConfig(dict):
              shape_name: str,
              availability_domain: Optional[str] = None,
              compartment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'containerConfigType' in kwargs:
+            container_config_type = kwargs['containerConfigType']
+        if 'networkChannel' in kwargs:
+            network_channel = kwargs['networkChannel']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("container_config_type", container_config_type)
         _setter("network_channel", network_channel)
         _setter("shape_config", shape_config)
@@ -3740,7 +4038,15 @@ class DeployStageContainerConfigNetworkChannel(dict):
              network_channel_type: str,
              subnet_id: str,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("network_channel_type", network_channel_type)
         _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -3807,7 +4113,11 @@ class DeployStageContainerConfigShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              ocpus: float,
              memory_in_gbs: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("ocpus", ocpus)
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
@@ -3844,7 +4154,9 @@ class DeployStageDeployStagePredecessorCollection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3871,7 +4183,9 @@ class DeployStageDeployStagePredecessorCollectionItem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -3927,7 +4241,15 @@ class DeployStageFailurePolicy(dict):
              policy_type: str,
              failure_count: Optional[int] = None,
              failure_percentage: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'failureCount' in kwargs:
+            failure_count = kwargs['failureCount']
+        if 'failurePercentage' in kwargs:
+            failure_percentage = kwargs['failurePercentage']
+
         _setter("policy_type", policy_type)
         if failure_count is not None:
             _setter("failure_count", failure_count)
@@ -3974,7 +4296,9 @@ class DeployStageGreenBackendIps(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4035,7 +4359,15 @@ class DeployStageLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if backend_port is not None:
             _setter("backend_port", backend_port)
         if listener_name is not None:
@@ -4126,7 +4458,15 @@ class DeployStageProductionLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if backend_port is not None:
             _setter("backend_port", backend_port)
         if listener_name is not None:
@@ -4201,7 +4541,11 @@ class DeployStageRollbackPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              policy_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         if policy_type is not None:
             _setter("policy_type", policy_type)
 
@@ -4270,7 +4614,19 @@ class DeployStageRolloutPolicy(dict):
              batch_percentage: Optional[int] = None,
              policy_type: Optional[str] = None,
              ramp_limit_percent: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchCount' in kwargs:
+            batch_count = kwargs['batchCount']
+        if 'batchDelayInSeconds' in kwargs:
+            batch_delay_in_seconds = kwargs['batchDelayInSeconds']
+        if 'batchPercentage' in kwargs:
+            batch_percentage = kwargs['batchPercentage']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'rampLimitPercent' in kwargs:
+            ramp_limit_percent = kwargs['rampLimitPercent']
+
         if batch_count is not None:
             _setter("batch_count", batch_count)
         if batch_delay_in_seconds is not None:
@@ -4338,7 +4694,9 @@ class DeployStageSetString(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployStageSetStringItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4370,7 +4728,9 @@ class DeployStageSetStringItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -4408,7 +4768,9 @@ class DeployStageSetValues(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeployStageSetValuesItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4440,7 +4802,9 @@ class DeployStageSetValuesItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -4511,7 +4875,15 @@ class DeployStageTestLoadBalancerConfig(dict):
              listener_name: Optional[str] = None,
              load_balancer_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if backend_port is not None:
             _setter("backend_port", backend_port)
         if listener_name is not None:
@@ -4596,7 +4968,13 @@ class DeployStageWaitCriteria(dict):
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -4636,7 +5014,9 @@ class DeploymentDeployArtifactOverrideArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployArtifactOverrideArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4690,7 +5070,11 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
              deploy_artifact_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+
         if deploy_artifact_id is not None:
             _setter("deploy_artifact_id", deploy_artifact_id)
         if name is not None:
@@ -4739,7 +5123,9 @@ class DeploymentDeployPipelineArtifact(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4796,7 +5182,15 @@ class DeploymentDeployPipelineArtifactItem(dict):
              deploy_artifact_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_artifact_id is not None:
             _setter("deploy_artifact_id", deploy_artifact_id)
         if deploy_pipeline_stages is not None:
@@ -4844,7 +5238,9 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4895,7 +5291,13 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_stage_id is not None:
             _setter("deploy_stage_id", deploy_stage_id)
         if display_name is not None:
@@ -4933,7 +5335,9 @@ class DeploymentDeployPipelineEnvironment(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4990,7 +5394,15 @@ class DeploymentDeployPipelineEnvironmentItem(dict):
              deploy_environment_id: Optional[str] = None,
              deploy_pipeline_stages: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStage']] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_environment_id is not None:
             _setter("deploy_environment_id", deploy_environment_id)
         if deploy_pipeline_stages is not None:
@@ -5038,7 +5450,9 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -5089,7 +5503,13 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: Optional[str] = None,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if deploy_stage_id is not None:
             _setter("deploy_stage_id", deploy_stage_id)
         if display_name is not None:
@@ -5127,7 +5547,9 @@ class DeploymentDeployStageOverrideArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -5181,7 +5603,11 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
              deploy_stage_id: Optional[str] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+
         if deploy_stage_id is not None:
             _setter("deploy_stage_id", deploy_stage_id)
         if name is not None:
@@ -5230,7 +5656,9 @@ class DeploymentDeploymentArguments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentDeploymentArgumentsItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -5263,7 +5691,9 @@ class DeploymentDeploymentArgumentsItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -5331,7 +5761,15 @@ class DeploymentDeploymentExecutionProgress(dict):
              deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
              time_finished: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageExecutionProgress' in kwargs:
+            deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if deploy_stage_execution_progress is not None:
             _setter("deploy_stage_execution_progress", deploy_stage_execution_progress)
         if time_finished is not None:
@@ -5400,7 +5838,11 @@ class ProjectNotificationConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("topic_id", topic_id)
 
     @property
@@ -5460,7 +5902,15 @@ class RepositoryMirrorRepositoryConfig(dict):
              connector_id: Optional[str] = None,
              repository_url: Optional[str] = None,
              trigger_schedule: Optional['outputs.RepositoryMirrorRepositoryConfigTriggerSchedule'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if 'triggerSchedule' in kwargs:
+            trigger_schedule = kwargs['triggerSchedule']
+
         if connector_id is not None:
             _setter("connector_id", connector_id)
         if repository_url is not None:
@@ -5531,7 +5981,13 @@ class RepositoryMirrorRepositoryConfigTriggerSchedule(dict):
              _setter: Callable[[Any, Any], None],
              schedule_type: str,
              custom_schedule: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scheduleType' in kwargs:
+            schedule_type = kwargs['scheduleType']
+        if 'customSchedule' in kwargs:
+            custom_schedule = kwargs['customSchedule']
+
         _setter("schedule_type", schedule_type)
         if custom_schedule is not None:
             _setter("custom_schedule", custom_schedule)
@@ -5593,7 +6049,11 @@ class TriggerAction(dict):
              build_pipeline_id: str,
              type: str,
              filter: Optional['outputs.TriggerActionFilter'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("type", type)
         if filter is not None:
@@ -5672,7 +6132,11 @@ class TriggerActionFilter(dict):
              events: Optional[Sequence[str]] = None,
              exclude: Optional['outputs.TriggerActionFilterExclude'] = None,
              include: Optional['outputs.TriggerActionFilterInclude'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         _setter("trigger_source", trigger_source)
         if events is not None:
             _setter("events", events)
@@ -5750,7 +6214,11 @@ class TriggerActionFilterExclude(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filter: Optional['outputs.TriggerActionFilterExcludeFileFilter'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileFilter' in kwargs:
+            file_filter = kwargs['fileFilter']
+
         if file_filter is not None:
             _setter("file_filter", file_filter)
 
@@ -5795,7 +6263,11 @@ class TriggerActionFilterExcludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         if file_paths is not None:
             _setter("file_paths", file_paths)
 
@@ -5858,7 +6330,17 @@ class TriggerActionFilterInclude(dict):
              file_filter: Optional['outputs.TriggerActionFilterIncludeFileFilter'] = None,
              head_ref: Optional[str] = None,
              repository_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'fileFilter' in kwargs:
+            file_filter = kwargs['fileFilter']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+
         if base_ref is not None:
             _setter("base_ref", base_ref)
         if file_filter is not None:
@@ -5933,7 +6415,11 @@ class TriggerActionFilterIncludeFileFilter(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         if file_paths is not None:
             _setter("file_paths", file_paths)
 
@@ -5961,7 +6447,9 @@ class GetBuildPipelineBuildPipelineParameterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineBuildPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5996,7 +6484,11 @@ class GetBuildPipelineBuildPipelineParameterItemResult(dict):
              default_value: str,
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("default_value", default_value)
         _setter("description", description)
         _setter("name", name)
@@ -6041,7 +6533,9 @@ class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6068,7 +6562,9 @@ class GetBuildPipelineStageBuildPipelineStagePredecessorCollectionItemResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -6103,7 +6599,13 @@ class GetBuildPipelineStageBuildRunnerShapeConfigResult(dict):
              build_runner_type: str,
              memory_in_gbs: int,
              ocpus: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildRunnerType' in kwargs:
+            build_runner_type = kwargs['buildRunnerType']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("build_runner_type", build_runner_type)
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -6148,7 +6650,9 @@ class GetBuildPipelineStageBuildSourceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6195,7 +6699,17 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
              name: str,
              repository_id: str,
              repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionId' in kwargs:
+            connection_id = kwargs['connectionId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("branch", branch)
         _setter("connection_id", connection_id)
         _setter("connection_type", connection_type)
@@ -6267,7 +6781,9 @@ class GetBuildPipelineStageDeliverArtifactCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStageDeliverArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6298,7 +6814,13 @@ class GetBuildPipelineStageDeliverArtifactCollectionItemResult(dict):
              _setter: Callable[[Any, Any], None],
              artifact_id: str,
              artifact_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'artifactName' in kwargs:
+            artifact_name = kwargs['artifactName']
+
         _setter("artifact_id", artifact_id)
         _setter("artifact_name", artifact_name)
 
@@ -6342,7 +6864,15 @@ class GetBuildPipelineStagePrivateAccessConfigResult(dict):
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -6391,7 +6921,13 @@ class GetBuildPipelineStageWaitCriteriaResult(dict):
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -6427,7 +6963,9 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6558,7 +7096,55 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              wait_criteria: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildPipelineStagePredecessorCollections' in kwargs:
+            build_pipeline_stage_predecessor_collections = kwargs['buildPipelineStagePredecessorCollections']
+        if 'buildPipelineStageType' in kwargs:
+            build_pipeline_stage_type = kwargs['buildPipelineStageType']
+        if 'buildRunnerShapeConfig' in kwargs:
+            build_runner_shape_config = kwargs['buildRunnerShapeConfig']
+        if 'buildSourceCollection' in kwargs:
+            build_source_collection = kwargs['buildSourceCollection']
+        if 'buildSpecFile' in kwargs:
+            build_spec_file = kwargs['buildSpecFile']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deliverArtifactCollection' in kwargs:
+            deliver_artifact_collection = kwargs['deliverArtifactCollection']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPassAllParametersEnabled' in kwargs:
+            is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'primaryBuildSource' in kwargs:
+            primary_build_source = kwargs['primaryBuildSource']
+        if 'privateAccessConfig' in kwargs:
+            private_access_config = kwargs['privateAccessConfig']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'stageExecutionTimeoutInSeconds' in kwargs:
+            stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'waitCriteria' in kwargs:
+            wait_criteria = kwargs['waitCriteria']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("build_pipeline_stage_predecessor_collections", build_pipeline_stage_predecessor_collections)
         _setter("build_pipeline_stage_type", build_pipeline_stage_type)
@@ -6819,7 +7405,9 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePr
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6846,7 +7434,9 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePr
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -6881,7 +7471,13 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConf
              build_runner_type: str,
              memory_in_gbs: int,
              ocpus: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildRunnerType' in kwargs:
+            build_runner_type = kwargs['buildRunnerType']
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("build_runner_type", build_runner_type)
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
@@ -6926,7 +7522,9 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6973,7 +7571,17 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
              name: str,
              repository_id: str,
              repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionId' in kwargs:
+            connection_id = kwargs['connectionId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("branch", branch)
         _setter("connection_id", connection_id)
         _setter("connection_type", connection_type)
@@ -7045,7 +7653,9 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactColle
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7076,7 +7686,13 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactColle
              _setter: Callable[[Any, Any], None],
              artifact_id: str,
              artifact_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'artifactName' in kwargs:
+            artifact_name = kwargs['artifactName']
+
         _setter("artifact_id", artifact_id)
         _setter("artifact_name", artifact_name)
 
@@ -7120,7 +7736,15 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfigR
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -7169,7 +7793,13 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult(d
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -7211,7 +7841,9 @@ class GetBuildPipelineStagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7251,7 +7883,9 @@ class GetBuildPipelinesBuildPipelineCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7326,7 +7960,29 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineParameters' in kwargs:
+            build_pipeline_parameters = kwargs['buildPipelineParameters']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("build_pipeline_parameters", build_pipeline_parameters)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -7461,7 +8117,9 @@ class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7496,7 +8154,11 @@ class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItemResu
              default_value: str,
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("default_value", default_value)
         _setter("description", description)
         _setter("name", name)
@@ -7547,7 +8209,9 @@ class GetBuildPipelinesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7599,7 +8263,17 @@ class GetBuildRunBuildOutputResult(dict):
              delivered_artifacts: Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactResult'],
              exported_variables: Sequence['outputs.GetBuildRunBuildOutputExportedVariableResult'],
              vulnerability_audit_summary_collections: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactOverrideParameters' in kwargs:
+            artifact_override_parameters = kwargs['artifactOverrideParameters']
+        if 'deliveredArtifacts' in kwargs:
+            delivered_artifacts = kwargs['deliveredArtifacts']
+        if 'exportedVariables' in kwargs:
+            exported_variables = kwargs['exportedVariables']
+        if 'vulnerabilityAuditSummaryCollections' in kwargs:
+            vulnerability_audit_summary_collections = kwargs['vulnerabilityAuditSummaryCollections']
+
         _setter("artifact_override_parameters", artifact_override_parameters)
         _setter("delivered_artifacts", delivered_artifacts)
         _setter("exported_variables", exported_variables)
@@ -7653,7 +8327,9 @@ class GetBuildRunBuildOutputArtifactOverrideParameterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7688,7 +8364,11 @@ class GetBuildRunBuildOutputArtifactOverrideParameterItemResult(dict):
              deploy_artifact_id: str,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
         _setter("value", value)
@@ -7733,7 +8413,9 @@ class GetBuildRunBuildOutputDeliveredArtifactResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7792,7 +8474,23 @@ class GetBuildRunBuildOutputDeliveredArtifactItemResult(dict):
              output_artifact_name: str,
              path: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactRepositoryId' in kwargs:
+            artifact_repository_id = kwargs['artifactRepositoryId']
+        if 'artifactType' in kwargs:
+            artifact_type = kwargs['artifactType']
+        if 'deliveredArtifactHash' in kwargs:
+            delivered_artifact_hash = kwargs['deliveredArtifactHash']
+        if 'deliveredArtifactId' in kwargs:
+            delivered_artifact_id = kwargs['deliveredArtifactId']
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'imageUri' in kwargs:
+            image_uri = kwargs['imageUri']
+        if 'outputArtifactName' in kwargs:
+            output_artifact_name = kwargs['outputArtifactName']
+
         _setter("artifact_repository_id", artifact_repository_id)
         _setter("artifact_type", artifact_type)
         _setter("delivered_artifact_hash", delivered_artifact_hash)
@@ -7891,7 +8589,9 @@ class GetBuildRunBuildOutputExportedVariableResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunBuildOutputExportedVariableItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7922,7 +8622,9 @@ class GetBuildRunBuildOutputExportedVariableItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -7958,7 +8660,9 @@ class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7993,7 +8697,15 @@ class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult(dict):
              build_stage_id: str,
              commit_hash: str,
              vulnerability_audit_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildStageId' in kwargs:
+            build_stage_id = kwargs['buildStageId']
+        if 'commitHash' in kwargs:
+            commit_hash = kwargs['commitHash']
+        if 'vulnerabilityAuditId' in kwargs:
+            vulnerability_audit_id = kwargs['vulnerabilityAuditId']
+
         _setter("build_stage_id", build_stage_id)
         _setter("commit_hash", commit_hash)
         _setter("vulnerability_audit_id", vulnerability_audit_id)
@@ -8038,7 +8750,9 @@ class GetBuildRunBuildRunArgumentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunBuildRunArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8069,7 +8783,9 @@ class GetBuildRunBuildRunArgumentItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -8113,7 +8829,15 @@ class GetBuildRunBuildRunProgressResult(dict):
              build_pipeline_stage_run_progress: Mapping[str, Any],
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineStageRunProgress' in kwargs:
+            build_pipeline_stage_run_progress = kwargs['buildPipelineStageRunProgress']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("build_pipeline_stage_run_progress", build_pipeline_stage_run_progress)
         _setter("time_finished", time_finished)
         _setter("time_started", time_started)
@@ -8170,7 +8894,17 @@ class GetBuildRunBuildRunSourceResult(dict):
              source_type: str,
              trigger_id: str,
              trigger_infos: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'triggerId' in kwargs:
+            trigger_id = kwargs['triggerId']
+        if 'triggerInfos' in kwargs:
+            trigger_infos = kwargs['triggerInfos']
+
         _setter("repository_id", repository_id)
         _setter("source_type", source_type)
         _setter("trigger_id", trigger_id)
@@ -8228,7 +8962,11 @@ class GetBuildRunBuildRunSourceTriggerInfoResult(dict):
              _setter: Callable[[Any, Any], None],
              actions: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("actions", actions)
         _setter("display_name", display_name)
 
@@ -8272,7 +9010,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionResult(dict):
              build_pipeline_id: str,
              filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
         _setter("type", type)
@@ -8328,7 +9070,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
              excludes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult'],
              includes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult'],
              trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         _setter("events", events)
         _setter("excludes", excludes)
         _setter("includes", includes)
@@ -8376,7 +9122,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+
         _setter("file_filters", file_filters)
 
     @property
@@ -8397,7 +9147,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property
@@ -8432,7 +9186,17 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
              file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult'],
              head_ref: str,
              repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
         _setter("head_ref", head_ref)
@@ -8480,7 +9244,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property
@@ -8512,7 +9280,15 @@ class GetBuildRunCommitInfoResult(dict):
              commit_hash: str,
              repository_branch: str,
              repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitHash' in kwargs:
+            commit_hash = kwargs['commitHash']
+        if 'repositoryBranch' in kwargs:
+            repository_branch = kwargs['repositoryBranch']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
         _setter("repository_url", repository_url)
@@ -8557,7 +9333,9 @@ class GetBuildRunsBuildRunSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8643,7 +9421,37 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildRunArguments' in kwargs:
+            build_run_arguments = kwargs['buildRunArguments']
+        if 'buildRunProgressSummaries' in kwargs:
+            build_run_progress_summaries = kwargs['buildRunProgressSummaries']
+        if 'buildRunSources' in kwargs:
+            build_run_sources = kwargs['buildRunSources']
+        if 'commitInfo' in kwargs:
+            commit_info = kwargs['commitInfo']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("build_run_arguments", build_run_arguments)
         _setter("build_run_progress_summaries", build_run_progress_summaries)
@@ -8802,7 +9610,9 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8833,7 +9643,9 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItemResult(dict)
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -8873,7 +9685,13 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummaryResult(dic
              _setter: Callable[[Any, Any], None],
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("time_finished", time_finished)
         _setter("time_started", time_started)
 
@@ -8917,7 +9735,15 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult(dict):
              repository_id: str,
              source_type: str,
              trigger_infos: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'triggerInfos' in kwargs:
+            trigger_infos = kwargs['triggerInfos']
+
         _setter("repository_id", repository_id)
         _setter("source_type", source_type)
         _setter("trigger_infos", trigger_infos)
@@ -8970,7 +9796,13 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoResult(d
              actions: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionResult'],
              display_name: str,
              trigger_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'triggerId' in kwargs:
+            trigger_id = kwargs['triggerId']
+
         _setter("actions", actions)
         _setter("display_name", display_name)
         _setter("trigger_id", trigger_id)
@@ -9023,7 +9855,11 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionRe
              build_pipeline_id: str,
              filters: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
         _setter("type", type)
@@ -9076,7 +9912,11 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
              events: Sequence[str],
              includes: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterIncludeResult'],
              trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         _setter("events", events)
         _setter("includes", includes)
         _setter("trigger_source", trigger_source)
@@ -9125,7 +9965,13 @@ class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFi
              _setter: Callable[[Any, Any], None],
              base_ref: str,
              head_ref: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+
         _setter("base_ref", base_ref)
         _setter("head_ref", head_ref)
 
@@ -9169,7 +10015,15 @@ class GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult(dict):
              commit_hash: str,
              repository_branch: str,
              repository_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitHash' in kwargs:
+            commit_hash = kwargs['commitHash']
+        if 'repositoryBranch' in kwargs:
+            repository_branch = kwargs['repositoryBranch']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
         _setter("commit_hash", commit_hash)
         _setter("repository_branch", repository_branch)
         _setter("repository_url", repository_url)
@@ -9220,7 +10074,9 @@ class GetBuildRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9268,7 +10124,11 @@ class GetConnectionLastConnectionValidationResultResult(dict):
              message: str,
              result: str,
              time_validated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeValidated' in kwargs:
+            time_validated = kwargs['timeValidated']
+
         _setter("message", message)
         _setter("result", result)
         _setter("time_validated", time_validated)
@@ -9317,7 +10177,13 @@ class GetConnectionTlsVerifyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              ca_certificate_bundle_id: str,
              tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertificateBundleId' in kwargs:
+            ca_certificate_bundle_id = kwargs['caCertificateBundleId']
+        if 'tlsVerifyMode' in kwargs:
+            tls_verify_mode = kwargs['tlsVerifyMode']
+
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
 
@@ -9350,7 +10216,9 @@ class GetConnectionsConnectionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -9442,7 +10310,37 @@ class GetConnectionsConnectionCollectionItemResult(dict):
              time_updated: str,
              tls_verify_configs: Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult'],
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessToken' in kwargs:
+            access_token = kwargs['accessToken']
+        if 'appPassword' in kwargs:
+            app_password = kwargs['appPassword']
+        if 'baseUrl' in kwargs:
+            base_url = kwargs['baseUrl']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastConnectionValidationResults' in kwargs:
+            last_connection_validation_results = kwargs['lastConnectionValidationResults']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'tlsVerifyConfigs' in kwargs:
+            tls_verify_configs = kwargs['tlsVerifyConfigs']
+
         _setter("access_token", access_token)
         _setter("app_password", app_password)
         _setter("base_url", base_url)
@@ -9630,7 +10528,11 @@ class GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult
              message: str,
              result: str,
              time_validated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeValidated' in kwargs:
+            time_validated = kwargs['timeValidated']
+
         _setter("message", message)
         _setter("result", result)
         _setter("time_validated", time_validated)
@@ -9679,7 +10581,13 @@ class GetConnectionsConnectionCollectionItemTlsVerifyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              ca_certificate_bundle_id: str,
              tls_verify_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertificateBundleId' in kwargs:
+            ca_certificate_bundle_id = kwargs['caCertificateBundleId']
+        if 'tlsVerifyMode' in kwargs:
+            tls_verify_mode = kwargs['tlsVerifyMode']
+
         _setter("ca_certificate_bundle_id", ca_certificate_bundle_id)
         _setter("tls_verify_mode", tls_verify_mode)
 
@@ -9718,7 +10626,9 @@ class GetConnectionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9787,7 +10697,27 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
              image_digest: str,
              image_uri: str,
              repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'base64encodedContent' in kwargs:
+            base64encoded_content = kwargs['base64encodedContent']
+        if 'chartUrl' in kwargs:
+            chart_url = kwargs['chartUrl']
+        if 'deployArtifactPath' in kwargs:
+            deploy_artifact_path = kwargs['deployArtifactPath']
+        if 'deployArtifactSourceType' in kwargs:
+            deploy_artifact_source_type = kwargs['deployArtifactSourceType']
+        if 'deployArtifactVersion' in kwargs:
+            deploy_artifact_version = kwargs['deployArtifactVersion']
+        if 'helmVerificationKeySources' in kwargs:
+            helm_verification_key_sources = kwargs['helmVerificationKeySources']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'imageUri' in kwargs:
+            image_uri = kwargs['imageUri']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         _setter("base64encoded_content", base64encoded_content)
         _setter("chart_url", chart_url)
         _setter("deploy_artifact_path", deploy_artifact_path)
@@ -9898,7 +10828,17 @@ class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceResult(dict)
              previous_public_key: str,
              vault_secret_id: str,
              verification_key_source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentPublicKey' in kwargs:
+            current_public_key = kwargs['currentPublicKey']
+        if 'previousPublicKey' in kwargs:
+            previous_public_key = kwargs['previousPublicKey']
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'verificationKeySourceType' in kwargs:
+            verification_key_source_type = kwargs['verificationKeySourceType']
+
         _setter("current_public_key", current_public_key)
         _setter("previous_public_key", previous_public_key)
         _setter("vault_secret_id", vault_secret_id)
@@ -9949,7 +10889,9 @@ class GetDeployArtifactsDeployArtifactCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10029,7 +10971,33 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'argumentSubstitutionMode' in kwargs:
+            argument_substitution_mode = kwargs['argumentSubstitutionMode']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactSources' in kwargs:
+            deploy_artifact_sources = kwargs['deployArtifactSources']
+        if 'deployArtifactType' in kwargs:
+            deploy_artifact_type = kwargs['deployArtifactType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("argument_substitution_mode", argument_substitution_mode)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -10214,7 +11182,27 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
              image_digest: str,
              image_uri: str,
              repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'base64encodedContent' in kwargs:
+            base64encoded_content = kwargs['base64encodedContent']
+        if 'chartUrl' in kwargs:
+            chart_url = kwargs['chartUrl']
+        if 'deployArtifactPath' in kwargs:
+            deploy_artifact_path = kwargs['deployArtifactPath']
+        if 'deployArtifactSourceType' in kwargs:
+            deploy_artifact_source_type = kwargs['deployArtifactSourceType']
+        if 'deployArtifactVersion' in kwargs:
+            deploy_artifact_version = kwargs['deployArtifactVersion']
+        if 'helmVerificationKeySources' in kwargs:
+            helm_verification_key_sources = kwargs['helmVerificationKeySources']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'imageUri' in kwargs:
+            image_uri = kwargs['imageUri']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         _setter("base64encoded_content", base64encoded_content)
         _setter("chart_url", chart_url)
         _setter("deploy_artifact_path", deploy_artifact_path)
@@ -10325,7 +11313,17 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVeri
              previous_public_key: str,
              vault_secret_id: str,
              verification_key_source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentPublicKey' in kwargs:
+            current_public_key = kwargs['currentPublicKey']
+        if 'previousPublicKey' in kwargs:
+            previous_public_key = kwargs['previousPublicKey']
+        if 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if 'verificationKeySourceType' in kwargs:
+            verification_key_source_type = kwargs['verificationKeySourceType']
+
         _setter("current_public_key", current_public_key)
         _setter("previous_public_key", previous_public_key)
         _setter("vault_secret_id", vault_secret_id)
@@ -10382,7 +11380,9 @@ class GetDeployArtifactsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -10419,7 +11419,9 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployEnvironmentComputeInstanceGroupSelectorItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10458,7 +11460,13 @@ class GetDeployEnvironmentComputeInstanceGroupSelectorItemResult(dict):
              query: str,
              region: str,
              selector_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'computeInstanceIds' in kwargs:
+            compute_instance_ids = kwargs['computeInstanceIds']
+        if 'selectorType' in kwargs:
+            selector_type = kwargs['selectorType']
+
         _setter("compute_instance_ids", compute_instance_ids)
         _setter("query", query)
         _setter("region", region)
@@ -10520,7 +11528,15 @@ class GetDeployEnvironmentNetworkChannelResult(dict):
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -10565,7 +11581,9 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10656,7 +11674,37 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeInstanceGroupSelectors' in kwargs:
+            compute_instance_group_selectors = kwargs['computeInstanceGroupSelectors']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployEnvironmentType' in kwargs:
+            deploy_environment_type = kwargs['deployEnvironmentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkChannels' in kwargs:
+            network_channels = kwargs['networkChannels']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
         _setter("compute_instance_group_selectors", compute_instance_group_selectors)
@@ -10827,7 +11875,9 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10866,7 +11916,13 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSe
              query: str,
              region: str,
              selector_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'computeInstanceIds' in kwargs:
+            compute_instance_ids = kwargs['computeInstanceIds']
+        if 'selectorType' in kwargs:
+            selector_type = kwargs['selectorType']
+
         _setter("compute_instance_ids", compute_instance_ids)
         _setter("query", query)
         _setter("region", region)
@@ -10928,7 +11984,15 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult(d
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -10976,7 +12040,9 @@ class GetDeployEnvironmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11013,7 +12079,9 @@ class GetDeployPipelineDeployPipelineArtifactResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11048,7 +12116,15 @@ class GetDeployPipelineDeployPipelineArtifactItemResult(dict):
              deploy_artifact_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -11093,7 +12169,9 @@ class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11124,7 +12202,13 @@ class GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemResult(d
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -11160,7 +12244,9 @@ class GetDeployPipelineDeployPipelineEnvironmentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11195,7 +12281,15 @@ class GetDeployPipelineDeployPipelineEnvironmentItemResult(dict):
              deploy_environment_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -11240,7 +12334,9 @@ class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11271,7 +12367,13 @@ class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemResul
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -11307,7 +12409,9 @@ class GetDeployPipelineDeployPipelineParameterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelineDeployPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11342,7 +12446,11 @@ class GetDeployPipelineDeployPipelineParameterItemResult(dict):
              default_value: str,
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("default_value", default_value)
         _setter("description", description)
         _setter("name", name)
@@ -11387,7 +12495,9 @@ class GetDeployPipelinesDeployPipelineCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11470,7 +12580,33 @@ class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployPipelineArtifacts' in kwargs:
+            deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
+        if 'deployPipelineEnvironments' in kwargs:
+            deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
+        if 'deployPipelineParameters' in kwargs:
+            deploy_pipeline_parameters = kwargs['deployPipelineParameters']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("deploy_pipeline_artifacts", deploy_pipeline_artifacts)
@@ -11623,7 +12759,9 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactResult
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11658,7 +12796,15 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemRe
              deploy_artifact_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -11703,7 +12849,9 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11734,7 +12882,13 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDe
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -11770,7 +12924,9 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentRes
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11805,7 +12961,15 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
              deploy_environment_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -11850,7 +13014,9 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11881,7 +13047,13 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentIte
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -11917,7 +13089,9 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11952,7 +13126,11 @@ class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItemR
              default_value: str,
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("default_value", default_value)
         _setter("description", description)
         _setter("name", name)
@@ -12003,7 +13181,9 @@ class GetDeployPipelinesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -12047,7 +13227,13 @@ class GetDeployStageApprovalPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              approval_policy_type: str,
              number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalPolicyType' in kwargs:
+            approval_policy_type = kwargs['approvalPolicyType']
+        if 'numberOfApprovalsRequired' in kwargs:
+            number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
 
@@ -12083,7 +13269,9 @@ class GetDeployStageBlueBackendIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12122,7 +13310,17 @@ class GetDeployStageBlueGreenStrategyResult(dict):
              namespace_a: str,
              namespace_b: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'namespaceA' in kwargs:
+            namespace_a = kwargs['namespaceA']
+        if 'namespaceB' in kwargs:
+            namespace_b = kwargs['namespaceB']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
         _setter("namespace_b", namespace_b)
@@ -12184,7 +13382,13 @@ class GetDeployStageCanaryStrategyResult(dict):
              ingress_name: str,
              namespace: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
         _setter("strategy_type", strategy_type)
@@ -12249,7 +13453,21 @@ class GetDeployStageContainerConfigResult(dict):
              network_channels: Sequence['outputs.GetDeployStageContainerConfigNetworkChannelResult'],
              shape_configs: Sequence['outputs.GetDeployStageContainerConfigShapeConfigResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerConfigType' in kwargs:
+            container_config_type = kwargs['containerConfigType']
+        if 'networkChannels' in kwargs:
+            network_channels = kwargs['networkChannels']
+        if 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("container_config_type", container_config_type)
@@ -12329,7 +13547,15 @@ class GetDeployStageContainerConfigNetworkChannelResult(dict):
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -12378,7 +13604,11 @@ class GetDeployStageContainerConfigShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -12414,7 +13644,9 @@ class GetDeployStageDeployStagePredecessorCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStageDeployStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12441,7 +13673,9 @@ class GetDeployStageDeployStagePredecessorCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -12476,7 +13710,15 @@ class GetDeployStageFailurePolicyResult(dict):
              failure_count: int,
              failure_percentage: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureCount' in kwargs:
+            failure_count = kwargs['failureCount']
+        if 'failurePercentage' in kwargs:
+            failure_percentage = kwargs['failurePercentage']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("failure_count", failure_count)
         _setter("failure_percentage", failure_percentage)
         _setter("policy_type", policy_type)
@@ -12521,7 +13763,9 @@ class GetDeployStageGreenBackendIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12560,7 +13804,15 @@ class GetDeployStageLoadBalancerConfigResult(dict):
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -12626,7 +13878,15 @@ class GetDeployStageProductionLoadBalancerConfigResult(dict):
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -12680,7 +13940,11 @@ class GetDeployStageRollbackPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("policy_type", policy_type)
 
     @property
@@ -12723,7 +13987,19 @@ class GetDeployStageRolloutPolicyResult(dict):
              batch_percentage: int,
              policy_type: str,
              ramp_limit_percent: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchCount' in kwargs:
+            batch_count = kwargs['batchCount']
+        if 'batchDelayInSeconds' in kwargs:
+            batch_delay_in_seconds = kwargs['batchDelayInSeconds']
+        if 'batchPercentage' in kwargs:
+            batch_percentage = kwargs['batchPercentage']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'rampLimitPercent' in kwargs:
+            ramp_limit_percent = kwargs['rampLimitPercent']
+
         _setter("batch_count", batch_count)
         _setter("batch_delay_in_seconds", batch_delay_in_seconds)
         _setter("batch_percentage", batch_percentage)
@@ -12786,7 +14062,9 @@ class GetDeployStageSetStringResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStageSetStringItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12817,7 +14095,9 @@ class GetDeployStageSetStringItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -12853,7 +14133,9 @@ class GetDeployStageSetValueResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStageSetValueItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12884,7 +14166,9 @@ class GetDeployStageSetValueItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -12932,7 +14216,15 @@ class GetDeployStageTestLoadBalancerConfigResult(dict):
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -12990,7 +14282,13 @@ class GetDeployStageWaitCriteriaResult(dict):
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -13026,7 +14324,9 @@ class GetDeployStagesDeployStageCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13321,7 +14621,135 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
              traffic_shift_target: str,
              values_artifact_ids: Sequence[str],
              wait_criterias: Sequence['outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalPolicies' in kwargs:
+            approval_policies = kwargs['approvalPolicies']
+        if 'areHooksEnabled' in kwargs:
+            are_hooks_enabled = kwargs['areHooksEnabled']
+        if 'blueBackendIps' in kwargs:
+            blue_backend_ips = kwargs['blueBackendIps']
+        if 'blueGreenStrategies' in kwargs:
+            blue_green_strategies = kwargs['blueGreenStrategies']
+        if 'canaryStrategies' in kwargs:
+            canary_strategies = kwargs['canaryStrategies']
+        if 'commandSpecDeployArtifactId' in kwargs:
+            command_spec_deploy_artifact_id = kwargs['commandSpecDeployArtifactId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeInstanceGroupBlueGreenDeploymentDeployStageId' in kwargs:
+            compute_instance_group_blue_green_deployment_deploy_stage_id = kwargs['computeInstanceGroupBlueGreenDeploymentDeployStageId']
+        if 'computeInstanceGroupCanaryDeployStageId' in kwargs:
+            compute_instance_group_canary_deploy_stage_id = kwargs['computeInstanceGroupCanaryDeployStageId']
+        if 'computeInstanceGroupCanaryTrafficShiftDeployStageId' in kwargs:
+            compute_instance_group_canary_traffic_shift_deploy_stage_id = kwargs['computeInstanceGroupCanaryTrafficShiftDeployStageId']
+        if 'computeInstanceGroupDeployEnvironmentId' in kwargs:
+            compute_instance_group_deploy_environment_id = kwargs['computeInstanceGroupDeployEnvironmentId']
+        if 'containerConfigs' in kwargs:
+            container_configs = kwargs['containerConfigs']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployArtifactIds' in kwargs:
+            deploy_artifact_ids = kwargs['deployArtifactIds']
+        if 'deployEnvironmentIdA' in kwargs:
+            deploy_environment_id_a = kwargs['deployEnvironmentIdA']
+        if 'deployEnvironmentIdB' in kwargs:
+            deploy_environment_id_b = kwargs['deployEnvironmentIdB']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'deployStagePredecessorCollections' in kwargs:
+            deploy_stage_predecessor_collections = kwargs['deployStagePredecessorCollections']
+        if 'deployStageType' in kwargs:
+            deploy_stage_type = kwargs['deployStageType']
+        if 'deploymentSpecDeployArtifactId' in kwargs:
+            deployment_spec_deploy_artifact_id = kwargs['deploymentSpecDeployArtifactId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dockerImageDeployArtifactId' in kwargs:
+            docker_image_deploy_artifact_id = kwargs['dockerImageDeployArtifactId']
+        if 'failurePolicies' in kwargs:
+            failure_policies = kwargs['failurePolicies']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'functionDeployEnvironmentId' in kwargs:
+            function_deploy_environment_id = kwargs['functionDeployEnvironmentId']
+        if 'functionTimeoutInSeconds' in kwargs:
+            function_timeout_in_seconds = kwargs['functionTimeoutInSeconds']
+        if 'greenBackendIps' in kwargs:
+            green_backend_ips = kwargs['greenBackendIps']
+        if 'helmChartDeployArtifactId' in kwargs:
+            helm_chart_deploy_artifact_id = kwargs['helmChartDeployArtifactId']
+        if 'isAsync' in kwargs:
+            is_async = kwargs['isAsync']
+        if 'isDebugEnabled' in kwargs:
+            is_debug_enabled = kwargs['isDebugEnabled']
+        if 'isForceEnabled' in kwargs:
+            is_force_enabled = kwargs['isForceEnabled']
+        if 'isValidationEnabled' in kwargs:
+            is_validation_enabled = kwargs['isValidationEnabled']
+        if 'kubernetesManifestDeployArtifactIds' in kwargs:
+            kubernetes_manifest_deploy_artifact_ids = kwargs['kubernetesManifestDeployArtifactIds']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'loadBalancerConfigs' in kwargs:
+            load_balancer_configs = kwargs['loadBalancerConfigs']
+        if 'maxHistory' in kwargs:
+            max_history = kwargs['maxHistory']
+        if 'maxMemoryInMbs' in kwargs:
+            max_memory_in_mbs = kwargs['maxMemoryInMbs']
+        if 'okeBlueGreenDeployStageId' in kwargs:
+            oke_blue_green_deploy_stage_id = kwargs['okeBlueGreenDeployStageId']
+        if 'okeCanaryDeployStageId' in kwargs:
+            oke_canary_deploy_stage_id = kwargs['okeCanaryDeployStageId']
+        if 'okeCanaryTrafficShiftDeployStageId' in kwargs:
+            oke_canary_traffic_shift_deploy_stage_id = kwargs['okeCanaryTrafficShiftDeployStageId']
+        if 'okeClusterDeployEnvironmentId' in kwargs:
+            oke_cluster_deploy_environment_id = kwargs['okeClusterDeployEnvironmentId']
+        if 'productionLoadBalancerConfigs' in kwargs:
+            production_load_balancer_configs = kwargs['productionLoadBalancerConfigs']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'releaseName' in kwargs:
+            release_name = kwargs['releaseName']
+        if 'rollbackPolicies' in kwargs:
+            rollback_policies = kwargs['rollbackPolicies']
+        if 'rolloutPolicies' in kwargs:
+            rollout_policies = kwargs['rolloutPolicies']
+        if 'setStrings' in kwargs:
+            set_strings = kwargs['setStrings']
+        if 'setValues' in kwargs:
+            set_values = kwargs['setValues']
+        if 'shouldCleanupOnFail' in kwargs:
+            should_cleanup_on_fail = kwargs['shouldCleanupOnFail']
+        if 'shouldNotWait' in kwargs:
+            should_not_wait = kwargs['shouldNotWait']
+        if 'shouldResetValues' in kwargs:
+            should_reset_values = kwargs['shouldResetValues']
+        if 'shouldReuseValues' in kwargs:
+            should_reuse_values = kwargs['shouldReuseValues']
+        if 'shouldSkipCrds' in kwargs:
+            should_skip_crds = kwargs['shouldSkipCrds']
+        if 'shouldSkipRenderSubchartNotes' in kwargs:
+            should_skip_render_subchart_notes = kwargs['shouldSkipRenderSubchartNotes']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'testLoadBalancerConfigs' in kwargs:
+            test_load_balancer_configs = kwargs['testLoadBalancerConfigs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'trafficShiftTarget' in kwargs:
+            traffic_shift_target = kwargs['trafficShiftTarget']
+        if 'valuesArtifactIds' in kwargs:
+            values_artifact_ids = kwargs['valuesArtifactIds']
+        if 'waitCriterias' in kwargs:
+            wait_criterias = kwargs['waitCriterias']
+
         _setter("approval_policies", approval_policies)
         _setter("are_hooks_enabled", are_hooks_enabled)
         _setter("blue_backend_ips", blue_backend_ips)
@@ -13955,7 +15383,13 @@ class GetDeployStagesDeployStageCollectionItemApprovalPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              approval_policy_type: str,
              number_of_approvals_required: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalPolicyType' in kwargs:
+            approval_policy_type = kwargs['approvalPolicyType']
+        if 'numberOfApprovalsRequired' in kwargs:
+            number_of_approvals_required = kwargs['numberOfApprovalsRequired']
+
         _setter("approval_policy_type", approval_policy_type)
         _setter("number_of_approvals_required", number_of_approvals_required)
 
@@ -13991,7 +15425,9 @@ class GetDeployStagesDeployStageCollectionItemBlueBackendIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14030,7 +15466,17 @@ class GetDeployStagesDeployStageCollectionItemBlueGreenStrategyResult(dict):
              namespace_a: str,
              namespace_b: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'namespaceA' in kwargs:
+            namespace_a = kwargs['namespaceA']
+        if 'namespaceB' in kwargs:
+            namespace_b = kwargs['namespaceB']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace_a", namespace_a)
         _setter("namespace_b", namespace_b)
@@ -14092,7 +15538,13 @@ class GetDeployStagesDeployStageCollectionItemCanaryStrategyResult(dict):
              ingress_name: str,
              namespace: str,
              strategy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressName' in kwargs:
+            ingress_name = kwargs['ingressName']
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+
         _setter("ingress_name", ingress_name)
         _setter("namespace", namespace)
         _setter("strategy_type", strategy_type)
@@ -14157,7 +15609,21 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigResult(dict):
              network_channels: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult'],
              shape_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult'],
              shape_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerConfigType' in kwargs:
+            container_config_type = kwargs['containerConfigType']
+        if 'networkChannels' in kwargs:
+            network_channels = kwargs['networkChannels']
+        if 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("container_config_type", container_config_type)
@@ -14237,7 +15703,15 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResul
              network_channel_type: str,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkChannelType' in kwargs:
+            network_channel_type = kwargs['networkChannelType']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("network_channel_type", network_channel_type)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -14286,7 +15760,11 @@ class GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfigResult(d
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -14322,7 +15800,9 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionRe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14349,7 +15829,9 @@ class GetDeployStagesDeployStageCollectionItemDeployStagePredecessorCollectionIt
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -14384,7 +15866,15 @@ class GetDeployStagesDeployStageCollectionItemFailurePolicyResult(dict):
              failure_count: int,
              failure_percentage: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureCount' in kwargs:
+            failure_count = kwargs['failureCount']
+        if 'failurePercentage' in kwargs:
+            failure_percentage = kwargs['failurePercentage']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("failure_count", failure_count)
         _setter("failure_percentage", failure_percentage)
         _setter("policy_type", policy_type)
@@ -14429,7 +15919,9 @@ class GetDeployStagesDeployStageCollectionItemGreenBackendIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14468,7 +15960,15 @@ class GetDeployStagesDeployStageCollectionItemLoadBalancerConfigResult(dict):
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -14534,7 +16034,15 @@ class GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -14588,7 +16096,11 @@ class GetDeployStagesDeployStageCollectionItemRollbackPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("policy_type", policy_type)
 
     @property
@@ -14631,7 +16143,19 @@ class GetDeployStagesDeployStageCollectionItemRolloutPolicyResult(dict):
              batch_percentage: int,
              policy_type: str,
              ramp_limit_percent: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'batchCount' in kwargs:
+            batch_count = kwargs['batchCount']
+        if 'batchDelayInSeconds' in kwargs:
+            batch_delay_in_seconds = kwargs['batchDelayInSeconds']
+        if 'batchPercentage' in kwargs:
+            batch_percentage = kwargs['batchPercentage']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'rampLimitPercent' in kwargs:
+            ramp_limit_percent = kwargs['rampLimitPercent']
+
         _setter("batch_count", batch_count)
         _setter("batch_delay_in_seconds", batch_delay_in_seconds)
         _setter("batch_percentage", batch_percentage)
@@ -14694,7 +16218,9 @@ class GetDeployStagesDeployStageCollectionItemSetStringResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetStringItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14725,7 +16251,9 @@ class GetDeployStagesDeployStageCollectionItemSetStringItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -14761,7 +16289,9 @@ class GetDeployStagesDeployStageCollectionItemSetValueResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeployStagesDeployStageCollectionItemSetValueItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14792,7 +16322,9 @@ class GetDeployStagesDeployStageCollectionItemSetValueItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -14840,7 +16372,15 @@ class GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult(dict)
              listener_name: str,
              load_balancer_id: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendPort' in kwargs:
+            backend_port = kwargs['backendPort']
+        if 'listenerName' in kwargs:
+            listener_name = kwargs['listenerName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backend_port", backend_port)
         _setter("listener_name", listener_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -14898,7 +16438,13 @@ class GetDeployStagesDeployStageCollectionItemWaitCriteriaResult(dict):
              _setter: Callable[[Any, Any], None],
              wait_duration: str,
              wait_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'waitDuration' in kwargs:
+            wait_duration = kwargs['waitDuration']
+        if 'waitType' in kwargs:
+            wait_type = kwargs['waitType']
+
         _setter("wait_duration", wait_duration)
         _setter("wait_type", wait_type)
 
@@ -14940,7 +16486,9 @@ class GetDeployStagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -14980,7 +16528,9 @@ class GetDeploymentDeployArtifactOverrideArgumentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployArtifactOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15015,7 +16565,11 @@ class GetDeploymentDeployArtifactOverrideArgumentItemResult(dict):
              deploy_artifact_id: str,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
         _setter("value", value)
@@ -15060,7 +16614,9 @@ class GetDeploymentDeployPipelineArtifactResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15095,7 +16651,15 @@ class GetDeploymentDeployPipelineArtifactItemResult(dict):
              deploy_artifact_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -15140,7 +16704,9 @@ class GetDeploymentDeployPipelineArtifactItemDeployPipelineStageResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15171,7 +16737,13 @@ class GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItemResult(dict)
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -15207,7 +16779,9 @@ class GetDeploymentDeployPipelineEnvironmentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15242,7 +16816,15 @@ class GetDeploymentDeployPipelineEnvironmentItemResult(dict):
              deploy_environment_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -15287,7 +16869,9 @@ class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15318,7 +16902,13 @@ class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemResult(di
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -15354,7 +16944,9 @@ class GetDeploymentDeployStageOverrideArgumentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeployStageOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15389,7 +16981,11 @@ class GetDeploymentDeployStageOverrideArgumentItemResult(dict):
              deploy_stage_id: str,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("name", name)
         _setter("value", value)
@@ -15434,7 +17030,9 @@ class GetDeploymentDeploymentArgumentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentDeploymentArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15465,7 +17063,9 @@ class GetDeploymentDeploymentArgumentItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -15509,7 +17109,15 @@ class GetDeploymentDeploymentExecutionProgressResult(dict):
              deploy_stage_execution_progress: Mapping[str, Any],
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageExecutionProgress' in kwargs:
+            deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("deploy_stage_execution_progress", deploy_stage_execution_progress)
         _setter("time_finished", time_finished)
         _setter("time_started", time_started)
@@ -15554,7 +17162,9 @@ class GetDeploymentsDeploymentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15664,7 +17274,49 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              trigger_new_devops_deployment: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactOverrideArguments' in kwargs:
+            deploy_artifact_override_arguments = kwargs['deployArtifactOverrideArguments']
+        if 'deployPipelineArtifacts' in kwargs:
+            deploy_pipeline_artifacts = kwargs['deployPipelineArtifacts']
+        if 'deployPipelineEnvironments' in kwargs:
+            deploy_pipeline_environments = kwargs['deployPipelineEnvironments']
+        if 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'deployStageOverrideArguments' in kwargs:
+            deploy_stage_override_arguments = kwargs['deployStageOverrideArguments']
+        if 'deploymentArguments' in kwargs:
+            deployment_arguments = kwargs['deploymentArguments']
+        if 'deploymentExecutionProgresses' in kwargs:
+            deployment_execution_progresses = kwargs['deploymentExecutionProgresses']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'previousDeploymentId' in kwargs:
+            previous_deployment_id = kwargs['previousDeploymentId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggerNewDevopsDeployment' in kwargs:
+            trigger_new_devops_deployment = kwargs['triggerNewDevopsDeployment']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("deploy_artifact_override_arguments", deploy_artifact_override_arguments)
@@ -15877,7 +17529,9 @@ class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15912,7 +17566,11 @@ class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItemRe
              deploy_artifact_id: str,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("name", name)
         _setter("value", value)
@@ -15957,7 +17615,9 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15992,7 +17652,15 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult(dic
              deploy_artifact_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployArtifactId' in kwargs:
+            deploy_artifact_id = kwargs['deployArtifactId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_artifact_id", deploy_artifact_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -16037,7 +17705,9 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16068,7 +17738,13 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipe
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -16104,7 +17780,9 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16139,7 +17817,15 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemResult(
              deploy_environment_id: str,
              deploy_pipeline_stages: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageResult'],
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployEnvironmentId' in kwargs:
+            deploy_environment_id = kwargs['deployEnvironmentId']
+        if 'deployPipelineStages' in kwargs:
+            deploy_pipeline_stages = kwargs['deployPipelineStages']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_environment_id", deploy_environment_id)
         _setter("deploy_pipeline_stages", deploy_pipeline_stages)
         _setter("display_name", display_name)
@@ -16184,7 +17870,9 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployP
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16215,7 +17903,13 @@ class GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployP
              _setter: Callable[[Any, Any], None],
              deploy_stage_id: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("display_name", display_name)
 
@@ -16251,7 +17945,9 @@ class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16286,7 +17982,11 @@ class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemResul
              deploy_stage_id: str,
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageId' in kwargs:
+            deploy_stage_id = kwargs['deployStageId']
+
         _setter("deploy_stage_id", deploy_stage_id)
         _setter("name", name)
         _setter("value", value)
@@ -16331,7 +18031,9 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16362,7 +18064,9 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -16406,7 +18110,15 @@ class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(di
              deploy_stage_execution_progress: Mapping[str, Any],
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deployStageExecutionProgress' in kwargs:
+            deploy_stage_execution_progress = kwargs['deployStageExecutionProgress']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("deploy_stage_execution_progress", deploy_stage_execution_progress)
         _setter("time_finished", time_finished)
         _setter("time_started", time_started)
@@ -16457,7 +18169,9 @@ class GetDeploymentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16497,7 +18211,11 @@ class GetProjectNotificationConfigResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("topic_id", topic_id)
 
     @property
@@ -16530,7 +18248,9 @@ class GetProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16567,7 +18287,9 @@ class GetProjectsProjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16639,7 +18361,25 @@ class GetProjectsProjectCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'notificationConfigs' in kwargs:
+            notification_configs = kwargs['notificationConfigs']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -16774,7 +18514,11 @@ class GetProjectsProjectCollectionItemNotificationConfigResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("topic_id", topic_id)
 
     @property
@@ -16805,7 +18549,13 @@ class GetRepoFileLineLineResult(dict):
              _setter: Callable[[Any, Any], None],
              line_content: str,
              line_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lineContent' in kwargs:
+            line_content = kwargs['lineContent']
+        if 'lineNumber' in kwargs:
+            line_number = kwargs['lineNumber']
+
         _setter("line_content", line_content)
         _setter("line_number", line_number)
 
@@ -16847,7 +18597,9 @@ class GetRepositoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16884,7 +18636,9 @@ class GetRepositoriesRepositoryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16995,7 +18749,45 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              trigger_build_events: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'branchCount' in kwargs:
+            branch_count = kwargs['branchCount']
+        if 'commitCount' in kwargs:
+            commit_count = kwargs['commitCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultBranch' in kwargs:
+            default_branch = kwargs['defaultBranch']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'httpUrl' in kwargs:
+            http_url = kwargs['httpUrl']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'mirrorRepositoryConfig' in kwargs:
+            mirror_repository_config = kwargs['mirrorRepositoryConfig']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'projectName' in kwargs:
+            project_name = kwargs['projectName']
+        if 'repositoryType' in kwargs:
+            repository_type = kwargs['repositoryType']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'sshUrl' in kwargs:
+            ssh_url = kwargs['sshUrl']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggerBuildEvents' in kwargs:
+            trigger_build_events = kwargs['triggerBuildEvents']
+
         _setter("branch_count", branch_count)
         _setter("commit_count", commit_count)
         _setter("compartment_id", compartment_id)
@@ -17225,7 +19017,15 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigResult(dict):
              connector_id: str,
              repository_url: str,
              trigger_schedule: 'outputs.GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerScheduleResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if 'triggerSchedule' in kwargs:
+            trigger_schedule = kwargs['triggerSchedule']
+
         _setter("connector_id", connector_id)
         _setter("repository_url", repository_url)
         _setter("trigger_schedule", trigger_schedule)
@@ -17274,7 +19074,13 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedu
              _setter: Callable[[Any, Any], None],
              custom_schedule: str,
              schedule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customSchedule' in kwargs:
+            custom_schedule = kwargs['customSchedule']
+        if 'scheduleType' in kwargs:
+            schedule_type = kwargs['scheduleType']
+
         _setter("custom_schedule", custom_schedule)
         _setter("schedule_type", schedule_type)
 
@@ -17318,7 +19124,15 @@ class GetRepositoryAuthorItemResult(dict):
              author_name: str,
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authorName' in kwargs:
+            author_name = kwargs['authorName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("author_name", author_name)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -17366,7 +19180,9 @@ class GetRepositoryAuthorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17403,7 +19219,9 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryAuthorsRepositoryAuthorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -17438,7 +19256,15 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
              author_name: str,
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authorName' in kwargs:
+            author_name = kwargs['authorName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("author_name", author_name)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -17486,7 +19312,9 @@ class GetRepositoryCommitsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17520,7 +19348,9 @@ class GetRepositoryCommitsRepositoryCommitCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryCommitsRepositoryCommitCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -17582,7 +19412,31 @@ class GetRepositoryCommitsRepositoryCommitCollectionItemResult(dict):
              parent_commit_ids: Sequence[str],
              time_created: str,
              tree_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authorEmail' in kwargs:
+            author_email = kwargs['authorEmail']
+        if 'authorName' in kwargs:
+            author_name = kwargs['authorName']
+        if 'commitId' in kwargs:
+            commit_id = kwargs['commitId']
+        if 'commitMessage' in kwargs:
+            commit_message = kwargs['commitMessage']
+        if 'committerEmail' in kwargs:
+            committer_email = kwargs['committerEmail']
+        if 'committerName' in kwargs:
+            committer_name = kwargs['committerName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'parentCommitIds' in kwargs:
+            parent_commit_ids = kwargs['parentCommitIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'treeId' in kwargs:
+            tree_id = kwargs['treeId']
+
         _setter("author_email", author_email)
         _setter("author_name", author_name)
         _setter("commit_id", commit_id)
@@ -17709,7 +19563,19 @@ class GetRepositoryDiffChangeResult(dict):
              diff_sections: Sequence['outputs.GetRepositoryDiffChangeDiffSectionResult'],
              target_line: int,
              target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'baseSpan' in kwargs:
+            base_span = kwargs['baseSpan']
+        if 'diffSections' in kwargs:
+            diff_sections = kwargs['diffSections']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+        if 'targetSpan' in kwargs:
+            target_span = kwargs['targetSpan']
+
         _setter("base_line", base_line)
         _setter("base_span", base_span)
         _setter("diff_sections", diff_sections)
@@ -17776,7 +19642,9 @@ class GetRepositoryDiffChangeDiffSectionResult(dict):
              _setter: Callable[[Any, Any], None],
              lines: Sequence['outputs.GetRepositoryDiffChangeDiffSectionLineResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("lines", lines)
         _setter("type", type)
 
@@ -17824,7 +19692,17 @@ class GetRepositoryDiffChangeDiffSectionLineResult(dict):
              conflict_marker: str,
              line_content: str,
              target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'conflictMarker' in kwargs:
+            conflict_marker = kwargs['conflictMarker']
+        if 'lineContent' in kwargs:
+            line_content = kwargs['lineContent']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
         _setter("line_content", line_content)
@@ -17875,7 +19753,9 @@ class GetRepositoryDiffsDiffCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -17930,7 +19810,25 @@ class GetRepositoryDiffsDiffCollectionItemResult(dict):
              new_path: str,
              old_id: str,
              old_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areConflictsInFile' in kwargs:
+            are_conflicts_in_file = kwargs['areConflictsInFile']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isBinary' in kwargs:
+            is_binary = kwargs['isBinary']
+        if 'isLarge' in kwargs:
+            is_large = kwargs['isLarge']
+        if 'newId' in kwargs:
+            new_id = kwargs['newId']
+        if 'newPath' in kwargs:
+            new_path = kwargs['newPath']
+        if 'oldId' in kwargs:
+            old_id = kwargs['oldId']
+        if 'oldPath' in kwargs:
+            old_path = kwargs['oldPath']
+
         _setter("are_conflicts_in_file", are_conflicts_in_file)
         _setter("changes", changes)
         _setter("freeform_tags", freeform_tags)
@@ -18042,7 +19940,19 @@ class GetRepositoryDiffsDiffCollectionItemChangeResult(dict):
              diff_sections: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionResult'],
              target_line: int,
              target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'baseSpan' in kwargs:
+            base_span = kwargs['baseSpan']
+        if 'diffSections' in kwargs:
+            diff_sections = kwargs['diffSections']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+        if 'targetSpan' in kwargs:
+            target_span = kwargs['targetSpan']
+
         _setter("base_line", base_line)
         _setter("base_span", base_span)
         _setter("diff_sections", diff_sections)
@@ -18109,7 +20019,9 @@ class GetRepositoryDiffsDiffCollectionItemChangeDiffSectionResult(dict):
              _setter: Callable[[Any, Any], None],
              lines: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("lines", lines)
         _setter("type", type)
 
@@ -18157,7 +20069,17 @@ class GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLineResult(dict):
              conflict_marker: str,
              line_content: str,
              target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'conflictMarker' in kwargs:
+            conflict_marker = kwargs['conflictMarker']
+        if 'lineContent' in kwargs:
+            line_content = kwargs['lineContent']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
         _setter("line_content", line_content)
@@ -18214,7 +20136,9 @@ class GetRepositoryDiffsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18267,7 +20191,19 @@ class GetRepositoryFileDiffChangeResult(dict):
              diff_sections: Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionResult'],
              target_line: int,
              target_span: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'baseSpan' in kwargs:
+            base_span = kwargs['baseSpan']
+        if 'diffSections' in kwargs:
+            diff_sections = kwargs['diffSections']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+        if 'targetSpan' in kwargs:
+            target_span = kwargs['targetSpan']
+
         _setter("base_line", base_line)
         _setter("base_span", base_span)
         _setter("diff_sections", diff_sections)
@@ -18334,7 +20270,9 @@ class GetRepositoryFileDiffChangeDiffSectionResult(dict):
              _setter: Callable[[Any, Any], None],
              lines: Sequence['outputs.GetRepositoryFileDiffChangeDiffSectionLineResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("lines", lines)
         _setter("type", type)
 
@@ -18382,7 +20320,17 @@ class GetRepositoryFileDiffChangeDiffSectionLineResult(dict):
              conflict_marker: str,
              line_content: str,
              target_line: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseLine' in kwargs:
+            base_line = kwargs['baseLine']
+        if 'conflictMarker' in kwargs:
+            conflict_marker = kwargs['conflictMarker']
+        if 'lineContent' in kwargs:
+            line_content = kwargs['lineContent']
+        if 'targetLine' in kwargs:
+            target_line = kwargs['targetLine']
+
         _setter("base_line", base_line)
         _setter("conflict_marker", conflict_marker)
         _setter("line_content", line_content)
@@ -18440,7 +20388,13 @@ class GetRepositoryFileLineLineResult(dict):
              _setter: Callable[[Any, Any], None],
              line_content: str,
              line_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lineContent' in kwargs:
+            line_content = kwargs['lineContent']
+        if 'lineNumber' in kwargs:
+            line_number = kwargs['lineNumber']
+
         _setter("line_content", line_content)
         _setter("line_number", line_number)
 
@@ -18479,7 +20433,9 @@ class GetRepositoryMirrorRecordsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18513,7 +20469,9 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18555,7 +20513,21 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(dict)
              time_enqueued: str,
              time_started: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mirrorStatus' in kwargs:
+            mirror_status = kwargs['mirrorStatus']
+        if 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if 'timeEnqueued' in kwargs:
+            time_enqueued = kwargs['timeEnqueued']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("freeform_tags", freeform_tags)
         _setter("mirror_status", mirror_status)
         _setter("time_completed", time_completed)
@@ -18629,7 +20601,15 @@ class GetRepositoryMirrorRepositoryConfigResult(dict):
              connector_id: str,
              repository_url: str,
              trigger_schedules: Sequence['outputs.GetRepositoryMirrorRepositoryConfigTriggerScheduleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if 'triggerSchedules' in kwargs:
+            trigger_schedules = kwargs['triggerSchedules']
+
         _setter("connector_id", connector_id)
         _setter("repository_url", repository_url)
         _setter("trigger_schedules", trigger_schedules)
@@ -18678,7 +20658,13 @@ class GetRepositoryMirrorRepositoryConfigTriggerScheduleResult(dict):
              _setter: Callable[[Any, Any], None],
              custom_schedule: str,
              schedule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customSchedule' in kwargs:
+            custom_schedule = kwargs['customSchedule']
+        if 'scheduleType' in kwargs:
+            schedule_type = kwargs['scheduleType']
+
         _setter("custom_schedule", custom_schedule)
         _setter("schedule_type", schedule_type)
 
@@ -18742,7 +20728,17 @@ class GetRepositoryPathItemResult(dict):
              size_in_bytes: str,
              submodule_git_url: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'submoduleGitUrl' in kwargs:
+            submodule_git_url = kwargs['submoduleGitUrl']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("name", name)
@@ -18838,7 +20834,9 @@ class GetRepositoryPathsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18878,7 +20876,9 @@ class GetRepositoryPathsRepositoryPathCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryPathsRepositoryPathCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18933,7 +20933,17 @@ class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
              size_in_bytes: str,
              submodule_git_url: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'submoduleGitUrl' in kwargs:
+            submodule_git_url = kwargs['submoduleGitUrl']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("name", name)
@@ -19026,7 +21036,9 @@ class GetRepositoryRefsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19060,7 +21072,9 @@ class GetRepositoryRefsRepositoryRefCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoryRefsRepositoryRefCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19115,7 +21129,25 @@ class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
              ref_name: str,
              ref_type: str,
              repository_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitId' in kwargs:
+            commit_id = kwargs['commitId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fullRefName' in kwargs:
+            full_ref_name = kwargs['fullRefName']
+        if 'objectId' in kwargs:
+            object_id = kwargs['objectId']
+        if 'refName' in kwargs:
+            ref_name = kwargs['refName']
+        if 'refType' in kwargs:
+            ref_type = kwargs['refType']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         _setter("commit_id", commit_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -19219,7 +21251,11 @@ class GetTriggerActionResult(dict):
              build_pipeline_id: str,
              filters: Sequence['outputs.GetTriggerActionFilterResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
         _setter("type", type)
@@ -19275,7 +21311,11 @@ class GetTriggerActionFilterResult(dict):
              excludes: Sequence['outputs.GetTriggerActionFilterExcludeResult'],
              includes: Sequence['outputs.GetTriggerActionFilterIncludeResult'],
              trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         _setter("events", events)
         _setter("excludes", excludes)
         _setter("includes", includes)
@@ -19323,7 +21363,11 @@ class GetTriggerActionFilterExcludeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filters: Sequence['outputs.GetTriggerActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+
         _setter("file_filters", file_filters)
 
     @property
@@ -19344,7 +21388,11 @@ class GetTriggerActionFilterExcludeFileFilterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property
@@ -19379,7 +21427,17 @@ class GetTriggerActionFilterIncludeResult(dict):
              file_filters: Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult'],
              head_ref: str,
              repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
         _setter("head_ref", head_ref)
@@ -19427,7 +21485,11 @@ class GetTriggerActionFilterIncludeFileFilterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property
@@ -19454,7 +21516,9 @@ class GetTriggersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19488,7 +21552,9 @@ class GetTriggersTriggerCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetTriggersTriggerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19575,7 +21641,35 @@ class GetTriggersTriggerCollectionItemResult(dict):
              time_updated: str,
              trigger_source: str,
              trigger_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionId' in kwargs:
+            connection_id = kwargs['connectionId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+        if 'triggerUrl' in kwargs:
+            trigger_url = kwargs['triggerUrl']
+
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
         _setter("connection_id", connection_id)
@@ -19751,7 +21845,11 @@ class GetTriggersTriggerCollectionItemActionResult(dict):
              build_pipeline_id: str,
              filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+
         _setter("build_pipeline_id", build_pipeline_id)
         _setter("filters", filters)
         _setter("type", type)
@@ -19807,7 +21905,11 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
              excludes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult'],
              includes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeResult'],
              trigger_source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'triggerSource' in kwargs:
+            trigger_source = kwargs['triggerSource']
+
         _setter("events", events)
         _setter("excludes", excludes)
         _setter("includes", includes)
@@ -19855,7 +21957,11 @@ class GetTriggersTriggerCollectionItemActionFilterExcludeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+
         _setter("file_filters", file_filters)
 
     @property
@@ -19876,7 +21982,11 @@ class GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property
@@ -19911,7 +22021,17 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
              file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult'],
              head_ref: str,
              repository_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'baseRef' in kwargs:
+            base_ref = kwargs['baseRef']
+        if 'fileFilters' in kwargs:
+            file_filters = kwargs['fileFilters']
+        if 'headRef' in kwargs:
+            head_ref = kwargs['headRef']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+
         _setter("base_ref", base_ref)
         _setter("file_filters", file_filters)
         _setter("head_ref", head_ref)
@@ -19959,7 +22079,11 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              file_paths: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filePaths' in kwargs:
+            file_paths = kwargs['filePaths']
+
         _setter("file_paths", file_paths)
 
     @property

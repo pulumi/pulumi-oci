@@ -48,6 +48,8 @@ export interface GetExsiHostResult {
     readonly billingContractEndDate: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     *
+     * @deprecated This 'billing_donor_host_id' argument has been deprecated and will be computed only.
      */
     readonly billingDonorHostId: string;
     /**
@@ -67,7 +69,9 @@ export interface GetExsiHostResult {
      */
     readonly computeInstanceId: string;
     /**
-     * The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
     readonly currentSku: string;
     /**
@@ -81,6 +85,8 @@ export interface GetExsiHostResult {
     readonly esxiHostId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+     *
+     * @deprecated This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
      */
     readonly failedEsxiHostId: string;
     /**
@@ -112,11 +118,15 @@ export interface GetExsiHostResult {
      */
     readonly isBillingSwappingInProgress: boolean;
     /**
-     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
     readonly nextSku: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+     *
+     * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
     readonly nonUpgradedEsxiHostId: string;
     /**
@@ -124,7 +134,9 @@ export interface GetExsiHostResult {
      */
     readonly replacementEsxiHostId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     *
+     * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */
     readonly sddcId: string;
     /**

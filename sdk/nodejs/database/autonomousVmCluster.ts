@@ -90,6 +90,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === AutonomousVmCluster.__pulumiType;
     }
 
+    public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number>;
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
@@ -122,6 +123,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The number of CPU cores to enable per VM cluster node.
      */
     public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
+    public /*out*/ readonly cpuPercentage!: pulumi.Output<number>;
     /**
      * The number of enabled CPU cores.
      */
@@ -199,16 +201,20 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The number of nodes in the Autonomous VM Cluster.
      */
     public /*out*/ readonly nodeCount!: pulumi.Output<number>;
+    public /*out*/ readonly nonProvisionableAutonomousContainerDatabases!: pulumi.Output<number>;
     /**
      * The number of enabled OCPU cores.
      */
     public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
+    public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
@@ -237,6 +243,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     public readonly timeZone!: pulumi.Output<string>;
+    public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number>;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */
@@ -263,6 +270,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousVmClusterState | undefined;
+            resourceInputs["autonomousDataStoragePercentage"] = state ? state.autonomousDataStoragePercentage : undefined;
             resourceInputs["autonomousDataStorageSizeInTbs"] = state ? state.autonomousDataStorageSizeInTbs : undefined;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = state ? state.availableAutonomousDataStorageSizeInTbs : undefined;
             resourceInputs["availableContainerDatabases"] = state ? state.availableContainerDatabases : undefined;
@@ -271,6 +279,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
+            resourceInputs["cpuPercentage"] = state ? state.cpuPercentage : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
@@ -291,8 +300,12 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
+            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state ? state.nonProvisionableAutonomousContainerDatabases : undefined;
             resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
+            resourceInputs["provisionedAutonomousContainerDatabases"] = state ? state.provisionedAutonomousContainerDatabases : undefined;
+            resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
+            resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
             resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -300,6 +313,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
             resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
+            resourceInputs["totalAutonomousDataStorageInTbs"] = state ? state.totalAutonomousDataStorageInTbs : undefined;
             resourceInputs["totalContainerDatabases"] = state ? state.totalContainerDatabases : undefined;
             resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
         } else {
@@ -335,10 +349,12 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
             resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
+            resourceInputs["autonomousDataStoragePercentage"] = undefined /*out*/;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["availableContainerDatabases"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["availableDataStorageSizeInTbs"] = undefined /*out*/;
+            resourceInputs["cpuPercentage"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
@@ -349,12 +365,17 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
+            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
+            resourceInputs["provisionedAutonomousContainerDatabases"] = undefined /*out*/;
+            resourceInputs["provisionedCpus"] = undefined /*out*/;
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
+            resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeDatabaseSslCertificateExpires"] = undefined /*out*/;
             resourceInputs["timeOrdsCertificateExpires"] = undefined /*out*/;
+            resourceInputs["totalAutonomousDataStorageInTbs"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousVmCluster.__pulumiType, name, resourceInputs, opts);
@@ -365,6 +386,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AutonomousVmCluster resources.
  */
 export interface AutonomousVmClusterState {
+    autonomousDataStoragePercentage?: pulumi.Input<number>;
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
@@ -397,6 +419,7 @@ export interface AutonomousVmClusterState {
      * The number of CPU cores to enable per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
+    cpuPercentage?: pulumi.Input<number>;
     /**
      * The number of enabled CPU cores.
      */
@@ -474,16 +497,20 @@ export interface AutonomousVmClusterState {
      * The number of nodes in the Autonomous VM Cluster.
      */
     nodeCount?: pulumi.Input<number>;
+    nonProvisionableAutonomousContainerDatabases?: pulumi.Input<number>;
     /**
      * The number of enabled OCPU cores.
      */
     ocpusEnabled?: pulumi.Input<number>;
+    provisionedAutonomousContainerDatabases?: pulumi.Input<number>;
+    provisionedCpus?: pulumi.Input<number>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
     reclaimableCpus?: pulumi.Input<number>;
+    reservedCpus?: pulumi.Input<number>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
@@ -512,6 +539,7 @@ export interface AutonomousVmClusterState {
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     timeZone?: pulumi.Input<string>;
+    totalAutonomousDataStorageInTbs?: pulumi.Input<number>;
     /**
      * The total number of Autonomous Container Databases that can be created.
      */

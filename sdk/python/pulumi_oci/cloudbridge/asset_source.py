@@ -89,7 +89,37 @@ class AssetSourceArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              replication_credentials: Optional[pulumi.Input['AssetSourceReplicationCredentialsArgs']] = None,
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetsCompartmentId' in kwargs:
+            assets_compartment_id = kwargs['assetsCompartmentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'discoveryCredentials' in kwargs:
+            discovery_credentials = kwargs['discoveryCredentials']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'vcenterEndpoint' in kwargs:
+            vcenter_endpoint = kwargs['vcenterEndpoint']
+        if 'areHistoricalMetricsCollected' in kwargs:
+            are_historical_metrics_collected = kwargs['areHistoricalMetricsCollected']
+        if 'areRealtimeMetricsCollected' in kwargs:
+            are_realtime_metrics_collected = kwargs['areRealtimeMetricsCollected']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryScheduleId' in kwargs:
+            discovery_schedule_id = kwargs['discoveryScheduleId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'replicationCredentials' in kwargs:
+            replication_credentials = kwargs['replicationCredentials']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("assets_compartment_id", assets_compartment_id)
         _setter("compartment_id", compartment_id)
         _setter("discovery_credentials", discovery_credentials)
@@ -391,7 +421,43 @@ class _AssetSourceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vcenter_endpoint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areHistoricalMetricsCollected' in kwargs:
+            are_historical_metrics_collected = kwargs['areHistoricalMetricsCollected']
+        if 'areRealtimeMetricsCollected' in kwargs:
+            are_realtime_metrics_collected = kwargs['areRealtimeMetricsCollected']
+        if 'assetsCompartmentId' in kwargs:
+            assets_compartment_id = kwargs['assetsCompartmentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryCredentials' in kwargs:
+            discovery_credentials = kwargs['discoveryCredentials']
+        if 'discoveryScheduleId' in kwargs:
+            discovery_schedule_id = kwargs['discoveryScheduleId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'replicationCredentials' in kwargs:
+            replication_credentials = kwargs['replicationCredentials']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcenterEndpoint' in kwargs:
+            vcenter_endpoint = kwargs['vcenterEndpoint']
+
         if are_historical_metrics_collected is not None:
             _setter("are_historical_metrics_collected", are_historical_metrics_collected)
         if are_realtime_metrics_collected is not None:

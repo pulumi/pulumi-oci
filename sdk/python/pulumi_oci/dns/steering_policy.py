@@ -77,7 +77,19 @@ class SteeringPolicyArgs:
              health_check_monitor_id: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthCheckMonitorId' in kwargs:
+            health_check_monitor_id = kwargs['healthCheckMonitorId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("template", template)
@@ -295,7 +307,21 @@ class _SteeringPolicyState:
              template: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthCheckMonitorId' in kwargs:
+            health_check_monitor_id = kwargs['healthCheckMonitorId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if answers is not None:
             _setter("answers", answers)
         if compartment_id is not None:

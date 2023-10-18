@@ -65,7 +65,27 @@ class PublicationArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              long_description: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isAgreementAcknowledged' in kwargs:
+            is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
+        if 'listingType' in kwargs:
+            listing_type = kwargs['listingType']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'supportContacts' in kwargs:
+            support_contacts = kwargs['supportContacts']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+
         _setter("compartment_id", compartment_id)
         _setter("is_agreement_acknowledged", is_agreement_acknowledged)
         _setter("listing_type", listing_type)
@@ -274,7 +294,33 @@ class _PublicationState:
              support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
              supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAgreementAcknowledged' in kwargs:
+            is_agreement_acknowledged = kwargs['isAgreementAcknowledged']
+        if 'listingType' in kwargs:
+            listing_type = kwargs['listingType']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'supportContacts' in kwargs:
+            support_contacts = kwargs['supportContacts']
+        if 'supportedOperatingSystems' in kwargs:
+            supported_operating_systems = kwargs['supportedOperatingSystems']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

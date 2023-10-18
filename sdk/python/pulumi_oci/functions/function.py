@@ -75,7 +75,29 @@ class FunctionArgs:
              source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'provisionedConcurrencyConfig' in kwargs:
+            provisioned_concurrency_config = kwargs['provisionedConcurrencyConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
         _setter("application_id", application_id)
         _setter("display_name", display_name)
         _setter("memory_in_mbs", memory_in_mbs)
@@ -331,7 +353,37 @@ class _FunctionState:
              time_updated: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if 'invokeEndpoint' in kwargs:
+            invoke_endpoint = kwargs['invokeEndpoint']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'provisionedConcurrencyConfig' in kwargs:
+            provisioned_concurrency_config = kwargs['provisionedConcurrencyConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
         if application_id is not None:
             _setter("application_id", application_id)
         if compartment_id is not None:

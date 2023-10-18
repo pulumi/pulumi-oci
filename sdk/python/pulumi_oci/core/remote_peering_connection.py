@@ -55,7 +55,23 @@ class RemotePeeringConnectionArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              peer_id: Optional[pulumi.Input[str]] = None,
              peer_region_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if 'peerRegionName' in kwargs:
+            peer_region_name = kwargs['peerRegionName']
+
         _setter("compartment_id", compartment_id)
         _setter("drg_id", drg_id)
         if defined_tags is not None:
@@ -222,7 +238,31 @@ class _RemotePeeringConnectionState:
              peering_status: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCrossTenancyPeering' in kwargs:
+            is_cross_tenancy_peering = kwargs['isCrossTenancyPeering']
+        if 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if 'peerRegionName' in kwargs:
+            peer_region_name = kwargs['peerRegionName']
+        if 'peerTenancyId' in kwargs:
+            peer_tenancy_id = kwargs['peerTenancyId']
+        if 'peeringStatus' in kwargs:
+            peering_status = kwargs['peeringStatus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

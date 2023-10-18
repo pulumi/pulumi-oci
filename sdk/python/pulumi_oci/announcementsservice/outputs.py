@@ -42,7 +42,9 @@ class AnnouncementSubscriptionFilterGroups(dict):
              _setter: Callable[[Any, Any], None],
              filters: Sequence['outputs.AnnouncementSubscriptionFilterGroupsFilter'],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("filters", filters)
         if name is not None:
             _setter("name", name)
@@ -83,7 +85,9 @@ class AnnouncementSubscriptionFilterGroupsFilter(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -123,7 +127,9 @@ class AnnouncementSubscriptionsFilterGroupFilter(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -163,7 +169,9 @@ class GetAnnouncementSubscriptionFilterGroupResult(dict):
              _setter: Callable[[Any, Any], None],
              filters: Sequence['outputs.GetAnnouncementSubscriptionFilterGroupFilterResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("filters", filters)
         _setter("name", name)
 
@@ -203,7 +211,9 @@ class GetAnnouncementSubscriptionFilterGroupFilterResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -236,7 +246,9 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -316,7 +328,33 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterGroups' in kwargs:
+            filter_groups = kwargs['filterGroups']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'preferredTimeZone' in kwargs:
+            preferred_time_zone = kwargs['preferredTimeZone']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -473,7 +511,9 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
              _setter: Callable[[Any, Any], None],
              filters: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("filters", filters)
         _setter("name", name)
 
@@ -513,7 +553,9 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGr
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -555,7 +597,9 @@ class GetAnnouncementSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

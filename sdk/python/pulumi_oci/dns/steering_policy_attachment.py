@@ -43,7 +43,17 @@ class SteeringPolicyAttachmentArgs:
              steering_policy_id: pulumi.Input[str],
              zone_id: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'steeringPolicyId' in kwargs:
+            steering_policy_id = kwargs['steeringPolicyId']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("domain_name", domain_name)
         _setter("steering_policy_id", steering_policy_id)
         _setter("zone_id", zone_id)
@@ -155,7 +165,21 @@ class _SteeringPolicyAttachmentState:
              steering_policy_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              zone_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'steeringPolicyId' in kwargs:
+            steering_policy_id = kwargs['steeringPolicyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if display_name is not None:

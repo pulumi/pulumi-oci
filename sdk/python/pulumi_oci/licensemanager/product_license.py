@@ -61,7 +61,23 @@ class ProductLicenseArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              images: Optional[pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]]] = None,
              vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isVendorOracle' in kwargs:
+            is_vendor_oracle = kwargs['isVendorOracle']
+        if 'licenseUnit' in kwargs:
+            license_unit = kwargs['licenseUnit']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("is_vendor_oracle", is_vendor_oracle)
@@ -272,7 +288,43 @@ class _ProductLicenseState:
              total_license_record_count: Optional[pulumi.Input[int]] = None,
              total_license_units_consumed: Optional[pulumi.Input[float]] = None,
              vendor_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeLicenseRecordCount' in kwargs:
+            active_license_record_count = kwargs['activeLicenseRecordCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isOverSubscribed' in kwargs:
+            is_over_subscribed = kwargs['isOverSubscribed']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'isVendorOracle' in kwargs:
+            is_vendor_oracle = kwargs['isVendorOracle']
+        if 'licenseUnit' in kwargs:
+            license_unit = kwargs['licenseUnit']
+        if 'statusDescription' in kwargs:
+            status_description = kwargs['statusDescription']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalActiveLicenseUnitCount' in kwargs:
+            total_active_license_unit_count = kwargs['totalActiveLicenseUnitCount']
+        if 'totalLicenseRecordCount' in kwargs:
+            total_license_record_count = kwargs['totalLicenseRecordCount']
+        if 'totalLicenseUnitsConsumed' in kwargs:
+            total_license_units_consumed = kwargs['totalLicenseUnitsConsumed']
+        if 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
         if active_license_record_count is not None:
             _setter("active_license_record_count", active_license_record_count)
         if compartment_id is not None:

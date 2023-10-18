@@ -59,7 +59,11 @@ class GeneratedKeyKeyShapeArgs:
              algorithm: pulumi.Input[str],
              length: pulumi.Input[int],
              curve_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("length", length)
         if curve_id is not None:
@@ -120,7 +124,11 @@ class KeyExternalKeyReferenceArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              external_key_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+
         _setter("external_key_id", external_key_id)
 
     @property
@@ -155,7 +163,13 @@ class KeyExternalKeyReferenceDetailArgs:
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[pulumi.Input[str]] = None,
              external_key_version_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         if external_key_id is not None:
             _setter("external_key_id", external_key_id)
         if external_key_version_id is not None:
@@ -212,7 +226,11 @@ class KeyKeyShapeArgs:
              algorithm: pulumi.Input[str],
              length: pulumi.Input[int],
              curve_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("length", length)
         if curve_id is not None:
@@ -273,7 +291,11 @@ class KeyReplicaDetailArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -313,7 +335,15 @@ class KeyRestoreFromFileArgs:
              content_length: pulumi.Input[str],
              restore_key_from_file_details: pulumi.Input[str],
              content_md5: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'restoreKeyFromFileDetails' in kwargs:
+            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+
         _setter("content_length", content_length)
         _setter("restore_key_from_file_details", restore_key_from_file_details)
         if content_md5 is not None:
@@ -387,7 +417,9 @@ class KeyRestoreFromObjectStoreArgs:
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destination", destination)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -478,7 +510,13 @@ class KeyVersionExternalKeyReferenceDetailArgs:
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[pulumi.Input[str]] = None,
              external_key_version_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         if external_key_id is not None:
             _setter("external_key_id", external_key_id)
         if external_key_version_id is not None:
@@ -524,7 +562,11 @@ class KeyVersionReplicaDetailArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -564,7 +606,15 @@ class VaultExternalKeyManagerMetadataArgs:
              external_vault_endpoint_url: pulumi.Input[str],
              oauth_metadata: pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs'],
              private_endpoint_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadata' in kwargs:
+            oauth_metadata = kwargs['oauthMetadata']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata", oauth_metadata)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -629,7 +679,15 @@ class VaultExternalKeyManagerMetadataOauthMetadataArgs:
              client_app_id: pulumi.Input[str],
              client_app_secret: pulumi.Input[str],
              idcs_account_name_url: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'clientAppSecret' in kwargs:
+            client_app_secret = kwargs['clientAppSecret']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -698,7 +756,15 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
              oauth_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]] = None,
              private_endpoint_id: Optional[pulumi.Input[str]] = None,
              vendor: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadataSummaries' in kwargs:
+            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         if external_vault_endpoint_url is not None:
             _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         if oauth_metadata_summaries is not None:
@@ -776,7 +842,13 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
              _setter: Callable[[Any, Any], None],
              client_app_id: Optional[pulumi.Input[str]] = None,
              idcs_account_name_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         if client_app_id is not None:
             _setter("client_app_id", client_app_id)
         if idcs_account_name_url is not None:
@@ -822,7 +894,11 @@ class VaultReplicaDetailArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -862,7 +938,15 @@ class VaultRestoreFromFileArgs:
              content_length: pulumi.Input[str],
              restore_vault_from_file_details: pulumi.Input[str],
              content_md5: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'restoreVaultFromFileDetails' in kwargs:
+            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+
         _setter("content_length", content_length)
         _setter("restore_vault_from_file_details", restore_vault_from_file_details)
         if content_md5 is not None:
@@ -936,7 +1020,9 @@ class VaultRestoreFromObjectStoreArgs:
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
              uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destination", destination)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -1026,7 +1112,9 @@ class GetEkmsPrivateEndpointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1078,7 +1166,9 @@ class GetKeyVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1130,7 +1220,9 @@ class GetKeysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1182,7 +1274,9 @@ class GetVaultReplicasFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1234,7 +1328,9 @@ class GetVaultsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

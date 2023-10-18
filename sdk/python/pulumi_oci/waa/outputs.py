@@ -70,7 +70,11 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+
         if is_response_header_based_caching_enabled is not None:
             _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
@@ -125,7 +129,11 @@ class AppAccelerationPolicyResponseCompressionPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compression: Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gzipCompression' in kwargs:
+            gzip_compression = kwargs['gzipCompression']
+
         if gzip_compression is not None:
             _setter("gzip_compression", gzip_compression)
 
@@ -172,7 +180,11 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -205,7 +217,9 @@ class GetAppAccelerationPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -239,7 +253,9 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -307,7 +323,29 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult(dic
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'responseCachingPolicies' in kwargs:
+            response_caching_policies = kwargs['responseCachingPolicies']
+        if 'responseCompressionPolicies' in kwargs:
+            response_compression_policies = kwargs['responseCompressionPolicies']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -433,7 +471,11 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCa
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+
         _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
@@ -460,7 +502,11 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compressions: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gzipCompressions' in kwargs:
+            gzip_compressions = kwargs['gzipCompressions']
+
         _setter("gzip_compressions", gzip_compressions)
 
     @property
@@ -487,7 +533,11 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -514,7 +564,11 @@ class GetAppAccelerationPolicyResponseCachingPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_response_header_based_caching_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isResponseHeaderBasedCachingEnabled' in kwargs:
+            is_response_header_based_caching_enabled = kwargs['isResponseHeaderBasedCachingEnabled']
+
         _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
@@ -541,7 +595,11 @@ class GetAppAccelerationPolicyResponseCompressionPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              gzip_compressions: Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gzipCompressions' in kwargs:
+            gzip_compressions = kwargs['gzipCompressions']
+
         _setter("gzip_compressions", gzip_compressions)
 
     @property
@@ -568,7 +626,11 @@ class GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -598,7 +660,9 @@ class GetAppAccelerationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -632,7 +696,9 @@ class GetAppAccelerationsWebAppAccelerationCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -704,7 +770,31 @@ class GetAppAccelerationsWebAppAccelerationCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              web_app_acceleration_policy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendType' in kwargs:
+            backend_type = kwargs['backendType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'webAppAccelerationPolicyId' in kwargs:
+            web_app_acceleration_policy_id = kwargs['webAppAccelerationPolicyId']
+
         _setter("backend_type", backend_type)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)

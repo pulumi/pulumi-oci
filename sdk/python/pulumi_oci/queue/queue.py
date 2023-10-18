@@ -69,7 +69,33 @@ class QueueArgs:
              retention_in_seconds: Optional[pulumi.Input[int]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              visibility_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'channelConsumptionLimit' in kwargs:
+            channel_consumption_limit = kwargs['channelConsumptionLimit']
+        if 'customEncryptionKeyId' in kwargs:
+            custom_encryption_key_id = kwargs['customEncryptionKeyId']
+        if 'deadLetterQueueDeliveryCount' in kwargs:
+            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'purgeQueue' in kwargs:
+            purge_queue = kwargs['purgeQueue']
+        if 'purgeType' in kwargs:
+            purge_type = kwargs['purgeType']
+        if 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'visibilityInSeconds' in kwargs:
+            visibility_in_seconds = kwargs['visibilityInSeconds']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if channel_consumption_limit is not None:
@@ -314,7 +340,43 @@ class _QueueState:
              time_updated: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              visibility_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'channelConsumptionLimit' in kwargs:
+            channel_consumption_limit = kwargs['channelConsumptionLimit']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customEncryptionKeyId' in kwargs:
+            custom_encryption_key_id = kwargs['customEncryptionKeyId']
+        if 'deadLetterQueueDeliveryCount' in kwargs:
+            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'messagesEndpoint' in kwargs:
+            messages_endpoint = kwargs['messagesEndpoint']
+        if 'purgeQueue' in kwargs:
+            purge_queue = kwargs['purgeQueue']
+        if 'purgeType' in kwargs:
+            purge_type = kwargs['purgeType']
+        if 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'visibilityInSeconds' in kwargs:
+            visibility_in_seconds = kwargs['visibilityInSeconds']
+
         if channel_consumption_limit is not None:
             _setter("channel_consumption_limit", channel_consumption_limit)
         if compartment_id is not None:

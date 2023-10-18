@@ -26,7 +26,11 @@ class AddSdmColumnsArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              masking_policy_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+
         _setter("masking_policy_id", masking_policy_id)
 
     @property
@@ -54,7 +58,11 @@ class _AddSdmColumnsState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              masking_policy_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+
         if masking_policy_id is not None:
             _setter("masking_policy_id", masking_policy_id)
 

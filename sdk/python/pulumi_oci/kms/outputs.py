@@ -113,7 +113,11 @@ class GeneratedKeyKeyShape(dict):
              algorithm: str,
              length: int,
              curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("length", length)
         if curve_id is not None:
@@ -179,7 +183,11 @@ class KeyExternalKeyReference(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+
         _setter("external_key_id", external_key_id)
 
     @property
@@ -229,7 +237,13 @@ class KeyExternalKeyReferenceDetail(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[str] = None,
              external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         if external_key_id is not None:
             _setter("external_key_id", external_key_id)
         if external_key_version_id is not None:
@@ -295,7 +309,11 @@ class KeyKeyShape(dict):
              algorithm: str,
              length: int,
              curve_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("length", length)
         if curve_id is not None:
@@ -361,7 +379,11 @@ class KeyReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -418,7 +440,15 @@ class KeyRestoreFromFile(dict):
              content_length: str,
              restore_key_from_file_details: str,
              content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'restoreKeyFromFileDetails' in kwargs:
+            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+
         _setter("content_length", content_length)
         _setter("restore_key_from_file_details", restore_key_from_file_details)
         if content_md5 is not None:
@@ -480,7 +510,9 @@ class KeyRestoreFromObjectStore(dict):
              namespace: Optional[str] = None,
              object: Optional[str] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destination", destination)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -570,7 +602,13 @@ class KeyVersionExternalKeyReferenceDetail(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: Optional[str] = None,
              external_key_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         if external_key_id is not None:
             _setter("external_key_id", external_key_id)
         if external_key_version_id is not None:
@@ -625,7 +663,11 @@ class KeyVersionReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -682,7 +724,15 @@ class VaultExternalKeyManagerMetadata(dict):
              external_vault_endpoint_url: str,
              oauth_metadata: 'outputs.VaultExternalKeyManagerMetadataOauthMetadata',
              private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadata' in kwargs:
+            oauth_metadata = kwargs['oauthMetadata']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata", oauth_metadata)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -756,7 +806,15 @@ class VaultExternalKeyManagerMetadataOauthMetadata(dict):
              client_app_id: str,
              client_app_secret: str,
              idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'clientAppSecret' in kwargs:
+            client_app_secret = kwargs['clientAppSecret']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -834,7 +892,15 @@ class VaultExternalKeyManagerMetadataSummary(dict):
              oauth_metadata_summaries: Optional[Sequence['outputs.VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary']] = None,
              private_endpoint_id: Optional[str] = None,
              vendor: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadataSummaries' in kwargs:
+            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         if external_vault_endpoint_url is not None:
             _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         if oauth_metadata_summaries is not None:
@@ -915,7 +981,13 @@ class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary(dict):
              _setter: Callable[[Any, Any], None],
              client_app_id: Optional[str] = None,
              idcs_account_name_url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         if client_app_id is not None:
             _setter("client_app_id", client_app_id)
         if idcs_account_name_url is not None:
@@ -970,7 +1042,11 @@ class VaultReplicaDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         if replication_id is not None:
             _setter("replication_id", replication_id)
 
@@ -1027,7 +1103,15 @@ class VaultRestoreFromFile(dict):
              content_length: str,
              restore_vault_from_file_details: str,
              content_md5: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'restoreVaultFromFileDetails' in kwargs:
+            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+
         _setter("content_length", content_length)
         _setter("restore_vault_from_file_details", restore_vault_from_file_details)
         if content_md5 is not None:
@@ -1089,7 +1173,9 @@ class VaultRestoreFromObjectStore(dict):
              namespace: Optional[str] = None,
              object: Optional[str] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("destination", destination)
         if bucket is not None:
             _setter("bucket", bucket)
@@ -1208,7 +1294,31 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundle' in kwargs:
+            ca_bundle = kwargs['caBundle']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKeyManagerIp' in kwargs:
+            external_key_manager_ip = kwargs['externalKeyManagerIp']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("ca_bundle", ca_bundle)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1355,7 +1465,9 @@ class GetEkmsPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1392,7 +1504,11 @@ class GetKeyExternalKeyReferenceResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+
         _setter("external_key_id", external_key_id)
 
     @property
@@ -1423,7 +1539,13 @@ class GetKeyExternalKeyReferenceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
              external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
 
@@ -1470,7 +1592,11 @@ class GetKeyKeyShapeResult(dict):
              algorithm: str,
              curve_id: str,
              length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("curve_id", curve_id)
         _setter("length", length)
@@ -1518,7 +1644,11 @@ class GetKeyReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -1553,7 +1683,15 @@ class GetKeyRestoreFromFileResult(dict):
              content_length: str,
              content_md5: str,
              restore_key_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'restoreKeyFromFileDetails' in kwargs:
+            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
         _setter("restore_key_from_file_details", restore_key_from_file_details)
@@ -1614,7 +1752,9 @@ class GetKeyRestoreFromObjectStoreResult(dict):
              namespace: str,
              object: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("destination", destination)
         _setter("namespace", namespace)
@@ -1681,7 +1821,13 @@ class GetKeyVersionExternalKeyReferenceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
              external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
 
@@ -1717,7 +1863,11 @@ class GetKeyVersionReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -1747,7 +1897,9 @@ class GetKeyVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1843,7 +1995,37 @@ class GetKeyVersionsKeyVersionResult(dict):
              time_created: str,
              time_of_deletion: str,
              vault_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'externalKeyReferenceDetails' in kwargs:
+            external_key_reference_details = kwargs['externalKeyReferenceDetails']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'publicKey' in kwargs:
+            public_key = kwargs['publicKey']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoredFromKeyId' in kwargs:
+            restored_from_key_id = kwargs['restoredFromKeyId']
+        if 'restoredFromKeyVersionId' in kwargs:
+            restored_from_key_version_id = kwargs['restoredFromKeyVersionId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("external_key_reference_details", external_key_reference_details)
         _setter("external_key_version_id", external_key_version_id)
@@ -2006,7 +2188,13 @@ class GetKeyVersionsKeyVersionExternalKeyReferenceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
              external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
 
@@ -2042,7 +2230,11 @@ class GetKeyVersionsKeyVersionReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -2072,7 +2264,9 @@ class GetKeysFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2187,7 +2381,49 @@ class GetKeysKeyResult(dict):
              time_created: str,
              time_of_deletion: str,
              vault_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currentKeyVersion' in kwargs:
+            current_key_version = kwargs['currentKeyVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKeyReferenceDetails' in kwargs:
+            external_key_reference_details = kwargs['externalKeyReferenceDetails']
+        if 'externalKeyReferences' in kwargs:
+            external_key_references = kwargs['externalKeyReferences']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'keyShapes' in kwargs:
+            key_shapes = kwargs['keyShapes']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoreFromFiles' in kwargs:
+            restore_from_files = kwargs['restoreFromFiles']
+        if 'restoreFromObjectStores' in kwargs:
+            restore_from_object_stores = kwargs['restoreFromObjectStores']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'restoredFromKeyId' in kwargs:
+            restored_from_key_id = kwargs['restoredFromKeyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("current_key_version", current_key_version)
         _setter("defined_tags", defined_tags)
@@ -2385,7 +2621,11 @@ class GetKeysKeyExternalKeyReferenceResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+
         _setter("external_key_id", external_key_id)
 
     @property
@@ -2416,7 +2656,13 @@ class GetKeysKeyExternalKeyReferenceDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              external_key_id: str,
              external_key_version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalKeyId' in kwargs:
+            external_key_id = kwargs['externalKeyId']
+        if 'externalKeyVersionId' in kwargs:
+            external_key_version_id = kwargs['externalKeyVersionId']
+
         _setter("external_key_id", external_key_id)
         _setter("external_key_version_id", external_key_version_id)
 
@@ -2460,7 +2706,11 @@ class GetKeysKeyKeyShapeResult(dict):
              algorithm: str,
              curve_id: str,
              length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'curveId' in kwargs:
+            curve_id = kwargs['curveId']
+
         _setter("algorithm", algorithm)
         _setter("curve_id", curve_id)
         _setter("length", length)
@@ -2505,7 +2755,11 @@ class GetKeysKeyReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -2535,7 +2789,15 @@ class GetKeysKeyRestoreFromFileResult(dict):
              content_length: str,
              content_md5: str,
              restore_key_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'restoreKeyFromFileDetails' in kwargs:
+            restore_key_from_file_details = kwargs['restoreKeyFromFileDetails']
+
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
         _setter("restore_key_from_file_details", restore_key_from_file_details)
@@ -2580,7 +2842,9 @@ class GetKeysKeyRestoreFromObjectStoreResult(dict):
              namespace: str,
              object: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("destination", destination)
         _setter("namespace", namespace)
@@ -2632,7 +2896,9 @@ class GetReplicationStatusReplicaDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              region: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("region", region)
         _setter("status", status)
 
@@ -2675,7 +2941,15 @@ class GetVaultExternalKeyManagerMetadataResult(dict):
              external_vault_endpoint_url: str,
              oauth_metadatas: Sequence['outputs.GetVaultExternalKeyManagerMetadataOauthMetadataResult'],
              private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadatas' in kwargs:
+            oauth_metadatas = kwargs['oauthMetadatas']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadatas", oauth_metadatas)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -2724,7 +2998,15 @@ class GetVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
              client_app_id: str,
              client_app_secret: str,
              idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'clientAppSecret' in kwargs:
+            client_app_secret = kwargs['clientAppSecret']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -2778,7 +3060,15 @@ class GetVaultExternalKeyManagerMetadataSummaryResult(dict):
              oauth_metadata_summaries: Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult'],
              private_endpoint_id: str,
              vendor: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadataSummaries' in kwargs:
+            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata_summaries", oauth_metadata_summaries)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -2836,7 +3126,13 @@ class GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(dict):
              _setter: Callable[[Any, Any], None],
              client_app_id: str,
              idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("idcs_account_name_url", idcs_account_name_url)
 
@@ -2872,7 +3168,11 @@ class GetVaultReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -2902,7 +3202,9 @@ class GetVaultReplicasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2951,7 +3253,13 @@ class GetVaultReplicasVaultReplicaResult(dict):
              management_endpoint: str,
              region: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("management_endpoint", management_endpoint)
         _setter("region", region)
@@ -3013,7 +3321,15 @@ class GetVaultRestoreFromFileResult(dict):
              content_length: str,
              content_md5: str,
              restore_vault_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'restoreVaultFromFileDetails' in kwargs:
+            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
         _setter("restore_vault_from_file_details", restore_vault_from_file_details)
@@ -3074,7 +3390,9 @@ class GetVaultRestoreFromObjectStoreResult(dict):
              namespace: str,
              object: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("destination", destination)
         _setter("namespace", namespace)
@@ -3140,7 +3458,9 @@ class GetVaultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3245,7 +3565,43 @@ class GetVaultsVaultResult(dict):
              time_created: str,
              time_of_deletion: str,
              vault_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKeyManagerMetadataSummaries' in kwargs:
+            external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
+        if 'externalKeyManagerMetadatas' in kwargs:
+            external_key_manager_metadatas = kwargs['externalKeyManagerMetadatas']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoreFromFiles' in kwargs:
+            restore_from_files = kwargs['restoreFromFiles']
+        if 'restoreFromObjectStores' in kwargs:
+            restore_from_object_stores = kwargs['restoreFromObjectStores']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'restoredFromVaultId' in kwargs:
+            restored_from_vault_id = kwargs['restoredFromVaultId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultType' in kwargs:
+            vault_type = kwargs['vaultType']
+
         _setter("compartment_id", compartment_id)
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("defined_tags", defined_tags)
@@ -3429,7 +3785,15 @@ class GetVaultsVaultExternalKeyManagerMetadataResult(dict):
              external_vault_endpoint_url: str,
              oauth_metadatas: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult'],
              private_endpoint_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadatas' in kwargs:
+            oauth_metadatas = kwargs['oauthMetadatas']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadatas", oauth_metadatas)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -3478,7 +3842,15 @@ class GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult(dict):
              client_app_id: str,
              client_app_secret: str,
              idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'clientAppSecret' in kwargs:
+            client_app_secret = kwargs['clientAppSecret']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("client_app_secret", client_app_secret)
         _setter("idcs_account_name_url", idcs_account_name_url)
@@ -3532,7 +3904,15 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryResult(dict):
              oauth_metadata_summaries: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult'],
              private_endpoint_id: str,
              vendor: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalVaultEndpointUrl' in kwargs:
+            external_vault_endpoint_url = kwargs['externalVaultEndpointUrl']
+        if 'oauthMetadataSummaries' in kwargs:
+            oauth_metadata_summaries = kwargs['oauthMetadataSummaries']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
         _setter("external_vault_endpoint_url", external_vault_endpoint_url)
         _setter("oauth_metadata_summaries", oauth_metadata_summaries)
         _setter("private_endpoint_id", private_endpoint_id)
@@ -3590,7 +3970,13 @@ class GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryResult(
              _setter: Callable[[Any, Any], None],
              client_app_id: str,
              idcs_account_name_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAppId' in kwargs:
+            client_app_id = kwargs['clientAppId']
+        if 'idcsAccountNameUrl' in kwargs:
+            idcs_account_name_url = kwargs['idcsAccountNameUrl']
+
         _setter("client_app_id", client_app_id)
         _setter("idcs_account_name_url", idcs_account_name_url)
 
@@ -3626,7 +4012,11 @@ class GetVaultsVaultReplicaDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              replication_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'replicationId' in kwargs:
+            replication_id = kwargs['replicationId']
+
         _setter("replication_id", replication_id)
 
     @property
@@ -3656,7 +4046,15 @@ class GetVaultsVaultRestoreFromFileResult(dict):
              content_length: str,
              content_md5: str,
              restore_vault_from_file_details: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'restoreVaultFromFileDetails' in kwargs:
+            restore_vault_from_file_details = kwargs['restoreVaultFromFileDetails']
+
         _setter("content_length", content_length)
         _setter("content_md5", content_md5)
         _setter("restore_vault_from_file_details", restore_vault_from_file_details)
@@ -3701,7 +4099,9 @@ class GetVaultsVaultRestoreFromObjectStoreResult(dict):
              namespace: str,
              object: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("destination", destination)
         _setter("namespace", namespace)

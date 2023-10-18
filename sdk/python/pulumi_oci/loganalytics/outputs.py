@@ -158,7 +158,27 @@ class LogAnalyticsImportCustomContentChangeList(dict):
              updated_field_display_names: Optional[Sequence[str]] = None,
              updated_parser_names: Optional[Sequence[str]] = None,
              updated_source_names: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conflictFieldDisplayNames' in kwargs:
+            conflict_field_display_names = kwargs['conflictFieldDisplayNames']
+        if 'conflictParserNames' in kwargs:
+            conflict_parser_names = kwargs['conflictParserNames']
+        if 'conflictSourceNames' in kwargs:
+            conflict_source_names = kwargs['conflictSourceNames']
+        if 'createdFieldDisplayNames' in kwargs:
+            created_field_display_names = kwargs['createdFieldDisplayNames']
+        if 'createdParserNames' in kwargs:
+            created_parser_names = kwargs['createdParserNames']
+        if 'createdSourceNames' in kwargs:
+            created_source_names = kwargs['createdSourceNames']
+        if 'updatedFieldDisplayNames' in kwargs:
+            updated_field_display_names = kwargs['updatedFieldDisplayNames']
+        if 'updatedParserNames' in kwargs:
+            updated_parser_names = kwargs['updatedParserNames']
+        if 'updatedSourceNames' in kwargs:
+            updated_source_names = kwargs['updatedSourceNames']
+
         if conflict_field_display_names is not None:
             _setter("conflict_field_display_names", conflict_field_display_names)
         if conflict_parser_names is not None:
@@ -295,7 +315,17 @@ class LogAnalyticsObjectCollectionRuleOverride(dict):
              match_value: Optional[str] = None,
              property_name: Optional[str] = None,
              property_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'propertyValue' in kwargs:
+            property_value = kwargs['propertyValue']
+
         if match_type is not None:
             _setter("match_type", match_type)
         if match_value is not None:
@@ -345,7 +375,9 @@ class LogAnalyticsPreferencesManagementItem(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -428,7 +460,15 @@ class NamespaceIngestTimeRuleAction(dict):
              type: str,
              dimensions: Optional[Sequence[str]] = None,
              resource_group: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("metric_name", metric_name)
         _setter("namespace", namespace)
@@ -545,7 +585,17 @@ class NamespaceIngestTimeRuleConditions(dict):
              field_value: str,
              kind: str,
              additional_conditions: Optional[Sequence['outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'fieldOperator' in kwargs:
+            field_operator = kwargs['fieldOperator']
+        if 'fieldValue' in kwargs:
+            field_value = kwargs['fieldValue']
+        if 'additionalConditions' in kwargs:
+            additional_conditions = kwargs['additionalConditions']
+
         _setter("field_name", field_name)
         _setter("field_operator", field_operator)
         _setter("field_value", field_value)
@@ -638,7 +688,15 @@ class NamespaceIngestTimeRuleConditionsAdditionalCondition(dict):
              condition_field: str,
              condition_operator: str,
              condition_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionField' in kwargs:
+            condition_field = kwargs['conditionField']
+        if 'conditionOperator' in kwargs:
+            condition_operator = kwargs['conditionOperator']
+        if 'conditionValue' in kwargs:
+            condition_value = kwargs['conditionValue']
+
         _setter("condition_field", condition_field)
         _setter("condition_operator", condition_operator)
         _setter("condition_value", condition_value)
@@ -740,7 +798,23 @@ class NamespaceScheduledTaskAction(dict):
              purge_duration: Optional[str] = None,
              query_string: Optional[str] = None,
              saved_search_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'metricExtraction' in kwargs:
+            metric_extraction = kwargs['metricExtraction']
+        if 'purgeCompartmentId' in kwargs:
+            purge_compartment_id = kwargs['purgeCompartmentId']
+        if 'purgeDuration' in kwargs:
+            purge_duration = kwargs['purgeDuration']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+
         _setter("type", type)
         if compartment_id_in_subtree is not None:
             _setter("compartment_id_in_subtree", compartment_id_in_subtree)
@@ -870,7 +944,15 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
              metric_name: Optional[str] = None,
              namespace: Optional[str] = None,
              resource_group: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if metric_name is not None:
@@ -925,7 +1007,9 @@ class NamespaceScheduledTaskSchedules(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              schedules: Sequence['outputs.NamespaceScheduledTaskSchedulesSchedule'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("schedules", schedules)
 
     @property
@@ -992,7 +1076,17 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
              recurring_interval: Optional[str] = None,
              repeat_count: Optional[int] = None,
              time_zone: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'misfirePolicy' in kwargs:
+            misfire_policy = kwargs['misfirePolicy']
+        if 'recurringInterval' in kwargs:
+            recurring_interval = kwargs['recurringInterval']
+        if 'repeatCount' in kwargs:
+            repeat_count = kwargs['repeatCount']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("type", type)
         if expression is not None:
             _setter("expression", expression)
@@ -1085,7 +1179,13 @@ class GetLogAnalyticsCategoriesListItemResult(dict):
              is_system: bool,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isSystem' in kwargs:
+            is_system = kwargs['isSystem']
+
         _setter("description", description)
         _setter("display_name", display_name)
         _setter("is_system", is_system)
@@ -1154,7 +1254,9 @@ class GetLogAnalyticsEntitiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1191,7 +1293,9 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1295,7 +1399,39 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              timezone_region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areLogsCollected' in kwargs:
+            are_logs_collected = kwargs['areLogsCollected']
+        if 'cloudResourceId' in kwargs:
+            cloud_resource_id = kwargs['cloudResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'entityTypeInternalName' in kwargs:
+            entity_type_internal_name = kwargs['entityTypeInternalName']
+        if 'entityTypeName' in kwargs:
+            entity_type_name = kwargs['entityTypeName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managementAgentCompartmentId' in kwargs:
+            management_agent_compartment_id = kwargs['managementAgentCompartmentId']
+        if 'managementAgentDisplayName' in kwargs:
+            management_agent_display_name = kwargs['managementAgentDisplayName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timezoneRegion' in kwargs:
+            timezone_region = kwargs['timezoneRegion']
+
         _setter("are_logs_collected", are_logs_collected)
         _setter("cloud_resource_id", cloud_resource_id)
         _setter("compartment_id", compartment_id)
@@ -1506,7 +1642,9 @@ class GetLogAnalyticsEntityTopologyItemResult(dict):
              _setter: Callable[[Any, Any], None],
              links: Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkResult'],
              nodes: Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("links", links)
         _setter("nodes", nodes)
 
@@ -1542,7 +1680,9 @@ class GetLogAnalyticsEntityTopologyItemLinkResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1573,7 +1713,13 @@ class GetLogAnalyticsEntityTopologyItemLinkItemResult(dict):
              _setter: Callable[[Any, Any], None],
              destination_entity_id: str,
              source_entity_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationEntityId' in kwargs:
+            destination_entity_id = kwargs['destinationEntityId']
+        if 'sourceEntityId' in kwargs:
+            source_entity_id = kwargs['sourceEntityId']
+
         _setter("destination_entity_id", destination_entity_id)
         _setter("source_entity_id", source_entity_id)
 
@@ -1609,7 +1755,9 @@ class GetLogAnalyticsEntityTopologyItemNodeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1696,7 +1844,35 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
              time_created: str,
              time_updated: str,
              timezone_region: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areLogsCollected' in kwargs:
+            are_logs_collected = kwargs['areLogsCollected']
+        if 'cloudResourceId' in kwargs:
+            cloud_resource_id = kwargs['cloudResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'entityTypeInternalName' in kwargs:
+            entity_type_internal_name = kwargs['entityTypeInternalName']
+        if 'entityTypeName' in kwargs:
+            entity_type_name = kwargs['entityTypeName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timezoneRegion' in kwargs:
+            timezone_region = kwargs['timezoneRegion']
+
         _setter("are_logs_collected", are_logs_collected)
         _setter("cloud_resource_id", cloud_resource_id)
         _setter("compartment_id", compartment_id)
@@ -1861,7 +2037,9 @@ class GetLogAnalyticsLogGroupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1895,7 +2073,9 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1951,7 +2131,21 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(di
              namespace: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -2056,7 +2250,17 @@ class GetLogAnalyticsObjectCollectionRuleOverrideResult(dict):
              match_value: str,
              property_name: str,
              property_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'propertyValue' in kwargs:
+            property_value = kwargs['propertyValue']
+
         _setter("match_type", match_type)
         _setter("match_value", match_value)
         _setter("property_name", property_name)
@@ -2104,7 +2308,9 @@ class GetLogAnalyticsObjectCollectionRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2141,7 +2347,9 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2269,7 +2477,49 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
              time_created: str,
              time_updated: str,
              timezone: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'charEncoding' in kwargs:
+            char_encoding = kwargs['charEncoding']
+        if 'collectionType' in kwargs:
+            collection_type = kwargs['collectionType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logSet' in kwargs:
+            log_set = kwargs['logSet']
+        if 'logSetExtRegex' in kwargs:
+            log_set_ext_regex = kwargs['logSetExtRegex']
+        if 'logSetKey' in kwargs:
+            log_set_key = kwargs['logSetKey']
+        if 'logSourceName' in kwargs:
+            log_source_name = kwargs['logSourceName']
+        if 'objectNameFilters' in kwargs:
+            object_name_filters = kwargs['objectNameFilters']
+        if 'osBucketName' in kwargs:
+            os_bucket_name = kwargs['osBucketName']
+        if 'osNamespace' in kwargs:
+            os_namespace = kwargs['osNamespace']
+        if 'pollSince' in kwargs:
+            poll_since = kwargs['pollSince']
+        if 'pollTill' in kwargs:
+            poll_till = kwargs['pollTill']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("char_encoding", char_encoding)
         _setter("collection_type", collection_type)
         _setter("compartment_id", compartment_id)
@@ -2536,7 +2786,17 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
              match_value: str,
              property_name: str,
              property_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'propertyValue' in kwargs:
+            property_value = kwargs['propertyValue']
+
         _setter("match_type", match_type)
         _setter("match_value", match_value)
         _setter("property_name", property_name)
@@ -2582,7 +2842,9 @@ class GetLogAnalyticsPreferenceItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -2634,7 +2896,13 @@ class GetLogAnalyticsResourceCategoriesListCategoryResult(dict):
              is_system: bool,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isSystem' in kwargs:
+            is_system = kwargs['isSystem']
+
         _setter("description", description)
         _setter("display_name", display_name)
         _setter("is_system", is_system)
@@ -2709,7 +2977,17 @@ class GetLogAnalyticsResourceCategoriesListItemResult(dict):
              is_system: bool,
              resource_id: str,
              resource_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryName' in kwargs:
+            category_name = kwargs['categoryName']
+        if 'isSystem' in kwargs:
+            is_system = kwargs['isSystem']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("category_name", category_name)
         _setter("is_system", is_system)
         _setter("resource_id", resource_id)
@@ -2763,7 +3041,9 @@ class GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2802,7 +3082,11 @@ class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult(dict)
              name: str,
              patterns: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult'],
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'effectiveLevel' in kwargs:
+            effective_level = kwargs['effectiveLevel']
+
         _setter("effective_level", effective_level)
         _setter("name", name)
         _setter("patterns", patterns)
@@ -2864,7 +3148,11 @@ class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResul
              effective_level: str,
              id: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'effectiveLevel' in kwargs:
+            effective_level = kwargs['effectiveLevel']
+
         _setter("effective_level", effective_level)
         _setter("id", id)
         _setter("value", value)
@@ -2915,7 +3203,9 @@ class GetNamespaceEffectivePropertiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2975,7 +3265,15 @@ class GetNamespaceIngestTimeRuleActionResult(dict):
              namespace: str,
              resource_group: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -3063,7 +3361,17 @@ class GetNamespaceIngestTimeRuleConditionResult(dict):
              field_operator: str,
              field_value: str,
              kind: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalConditions' in kwargs:
+            additional_conditions = kwargs['additionalConditions']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'fieldOperator' in kwargs:
+            field_operator = kwargs['fieldOperator']
+        if 'fieldValue' in kwargs:
+            field_value = kwargs['fieldValue']
+
         _setter("additional_conditions", additional_conditions)
         _setter("field_name", field_name)
         _setter("field_operator", field_operator)
@@ -3134,7 +3442,15 @@ class GetNamespaceIngestTimeRuleConditionAdditionalConditionResult(dict):
              condition_field: str,
              condition_operator: str,
              condition_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionField' in kwargs:
+            condition_field = kwargs['conditionField']
+        if 'conditionOperator' in kwargs:
+            condition_operator = kwargs['conditionOperator']
+        if 'conditionValue' in kwargs:
+            condition_value = kwargs['conditionValue']
+
         _setter("condition_field", condition_field)
         _setter("condition_operator", condition_operator)
         _setter("condition_value", condition_value)
@@ -3182,7 +3498,9 @@ class GetNamespaceIngestTimeRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3216,7 +3534,9 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3288,7 +3608,29 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'conditionKind' in kwargs:
+            condition_kind = kwargs['conditionKind']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'fieldValue' in kwargs:
+            field_value = kwargs['fieldValue']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("condition_kind", condition_kind)
         _setter("defined_tags", defined_tags)
@@ -3429,7 +3771,9 @@ class GetNamespacePropertiesMetadataFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3469,7 +3813,9 @@ class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3512,7 +3858,13 @@ class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult(
              display_name: str,
              levels: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("default_value", default_value)
         _setter("description", description)
         _setter("display_name", display_name)
@@ -3579,7 +3931,9 @@ class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelRe
              _setter: Callable[[Any, Any], None],
              constraints: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("constraints", constraints)
         _setter("name", name)
 
@@ -3618,7 +3972,9 @@ class GetNamespaceRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3655,7 +4011,9 @@ class GetNamespaceRulesRuleSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3730,7 +4088,27 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
              time_created: str,
              time_last_executed: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'lastExecutionStatus' in kwargs:
+            last_execution_status = kwargs['lastExecutionStatus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastExecuted' in kwargs:
+            time_last_executed = kwargs['timeLastExecuted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3893,7 +4271,23 @@ class GetNamespaceScheduledTaskActionResult(dict):
              query_string: str,
              saved_search_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'metricExtractions' in kwargs:
+            metric_extractions = kwargs['metricExtractions']
+        if 'purgeCompartmentId' in kwargs:
+            purge_compartment_id = kwargs['purgeCompartmentId']
+        if 'purgeDuration' in kwargs:
+            purge_duration = kwargs['purgeDuration']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+
         _setter("compartment_id_in_subtree", compartment_id_in_subtree)
         _setter("data_type", data_type)
         _setter("metric_extractions", metric_extractions)
@@ -3995,7 +4389,15 @@ class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
              metric_name: str,
              namespace: str,
              resource_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("metric_name", metric_name)
         _setter("namespace", namespace)
@@ -4046,7 +4448,9 @@ class GetNamespaceScheduledTaskScheduleResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              schedules: Sequence['outputs.GetNamespaceScheduledTaskScheduleScheduleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("schedules", schedules)
 
     @property
@@ -4090,7 +4494,17 @@ class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
              repeat_count: int,
              time_zone: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'misfirePolicy' in kwargs:
+            misfire_policy = kwargs['misfirePolicy']
+        if 'recurringInterval' in kwargs:
+            recurring_interval = kwargs['recurringInterval']
+        if 'repeatCount' in kwargs:
+            repeat_count = kwargs['repeatCount']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("expression", expression)
         _setter("misfire_policy", misfire_policy)
         _setter("recurring_interval", recurring_interval)
@@ -4165,7 +4579,9 @@ class GetNamespaceScheduledTasksFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4199,7 +4615,9 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4289,7 +4707,33 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'numOccurrences' in kwargs:
+            num_occurrences = kwargs['numOccurrences']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+        if 'scheduledTaskId' in kwargs:
+            scheduled_task_id = kwargs['scheduledTaskId']
+        if 'taskStatus' in kwargs:
+            task_status = kwargs['taskStatus']
+        if 'taskType' in kwargs:
+            task_type = kwargs['taskType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4490,7 +4934,23 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
              query_string: str,
              saved_search_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'metricExtractions' in kwargs:
+            metric_extractions = kwargs['metricExtractions']
+        if 'purgeCompartmentId' in kwargs:
+            purge_compartment_id = kwargs['purgeCompartmentId']
+        if 'purgeDuration' in kwargs:
+            purge_duration = kwargs['purgeDuration']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+
         _setter("compartment_id_in_subtree", compartment_id_in_subtree)
         _setter("data_type", data_type)
         _setter("metric_extractions", metric_extractions)
@@ -4587,7 +5047,15 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractio
              metric_name: str,
              namespace: str,
              resource_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("metric_name", metric_name)
         _setter("namespace", namespace)
@@ -4632,7 +5100,9 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              schedules: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("schedules", schedules)
 
     @property
@@ -4676,7 +5146,17 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResul
              repeat_count: int,
              time_zone: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'misfirePolicy' in kwargs:
+            misfire_policy = kwargs['misfirePolicy']
+        if 'recurringInterval' in kwargs:
+            recurring_interval = kwargs['recurringInterval']
+        if 'repeatCount' in kwargs:
+            repeat_count = kwargs['repeatCount']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("expression", expression)
         _setter("misfire_policy", misfire_policy)
         _setter("recurring_interval", recurring_interval)
@@ -4756,7 +5236,15 @@ class GetNamespaceStorageEncryptionKeyInfoItemResult(dict):
              key_id: str,
              key_source: str,
              key_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keySource' in kwargs:
+            key_source = kwargs['keySource']
+        if 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+
         _setter("key_id", key_id)
         _setter("key_source", key_source)
         _setter("key_type", key_type)
@@ -4804,7 +5292,9 @@ class GetNamespaceStorageOverlappingRecallsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4841,7 +5331,9 @@ class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4896,7 +5388,21 @@ class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult
              time_data_ended: str,
              time_data_started: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'logSets' in kwargs:
+            log_sets = kwargs['logSets']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'timeDataEnded' in kwargs:
+            time_data_ended = kwargs['timeDataEnded']
+        if 'timeDataStarted' in kwargs:
+            time_data_started = kwargs['timeDataStarted']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("created_by", created_by)
         _setter("log_sets", log_sets)
         _setter("purpose", purpose)
@@ -4989,7 +5495,9 @@ class GetNamespacesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5023,7 +5531,9 @@ class GetNamespacesNamespaceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNamespacesNamespaceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5055,7 +5565,13 @@ class GetNamespacesNamespaceCollectionItemResult(dict):
              compartment_id: str,
              is_onboarded: bool,
              namespace: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isOnboarded' in kwargs:
+            is_onboarded = kwargs['isOnboarded']
+
         _setter("compartment_id", compartment_id)
         _setter("is_onboarded", is_onboarded)
         _setter("namespace", namespace)

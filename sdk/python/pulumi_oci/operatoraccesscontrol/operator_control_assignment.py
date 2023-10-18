@@ -95,7 +95,41 @@ class OperatorControlAssignmentArgs:
              remote_syslog_server_port: Optional[pulumi.Input[int]] = None,
              time_assignment_from: Optional[pulumi.Input[str]] = None,
              time_assignment_to: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isEnforcedAlways' in kwargs:
+            is_enforced_always = kwargs['isEnforcedAlways']
+        if 'operatorControlId' in kwargs:
+            operator_control_id = kwargs['operatorControlId']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoApproveDuringMaintenance' in kwargs:
+            is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
+        if 'isLogForwarded' in kwargs:
+            is_log_forwarded = kwargs['isLogForwarded']
+        if 'remoteSyslogServerAddress' in kwargs:
+            remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
+        if 'remoteSyslogServerCaCert' in kwargs:
+            remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
+        if 'remoteSyslogServerPort' in kwargs:
+            remote_syslog_server_port = kwargs['remoteSyslogServerPort']
+        if 'timeAssignmentFrom' in kwargs:
+            time_assignment_from = kwargs['timeAssignmentFrom']
+        if 'timeAssignmentTo' in kwargs:
+            time_assignment_to = kwargs['timeAssignmentTo']
+
         _setter("compartment_id", compartment_id)
         _setter("is_enforced_always", is_enforced_always)
         _setter("operator_control_id", operator_control_id)
@@ -457,7 +491,59 @@ class _OperatorControlAssignmentState:
              time_of_assignment: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              unassigner_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignerId' in kwargs:
+            assigner_id = kwargs['assignerId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'detachmentDescription' in kwargs:
+            detachment_description = kwargs['detachmentDescription']
+        if 'errorCode' in kwargs:
+            error_code = kwargs['errorCode']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoApproveDuringMaintenance' in kwargs:
+            is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
+        if 'isDefaultAssignment' in kwargs:
+            is_default_assignment = kwargs['isDefaultAssignment']
+        if 'isEnforcedAlways' in kwargs:
+            is_enforced_always = kwargs['isEnforcedAlways']
+        if 'isLogForwarded' in kwargs:
+            is_log_forwarded = kwargs['isLogForwarded']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operatorControlId' in kwargs:
+            operator_control_id = kwargs['operatorControlId']
+        if 'remoteSyslogServerAddress' in kwargs:
+            remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
+        if 'remoteSyslogServerCaCert' in kwargs:
+            remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
+        if 'remoteSyslogServerPort' in kwargs:
+            remote_syslog_server_port = kwargs['remoteSyslogServerPort']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'timeAssignmentFrom' in kwargs:
+            time_assignment_from = kwargs['timeAssignmentFrom']
+        if 'timeAssignmentTo' in kwargs:
+            time_assignment_to = kwargs['timeAssignmentTo']
+        if 'timeOfAssignment' in kwargs:
+            time_of_assignment = kwargs['timeOfAssignment']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'unassignerId' in kwargs:
+            unassigner_id = kwargs['unassignerId']
+
         if assigner_id is not None:
             _setter("assigner_id", assigner_id)
         if comment is not None:

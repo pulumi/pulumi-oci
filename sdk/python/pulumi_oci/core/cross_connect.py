@@ -77,7 +77,33 @@ class CrossConnectArgs:
              is_active: Optional[pulumi.Input[bool]] = None,
              macsec_properties: Optional[pulumi.Input['CrossConnectMacsecPropertiesArgs']] = None,
              near_cross_connect_or_cross_connect_group_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'locationName' in kwargs:
+            location_name = kwargs['locationName']
+        if 'portSpeedShapeName' in kwargs:
+            port_speed_shape_name = kwargs['portSpeedShapeName']
+        if 'crossConnectGroupId' in kwargs:
+            cross_connect_group_id = kwargs['crossConnectGroupId']
+        if 'customerReferenceName' in kwargs:
+            customer_reference_name = kwargs['customerReferenceName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'farCrossConnectOrCrossConnectGroupId' in kwargs:
+            far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'macsecProperties' in kwargs:
+            macsec_properties = kwargs['macsecProperties']
+        if 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
+            near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
+
         _setter("compartment_id", compartment_id)
         _setter("location_name", location_name)
         _setter("port_speed_shape_name", port_speed_shape_name)
@@ -333,7 +359,41 @@ class _CrossConnectState:
              port_speed_shape_name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'crossConnectGroupId' in kwargs:
+            cross_connect_group_id = kwargs['crossConnectGroupId']
+        if 'customerReferenceName' in kwargs:
+            customer_reference_name = kwargs['customerReferenceName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'farCrossConnectOrCrossConnectGroupId' in kwargs:
+            far_cross_connect_or_cross_connect_group_id = kwargs['farCrossConnectOrCrossConnectGroupId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'locationName' in kwargs:
+            location_name = kwargs['locationName']
+        if 'macsecProperties' in kwargs:
+            macsec_properties = kwargs['macsecProperties']
+        if 'nearCrossConnectOrCrossConnectGroupId' in kwargs:
+            near_cross_connect_or_cross_connect_group_id = kwargs['nearCrossConnectOrCrossConnectGroupId']
+        if 'ociLogicalDeviceName' in kwargs:
+            oci_logical_device_name = kwargs['ociLogicalDeviceName']
+        if 'ociPhysicalDeviceName' in kwargs:
+            oci_physical_device_name = kwargs['ociPhysicalDeviceName']
+        if 'portName' in kwargs:
+            port_name = kwargs['portName']
+        if 'portSpeedShapeName' in kwargs:
+            port_speed_shape_name = kwargs['portSpeedShapeName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if cross_connect_group_id is not None:

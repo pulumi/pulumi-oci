@@ -68,7 +68,21 @@ class CloudDatabaseManagementArgs:
              protocol: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'enableManagement' in kwargs:
+            enable_management = kwargs['enableManagement']
+        if 'managementType' in kwargs:
+            management_type = kwargs['managementType']
+        if 'privateEndPointId' in kwargs:
+            private_end_point_id = kwargs['privateEndPointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         _setter("credentialdetails", credentialdetails)
         _setter("database_id", database_id)
         _setter("enable_management", enable_management)
@@ -261,7 +275,21 @@ class _CloudDatabaseManagementState:
              role: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              ssl_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'enableManagement' in kwargs:
+            enable_management = kwargs['enableManagement']
+        if 'managementType' in kwargs:
+            management_type = kwargs['managementType']
+        if 'privateEndPointId' in kwargs:
+            private_end_point_id = kwargs['privateEndPointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         if credentialdetails is not None:
             _setter("credentialdetails", credentialdetails)
         if database_id is not None:

@@ -75,7 +75,27 @@ class GetBillingScheduleBillingScheduleResult(dict):
              time_end: str,
              time_invoicing: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'arCustomerTransactionId' in kwargs:
+            ar_customer_transaction_id = kwargs['arCustomerTransactionId']
+        if 'arInvoiceNumber' in kwargs:
+            ar_invoice_number = kwargs['arInvoiceNumber']
+        if 'billingFrequency' in kwargs:
+            billing_frequency = kwargs['billingFrequency']
+        if 'invoiceStatus' in kwargs:
+            invoice_status = kwargs['invoiceStatus']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeInvoicing' in kwargs:
+            time_invoicing = kwargs['timeInvoicing']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("amount", amount)
         _setter("ar_customer_transaction_id", ar_customer_transaction_id)
         _setter("ar_invoice_number", ar_invoice_number)
@@ -205,7 +225,11 @@ class GetBillingScheduleBillingScheduleProductResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              part_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+
         _setter("name", name)
         _setter("part_number", part_number)
 
@@ -247,7 +271,9 @@ class GetBillingScheduleFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

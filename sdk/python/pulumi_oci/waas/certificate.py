@@ -61,7 +61,23 @@ class CertificateArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_trust_verification_disabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateData' in kwargs:
+            certificate_data = kwargs['certificateData']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'privateKeyData' in kwargs:
+            private_key_data = kwargs['privateKeyData']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isTrustVerificationDisabled' in kwargs:
+            is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
+
         _setter("certificate_data", certificate_data)
         _setter("compartment_id", compartment_id)
         _setter("private_key_data", private_key_data)
@@ -262,7 +278,41 @@ class _CertificateState:
              time_not_valid_after: Optional[pulumi.Input[str]] = None,
              time_not_valid_before: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateData' in kwargs:
+            certificate_data = kwargs['certificateData']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isTrustVerificationDisabled' in kwargs:
+            is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
+        if 'issuedBy' in kwargs:
+            issued_by = kwargs['issuedBy']
+        if 'issuerNames' in kwargs:
+            issuer_names = kwargs['issuerNames']
+        if 'privateKeyData' in kwargs:
+            private_key_data = kwargs['privateKeyData']
+        if 'publicKeyInfos' in kwargs:
+            public_key_infos = kwargs['publicKeyInfos']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if 'timeNotValidBefore' in kwargs:
+            time_not_valid_before = kwargs['timeNotValidBefore']
+
         if certificate_data is not None:
             _setter("certificate_data", certificate_data)
         if compartment_id is not None:

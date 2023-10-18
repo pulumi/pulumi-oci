@@ -126,7 +126,9 @@ class AccessPolicyRule(dict):
              action: str,
              destination: 'outputs.AccessPolicyRuleDestination',
              source: 'outputs.AccessPolicyRuleSource',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("destination", destination)
         _setter("source", source)
@@ -220,7 +222,15 @@ class AccessPolicyRuleDestination(dict):
              ports: Optional[Sequence[int]] = None,
              protocol: Optional[str] = None,
              virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("type", type)
         if hostnames is not None:
             _setter("hostnames", hostnames)
@@ -360,7 +370,15 @@ class AccessPolicyRuleSource(dict):
              ports: Optional[Sequence[int]] = None,
              protocol: Optional[str] = None,
              virtual_service_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("type", type)
         if hostnames is not None:
             _setter("hostnames", hostnames)
@@ -468,7 +486,11 @@ class IngressGatewayAccessLogging(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -508,7 +530,9 @@ class IngressGatewayHost(dict):
              listeners: Sequence['outputs.IngressGatewayHostListener'],
              name: str,
              hostnames: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("listeners", listeners)
         _setter("name", name)
         if hostnames is not None:
@@ -566,7 +590,9 @@ class IngressGatewayHostListener(dict):
              port: int,
              protocol: str,
              tls: Optional['outputs.IngressGatewayHostListenerTls'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("port", port)
         _setter("protocol", protocol)
         if tls is not None:
@@ -639,7 +665,13 @@ class IngressGatewayHostListenerTls(dict):
              mode: str,
              client_validation: Optional['outputs.IngressGatewayHostListenerTlsClientValidation'] = None,
              server_certificate: Optional['outputs.IngressGatewayHostListenerTlsServerCertificate'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientValidation' in kwargs:
+            client_validation = kwargs['clientValidation']
+        if 'serverCertificate' in kwargs:
+            server_certificate = kwargs['serverCertificate']
+
         _setter("mode", mode)
         if client_validation is not None:
             _setter("client_validation", client_validation)
@@ -709,7 +741,13 @@ class IngressGatewayHostListenerTlsClientValidation(dict):
              _setter: Callable[[Any, Any], None],
              subject_alternate_names: Optional[Sequence[str]] = None,
              trusted_ca_bundle: Optional['outputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundle'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subjectAlternateNames' in kwargs:
+            subject_alternate_names = kwargs['subjectAlternateNames']
+        if 'trustedCaBundle' in kwargs:
+            trusted_ca_bundle = kwargs['trustedCaBundle']
+
         if subject_alternate_names is not None:
             _setter("subject_alternate_names", subject_alternate_names)
         if trusted_ca_bundle is not None:
@@ -774,7 +812,13 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle(dict):
              type: str,
              ca_bundle_id: Optional[str] = None,
              secret_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("type", type)
         if ca_bundle_id is not None:
             _setter("ca_bundle_id", ca_bundle_id)
@@ -848,7 +892,13 @@ class IngressGatewayHostListenerTlsServerCertificate(dict):
              type: str,
              certificate_id: Optional[str] = None,
              secret_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("type", type)
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
@@ -918,7 +968,13 @@ class IngressGatewayMtls(dict):
              _setter: Callable[[Any, Any], None],
              certificate_id: Optional[str] = None,
              maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
         if maximum_validity is not None:
@@ -1019,7 +1075,21 @@ class IngressGatewayRouteTableRouteRule(dict):
              path: Optional[str] = None,
              path_type: Optional[str] = None,
              request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayHost' in kwargs:
+            ingress_gateway_host = kwargs['ingressGatewayHost']
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'isHostRewriteEnabled' in kwargs:
+            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
+        if 'isPathRewriteEnabled' in kwargs:
+            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("type", type)
         if ingress_gateway_host is not None:
@@ -1154,7 +1224,11 @@ class IngressGatewayRouteTableRouteRuleDestination(dict):
              virtual_service_id: str,
              port: Optional[int] = None,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("virtual_service_id", virtual_service_id)
         if port is not None:
             _setter("port", port)
@@ -1205,7 +1279,9 @@ class IngressGatewayRouteTableRouteRuleIngressGatewayHost(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if port is not None:
             _setter("port", port)
@@ -1242,7 +1318,9 @@ class MeshCertificateAuthority(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -1273,7 +1351,9 @@ class MeshMtls(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              minimum: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("minimum", minimum)
 
     @property
@@ -1321,7 +1401,11 @@ class VirtualDeploymentAccessLogging(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -1380,7 +1464,13 @@ class VirtualDeploymentListener(dict):
              protocol: str,
              idle_timeout_in_ms: Optional[str] = None,
              request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idleTimeoutInMs' in kwargs:
+            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("port", port)
         _setter("protocol", protocol)
         if idle_timeout_in_ms is not None:
@@ -1440,7 +1530,9 @@ class VirtualDeploymentServiceDiscovery(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if hostname is not None:
             _setter("hostname", hostname)
@@ -1477,7 +1569,9 @@ class VirtualServiceDefaultRoutingPolicy(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
 
     @property
@@ -1531,7 +1625,13 @@ class VirtualServiceMtls(dict):
              mode: str,
              certificate_id: Optional[str] = None,
              maximum_validity: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         _setter("mode", mode)
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
@@ -1619,7 +1719,15 @@ class VirtualServiceRouteTableRouteRule(dict):
              path: Optional[str] = None,
              path_type: Optional[str] = None,
              request_timeout_in_ms: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("type", type)
         if is_grpc is not None:
@@ -1720,7 +1828,11 @@ class VirtualServiceRouteTableRouteRuleDestination(dict):
              virtual_deployment_id: str,
              weight: int,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualDeploymentId' in kwargs:
+            virtual_deployment_id = kwargs['virtualDeploymentId']
+
         _setter("virtual_deployment_id", virtual_deployment_id)
         _setter("weight", weight)
         if port is not None:
@@ -1763,7 +1875,9 @@ class GetAccessPoliciesAccessPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1835,7 +1949,25 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'meshId' in kwargs:
+            mesh_id = kwargs['meshId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1978,7 +2110,9 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleResult(dict):
              action: str,
              destinations: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult'],
              sources: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("destinations", destinations)
         _setter("sources", sources)
@@ -2047,7 +2181,15 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult(dict):
              protocol: str,
              type: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("hostnames", hostnames)
         _setter("ingress_gateway_id", ingress_gateway_id)
         _setter("ip_addresses", ip_addresses)
@@ -2152,7 +2294,15 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult(dict):
              protocol: str,
              type: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("hostnames", hostnames)
         _setter("ingress_gateway_id", ingress_gateway_id)
         _setter("ip_addresses", ip_addresses)
@@ -2239,7 +2389,9 @@ class GetAccessPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2287,7 +2439,9 @@ class GetAccessPolicyRuleResult(dict):
              action: str,
              destinations: Sequence['outputs.GetAccessPolicyRuleDestinationResult'],
              sources: Sequence['outputs.GetAccessPolicyRuleSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("destinations", destinations)
         _setter("sources", sources)
@@ -2356,7 +2510,15 @@ class GetAccessPolicyRuleDestinationResult(dict):
              protocol: str,
              type: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("hostnames", hostnames)
         _setter("ingress_gateway_id", ingress_gateway_id)
         _setter("ip_addresses", ip_addresses)
@@ -2461,7 +2623,15 @@ class GetAccessPolicyRuleSourceResult(dict):
              protocol: str,
              type: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("hostnames", hostnames)
         _setter("ingress_gateway_id", ingress_gateway_id)
         _setter("ip_addresses", ip_addresses)
@@ -2542,7 +2712,11 @@ class GetIngressGatewayAccessLoggingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -2577,7 +2751,9 @@ class GetIngressGatewayHostResult(dict):
              hostnames: Sequence[str],
              listeners: Sequence['outputs.GetIngressGatewayHostListenerResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostnames", hostnames)
         _setter("listeners", listeners)
         _setter("name", name)
@@ -2630,7 +2806,9 @@ class GetIngressGatewayHostListenerResult(dict):
              port: int,
              protocol: str,
              tls: Sequence['outputs.GetIngressGatewayHostListenerTlResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("port", port)
         _setter("protocol", protocol)
         _setter("tls", tls)
@@ -2683,7 +2861,13 @@ class GetIngressGatewayHostListenerTlResult(dict):
              client_validations: Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationResult'],
              mode: str,
              server_certificates: Sequence['outputs.GetIngressGatewayHostListenerTlServerCertificateResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientValidations' in kwargs:
+            client_validations = kwargs['clientValidations']
+        if 'serverCertificates' in kwargs:
+            server_certificates = kwargs['serverCertificates']
+
         _setter("client_validations", client_validations)
         _setter("mode", mode)
         _setter("server_certificates", server_certificates)
@@ -2732,7 +2916,13 @@ class GetIngressGatewayHostListenerTlClientValidationResult(dict):
              _setter: Callable[[Any, Any], None],
              subject_alternate_names: Sequence[str],
              trusted_ca_bundles: Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subjectAlternateNames' in kwargs:
+            subject_alternate_names = kwargs['subjectAlternateNames']
+        if 'trustedCaBundles' in kwargs:
+            trusted_ca_bundles = kwargs['trustedCaBundles']
+
         _setter("subject_alternate_names", subject_alternate_names)
         _setter("trusted_ca_bundles", trusted_ca_bundles)
 
@@ -2776,7 +2966,13 @@ class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult(dict)
              ca_bundle_id: str,
              secret_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("ca_bundle_id", ca_bundle_id)
         _setter("secret_name", secret_name)
         _setter("type", type)
@@ -2829,7 +3025,13 @@ class GetIngressGatewayHostListenerTlServerCertificateResult(dict):
              certificate_id: str,
              secret_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("certificate_id", certificate_id)
         _setter("secret_name", secret_name)
         _setter("type", type)
@@ -2878,7 +3080,13 @@ class GetIngressGatewayMtlResult(dict):
              _setter: Callable[[Any, Any], None],
              certificate_id: str,
              maximum_validity: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         _setter("certificate_id", certificate_id)
         _setter("maximum_validity", maximum_validity)
 
@@ -2946,7 +3154,21 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
              path_type: str,
              request_timeout_in_ms: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayHosts' in kwargs:
+            ingress_gateway_hosts = kwargs['ingressGatewayHosts']
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'isHostRewriteEnabled' in kwargs:
+            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
+        if 'isPathRewriteEnabled' in kwargs:
+            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("ingress_gateway_hosts", ingress_gateway_hosts)
         _setter("is_grpc", is_grpc)
@@ -3053,7 +3275,11 @@ class GetIngressGatewayRouteTableRouteRuleDestinationResult(dict):
              port: int,
              virtual_service_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("port", port)
         _setter("virtual_service_id", virtual_service_id)
         _setter("weight", weight)
@@ -3102,7 +3328,9 @@ class GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("port", port)
 
@@ -3144,7 +3372,9 @@ class GetIngressGatewayRouteTablesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3181,7 +3411,9 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3257,7 +3489,27 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ingressGatewayId' in kwargs:
+            ingress_gateway_id = kwargs['ingressGatewayId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3433,7 +3685,21 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
              path_type: str,
              request_timeout_in_ms: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressGatewayHosts' in kwargs:
+            ingress_gateway_hosts = kwargs['ingressGatewayHosts']
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'isHostRewriteEnabled' in kwargs:
+            is_host_rewrite_enabled = kwargs['isHostRewriteEnabled']
+        if 'isPathRewriteEnabled' in kwargs:
+            is_path_rewrite_enabled = kwargs['isPathRewriteEnabled']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("ingress_gateway_hosts", ingress_gateway_hosts)
         _setter("is_grpc", is_grpc)
@@ -3540,7 +3806,11 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
              port: int,
              virtual_service_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("port", port)
         _setter("virtual_service_id", virtual_service_id)
         _setter("weight", weight)
@@ -3589,7 +3859,9 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
              _setter: Callable[[Any, Any], None],
              name: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("port", port)
 
@@ -3631,7 +3903,9 @@ class GetIngressGatewaysFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3668,7 +3942,9 @@ class GetIngressGatewaysIngressGatewayCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3748,7 +4024,27 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLoggings' in kwargs:
+            access_loggings = kwargs['accessLoggings']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'meshId' in kwargs:
+            mesh_id = kwargs['meshId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("access_loggings", access_loggings)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3901,7 +4197,11 @@ class GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -3936,7 +4236,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostResult(dict):
              hostnames: Sequence[str],
              listeners: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostnames", hostnames)
         _setter("listeners", listeners)
         _setter("name", name)
@@ -3989,7 +4291,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult(dict):
              port: int,
              protocol: str,
              tls: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("port", port)
         _setter("protocol", protocol)
         _setter("tls", tls)
@@ -4042,7 +4346,13 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult(dict):
              client_validations: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult'],
              mode: str,
              server_certificates: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientValidations' in kwargs:
+            client_validations = kwargs['clientValidations']
+        if 'serverCertificates' in kwargs:
+            server_certificates = kwargs['serverCertificates']
+
         _setter("client_validations", client_validations)
         _setter("mode", mode)
         _setter("server_certificates", server_certificates)
@@ -4091,7 +4401,13 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
              _setter: Callable[[Any, Any], None],
              subject_alternate_names: Sequence[str],
              trusted_ca_bundles: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subjectAlternateNames' in kwargs:
+            subject_alternate_names = kwargs['subjectAlternateNames']
+        if 'trustedCaBundles' in kwargs:
+            trusted_ca_bundles = kwargs['trustedCaBundles']
+
         _setter("subject_alternate_names", subject_alternate_names)
         _setter("trusted_ca_bundles", trusted_ca_bundles)
 
@@ -4135,7 +4451,13 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
              ca_bundle_id: str,
              secret_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("ca_bundle_id", ca_bundle_id)
         _setter("secret_name", secret_name)
         _setter("type", type)
@@ -4188,7 +4510,13 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertific
              certificate_id: str,
              secret_name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+
         _setter("certificate_id", certificate_id)
         _setter("secret_name", secret_name)
         _setter("type", type)
@@ -4237,7 +4565,13 @@ class GetIngressGatewaysIngressGatewayCollectionItemMtlResult(dict):
              _setter: Callable[[Any, Any], None],
              certificate_id: str,
              maximum_validity: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         _setter("certificate_id", certificate_id)
         _setter("maximum_validity", maximum_validity)
 
@@ -4273,7 +4607,9 @@ class GetMeshCertificateAuthorityResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -4300,7 +4636,9 @@ class GetMeshMtlResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              minimum: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("minimum", minimum)
 
     @property
@@ -4330,7 +4668,9 @@ class GetMeshesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4364,7 +4704,9 @@ class GetMeshesMeshCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMeshesMeshCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4436,7 +4778,27 @@ class GetMeshesMeshCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorities' in kwargs:
+            certificate_authorities = kwargs['certificateAuthorities']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("certificate_authorities", certificate_authorities)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4571,7 +4933,9 @@ class GetMeshesMeshCollectionItemCertificateAuthorityResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -4598,7 +4962,9 @@ class GetMeshesMeshCollectionItemMtlResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              minimum: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("minimum", minimum)
 
     @property
@@ -4625,7 +4991,11 @@ class GetVirtualDeploymentAccessLoggingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -4664,7 +5034,13 @@ class GetVirtualDeploymentListenerResult(dict):
              port: int,
              protocol: str,
              request_timeout_in_ms: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idleTimeoutInMs' in kwargs:
+            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("idle_timeout_in_ms", idle_timeout_in_ms)
         _setter("port", port)
         _setter("protocol", protocol)
@@ -4722,7 +5098,9 @@ class GetVirtualDeploymentServiceDiscoveryResult(dict):
              _setter: Callable[[Any, Any], None],
              hostname: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("type", type)
 
@@ -4764,7 +5142,9 @@ class GetVirtualDeploymentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4801,7 +5181,9 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4881,7 +5263,29 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLoggings' in kwargs:
+            access_loggings = kwargs['accessLoggings']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'serviceDiscoveries' in kwargs:
+            service_discoveries = kwargs['serviceDiscoveries']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("access_loggings", access_loggings)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -5034,7 +5438,11 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -5073,7 +5481,13 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult(dict):
              port: int,
              protocol: str,
              request_timeout_in_ms: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idleTimeoutInMs' in kwargs:
+            idle_timeout_in_ms = kwargs['idleTimeoutInMs']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("idle_timeout_in_ms", idle_timeout_in_ms)
         _setter("port", port)
         _setter("protocol", protocol)
@@ -5131,7 +5545,9 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult
              _setter: Callable[[Any, Any], None],
              hostname: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("type", type)
 
@@ -5167,7 +5583,9 @@ class GetVirtualServiceDefaultRoutingPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
 
     @property
@@ -5202,7 +5620,13 @@ class GetVirtualServiceMtlResult(dict):
              certificate_id: str,
              maximum_validity: int,
              mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         _setter("certificate_id", certificate_id)
         _setter("maximum_validity", maximum_validity)
         _setter("mode", mode)
@@ -5267,7 +5691,15 @@ class GetVirtualServiceRouteTableRouteRuleResult(dict):
              path_type: str,
              request_timeout_in_ms: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("is_grpc", is_grpc)
         _setter("path", path)
@@ -5347,7 +5779,11 @@ class GetVirtualServiceRouteTableRouteRuleDestinationResult(dict):
              port: int,
              virtual_deployment_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualDeploymentId' in kwargs:
+            virtual_deployment_id = kwargs['virtualDeploymentId']
+
         _setter("port", port)
         _setter("virtual_deployment_id", virtual_deployment_id)
         _setter("weight", weight)
@@ -5398,7 +5834,9 @@ class GetVirtualServiceRouteTablesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5435,7 +5873,9 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5511,7 +5951,27 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
              time_created: str,
              time_updated: str,
              virtual_service_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'routeRules' in kwargs:
+            route_rules = kwargs['routeRules']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -5675,7 +6135,15 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
              path_type: str,
              request_timeout_in_ms: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isGrpc' in kwargs:
+            is_grpc = kwargs['isGrpc']
+        if 'pathType' in kwargs:
+            path_type = kwargs['pathType']
+        if 'requestTimeoutInMs' in kwargs:
+            request_timeout_in_ms = kwargs['requestTimeoutInMs']
+
         _setter("destinations", destinations)
         _setter("is_grpc", is_grpc)
         _setter("path", path)
@@ -5755,7 +6223,11 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
              port: int,
              virtual_deployment_id: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'virtualDeploymentId' in kwargs:
+            virtual_deployment_id = kwargs['virtualDeploymentId']
+
         _setter("port", port)
         _setter("virtual_deployment_id", virtual_deployment_id)
         _setter("weight", weight)
@@ -5806,7 +6278,9 @@ class GetVirtualServicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5843,7 +6317,9 @@ class GetVirtualServicesVirtualServiceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5923,7 +6399,27 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultRoutingPolicies' in kwargs:
+            default_routing_policies = kwargs['defaultRoutingPolicies']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'meshId' in kwargs:
+            mesh_id = kwargs['meshId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("default_routing_policies", default_routing_policies)
         _setter("defined_tags", defined_tags)
@@ -6076,7 +6572,9 @@ class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
 
     @property
@@ -6111,7 +6609,13 @@ class GetVirtualServicesVirtualServiceCollectionItemMtlResult(dict):
              certificate_id: str,
              maximum_validity: int,
              mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'maximumValidity' in kwargs:
+            maximum_validity = kwargs['maximumValidity']
+
         _setter("certificate_id", certificate_id)
         _setter("maximum_validity", maximum_validity)
         _setter("mode", mode)

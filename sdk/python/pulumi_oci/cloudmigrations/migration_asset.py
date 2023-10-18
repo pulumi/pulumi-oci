@@ -58,7 +58,25 @@ class MigrationAssetArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              replication_schedule_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'inventoryAssetId' in kwargs:
+            inventory_asset_id = kwargs['inventoryAssetId']
+        if 'migrationId' in kwargs:
+            migration_id = kwargs['migrationId']
+        if 'replicationCompartmentId' in kwargs:
+            replication_compartment_id = kwargs['replicationCompartmentId']
+        if 'snapShotBucketName' in kwargs:
+            snap_shot_bucket_name = kwargs['snapShotBucketName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'migrationAssetDependsOns' in kwargs:
+            migration_asset_depends_ons = kwargs['migrationAssetDependsOns']
+        if 'replicationScheduleId' in kwargs:
+            replication_schedule_id = kwargs['replicationScheduleId']
+
         _setter("availability_domain", availability_domain)
         _setter("inventory_asset_id", inventory_asset_id)
         _setter("migration_id", migration_id)
@@ -264,7 +282,41 @@ class _MigrationAssetState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dependedOnBies' in kwargs:
+            depended_on_bies = kwargs['dependedOnBies']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'inventoryAssetId' in kwargs:
+            inventory_asset_id = kwargs['inventoryAssetId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'migrationAssetDependsOns' in kwargs:
+            migration_asset_depends_ons = kwargs['migrationAssetDependsOns']
+        if 'migrationId' in kwargs:
+            migration_id = kwargs['migrationId']
+        if 'parentSnapshot' in kwargs:
+            parent_snapshot = kwargs['parentSnapshot']
+        if 'replicationCompartmentId' in kwargs:
+            replication_compartment_id = kwargs['replicationCompartmentId']
+        if 'replicationScheduleId' in kwargs:
+            replication_schedule_id = kwargs['replicationScheduleId']
+        if 'snapShotBucketName' in kwargs:
+            snap_shot_bucket_name = kwargs['snapShotBucketName']
+        if 'sourceAssetId' in kwargs:
+            source_asset_id = kwargs['sourceAssetId']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

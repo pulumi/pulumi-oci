@@ -62,9 +62,11 @@ type LookupPluggableDatabaseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Connection strings to connect to an Oracle Pluggable Database.
-	ConnectionStrings []GetPluggableDatabaseConnectionString `pulumi:"connectionStrings"`
+	ConnectionStrings              []GetPluggableDatabaseConnectionString `pulumi:"connectionStrings"`
+	ContainerDatabaseAdminPassword string                                 `pulumi:"containerDatabaseAdminPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-	ContainerDatabaseId string `pulumi:"containerDatabaseId"`
+	ContainerDatabaseId     string `pulumi:"containerDatabaseId"`
+	ConvertToRegularTrigger int    `pulumi:"convertToRegularTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -76,15 +78,22 @@ type LookupPluggableDatabaseResult struct {
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-	OpenMode         string `pulumi:"openMode"`
-	PdbAdminPassword string `pulumi:"pdbAdminPassword"`
+	OpenMode               string                                      `pulumi:"openMode"`
+	PdbAdminPassword       string                                      `pulumi:"pdbAdminPassword"`
+	PdbCreationTypeDetails []GetPluggableDatabasePdbCreationTypeDetail `pulumi:"pdbCreationTypeDetails"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-	PdbName             string `pulumi:"pdbName"`
-	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	PdbName string `pulumi:"pdbName"`
+	// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+	PdbNodeLevelDetails []GetPluggableDatabasePdbNodeLevelDetail `pulumi:"pdbNodeLevelDetails"`
+	PluggableDatabaseId string                                   `pulumi:"pluggableDatabaseId"`
 	// The configuration of the Pluggable Database Management service.
 	PluggableDatabaseManagementConfigs []GetPluggableDatabasePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
-	RotateKeyTrigger                   int                                                     `pulumi:"rotateKeyTrigger"`
-	ShouldPdbAdminAccountBeLocked      bool                                                    `pulumi:"shouldPdbAdminAccountBeLocked"`
+	RefreshTrigger                     int                                                     `pulumi:"refreshTrigger"`
+	// Pluggable Database Refreshable Clone Configuration.
+	RefreshableCloneConfigs       []GetPluggableDatabaseRefreshableCloneConfig `pulumi:"refreshableCloneConfigs"`
+	RotateKeyTrigger              int                                          `pulumi:"rotateKeyTrigger"`
+	ShouldCreatePdbBackup         bool                                         `pulumi:"shouldCreatePdbBackup"`
+	ShouldPdbAdminAccountBeLocked bool                                         `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State             string `pulumi:"state"`
 	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
@@ -148,9 +157,17 @@ func (o LookupPluggableDatabaseResultOutput) ConnectionStrings() GetPluggableDat
 	}).(GetPluggableDatabaseConnectionStringArrayOutput)
 }
 
+func (o LookupPluggableDatabaseResultOutput) ContainerDatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.ContainerDatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
 func (o LookupPluggableDatabaseResultOutput) ContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.ContainerDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o LookupPluggableDatabaseResultOutput) ConvertToRegularTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) int { return v.ConvertToRegularTrigger }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -187,9 +204,22 @@ func (o LookupPluggableDatabaseResultOutput) PdbAdminPassword() pulumi.StringOut
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.PdbAdminPassword }).(pulumi.StringOutput)
 }
 
+func (o LookupPluggableDatabaseResultOutput) PdbCreationTypeDetails() GetPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) []GetPluggableDatabasePdbCreationTypeDetail {
+		return v.PdbCreationTypeDetails
+	}).(GetPluggableDatabasePdbCreationTypeDetailArrayOutput)
+}
+
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 func (o LookupPluggableDatabaseResultOutput) PdbName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.PdbName }).(pulumi.StringOutput)
+}
+
+// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+func (o LookupPluggableDatabaseResultOutput) PdbNodeLevelDetails() GetPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) []GetPluggableDatabasePdbNodeLevelDetail {
+		return v.PdbNodeLevelDetails
+	}).(GetPluggableDatabasePdbNodeLevelDetailArrayOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) PluggableDatabaseId() pulumi.StringOutput {
@@ -203,8 +233,23 @@ func (o LookupPluggableDatabaseResultOutput) PluggableDatabaseManagementConfigs(
 	}).(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
 }
 
+func (o LookupPluggableDatabaseResultOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// Pluggable Database Refreshable Clone Configuration.
+func (o LookupPluggableDatabaseResultOutput) RefreshableCloneConfigs() GetPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) []GetPluggableDatabaseRefreshableCloneConfig {
+		return v.RefreshableCloneConfigs
+	}).(GetPluggableDatabaseRefreshableCloneConfigArrayOutput)
+}
+
 func (o LookupPluggableDatabaseResultOutput) RotateKeyTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) int { return v.RotateKeyTrigger }).(pulumi.IntOutput)
+}
+
+func (o LookupPluggableDatabaseResultOutput) ShouldCreatePdbBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) bool { return v.ShouldCreatePdbBackup }).(pulumi.BoolOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutput {

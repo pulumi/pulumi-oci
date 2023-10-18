@@ -61,7 +61,23 @@ class MysqlConfigurationArgs:
              init_variables: Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']] = None,
              parent_configuration_id: Optional[pulumi.Input[str]] = None,
              variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initVariables' in kwargs:
+            init_variables = kwargs['initVariables']
+        if 'parentConfigurationId' in kwargs:
+            parent_configuration_id = kwargs['parentConfigurationId']
+
         _setter("compartment_id", compartment_id)
         _setter("shape_name", shape_name)
         if defined_tags is not None:
@@ -252,7 +268,27 @@ class _MysqlConfigurationState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initVariables' in kwargs:
+            init_variables = kwargs['initVariables']
+        if 'parentConfigurationId' in kwargs:
+            parent_configuration_id = kwargs['parentConfigurationId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

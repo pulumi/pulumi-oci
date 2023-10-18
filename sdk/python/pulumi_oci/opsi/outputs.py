@@ -159,7 +159,19 @@ class DatabaseInsightConnectionCredentialDetails(dict):
              role: Optional[str] = None,
              user_name: Optional[str] = None,
              wallet_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         if credential_source_name is not None:
             _setter("credential_source_name", credential_source_name)
         if credential_type is not None:
@@ -272,7 +284,13 @@ class DatabaseInsightConnectionDetails(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -361,7 +379,11 @@ class DatabaseInsightConnectionDetailsHost(dict):
              _setter: Callable[[Any, Any], None],
              host_ip: Optional[str] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         if host_ip is not None:
             _setter("host_ip", host_ip)
         if port is not None:
@@ -444,7 +466,19 @@ class DatabaseInsightCredentialDetails(dict):
              role: Optional[str] = None,
              user_name: Optional[str] = None,
              wallet_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_type", credential_type)
         if credential_source_name is not None:
             _setter("credential_source_name", credential_source_name)
@@ -562,7 +596,19 @@ class ExadataInsightMemberVmClusterDetail(dict):
              member_database_details: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']] = None,
              opsi_private_endpoint_id: Optional[str] = None,
              vmcluster_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'memberDatabaseDetails' in kwargs:
+            member_database_details = kwargs['memberDatabaseDetails']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'vmclusterId' in kwargs:
+            vmcluster_id = kwargs['vmclusterId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
@@ -719,7 +765,35 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
              opsi_private_endpoint_id: Optional[str] = None,
              service_name: Optional[str] = None,
              system_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_details is not None:
@@ -892,7 +966,11 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails(d
              hosts: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost']] = None,
              protocol: Optional[str] = None,
              service_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         if hosts is not None:
             _setter("hosts", hosts)
         if protocol is not None:
@@ -961,7 +1039,11 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
              _setter: Callable[[Any, Any], None],
              host_ip: Optional[str] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         if host_ip is not None:
             _setter("host_ip", host_ip)
         if port is not None:
@@ -1044,7 +1126,19 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
              role: Optional[str] = None,
              user_name: Optional[str] = None,
              wallet_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_type", credential_type)
         if credential_source_name is not None:
             _setter("credential_source_name", credential_source_name)
@@ -1138,7 +1232,11 @@ class NewsReportContentTypes(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              capacity_planning_resources: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityPlanningResources' in kwargs:
+            capacity_planning_resources = kwargs['capacityPlanningResources']
+
         _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
@@ -1206,7 +1304,15 @@ class OpsiConfigurationConfigItem(dict):
              metadatas: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']] = None,
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'applicableContexts' in kwargs:
+            applicable_contexts = kwargs['applicableContexts']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("config_item_type", config_item_type)
         if applicable_contexts is not None:
             _setter("applicable_contexts", applicable_contexts)
@@ -1328,7 +1434,19 @@ class OpsiConfigurationConfigItemMetadata(dict):
              display_name: Optional[str] = None,
              unit_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']] = None,
              value_input_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'unitDetails' in kwargs:
+            unit_details = kwargs['unitDetails']
+        if 'valueInputDetails' in kwargs:
+            value_input_details = kwargs['valueInputDetails']
+
         if config_item_type is not None:
             _setter("config_item_type", config_item_type)
         if data_type is not None:
@@ -1427,7 +1545,11 @@ class OpsiConfigurationConfigItemMetadataUnitDetail(dict):
              _setter: Callable[[Any, Any], None],
              display_name: Optional[str] = None,
              unit: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if unit is not None:
@@ -1500,7 +1622,17 @@ class OpsiConfigurationConfigItemMetadataValueInputDetail(dict):
              max_value: Optional[str] = None,
              min_value: Optional[str] = None,
              possible_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValueType' in kwargs:
+            allowed_value_type = kwargs['allowedValueType']
+        if 'maxValue' in kwargs:
+            max_value = kwargs['maxValue']
+        if 'minValue' in kwargs:
+            min_value = kwargs['minValue']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         if allowed_value_type is not None:
             _setter("allowed_value_type", allowed_value_type)
         if max_value is not None:
@@ -1582,7 +1714,23 @@ class GetAwrHubAwrSnapshotItemResult(dict):
              time_db_startup: str,
              time_snapshot_begin: str,
              time_snapshot_end: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'awrSourceDatabaseId' in kwargs:
+            awr_source_database_id = kwargs['awrSourceDatabaseId']
+        if 'errorCount' in kwargs:
+            error_count = kwargs['errorCount']
+        if 'instanceNumber' in kwargs:
+            instance_number = kwargs['instanceNumber']
+        if 'snapshotIdentifier' in kwargs:
+            snapshot_identifier = kwargs['snapshotIdentifier']
+        if 'timeDbStartup' in kwargs:
+            time_db_startup = kwargs['timeDbStartup']
+        if 'timeSnapshotBegin' in kwargs:
+            time_snapshot_begin = kwargs['timeSnapshotBegin']
+        if 'timeSnapshotEnd' in kwargs:
+            time_snapshot_end = kwargs['timeSnapshotEnd']
+
         _setter("awr_source_database_id", awr_source_database_id)
         _setter("error_count", error_count)
         _setter("instance_number", instance_number)
@@ -1663,7 +1811,9 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1690,7 +1840,9 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1741,7 +1893,23 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult(dict):
              time_db_startup: str,
              time_snapshot_begin: str,
              time_snapshot_end: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'awrSourceDatabaseId' in kwargs:
+            awr_source_database_id = kwargs['awrSourceDatabaseId']
+        if 'errorCount' in kwargs:
+            error_count = kwargs['errorCount']
+        if 'instanceNumber' in kwargs:
+            instance_number = kwargs['instanceNumber']
+        if 'snapshotIdentifier' in kwargs:
+            snapshot_identifier = kwargs['snapshotIdentifier']
+        if 'timeDbStartup' in kwargs:
+            time_db_startup = kwargs['timeDbStartup']
+        if 'timeSnapshotBegin' in kwargs:
+            time_snapshot_begin = kwargs['timeSnapshotBegin']
+        if 'timeSnapshotEnd' in kwargs:
+            time_snapshot_end = kwargs['timeSnapshotEnd']
+
         _setter("awr_source_database_id", awr_source_database_id)
         _setter("error_count", error_count)
         _setter("instance_number", instance_number)
@@ -1825,7 +1993,9 @@ class GetAwrHubAwrSnapshotsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1894,7 +2064,25 @@ class GetAwrHubAwrSourcesSummaryItemResult(dict):
              snapshots_uploaded: float,
              time_first_snapshot_generated: str,
              time_last_snapshot_generated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'awrHubId' in kwargs:
+            awr_hub_id = kwargs['awrHubId']
+        if 'awrSourceDatabaseId' in kwargs:
+            awr_source_database_id = kwargs['awrSourceDatabaseId']
+        if 'hoursSinceLastImport' in kwargs:
+            hours_since_last_import = kwargs['hoursSinceLastImport']
+        if 'maxSnapshotIdentifier' in kwargs:
+            max_snapshot_identifier = kwargs['maxSnapshotIdentifier']
+        if 'minSnapshotIdentifier' in kwargs:
+            min_snapshot_identifier = kwargs['minSnapshotIdentifier']
+        if 'snapshotsUploaded' in kwargs:
+            snapshots_uploaded = kwargs['snapshotsUploaded']
+        if 'timeFirstSnapshotGenerated' in kwargs:
+            time_first_snapshot_generated = kwargs['timeFirstSnapshotGenerated']
+        if 'timeLastSnapshotGenerated' in kwargs:
+            time_last_snapshot_generated = kwargs['timeLastSnapshotGenerated']
+
         _setter("awr_hub_id", awr_hub_id)
         _setter("awr_source_database_id", awr_source_database_id)
         _setter("hours_since_last_import", hours_since_last_import)
@@ -1990,7 +2178,9 @@ class GetAwrHubsAwrHubSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2062,7 +2252,31 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'awrMailboxUrl' in kwargs:
+            awr_mailbox_url = kwargs['awrMailboxUrl']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("awr_mailbox_url", awr_mailbox_url)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2200,7 +2414,9 @@ class GetAwrHubsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2257,7 +2473,19 @@ class GetDatabaseInsightConnectionCredentialDetailResult(dict):
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -2345,7 +2573,13 @@ class GetDatabaseInsightConnectionDetailResult(dict):
              port: int,
              protocol: str,
              service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -2412,7 +2646,11 @@ class GetDatabaseInsightConnectionDetailHostResult(dict):
              _setter: Callable[[Any, Any], None],
              host_ip: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         _setter("host_ip", host_ip)
         _setter("port", port)
 
@@ -2468,7 +2706,19 @@ class GetDatabaseInsightCredentialDetailResult(dict):
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -2537,7 +2787,9 @@ class GetDatabaseInsightsDatabaseInsightsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2695,7 +2947,73 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionCredentialDetails' in kwargs:
+            connection_credential_details = kwargs['connectionCredentialDetails']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseConnectionStatusDetails' in kwargs:
+            database_connection_status_details = kwargs['databaseConnectionStatusDetails']
+        if 'databaseDisplayName' in kwargs:
+            database_display_name = kwargs['databaseDisplayName']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'processorCount' in kwargs:
+            processor_count = kwargs['processorCount']
+        if 'rootId' in kwargs:
+            root_id = kwargs['rootId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_credential_details", connection_credential_details)
         _setter("connection_details", connection_details)
@@ -3042,7 +3360,19 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetai
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -3130,7 +3460,13 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult(di
              port: int,
              protocol: str,
              service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -3197,7 +3533,11 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResul
              _setter: Callable[[Any, Any], None],
              host_ip: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         _setter("host_ip", host_ip)
         _setter("port", port)
 
@@ -3253,7 +3593,19 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult(di
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -3328,7 +3680,9 @@ class GetDatabaseInsightsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3362,7 +3716,9 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3438,7 +3794,31 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dic
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageBucketStatusDetails' in kwargs:
+            object_storage_bucket_status_details = kwargs['objectStorageBucketStatusDetails']
+        if 'objectStorageNamespaceName' in kwargs:
+            object_storage_namespace_name = kwargs['objectStorageNamespaceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3585,7 +3965,9 @@ class GetEnterpriseManagerBridgesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3634,7 +4016,19 @@ class GetExadataInsightMemberVmClusterDetailResult(dict):
              member_database_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult'],
              opsi_private_endpoint_id: str,
              vmcluster_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'memberDatabaseDetails' in kwargs:
+            member_database_details = kwargs['memberDatabaseDetails']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'vmclusterId' in kwargs:
+            vmcluster_id = kwargs['vmclusterId']
+
         _setter("compartment_id", compartment_id)
         _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         _setter("member_database_details", member_database_details)
@@ -3725,7 +4119,35 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
              opsi_private_endpoint_id: str,
              service_name: str,
              system_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_details", connection_details)
         _setter("credential_details", credential_details)
@@ -3839,7 +4261,11 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail
              hosts: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
              protocol: str,
              service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("hosts", hosts)
         _setter("protocol", protocol)
         _setter("service_name", service_name)
@@ -3875,7 +4301,11 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail
              _setter: Callable[[Any, Any], None],
              host_ip: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         _setter("host_ip", host_ip)
         _setter("port", port)
 
@@ -3917,7 +4347,19 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -3968,7 +4410,9 @@ class GetExadataInsightsExadataInsightSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4094,7 +4538,57 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'exadataDisplayName' in kwargs:
+            exadata_display_name = kwargs['exadataDisplayName']
+        if 'exadataInfraId' in kwargs:
+            exadata_infra_id = kwargs['exadataInfraId']
+        if 'exadataInfraResourceType' in kwargs:
+            exadata_infra_resource_type = kwargs['exadataInfraResourceType']
+        if 'exadataName' in kwargs:
+            exadata_name = kwargs['exadataName']
+        if 'exadataRackType' in kwargs:
+            exadata_rack_type = kwargs['exadataRackType']
+        if 'exadataShape' in kwargs:
+            exadata_shape = kwargs['exadataShape']
+        if 'exadataType' in kwargs:
+            exadata_type = kwargs['exadataType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoSyncEnabled' in kwargs:
+            is_auto_sync_enabled = kwargs['isAutoSyncEnabled']
+        if 'isVirtualizedExadata' in kwargs:
+            is_virtualized_exadata = kwargs['isVirtualizedExadata']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'memberVmClusterDetails' in kwargs:
+            member_vm_cluster_details = kwargs['memberVmClusterDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
@@ -4361,7 +4855,19 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
              member_database_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult'],
              opsi_private_endpoint_id: str,
              vmcluster_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'memberDatabaseDetails' in kwargs:
+            member_database_details = kwargs['memberDatabaseDetails']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'vmclusterId' in kwargs:
+            vmcluster_id = kwargs['vmclusterId']
+
         _setter("compartment_id", compartment_id)
         _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         _setter("member_database_details", member_database_details)
@@ -4452,7 +4958,35 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
              opsi_private_endpoint_id: str,
              service_name: str,
              system_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_details", connection_details)
         _setter("credential_details", credential_details)
@@ -4566,7 +5100,11 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
              hosts: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
              protocol: str,
              service_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("hosts", hosts)
         _setter("protocol", protocol)
         _setter("service_name", service_name)
@@ -4602,7 +5140,11 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
              _setter: Callable[[Any, Any], None],
              host_ip: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostIp' in kwargs:
+            host_ip = kwargs['hostIp']
+
         _setter("host_ip", host_ip)
         _setter("port", port)
 
@@ -4644,7 +5186,19 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
              role: str,
              user_name: str,
              wallet_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialSourceName' in kwargs:
+            credential_source_name = kwargs['credentialSourceName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'walletSecretId' in kwargs:
+            wallet_secret_id = kwargs['walletSecretId']
+
         _setter("credential_source_name", credential_source_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -4701,7 +5255,9 @@ class GetExadataInsightsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4741,7 +5297,9 @@ class GetHostInsightsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4775,7 +5333,9 @@ class GetHostInsightsHostInsightSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4903,7 +5463,57 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostDisplayName' in kwargs:
+            host_display_name = kwargs['hostDisplayName']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'hostType' in kwargs:
+            host_type = kwargs['hostType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'platformName' in kwargs:
+            platform_name = kwargs['platformName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'processorCount' in kwargs:
+            processor_count = kwargs['processorCount']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("compute_id", compute_id)
         _setter("defined_tags", defined_tags)
@@ -5180,7 +5790,19 @@ class GetImportableAgentEntitiesItemResult(dict):
              management_agent_display_name: str,
              management_agent_id: str,
              platform_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentDisplayName' in kwargs:
+            management_agent_display_name = kwargs['managementAgentDisplayName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("entity_source", entity_source)
         _setter("host_name", host_name)
         _setter("management_agent_display_name", management_agent_display_name)
@@ -5259,7 +5881,19 @@ class GetImportableAgentEntityItemResult(dict):
              management_agent_display_name: str,
              management_agent_id: str,
              platform_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentDisplayName' in kwargs:
+            management_agent_display_name = kwargs['managementAgentDisplayName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("entity_source", entity_source)
         _setter("host_name", host_name)
         _setter("management_agent_display_name", management_agent_display_name)
@@ -5342,7 +5976,21 @@ class GetImportableComputeEntitiesItemResult(dict):
              entity_source: str,
              host_name: str,
              platform_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeDisplayName' in kwargs:
+            compute_display_name = kwargs['computeDisplayName']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("compartment_id", compartment_id)
         _setter("compute_display_name", compute_display_name)
         _setter("compute_id", compute_id)
@@ -5434,7 +6082,21 @@ class GetImportableComputeEntityItemResult(dict):
              entity_source: str,
              host_name: str,
              platform_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeDisplayName' in kwargs:
+            compute_display_name = kwargs['computeDisplayName']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+
         _setter("compartment_id", compartment_id)
         _setter("compute_display_name", compute_display_name)
         _setter("compute_id", compute_id)
@@ -5506,7 +6168,11 @@ class GetNewsReportContentTypeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              capacity_planning_resources: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityPlanningResources' in kwargs:
+            capacity_planning_resources = kwargs['capacityPlanningResources']
+
         _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
@@ -5539,7 +6205,9 @@ class GetNewsReportsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5576,7 +6244,9 @@ class GetNewsReportsNewsReportCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5660,7 +6330,29 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'contentTypes' in kwargs:
+            content_types = kwargs['contentTypes']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'newsFrequency' in kwargs:
+            news_frequency = kwargs['newsFrequency']
+        if 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("content_types", content_types)
         _setter("defined_tags", defined_tags)
@@ -5822,7 +6514,11 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              capacity_planning_resources: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityPlanningResources' in kwargs:
+            capacity_planning_resources = kwargs['capacityPlanningResources']
+
         _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
@@ -5852,7 +6548,9 @@ class GetOperationsInsightsPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5886,7 +6584,9 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5970,7 +6670,35 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
              system_tags: Mapping[str, Any],
              time_created: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isUsedForRacDbs' in kwargs:
+            is_used_for_rac_dbs = kwargs['isUsedForRacDbs']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointStatusDetails' in kwargs:
+            private_endpoint_status_details = kwargs['privateEndpointStatusDetails']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -6138,7 +6866,9 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6175,7 +6905,9 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6255,7 +6987,33 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionPassword' in kwargs:
+            connection_password = kwargs['connectionPassword']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAwrDataAccess' in kwargs:
+            is_awr_data_access = kwargs['isAwrDataAccess']
+        if 'isEmDataAccess' in kwargs:
+            is_em_data_access = kwargs['isEmDataAccess']
+        if 'isOpsiDataAccess' in kwargs:
+            is_opsi_data_access = kwargs['isOpsiDataAccess']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("connection_password", connection_password)
         _setter("defined_tags", defined_tags)
@@ -6411,7 +7169,9 @@ class GetOperationsInsightsWarehousesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6445,7 +7205,9 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6533,7 +7295,39 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
              time_created: str,
              time_last_wallet_rotated: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpuAllocated' in kwargs:
+            cpu_allocated = kwargs['cpuAllocated']
+        if 'cpuUsed' in kwargs:
+            cpu_used = kwargs['cpuUsed']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dynamicGroupId' in kwargs:
+            dynamic_group_id = kwargs['dynamicGroupId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operationsInsightsTenancyId' in kwargs:
+            operations_insights_tenancy_id = kwargs['operationsInsightsTenancyId']
+        if 'storageAllocatedInGbs' in kwargs:
+            storage_allocated_in_gbs = kwargs['storageAllocatedInGbs']
+        if 'storageUsedInGbs' in kwargs:
+            storage_used_in_gbs = kwargs['storageUsedInGbs']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastWalletRotated' in kwargs:
+            time_last_wallet_rotated = kwargs['timeLastWalletRotated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("cpu_allocated", cpu_allocated)
         _setter("cpu_used", cpu_used)
@@ -6724,7 +7518,15 @@ class GetOpsiConfigurationConfigItemResult(dict):
              metadatas: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult'],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicableContexts' in kwargs:
+            applicable_contexts = kwargs['applicableContexts']
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("applicable_contexts", applicable_contexts)
         _setter("config_item_type", config_item_type)
         _setter("default_value", default_value)
@@ -6816,7 +7618,19 @@ class GetOpsiConfigurationConfigItemMetadataResult(dict):
              display_name: str,
              unit_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult'],
              value_input_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'unitDetails' in kwargs:
+            unit_details = kwargs['unitDetails']
+        if 'valueInputDetails' in kwargs:
+            value_input_details = kwargs['valueInputDetails']
+
         _setter("config_item_type", config_item_type)
         _setter("data_type", data_type)
         _setter("description", description)
@@ -6892,7 +7706,11 @@ class GetOpsiConfigurationConfigItemMetadataUnitDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("unit", unit)
 
@@ -6940,7 +7758,17 @@ class GetOpsiConfigurationConfigItemMetadataValueInputDetailResult(dict):
              max_value: str,
              min_value: str,
              possible_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValueType' in kwargs:
+            allowed_value_type = kwargs['allowedValueType']
+        if 'maxValue' in kwargs:
+            max_value = kwargs['maxValue']
+        if 'minValue' in kwargs:
+            min_value = kwargs['minValue']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         _setter("allowed_value_type", allowed_value_type)
         _setter("max_value", max_value)
         _setter("min_value", min_value)
@@ -7018,7 +7846,17 @@ class GetOpsiConfigurationConfigurationItemConfigItemResult(dict):
              name: str,
              value: str,
              value_source_config: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicableContexts' in kwargs:
+            applicable_contexts = kwargs['applicableContexts']
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if 'valueSourceConfig' in kwargs:
+            value_source_config = kwargs['valueSourceConfig']
+
         _setter("applicable_contexts", applicable_contexts)
         _setter("config_item_type", config_item_type)
         _setter("default_value", default_value)
@@ -7119,7 +7957,19 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataResult(dict):
              display_name: str,
              unit_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult'],
              value_input_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'unitDetails' in kwargs:
+            unit_details = kwargs['unitDetails']
+        if 'valueInputDetails' in kwargs:
+            value_input_details = kwargs['valueInputDetails']
+
         _setter("config_item_type", config_item_type)
         _setter("data_type", data_type)
         _setter("description", description)
@@ -7195,7 +8045,11 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult(di
              _setter: Callable[[Any, Any], None],
              display_name: str,
              unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("unit", unit)
 
@@ -7243,7 +8097,17 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailRes
              max_value: str,
              min_value: str,
              possible_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValueType' in kwargs:
+            allowed_value_type = kwargs['allowedValueType']
+        if 'maxValue' in kwargs:
+            max_value = kwargs['maxValue']
+        if 'minValue' in kwargs:
+            min_value = kwargs['minValue']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         _setter("allowed_value_type", allowed_value_type)
         _setter("max_value", max_value)
         _setter("min_value", min_value)
@@ -7303,7 +8167,9 @@ class GetOpsiConfigurationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7340,7 +8206,9 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7424,7 +8292,37 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configItemCustomStatuses' in kwargs:
+            config_item_custom_statuses = kwargs['configItemCustomStatuses']
+        if 'configItemFields' in kwargs:
+            config_item_fields = kwargs['configItemFields']
+        if 'configItems' in kwargs:
+            config_items = kwargs['configItems']
+        if 'configItemsApplicableContexts' in kwargs:
+            config_items_applicable_contexts = kwargs['configItemsApplicableContexts']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'opsiConfigFields' in kwargs:
+            opsi_config_fields = kwargs['opsiConfigFields']
+        if 'opsiConfigType' in kwargs:
+            opsi_config_type = kwargs['opsiConfigType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("config_item_custom_statuses", config_item_custom_statuses)
         _setter("config_item_fields", config_item_fields)
@@ -7603,7 +8501,15 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult(dict
              metadatas: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult'],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicableContexts' in kwargs:
+            applicable_contexts = kwargs['applicableContexts']
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+
         _setter("applicable_contexts", applicable_contexts)
         _setter("config_item_type", config_item_type)
         _setter("default_value", default_value)
@@ -7695,7 +8601,19 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataRes
              display_name: str,
              unit_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult'],
              value_input_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configItemType' in kwargs:
+            config_item_type = kwargs['configItemType']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'unitDetails' in kwargs:
+            unit_details = kwargs['unitDetails']
+        if 'valueInputDetails' in kwargs:
+            value_input_details = kwargs['valueInputDetails']
+
         _setter("config_item_type", config_item_type)
         _setter("data_type", data_type)
         _setter("description", description)
@@ -7771,7 +8689,11 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUni
              _setter: Callable[[Any, Any], None],
              display_name: str,
              unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("unit", unit)
 
@@ -7819,7 +8741,17 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataVal
              max_value: str,
              min_value: str,
              possible_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValueType' in kwargs:
+            allowed_value_type = kwargs['allowedValueType']
+        if 'maxValue' in kwargs:
+            max_value = kwargs['maxValue']
+        if 'minValue' in kwargs:
+            min_value = kwargs['minValue']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         _setter("allowed_value_type", allowed_value_type)
         _setter("max_value", max_value)
         _setter("min_value", min_value)

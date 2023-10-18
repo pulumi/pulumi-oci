@@ -126,7 +126,59 @@ class BdsInstanceArgs:
              network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
              os_patch_version: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'clusterPublicKey' in kwargs:
+            cluster_public_key = kwargs['clusterPublicKey']
+        if 'clusterVersion' in kwargs:
+            cluster_version = kwargs['clusterVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isHighAvailability' in kwargs:
+            is_high_availability = kwargs['isHighAvailability']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'masterNode' in kwargs:
+            master_node = kwargs['masterNode']
+        if 'utilNode' in kwargs:
+            util_node = kwargs['utilNode']
+        if 'workerNode' in kwargs:
+            worker_node = kwargs['workerNode']
+        if 'bootstrapScriptUrl' in kwargs:
+            bootstrap_script_url = kwargs['bootstrapScriptUrl']
+        if 'cloudSqlDetails' in kwargs:
+            cloud_sql_details = kwargs['cloudSqlDetails']
+        if 'clusterProfile' in kwargs:
+            cluster_profile = kwargs['clusterProfile']
+        if 'computeOnlyWorkerNode' in kwargs:
+            compute_only_worker_node = kwargs['computeOnlyWorkerNode']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'edgeNode' in kwargs:
+            edge_node = kwargs['edgeNode']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCloudSqlConfigured' in kwargs:
+            is_cloud_sql_configured = kwargs['isCloudSqlConfigured']
+        if 'isForceStopJobs' in kwargs:
+            is_force_stop_jobs = kwargs['isForceStopJobs']
+        if 'isKafkaConfigured' in kwargs:
+            is_kafka_configured = kwargs['isKafkaConfigured']
+        if 'kafkaBrokerNode' in kwargs:
+            kafka_broker_node = kwargs['kafkaBrokerNode']
+        if 'kerberosRealmName' in kwargs:
+            kerberos_realm_name = kwargs['kerberosRealmName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'networkConfig' in kwargs:
+            network_config = kwargs['networkConfig']
+        if 'osPatchVersion' in kwargs:
+            os_patch_version = kwargs['osPatchVersion']
+
         _setter("cluster_admin_password", cluster_admin_password)
         _setter("cluster_public_key", cluster_public_key)
         _setter("cluster_version", cluster_version)
@@ -615,7 +667,71 @@ class _BdsInstanceState:
              time_updated: Optional[pulumi.Input[str]] = None,
              util_node: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']] = None,
              worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootstrapScriptUrl' in kwargs:
+            bootstrap_script_url = kwargs['bootstrapScriptUrl']
+        if 'cloudSqlDetails' in kwargs:
+            cloud_sql_details = kwargs['cloudSqlDetails']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if 'clusterDetails' in kwargs:
+            cluster_details = kwargs['clusterDetails']
+        if 'clusterProfile' in kwargs:
+            cluster_profile = kwargs['clusterProfile']
+        if 'clusterPublicKey' in kwargs:
+            cluster_public_key = kwargs['clusterPublicKey']
+        if 'clusterVersion' in kwargs:
+            cluster_version = kwargs['clusterVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeOnlyWorkerNode' in kwargs:
+            compute_only_worker_node = kwargs['computeOnlyWorkerNode']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'edgeNode' in kwargs:
+            edge_node = kwargs['edgeNode']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCloudSqlConfigured' in kwargs:
+            is_cloud_sql_configured = kwargs['isCloudSqlConfigured']
+        if 'isForceStopJobs' in kwargs:
+            is_force_stop_jobs = kwargs['isForceStopJobs']
+        if 'isHighAvailability' in kwargs:
+            is_high_availability = kwargs['isHighAvailability']
+        if 'isKafkaConfigured' in kwargs:
+            is_kafka_configured = kwargs['isKafkaConfigured']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'kafkaBrokerNode' in kwargs:
+            kafka_broker_node = kwargs['kafkaBrokerNode']
+        if 'kerberosRealmName' in kwargs:
+            kerberos_realm_name = kwargs['kerberosRealmName']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'masterNode' in kwargs:
+            master_node = kwargs['masterNode']
+        if 'networkConfig' in kwargs:
+            network_config = kwargs['networkConfig']
+        if 'numberOfNodes' in kwargs:
+            number_of_nodes = kwargs['numberOfNodes']
+        if 'numberOfNodesRequiringMaintenanceReboot' in kwargs:
+            number_of_nodes_requiring_maintenance_reboot = kwargs['numberOfNodesRequiringMaintenanceReboot']
+        if 'osPatchVersion' in kwargs:
+            os_patch_version = kwargs['osPatchVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'utilNode' in kwargs:
+            util_node = kwargs['utilNode']
+        if 'workerNode' in kwargs:
+            worker_node = kwargs['workerNode']
+
         if bootstrap_script_url is not None:
             _setter("bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:

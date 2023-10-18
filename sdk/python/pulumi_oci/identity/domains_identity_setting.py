@@ -215,7 +215,33 @@ class DomainsIdentitySettingArgs:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentitySettingTagArgs']]]] = None,
              tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentitySettingTokenArgs']]]] = None,
              user_allowed_to_set_recovery_email: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'identitySettingId' in kwargs:
+            identity_setting_id = kwargs['identitySettingId']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'emitLockedMessageWhenUserIsLocked' in kwargs:
+            emit_locked_message_when_user_is_locked = kwargs['emitLockedMessageWhenUserIsLocked']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'myProfile' in kwargs:
+            my_profile = kwargs['myProfile']
+        if 'posixGid' in kwargs:
+            posix_gid = kwargs['posixGid']
+        if 'posixUid' in kwargs:
+            posix_uid = kwargs['posixUid']
+        if 'primaryEmailRequired' in kwargs:
+            primary_email_required = kwargs['primaryEmailRequired']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'returnInactiveOverLockedMessage' in kwargs:
+            return_inactive_over_locked_message = kwargs['returnInactiveOverLockedMessage']
+        if 'userAllowedToSetRecoveryEmail' in kwargs:
+            user_allowed_to_set_recovery_email = kwargs['userAllowedToSetRecoveryEmail']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("identity_setting_id", identity_setting_id)
         _setter("schemas", schemas)
@@ -923,7 +949,51 @@ class _DomainsIdentitySettingState:
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              tokens: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentitySettingTokenArgs']]]] = None,
              user_allowed_to_set_recovery_email: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'emitLockedMessageWhenUserIsLocked' in kwargs:
+            emit_locked_message_when_user_is_locked = kwargs['emitLockedMessageWhenUserIsLocked']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'identitySettingId' in kwargs:
+            identity_setting_id = kwargs['identitySettingId']
+        if 'myProfile' in kwargs:
+            my_profile = kwargs['myProfile']
+        if 'posixGid' in kwargs:
+            posix_gid = kwargs['posixGid']
+        if 'posixUid' in kwargs:
+            posix_uid = kwargs['posixUid']
+        if 'primaryEmailRequired' in kwargs:
+            primary_email_required = kwargs['primaryEmailRequired']
+        if 'removeInvalidEmails' in kwargs:
+            remove_invalid_emails = kwargs['removeInvalidEmails']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'returnInactiveOverLockedMessage' in kwargs:
+            return_inactive_over_locked_message = kwargs['returnInactiveOverLockedMessage']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'userAllowedToSetRecoveryEmail' in kwargs:
+            user_allowed_to_set_recovery_email = kwargs['userAllowedToSetRecoveryEmail']
+
         if attribute_sets is not None:
             _setter("attribute_sets", attribute_sets)
         if attributes is not None:

@@ -46,7 +46,15 @@ class ProductLicenseImageArgs:
              id: Optional[pulumi.Input[str]] = None,
              listing_name: Optional[pulumi.Input[str]] = None,
              publisher: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'listingName' in kwargs:
+            listing_name = kwargs['listingName']
+
         _setter("listing_id", listing_id)
         _setter("package_version", package_version)
         if id is not None:
@@ -135,7 +143,9 @@ class GetLicenseRecordsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -187,7 +197,9 @@ class GetProductLicensesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

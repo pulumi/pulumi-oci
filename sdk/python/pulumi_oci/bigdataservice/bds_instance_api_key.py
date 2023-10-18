@@ -47,7 +47,17 @@ class BdsInstanceApiKeyArgs:
              passphrase: pulumi.Input[str],
              user_id: pulumi.Input[str],
              default_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'keyAlias' in kwargs:
+            key_alias = kwargs['keyAlias']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'defaultRegion' in kwargs:
+            default_region = kwargs['defaultRegion']
+
         _setter("bds_instance_id", bds_instance_id)
         _setter("key_alias", key_alias)
         _setter("passphrase", passphrase)
@@ -176,7 +186,21 @@ class _BdsInstanceApiKeyState:
              tenant_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'defaultRegion' in kwargs:
+            default_region = kwargs['defaultRegion']
+        if 'keyAlias' in kwargs:
+            key_alias = kwargs['keyAlias']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if bds_instance_id is not None:
             _setter("bds_instance_id", bds_instance_id)
         if default_region is not None:

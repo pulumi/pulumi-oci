@@ -43,7 +43,15 @@ class CloudGuardConfigurationArgs:
              reporting_region: pulumi.Input[str],
              status: pulumi.Input[str],
              self_manage_resources: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'reportingRegion' in kwargs:
+            reporting_region = kwargs['reportingRegion']
+        if 'selfManageResources' in kwargs:
+            self_manage_resources = kwargs['selfManageResources']
+
         _setter("compartment_id", compartment_id)
         _setter("reporting_region", reporting_region)
         _setter("status", status)
@@ -135,7 +143,15 @@ class _CloudGuardConfigurationState:
              reporting_region: Optional[pulumi.Input[str]] = None,
              self_manage_resources: Optional[pulumi.Input[bool]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'reportingRegion' in kwargs:
+            reporting_region = kwargs['reportingRegion']
+        if 'selfManageResources' in kwargs:
+            self_manage_resources = kwargs['selfManageResources']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if reporting_region is not None:

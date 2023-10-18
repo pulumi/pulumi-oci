@@ -32,7 +32,13 @@ class NamespaceMetadataArgs:
              namespace: pulumi.Input[str],
              default_s3compartment_id: Optional[pulumi.Input[str]] = None,
              default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultS3compartmentId' in kwargs:
+            default_s3compartment_id = kwargs['defaultS3compartmentId']
+        if 'defaultSwiftCompartmentId' in kwargs:
+            default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
+
         _setter("namespace", namespace)
         if default_s3compartment_id is not None:
             _setter("default_s3compartment_id", default_s3compartment_id)
@@ -88,7 +94,13 @@ class _NamespaceMetadataState:
              default_s3compartment_id: Optional[pulumi.Input[str]] = None,
              default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultS3compartmentId' in kwargs:
+            default_s3compartment_id = kwargs['defaultS3compartmentId']
+        if 'defaultSwiftCompartmentId' in kwargs:
+            default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
+
         if default_s3compartment_id is not None:
             _setter("default_s3compartment_id", default_s3compartment_id)
         if default_swift_compartment_id is not None:

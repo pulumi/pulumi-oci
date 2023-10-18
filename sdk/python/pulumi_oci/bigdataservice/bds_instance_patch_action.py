@@ -39,7 +39,13 @@ class BdsInstancePatchActionArgs:
              bds_instance_id: pulumi.Input[str],
              cluster_admin_password: pulumi.Input[str],
              version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+
         _setter("bds_instance_id", bds_instance_id)
         _setter("cluster_admin_password", cluster_admin_password)
         _setter("version", version)
@@ -113,7 +119,13 @@ class _BdsInstancePatchActionState:
              bds_instance_id: Optional[pulumi.Input[str]] = None,
              cluster_admin_password: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+
         if bds_instance_id is not None:
             _setter("bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:

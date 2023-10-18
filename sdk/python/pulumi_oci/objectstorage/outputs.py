@@ -96,7 +96,19 @@ class BucketRetentionRule(dict):
              time_created: Optional[str] = None,
              time_modified: Optional[str] = None,
              time_rule_locked: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'retentionRuleId' in kwargs:
+            retention_rule_id = kwargs['retentionRuleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'timeRuleLocked' in kwargs:
+            time_rule_locked = kwargs['timeRuleLocked']
+
         _setter("display_name", display_name)
         if duration is not None:
             _setter("duration", duration)
@@ -196,7 +208,13 @@ class BucketRetentionRuleDuration(dict):
              _setter: Callable[[Any, Any], None],
              time_amount: str,
              time_unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+
         _setter("time_amount", time_amount)
         _setter("time_unit", time_unit)
 
@@ -283,7 +301,17 @@ class ObjectLifecyclePolicyRule(dict):
              time_unit: str,
              object_name_filter: Optional['outputs.ObjectLifecyclePolicyRuleObjectNameFilter'] = None,
              target: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+        if 'objectNameFilter' in kwargs:
+            object_name_filter = kwargs['objectNameFilter']
+
         _setter("action", action)
         _setter("is_enabled", is_enabled)
         _setter("name", name)
@@ -409,7 +437,15 @@ class ObjectLifecyclePolicyRuleObjectNameFilter(dict):
              exclusion_patterns: Optional[Sequence[str]] = None,
              inclusion_patterns: Optional[Sequence[str]] = None,
              inclusion_prefixes: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exclusionPatterns' in kwargs:
+            exclusion_patterns = kwargs['exclusionPatterns']
+        if 'inclusionPatterns' in kwargs:
+            inclusion_patterns = kwargs['inclusionPatterns']
+        if 'inclusionPrefixes' in kwargs:
+            inclusion_prefixes = kwargs['inclusionPrefixes']
+
         if exclusion_patterns is not None:
             _setter("exclusion_patterns", exclusion_patterns)
         if inclusion_patterns is not None:
@@ -522,7 +558,17 @@ class StorageObjectSourceUriDetails(dict):
              destination_object_if_none_match_etag: Optional[str] = None,
              source_object_if_match_etag: Optional[str] = None,
              source_version_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationObjectIfMatchEtag' in kwargs:
+            destination_object_if_match_etag = kwargs['destinationObjectIfMatchEtag']
+        if 'destinationObjectIfNoneMatchEtag' in kwargs:
+            destination_object_if_none_match_etag = kwargs['destinationObjectIfNoneMatchEtag']
+        if 'sourceObjectIfMatchEtag' in kwargs:
+            source_object_if_match_etag = kwargs['sourceObjectIfMatchEtag']
+        if 'sourceVersionId' in kwargs:
+            source_version_id = kwargs['sourceVersionId']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -639,7 +685,19 @@ class GetBucketRetentionRuleResult(dict):
              time_created: str,
              time_modified: str,
              time_rule_locked: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'retentionRuleId' in kwargs:
+            retention_rule_id = kwargs['retentionRuleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'timeRuleLocked' in kwargs:
+            time_rule_locked = kwargs['timeRuleLocked']
+
         _setter("display_name", display_name)
         _setter("durations", durations)
         _setter("retention_rule_id", retention_rule_id)
@@ -712,7 +770,13 @@ class GetBucketRetentionRuleDurationResult(dict):
              _setter: Callable[[Any, Any], None],
              time_amount: str,
              time_unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+
         _setter("time_amount", time_amount)
         _setter("time_unit", time_unit)
 
@@ -833,7 +897,43 @@ class GetBucketSummariesBucketSummaryResult(dict):
              storage_tier: str,
              time_created: str,
              versioning: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'approximateCount' in kwargs:
+            approximate_count = kwargs['approximateCount']
+        if 'approximateSize' in kwargs:
+            approximate_size = kwargs['approximateSize']
+        if 'autoTiering' in kwargs:
+            auto_tiering = kwargs['autoTiering']
+        if 'bucketId' in kwargs:
+            bucket_id = kwargs['bucketId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'objectEventsEnabled' in kwargs:
+            object_events_enabled = kwargs['objectEventsEnabled']
+        if 'objectLifecyclePolicyEtag' in kwargs:
+            object_lifecycle_policy_etag = kwargs['objectLifecyclePolicyEtag']
+        if 'replicationEnabled' in kwargs:
+            replication_enabled = kwargs['replicationEnabled']
+        if 'retentionRules' in kwargs:
+            retention_rules = kwargs['retentionRules']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("access_type", access_type)
         _setter("approximate_count", approximate_count)
         _setter("approximate_size", approximate_size)
@@ -1064,7 +1164,19 @@ class GetBucketSummariesBucketSummaryRetentionRuleResult(dict):
              time_created: str,
              time_modified: str,
              time_rule_locked: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'retentionRuleId' in kwargs:
+            retention_rule_id = kwargs['retentionRuleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'timeRuleLocked' in kwargs:
+            time_rule_locked = kwargs['timeRuleLocked']
+
         _setter("display_name", display_name)
         _setter("durations", durations)
         _setter("retention_rule_id", retention_rule_id)
@@ -1121,7 +1233,13 @@ class GetBucketSummariesBucketSummaryRetentionRuleDurationResult(dict):
              _setter: Callable[[Any, Any], None],
              time_amount: str,
              time_unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+
         _setter("time_amount", time_amount)
         _setter("time_unit", time_unit)
 
@@ -1157,7 +1275,9 @@ class GetBucketSummariesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1221,7 +1341,17 @@ class GetObjectLifecyclePolicyRuleResult(dict):
              target: str,
              time_amount: str,
              time_unit: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'objectNameFilters' in kwargs:
+            object_name_filters = kwargs['objectNameFilters']
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+
         _setter("action", action)
         _setter("is_enabled", is_enabled)
         _setter("name", name)
@@ -1310,7 +1440,15 @@ class GetObjectLifecyclePolicyRuleObjectNameFilterResult(dict):
              exclusion_patterns: Sequence[str],
              inclusion_patterns: Sequence[str],
              inclusion_prefixes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exclusionPatterns' in kwargs:
+            exclusion_patterns = kwargs['exclusionPatterns']
+        if 'inclusionPatterns' in kwargs:
+            inclusion_patterns = kwargs['inclusionPatterns']
+        if 'inclusionPrefixes' in kwargs:
+            inclusion_prefixes = kwargs['inclusionPrefixes']
+
         _setter("exclusion_patterns", exclusion_patterns)
         _setter("inclusion_patterns", inclusion_patterns)
         _setter("inclusion_prefixes", inclusion_prefixes)
@@ -1361,7 +1499,9 @@ class GetObjectVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1437,7 +1577,21 @@ class GetObjectVersionsItemResult(dict):
              time_created: str,
              time_modified: str,
              version_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archivalState' in kwargs:
+            archival_state = kwargs['archivalState']
+        if 'isDeleteMarker' in kwargs:
+            is_delete_marker = kwargs['isDeleteMarker']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'versionId' in kwargs:
+            version_id = kwargs['versionId']
+
         _setter("archival_state", archival_state)
         _setter("etag", etag)
         _setter("is_delete_marker", is_delete_marker)
@@ -1551,7 +1705,9 @@ class GetObjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1619,7 +1775,17 @@ class GetObjectsObjectResult(dict):
              storage_tier: str,
              time_created: str,
              time_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archivalState' in kwargs:
+            archival_state = kwargs['archivalState']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+
         _setter("archival_state", archival_state)
         _setter("etag", etag)
         _setter("md5", md5)
@@ -1713,7 +1879,9 @@ class GetPreauthrequestsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1799,7 +1967,25 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
              par_id: str,
              time_created: str,
              time_expires: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessType' in kwargs:
+            access_type = kwargs['accessType']
+        if 'accessUri' in kwargs:
+            access_uri = kwargs['accessUri']
+        if 'bucketListingAction' in kwargs:
+            bucket_listing_action = kwargs['bucketListingAction']
+        if 'fullPath' in kwargs:
+            full_path = kwargs['fullPath']
+        if 'objectName' in kwargs:
+            object_name = kwargs['objectName']
+        if 'parId' in kwargs:
+            par_id = kwargs['parId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+
         _setter("access_type", access_type)
         _setter("access_uri", access_uri)
         _setter("bucket", bucket)
@@ -1937,7 +2123,9 @@ class GetReplicationPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2016,7 +2204,21 @@ class GetReplicationPoliciesReplicationPolicyResult(dict):
              status_message: str,
              time_created: str,
              time_last_sync: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deleteObjectInDestinationBucket' in kwargs:
+            delete_object_in_destination_bucket = kwargs['deleteObjectInDestinationBucket']
+        if 'destinationBucketName' in kwargs:
+            destination_bucket_name = kwargs['destinationBucketName']
+        if 'destinationRegionName' in kwargs:
+            destination_region_name = kwargs['destinationRegionName']
+        if 'statusMessage' in kwargs:
+            status_message = kwargs['statusMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastSync' in kwargs:
+            time_last_sync = kwargs['timeLastSync']
+
         _setter("bucket", bucket)
         _setter("delete_object_in_destination_bucket", delete_object_in_destination_bucket)
         _setter("destination_bucket_name", destination_bucket_name)
@@ -2136,7 +2338,9 @@ class GetReplicationSourcesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2181,7 +2385,15 @@ class GetReplicationSourcesReplicationSourceResult(dict):
              policy_name: str,
              source_bucket_name: str,
              source_region_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyName' in kwargs:
+            policy_name = kwargs['policyName']
+        if 'sourceBucketName' in kwargs:
+            source_bucket_name = kwargs['sourceBucketName']
+        if 'sourceRegionName' in kwargs:
+            source_region_name = kwargs['sourceRegionName']
+
         _setter("policy_name", policy_name)
         _setter("source_bucket_name", source_bucket_name)
         _setter("source_region_name", source_region_name)

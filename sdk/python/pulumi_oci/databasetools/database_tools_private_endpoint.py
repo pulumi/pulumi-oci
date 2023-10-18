@@ -65,7 +65,25 @@ class DatabaseToolsPrivateEndpointArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              private_endpoint_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointServiceId' in kwargs:
+            endpoint_service_id = kwargs['endpointServiceId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("endpoint_service_id", endpoint_service_id)
@@ -286,7 +304,43 @@ class _DatabaseToolsPrivateEndpointState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalFqdns' in kwargs:
+            additional_fqdns = kwargs['additionalFqdns']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if 'endpointServiceId' in kwargs:
+            endpoint_service_id = kwargs['endpointServiceId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'privateEndpointVnicId' in kwargs:
+            private_endpoint_vnic_id = kwargs['privateEndpointVnicId']
+        if 'reverseConnectionConfigurations' in kwargs:
+            reverse_connection_configurations = kwargs['reverseConnectionConfigurations']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if additional_fqdns is not None:
             _setter("additional_fqdns", additional_fqdns)
         if compartment_id is not None:

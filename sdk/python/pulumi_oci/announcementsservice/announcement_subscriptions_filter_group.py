@@ -41,7 +41,11 @@ class AnnouncementSubscriptionsFilterGroupArgs:
              announcement_subscription_id: pulumi.Input[str],
              filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'announcementSubscriptionId' in kwargs:
+            announcement_subscription_id = kwargs['announcementSubscriptionId']
+
         _setter("announcement_subscription_id", announcement_subscription_id)
         _setter("filters", filters)
         if name is not None:
@@ -116,7 +120,11 @@ class _AnnouncementSubscriptionsFilterGroupState:
              announcement_subscription_id: Optional[pulumi.Input[str]] = None,
              filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'announcementSubscriptionId' in kwargs:
+            announcement_subscription_id = kwargs['announcementSubscriptionId']
+
         if announcement_subscription_id is not None:
             _setter("announcement_subscription_id", announcement_subscription_id)
         if filters is not None:

@@ -34,7 +34,9 @@ class GetEmWarehousesEmWarehouseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -118,7 +120,37 @@ class GetEmWarehousesEmWarehouseCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'emBridgeId' in kwargs:
+            em_bridge_id = kwargs['emBridgeId']
+        if 'emWarehouseType' in kwargs:
+            em_warehouse_type = kwargs['emWarehouseType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'latestEtlRunMessage' in kwargs:
+            latest_etl_run_message = kwargs['latestEtlRunMessage']
+        if 'latestEtlRunStatus' in kwargs:
+            latest_etl_run_status = kwargs['latestEtlRunStatus']
+        if 'latestEtlRunTime' in kwargs:
+            latest_etl_run_time = kwargs['latestEtlRunTime']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -283,7 +315,9 @@ class GetEmWarehousesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -360,7 +394,29 @@ class GetEtlRunItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if 'dataWritten' in kwargs:
+            data_written = kwargs['dataWritten']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("data_read_in_bytes", data_read_in_bytes)
         _setter("data_written", data_written)
@@ -477,7 +533,9 @@ class GetEtlRunsEtlRunCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -504,7 +562,9 @@ class GetEtlRunsEtlRunCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -571,7 +631,29 @@ class GetEtlRunsEtlRunCollectionItemItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if 'dataWritten' in kwargs:
+            data_written = kwargs['dataWritten']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("data_read_in_bytes", data_read_in_bytes)
         _setter("data_written", data_written)
@@ -691,7 +773,9 @@ class GetEtlRunsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -740,7 +824,17 @@ class GetResourceUsageEmInstanceResult(dict):
              em_host: str,
              em_id: str,
              targets_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emDiscovererUrl' in kwargs:
+            em_discoverer_url = kwargs['emDiscovererUrl']
+        if 'emHost' in kwargs:
+            em_host = kwargs['emHost']
+        if 'emId' in kwargs:
+            em_id = kwargs['emId']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+
         _setter("em_discoverer_url", em_discoverer_url)
         _setter("em_host", em_host)
         _setter("em_id", em_id)

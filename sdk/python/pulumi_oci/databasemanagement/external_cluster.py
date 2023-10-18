@@ -37,7 +37,13 @@ class ExternalClusterArgs:
              _setter: Callable[[Any, Any], None],
              external_cluster_id: pulumi.Input[str],
              external_connector_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+
         _setter("external_cluster_id", external_cluster_id)
         if external_connector_id is not None:
             _setter("external_connector_id", external_connector_id)
@@ -159,7 +165,41 @@ class _ExternalClusterState:
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
              vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalClusterVipConfigurationArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'isFlexCluster' in kwargs:
+            is_flex_cluster = kwargs['isFlexCluster']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'ocrFileLocation' in kwargs:
+            ocr_file_location = kwargs['ocrFileLocation']
+        if 'scanConfigurations' in kwargs:
+            scan_configurations = kwargs['scanConfigurations']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vipConfigurations' in kwargs:
+            vip_configurations = kwargs['vipConfigurations']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if compartment_id is not None:

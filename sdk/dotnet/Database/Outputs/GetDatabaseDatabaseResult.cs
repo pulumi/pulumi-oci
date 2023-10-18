@@ -64,6 +64,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
         public readonly string PdbName;
+        public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
@@ -106,6 +107,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string pdbName,
 
+            ImmutableArray<string> pluggableDatabases,
+
             string sidPrefix,
 
             string tdeWalletPassword,
@@ -127,6 +130,7 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyVersionId = kmsKeyVersionId;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;
+            PluggableDatabases = pluggableDatabases;
             SidPrefix = sidPrefix;
             TdeWalletPassword = tdeWalletPassword;
             VaultId = vaultId;

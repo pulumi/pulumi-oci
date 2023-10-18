@@ -82,7 +82,9 @@ class ConnectionAdminCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -138,7 +140,13 @@ class ConnectionConnectDescriptorArgs:
              database_service_name: Optional[pulumi.Input[str]] = None,
              host: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectString' in kwargs:
+            connect_string = kwargs['connectString']
+        if 'databaseServiceName' in kwargs:
+            database_service_name = kwargs['databaseServiceName']
+
         if connect_string is not None:
             _setter("connect_string", connect_string)
         if database_service_name is not None:
@@ -224,7 +232,15 @@ class ConnectionPrivateEndpointArgs:
              subnet_id: pulumi.Input[str],
              vcn_id: pulumi.Input[str],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("subnet_id", subnet_id)
         _setter("vcn_id", vcn_id)
@@ -299,7 +315,9 @@ class ConnectionReplicationCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -355,7 +373,11 @@ class ConnectionSshDetailsArgs:
              sshkey: pulumi.Input[str],
              user: pulumi.Input[str],
              sudo_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sudoLocation' in kwargs:
+            sudo_location = kwargs['sudoLocation']
+
         _setter("host", host)
         _setter("sshkey", sshkey)
         _setter("user", user)
@@ -438,7 +460,15 @@ class ConnectionVaultDetailsArgs:
              compartment_id: pulumi.Input[str],
              key_id: pulumi.Input[str],
              vault_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("key_id", key_id)
         _setter("vault_id", vault_id)
@@ -507,7 +537,13 @@ class JobProgressArgs:
              current_phase: Optional[pulumi.Input[str]] = None,
              current_status: Optional[pulumi.Input[str]] = None,
              phases: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentPhase' in kwargs:
+            current_phase = kwargs['currentPhase']
+        if 'currentStatus' in kwargs:
+            current_status = kwargs['currentStatus']
+
         if current_phase is not None:
             _setter("current_phase", current_phase)
         if current_status is not None:
@@ -599,7 +635,15 @@ class JobProgressPhaseArgs:
              name: Optional[pulumi.Input[str]] = None,
              progress: Optional[pulumi.Input[int]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'durationInMs' in kwargs:
+            duration_in_ms = kwargs['durationInMs']
+        if 'isAdvisorReportAvailable' in kwargs:
+            is_advisor_report_available = kwargs['isAdvisorReportAvailable']
+        if 'logLocations' in kwargs:
+            log_locations = kwargs['logLocations']
+
         if action is not None:
             _setter("action", action)
         if duration_in_ms is not None:
@@ -747,7 +791,9 @@ class JobProgressPhaseExtractArgs:
              _setter: Callable[[Any, Any], None],
              message: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if message is not None:
             _setter("message", message)
         if type is not None:
@@ -801,7 +847,9 @@ class JobProgressPhaseLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -869,7 +917,9 @@ class JobUnsupportedObjectArgs:
              object: Optional[pulumi.Input[str]] = None,
              owner: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if object is not None:
             _setter("object", object)
         if owner is not None:
@@ -933,7 +983,13 @@ class MigrationAdvisorSettingsArgs:
              _setter: Callable[[Any, Any], None],
              is_ignore_errors: Optional[pulumi.Input[bool]] = None,
              is_skip_advisor: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isIgnoreErrors' in kwargs:
+            is_ignore_errors = kwargs['isIgnoreErrors']
+        if 'isSkipAdvisor' in kwargs:
+            is_skip_advisor = kwargs['isSkipAdvisor']
+
         if is_ignore_errors is not None:
             _setter("is_ignore_errors", is_ignore_errors)
         if is_skip_advisor is not None:
@@ -983,7 +1039,13 @@ class MigrationDataTransferMediumDetailsArgs:
              _setter: Callable[[Any, Any], None],
              database_link_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs']] = None,
              object_storage_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseLinkDetails' in kwargs:
+            database_link_details = kwargs['databaseLinkDetails']
+        if 'objectStorageDetails' in kwargs:
+            object_storage_details = kwargs['objectStorageDetails']
+
         if database_link_details is not None:
             _setter("database_link_details", database_link_details)
         if object_storage_details is not None:
@@ -1033,7 +1095,11 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              wallet_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'walletBucket' in kwargs:
+            wallet_bucket = kwargs['walletBucket']
+
         if name is not None:
             _setter("name", name)
         if wallet_bucket is not None:
@@ -1083,7 +1149,9 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs:
              _setter: Callable[[Any, Any], None],
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
 
@@ -1131,7 +1199,9 @@ class MigrationDataTransferMediumDetailsObjectStorageDetailsArgs:
              _setter: Callable[[Any, Any], None],
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
 
@@ -1191,7 +1261,15 @@ class MigrationDataTransferMediumDetailsV2Args:
              object_storage_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs']] = None,
              region: Optional[pulumi.Input[str]] = None,
              secret_access_key: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if 'objectStorageBucket' in kwargs:
+            object_storage_bucket = kwargs['objectStorageBucket']
+        if 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+
         _setter("type", type)
         if access_key_id is not None:
             _setter("access_key_id", access_key_id)
@@ -1284,7 +1362,9 @@ class MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs:
              _setter: Callable[[Any, Any], None],
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -1346,7 +1426,19 @@ class MigrationDatapumpSettingsArgs:
              import_directory_object: Optional[pulumi.Input['MigrationDatapumpSettingsImportDirectoryObjectArgs']] = None,
              job_mode: Optional[pulumi.Input[str]] = None,
              metadata_remaps: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationDatapumpSettingsMetadataRemapArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataPumpParameters' in kwargs:
+            data_pump_parameters = kwargs['dataPumpParameters']
+        if 'exportDirectoryObject' in kwargs:
+            export_directory_object = kwargs['exportDirectoryObject']
+        if 'importDirectoryObject' in kwargs:
+            import_directory_object = kwargs['importDirectoryObject']
+        if 'jobMode' in kwargs:
+            job_mode = kwargs['jobMode']
+        if 'metadataRemaps' in kwargs:
+            metadata_remaps = kwargs['metadataRemaps']
+
         if data_pump_parameters is not None:
             _setter("data_pump_parameters", data_pump_parameters)
         if export_directory_object is not None:
@@ -1454,7 +1546,19 @@ class MigrationDatapumpSettingsDataPumpParametersArgs:
              import_parallelism_degree: Optional[pulumi.Input[int]] = None,
              is_cluster: Optional[pulumi.Input[bool]] = None,
              table_exists_action: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'excludeParameters' in kwargs:
+            exclude_parameters = kwargs['excludeParameters']
+        if 'exportParallelismDegree' in kwargs:
+            export_parallelism_degree = kwargs['exportParallelismDegree']
+        if 'importParallelismDegree' in kwargs:
+            import_parallelism_degree = kwargs['importParallelismDegree']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'tableExistsAction' in kwargs:
+            table_exists_action = kwargs['tableExistsAction']
+
         if estimate is not None:
             _setter("estimate", estimate)
         if exclude_parameters is not None:
@@ -1560,7 +1664,9 @@ class MigrationDatapumpSettingsExportDirectoryObjectArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if path is not None:
             _setter("path", path)
@@ -1609,7 +1715,9 @@ class MigrationDatapumpSettingsImportDirectoryObjectArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if path is not None:
             _setter("path", path)
@@ -1662,7 +1770,13 @@ class MigrationDatapumpSettingsMetadataRemapArgs:
              new_value: pulumi.Input[str],
              old_value: pulumi.Input[str],
              type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'newValue' in kwargs:
+            new_value = kwargs['newValue']
+        if 'oldValue' in kwargs:
+            old_value = kwargs['oldValue']
+
         _setter("new_value", new_value)
         _setter("old_value", old_value)
         _setter("type", type)
@@ -1726,7 +1840,11 @@ class MigrationDumpTransferDetailsArgs:
              shared_storage_mount_target_id: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input['MigrationDumpTransferDetailsSourceArgs']] = None,
              target: Optional[pulumi.Input['MigrationDumpTransferDetailsTargetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sharedStorageMountTargetId' in kwargs:
+            shared_storage_mount_target_id = kwargs['sharedStorageMountTargetId']
+
         if shared_storage_mount_target_id is not None:
             _setter("shared_storage_mount_target_id", shared_storage_mount_target_id)
         if source is not None:
@@ -1791,7 +1909,13 @@ class MigrationDumpTransferDetailsSourceArgs:
              kind: pulumi.Input[str],
              oci_home: Optional[pulumi.Input[str]] = None,
              wallet_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociHome' in kwargs:
+            oci_home = kwargs['ociHome']
+        if 'walletLocation' in kwargs:
+            wallet_location = kwargs['walletLocation']
+
         _setter("kind", kind)
         if oci_home is not None:
             _setter("oci_home", oci_home)
@@ -1858,7 +1982,13 @@ class MigrationDumpTransferDetailsTargetArgs:
              kind: pulumi.Input[str],
              oci_home: Optional[pulumi.Input[str]] = None,
              wallet_location: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociHome' in kwargs:
+            oci_home = kwargs['ociHome']
+        if 'walletLocation' in kwargs:
+            wallet_location = kwargs['walletLocation']
+
         _setter("kind", kind)
         if oci_home is not None:
             _setter("oci_home", oci_home)
@@ -1929,7 +2059,11 @@ class MigrationExcludeObjectArgs:
              owner: pulumi.Input[str],
              is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOmitExcludedTableFromReplication' in kwargs:
+            is_omit_excluded_table_from_replication = kwargs['isOmitExcludedTableFromReplication']
+
         _setter("object", object)
         _setter("owner", owner)
         if is_omit_excluded_table_from_replication is not None:
@@ -2005,7 +2139,9 @@ class MigrationGoldenGateDetailsArgs:
              _setter: Callable[[Any, Any], None],
              hub: pulumi.Input['MigrationGoldenGateDetailsHubArgs'],
              settings: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hub", hub)
         if settings is not None:
             _setter("settings", settings)
@@ -2078,7 +2214,23 @@ class MigrationGoldenGateDetailsHubArgs:
              source_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
              target_db_admin_credentials: Optional[pulumi.Input['MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs']] = None,
              target_microservices_deployment_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'restAdminCredentials' in kwargs:
+            rest_admin_credentials = kwargs['restAdminCredentials']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'sourceContainerDbAdminCredentials' in kwargs:
+            source_container_db_admin_credentials = kwargs['sourceContainerDbAdminCredentials']
+        if 'sourceDbAdminCredentials' in kwargs:
+            source_db_admin_credentials = kwargs['sourceDbAdminCredentials']
+        if 'sourceMicroservicesDeploymentName' in kwargs:
+            source_microservices_deployment_name = kwargs['sourceMicroservicesDeploymentName']
+        if 'targetDbAdminCredentials' in kwargs:
+            target_db_admin_credentials = kwargs['targetDbAdminCredentials']
+        if 'targetMicroservicesDeploymentName' in kwargs:
+            target_microservices_deployment_name = kwargs['targetMicroservicesDeploymentName']
+
         _setter("rest_admin_credentials", rest_admin_credentials)
         _setter("url", url)
         if compute_id is not None:
@@ -2210,7 +2362,9 @@ class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -2258,7 +2412,9 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -2306,7 +2462,9 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -2354,7 +2512,9 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -2406,7 +2566,11 @@ class MigrationGoldenGateDetailsSettingsArgs:
              acceptable_lag: Optional[pulumi.Input[int]] = None,
              extract: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsExtractArgs']] = None,
              replicat: Optional[pulumi.Input['MigrationGoldenGateDetailsSettingsReplicatArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'acceptableLag' in kwargs:
+            acceptable_lag = kwargs['acceptableLag']
+
         if acceptable_lag is not None:
             _setter("acceptable_lag", acceptable_lag)
         if extract is not None:
@@ -2470,7 +2634,13 @@ class MigrationGoldenGateDetailsSettingsExtractArgs:
              _setter: Callable[[Any, Any], None],
              long_trans_duration: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'longTransDuration' in kwargs:
+            long_trans_duration = kwargs['longTransDuration']
+        if 'performanceProfile' in kwargs:
+            performance_profile = kwargs['performanceProfile']
+
         if long_trans_duration is not None:
             _setter("long_trans_duration", long_trans_duration)
         if performance_profile is not None:
@@ -2528,7 +2698,17 @@ class MigrationGoldenGateDetailsSettingsReplicatArgs:
              max_apply_parallelism: Optional[pulumi.Input[int]] = None,
              min_apply_parallelism: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mapParallelism' in kwargs:
+            map_parallelism = kwargs['mapParallelism']
+        if 'maxApplyParallelism' in kwargs:
+            max_apply_parallelism = kwargs['maxApplyParallelism']
+        if 'minApplyParallelism' in kwargs:
+            min_apply_parallelism = kwargs['minApplyParallelism']
+        if 'performanceProfile' in kwargs:
+            performance_profile = kwargs['performanceProfile']
+
         if map_parallelism is not None:
             _setter("map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
@@ -2618,7 +2798,17 @@ class MigrationGoldenGateServiceDetailsArgs:
              source_container_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs']] = None,
              source_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs']] = None,
              target_db_credentials: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ggsDeployments' in kwargs:
+            ggs_deployments = kwargs['ggsDeployments']
+        if 'sourceContainerDbCredentials' in kwargs:
+            source_container_db_credentials = kwargs['sourceContainerDbCredentials']
+        if 'sourceDbCredentials' in kwargs:
+            source_db_credentials = kwargs['sourceDbCredentials']
+        if 'targetDbCredentials' in kwargs:
+            target_db_credentials = kwargs['targetDbCredentials']
+
         if ggs_deployments is not None:
             _setter("ggs_deployments", ggs_deployments)
         if settings is not None:
@@ -2710,7 +2900,13 @@ class MigrationGoldenGateServiceDetailsGgsDeploymentArgs:
              _setter: Callable[[Any, Any], None],
              deployment_id: Optional[pulumi.Input[str]] = None,
              ggs_admin_credentials_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if 'ggsAdminCredentialsSecretId' in kwargs:
+            ggs_admin_credentials_secret_id = kwargs['ggsAdminCredentialsSecretId']
+
         if deployment_id is not None:
             _setter("deployment_id", deployment_id)
         if ggs_admin_credentials_secret_id is not None:
@@ -2764,7 +2960,11 @@ class MigrationGoldenGateServiceDetailsSettingsArgs:
              acceptable_lag: Optional[pulumi.Input[int]] = None,
              extract: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsExtractArgs']] = None,
              replicat: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsSettingsReplicatArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'acceptableLag' in kwargs:
+            acceptable_lag = kwargs['acceptableLag']
+
         if acceptable_lag is not None:
             _setter("acceptable_lag", acceptable_lag)
         if extract is not None:
@@ -2828,7 +3028,13 @@ class MigrationGoldenGateServiceDetailsSettingsExtractArgs:
              _setter: Callable[[Any, Any], None],
              long_trans_duration: Optional[pulumi.Input[int]] = None,
              performance_profile: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'longTransDuration' in kwargs:
+            long_trans_duration = kwargs['longTransDuration']
+        if 'performanceProfile' in kwargs:
+            performance_profile = kwargs['performanceProfile']
+
         if long_trans_duration is not None:
             _setter("long_trans_duration", long_trans_duration)
         if performance_profile is not None:
@@ -2882,7 +3088,15 @@ class MigrationGoldenGateServiceDetailsSettingsReplicatArgs:
              map_parallelism: Optional[pulumi.Input[int]] = None,
              max_apply_parallelism: Optional[pulumi.Input[int]] = None,
              min_apply_parallelism: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mapParallelism' in kwargs:
+            map_parallelism = kwargs['mapParallelism']
+        if 'maxApplyParallelism' in kwargs:
+            max_apply_parallelism = kwargs['maxApplyParallelism']
+        if 'minApplyParallelism' in kwargs:
+            min_apply_parallelism = kwargs['minApplyParallelism']
+
         if map_parallelism is not None:
             _setter("map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
@@ -2946,7 +3160,9 @@ class MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -2994,7 +3210,9 @@ class MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -3042,7 +3260,9 @@ class MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs:
              _setter: Callable[[Any, Any], None],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("password", password)
         _setter("username", username)
 
@@ -3098,7 +3318,11 @@ class MigrationIncludeObjectArgs:
              owner: pulumi.Input[str],
              is_omit_excluded_table_from_replication: Optional[pulumi.Input[bool]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOmitExcludedTableFromReplication' in kwargs:
+            is_omit_excluded_table_from_replication = kwargs['isOmitExcludedTableFromReplication']
+
         _setter("object", object)
         _setter("owner", owner)
         if is_omit_excluded_table_from_replication is not None:
@@ -3182,7 +3406,15 @@ class MigrationVaultDetailsArgs:
              compartment_id: pulumi.Input[str],
              key_id: pulumi.Input[str],
              vault_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("key_id", key_id)
         _setter("vault_id", vault_id)
@@ -3246,7 +3478,9 @@ class GetAgentImagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3298,7 +3532,9 @@ class GetAgentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3350,7 +3586,9 @@ class GetConnectionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3405,7 +3643,9 @@ class GetMigrationObjectTypesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3463,7 +3703,9 @@ class GetMigrationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

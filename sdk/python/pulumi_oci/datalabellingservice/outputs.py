@@ -85,7 +85,13 @@ class DatasetDatasetFormatDetails(dict):
              _setter: Callable[[Any, Any], None],
              format_type: str,
              text_file_type_metadata: Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'textFileTypeMetadata' in kwargs:
+            text_file_type_metadata = kwargs['textFileTypeMetadata']
+
         _setter("format_type", format_type)
         if text_file_type_metadata is not None:
             _setter("text_file_type_metadata", text_file_type_metadata)
@@ -169,7 +175,21 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadata(dict):
              column_name: Optional[str] = None,
              escape_character: Optional[str] = None,
              line_delimiter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnIndex' in kwargs:
+            column_index = kwargs['columnIndex']
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'columnDelimiter' in kwargs:
+            column_delimiter = kwargs['columnDelimiter']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'escapeCharacter' in kwargs:
+            escape_character = kwargs['escapeCharacter']
+        if 'lineDelimiter' in kwargs:
+            line_delimiter = kwargs['lineDelimiter']
+
         _setter("column_index", column_index)
         _setter("format_type", format_type)
         if column_delimiter is not None:
@@ -274,7 +294,11 @@ class DatasetDatasetSourceDetails(dict):
              namespace: str,
              source_type: str,
              prefix: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("source_type", source_type)
@@ -352,7 +376,13 @@ class DatasetInitialImportDatasetConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              import_format: 'outputs.DatasetInitialImportDatasetConfigurationImportFormat',
              import_metadata_path: 'outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importFormat' in kwargs:
+            import_format = kwargs['importFormat']
+        if 'importMetadataPath' in kwargs:
+            import_metadata_path = kwargs['importMetadataPath']
+
         _setter("import_format", import_format)
         _setter("import_metadata_path", import_metadata_path)
 
@@ -392,7 +422,9 @@ class DatasetInitialImportDatasetConfigurationImportFormat(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if version is not None:
             _setter("version", version)
@@ -458,7 +490,11 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPath(dict):
              namespace: str,
              path: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("path", path)
@@ -504,8 +540,10 @@ class DatasetInitialRecordGenerationConfiguration(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.output_type
@@ -523,7 +561,9 @@ class DatasetLabelSet(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DatasetLabelSetItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -550,7 +590,9 @@ class DatasetLabelSetItem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -577,7 +619,9 @@ class GetAnnotationFormatItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -604,7 +648,9 @@ class GetAnnotationFormatsAnnotationFormatCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAnnotationFormatsAnnotationFormatCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -631,7 +677,9 @@ class GetAnnotationFormatsAnnotationFormatCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -664,7 +712,9 @@ class GetAnnotationFormatsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -708,7 +758,13 @@ class GetDatasetDatasetFormatDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              format_type: str,
              text_file_type_metadatas: Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'textFileTypeMetadatas' in kwargs:
+            text_file_type_metadatas = kwargs['textFileTypeMetadatas']
+
         _setter("format_type", format_type)
         _setter("text_file_type_metadatas", text_file_type_metadatas)
 
@@ -764,7 +820,21 @@ class GetDatasetDatasetFormatDetailTextFileTypeMetadataResult(dict):
              escape_character: str,
              format_type: str,
              line_delimiter: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnDelimiter' in kwargs:
+            column_delimiter = kwargs['columnDelimiter']
+        if 'columnIndex' in kwargs:
+            column_index = kwargs['columnIndex']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'escapeCharacter' in kwargs:
+            escape_character = kwargs['escapeCharacter']
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'lineDelimiter' in kwargs:
+            line_delimiter = kwargs['lineDelimiter']
+
         _setter("column_delimiter", column_delimiter)
         _setter("column_index", column_index)
         _setter("column_name", column_name)
@@ -848,7 +918,11 @@ class GetDatasetDatasetSourceDetailResult(dict):
              namespace: str,
              prefix: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("prefix", prefix)
@@ -906,7 +980,13 @@ class GetDatasetInitialImportDatasetConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              import_formats: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult'],
              import_metadata_paths: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importFormats' in kwargs:
+            import_formats = kwargs['importFormats']
+        if 'importMetadataPaths' in kwargs:
+            import_metadata_paths = kwargs['importMetadataPaths']
+
         _setter("import_formats", import_formats)
         _setter("import_metadata_paths", import_metadata_paths)
 
@@ -946,7 +1026,9 @@ class GetDatasetInitialImportDatasetConfigurationImportFormatResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("version", version)
 
@@ -994,7 +1076,11 @@ class GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult(dict):
              namespace: str,
              path: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("path", path)
@@ -1040,8 +1126,10 @@ class GetDatasetInitialRecordGenerationConfigurationResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.output_type
@@ -1059,7 +1147,9 @@ class GetDatasetLabelSetResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatasetLabelSetItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1086,7 +1176,9 @@ class GetDatasetLabelSetItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -1113,7 +1205,9 @@ class GetDatasetsDatasetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatasetsDatasetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1212,7 +1306,41 @@ class GetDatasetsDatasetCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalProperties' in kwargs:
+            additional_properties = kwargs['additionalProperties']
+        if 'annotationFormat' in kwargs:
+            annotation_format = kwargs['annotationFormat']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'datasetFormatDetails' in kwargs:
+            dataset_format_details = kwargs['datasetFormatDetails']
+        if 'datasetSourceDetails' in kwargs:
+            dataset_source_details = kwargs['datasetSourceDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialImportDatasetConfigurations' in kwargs:
+            initial_import_dataset_configurations = kwargs['initialImportDatasetConfigurations']
+        if 'initialRecordGenerationConfigurations' in kwargs:
+            initial_record_generation_configurations = kwargs['initialRecordGenerationConfigurations']
+        if 'labelSets' in kwargs:
+            label_sets = kwargs['labelSets']
+        if 'labelingInstructions' in kwargs:
+            labeling_instructions = kwargs['labelingInstructions']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lifecycleSubstate' in kwargs:
+            lifecycle_substate = kwargs['lifecycleSubstate']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_properties", additional_properties)
         _setter("annotation_format", annotation_format)
         _setter("compartment_id", compartment_id)
@@ -1405,7 +1533,13 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              format_type: str,
              text_file_type_metadatas: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'textFileTypeMetadatas' in kwargs:
+            text_file_type_metadatas = kwargs['textFileTypeMetadatas']
+
         _setter("format_type", format_type)
         _setter("text_file_type_metadatas", text_file_type_metadatas)
 
@@ -1461,7 +1595,21 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataRes
              escape_character: str,
              format_type: str,
              line_delimiter: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnDelimiter' in kwargs:
+            column_delimiter = kwargs['columnDelimiter']
+        if 'columnIndex' in kwargs:
+            column_index = kwargs['columnIndex']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'escapeCharacter' in kwargs:
+            escape_character = kwargs['escapeCharacter']
+        if 'formatType' in kwargs:
+            format_type = kwargs['formatType']
+        if 'lineDelimiter' in kwargs:
+            line_delimiter = kwargs['lineDelimiter']
+
         _setter("column_delimiter", column_delimiter)
         _setter("column_index", column_index)
         _setter("column_name", column_name)
@@ -1545,7 +1693,11 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
              namespace: str,
              prefix: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("prefix", prefix)
@@ -1603,7 +1755,13 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult(di
              _setter: Callable[[Any, Any], None],
              import_formats: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult'],
              import_metadata_paths: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'importFormats' in kwargs:
+            import_formats = kwargs['importFormats']
+        if 'importMetadataPaths' in kwargs:
+            import_metadata_paths = kwargs['importMetadataPaths']
+
         _setter("import_formats", import_formats)
         _setter("import_metadata_paths", import_metadata_paths)
 
@@ -1643,7 +1801,9 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFor
              _setter: Callable[[Any, Any], None],
              name: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("version", version)
 
@@ -1691,7 +1851,11 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMet
              namespace: str,
              path: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("path", path)
@@ -1737,8 +1901,10 @@ class GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.output_type
@@ -1756,7 +1922,9 @@ class GetDatasetsDatasetCollectionItemLabelSetResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1783,7 +1951,9 @@ class GetDatasetsDatasetCollectionItemLabelSetItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -1816,7 +1986,9 @@ class GetDatasetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

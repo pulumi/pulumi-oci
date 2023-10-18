@@ -35,7 +35,13 @@ class NamespaceArgs:
              compartment_id: pulumi.Input[str],
              is_onboarded: pulumi.Input[bool],
              namespace: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isOnboarded' in kwargs:
+            is_onboarded = kwargs['isOnboarded']
+
         _setter("compartment_id", compartment_id)
         _setter("is_onboarded", is_onboarded)
         _setter("namespace", namespace)
@@ -101,7 +107,13 @@ class _NamespaceState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              is_onboarded: Optional[pulumi.Input[bool]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isOnboarded' in kwargs:
+            is_onboarded = kwargs['isOnboarded']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if is_onboarded is not None:

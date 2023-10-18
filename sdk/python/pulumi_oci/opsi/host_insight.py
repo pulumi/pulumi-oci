@@ -71,7 +71,29 @@ class HostInsightArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              management_agent_id: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+
         _setter("compartment_id", compartment_id)
         _setter("entity_source", entity_source)
         if compute_id is not None:
@@ -350,7 +372,57 @@ class _HostInsightState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeId' in kwargs:
+            compute_id = kwargs['computeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostDisplayName' in kwargs:
+            host_display_name = kwargs['hostDisplayName']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'hostType' in kwargs:
+            host_type = kwargs['hostType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'platformName' in kwargs:
+            platform_name = kwargs['platformName']
+        if 'platformType' in kwargs:
+            platform_type = kwargs['platformType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'processorCount' in kwargs:
+            processor_count = kwargs['processorCount']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if compute_id is not None:

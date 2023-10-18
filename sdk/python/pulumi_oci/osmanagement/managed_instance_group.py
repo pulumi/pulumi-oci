@@ -53,7 +53,19 @@ class ManagedInstanceGroupArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              os_family: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -193,7 +205,23 @@ class _ManagedInstanceGroupState:
              managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]]] = None,
              os_family: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+        if 'managedInstances' in kwargs:
+            managed_instances = kwargs['managedInstances']
+        if 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

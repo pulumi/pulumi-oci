@@ -161,7 +161,9 @@ class AddonAddonError(dict):
              code: Optional[str] = None,
              message: Optional[str] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if code is not None:
             _setter("code", code)
         if message is not None:
@@ -213,7 +215,9 @@ class AddonConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if value is not None:
@@ -268,7 +272,11 @@ class ClusterClusterPodNetworkOption(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+
         _setter("cni_type", cni_type)
 
     @property
@@ -328,7 +336,15 @@ class ClusterEndpoint(dict):
              private_endpoint: Optional[str] = None,
              public_endpoint: Optional[str] = None,
              vcn_hostname_endpoint: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateEndpoint' in kwargs:
+            private_endpoint = kwargs['privateEndpoint']
+        if 'publicEndpoint' in kwargs:
+            public_endpoint = kwargs['publicEndpoint']
+        if 'vcnHostnameEndpoint' in kwargs:
+            vcn_hostname_endpoint = kwargs['vcnHostnameEndpoint']
+
         if kubernetes is not None:
             _setter("kubernetes", kubernetes)
         if private_endpoint is not None:
@@ -415,7 +431,15 @@ class ClusterEndpointConfig(dict):
              subnet_id: str,
              is_public_ip_enabled: Optional[bool] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'isPublicIpEnabled' in kwargs:
+            is_public_ip_enabled = kwargs['isPublicIpEnabled']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("subnet_id", subnet_id)
         if is_public_ip_enabled is not None:
             _setter("is_public_ip_enabled", is_public_ip_enabled)
@@ -485,7 +509,13 @@ class ClusterImagePolicyConfig(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: Optional[bool] = None,
              key_details: Optional[Sequence['outputs.ClusterImagePolicyConfigKeyDetail']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         if is_policy_enabled is not None:
             _setter("is_policy_enabled", is_policy_enabled)
         if key_details is not None:
@@ -540,7 +570,11 @@ class ClusterImagePolicyConfigKeyDetail(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         if kms_key_id is not None:
             _setter("kms_key_id", kms_key_id)
 
@@ -639,7 +673,29 @@ class ClusterMetadata(dict):
              time_updated: Optional[str] = None,
              updated_by_user_id: Optional[str] = None,
              updated_by_work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdByUserId' in kwargs:
+            created_by_user_id = kwargs['createdByUserId']
+        if 'createdByWorkRequestId' in kwargs:
+            created_by_work_request_id = kwargs['createdByWorkRequestId']
+        if 'deletedByUserId' in kwargs:
+            deleted_by_user_id = kwargs['deletedByUserId']
+        if 'deletedByWorkRequestId' in kwargs:
+            deleted_by_work_request_id = kwargs['deletedByWorkRequestId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeCredentialExpiration' in kwargs:
+            time_credential_expiration = kwargs['timeCredentialExpiration']
+        if 'timeDeleted' in kwargs:
+            time_deleted = kwargs['timeDeleted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedByUserId' in kwargs:
+            updated_by_user_id = kwargs['updatedByUserId']
+        if 'updatedByWorkRequestId' in kwargs:
+            updated_by_work_request_id = kwargs['updatedByWorkRequestId']
+
         if created_by_user_id is not None:
             _setter("created_by_user_id", created_by_user_id)
         if created_by_work_request_id is not None:
@@ -804,7 +860,21 @@ class ClusterOptions(dict):
              persistent_volume_config: Optional['outputs.ClusterOptionsPersistentVolumeConfig'] = None,
              service_lb_config: Optional['outputs.ClusterOptionsServiceLbConfig'] = None,
              service_lb_subnet_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addOns' in kwargs:
+            add_ons = kwargs['addOns']
+        if 'admissionControllerOptions' in kwargs:
+            admission_controller_options = kwargs['admissionControllerOptions']
+        if 'kubernetesNetworkConfig' in kwargs:
+            kubernetes_network_config = kwargs['kubernetesNetworkConfig']
+        if 'persistentVolumeConfig' in kwargs:
+            persistent_volume_config = kwargs['persistentVolumeConfig']
+        if 'serviceLbConfig' in kwargs:
+            service_lb_config = kwargs['serviceLbConfig']
+        if 'serviceLbSubnetIds' in kwargs:
+            service_lb_subnet_ids = kwargs['serviceLbSubnetIds']
+
         if add_ons is not None:
             _setter("add_ons", add_ons)
         if admission_controller_options is not None:
@@ -905,7 +975,13 @@ class ClusterOptionsAddOns(dict):
              _setter: Callable[[Any, Any], None],
              is_kubernetes_dashboard_enabled: Optional[bool] = None,
              is_tiller_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isKubernetesDashboardEnabled' in kwargs:
+            is_kubernetes_dashboard_enabled = kwargs['isKubernetesDashboardEnabled']
+        if 'isTillerEnabled' in kwargs:
+            is_tiller_enabled = kwargs['isTillerEnabled']
+
         if is_kubernetes_dashboard_enabled is not None:
             _setter("is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
         if is_tiller_enabled is not None:
@@ -960,7 +1036,11 @@ class ClusterOptionsAdmissionControllerOptions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_pod_security_policy_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPodSecurityPolicyEnabled' in kwargs:
+            is_pod_security_policy_enabled = kwargs['isPodSecurityPolicyEnabled']
+
         if is_pod_security_policy_enabled is not None:
             _setter("is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
@@ -1011,7 +1091,13 @@ class ClusterOptionsKubernetesNetworkConfig(dict):
              _setter: Callable[[Any, Any], None],
              pods_cidr: Optional[str] = None,
              services_cidr: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'podsCidr' in kwargs:
+            pods_cidr = kwargs['podsCidr']
+        if 'servicesCidr' in kwargs:
+            services_cidr = kwargs['servicesCidr']
+
         if pods_cidr is not None:
             _setter("pods_cidr", pods_cidr)
         if services_cidr is not None:
@@ -1072,7 +1158,13 @@ class ClusterOptionsPersistentVolumeConfig(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -1133,7 +1225,13 @@ class ClusterOptionsServiceLbConfig(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -1339,7 +1437,53 @@ class ContainerInstanceContainer(dict):
              time_updated: Optional[str] = None,
              volume_mounts: Optional[Sequence['outputs.ContainerInstanceContainerVolumeMount']] = None,
              working_directory: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageUrl' in kwargs:
+            image_url = kwargs['imageUrl']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if 'containerInstanceId' in kwargs:
+            container_instance_id = kwargs['containerInstanceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'exitCode' in kwargs:
+            exit_code = kwargs['exitCode']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'isResourcePrincipalDisabled' in kwargs:
+            is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'resourceConfig' in kwargs:
+            resource_config = kwargs['resourceConfig']
+        if 'securityContext' in kwargs:
+            security_context = kwargs['securityContext']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeTerminated' in kwargs:
+            time_terminated = kwargs['timeTerminated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'volumeMounts' in kwargs:
+            volume_mounts = kwargs['volumeMounts']
+        if 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+
         _setter("image_url", image_url)
         if arguments is not None:
             _setter("arguments", arguments)
@@ -1694,7 +1838,25 @@ class ContainerInstanceContainerHealthCheck(dict):
              status_details: Optional[str] = None,
              success_threshold: Optional[int] = None,
              timeout_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthCheckType' in kwargs:
+            health_check_type = kwargs['healthCheckType']
+        if 'failureAction' in kwargs:
+            failure_action = kwargs['failureAction']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'initialDelayInSeconds' in kwargs:
+            initial_delay_in_seconds = kwargs['initialDelayInSeconds']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if 'successThreshold' in kwargs:
+            success_threshold = kwargs['successThreshold']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+
         _setter("health_check_type", health_check_type)
         if commands is not None:
             _setter("commands", commands)
@@ -1849,7 +2011,9 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1918,7 +2082,13 @@ class ContainerInstanceContainerResourceConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_limit_in_gbs: Optional[float] = None,
              vcpus_limit: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryLimitInGbs' in kwargs:
+            memory_limit_in_gbs = kwargs['memoryLimitInGbs']
+        if 'vcpusLimit' in kwargs:
+            vcpus_limit = kwargs['vcpusLimit']
+
         if memory_limit_in_gbs is not None:
             _setter("memory_limit_in_gbs", memory_limit_in_gbs)
         if vcpus_limit is not None:
@@ -2005,7 +2175,19 @@ class ContainerInstanceContainerSecurityContext(dict):
              run_as_group: Optional[int] = None,
              run_as_user: Optional[int] = None,
              security_context_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNonRootUserCheckEnabled' in kwargs:
+            is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
+        if 'isRootFileSystemReadonly' in kwargs:
+            is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
+        if 'runAsGroup' in kwargs:
+            run_as_group = kwargs['runAsGroup']
+        if 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if 'securityContextType' in kwargs:
+            security_context_type = kwargs['securityContextType']
+
         if is_non_root_user_check_enabled is not None:
             _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         if is_root_file_system_readonly is not None:
@@ -2112,7 +2294,17 @@ class ContainerInstanceContainerVolumeMount(dict):
              is_read_only: Optional[bool] = None,
              partition: Optional[int] = None,
              sub_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mountPath' in kwargs:
+            mount_path = kwargs['mountPath']
+        if 'volumeName' in kwargs:
+            volume_name = kwargs['volumeName']
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'subPath' in kwargs:
+            sub_path = kwargs['subPath']
+
         _setter("mount_path", mount_path)
         _setter("volume_name", volume_name)
         if is_read_only is not None:
@@ -2186,7 +2378,9 @@ class ContainerInstanceDnsConfig(dict):
              nameservers: Optional[Sequence[str]] = None,
              options: Optional[Sequence[str]] = None,
              searches: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if nameservers is not None:
             _setter("nameservers", nameservers)
         if options is not None:
@@ -2271,7 +2465,15 @@ class ContainerInstanceImagePullSecret(dict):
              password: Optional[str] = None,
              secret_id: Optional[str] = None,
              username: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'registryEndpoint' in kwargs:
+            registry_endpoint = kwargs['registryEndpoint']
+        if 'secretType' in kwargs:
+            secret_type = kwargs['secretType']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("registry_endpoint", registry_endpoint)
         _setter("secret_type", secret_type)
         if password is not None:
@@ -2370,7 +2572,15 @@ class ContainerInstanceShapeConfig(dict):
              memory_in_gbs: Optional[float] = None,
              networking_bandwidth_in_gbps: Optional[float] = None,
              processor_description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("ocpus", ocpus)
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
@@ -2498,7 +2708,29 @@ class ContainerInstanceVnic(dict):
              private_ip: Optional[str] = None,
              skip_source_dest_check: Optional[bool] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'isPublicIpAssigned' in kwargs:
+            is_public_ip_assigned = kwargs['isPublicIpAssigned']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("subnet_id", subnet_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -2646,7 +2878,13 @@ class ContainerInstanceVolume(dict):
              volume_type: str,
              backing_store: Optional[str] = None,
              configs: Optional[Sequence['outputs.ContainerInstanceVolumeConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'volumeType' in kwargs:
+            volume_type = kwargs['volumeType']
+        if 'backingStore' in kwargs:
+            backing_store = kwargs['backingStore']
+
         _setter("name", name)
         _setter("volume_type", volume_type)
         if backing_store is not None:
@@ -2727,7 +2965,11 @@ class ContainerInstanceVolumeConfig(dict):
              data: Optional[str] = None,
              file_name: Optional[str] = None,
              path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if data is not None:
             _setter("data", data)
         if file_name is not None:
@@ -2779,7 +3021,9 @@ class NodePoolInitialNodeLabel(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if value is not None:
@@ -2904,7 +3148,29 @@ class NodePoolNode(dict):
              public_ip: Optional[str] = None,
              state: Optional[str] = None,
              subnet_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodePoolId' in kwargs:
+            node_pool_id = kwargs['nodePoolId']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'publicIp' in kwargs:
+            public_ip = kwargs['publicIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if defined_tags is not None:
@@ -3121,7 +3387,23 @@ class NodePoolNodeConfigDetails(dict):
              kms_key_id: Optional[str] = None,
              node_pool_pod_network_option_details: Optional['outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails'] = None,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'placementConfigs' in kwargs:
+            placement_configs = kwargs['placementConfigs']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+            node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("placement_configs", placement_configs)
         _setter("size", size)
         if defined_tags is not None:
@@ -3254,7 +3536,17 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails(dict):
              max_pods_per_node: Optional[int] = None,
              pod_nsg_ids: Optional[Sequence[str]] = None,
              pod_subnet_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+        if 'maxPodsPerNode' in kwargs:
+            max_pods_per_node = kwargs['maxPodsPerNode']
+        if 'podNsgIds' in kwargs:
+            pod_nsg_ids = kwargs['podNsgIds']
+        if 'podSubnetIds' in kwargs:
+            pod_subnet_ids = kwargs['podSubnetIds']
+
         _setter("cni_type", cni_type)
         if max_pods_per_node is not None:
             _setter("max_pods_per_node", max_pods_per_node)
@@ -3352,7 +3644,19 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
              capacity_reservation_id: Optional[str] = None,
              fault_domains: Optional[Sequence[str]] = None,
              preemptible_node_config: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'preemptibleNodeConfig' in kwargs:
+            preemptible_node_config = kwargs['preemptibleNodeConfig']
+
         _setter("availability_domain", availability_domain)
         _setter("subnet_id", subnet_id)
         if capacity_reservation_id is not None:
@@ -3435,7 +3739,11 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_action: 'outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionAction' in kwargs:
+            preemption_action = kwargs['preemptionAction']
+
         _setter("preemption_action", preemption_action)
 
     @property
@@ -3483,7 +3791,11 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
              _setter: Callable[[Any, Any], None],
              type: str,
              is_preserve_boot_volume: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPreserveBootVolume' in kwargs:
+            is_preserve_boot_volume = kwargs['isPreserveBootVolume']
+
         _setter("type", type)
         if is_preserve_boot_volume is not None:
             _setter("is_preserve_boot_volume", is_preserve_boot_volume)
@@ -3528,7 +3840,9 @@ class NodePoolNodeError(dict):
              code: Optional[str] = None,
              message: Optional[str] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if code is not None:
             _setter("code", code)
         if message is not None:
@@ -3599,7 +3913,13 @@ class NodePoolNodeEvictionNodePoolSettings(dict):
              _setter: Callable[[Any, Any], None],
              eviction_grace_duration: Optional[str] = None,
              is_force_delete_after_grace_duration: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'evictionGraceDuration' in kwargs:
+            eviction_grace_duration = kwargs['evictionGraceDuration']
+        if 'isForceDeleteAfterGraceDuration' in kwargs:
+            is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
+
         if eviction_grace_duration is not None:
             _setter("eviction_grace_duration", eviction_grace_duration)
         if is_force_delete_after_grace_duration is not None:
@@ -3666,7 +3986,15 @@ class NodePoolNodePoolCyclingDetails(dict):
              is_node_cycling_enabled: Optional[bool] = None,
              maximum_surge: Optional[str] = None,
              maximum_unavailable: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNodeCyclingEnabled' in kwargs:
+            is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
+        if 'maximumSurge' in kwargs:
+            maximum_surge = kwargs['maximumSurge']
+        if 'maximumUnavailable' in kwargs:
+            maximum_unavailable = kwargs['maximumUnavailable']
+
         if is_node_cycling_enabled is not None:
             _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         if maximum_surge is not None:
@@ -3735,7 +4063,11 @@ class NodePoolNodeShapeConfig(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: Optional[float] = None,
              ocpus: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
             _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -3802,7 +4134,15 @@ class NodePoolNodeSource(dict):
              image_id: Optional[str] = None,
              source_name: Optional[str] = None,
              source_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceName' in kwargs:
+            source_name = kwargs['sourceName']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         if image_id is not None:
             _setter("image_id", image_id)
         if source_name is not None:
@@ -3879,7 +4219,15 @@ class NodePoolNodeSourceDetails(dict):
              image_id: str,
              source_type: str,
              boot_volume_size_in_gbs: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+
         _setter("image_id", image_id)
         _setter("source_type", source_type)
         if boot_volume_size_in_gbs is not None:
@@ -3929,7 +4277,9 @@ class VirtualNodePoolInitialVirtualNodeLabel(dict):
              _setter: Callable[[Any, Any], None],
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if key is not None:
             _setter("key", key)
         if value is not None:
@@ -3996,7 +4346,15 @@ class VirtualNodePoolPlacementConfiguration(dict):
              availability_domain: str,
              fault_domains: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
         _setter("subnet_id", subnet_id)
@@ -4068,7 +4426,13 @@ class VirtualNodePoolPodConfiguration(dict):
              shape: str,
              subnet_id: str,
              nsg_ids: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("shape", shape)
         _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -4122,7 +4486,9 @@ class VirtualNodePoolTaint(dict):
              effect: Optional[str] = None,
              key: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if effect is not None:
             _setter("effect", effect)
         if key is not None:
@@ -4197,7 +4563,13 @@ class VirtualNodePoolVirtualNodeTags(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Optional[Mapping[str, Any]] = None,
              freeform_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -4247,7 +4619,9 @@ class GetAddonAddonErrorResult(dict):
              code: str,
              message: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("message", message)
         _setter("status", status)
@@ -4296,7 +4670,9 @@ class GetAddonConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -4372,7 +4748,23 @@ class GetAddonOptionsAddonOptionResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              versions: Sequence['outputs.GetAddonOptionsAddonOptionVersionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addonGroup' in kwargs:
+            addon_group = kwargs['addonGroup']
+        if 'addonSchemaVersion' in kwargs:
+            addon_schema_version = kwargs['addonSchemaVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEssential' in kwargs:
+            is_essential = kwargs['isEssential']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("addon_group", addon_group)
         _setter("addon_schema_version", addon_schema_version)
         _setter("defined_tags", defined_tags)
@@ -4505,7 +4897,13 @@ class GetAddonOptionsAddonOptionVersionResult(dict):
              kubernetes_version_filters: Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult'],
              status: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kubernetesVersionFilters' in kwargs:
+            kubernetes_version_filters = kwargs['kubernetesVersionFilters']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("configurations", configurations)
         _setter("description", description)
         _setter("kubernetes_version_filters", kubernetes_version_filters)
@@ -4584,7 +4982,13 @@ class GetAddonOptionsAddonOptionVersionConfigurationResult(dict):
              is_required: bool,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("description", description)
         _setter("display_name", display_name)
         _setter("is_required", is_required)
@@ -4655,7 +5059,15 @@ class GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult(dict):
              exact_kubernetes_versions: Sequence[str],
              maximum_version: str,
              minimal_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exactKubernetesVersions' in kwargs:
+            exact_kubernetes_versions = kwargs['exactKubernetesVersions']
+        if 'maximumVersion' in kwargs:
+            maximum_version = kwargs['maximumVersion']
+        if 'minimalVersion' in kwargs:
+            minimal_version = kwargs['minimalVersion']
+
         _setter("exact_kubernetes_versions", exact_kubernetes_versions)
         _setter("maximum_version", maximum_version)
         _setter("minimal_version", minimal_version)
@@ -4706,7 +5118,9 @@ class GetAddonOptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4777,7 +5191,21 @@ class GetAddonsAddonResult(dict):
              state: str,
              time_created: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addonErrors' in kwargs:
+            addon_errors = kwargs['addonErrors']
+        if 'addonName' in kwargs:
+            addon_name = kwargs['addonName']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'currentInstalledVersion' in kwargs:
+            current_installed_version = kwargs['currentInstalledVersion']
+        if 'removeAddonResourcesOnDelete' in kwargs:
+            remove_addon_resources_on_delete = kwargs['removeAddonResourcesOnDelete']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("addon_errors", addon_errors)
         _setter("addon_name", addon_name)
         _setter("cluster_id", cluster_id)
@@ -4881,7 +5309,9 @@ class GetAddonsAddonAddonErrorResult(dict):
              code: str,
              message: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("message", message)
         _setter("status", status)
@@ -4930,7 +5360,9 @@ class GetAddonsAddonConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -4969,7 +5401,9 @@ class GetAddonsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5006,7 +5440,11 @@ class GetClusterOptionClusterPodNetworkOptionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+
         _setter("cni_type", cni_type)
 
     @property
@@ -5036,7 +5474,9 @@ class GetClusterWorkloadMappingsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5105,7 +5545,21 @@ class GetClusterWorkloadMappingsWorkloadMappingResult(dict):
              namespace: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mappedCompartmentId' in kwargs:
+            mapped_compartment_id = kwargs['mappedCompartmentId']
+        if 'mappedTenancyId' in kwargs:
+            mapped_tenancy_id = kwargs['mappedTenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("cluster_id", cluster_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -5272,7 +5726,31 @@ class GetClustersClusterResult(dict):
              state: str,
              type: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableKubernetesUpgrades' in kwargs:
+            available_kubernetes_upgrades = kwargs['availableKubernetesUpgrades']
+        if 'clusterPodNetworkOptions' in kwargs:
+            cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'endpointConfigs' in kwargs:
+            endpoint_configs = kwargs['endpointConfigs']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfigs' in kwargs:
+            image_policy_configs = kwargs['imagePolicyConfigs']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("available_kubernetes_upgrades", available_kubernetes_upgrades)
         _setter("cluster_pod_network_options", cluster_pod_network_options)
         _setter("compartment_id", compartment_id)
@@ -5452,7 +5930,11 @@ class GetClustersClusterClusterPodNetworkOptionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              cni_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+
         _setter("cni_type", cni_type)
 
     @property
@@ -5491,7 +5973,15 @@ class GetClustersClusterEndpointResult(dict):
              private_endpoint: str,
              public_endpoint: str,
              vcn_hostname_endpoint: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateEndpoint' in kwargs:
+            private_endpoint = kwargs['privateEndpoint']
+        if 'publicEndpoint' in kwargs:
+            public_endpoint = kwargs['publicEndpoint']
+        if 'vcnHostnameEndpoint' in kwargs:
+            vcn_hostname_endpoint = kwargs['vcnHostnameEndpoint']
+
         _setter("kubernetes", kubernetes)
         _setter("private_endpoint", private_endpoint)
         _setter("public_endpoint", public_endpoint)
@@ -5553,7 +6043,15 @@ class GetClustersClusterEndpointConfigResult(dict):
              is_public_ip_enabled: bool,
              nsg_ids: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPublicIpEnabled' in kwargs:
+            is_public_ip_enabled = kwargs['isPublicIpEnabled']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("is_public_ip_enabled", is_public_ip_enabled)
         _setter("nsg_ids", nsg_ids)
         _setter("subnet_id", subnet_id)
@@ -5602,7 +6100,13 @@ class GetClustersClusterImagePolicyConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              is_policy_enabled: bool,
              key_details: Sequence['outputs.GetClustersClusterImagePolicyConfigKeyDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPolicyEnabled' in kwargs:
+            is_policy_enabled = kwargs['isPolicyEnabled']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+
         _setter("is_policy_enabled", is_policy_enabled)
         _setter("key_details", key_details)
 
@@ -5638,7 +6142,11 @@ class GetClustersClusterImagePolicyConfigKeyDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              kms_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("kms_key_id", kms_key_id)
 
     @property
@@ -5701,7 +6209,29 @@ class GetClustersClusterMetadataResult(dict):
              time_updated: str,
              updated_by_user_id: str,
              updated_by_work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdByUserId' in kwargs:
+            created_by_user_id = kwargs['createdByUserId']
+        if 'createdByWorkRequestId' in kwargs:
+            created_by_work_request_id = kwargs['createdByWorkRequestId']
+        if 'deletedByUserId' in kwargs:
+            deleted_by_user_id = kwargs['deletedByUserId']
+        if 'deletedByWorkRequestId' in kwargs:
+            deleted_by_work_request_id = kwargs['deletedByWorkRequestId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeCredentialExpiration' in kwargs:
+            time_credential_expiration = kwargs['timeCredentialExpiration']
+        if 'timeDeleted' in kwargs:
+            time_deleted = kwargs['timeDeleted']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedByUserId' in kwargs:
+            updated_by_user_id = kwargs['updatedByUserId']
+        if 'updatedByWorkRequestId' in kwargs:
+            updated_by_work_request_id = kwargs['updatedByWorkRequestId']
+
         _setter("created_by_user_id", created_by_user_id)
         _setter("created_by_work_request_id", created_by_work_request_id)
         _setter("deleted_by_user_id", deleted_by_user_id)
@@ -5829,7 +6359,21 @@ class GetClustersClusterOptionResult(dict):
              persistent_volume_configs: Sequence['outputs.GetClustersClusterOptionPersistentVolumeConfigResult'],
              service_lb_configs: Sequence['outputs.GetClustersClusterOptionServiceLbConfigResult'],
              service_lb_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addOns' in kwargs:
+            add_ons = kwargs['addOns']
+        if 'admissionControllerOptions' in kwargs:
+            admission_controller_options = kwargs['admissionControllerOptions']
+        if 'kubernetesNetworkConfigs' in kwargs:
+            kubernetes_network_configs = kwargs['kubernetesNetworkConfigs']
+        if 'persistentVolumeConfigs' in kwargs:
+            persistent_volume_configs = kwargs['persistentVolumeConfigs']
+        if 'serviceLbConfigs' in kwargs:
+            service_lb_configs = kwargs['serviceLbConfigs']
+        if 'serviceLbSubnetIds' in kwargs:
+            service_lb_subnet_ids = kwargs['serviceLbSubnetIds']
+
         _setter("add_ons", add_ons)
         _setter("admission_controller_options", admission_controller_options)
         _setter("kubernetes_network_configs", kubernetes_network_configs)
@@ -5905,7 +6449,13 @@ class GetClustersClusterOptionAddOnResult(dict):
              _setter: Callable[[Any, Any], None],
              is_kubernetes_dashboard_enabled: bool,
              is_tiller_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isKubernetesDashboardEnabled' in kwargs:
+            is_kubernetes_dashboard_enabled = kwargs['isKubernetesDashboardEnabled']
+        if 'isTillerEnabled' in kwargs:
+            is_tiller_enabled = kwargs['isTillerEnabled']
+
         _setter("is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
         _setter("is_tiller_enabled", is_tiller_enabled)
 
@@ -5941,7 +6491,11 @@ class GetClustersClusterOptionAdmissionControllerOptionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_pod_security_policy_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPodSecurityPolicyEnabled' in kwargs:
+            is_pod_security_policy_enabled = kwargs['isPodSecurityPolicyEnabled']
+
         _setter("is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
     @property
@@ -5972,7 +6526,13 @@ class GetClustersClusterOptionKubernetesNetworkConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              pods_cidr: str,
              services_cidr: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'podsCidr' in kwargs:
+            pods_cidr = kwargs['podsCidr']
+        if 'servicesCidr' in kwargs:
+            services_cidr = kwargs['servicesCidr']
+
         _setter("pods_cidr", pods_cidr)
         _setter("services_cidr", services_cidr)
 
@@ -6012,7 +6572,13 @@ class GetClustersClusterOptionPersistentVolumeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
 
@@ -6052,7 +6618,13 @@ class GetClustersClusterOptionServiceLbConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
 
@@ -6094,7 +6666,9 @@ class GetClustersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6138,7 +6712,9 @@ class GetNodePoolInitialNodeLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -6226,7 +6802,29 @@ class GetNodePoolNodeResult(dict):
              public_ip: str,
              state: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodePoolId' in kwargs:
+            node_pool_id = kwargs['nodePoolId']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'publicIp' in kwargs:
+            public_ip = kwargs['publicIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
         _setter("errors", errors)
@@ -6398,7 +6996,23 @@ class GetNodePoolNodeConfigDetailResult(dict):
              nsg_ids: Sequence[str],
              placement_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult'],
              size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+            node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'placementConfigs' in kwargs:
+            placement_configs = kwargs['placementConfigs']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
@@ -6500,7 +7114,17 @@ class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(dict):
              max_pods_per_node: int,
              pod_nsg_ids: Sequence[str],
              pod_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+        if 'maxPodsPerNode' in kwargs:
+            max_pods_per_node = kwargs['maxPodsPerNode']
+        if 'podNsgIds' in kwargs:
+            pod_nsg_ids = kwargs['podNsgIds']
+        if 'podSubnetIds' in kwargs:
+            pod_subnet_ids = kwargs['podSubnetIds']
+
         _setter("cni_type", cni_type)
         _setter("max_pods_per_node", max_pods_per_node)
         _setter("pod_nsg_ids", pod_nsg_ids)
@@ -6570,7 +7194,19 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
              fault_domains: Sequence[str],
              preemptible_node_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'preemptibleNodeConfigs' in kwargs:
+            preemptible_node_configs = kwargs['preemptibleNodeConfigs']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("capacity_reservation_id", capacity_reservation_id)
         _setter("fault_domains", fault_domains)
@@ -6633,7 +7269,11 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_actions: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionActions' in kwargs:
+            preemption_actions = kwargs['preemptionActions']
+
         _setter("preemption_actions", preemption_actions)
 
     @property
@@ -6664,7 +7304,11 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionA
              _setter: Callable[[Any, Any], None],
              is_preserve_boot_volume: bool,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPreserveBootVolume' in kwargs:
+            is_preserve_boot_volume = kwargs['isPreserveBootVolume']
+
         _setter("is_preserve_boot_volume", is_preserve_boot_volume)
         _setter("type", type)
 
@@ -6708,7 +7352,9 @@ class GetNodePoolNodeErrorResult(dict):
              code: str,
              message: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("message", message)
         _setter("status", status)
@@ -6757,7 +7403,13 @@ class GetNodePoolNodeEvictionNodePoolSettingResult(dict):
              _setter: Callable[[Any, Any], None],
              eviction_grace_duration: str,
              is_force_delete_after_grace_duration: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'evictionGraceDuration' in kwargs:
+            eviction_grace_duration = kwargs['evictionGraceDuration']
+        if 'isForceDeleteAfterGraceDuration' in kwargs:
+            is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
+
         _setter("eviction_grace_duration", eviction_grace_duration)
         _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
@@ -6801,7 +7453,15 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
              is_node_cycling_enabled: bool,
              maximum_surge: str,
              maximum_unavailable: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNodeCyclingEnabled' in kwargs:
+            is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
+        if 'maximumSurge' in kwargs:
+            maximum_surge = kwargs['maximumSurge']
+        if 'maximumUnavailable' in kwargs:
+            maximum_unavailable = kwargs['maximumUnavailable']
+
         _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         _setter("maximum_surge", maximum_surge)
         _setter("maximum_unavailable", maximum_unavailable)
@@ -6850,7 +7510,11 @@ class GetNodePoolNodeShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -6894,7 +7558,15 @@ class GetNodePoolNodeSourceResult(dict):
              image_id: str,
              source_name: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceName' in kwargs:
+            source_name = kwargs['sourceName']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("image_id", image_id)
         _setter("source_name", source_name)
         _setter("source_type", source_type)
@@ -6947,7 +7619,15 @@ class GetNodePoolNodeSourceDetailResult(dict):
              boot_volume_size_in_gbs: str,
              image_id: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         _setter("image_id", image_id)
         _setter("source_type", source_type)
@@ -7000,7 +7680,15 @@ class GetNodePoolOptionSourceResult(dict):
              image_id: str,
              source_name: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceName' in kwargs:
+            source_name = kwargs['sourceName']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("image_id", image_id)
         _setter("source_name", source_name)
         _setter("source_type", source_type)
@@ -7051,7 +7739,9 @@ class GetNodePoolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7185,7 +7875,51 @@ class GetNodePoolsNodePoolResult(dict):
              ssh_public_key: str,
              state: str,
              subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialNodeLabels' in kwargs:
+            initial_node_labels = kwargs['initialNodeLabels']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodeConfigDetails' in kwargs:
+            node_config_details = kwargs['nodeConfigDetails']
+        if 'nodeEvictionNodePoolSettings' in kwargs:
+            node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
+        if 'nodeImageId' in kwargs:
+            node_image_id = kwargs['nodeImageId']
+        if 'nodeImageName' in kwargs:
+            node_image_name = kwargs['nodeImageName']
+        if 'nodeMetadata' in kwargs:
+            node_metadata = kwargs['nodeMetadata']
+        if 'nodePoolCyclingDetails' in kwargs:
+            node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
+        if 'nodePoolId' in kwargs:
+            node_pool_id = kwargs['nodePoolId']
+        if 'nodeShape' in kwargs:
+            node_shape = kwargs['nodeShape']
+        if 'nodeShapeConfigs' in kwargs:
+            node_shape_configs = kwargs['nodeShapeConfigs']
+        if 'nodeSourceDetails' in kwargs:
+            node_source_details = kwargs['nodeSourceDetails']
+        if 'nodeSources' in kwargs:
+            node_sources = kwargs['nodeSources']
+        if 'quantityPerSubnet' in kwargs:
+            quantity_per_subnet = kwargs['quantityPerSubnet']
+        if 'sshPublicKey' in kwargs:
+            ssh_public_key = kwargs['sshPublicKey']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -7432,7 +8166,9 @@ class GetNodePoolsNodePoolInitialNodeLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -7515,7 +8251,29 @@ class GetNodePoolsNodePoolNodeResult(dict):
              public_ip: str,
              state: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodePoolId' in kwargs:
+            node_pool_id = kwargs['nodePoolId']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'publicIp' in kwargs:
+            public_ip = kwargs['publicIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("defined_tags", defined_tags)
         _setter("errors", errors)
@@ -7672,7 +8430,23 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
              nsg_ids: Sequence[str],
              placement_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult'],
              size: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'nodePoolPodNetworkOptionDetails' in kwargs:
+            node_pool_pod_network_option_details = kwargs['nodePoolPodNetworkOptionDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'placementConfigs' in kwargs:
+            placement_configs = kwargs['placementConfigs']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
@@ -7774,7 +8548,17 @@ class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(d
              max_pods_per_node: int,
              pod_nsg_ids: Sequence[str],
              pod_subnet_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cniType' in kwargs:
+            cni_type = kwargs['cniType']
+        if 'maxPodsPerNode' in kwargs:
+            max_pods_per_node = kwargs['maxPodsPerNode']
+        if 'podNsgIds' in kwargs:
+            pod_nsg_ids = kwargs['podNsgIds']
+        if 'podSubnetIds' in kwargs:
+            pod_subnet_ids = kwargs['podSubnetIds']
+
         _setter("cni_type", cni_type)
         _setter("max_pods_per_node", max_pods_per_node)
         _setter("pod_nsg_ids", pod_nsg_ids)
@@ -7844,7 +8628,19 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
              fault_domains: Sequence[str],
              preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'preemptibleNodeConfigs' in kwargs:
+            preemptible_node_configs = kwargs['preemptibleNodeConfigs']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("capacity_reservation_id", capacity_reservation_id)
         _setter("fault_domains", fault_domains)
@@ -7907,7 +8703,11 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigRe
     def _configure(
              _setter: Callable[[Any, Any], None],
              preemption_actions: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'preemptionActions' in kwargs:
+            preemption_actions = kwargs['preemptionActions']
+
         _setter("preemption_actions", preemption_actions)
 
     @property
@@ -7938,7 +8738,11 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPr
              _setter: Callable[[Any, Any], None],
              is_preserve_boot_volume: bool,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPreserveBootVolume' in kwargs:
+            is_preserve_boot_volume = kwargs['isPreserveBootVolume']
+
         _setter("is_preserve_boot_volume", is_preserve_boot_volume)
         _setter("type", type)
 
@@ -7977,7 +8781,9 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
              code: str,
              message: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("message", message)
         _setter("status", status)
@@ -8017,7 +8823,13 @@ class GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(dict):
              _setter: Callable[[Any, Any], None],
              eviction_grace_duration: str,
              is_force_delete_after_grace_duration: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'evictionGraceDuration' in kwargs:
+            eviction_grace_duration = kwargs['evictionGraceDuration']
+        if 'isForceDeleteAfterGraceDuration' in kwargs:
+            is_force_delete_after_grace_duration = kwargs['isForceDeleteAfterGraceDuration']
+
         _setter("eviction_grace_duration", eviction_grace_duration)
         _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
@@ -8061,7 +8873,15 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
              is_node_cycling_enabled: bool,
              maximum_surge: str,
              maximum_unavailable: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNodeCyclingEnabled' in kwargs:
+            is_node_cycling_enabled = kwargs['isNodeCyclingEnabled']
+        if 'maximumSurge' in kwargs:
+            maximum_surge = kwargs['maximumSurge']
+        if 'maximumUnavailable' in kwargs:
+            maximum_unavailable = kwargs['maximumUnavailable']
+
         _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         _setter("maximum_surge", maximum_surge)
         _setter("maximum_unavailable", maximum_unavailable)
@@ -8110,7 +8930,11 @@ class GetNodePoolsNodePoolNodeShapeConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_in_gbs: float,
              ocpus: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("ocpus", ocpus)
 
@@ -8154,7 +8978,15 @@ class GetNodePoolsNodePoolNodeSourceResult(dict):
              image_id: str,
              source_name: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceName' in kwargs:
+            source_name = kwargs['sourceName']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("image_id", image_id)
         _setter("source_name", source_name)
         _setter("source_type", source_type)
@@ -8207,7 +9039,15 @@ class GetNodePoolsNodePoolNodeSourceDetailResult(dict):
              boot_volume_size_in_gbs: str,
              image_id: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootVolumeSizeInGbs' in kwargs:
+            boot_volume_size_in_gbs = kwargs['bootVolumeSizeInGbs']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         _setter("image_id", image_id)
         _setter("source_type", source_type)
@@ -8258,7 +9098,9 @@ class GetPodShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8314,7 +9156,17 @@ class GetPodShapesPodShapeResult(dict):
              network_bandwidth_options: Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult'],
              ocpu_options: Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult'],
              processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryOptions' in kwargs:
+            memory_options = kwargs['memoryOptions']
+        if 'networkBandwidthOptions' in kwargs:
+            network_bandwidth_options = kwargs['networkBandwidthOptions']
+        if 'ocpuOptions' in kwargs:
+            ocpu_options = kwargs['ocpuOptions']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("memory_options", memory_options)
         _setter("name", name)
         _setter("network_bandwidth_options", network_bandwidth_options)
@@ -8393,7 +9245,19 @@ class GetPodShapesPodShapeMemoryOptionResult(dict):
              max_per_ocpu_in_gbs: float,
              min_in_gbs: float,
              min_per_ocpu_in_gbs: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbs' in kwargs:
+            default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
+        if 'maxInGbs' in kwargs:
+            max_in_gbs = kwargs['maxInGbs']
+        if 'maxPerOcpuInGbs' in kwargs:
+            max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
+        if 'minInGbs' in kwargs:
+            min_in_gbs = kwargs['minInGbs']
+        if 'minPerOcpuInGbs' in kwargs:
+            min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+
         _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         _setter("max_in_gbs", max_in_gbs)
         _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
@@ -8464,7 +9328,15 @@ class GetPodShapesPodShapeNetworkBandwidthOptionResult(dict):
              default_per_ocpu_in_gbps: float,
              max_in_gbps: float,
              min_in_gbps: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbps' in kwargs:
+            default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
+        if 'maxInGbps' in kwargs:
+            max_in_gbps = kwargs['maxInGbps']
+        if 'minInGbps' in kwargs:
+            min_in_gbps = kwargs['minInGbps']
+
         _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
         _setter("max_in_gbps", max_in_gbps)
         _setter("min_in_gbps", min_in_gbps)
@@ -8513,7 +9385,9 @@ class GetPodShapesPodShapeOcpuOptionResult(dict):
              _setter: Callable[[Any, Any], None],
              max: float,
              min: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -8553,7 +9427,9 @@ class GetVirtualNodePoolInitialVirtualNodeLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -8597,7 +9473,15 @@ class GetVirtualNodePoolPlacementConfigurationResult(dict):
              availability_domain: str,
              fault_domains: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
         _setter("subnet_id", subnet_id)
@@ -8650,7 +9534,13 @@ class GetVirtualNodePoolPodConfigurationResult(dict):
              nsg_ids: Sequence[str],
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("nsg_ids", nsg_ids)
         _setter("shape", shape)
         _setter("subnet_id", subnet_id)
@@ -8703,7 +9593,9 @@ class GetVirtualNodePoolTaintResult(dict):
              effect: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("effect", effect)
         _setter("key", key)
         _setter("value", value)
@@ -8752,7 +9644,13 @@ class GetVirtualNodePoolVirtualNodeTagResult(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
 
@@ -8794,7 +9692,9 @@ class GetVirtualNodePoolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8909,7 +9809,41 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
              time_updated: str,
              virtual_node_pool_id: str,
              virtual_node_tags: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialVirtualNodeLabels' in kwargs:
+            initial_virtual_node_labels = kwargs['initialVirtualNodeLabels']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'placementConfigurations' in kwargs:
+            placement_configurations = kwargs['placementConfigurations']
+        if 'podConfigurations' in kwargs:
+            pod_configurations = kwargs['podConfigurations']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'virtualNodePoolId' in kwargs:
+            virtual_node_pool_id = kwargs['virtualNodePoolId']
+        if 'virtualNodeTags' in kwargs:
+            virtual_node_tags = kwargs['virtualNodeTags']
+
         _setter("cluster_id", cluster_id)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -9108,7 +10042,9 @@ class GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult(dict):
              _setter: Callable[[Any, Any], None],
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("value", value)
 
@@ -9152,7 +10088,15 @@ class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
              availability_domain: str,
              fault_domains: Sequence[str],
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'faultDomains' in kwargs:
+            fault_domains = kwargs['faultDomains']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("availability_domain", availability_domain)
         _setter("fault_domains", fault_domains)
         _setter("subnet_id", subnet_id)
@@ -9205,7 +10149,13 @@ class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
              nsg_ids: Sequence[str],
              shape: str,
              subnet_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("nsg_ids", nsg_ids)
         _setter("shape", shape)
         _setter("subnet_id", subnet_id)
@@ -9258,7 +10208,9 @@ class GetVirtualNodePoolsVirtualNodePoolTaintResult(dict):
              effect: str,
              key: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("effect", effect)
         _setter("key", key)
         _setter("value", value)
@@ -9307,7 +10259,13 @@ class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult(dict):
              _setter: Callable[[Any, Any], None],
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
 
@@ -9346,7 +10304,9 @@ class GetWorkRequestErrorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9391,7 +10351,9 @@ class GetWorkRequestErrorsWorkRequestErrorResult(dict):
              code: str,
              message: str,
              timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("code", code)
         _setter("message", message)
         _setter("timestamp", timestamp)
@@ -9439,7 +10401,9 @@ class GetWorkRequestLogEntriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9480,7 +10444,9 @@ class GetWorkRequestLogEntriesWorkRequestLogEntryResult(dict):
              _setter: Callable[[Any, Any], None],
              message: str,
              timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("message", message)
         _setter("timestamp", timestamp)
 
@@ -9519,7 +10485,9 @@ class GetWorkRequestsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9584,7 +10552,19 @@ class GetWorkRequestsWorkRequestResult(dict):
              time_accepted: str,
              time_finished: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'operationType' in kwargs:
+            operation_type = kwargs['operationType']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("operation_type", operation_type)
@@ -9686,7 +10666,15 @@ class GetWorkRequestsWorkRequestResourceResult(dict):
              entity_type: str,
              entity_uri: str,
              identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'entityUri' in kwargs:
+            entity_uri = kwargs['entityUri']
+
         _setter("action_type", action_type)
         _setter("entity_type", entity_type)
         _setter("entity_uri", entity_uri)

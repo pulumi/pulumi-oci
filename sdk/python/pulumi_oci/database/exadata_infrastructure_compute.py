@@ -38,7 +38,17 @@ class ExadataInfrastructureComputeArgs:
              activation_file: Optional[pulumi.Input[str]] = None,
              additional_compute_count_compute_managed_resource: Optional[pulumi.Input[int]] = None,
              additional_compute_system_model_compute_managed_resource: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'activationFile' in kwargs:
+            activation_file = kwargs['activationFile']
+        if 'additionalComputeCountComputeManagedResource' in kwargs:
+            additional_compute_count_compute_managed_resource = kwargs['additionalComputeCountComputeManagedResource']
+        if 'additionalComputeSystemModelComputeManagedResource' in kwargs:
+            additional_compute_system_model_compute_managed_resource = kwargs['additionalComputeSystemModelComputeManagedResource']
+
         _setter("exadata_infrastructure_id", exadata_infrastructure_id)
         if activation_file is not None:
             _setter("activation_file", activation_file)
@@ -275,7 +285,89 @@ class _ExadataInfrastructureComputeState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activatedStorageCount' in kwargs:
+            activated_storage_count = kwargs['activatedStorageCount']
+        if 'activationFile' in kwargs:
+            activation_file = kwargs['activationFile']
+        if 'additionalComputeCount' in kwargs:
+            additional_compute_count = kwargs['additionalComputeCount']
+        if 'additionalComputeCountComputeManagedResource' in kwargs:
+            additional_compute_count_compute_managed_resource = kwargs['additionalComputeCountComputeManagedResource']
+        if 'additionalComputeSystemModel' in kwargs:
+            additional_compute_system_model = kwargs['additionalComputeSystemModel']
+        if 'additionalComputeSystemModelComputeManagedResource' in kwargs:
+            additional_compute_system_model_compute_managed_resource = kwargs['additionalComputeSystemModelComputeManagedResource']
+        if 'additionalStorageCount' in kwargs:
+            additional_storage_count = kwargs['additionalStorageCount']
+        if 'adminNetworkCidr' in kwargs:
+            admin_network_cidr = kwargs['adminNetworkCidr']
+        if 'cloudControlPlaneServer1' in kwargs:
+            cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
+        if 'cloudControlPlaneServer2' in kwargs:
+            cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if 'corporateProxy' in kwargs:
+            corporate_proxy = kwargs['corporateProxy']
+        if 'cpusEnabled' in kwargs:
+            cpus_enabled = kwargs['cpusEnabled']
+        if 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if 'csiNumber' in kwargs:
+            csi_number = kwargs['csiNumber']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServerVersion' in kwargs:
+            db_server_version = kwargs['dbServerVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsServers' in kwargs:
+            dns_servers = kwargs['dnsServers']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infiniBandNetworkCidr' in kwargs:
+            infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
+        if 'isCpsOfflineReportEnabled' in kwargs:
+            is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceSloStatus' in kwargs:
+            maintenance_slo_status = kwargs['maintenanceSloStatus']
+        if 'maintenanceWindows' in kwargs:
+            maintenance_windows = kwargs['maintenanceWindows']
+        if 'maxCpuCount' in kwargs:
+            max_cpu_count = kwargs['maxCpuCount']
+        if 'maxDataStorageInTbs' in kwargs:
+            max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
+        if 'maxDbNodeStorageInGbs' in kwargs:
+            max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
+        if 'maxMemoryInGbs' in kwargs:
+            max_memory_in_gbs = kwargs['maxMemoryInGbs']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'monthlyDbServerVersion' in kwargs:
+            monthly_db_server_version = kwargs['monthlyDbServerVersion']
+        if 'ntpServers' in kwargs:
+            ntp_servers = kwargs['ntpServers']
+        if 'storageCount' in kwargs:
+            storage_count = kwargs['storageCount']
+        if 'storageServerVersion' in kwargs:
+            storage_server_version = kwargs['storageServerVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         if activated_storage_count is not None:
             _setter("activated_storage_count", activated_storage_count)
         if activation_file is not None:

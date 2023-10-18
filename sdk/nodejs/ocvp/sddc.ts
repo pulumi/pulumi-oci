@@ -102,11 +102,15 @@ export class Sddc extends pulumi.CustomResource {
     }
 
     /**
-     * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     *
+     * @deprecated The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly capacityReservationId!: pulumi.Output<string>;
     /**
@@ -114,11 +118,15 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     *
+     * @deprecated The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly computeAvailabilityDomain!: pulumi.Output<string>;
     /**
-     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     *
+     * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly datastores!: pulumi.Output<outputs.Ocvp.SddcDatastore[]>;
     /**
@@ -130,9 +138,11 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      *
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
+     *
+     * @deprecated The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly esxiHostsCount!: pulumi.Output<number>;
     /**
@@ -148,11 +158,15 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly hcxFqdn!: pulumi.Output<string>;
     /**
-     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     *
+     * @deprecated The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     public /*out*/ readonly hcxInitialPassword!: pulumi.Output<string>;
     /**
-     * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     *
+     * @deprecated The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     public /*out*/ readonly hcxOnPremKey!: pulumi.Output<string>;
     /**
@@ -164,33 +178,47 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly hcxPrivateIpId!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     *
+     * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly hcxVlanId!: pulumi.Output<string>;
     /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
+     * (Optional) The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly initialHostOcpuCount!: pulumi.Output<number>;
     /**
-     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     *
+     * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly initialHostShapeName!: pulumi.Output<string>;
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly initialSku!: pulumi.Output<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
      *
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
+     *
+     * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly instanceDisplayNamePrefix!: pulumi.Output<string>;
     /**
-     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
      */
     public readonly isHcxEnabled!: pulumi.Output<boolean>;
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
      */
     public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean>;
     /**
@@ -198,7 +226,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly isHcxPendingDowngrade!: pulumi.Output<boolean>;
     /**
-     * Indicates whether shielded instance is enabled for this SDDC.
+     * (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     *
+     * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean>;
     /**
@@ -206,21 +236,27 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly isSingleHostSddc!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly nsxEdgeUplink1vlanId!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      *
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+     *
+     * @deprecated The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly nsxEdgeUplink2vlanId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      */
     public /*out*/ readonly nsxEdgeUplinkIpId!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly nsxEdgeVtepVlanId!: pulumi.Output<string>;
     /**
@@ -228,7 +264,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly nsxManagerFqdn!: pulumi.Output<string>;
     /**
-     * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     *
+     * @deprecated The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     public /*out*/ readonly nsxManagerInitialPassword!: pulumi.Output<string>;
     /**
@@ -240,19 +278,27 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly nsxManagerUsername!: pulumi.Output<string>;
     /**
-     * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     *
+     * @deprecated The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     public /*out*/ readonly nsxOverlaySegmentName!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly nsxVtepVlanId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     *
+     * @deprecated The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly provisioningSubnetId!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     *
+     * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly provisioningVlanId!: pulumi.Output<string>;
     /**
@@ -260,7 +306,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly refreshHcxLicenseStatus!: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     *
+     * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly replicationVlanId!: pulumi.Output<string>;
     /**
@@ -292,7 +340,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The vSphere licenses to use when upgrading the SDDC.
+     * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
     /**
@@ -300,7 +350,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly vcenterFqdn!: pulumi.Output<string>;
     /**
-     * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     *
+     * @deprecated The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     public /*out*/ readonly vcenterInitialPassword!: pulumi.Output<string>;
     /**
@@ -312,7 +364,9 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly vcenterUsername!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     *
+     * @deprecated The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly vmotionVlanId!: pulumi.Output<string>;
     /**
@@ -320,27 +374,37 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly vmwareSoftwareVersion!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     *
+     * @deprecated The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly vsanVlanId!: pulumi.Output<string>;
     /**
-     * The link to guidance for upgrading vSphere.
+     * (**Deprecated**) The link to guidance for upgrading vSphere.
+     *
+     * @deprecated The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string>;
     /**
-     * The links to binary objects needed to upgrade vSphere.
+     * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     *
+     * @deprecated The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly vsphereVlanId!: pulumi.Output<string>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
     public readonly workloadNetworkCidr!: pulumi.Output<string>;
 
@@ -525,11 +589,15 @@ export class Sddc extends pulumi.CustomResource {
  */
 export interface SddcState {
     /**
-     * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     *
+     * @deprecated The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     actualEsxiHostsCount?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
@@ -537,11 +605,15 @@ export interface SddcState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     *
+     * @deprecated The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
-     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     *
+     * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
     datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcDatastore>[]>;
     /**
@@ -553,9 +625,11 @@ export interface SddcState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      *
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
+     *
+     * @deprecated The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     esxiHostsCount?: pulumi.Input<number>;
     /**
@@ -571,11 +645,15 @@ export interface SddcState {
      */
     hcxFqdn?: pulumi.Input<string>;
     /**
-     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     *
+     * @deprecated The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     hcxInitialPassword?: pulumi.Input<string>;
     /**
-     * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     *
+     * @deprecated The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     hcxOnPremKey?: pulumi.Input<string>;
     /**
@@ -587,33 +665,47 @@ export interface SddcState {
      */
     hcxPrivateIpId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     *
+     * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     hcxVlanId?: pulumi.Input<string>;
     /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
+     * (Optional) The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialHostOcpuCount?: pulumi.Input<number>;
     /**
-     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     *
+     * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialHostShapeName?: pulumi.Input<string>;
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialSku?: pulumi.Input<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
      *
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
+     *
+     * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
     instanceDisplayNamePrefix?: pulumi.Input<string>;
     /**
-     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
      */
     isHcxEnabled?: pulumi.Input<boolean>;
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
      */
     isHcxEnterpriseEnabled?: pulumi.Input<boolean>;
     /**
@@ -621,7 +713,9 @@ export interface SddcState {
      */
     isHcxPendingDowngrade?: pulumi.Input<boolean>;
     /**
-     * Indicates whether shielded instance is enabled for this SDDC.
+     * (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     *
+     * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
     isShieldedInstanceEnabled?: pulumi.Input<boolean>;
     /**
@@ -629,21 +723,27 @@ export interface SddcState {
      */
     isSingleHostSddc?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeUplink1vlanId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      *
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+     *
+     * @deprecated The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeUplink2vlanId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      */
     nsxEdgeUplinkIpId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeVtepVlanId?: pulumi.Input<string>;
     /**
@@ -651,7 +751,9 @@ export interface SddcState {
      */
     nsxManagerFqdn?: pulumi.Input<string>;
     /**
-     * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     *
+     * @deprecated The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     nsxManagerInitialPassword?: pulumi.Input<string>;
     /**
@@ -663,19 +765,27 @@ export interface SddcState {
      */
     nsxManagerUsername?: pulumi.Input<string>;
     /**
-     * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     *
+     * @deprecated The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     nsxOverlaySegmentName?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxVtepVlanId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     *
+     * @deprecated The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     provisioningSubnetId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     *
+     * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     provisioningVlanId?: pulumi.Input<string>;
     /**
@@ -683,7 +793,9 @@ export interface SddcState {
      */
     refreshHcxLicenseStatus?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     *
+     * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     replicationVlanId?: pulumi.Input<string>;
     /**
@@ -715,7 +827,9 @@ export interface SddcState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The vSphere licenses to use when upgrading the SDDC.
+     * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     upgradeLicenses?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcUpgradeLicense>[]>;
     /**
@@ -723,7 +837,9 @@ export interface SddcState {
      */
     vcenterFqdn?: pulumi.Input<string>;
     /**
-     * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     *
+     * @deprecated The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
     vcenterInitialPassword?: pulumi.Input<string>;
     /**
@@ -735,7 +851,9 @@ export interface SddcState {
      */
     vcenterUsername?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     *
+     * @deprecated The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vmotionVlanId?: pulumi.Input<string>;
     /**
@@ -743,27 +861,37 @@ export interface SddcState {
      */
     vmwareSoftwareVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     *
+     * @deprecated The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vsanVlanId?: pulumi.Input<string>;
     /**
-     * The link to guidance for upgrading vSphere.
+     * (**Deprecated**) The link to guidance for upgrading vSphere.
+     *
+     * @deprecated The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     vsphereUpgradeGuide?: pulumi.Input<string>;
     /**
-     * The links to binary objects needed to upgrade vSphere.
+     * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     *
+     * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
     vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcVsphereUpgradeObject>[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     *
+     * @deprecated The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vsphereVlanId?: pulumi.Input<string>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
     workloadNetworkCidr?: pulumi.Input<string>;
 }
@@ -773,7 +901,9 @@ export interface SddcState {
  */
 export interface SddcArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     *
+     * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
@@ -781,11 +911,15 @@ export interface SddcArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     *
+     * @deprecated The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
      */
     computeAvailabilityDomain: pulumi.Input<string>;
     /**
-     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     *
+     * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
     datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcDatastore>[]>;
     /**
@@ -797,9 +931,11 @@ export interface SddcArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      *
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
+     *
+     * @deprecated The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     esxiHostsCount: pulumi.Input<number>;
     /**
@@ -811,33 +947,47 @@ export interface SddcArgs {
      */
     hcxAction?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     *
+     * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     hcxVlanId?: pulumi.Input<string>;
     /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
+     * (Optional) The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialHostOcpuCount?: pulumi.Input<number>;
     /**
-     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     *
+     * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialHostShapeName?: pulumi.Input<string>;
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     *
+     * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
     initialSku?: pulumi.Input<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
      *
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
+     *
+     * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
     instanceDisplayNamePrefix?: pulumi.Input<string>;
     /**
-     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     *
+     * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
      */
     isHcxEnabled?: pulumi.Input<boolean>;
     /**
-     * Indicates whether shielded instance is enabled for this SDDC.
+     * (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     *
+     * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
     isShieldedInstanceEnabled?: pulumi.Input<boolean>;
     /**
@@ -845,29 +995,41 @@ export interface SddcArgs {
      */
     isSingleHostSddc?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeUplink1vlanId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      *
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+     *
+     * @deprecated The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeUplink2vlanId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxEdgeVtepVlanId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     *
+     * @deprecated The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     nsxVtepVlanId: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     *
+     * @deprecated The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     provisioningSubnetId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     *
+     * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     provisioningVlanId?: pulumi.Input<string>;
     /**
@@ -875,7 +1037,9 @@ export interface SddcArgs {
      */
     refreshHcxLicenseStatus?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     *
+     * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     replicationVlanId?: pulumi.Input<string>;
     /**
@@ -887,7 +1051,9 @@ export interface SddcArgs {
      */
     sshAuthorizedKeys: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     *
+     * @deprecated The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vmotionVlanId: pulumi.Input<string>;
     /**
@@ -895,19 +1061,25 @@ export interface SddcArgs {
      */
     vmwareSoftwareVersion: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     *
+     * @deprecated The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vsanVlanId: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     *
+     * @deprecated The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
     vsphereVlanId: pulumi.Input<string>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
+     * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
     workloadNetworkCidr?: pulumi.Input<string>;
 }

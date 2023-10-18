@@ -61,7 +61,23 @@ class AuditProfileArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_paid_usage_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'changeRetentionTrigger' in kwargs:
+            change_retention_trigger = kwargs['changeRetentionTrigger']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPaidUsageEnabled' in kwargs:
+            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
+
         _setter("audit_profile_id", audit_profile_id)
         if change_retention_trigger is not None:
             _setter("change_retention_trigger", change_retention_trigger)
@@ -271,7 +287,43 @@ class _AuditProfileState:
              target_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectedVolume' in kwargs:
+            audit_collected_volume = kwargs['auditCollectedVolume']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'auditTrails' in kwargs:
+            audit_trails = kwargs['auditTrails']
+        if 'changeRetentionTrigger' in kwargs:
+            change_retention_trigger = kwargs['changeRetentionTrigger']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isOverrideGlobalRetentionSetting' in kwargs:
+            is_override_global_retention_setting = kwargs['isOverrideGlobalRetentionSetting']
+        if 'isPaidUsageEnabled' in kwargs:
+            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'offlineMonths' in kwargs:
+            offline_months = kwargs['offlineMonths']
+        if 'onlineMonths' in kwargs:
+            online_months = kwargs['onlineMonths']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if audit_collected_volume is not None:
             _setter("audit_collected_volume", audit_collected_volume)
         if audit_profile_id is not None:

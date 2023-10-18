@@ -83,7 +83,23 @@ class GetPathAnalyzerTestDestinationEndpointResult(dict):
              type: str,
              vlan_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("address", address)
         _setter("instance_id", instance_id)
         _setter("listener_id", listener_id)
@@ -207,7 +223,17 @@ class GetPathAnalyzerTestProtocolParameterResult(dict):
              icmp_type: int,
              source_port: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPort' in kwargs:
+            destination_port = kwargs['destinationPort']
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'sourcePort' in kwargs:
+            source_port = kwargs['sourcePort']
+
         _setter("destination_port", destination_port)
         _setter("icmp_code", icmp_code)
         _setter("icmp_type", icmp_type)
@@ -270,7 +296,11 @@ class GetPathAnalyzerTestQueryOptionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_bi_directional_analysis: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isBiDirectionalAnalysis' in kwargs:
+            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
+
         _setter("is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
@@ -333,7 +363,23 @@ class GetPathAnalyzerTestSourceEndpointResult(dict):
              type: str,
              vlan_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("address", address)
         _setter("instance_id", instance_id)
         _setter("listener_id", listener_id)
@@ -444,7 +490,9 @@ class GetPathAnalyzerTestsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -478,7 +526,9 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -554,7 +604,31 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'destinationEndpoints' in kwargs:
+            destination_endpoints = kwargs['destinationEndpoints']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if 'sourceEndpoints' in kwargs:
+            source_endpoints = kwargs['sourceEndpoints']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("destination_endpoints", destination_endpoints)
@@ -734,7 +808,23 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointResul
              type: str,
              vlan_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("address", address)
         _setter("instance_id", instance_id)
         _setter("listener_id", listener_id)
@@ -858,7 +948,17 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterResult(
              icmp_type: int,
              source_port: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPort' in kwargs:
+            destination_port = kwargs['destinationPort']
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'sourcePort' in kwargs:
+            source_port = kwargs['sourcePort']
+
         _setter("destination_port", destination_port)
         _setter("icmp_code", icmp_code)
         _setter("icmp_type", icmp_type)
@@ -921,7 +1021,11 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_bi_directional_analysis: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isBiDirectionalAnalysis' in kwargs:
+            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
+
         _setter("is_bi_directional_analysis", is_bi_directional_analysis)
 
     @property
@@ -984,7 +1088,23 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointResult(dic
              type: str,
              vlan_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("address", address)
         _setter("instance_id", instance_id)
         _setter("listener_id", listener_id)
@@ -1160,7 +1280,23 @@ class PathAnalysiDestinationEndpoint(dict):
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("type", type)
         if address is not None:
             _setter("address", address)
@@ -1321,7 +1457,17 @@ class PathAnalysiProtocolParameters(dict):
              icmp_code: Optional[int] = None,
              icmp_type: Optional[int] = None,
              source_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPort' in kwargs:
+            destination_port = kwargs['destinationPort']
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'sourcePort' in kwargs:
+            source_port = kwargs['sourcePort']
+
         _setter("type", type)
         if destination_port is not None:
             _setter("destination_port", destination_port)
@@ -1409,7 +1555,11 @@ class PathAnalysiQueryOptions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_bi_directional_analysis: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isBiDirectionalAnalysis' in kwargs:
+            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
+
         if is_bi_directional_analysis is not None:
             _setter("is_bi_directional_analysis", is_bi_directional_analysis)
 
@@ -1505,7 +1655,23 @@ class PathAnalysiSourceEndpoint(dict):
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("type", type)
         if address is not None:
             _setter("address", address)
@@ -1692,7 +1858,23 @@ class PathAnalyzerTestDestinationEndpoint(dict):
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("type", type)
         if address is not None:
             _setter("address", address)
@@ -1852,7 +2034,17 @@ class PathAnalyzerTestProtocolParameters(dict):
              icmp_code: Optional[int] = None,
              icmp_type: Optional[int] = None,
              source_port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationPort' in kwargs:
+            destination_port = kwargs['destinationPort']
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'icmpType' in kwargs:
+            icmp_type = kwargs['icmpType']
+        if 'sourcePort' in kwargs:
+            source_port = kwargs['sourcePort']
+
         _setter("type", type)
         if destination_port is not None:
             _setter("destination_port", destination_port)
@@ -1936,7 +2128,11 @@ class PathAnalyzerTestQueryOptions(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_bi_directional_analysis: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isBiDirectionalAnalysis' in kwargs:
+            is_bi_directional_analysis = kwargs['isBiDirectionalAnalysis']
+
         if is_bi_directional_analysis is not None:
             _setter("is_bi_directional_analysis", is_bi_directional_analysis)
 
@@ -2033,7 +2229,23 @@ class PathAnalyzerTestSourceEndpoint(dict):
              subnet_id: Optional[str] = None,
              vlan_id: Optional[str] = None,
              vnic_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("type", type)
         if address is not None:
             _setter("address", address)

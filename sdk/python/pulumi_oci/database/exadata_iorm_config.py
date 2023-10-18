@@ -41,7 +41,13 @@ class ExadataIormConfigArgs:
              db_plans: pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]],
              db_system_id: pulumi.Input[str],
              objective: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+
         _setter("db_plans", db_plans)
         _setter("db_system_id", db_system_id)
         if objective is not None:
@@ -124,7 +130,15 @@ class _ExadataIormConfigState:
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              objective: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if db_plans is not None:
             _setter("db_plans", db_plans)
         if db_system_id is not None:

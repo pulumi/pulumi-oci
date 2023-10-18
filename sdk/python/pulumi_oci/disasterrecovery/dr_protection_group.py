@@ -61,7 +61,21 @@ class DrProtectionGroupArgs:
              disassociate_trigger: Optional[pulumi.Input[int]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'logLocation' in kwargs:
+            log_location = kwargs['logLocation']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'disassociateTrigger' in kwargs:
+            disassociate_trigger = kwargs['disassociateTrigger']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("log_location", log_location)
@@ -257,7 +271,33 @@ class _DrProtectionGroupState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'disassociateTrigger' in kwargs:
+            disassociate_trigger = kwargs['disassociateTrigger']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifeCycleDetails' in kwargs:
+            life_cycle_details = kwargs['lifeCycleDetails']
+        if 'logLocation' in kwargs:
+            log_location = kwargs['logLocation']
+        if 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if 'peerRegion' in kwargs:
+            peer_region = kwargs['peerRegion']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if association is not None:
             _setter("association", association)
         if compartment_id is not None:

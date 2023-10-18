@@ -49,7 +49,19 @@ class ExternalDbSystemConnectorArgs:
              agent_id: Optional[pulumi.Input[str]] = None,
              connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoArgs']]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("connector_type", connector_type)
         _setter("external_db_system_id", external_db_system_id)
         if agent_id is not None:
@@ -192,7 +204,33 @@ class _ExternalDbSystemConnectorState:
              time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if compartment_id is not None:

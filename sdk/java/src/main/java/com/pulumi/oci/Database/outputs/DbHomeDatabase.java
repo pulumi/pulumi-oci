@@ -113,6 +113,11 @@ public final class DbHomeDatabase {
      */
     private @Nullable String pdbName;
     /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    private @Nullable List<String> pluggableDatabases;
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -281,6 +286,13 @@ public final class DbHomeDatabase {
         return Optional.ofNullable(this.pdbName);
     }
     /**
+     * @return The list of pluggable databases that needs to be restored into new database.
+     * 
+     */
+    public List<String> pluggableDatabases() {
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -352,6 +364,7 @@ public final class DbHomeDatabase {
         private @Nullable String ncharacterSet;
         private @Nullable List<String> oneOffPatches;
         private @Nullable String pdbName;
+        private @Nullable List<String> pluggableDatabases;
         private @Nullable String sidPrefix;
         private @Nullable String state;
         private @Nullable String tdeWalletPassword;
@@ -381,6 +394,7 @@ public final class DbHomeDatabase {
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -496,6 +510,14 @@ public final class DbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
+            return this;
+        }
+        public Builder pluggableDatabases(String... pluggableDatabases) {
+            return pluggableDatabases(List.of(pluggableDatabases));
+        }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
             this.sidPrefix = sidPrefix;
             return this;
@@ -547,6 +569,7 @@ public final class DbHomeDatabase {
             o.ncharacterSet = ncharacterSet;
             o.oneOffPatches = oneOffPatches;
             o.pdbName = pdbName;
+            o.pluggableDatabases = pluggableDatabases;
             o.sidPrefix = sidPrefix;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

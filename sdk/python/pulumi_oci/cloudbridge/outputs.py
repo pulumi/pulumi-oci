@@ -156,7 +156,23 @@ class AgentPluginList(dict):
              state: Optional[str] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if defined_tags is not None:
@@ -439,7 +455,57 @@ class AssetCompute(dict):
              scsi_controller: Optional['outputs.AssetComputeScsiController'] = None,
              storage_provisioned_in_mbs: Optional[str] = None,
              threads_per_core_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectedNetworks' in kwargs:
+            connected_networks = kwargs['connectedNetworks']
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'cpuModel' in kwargs:
+            cpu_model = kwargs['cpuModel']
+        if 'disksCount' in kwargs:
+            disks_count = kwargs['disksCount']
+        if 'dnsName' in kwargs:
+            dns_name = kwargs['dnsName']
+        if 'gpuDevices' in kwargs:
+            gpu_devices = kwargs['gpuDevices']
+        if 'gpuDevicesCount' in kwargs:
+            gpu_devices_count = kwargs['gpuDevicesCount']
+        if 'guestState' in kwargs:
+            guest_state = kwargs['guestState']
+        if 'hardwareVersion' in kwargs:
+            hardware_version = kwargs['hardwareVersion']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'isPmemEnabled' in kwargs:
+            is_pmem_enabled = kwargs['isPmemEnabled']
+        if 'isTpmEnabled' in kwargs:
+            is_tpm_enabled = kwargs['isTpmEnabled']
+        if 'latencySensitivity' in kwargs:
+            latency_sensitivity = kwargs['latencySensitivity']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'nicsCount' in kwargs:
+            nics_count = kwargs['nicsCount']
+        if 'nvdimmController' in kwargs:
+            nvdimm_controller = kwargs['nvdimmController']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+        if 'pmemInMbs' in kwargs:
+            pmem_in_mbs = kwargs['pmemInMbs']
+        if 'powerState' in kwargs:
+            power_state = kwargs['powerState']
+        if 'primaryIp' in kwargs:
+            primary_ip = kwargs['primaryIp']
+        if 'scsiController' in kwargs:
+            scsi_controller = kwargs['scsiController']
+        if 'storageProvisionedInMbs' in kwargs:
+            storage_provisioned_in_mbs = kwargs['storageProvisionedInMbs']
+        if 'threadsPerCoreCount' in kwargs:
+            threads_per_core_count = kwargs['threadsPerCoreCount']
+
         if connected_networks is not None:
             _setter("connected_networks", connected_networks)
         if cores_count is not None:
@@ -794,7 +860,17 @@ class AssetComputeDisk(dict):
              size_in_mbs: Optional[str] = None,
              uuid: Optional[str] = None,
              uuid_lun: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootOrder' in kwargs:
+            boot_order = kwargs['bootOrder']
+        if 'persistentMode' in kwargs:
+            persistent_mode = kwargs['persistentMode']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'uuidLun' in kwargs:
+            uuid_lun = kwargs['uuidLun']
+
         if boot_order is not None:
             _setter("boot_order", boot_order)
         if location is not None:
@@ -917,7 +993,13 @@ class AssetComputeGpuDevice(dict):
              manufacturer: Optional[str] = None,
              memory_in_mbs: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+
         if cores_count is not None:
             _setter("cores_count", cores_count)
         if description is not None:
@@ -1030,7 +1112,19 @@ class AssetComputeNic(dict):
              mac_address_type: Optional[str] = None,
              network_name: Optional[str] = None,
              switch_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'macAddress' in kwargs:
+            mac_address = kwargs['macAddress']
+        if 'macAddressType' in kwargs:
+            mac_address_type = kwargs['macAddressType']
+        if 'networkName' in kwargs:
+            network_name = kwargs['networkName']
+        if 'switchName' in kwargs:
+            switch_name = kwargs['switchName']
+
         if ip_addresses is not None:
             _setter("ip_addresses", ip_addresses)
         if label is not None:
@@ -1135,7 +1229,13 @@ class AssetComputeNvdimm(dict):
              controller_key: Optional[int] = None,
              label: Optional[str] = None,
              unit_number: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'controllerKey' in kwargs:
+            controller_key = kwargs['controllerKey']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         if controller_key is not None:
             _setter("controller_key", controller_key)
         if label is not None:
@@ -1204,7 +1304,11 @@ class AssetComputeNvdimmController(dict):
              _setter: Callable[[Any, Any], None],
              bus_number: Optional[int] = None,
              label: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'busNumber' in kwargs:
+            bus_number = kwargs['busNumber']
+
         if bus_number is not None:
             _setter("bus_number", bus_number)
         if label is not None:
@@ -1269,7 +1373,13 @@ class AssetComputeScsiController(dict):
              label: Optional[str] = None,
              shared_bus: Optional[str] = None,
              unit_number: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sharedBus' in kwargs:
+            shared_bus = kwargs['sharedBus']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         if label is not None:
             _setter("label", label)
         if shared_bus is not None:
@@ -1338,7 +1448,11 @@ class AssetSourceDiscoveryCredentials(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -1395,7 +1509,11 @@ class AssetSourceReplicationCredentials(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -1460,7 +1578,15 @@ class AssetVm(dict):
              hypervisor_host: Optional[str] = None,
              hypervisor_vendor: Optional[str] = None,
              hypervisor_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hypervisorHost' in kwargs:
+            hypervisor_host = kwargs['hypervisorHost']
+        if 'hypervisorVendor' in kwargs:
+            hypervisor_vendor = kwargs['hypervisorVendor']
+        if 'hypervisorVersion' in kwargs:
+            hypervisor_version = kwargs['hypervisorVersion']
+
         if hypervisor_host is not None:
             _setter("hypervisor_host", hypervisor_host)
         if hypervisor_vendor is not None:
@@ -1537,7 +1663,15 @@ class AssetVmwareVcenter(dict):
              data_center: Optional[str] = None,
              vcenter_key: Optional[str] = None,
              vcenter_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'vcenterKey' in kwargs:
+            vcenter_key = kwargs['vcenterKey']
+        if 'vcenterVersion' in kwargs:
+            vcenter_version = kwargs['vcenterVersion']
+
         if data_center is not None:
             _setter("data_center", data_center)
         if vcenter_key is not None:
@@ -1662,7 +1796,27 @@ class AssetVmwareVm(dict):
              is_disks_uuid_enabled: Optional[bool] = None,
              path: Optional[str] = None,
              vmware_tools_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerFields' in kwargs:
+            customer_fields = kwargs['customerFields']
+        if 'customerTags' in kwargs:
+            customer_tags = kwargs['customerTags']
+        if 'faultToleranceBandwidth' in kwargs:
+            fault_tolerance_bandwidth = kwargs['faultToleranceBandwidth']
+        if 'faultToleranceSecondaryLatency' in kwargs:
+            fault_tolerance_secondary_latency = kwargs['faultToleranceSecondaryLatency']
+        if 'faultToleranceState' in kwargs:
+            fault_tolerance_state = kwargs['faultToleranceState']
+        if 'instanceUuid' in kwargs:
+            instance_uuid = kwargs['instanceUuid']
+        if 'isDisksCbtEnabled' in kwargs:
+            is_disks_cbt_enabled = kwargs['isDisksCbtEnabled']
+        if 'isDisksUuidEnabled' in kwargs:
+            is_disks_uuid_enabled = kwargs['isDisksUuidEnabled']
+        if 'vmwareToolsStatus' in kwargs:
+            vmware_tools_status = kwargs['vmwareToolsStatus']
+
         if cluster is not None:
             _setter("cluster", cluster)
         if customer_fields is not None:
@@ -1798,7 +1952,9 @@ class AssetVmwareVmCustomerTag(dict):
              _setter: Callable[[Any, Any], None],
              description: Optional[str] = None,
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if name is not None:
@@ -1833,7 +1989,9 @@ class GetAgentDependenciesAgentDependencyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAgentDependenciesAgentDependencyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1921,7 +2079,29 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
              state: str,
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dependencyName' in kwargs:
+            dependency_name = kwargs['dependencyName']
+        if 'dependencyVersion' in kwargs:
+            dependency_version = kwargs['dependencyVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'eTag' in kwargs:
+            e_tag = kwargs['eTag']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("bucket", bucket)
         _setter("checksum", checksum)
         _setter("compartment_id", compartment_id)
@@ -2095,7 +2275,9 @@ class GetAgentDependenciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2164,7 +2346,23 @@ class GetAgentPluginListResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("agent_id", agent_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -2260,7 +2458,9 @@ class GetAgentsAgentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAgentsAgentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2356,7 +2556,43 @@ class GetAgentsAgentCollectionItemResult(dict):
              time_expire_agent_key_in_ms: str,
              time_last_sync_received: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentPubKey' in kwargs:
+            agent_pub_key = kwargs['agentPubKey']
+        if 'agentType' in kwargs:
+            agent_type = kwargs['agentType']
+        if 'agentVersion' in kwargs:
+            agent_version = kwargs['agentVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'heartBeatStatus' in kwargs:
+            heart_beat_status = kwargs['heartBeatStatus']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if 'pluginLists' in kwargs:
+            plugin_lists = kwargs['pluginLists']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpireAgentKeyInMs' in kwargs:
+            time_expire_agent_key_in_ms = kwargs['timeExpireAgentKeyInMs']
+        if 'timeLastSyncReceived' in kwargs:
+            time_last_sync_received = kwargs['timeLastSyncReceived']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("agent_pub_key", agent_pub_key)
         _setter("agent_type", agent_type)
         _setter("agent_version", agent_version)
@@ -2577,7 +2813,23 @@ class GetAgentsAgentCollectionItemPluginListResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("agent_id", agent_id)
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
@@ -2682,7 +2934,9 @@ class GetAgentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2774,7 +3028,25 @@ class GetApplianceImageItemResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'downloadUrl' in kwargs:
+            download_url = kwargs['downloadUrl']
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("checksum", checksum)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2918,7 +3190,9 @@ class GetApplianceImagesApplianceImageCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApplianceImagesApplianceImageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2997,7 +3271,25 @@ class GetApplianceImagesApplianceImageCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'downloadUrl' in kwargs:
+            download_url = kwargs['downloadUrl']
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("checksum", checksum)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -3144,7 +3436,9 @@ class GetApplianceImagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3293,7 +3587,57 @@ class GetAssetComputeResult(dict):
              scsi_controllers: Sequence['outputs.GetAssetComputeScsiControllerResult'],
              storage_provisioned_in_mbs: str,
              threads_per_core_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectedNetworks' in kwargs:
+            connected_networks = kwargs['connectedNetworks']
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'cpuModel' in kwargs:
+            cpu_model = kwargs['cpuModel']
+        if 'disksCount' in kwargs:
+            disks_count = kwargs['disksCount']
+        if 'dnsName' in kwargs:
+            dns_name = kwargs['dnsName']
+        if 'gpuDevices' in kwargs:
+            gpu_devices = kwargs['gpuDevices']
+        if 'gpuDevicesCount' in kwargs:
+            gpu_devices_count = kwargs['gpuDevicesCount']
+        if 'guestState' in kwargs:
+            guest_state = kwargs['guestState']
+        if 'hardwareVersion' in kwargs:
+            hardware_version = kwargs['hardwareVersion']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'isPmemEnabled' in kwargs:
+            is_pmem_enabled = kwargs['isPmemEnabled']
+        if 'isTpmEnabled' in kwargs:
+            is_tpm_enabled = kwargs['isTpmEnabled']
+        if 'latencySensitivity' in kwargs:
+            latency_sensitivity = kwargs['latencySensitivity']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'nicsCount' in kwargs:
+            nics_count = kwargs['nicsCount']
+        if 'nvdimmControllers' in kwargs:
+            nvdimm_controllers = kwargs['nvdimmControllers']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+        if 'pmemInMbs' in kwargs:
+            pmem_in_mbs = kwargs['pmemInMbs']
+        if 'powerState' in kwargs:
+            power_state = kwargs['powerState']
+        if 'primaryIp' in kwargs:
+            primary_ip = kwargs['primaryIp']
+        if 'scsiControllers' in kwargs:
+            scsi_controllers = kwargs['scsiControllers']
+        if 'storageProvisionedInMbs' in kwargs:
+            storage_provisioned_in_mbs = kwargs['storageProvisionedInMbs']
+        if 'threadsPerCoreCount' in kwargs:
+            threads_per_core_count = kwargs['threadsPerCoreCount']
+
         _setter("connected_networks", connected_networks)
         _setter("cores_count", cores_count)
         _setter("cpu_model", cpu_model)
@@ -3596,7 +3940,17 @@ class GetAssetComputeDiskResult(dict):
              size_in_mbs: str,
              uuid: str,
              uuid_lun: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootOrder' in kwargs:
+            boot_order = kwargs['bootOrder']
+        if 'persistentMode' in kwargs:
+            persistent_mode = kwargs['persistentMode']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'uuidLun' in kwargs:
+            uuid_lun = kwargs['uuidLun']
+
         _setter("boot_order", boot_order)
         _setter("location", location)
         _setter("name", name)
@@ -3693,7 +4047,13 @@ class GetAssetComputeGpuDeviceResult(dict):
              manufacturer: str,
              memory_in_mbs: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+
         _setter("cores_count", cores_count)
         _setter("description", description)
         _setter("manufacturer", manufacturer)
@@ -3776,7 +4136,19 @@ class GetAssetComputeNicResult(dict):
              mac_address_type: str,
              network_name: str,
              switch_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'macAddress' in kwargs:
+            mac_address = kwargs['macAddress']
+        if 'macAddressType' in kwargs:
+            mac_address_type = kwargs['macAddressType']
+        if 'networkName' in kwargs:
+            network_name = kwargs['networkName']
+        if 'switchName' in kwargs:
+            switch_name = kwargs['switchName']
+
         _setter("ip_addresses", ip_addresses)
         _setter("label", label)
         _setter("mac_address", mac_address)
@@ -3856,7 +4228,13 @@ class GetAssetComputeNvdimmResult(dict):
              controller_key: int,
              label: str,
              unit_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'controllerKey' in kwargs:
+            controller_key = kwargs['controllerKey']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         _setter("controller_key", controller_key)
         _setter("label", label)
         _setter("unit_number", unit_number)
@@ -3905,7 +4283,11 @@ class GetAssetComputeNvdimmControllerResult(dict):
              _setter: Callable[[Any, Any], None],
              bus_number: int,
              label: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'busNumber' in kwargs:
+            bus_number = kwargs['busNumber']
+
         _setter("bus_number", bus_number)
         _setter("label", label)
 
@@ -3949,7 +4331,13 @@ class GetAssetComputeScsiControllerResult(dict):
              label: str,
              shared_bus: str,
              unit_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sharedBus' in kwargs:
+            shared_bus = kwargs['sharedBus']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         _setter("label", label)
         _setter("shared_bus", shared_bus)
         _setter("unit_number", unit_number)
@@ -3998,7 +4386,11 @@ class GetAssetSourceDiscoveryCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -4038,7 +4430,11 @@ class GetAssetSourceReplicationCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -4071,7 +4467,9 @@ class GetAssetSourcesAssetSourceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4171,7 +4569,43 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
              time_updated: str,
              type: str,
              vcenter_endpoint: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areHistoricalMetricsCollected' in kwargs:
+            are_historical_metrics_collected = kwargs['areHistoricalMetricsCollected']
+        if 'areRealtimeMetricsCollected' in kwargs:
+            are_realtime_metrics_collected = kwargs['areRealtimeMetricsCollected']
+        if 'assetsCompartmentId' in kwargs:
+            assets_compartment_id = kwargs['assetsCompartmentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryCredentials' in kwargs:
+            discovery_credentials = kwargs['discoveryCredentials']
+        if 'discoveryScheduleId' in kwargs:
+            discovery_schedule_id = kwargs['discoveryScheduleId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'replicationCredentials' in kwargs:
+            replication_credentials = kwargs['replicationCredentials']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcenterEndpoint' in kwargs:
+            vcenter_endpoint = kwargs['vcenterEndpoint']
+
         _setter("are_historical_metrics_collected", are_historical_metrics_collected)
         _setter("are_realtime_metrics_collected", are_realtime_metrics_collected)
         _setter("assets_compartment_id", assets_compartment_id)
@@ -4373,7 +4807,11 @@ class GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -4413,7 +4851,11 @@ class GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("secret_id", secret_id)
         _setter("type", type)
 
@@ -4452,7 +4894,9 @@ class GetAssetSourcesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4497,7 +4941,15 @@ class GetAssetVmResult(dict):
              hypervisor_host: str,
              hypervisor_vendor: str,
              hypervisor_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hypervisorHost' in kwargs:
+            hypervisor_host = kwargs['hypervisorHost']
+        if 'hypervisorVendor' in kwargs:
+            hypervisor_vendor = kwargs['hypervisorVendor']
+        if 'hypervisorVersion' in kwargs:
+            hypervisor_version = kwargs['hypervisorVersion']
+
         _setter("hypervisor_host", hypervisor_host)
         _setter("hypervisor_vendor", hypervisor_vendor)
         _setter("hypervisor_version", hypervisor_version)
@@ -4550,7 +5002,15 @@ class GetAssetVmwareVcenterResult(dict):
              data_center: str,
              vcenter_key: str,
              vcenter_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'vcenterKey' in kwargs:
+            vcenter_key = kwargs['vcenterKey']
+        if 'vcenterVersion' in kwargs:
+            vcenter_version = kwargs['vcenterVersion']
+
         _setter("data_center", data_center)
         _setter("vcenter_key", vcenter_key)
         _setter("vcenter_version", vcenter_version)
@@ -4635,7 +5095,27 @@ class GetAssetVmwareVmResult(dict):
              is_disks_uuid_enabled: bool,
              path: str,
              vmware_tools_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerFields' in kwargs:
+            customer_fields = kwargs['customerFields']
+        if 'customerTags' in kwargs:
+            customer_tags = kwargs['customerTags']
+        if 'faultToleranceBandwidth' in kwargs:
+            fault_tolerance_bandwidth = kwargs['faultToleranceBandwidth']
+        if 'faultToleranceSecondaryLatency' in kwargs:
+            fault_tolerance_secondary_latency = kwargs['faultToleranceSecondaryLatency']
+        if 'faultToleranceState' in kwargs:
+            fault_tolerance_state = kwargs['faultToleranceState']
+        if 'instanceUuid' in kwargs:
+            instance_uuid = kwargs['instanceUuid']
+        if 'isDisksCbtEnabled' in kwargs:
+            is_disks_cbt_enabled = kwargs['isDisksCbtEnabled']
+        if 'isDisksUuidEnabled' in kwargs:
+            is_disks_uuid_enabled = kwargs['isDisksUuidEnabled']
+        if 'vmwareToolsStatus' in kwargs:
+            vmware_tools_status = kwargs['vmwareToolsStatus']
+
         _setter("cluster", cluster)
         _setter("customer_fields", customer_fields)
         _setter("customer_tags", customer_tags)
@@ -4756,7 +5236,9 @@ class GetAssetVmwareVmCustomerTagResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("name", name)
 
@@ -4789,7 +5271,9 @@ class GetAssetsAssetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAssetsAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4881,7 +5365,37 @@ class GetAssetsAssetCollectionItemResult(dict):
              vms: Sequence['outputs.GetAssetsAssetCollectionItemVmResult'],
              vmware_vcenters: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVcenterResult'],
              vmware_vms: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVmResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetSourceIds' in kwargs:
+            asset_source_ids = kwargs['assetSourceIds']
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalAssetKey' in kwargs:
+            external_asset_key = kwargs['externalAssetKey']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryId' in kwargs:
+            inventory_id = kwargs['inventoryId']
+        if 'sourceKey' in kwargs:
+            source_key = kwargs['sourceKey']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vmwareVcenters' in kwargs:
+            vmware_vcenters = kwargs['vmwareVcenters']
+        if 'vmwareVms' in kwargs:
+            vmware_vms = kwargs['vmwareVms']
+
         _setter("asset_source_ids", asset_source_ids)
         _setter("asset_type", asset_type)
         _setter("compartment_id", compartment_id)
@@ -5173,7 +5687,57 @@ class GetAssetsAssetCollectionItemComputeResult(dict):
              scsi_controllers: Sequence['outputs.GetAssetsAssetCollectionItemComputeScsiControllerResult'],
              storage_provisioned_in_mbs: str,
              threads_per_core_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectedNetworks' in kwargs:
+            connected_networks = kwargs['connectedNetworks']
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'cpuModel' in kwargs:
+            cpu_model = kwargs['cpuModel']
+        if 'disksCount' in kwargs:
+            disks_count = kwargs['disksCount']
+        if 'dnsName' in kwargs:
+            dns_name = kwargs['dnsName']
+        if 'gpuDevices' in kwargs:
+            gpu_devices = kwargs['gpuDevices']
+        if 'gpuDevicesCount' in kwargs:
+            gpu_devices_count = kwargs['gpuDevicesCount']
+        if 'guestState' in kwargs:
+            guest_state = kwargs['guestState']
+        if 'hardwareVersion' in kwargs:
+            hardware_version = kwargs['hardwareVersion']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'isPmemEnabled' in kwargs:
+            is_pmem_enabled = kwargs['isPmemEnabled']
+        if 'isTpmEnabled' in kwargs:
+            is_tpm_enabled = kwargs['isTpmEnabled']
+        if 'latencySensitivity' in kwargs:
+            latency_sensitivity = kwargs['latencySensitivity']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+        if 'nicsCount' in kwargs:
+            nics_count = kwargs['nicsCount']
+        if 'nvdimmControllers' in kwargs:
+            nvdimm_controllers = kwargs['nvdimmControllers']
+        if 'operatingSystem' in kwargs:
+            operating_system = kwargs['operatingSystem']
+        if 'operatingSystemVersion' in kwargs:
+            operating_system_version = kwargs['operatingSystemVersion']
+        if 'pmemInMbs' in kwargs:
+            pmem_in_mbs = kwargs['pmemInMbs']
+        if 'powerState' in kwargs:
+            power_state = kwargs['powerState']
+        if 'primaryIp' in kwargs:
+            primary_ip = kwargs['primaryIp']
+        if 'scsiControllers' in kwargs:
+            scsi_controllers = kwargs['scsiControllers']
+        if 'storageProvisionedInMbs' in kwargs:
+            storage_provisioned_in_mbs = kwargs['storageProvisionedInMbs']
+        if 'threadsPerCoreCount' in kwargs:
+            threads_per_core_count = kwargs['threadsPerCoreCount']
+
         _setter("connected_networks", connected_networks)
         _setter("cores_count", cores_count)
         _setter("cpu_model", cpu_model)
@@ -5476,7 +6040,17 @@ class GetAssetsAssetCollectionItemComputeDiskResult(dict):
              size_in_mbs: str,
              uuid: str,
              uuid_lun: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bootOrder' in kwargs:
+            boot_order = kwargs['bootOrder']
+        if 'persistentMode' in kwargs:
+            persistent_mode = kwargs['persistentMode']
+        if 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if 'uuidLun' in kwargs:
+            uuid_lun = kwargs['uuidLun']
+
         _setter("boot_order", boot_order)
         _setter("location", location)
         _setter("name", name)
@@ -5573,7 +6147,13 @@ class GetAssetsAssetCollectionItemComputeGpuDeviceResult(dict):
              manufacturer: str,
              memory_in_mbs: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'coresCount' in kwargs:
+            cores_count = kwargs['coresCount']
+        if 'memoryInMbs' in kwargs:
+            memory_in_mbs = kwargs['memoryInMbs']
+
         _setter("cores_count", cores_count)
         _setter("description", description)
         _setter("manufacturer", manufacturer)
@@ -5656,7 +6236,19 @@ class GetAssetsAssetCollectionItemComputeNicResult(dict):
              mac_address_type: str,
              network_name: str,
              switch_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'macAddress' in kwargs:
+            mac_address = kwargs['macAddress']
+        if 'macAddressType' in kwargs:
+            mac_address_type = kwargs['macAddressType']
+        if 'networkName' in kwargs:
+            network_name = kwargs['networkName']
+        if 'switchName' in kwargs:
+            switch_name = kwargs['switchName']
+
         _setter("ip_addresses", ip_addresses)
         _setter("label", label)
         _setter("mac_address", mac_address)
@@ -5736,7 +6328,13 @@ class GetAssetsAssetCollectionItemComputeNvdimmResult(dict):
              controller_key: int,
              label: str,
              unit_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'controllerKey' in kwargs:
+            controller_key = kwargs['controllerKey']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         _setter("controller_key", controller_key)
         _setter("label", label)
         _setter("unit_number", unit_number)
@@ -5785,7 +6383,11 @@ class GetAssetsAssetCollectionItemComputeNvdimmControllerResult(dict):
              _setter: Callable[[Any, Any], None],
              bus_number: int,
              label: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'busNumber' in kwargs:
+            bus_number = kwargs['busNumber']
+
         _setter("bus_number", bus_number)
         _setter("label", label)
 
@@ -5829,7 +6431,13 @@ class GetAssetsAssetCollectionItemComputeScsiControllerResult(dict):
              label: str,
              shared_bus: str,
              unit_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sharedBus' in kwargs:
+            shared_bus = kwargs['sharedBus']
+        if 'unitNumber' in kwargs:
+            unit_number = kwargs['unitNumber']
+
         _setter("label", label)
         _setter("shared_bus", shared_bus)
         _setter("unit_number", unit_number)
@@ -5882,7 +6490,15 @@ class GetAssetsAssetCollectionItemVmResult(dict):
              hypervisor_host: str,
              hypervisor_vendor: str,
              hypervisor_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hypervisorHost' in kwargs:
+            hypervisor_host = kwargs['hypervisorHost']
+        if 'hypervisorVendor' in kwargs:
+            hypervisor_vendor = kwargs['hypervisorVendor']
+        if 'hypervisorVersion' in kwargs:
+            hypervisor_version = kwargs['hypervisorVersion']
+
         _setter("hypervisor_host", hypervisor_host)
         _setter("hypervisor_vendor", hypervisor_vendor)
         _setter("hypervisor_version", hypervisor_version)
@@ -5935,7 +6551,15 @@ class GetAssetsAssetCollectionItemVmwareVcenterResult(dict):
              data_center: str,
              vcenter_key: str,
              vcenter_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'vcenterKey' in kwargs:
+            vcenter_key = kwargs['vcenterKey']
+        if 'vcenterVersion' in kwargs:
+            vcenter_version = kwargs['vcenterVersion']
+
         _setter("data_center", data_center)
         _setter("vcenter_key", vcenter_key)
         _setter("vcenter_version", vcenter_version)
@@ -6020,7 +6644,27 @@ class GetAssetsAssetCollectionItemVmwareVmResult(dict):
              is_disks_uuid_enabled: bool,
              path: str,
              vmware_tools_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerFields' in kwargs:
+            customer_fields = kwargs['customerFields']
+        if 'customerTags' in kwargs:
+            customer_tags = kwargs['customerTags']
+        if 'faultToleranceBandwidth' in kwargs:
+            fault_tolerance_bandwidth = kwargs['faultToleranceBandwidth']
+        if 'faultToleranceSecondaryLatency' in kwargs:
+            fault_tolerance_secondary_latency = kwargs['faultToleranceSecondaryLatency']
+        if 'faultToleranceState' in kwargs:
+            fault_tolerance_state = kwargs['faultToleranceState']
+        if 'instanceUuid' in kwargs:
+            instance_uuid = kwargs['instanceUuid']
+        if 'isDisksCbtEnabled' in kwargs:
+            is_disks_cbt_enabled = kwargs['isDisksCbtEnabled']
+        if 'isDisksUuidEnabled' in kwargs:
+            is_disks_uuid_enabled = kwargs['isDisksUuidEnabled']
+        if 'vmwareToolsStatus' in kwargs:
+            vmware_tools_status = kwargs['vmwareToolsStatus']
+
         _setter("cluster", cluster)
         _setter("customer_fields", customer_fields)
         _setter("customer_tags", customer_tags)
@@ -6141,7 +6785,9 @@ class GetAssetsAssetCollectionItemVmwareVmCustomerTagResult(dict):
              _setter: Callable[[Any, Any], None],
              description: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("name", name)
 
@@ -6183,7 +6829,9 @@ class GetAssetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6220,7 +6868,9 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6284,7 +6934,27 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionRecurrences' in kwargs:
+            execution_recurrences = kwargs['executionRecurrences']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -6404,7 +7074,9 @@ class GetDiscoverySchedulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6438,7 +7110,9 @@ class GetEnvironmentsEnvironmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEnvironmentsEnvironmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6498,7 +7172,25 @@ class GetEnvironmentsEnvironmentCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -6609,7 +7301,9 @@ class GetEnvironmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6649,7 +7343,9 @@ class GetInventoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6683,7 +7379,9 @@ class GetInventoriesInventoryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInventoriesInventoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6743,7 +7441,25 @@ class GetInventoriesInventoryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)

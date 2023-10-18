@@ -65,7 +65,21 @@ class ResolverArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'attachedViews' in kwargs:
+            attached_views = kwargs['attachedViews']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("resolver_id", resolver_id)
         if attached_views is not None:
             _setter("attached_views", attached_views)
@@ -271,7 +285,31 @@ class _ResolverState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedVcnId' in kwargs:
+            attached_vcn_id = kwargs['attachedVcnId']
+        if 'attachedViews' in kwargs:
+            attached_views = kwargs['attachedViews']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultViewId' in kwargs:
+            default_view_id = kwargs['defaultViewId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if attached_vcn_id is not None:
             _setter("attached_vcn_id", attached_vcn_id)
         if attached_views is not None:

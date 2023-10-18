@@ -47,7 +47,19 @@ class RepositoryRefArgs:
              repository_id: pulumi.Input[str],
              commit_id: Optional[pulumi.Input[str]] = None,
              object_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refName' in kwargs:
+            ref_name = kwargs['refName']
+        if 'refType' in kwargs:
+            ref_type = kwargs['refType']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'commitId' in kwargs:
+            commit_id = kwargs['commitId']
+        if 'objectId' in kwargs:
+            object_id = kwargs['objectId']
+
         _setter("ref_name", ref_name)
         _setter("ref_type", ref_type)
         _setter("repository_id", repository_id)
@@ -169,7 +181,25 @@ class _RepositoryRefState:
              ref_name: Optional[pulumi.Input[str]] = None,
              ref_type: Optional[pulumi.Input[str]] = None,
              repository_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitId' in kwargs:
+            commit_id = kwargs['commitId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fullRefName' in kwargs:
+            full_ref_name = kwargs['fullRefName']
+        if 'objectId' in kwargs:
+            object_id = kwargs['objectId']
+        if 'refName' in kwargs:
+            ref_name = kwargs['refName']
+        if 'refType' in kwargs:
+            ref_type = kwargs['refType']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+
         if commit_id is not None:
             _setter("commit_id", commit_id)
         if defined_tags is not None:

@@ -72,7 +72,19 @@ class BackendSetBackendArgs:
              name: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("port", port)
         if ip_address is not None:
             _setter("ip_address", ip_address)
@@ -241,7 +253,23 @@ class BackendSetHealthCheckerArgs:
              return_code: Optional[pulumi.Input[int]] = None,
              timeout_in_millis: Optional[pulumi.Input[int]] = None,
              url_path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_in_millis is not None:
             _setter("interval_in_millis", interval_in_millis)
@@ -410,7 +438,17 @@ class NetworkLoadBalancerIpAddressArgs:
              ip_version: Optional[pulumi.Input[str]] = None,
              is_public: Optional[pulumi.Input[bool]] = None,
              reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         if ip_address is not None:
             _setter("ip_address", ip_address)
         if ip_version is not None:
@@ -492,7 +530,9 @@ class NetworkLoadBalancerIpAddressReservedIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -540,7 +580,9 @@ class NetworkLoadBalancerReservedIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -612,7 +654,19 @@ class NetworkLoadBalancersBackendSetsUnifiedBackendArgs:
              name: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("port", port)
         if ip_address is not None:
             _setter("ip_address", ip_address)
@@ -781,7 +835,23 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs:
              return_code: Optional[pulumi.Input[int]] = None,
              timeout_in_millis: Optional[pulumi.Input[int]] = None,
              url_path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalInMillis' in kwargs:
+            interval_in_millis = kwargs['intervalInMillis']
+        if 'requestData' in kwargs:
+            request_data = kwargs['requestData']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'responseData' in kwargs:
+            response_data = kwargs['responseData']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_in_millis is not None:
             _setter("interval_in_millis", interval_in_millis)
@@ -944,7 +1014,9 @@ class GetBackendSetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1002,7 +1074,9 @@ class GetBackendsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1060,7 +1134,9 @@ class GetListenersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1115,7 +1191,9 @@ class GetNetworkLoadBalancersFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1167,7 +1245,9 @@ class GetNetworkLoadBalancersPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1219,7 +1299,9 @@ class GetNetworkLoadBalancersProtocolsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

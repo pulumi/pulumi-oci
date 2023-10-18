@@ -99,7 +99,35 @@ class DatabaseRegistrationArgs:
              subnet_id: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'secretCompartmentId' in kwargs:
+            secret_compartment_id = kwargs['secretCompartmentId']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("alias_name", alias_name)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -468,7 +496,47 @@ class _DatabaseRegistrationState:
              username: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
              wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'rcePrivateIp' in kwargs:
+            rce_private_ip = kwargs['rcePrivateIp']
+        if 'secretCompartmentId' in kwargs:
+            secret_compartment_id = kwargs['secretCompartmentId']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if alias_name is not None:
             _setter("alias_name", alias_name)
         if compartment_id is not None:

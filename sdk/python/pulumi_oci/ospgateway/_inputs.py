@@ -146,7 +146,43 @@ class AddressActionVerificationAddressArgs:
              state_inscription: Optional[pulumi.Input[str]] = None,
              street_name: Optional[pulumi.Input[str]] = None,
              street_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -632,7 +668,43 @@ class SubscriptionBillingAddressArgs:
              state_inscription: Optional[pulumi.Input[str]] = None,
              street_name: Optional[pulumi.Input[str]] = None,
              street_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -1014,7 +1086,11 @@ class SubscriptionPaymentGatewayArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedDatas' in kwargs:
+            merchant_defined_datas = kwargs['merchantDefinedDatas']
+
         if merchant_defined_datas is not None:
             _setter("merchant_defined_datas", merchant_defined_datas)
 
@@ -1050,7 +1126,13 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
              _setter: Callable[[Any, Any], None],
              cloud_account_name: Optional[pulumi.Input[str]] = None,
              promo_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         if cloud_account_name is not None:
             _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -1136,7 +1218,31 @@ class SubscriptionPaymentOptionArgs:
              time_expiration: Optional[pulumi.Input[str]] = None,
              wallet_instrument_id: Optional[pulumi.Input[str]] = None,
              wallet_transaction_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         if credit_card_type is not None:
             _setter("credit_card_type", credit_card_type)
         if email_address is not None:
@@ -1388,7 +1494,49 @@ class SubscriptionSubscriptionArgs:
              time_start: Optional[pulumi.Input[str]] = None,
              upgrade_state: Optional[pulumi.Input[str]] = None,
              upgrade_state_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'paymentGateway' in kwargs:
+            payment_gateway = kwargs['paymentGateway']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'taxInfo' in kwargs:
+            tax_info = kwargs['taxInfo']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         _setter("subscription_plan_number", subscription_plan_number)
         if account_type is not None:
             _setter("account_type", account_type)
@@ -1799,7 +1947,43 @@ class SubscriptionSubscriptionBillingAddressArgs:
              state_inscription: Optional[pulumi.Input[str]] = None,
              street_name: Optional[pulumi.Input[str]] = None,
              street_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addressKey' in kwargs:
+            address_key = kwargs['addressKey']
+        if 'companyName' in kwargs:
+            company_name = kwargs['companyName']
+        if 'contributorClass' in kwargs:
+            contributor_class = kwargs['contributorClass']
+        if 'departmentName' in kwargs:
+            department_name = kwargs['departmentName']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'internalNumber' in kwargs:
+            internal_number = kwargs['internalNumber']
+        if 'jobTitle' in kwargs:
+            job_title = kwargs['jobTitle']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'middleName' in kwargs:
+            middle_name = kwargs['middleName']
+        if 'municipalInscription' in kwargs:
+            municipal_inscription = kwargs['municipalInscription']
+        if 'phoneCountryCode' in kwargs:
+            phone_country_code = kwargs['phoneCountryCode']
+        if 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'stateInscription' in kwargs:
+            state_inscription = kwargs['stateInscription']
+        if 'streetName' in kwargs:
+            street_name = kwargs['streetName']
+        if 'streetNumber' in kwargs:
+            street_number = kwargs['streetNumber']
+
         if address_key is not None:
             _setter("address_key", address_key)
         if city is not None:
@@ -2181,7 +2365,11 @@ class SubscriptionSubscriptionPaymentGatewayArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              merchant_defined_data: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'merchantDefinedData' in kwargs:
+            merchant_defined_data = kwargs['merchantDefinedData']
+
         if merchant_defined_data is not None:
             _setter("merchant_defined_data", merchant_defined_data)
 
@@ -2217,7 +2405,13 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
              _setter: Callable[[Any, Any], None],
              cloud_account_name: Optional[pulumi.Input[str]] = None,
              promo_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudAccountName' in kwargs:
+            cloud_account_name = kwargs['cloudAccountName']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+
         if cloud_account_name is not None:
             _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -2303,7 +2497,31 @@ class SubscriptionSubscriptionPaymentOptionArgs:
              time_expiration: Optional[pulumi.Input[str]] = None,
              wallet_instrument_id: Optional[pulumi.Input[str]] = None,
              wallet_transaction_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'creditCardType' in kwargs:
+            credit_card_type = kwargs['creditCardType']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'extBillingAgreementId' in kwargs:
+            ext_billing_agreement_id = kwargs['extBillingAgreementId']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastDigits' in kwargs:
+            last_digits = kwargs['lastDigits']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'nameOnCard' in kwargs:
+            name_on_card = kwargs['nameOnCard']
+        if 'timeExpiration' in kwargs:
+            time_expiration = kwargs['timeExpiration']
+        if 'walletInstrumentId' in kwargs:
+            wallet_instrument_id = kwargs['walletInstrumentId']
+        if 'walletTransactionId' in kwargs:
+            wallet_transaction_id = kwargs['walletTransactionId']
+
         _setter("payment_method", payment_method)
         if credit_card_type is not None:
             _setter("credit_card_type", credit_card_type)
@@ -2490,7 +2708,19 @@ class SubscriptionSubscriptionTaxInfoArgs:
              tax_cnpj: Optional[pulumi.Input[str]] = None,
              tax_payer_id: Optional[pulumi.Input[str]] = None,
              tax_reg_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         if no_tax_reason_code is not None:
             _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2594,7 +2824,19 @@ class SubscriptionTaxInfoArgs:
              tax_cnpj: Optional[pulumi.Input[str]] = None,
              tax_payer_id: Optional[pulumi.Input[str]] = None,
              tax_reg_number: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'noTaxReasonCode' in kwargs:
+            no_tax_reason_code = kwargs['noTaxReasonCode']
+        if 'noTaxReasonCodeDetails' in kwargs:
+            no_tax_reason_code_details = kwargs['noTaxReasonCodeDetails']
+        if 'taxCnpj' in kwargs:
+            tax_cnpj = kwargs['taxCnpj']
+        if 'taxPayerId' in kwargs:
+            tax_payer_id = kwargs['taxPayerId']
+        if 'taxRegNumber' in kwargs:
+            tax_reg_number = kwargs['taxRegNumber']
+
         if no_tax_reason_code is not None:
             _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2688,7 +2930,9 @@ class GetInvoicesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2746,7 +2990,9 @@ class GetInvoicesInvoiceLinesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2801,7 +3047,9 @@ class GetSubscriptionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

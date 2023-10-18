@@ -35,7 +35,13 @@ class DomainReplicationToRegionArgs:
              _setter: Callable[[Any, Any], None],
              domain_id: pulumi.Input[str],
              replica_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'replicaRegion' in kwargs:
+            replica_region = kwargs['replicaRegion']
+
         _setter("domain_id", domain_id)
         if replica_region is not None:
             _setter("replica_region", replica_region)
@@ -93,7 +99,13 @@ class _DomainReplicationToRegionState:
              _setter: Callable[[Any, Any], None],
              domain_id: Optional[pulumi.Input[str]] = None,
              replica_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'replicaRegion' in kwargs:
+            replica_region = kwargs['replicaRegion']
+
         if domain_id is not None:
             _setter("domain_id", domain_id)
         if replica_region is not None:

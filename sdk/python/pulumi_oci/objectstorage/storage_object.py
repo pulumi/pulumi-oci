@@ -93,7 +93,29 @@ class StorageObjectArgs:
              source: Optional[pulumi.Input[str]] = None,
              source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
              storage_tier: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if 'contentDisposition' in kwargs:
+            content_disposition = kwargs['contentDisposition']
+        if 'contentEncoding' in kwargs:
+            content_encoding = kwargs['contentEncoding']
+        if 'contentLanguage' in kwargs:
+            content_language = kwargs['contentLanguage']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deleteAllObjectVersions' in kwargs:
+            delete_all_object_versions = kwargs['deleteAllObjectVersions']
+        if 'opcSseKmsKeyId' in kwargs:
+            opc_sse_kms_key_id = kwargs['opcSseKmsKeyId']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -414,7 +436,35 @@ class _StorageObjectState:
              storage_tier: Optional[pulumi.Input[str]] = None,
              version_id: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if 'contentDisposition' in kwargs:
+            content_disposition = kwargs['contentDisposition']
+        if 'contentEncoding' in kwargs:
+            content_encoding = kwargs['contentEncoding']
+        if 'contentLanguage' in kwargs:
+            content_language = kwargs['contentLanguage']
+        if 'contentLength' in kwargs:
+            content_length = kwargs['contentLength']
+        if 'contentMd5' in kwargs:
+            content_md5 = kwargs['contentMd5']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'deleteAllObjectVersions' in kwargs:
+            delete_all_object_versions = kwargs['deleteAllObjectVersions']
+        if 'opcSseKmsKeyId' in kwargs:
+            opc_sse_kms_key_id = kwargs['opcSseKmsKeyId']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'storageTier' in kwargs:
+            storage_tier = kwargs['storageTier']
+        if 'versionId' in kwargs:
+            version_id = kwargs['versionId']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if cache_control is not None:

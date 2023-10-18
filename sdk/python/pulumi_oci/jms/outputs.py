@@ -120,7 +120,13 @@ class FleetInventoryLog(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -187,7 +193,13 @@ class FleetOperationLog(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -227,7 +239,9 @@ class GetAnnouncementsAnnouncementCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -266,7 +280,11 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
              summary: str,
              time_released: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeReleased' in kwargs:
+            time_released = kwargs['timeReleased']
+
         _setter("key", key)
         _setter("summary", summary)
         _setter("time_released", time_released)
@@ -323,7 +341,9 @@ class GetAnnouncementsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -360,7 +380,11 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -391,7 +415,13 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'summarizedEventsLogs' in kwargs:
+            summarized_events_logs = kwargs['summarizedEventsLogs']
+
         _setter("is_enabled", is_enabled)
         _setter("summarized_events_logs", summarized_events_logs)
 
@@ -431,7 +461,13 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -467,7 +503,11 @@ class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -494,7 +534,11 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -525,7 +569,13 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'postInstallationActions' in kwargs:
+            post_installation_actions = kwargs['postInstallationActions']
+
         _setter("is_enabled", is_enabled)
         _setter("post_installation_actions", post_installation_actions)
 
@@ -583,7 +633,19 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
              minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
              proxies: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult'],
              should_replace_certificates_operating_system: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addLoggingHandler' in kwargs:
+            add_logging_handler = kwargs['addLoggingHandler']
+        if 'disabledTlsVersions' in kwargs:
+            disabled_tls_versions = kwargs['disabledTlsVersions']
+        if 'globalLoggingLevel' in kwargs:
+            global_logging_level = kwargs['globalLoggingLevel']
+        if 'minimumKeySizeSettings' in kwargs:
+            minimum_key_size_settings = kwargs['minimumKeySizeSettings']
+        if 'shouldReplaceCertificatesOperatingSystem' in kwargs:
+            should_replace_certificates_operating_system = kwargs['shouldReplaceCertificatesOperatingSystem']
+
         _setter("add_logging_handler", add_logging_handler)
         _setter("disabled_tls_versions", disabled_tls_versions)
         _setter("global_logging_level", global_logging_level)
@@ -672,7 +734,9 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
              certpaths: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult'],
              jars: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult'],
              tls: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("certpaths", certpaths)
         _setter("jars", jars)
         _setter("tls", tls)
@@ -728,7 +792,11 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
              _setter: Callable[[Any, Any], None],
              key_size: int,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         _setter("key_size", key_size)
         _setter("name", name)
 
@@ -768,7 +836,11 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
              _setter: Callable[[Any, Any], None],
              key_size: int,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         _setter("key_size", key_size)
         _setter("name", name)
 
@@ -808,7 +880,11 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
              _setter: Callable[[Any, Any], None],
              key_size: int,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keySize' in kwargs:
+            key_size = kwargs['keySize']
+
         _setter("key_size", key_size)
         _setter("name", name)
 
@@ -876,7 +952,27 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(d
              socks_proxy_host: str,
              socks_proxy_port: int,
              use_system_proxies: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ftpProxyHost' in kwargs:
+            ftp_proxy_host = kwargs['ftpProxyHost']
+        if 'ftpProxyPort' in kwargs:
+            ftp_proxy_port = kwargs['ftpProxyPort']
+        if 'httpProxyHost' in kwargs:
+            http_proxy_host = kwargs['httpProxyHost']
+        if 'httpProxyPort' in kwargs:
+            http_proxy_port = kwargs['httpProxyPort']
+        if 'httpsProxyHost' in kwargs:
+            https_proxy_host = kwargs['httpsProxyHost']
+        if 'httpsProxyPort' in kwargs:
+            https_proxy_port = kwargs['httpsProxyPort']
+        if 'socksProxyHost' in kwargs:
+            socks_proxy_host = kwargs['socksProxyHost']
+        if 'socksProxyPort' in kwargs:
+            socks_proxy_port = kwargs['socksProxyPort']
+        if 'useSystemProxies' in kwargs:
+            use_system_proxies = kwargs['useSystemProxies']
+
         _setter("ftp_proxy_host", ftp_proxy_host)
         _setter("ftp_proxy_port", ftp_proxy_port)
         _setter("http_proxy_host", http_proxy_host)
@@ -975,7 +1071,11 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -1005,7 +1105,9 @@ class GetFleetBlocklistsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1054,7 +1156,9 @@ class GetFleetBlocklistsItemResult(dict):
              operation: str,
              reason: str,
              targets: Sequence['outputs.GetFleetBlocklistsItemTargetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("operation", operation)
         _setter("reason", reason)
@@ -1116,7 +1220,15 @@ class GetFleetBlocklistsItemTargetResult(dict):
              fleet_id: str,
              installation_key: str,
              managed_instance_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fleetId' in kwargs:
+            fleet_id = kwargs['fleetId']
+        if 'installationKey' in kwargs:
+            installation_key = kwargs['installationKey']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+
         _setter("fleet_id", fleet_id)
         _setter("installation_key", installation_key)
         _setter("managed_instance_id", managed_instance_id)
@@ -1158,7 +1270,9 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1246,7 +1360,35 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
              time_last_event: str,
              total_event_count: int,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregationMode' in kwargs:
+            aggregation_mode = kwargs['aggregationMode']
+        if 'cryptoRoadmapVersion' in kwargs:
+            crypto_roadmap_version = kwargs['cryptoRoadmapVersion']
+        if 'findingCount' in kwargs:
+            finding_count = kwargs['findingCount']
+        if 'fleetId' in kwargs:
+            fleet_id = kwargs['fleetId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'nonCompliantFindingCount' in kwargs:
+            non_compliant_finding_count = kwargs['nonCompliantFindingCount']
+        if 'summarizedEventCount' in kwargs:
+            summarized_event_count = kwargs['summarizedEventCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeFirstEvent' in kwargs:
+            time_first_event = kwargs['timeFirstEvent']
+        if 'timeLastEvent' in kwargs:
+            time_last_event = kwargs['timeLastEvent']
+        if 'totalEventCount' in kwargs:
+            total_event_count = kwargs['totalEventCount']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("aggregation_mode", aggregation_mode)
         _setter("bucket", bucket)
         _setter("crypto_roadmap_version", crypto_roadmap_version)
@@ -1420,7 +1562,9 @@ class GetFleetCryptoAnalysisResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1460,7 +1604,9 @@ class GetFleetDiagnosesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1497,7 +1643,9 @@ class GetFleetDiagnosesFleetDiagnosisCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1536,7 +1684,17 @@ class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
              resource_id: str,
              resource_state: str,
              resource_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resourceDiagnosis' in kwargs:
+            resource_diagnosis = kwargs['resourceDiagnosis']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceState' in kwargs:
+            resource_state = kwargs['resourceState']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("resource_diagnosis", resource_diagnosis)
         _setter("resource_id", resource_id)
         _setter("resource_state", resource_state)
@@ -1594,7 +1752,13 @@ class GetFleetInventoryLogResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -1633,7 +1797,9 @@ class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1667,7 +1833,9 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionR
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1751,7 +1919,33 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
              target_jdk_version: str,
              time_created: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationExecutionType' in kwargs:
+            application_execution_type = kwargs['applicationExecutionType']
+        if 'applicationName' in kwargs:
+            application_name = kwargs['applicationName']
+        if 'applicationPath' in kwargs:
+            application_path = kwargs['applicationPath']
+        if 'fleetId' in kwargs:
+            fleet_id = kwargs['fleetId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'objectLists' in kwargs:
+            object_lists = kwargs['objectLists']
+        if 'objectStorageUploadDirPath' in kwargs:
+            object_storage_upload_dir_path = kwargs['objectStorageUploadDirPath']
+        if 'sourceJdkVersion' in kwargs:
+            source_jdk_version = kwargs['sourceJdkVersion']
+        if 'targetJdkVersion' in kwargs:
+            target_jdk_version = kwargs['targetJdkVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("application_execution_type", application_execution_type)
         _setter("application_name", application_name)
         _setter("application_path", application_path)
@@ -1917,7 +2111,13 @@ class GetFleetOperationLogResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -1956,7 +2156,9 @@ class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1990,7 +2192,9 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2078,7 +2282,33 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
              time_started: str,
              warning_count: int,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'applicationInstallationId' in kwargs:
+            application_installation_id = kwargs['applicationInstallationId']
+        if 'applicationInstallationPath' in kwargs:
+            application_installation_path = kwargs['applicationInstallationPath']
+        if 'applicationName' in kwargs:
+            application_name = kwargs['applicationName']
+        if 'fleetId' in kwargs:
+            fleet_id = kwargs['fleetId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if 'warningCount' in kwargs:
+            warning_count = kwargs['warningCount']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("application_id", application_id)
         _setter("application_installation_id", application_installation_id)
         _setter("application_installation_path", application_installation_path)
@@ -2252,7 +2482,9 @@ class GetFleetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2286,7 +2518,9 @@ class GetFleetsFleetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFleetsFleetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2374,7 +2608,37 @@ class GetFleetsFleetCollectionItemResult(dict):
              state: str,
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateApplicationCount' in kwargs:
+            approximate_application_count = kwargs['approximateApplicationCount']
+        if 'approximateInstallationCount' in kwargs:
+            approximate_installation_count = kwargs['approximateInstallationCount']
+        if 'approximateJavaServerCount' in kwargs:
+            approximate_java_server_count = kwargs['approximateJavaServerCount']
+        if 'approximateJreCount' in kwargs:
+            approximate_jre_count = kwargs['approximateJreCount']
+        if 'approximateManagedInstanceCount' in kwargs:
+            approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inventoryLogs' in kwargs:
+            inventory_logs = kwargs['inventoryLogs']
+        if 'isAdvancedFeaturesEnabled' in kwargs:
+            is_advanced_features_enabled = kwargs['isAdvancedFeaturesEnabled']
+        if 'operationLogs' in kwargs:
+            operation_logs = kwargs['operationLogs']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("approximate_application_count", approximate_application_count)
         _setter("approximate_installation_count", approximate_installation_count)
         _setter("approximate_java_server_count", approximate_java_server_count)
@@ -2549,7 +2813,13 @@ class GetFleetsFleetCollectionItemInventoryLogResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -2589,7 +2859,13 @@ class GetFleetsFleetCollectionItemOperationLogResult(dict):
              _setter: Callable[[Any, Any], None],
              log_group_id: str,
              log_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         _setter("log_group_id", log_group_id)
         _setter("log_id", log_id)
 
@@ -2661,7 +2937,21 @@ class GetInstallationSiteItemResult(dict):
              security_status: str,
              state: str,
              time_last_seen: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateApplicationCount' in kwargs:
+            approximate_application_count = kwargs['approximateApplicationCount']
+        if 'installationKey' in kwargs:
+            installation_key = kwargs['installationKey']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'securityStatus' in kwargs:
+            security_status = kwargs['securityStatus']
+        if 'timeLastSeen' in kwargs:
+            time_last_seen = kwargs['timeLastSeen']
+
         _setter("approximate_application_count", approximate_application_count)
         _setter("blocklists", blocklists)
         _setter("installation_key", installation_key)
@@ -2773,7 +3063,9 @@ class GetInstallationSiteItemBlocklistResult(dict):
              _setter: Callable[[Any, Any], None],
              operation: str,
              reason: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operation", operation)
         _setter("reason", reason)
 
@@ -2821,7 +3113,11 @@ class GetInstallationSiteItemJreResult(dict):
              jre_key: str,
              vendor: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jreKey' in kwargs:
+            jre_key = kwargs['jreKey']
+
         _setter("distribution", distribution)
         _setter("jre_key", jre_key)
         _setter("vendor", vendor)
@@ -2891,7 +3187,11 @@ class GetInstallationSiteItemOperatingSystemResult(dict):
              managed_instance_count: int,
              name: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+
         _setter("architecture", architecture)
         _setter("family", family)
         _setter("managed_instance_count", managed_instance_count)
@@ -2960,7 +3260,9 @@ class GetInstallationSitesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3000,7 +3302,9 @@ class GetInstallationSitesInstallationSiteCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3027,7 +3331,9 @@ class GetInstallationSitesInstallationSiteCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3090,7 +3396,21 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
              security_status: str,
              state: str,
              time_last_seen: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateApplicationCount' in kwargs:
+            approximate_application_count = kwargs['approximateApplicationCount']
+        if 'installationKey' in kwargs:
+            installation_key = kwargs['installationKey']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'securityStatus' in kwargs:
+            security_status = kwargs['securityStatus']
+        if 'timeLastSeen' in kwargs:
+            time_last_seen = kwargs['timeLastSeen']
+
         _setter("approximate_application_count", approximate_application_count)
         _setter("blocklists", blocklists)
         _setter("installation_key", installation_key)
@@ -3202,7 +3522,9 @@ class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict
              _setter: Callable[[Any, Any], None],
              operation: str,
              reason: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operation", operation)
         _setter("reason", reason)
 
@@ -3250,7 +3572,11 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
              jre_key: str,
              vendor: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'jreKey' in kwargs:
+            jre_key = kwargs['jreKey']
+
         _setter("distribution", distribution)
         _setter("jre_key", jre_key)
         _setter("vendor", vendor)
@@ -3320,7 +3646,11 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
              managed_instance_count: int,
              name: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+
         _setter("architecture", architecture)
         _setter("family", family)
         _setter("managed_instance_count", managed_instance_count)
@@ -3386,7 +3716,9 @@ class GetJavaFamiliesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3420,7 +3752,9 @@ class GetJavaFamiliesJavaFamilyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3460,7 +3794,19 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
              end_of_support_life_date: str,
              family_version: str,
              support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'docUrl' in kwargs:
+            doc_url = kwargs['docUrl']
+        if 'endOfSupportLifeDate' in kwargs:
+            end_of_support_life_date = kwargs['endOfSupportLifeDate']
+        if 'familyVersion' in kwargs:
+            family_version = kwargs['familyVersion']
+        if 'supportType' in kwargs:
+            support_type = kwargs['supportType']
+
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
         _setter("end_of_support_life_date", end_of_support_life_date)
@@ -3539,7 +3885,17 @@ class GetJavaReleaseArtifactResult(dict):
              artifact_description: str,
              artifact_id: str,
              sha256: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateFileSizeInBytes' in kwargs:
+            approximate_file_size_in_bytes = kwargs['approximateFileSizeInBytes']
+        if 'artifactContentType' in kwargs:
+            artifact_content_type = kwargs['artifactContentType']
+        if 'artifactDescription' in kwargs:
+            artifact_description = kwargs['artifactDescription']
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+
         _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
         _setter("artifact_content_type", artifact_content_type)
         _setter("artifact_description", artifact_description)
@@ -3618,7 +3974,19 @@ class GetJavaReleaseFamilyDetailResult(dict):
              end_of_support_life_date: str,
              family_version: str,
              support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'docUrl' in kwargs:
+            doc_url = kwargs['docUrl']
+        if 'endOfSupportLifeDate' in kwargs:
+            end_of_support_life_date = kwargs['endOfSupportLifeDate']
+        if 'familyVersion' in kwargs:
+            family_version = kwargs['familyVersion']
+        if 'supportType' in kwargs:
+            support_type = kwargs['supportType']
+
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
         _setter("end_of_support_life_date", end_of_support_life_date)
@@ -3689,7 +4057,15 @@ class GetJavaReleaseLicenseDetailResult(dict):
              display_name: str,
              license_type: str,
              license_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'licenseUrl' in kwargs:
+            license_url = kwargs['licenseUrl']
+
         _setter("display_name", display_name)
         _setter("license_type", license_type)
         _setter("license_url", license_url)
@@ -3737,7 +4113,9 @@ class GetJavaReleasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3771,7 +4149,9 @@ class GetJavaReleasesJavaReleaseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3839,7 +4219,31 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
              release_type: str,
              release_version: str,
              security_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentTypes' in kwargs:
+            artifact_content_types = kwargs['artifactContentTypes']
+        if 'familyDetails' in kwargs:
+            family_details = kwargs['familyDetails']
+        if 'familyVersion' in kwargs:
+            family_version = kwargs['familyVersion']
+        if 'licenseDetails' in kwargs:
+            license_details = kwargs['licenseDetails']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'parentReleaseVersion' in kwargs:
+            parent_release_version = kwargs['parentReleaseVersion']
+        if 'releaseDate' in kwargs:
+            release_date = kwargs['releaseDate']
+        if 'releaseNotesUrl' in kwargs:
+            release_notes_url = kwargs['releaseNotesUrl']
+        if 'releaseType' in kwargs:
+            release_type = kwargs['releaseType']
+        if 'releaseVersion' in kwargs:
+            release_version = kwargs['releaseVersion']
+        if 'securityStatus' in kwargs:
+            security_status = kwargs['securityStatus']
+
         _setter("artifact_content_types", artifact_content_types)
         _setter("artifacts", artifacts)
         _setter("family_details", family_details)
@@ -3981,7 +4385,17 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
              artifact_description: str,
              artifact_id: str,
              sha256: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateFileSizeInBytes' in kwargs:
+            approximate_file_size_in_bytes = kwargs['approximateFileSizeInBytes']
+        if 'artifactContentType' in kwargs:
+            artifact_content_type = kwargs['artifactContentType']
+        if 'artifactDescription' in kwargs:
+            artifact_description = kwargs['artifactDescription']
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+
         _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
         _setter("artifact_content_type", artifact_content_type)
         _setter("artifact_description", artifact_description)
@@ -4060,7 +4474,19 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
              end_of_support_life_date: str,
              family_version: str,
              support_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'docUrl' in kwargs:
+            doc_url = kwargs['docUrl']
+        if 'endOfSupportLifeDate' in kwargs:
+            end_of_support_life_date = kwargs['endOfSupportLifeDate']
+        if 'familyVersion' in kwargs:
+            family_version = kwargs['familyVersion']
+        if 'supportType' in kwargs:
+            support_type = kwargs['supportType']
+
         _setter("display_name", display_name)
         _setter("doc_url", doc_url)
         _setter("end_of_support_life_date", end_of_support_life_date)
@@ -4131,7 +4557,15 @@ class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
              display_name: str,
              license_type: str,
              license_url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'licenseUrl' in kwargs:
+            license_url = kwargs['licenseUrl']
+
         _setter("display_name", display_name)
         _setter("license_type", license_type)
         _setter("license_url", license_url)
@@ -4248,7 +4682,39 @@ class GetListJreUsageItemResult(dict):
              time_start: str,
              vendor: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approximateApplicationCount' in kwargs:
+            approximate_application_count = kwargs['approximateApplicationCount']
+        if 'approximateInstallationCount' in kwargs:
+            approximate_installation_count = kwargs['approximateInstallationCount']
+        if 'approximateManagedInstanceCount' in kwargs:
+            approximate_managed_instance_count = kwargs['approximateManagedInstanceCount']
+        if 'approximatePendingWorkRequestCount' in kwargs:
+            approximate_pending_work_request_count = kwargs['approximatePendingWorkRequestCount']
+        if 'daysUnderSecurityBaseline' in kwargs:
+            days_under_security_baseline = kwargs['daysUnderSecurityBaseline']
+        if 'endOfSupportLifeDate' in kwargs:
+            end_of_support_life_date = kwargs['endOfSupportLifeDate']
+        if 'fleetId' in kwargs:
+            fleet_id = kwargs['fleetId']
+        if 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if 'operatingSystems' in kwargs:
+            operating_systems = kwargs['operatingSystems']
+        if 'releaseDate' in kwargs:
+            release_date = kwargs['releaseDate']
+        if 'securityStatus' in kwargs:
+            security_status = kwargs['securityStatus']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeFirstSeen' in kwargs:
+            time_first_seen = kwargs['timeFirstSeen']
+        if 'timeLastSeen' in kwargs:
+            time_last_seen = kwargs['timeLastSeen']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("approximate_application_count", approximate_application_count)
         _setter("approximate_installation_count", approximate_installation_count)
         _setter("approximate_managed_instance_count", approximate_managed_instance_count)
@@ -4453,7 +4919,11 @@ class GetListJreUsageItemOperatingSystemResult(dict):
              managed_instance_count: int,
              name: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+
         _setter("architecture", architecture)
         _setter("family", family)
         _setter("managed_instance_count", managed_instance_count)

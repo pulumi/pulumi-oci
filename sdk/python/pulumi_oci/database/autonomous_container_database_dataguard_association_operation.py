@@ -35,7 +35,13 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
              autonomous_container_database_dataguard_association_id: pulumi.Input[str],
              autonomous_container_database_id: pulumi.Input[str],
              operation: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+
         _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         _setter("autonomous_container_database_id", autonomous_container_database_id)
         _setter("operation", operation)
@@ -101,7 +107,13 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
              autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
              autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
              operation: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+
         if autonomous_container_database_dataguard_association_id is not None:
             _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         if autonomous_container_database_id is not None:

@@ -47,7 +47,9 @@ class GetHttpMonitorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -152,7 +154,31 @@ class GetHttpMonitorsHttpMonitorResult(dict):
              time_created: str,
              timeout_in_seconds: int,
              vantage_point_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'homeRegion' in kwargs:
+            home_region = kwargs['homeRegion']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resultsUrl' in kwargs:
+            results_url = kwargs['resultsUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -335,7 +361,9 @@ class GetHttpProbeResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -469,7 +497,45 @@ class GetHttpProbeResultsHttpProbeResultResult(dict):
              status_code: int,
              target: str,
              vantage_point_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectEnd' in kwargs:
+            connect_end = kwargs['connectEnd']
+        if 'connectStart' in kwargs:
+            connect_start = kwargs['connectStart']
+        if 'domainLookupEnd' in kwargs:
+            domain_lookup_end = kwargs['domainLookupEnd']
+        if 'domainLookupStart' in kwargs:
+            domain_lookup_start = kwargs['domainLookupStart']
+        if 'encodedBodySize' in kwargs:
+            encoded_body_size = kwargs['encodedBodySize']
+        if 'errorCategory' in kwargs:
+            error_category = kwargs['errorCategory']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'fetchStart' in kwargs:
+            fetch_start = kwargs['fetchStart']
+        if 'isHealthy' in kwargs:
+            is_healthy = kwargs['isHealthy']
+        if 'isTimedOut' in kwargs:
+            is_timed_out = kwargs['isTimedOut']
+        if 'probeConfigurationId' in kwargs:
+            probe_configuration_id = kwargs['probeConfigurationId']
+        if 'requestStart' in kwargs:
+            request_start = kwargs['requestStart']
+        if 'responseEnd' in kwargs:
+            response_end = kwargs['responseEnd']
+        if 'responseStart' in kwargs:
+            response_start = kwargs['responseStart']
+        if 'secureConnectionStart' in kwargs:
+            secure_connection_start = kwargs['secureConnectionStart']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+        if 'vantagePointName' in kwargs:
+            vantage_point_name = kwargs['vantagePointName']
+
         _setter("connect_end", connect_end)
         _setter("connect_start", connect_start)
         _setter("connections", connections)
@@ -720,7 +786,13 @@ class GetHttpProbeResultsHttpProbeResultConnectionResult(dict):
              connect_duration: float,
              port: int,
              secure_connect_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectDuration' in kwargs:
+            connect_duration = kwargs['connectDuration']
+        if 'secureConnectDuration' in kwargs:
+            secure_connect_duration = kwargs['secureConnectDuration']
+
         _setter("address", address)
         _setter("connect_duration", connect_duration)
         _setter("port", port)
@@ -778,7 +850,11 @@ class GetHttpProbeResultsHttpProbeResultDnResult(dict):
              _setter: Callable[[Any, Any], None],
              addresses: Sequence[str],
              domain_lookup_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainLookupDuration' in kwargs:
+            domain_lookup_duration = kwargs['domainLookupDuration']
+
         _setter("addresses", addresses)
         _setter("domain_lookup_duration", domain_lookup_duration)
 
@@ -817,7 +893,9 @@ class GetPingMonitorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -910,7 +988,31 @@ class GetPingMonitorsPingMonitorResult(dict):
              time_created: str,
              timeout_in_seconds: int,
              vantage_point_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'homeRegion' in kwargs:
+            home_region = kwargs['homeRegion']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resultsUrl' in kwargs:
+            results_url = kwargs['resultsUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -1066,7 +1168,9 @@ class GetPingProbeResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1168,7 +1272,31 @@ class GetPingProbeResultsPingProbeResultResult(dict):
              start_time: float,
              target: str,
              vantage_point_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainLookupEnd' in kwargs:
+            domain_lookup_end = kwargs['domainLookupEnd']
+        if 'domainLookupStart' in kwargs:
+            domain_lookup_start = kwargs['domainLookupStart']
+        if 'errorCategory' in kwargs:
+            error_category = kwargs['errorCategory']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'icmpCode' in kwargs:
+            icmp_code = kwargs['icmpCode']
+        if 'isHealthy' in kwargs:
+            is_healthy = kwargs['isHealthy']
+        if 'isTimedOut' in kwargs:
+            is_timed_out = kwargs['isTimedOut']
+        if 'latencyInMs' in kwargs:
+            latency_in_ms = kwargs['latencyInMs']
+        if 'probeConfigurationId' in kwargs:
+            probe_configuration_id = kwargs['probeConfigurationId']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'vantagePointName' in kwargs:
+            vantage_point_name = kwargs['vantagePointName']
+
         _setter("connections", connections)
         _setter("dns", dns)
         _setter("domain_lookup_end", domain_lookup_end)
@@ -1339,7 +1467,9 @@ class GetPingProbeResultsPingProbeResultConnectionResult(dict):
              _setter: Callable[[Any, Any], None],
              address: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("address", address)
         _setter("port", port)
 
@@ -1379,7 +1509,11 @@ class GetPingProbeResultsPingProbeResultDnResult(dict):
              _setter: Callable[[Any, Any], None],
              addresses: Sequence[str],
              domain_lookup_duration: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'domainLookupDuration' in kwargs:
+            domain_lookup_duration = kwargs['domainLookupDuration']
+
         _setter("addresses", addresses)
         _setter("domain_lookup_duration", domain_lookup_duration)
 
@@ -1421,7 +1555,9 @@ class GetVantagePointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1477,7 +1613,13 @@ class GetVantagePointsHealthChecksVantagePointResult(dict):
              name: str,
              provider_name: str,
              routings: Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'providerName' in kwargs:
+            provider_name = kwargs['providerName']
+
         _setter("display_name", display_name)
         _setter("geos", geos)
         _setter("name", name)
@@ -1564,7 +1706,19 @@ class GetVantagePointsHealthChecksVantagePointGeoResult(dict):
              geo_key: str,
              latitude: float,
              longitude: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminDivCode' in kwargs:
+            admin_div_code = kwargs['adminDivCode']
+        if 'cityName' in kwargs:
+            city_name = kwargs['cityName']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'countryName' in kwargs:
+            country_name = kwargs['countryName']
+        if 'geoKey' in kwargs:
+            geo_key = kwargs['geoKey']
+
         _setter("admin_div_code", admin_div_code)
         _setter("city_name", city_name)
         _setter("country_code", country_code)
@@ -1657,7 +1811,11 @@ class GetVantagePointsHealthChecksVantagePointRoutingResult(dict):
              asn: int,
              prefix: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'asLabel' in kwargs:
+            as_label = kwargs['asLabel']
+
         _setter("as_label", as_label)
         _setter("asn", asn)
         _setter("prefix", prefix)

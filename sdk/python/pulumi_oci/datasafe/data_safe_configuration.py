@@ -37,7 +37,13 @@ class DataSafeConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              is_enabled: pulumi.Input[bool],
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("is_enabled", is_enabled)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -123,7 +129,23 @@ class _DataSafeConfigurationState:
              state: Optional[pulumi.Input[str]] = None,
              time_enabled: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataSafeNatGatewayIpAddress' in kwargs:
+            data_safe_nat_gateway_ip_address = kwargs['dataSafeNatGatewayIpAddress']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'globalSettings' in kwargs:
+            global_settings = kwargs['globalSettings']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeEnabled' in kwargs:
+            time_enabled = kwargs['timeEnabled']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if data_safe_nat_gateway_ip_address is not None:

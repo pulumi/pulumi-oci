@@ -65,7 +65,19 @@ class GetCommitmentsCommitmentResult(dict):
              time_end: str,
              time_start: str,
              used_amount: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'usedAmount' in kwargs:
+            used_amount = kwargs['usedAmount']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("id", id)
@@ -149,7 +161,9 @@ class GetCommitmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -192,7 +206,9 @@ class GetRatecardsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -264,7 +280,23 @@ class GetRatecardsRateCardResult(dict):
              rate_card_tiers: Sequence['outputs.GetRatecardsRateCardRateCardTierResult'],
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'discretionaryDiscountPercentage' in kwargs:
+            discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
+        if 'isTier' in kwargs:
+            is_tier = kwargs['isTier']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'rateCardTiers' in kwargs:
+            rate_card_tiers = kwargs['rateCardTiers']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("discretionary_discount_percentage", discretionary_discount_percentage)
         _setter("is_tier", is_tier)
@@ -371,7 +403,13 @@ class GetRatecardsRateCardCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -436,7 +474,19 @@ class GetRatecardsRateCardProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -516,7 +566,15 @@ class GetRatecardsRateCardRateCardTierResult(dict):
              net_unit_price: str,
              overage_price: str,
              up_to_quantity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'upToQuantity' in kwargs:
+            up_to_quantity = kwargs['upToQuantity']
+
         _setter("net_unit_price", net_unit_price)
         _setter("overage_price", overage_price)
         _setter("up_to_quantity", up_to_quantity)
@@ -567,7 +625,9 @@ class GetSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -627,7 +687,17 @@ class GetSubscriptionsSubscriptionResult(dict):
              subscribed_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult'],
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'subscribedServices' in kwargs:
+            subscribed_services = kwargs['subscribedServices']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("service_name", service_name)
         _setter("status", status)
@@ -707,7 +777,13 @@ class GetSubscriptionsSubscriptionCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -836,7 +912,43 @@ class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
              time_end: str,
              time_start: str,
              total_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bookingOptyNumber' in kwargs:
+            booking_opty_number = kwargs['bookingOptyNumber']
+        if 'commitmentServices' in kwargs:
+            commitment_services = kwargs['commitmentServices']
+        if 'dataCenterRegion' in kwargs:
+            data_center_region = kwargs['dataCenterRegion']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'operationType' in kwargs:
+            operation_type = kwargs['operationType']
+        if 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if 'partnerTransactionType' in kwargs:
+            partner_transaction_type = kwargs['partnerTransactionType']
+        if 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if 'programType' in kwargs:
+            program_type = kwargs['programType']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+        if 'termValue' in kwargs:
+            term_value = kwargs['termValue']
+        if 'termValueUom' in kwargs:
+            term_value_uom = kwargs['termValueUom']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+
         _setter("booking_opty_number", booking_opty_number)
         _setter("commitment_services", commitment_services)
         _setter("csi", csi)
@@ -1072,7 +1184,19 @@ class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict)
              quantity: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("line_net_amount", line_net_amount)
@@ -1156,7 +1280,15 @@ class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
              part_number: str,
              provisioning_group: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("name", name)
         _setter("part_number", part_number)
         _setter("provisioning_group", provisioning_group)

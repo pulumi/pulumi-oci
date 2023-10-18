@@ -61,7 +61,23 @@ class DeployArtifactArgs:
              description: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'argumentSubstitutionMode' in kwargs:
+            argument_substitution_mode = kwargs['argumentSubstitutionMode']
+        if 'deployArtifactSource' in kwargs:
+            deploy_artifact_source = kwargs['deployArtifactSource']
+        if 'deployArtifactType' in kwargs:
+            deploy_artifact_type = kwargs['deployArtifactType']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("argument_substitution_mode", argument_substitution_mode)
         _setter("deploy_artifact_source", deploy_artifact_source)
         _setter("deploy_artifact_type", deploy_artifact_type)
@@ -248,7 +264,33 @@ class _DeployArtifactState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'argumentSubstitutionMode' in kwargs:
+            argument_substitution_mode = kwargs['argumentSubstitutionMode']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deployArtifactSource' in kwargs:
+            deploy_artifact_source = kwargs['deployArtifactSource']
+        if 'deployArtifactType' in kwargs:
+            deploy_artifact_type = kwargs['deployArtifactType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if argument_substitution_mode is not None:
             _setter("argument_substitution_mode", argument_substitution_mode)
         if compartment_id is not None:

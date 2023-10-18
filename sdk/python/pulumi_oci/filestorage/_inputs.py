@@ -72,7 +72,21 @@ class ExportExportOptionArgs:
              identity_squash: Optional[pulumi.Input[str]] = None,
              is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
              require_privileged_source_port: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedAuths' in kwargs:
+            allowed_auths = kwargs['allowedAuths']
+        if 'anonymousGid' in kwargs:
+            anonymous_gid = kwargs['anonymousGid']
+        if 'anonymousUid' in kwargs:
+            anonymous_uid = kwargs['anonymousUid']
+        if 'identitySquash' in kwargs:
+            identity_squash = kwargs['identitySquash']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'requirePrivilegedSourcePort' in kwargs:
+            require_privileged_source_port = kwargs['requirePrivilegedSourcePort']
+
         _setter("source", source)
         if access is not None:
             _setter("access", access)
@@ -211,7 +225,13 @@ class FileSystemSourceDetailArgs:
              _setter: Callable[[Any, Any], None],
              parent_file_system_id: Optional[pulumi.Input[str]] = None,
              source_snapshot_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parentFileSystemId' in kwargs:
+            parent_file_system_id = kwargs['parentFileSystemId']
+        if 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+
         if parent_file_system_id is not None:
             _setter("parent_file_system_id", parent_file_system_id)
         if source_snapshot_id is not None:
@@ -293,7 +313,23 @@ class FilesystemSnapshotPolicyScheduleArgs:
              retention_duration_in_seconds: Optional[pulumi.Input[str]] = None,
              schedule_prefix: Optional[pulumi.Input[str]] = None,
              time_schedule_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'dayOfMonth' in kwargs:
+            day_of_month = kwargs['dayOfMonth']
+        if 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if 'hourOfDay' in kwargs:
+            hour_of_day = kwargs['hourOfDay']
+        if 'retentionDurationInSeconds' in kwargs:
+            retention_duration_in_seconds = kwargs['retentionDurationInSeconds']
+        if 'schedulePrefix' in kwargs:
+            schedule_prefix = kwargs['schedulePrefix']
+        if 'timeScheduleStart' in kwargs:
+            time_schedule_start = kwargs['timeScheduleStart']
+
         _setter("period", period)
         _setter("time_zone", time_zone)
         if day_of_month is not None:
@@ -451,7 +487,19 @@ class MountTargetKerberosArgs:
              current_key_tab_secret_version: Optional[pulumi.Input[int]] = None,
              is_kerberos_enabled: Optional[pulumi.Input[bool]] = None,
              key_tab_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kerberosRealm' in kwargs:
+            kerberos_realm = kwargs['kerberosRealm']
+        if 'backupKeyTabSecretVersion' in kwargs:
+            backup_key_tab_secret_version = kwargs['backupKeyTabSecretVersion']
+        if 'currentKeyTabSecretVersion' in kwargs:
+            current_key_tab_secret_version = kwargs['currentKeyTabSecretVersion']
+        if 'isKerberosEnabled' in kwargs:
+            is_kerberos_enabled = kwargs['isKerberosEnabled']
+        if 'keyTabSecretId' in kwargs:
+            key_tab_secret_id = kwargs['keyTabSecretId']
+
         _setter("kerberos_realm", kerberos_realm)
         if backup_key_tab_secret_version is not None:
             _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
@@ -566,7 +614,25 @@ class MountTargetLdapIdmapArgs:
              outbound_connector2id: Optional[pulumi.Input[str]] = None,
              schema_type: Optional[pulumi.Input[str]] = None,
              user_search_base: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheLifetimeSeconds' in kwargs:
+            cache_lifetime_seconds = kwargs['cacheLifetimeSeconds']
+        if 'cacheRefreshIntervalSeconds' in kwargs:
+            cache_refresh_interval_seconds = kwargs['cacheRefreshIntervalSeconds']
+        if 'groupSearchBase' in kwargs:
+            group_search_base = kwargs['groupSearchBase']
+        if 'negativeCacheLifetimeSeconds' in kwargs:
+            negative_cache_lifetime_seconds = kwargs['negativeCacheLifetimeSeconds']
+        if 'outboundConnector1id' in kwargs:
+            outbound_connector1id = kwargs['outboundConnector1id']
+        if 'outboundConnector2id' in kwargs:
+            outbound_connector2id = kwargs['outboundConnector2id']
+        if 'schemaType' in kwargs:
+            schema_type = kwargs['schemaType']
+        if 'userSearchBase' in kwargs:
+            user_search_base = kwargs['userSearchBase']
+
         if cache_lifetime_seconds is not None:
             _setter("cache_lifetime_seconds", cache_lifetime_seconds)
         if cache_refresh_interval_seconds is not None:
@@ -700,7 +766,9 @@ class OutboundConnectorEndpointArgs:
              _setter: Callable[[Any, Any], None],
              hostname: pulumi.Input[str],
              port: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("port", port)
 
@@ -747,7 +815,9 @@ class GetExportSetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -799,7 +869,9 @@ class GetExportsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -851,7 +923,9 @@ class GetFileSystemsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -903,7 +977,9 @@ class GetFilesystemSnapshotPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -955,7 +1031,9 @@ class GetMountTargetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1007,7 +1085,9 @@ class GetOutboundConnectorsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1059,7 +1139,9 @@ class GetReplicationTargetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1111,7 +1193,9 @@ class GetReplicationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1166,7 +1250,9 @@ class GetSnapshotsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -49,7 +49,21 @@ class SessionArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              key_type: Optional[pulumi.Input[str]] = None,
              session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionId' in kwargs:
+            bastion_id = kwargs['bastionId']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+        if 'targetResourceDetails' in kwargs:
+            target_resource_details = kwargs['targetResourceDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+        if 'sessionTtlInSeconds' in kwargs:
+            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
+
         _setter("bastion_id", bastion_id)
         _setter("key_details", key_details)
         _setter("target_resource_details", target_resource_details)
@@ -201,7 +215,35 @@ class _SessionState:
              target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionId' in kwargs:
+            bastion_id = kwargs['bastionId']
+        if 'bastionName' in kwargs:
+            bastion_name = kwargs['bastionName']
+        if 'bastionPublicHostKeyInfo' in kwargs:
+            bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
+        if 'bastionUserName' in kwargs:
+            bastion_user_name = kwargs['bastionUserName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+        if 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'sessionTtlInSeconds' in kwargs:
+            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
+        if 'sshMetadata' in kwargs:
+            ssh_metadata = kwargs['sshMetadata']
+        if 'targetResourceDetails' in kwargs:
+            target_resource_details = kwargs['targetResourceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bastion_id is not None:
             _setter("bastion_id", bastion_id)
         if bastion_name is not None:

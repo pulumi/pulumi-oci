@@ -35,7 +35,9 @@ class GetOceInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -178,7 +180,51 @@ class GetOceInstancesOceInstanceResult(dict):
              time_updated: str,
              upgrade_schedule: str,
              waf_primary_domain: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addOnFeatures' in kwargs:
+            add_on_features = kwargs['addOnFeatures']
+        if 'adminEmail' in kwargs:
+            admin_email = kwargs['adminEmail']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'drRegion' in kwargs:
+            dr_region = kwargs['drRegion']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'idcsTenancy' in kwargs:
+            idcs_tenancy = kwargs['idcsTenancy']
+        if 'instanceAccessType' in kwargs:
+            instance_access_type = kwargs['instanceAccessType']
+        if 'instanceLicenseType' in kwargs:
+            instance_license_type = kwargs['instanceLicenseType']
+        if 'instanceUsageType' in kwargs:
+            instance_usage_type = kwargs['instanceUsageType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'tenancyName' in kwargs:
+            tenancy_name = kwargs['tenancyName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradeSchedule' in kwargs:
+            upgrade_schedule = kwargs['upgradeSchedule']
+        if 'wafPrimaryDomain' in kwargs:
+            waf_primary_domain = kwargs['wafPrimaryDomain']
+
         _setter("add_on_features", add_on_features)
         _setter("admin_email", admin_email)
         _setter("compartment_id", compartment_id)

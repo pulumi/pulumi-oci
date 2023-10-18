@@ -52,10 +52,12 @@ export interface GetPluggableDatabaseResult {
      * Connection strings to connect to an Oracle Pluggable Database.
      */
     readonly connectionStrings: outputs.Database.GetPluggableDatabaseConnectionString[];
+    readonly containerDatabaseAdminPassword: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
     readonly containerDatabaseId: string;
+    readonly convertToRegularTrigger: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -81,16 +83,27 @@ export interface GetPluggableDatabaseResult {
      */
     readonly openMode: string;
     readonly pdbAdminPassword: string;
+    readonly pdbCreationTypeDetails: outputs.Database.GetPluggableDatabasePdbCreationTypeDetail[];
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
     readonly pdbName: string;
+    /**
+     * Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+     */
+    readonly pdbNodeLevelDetails: outputs.Database.GetPluggableDatabasePdbNodeLevelDetail[];
     readonly pluggableDatabaseId: string;
     /**
      * The configuration of the Pluggable Database Management service.
      */
     readonly pluggableDatabaseManagementConfigs: outputs.Database.GetPluggableDatabasePluggableDatabaseManagementConfig[];
+    readonly refreshTrigger: number;
+    /**
+     * Pluggable Database Refreshable Clone Configuration.
+     */
+    readonly refreshableCloneConfigs: outputs.Database.GetPluggableDatabaseRefreshableCloneConfig[];
     readonly rotateKeyTrigger: number;
+    readonly shouldCreatePdbBackup: boolean;
     readonly shouldPdbAdminAccountBeLocked: boolean;
     /**
      * The current state of the pluggable database.

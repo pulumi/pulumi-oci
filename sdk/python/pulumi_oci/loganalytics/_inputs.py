@@ -79,7 +79,27 @@ class LogAnalyticsImportCustomContentChangeListArgs:
              updated_field_display_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              updated_parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              updated_source_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conflictFieldDisplayNames' in kwargs:
+            conflict_field_display_names = kwargs['conflictFieldDisplayNames']
+        if 'conflictParserNames' in kwargs:
+            conflict_parser_names = kwargs['conflictParserNames']
+        if 'conflictSourceNames' in kwargs:
+            conflict_source_names = kwargs['conflictSourceNames']
+        if 'createdFieldDisplayNames' in kwargs:
+            created_field_display_names = kwargs['createdFieldDisplayNames']
+        if 'createdParserNames' in kwargs:
+            created_parser_names = kwargs['createdParserNames']
+        if 'createdSourceNames' in kwargs:
+            created_source_names = kwargs['createdSourceNames']
+        if 'updatedFieldDisplayNames' in kwargs:
+            updated_field_display_names = kwargs['updatedFieldDisplayNames']
+        if 'updatedParserNames' in kwargs:
+            updated_parser_names = kwargs['updatedParserNames']
+        if 'updatedSourceNames' in kwargs:
+            updated_source_names = kwargs['updatedSourceNames']
+
         if conflict_field_display_names is not None:
             _setter("conflict_field_display_names", conflict_field_display_names)
         if conflict_parser_names is not None:
@@ -229,7 +249,17 @@ class LogAnalyticsObjectCollectionRuleOverrideArgs:
              match_value: Optional[pulumi.Input[str]] = None,
              property_name: Optional[pulumi.Input[str]] = None,
              property_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+        if 'matchValue' in kwargs:
+            match_value = kwargs['matchValue']
+        if 'propertyName' in kwargs:
+            property_name = kwargs['propertyName']
+        if 'propertyValue' in kwargs:
+            property_value = kwargs['propertyValue']
+
         if match_type is not None:
             _setter("match_type", match_type)
         if match_value is not None:
@@ -295,7 +325,9 @@ class LogAnalyticsPreferencesManagementItemArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -365,7 +397,15 @@ class NamespaceIngestTimeRuleActionArgs:
              type: pulumi.Input[str],
              dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         _setter("compartment_id", compartment_id)
         _setter("metric_name", metric_name)
         _setter("namespace", namespace)
@@ -483,7 +523,17 @@ class NamespaceIngestTimeRuleConditionsArgs:
              field_value: pulumi.Input[str],
              kind: pulumi.Input[str],
              additional_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'fieldOperator' in kwargs:
+            field_operator = kwargs['fieldOperator']
+        if 'fieldValue' in kwargs:
+            field_value = kwargs['fieldValue']
+        if 'additionalConditions' in kwargs:
+            additional_conditions = kwargs['additionalConditions']
+
         _setter("field_name", field_name)
         _setter("field_operator", field_operator)
         _setter("field_value", field_value)
@@ -575,7 +625,15 @@ class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
              condition_field: pulumi.Input[str],
              condition_operator: pulumi.Input[str],
              condition_value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionField' in kwargs:
+            condition_field = kwargs['conditionField']
+        if 'conditionOperator' in kwargs:
+            condition_operator = kwargs['conditionOperator']
+        if 'conditionValue' in kwargs:
+            condition_value = kwargs['conditionValue']
+
         _setter("condition_field", condition_field)
         _setter("condition_operator", condition_operator)
         _setter("condition_value", condition_value)
@@ -660,7 +718,23 @@ class NamespaceScheduledTaskActionArgs:
              purge_duration: Optional[pulumi.Input[str]] = None,
              query_string: Optional[pulumi.Input[str]] = None,
              saved_search_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'metricExtraction' in kwargs:
+            metric_extraction = kwargs['metricExtraction']
+        if 'purgeCompartmentId' in kwargs:
+            purge_compartment_id = kwargs['purgeCompartmentId']
+        if 'purgeDuration' in kwargs:
+            purge_duration = kwargs['purgeDuration']
+        if 'queryString' in kwargs:
+            query_string = kwargs['queryString']
+        if 'savedSearchId' in kwargs:
+            saved_search_id = kwargs['savedSearchId']
+
         _setter("type", type)
         if compartment_id_in_subtree is not None:
             _setter("compartment_id_in_subtree", compartment_id_in_subtree)
@@ -801,7 +875,15 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
              metric_name: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              resource_group: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if metric_name is not None:
@@ -872,7 +954,9 @@ class NamespaceScheduledTaskSchedulesArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              schedules: pulumi.Input[Sequence[pulumi.Input['NamespaceScheduledTaskSchedulesScheduleArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("schedules", schedules)
 
     @property
@@ -920,7 +1004,17 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
              recurring_interval: Optional[pulumi.Input[str]] = None,
              repeat_count: Optional[pulumi.Input[int]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'misfirePolicy' in kwargs:
+            misfire_policy = kwargs['misfirePolicy']
+        if 'recurringInterval' in kwargs:
+            recurring_interval = kwargs['recurringInterval']
+        if 'repeatCount' in kwargs:
+            repeat_count = kwargs['repeatCount']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         _setter("type", type)
         if expression is not None:
             _setter("expression", expression)
@@ -1027,7 +1121,9 @@ class GetLogAnalyticsEntitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1082,7 +1178,9 @@ class GetLogAnalyticsLogGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1137,7 +1235,9 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1195,7 +1295,9 @@ class GetNamespaceEffectivePropertiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1250,7 +1352,9 @@ class GetNamespaceIngestTimeRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1305,7 +1409,9 @@ class GetNamespacePropertiesMetadataFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1360,7 +1466,9 @@ class GetNamespaceRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1412,7 +1520,9 @@ class GetNamespaceScheduledTasksFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1464,7 +1574,9 @@ class GetNamespaceStorageOverlappingRecallsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1516,7 +1628,9 @@ class GetNamespacesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

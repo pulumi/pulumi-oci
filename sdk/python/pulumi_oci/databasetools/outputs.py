@@ -87,7 +87,15 @@ class DatabaseToolsConnectionKeyStore(dict):
              key_store_content: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStoreContent'] = None,
              key_store_password: Optional['outputs.DatabaseToolsConnectionKeyStoreKeyStorePassword'] = None,
              key_store_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if 'keyStoreType' in kwargs:
+            key_store_type = kwargs['keyStoreType']
+
         if key_store_content is not None:
             _setter("key_store_content", key_store_content)
         if key_store_password is not None:
@@ -162,7 +170,13 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
              _setter: Callable[[Any, Any], None],
              value_type: str,
              secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("value_type", value_type)
         if secret_id is not None:
             _setter("secret_id", secret_id)
@@ -230,7 +244,13 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
              _setter: Callable[[Any, Any], None],
              value_type: str,
              secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
         _setter("value_type", value_type)
         if secret_id is not None:
             _setter("secret_id", secret_id)
@@ -292,7 +312,11 @@ class DatabaseToolsConnectionRelatedResource(dict):
              _setter: Callable[[Any, Any], None],
              entity_type: str,
              identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
 
@@ -355,7 +379,13 @@ class DatabaseToolsConnectionUserPassword(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -412,7 +442,11 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfiguration(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              reverse_connections_source_ips: Optional[Sequence['outputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'reverseConnectionsSourceIps' in kwargs:
+            reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+
         if reverse_connections_source_ips is not None:
             _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
@@ -457,7 +491,11 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
     def _configure(
              _setter: Callable[[Any, Any], None],
              source_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceIp' in kwargs:
+            source_ip = kwargs['sourceIp']
+
         if source_ip is not None:
             _setter("source_ip", source_ip)
 
@@ -493,7 +531,15 @@ class GetDatabaseToolsConnectionKeyStoreResult(dict):
              key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult'],
              key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult'],
              key_store_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyStoreContents' in kwargs:
+            key_store_contents = kwargs['keyStoreContents']
+        if 'keyStorePasswords' in kwargs:
+            key_store_passwords = kwargs['keyStorePasswords']
+        if 'keyStoreType' in kwargs:
+            key_store_type = kwargs['keyStoreType']
+
         _setter("key_store_contents", key_store_contents)
         _setter("key_store_passwords", key_store_passwords)
         _setter("key_store_type", key_store_type)
@@ -542,7 +588,13 @@ class GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -582,7 +634,13 @@ class GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -622,7 +680,11 @@ class GetDatabaseToolsConnectionRelatedResourceResult(dict):
              _setter: Callable[[Any, Any], None],
              entity_type: str,
              identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
 
@@ -662,7 +724,13 @@ class GetDatabaseToolsConnectionUserPasswordResult(dict):
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -695,7 +763,9 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -787,7 +857,39 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
              type: str,
              user_name: str,
              user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedProperties' in kwargs:
+            advanced_properties = kwargs['advancedProperties']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyStores' in kwargs:
+            key_stores = kwargs['keyStores']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'relatedResources' in kwargs:
+            related_resources = kwargs['relatedResources']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'userPasswords' in kwargs:
+            user_passwords = kwargs['userPasswords']
+
         _setter("advanced_properties", advanced_properties)
         _setter("compartment_id", compartment_id)
         _setter("connection_string", connection_string)
@@ -975,7 +1077,15 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreRe
              key_store_contents: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult'],
              key_store_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult'],
              key_store_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyStoreContents' in kwargs:
+            key_store_contents = kwargs['keyStoreContents']
+        if 'keyStorePasswords' in kwargs:
+            key_store_passwords = kwargs['keyStorePasswords']
+        if 'keyStoreType' in kwargs:
+            key_store_type = kwargs['keyStoreType']
+
         _setter("key_store_contents", key_store_contents)
         _setter("key_store_passwords", key_store_passwords)
         _setter("key_store_type", key_store_type)
@@ -1024,7 +1134,13 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKe
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -1064,7 +1180,13 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKe
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -1104,7 +1226,11 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedRes
              _setter: Callable[[Any, Any], None],
              entity_type: str,
              identifier: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
         _setter("entity_type", entity_type)
         _setter("identifier", identifier)
 
@@ -1144,7 +1270,13 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswo
              _setter: Callable[[Any, Any], None],
              secret_id: str,
              value_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+
         _setter("secret_id", secret_id)
         _setter("value_type", value_type)
 
@@ -1183,7 +1315,9 @@ class GetDatabaseToolsConnectionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1217,7 +1351,9 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1285,7 +1421,25 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1417,7 +1571,9 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1457,7 +1613,11 @@ class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'reverseConnectionsSourceIps' in kwargs:
+            reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+
         _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
@@ -1484,7 +1644,11 @@ class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnec
     def _configure(
              _setter: Callable[[Any, Any], None],
              source_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceIp' in kwargs:
+            source_ip = kwargs['sourceIp']
+
         _setter("source_ip", source_ip)
 
     @property
@@ -1508,7 +1672,9 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1608,7 +1774,43 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
              time_created: str,
              time_updated: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalFqdns' in kwargs:
+            additional_fqdns = kwargs['additionalFqdns']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if 'endpointServiceId' in kwargs:
+            endpoint_service_id = kwargs['endpointServiceId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'privateEndpointVnicId' in kwargs:
+            private_endpoint_vnic_id = kwargs['privateEndpointVnicId']
+        if 'reverseConnectionConfigurations' in kwargs:
+            reverse_connection_configurations = kwargs['reverseConnectionConfigurations']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("additional_fqdns", additional_fqdns)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1806,7 +2008,11 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     def _configure(
              _setter: Callable[[Any, Any], None],
              reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'reverseConnectionsSourceIps' in kwargs:
+            reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+
         _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
@@ -1833,7 +2039,11 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     def _configure(
              _setter: Callable[[Any, Any], None],
              source_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceIp' in kwargs:
+            source_ip = kwargs['sourceIp']
+
         _setter("source_ip", source_ip)
 
     @property
@@ -1863,7 +2073,9 @@ class GetDatabaseToolsPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

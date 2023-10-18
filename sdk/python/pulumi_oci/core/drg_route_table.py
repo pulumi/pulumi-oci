@@ -55,7 +55,23 @@ class DrgRouteTableArgs:
              import_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
              is_ecmp_enabled: Optional[pulumi.Input[bool]] = None,
              remove_import_trigger: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'importDrgRouteDistributionId' in kwargs:
+            import_drg_route_distribution_id = kwargs['importDrgRouteDistributionId']
+        if 'isEcmpEnabled' in kwargs:
+            is_ecmp_enabled = kwargs['isEcmpEnabled']
+        if 'removeImportTrigger' in kwargs:
+            remove_import_trigger = kwargs['removeImportTrigger']
+
         _setter("drg_id", drg_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -215,7 +231,27 @@ class _DrgRouteTableState:
              remove_import_trigger: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'importDrgRouteDistributionId' in kwargs:
+            import_drg_route_distribution_id = kwargs['importDrgRouteDistributionId']
+        if 'isEcmpEnabled' in kwargs:
+            is_ecmp_enabled = kwargs['isEcmpEnabled']
+        if 'removeImportTrigger' in kwargs:
+            remove_import_trigger = kwargs['removeImportTrigger']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

@@ -65,7 +65,11 @@ class SecretSecretContent(dict):
              content_type: str,
              name: Optional[str] = None,
              stage: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+
         _setter("content", content)
         _setter("content_type", content_type)
         if name is not None:
@@ -162,7 +166,19 @@ class SecretSecretRule(dict):
              is_secret_content_retrieval_blocked_on_expiry: Optional[bool] = None,
              secret_version_expiry_interval: Optional[str] = None,
              time_of_absolute_expiry: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'isEnforcedOnDeletedSecretVersions' in kwargs:
+            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
+        if 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
+            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
+        if 'secretVersionExpiryInterval' in kwargs:
+            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
+        if 'timeOfAbsoluteExpiry' in kwargs:
+            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
+
         _setter("rule_type", rule_type)
         if is_enforced_on_deleted_secret_versions is not None:
             _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
@@ -235,7 +251,11 @@ class GetSecretSecretContentResult(dict):
              content_type: str,
              name: str,
              stage: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+
         _setter("content", content)
         _setter("content_type", content_type)
         _setter("name", name)
@@ -293,7 +313,19 @@ class GetSecretSecretRuleResult(dict):
              rule_type: str,
              secret_version_expiry_interval: str,
              time_of_absolute_expiry: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnforcedOnDeletedSecretVersions' in kwargs:
+            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
+        if 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
+            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'secretVersionExpiryInterval' in kwargs:
+            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
+        if 'timeOfAbsoluteExpiry' in kwargs:
+            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
+
         _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
         _setter("is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
         _setter("rule_type", rule_type)
@@ -362,7 +394,9 @@ class GetSecretsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -465,7 +499,35 @@ class GetSecretsSecretResult(dict):
              time_of_current_version_expiry: str,
              time_of_deletion: str,
              vault_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currentVersionNumber' in kwargs:
+            current_version_number = kwargs['currentVersionNumber']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'secretContents' in kwargs:
+            secret_contents = kwargs['secretContents']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+        if 'secretRules' in kwargs:
+            secret_rules = kwargs['secretRules']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfCurrentVersionExpiry' in kwargs:
+            time_of_current_version_expiry = kwargs['timeOfCurrentVersionExpiry']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         _setter("compartment_id", compartment_id)
         _setter("current_version_number", current_version_number)
         _setter("defined_tags", defined_tags)
@@ -642,7 +704,11 @@ class GetSecretsSecretSecretContentResult(dict):
              content_type: str,
              name: str,
              stage: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+
         _setter("content", content)
         _setter("content_type", content_type)
         _setter("name", name)
@@ -703,7 +769,19 @@ class GetSecretsSecretSecretRuleResult(dict):
              rule_type: str,
              secret_version_expiry_interval: str,
              time_of_absolute_expiry: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnforcedOnDeletedSecretVersions' in kwargs:
+            is_enforced_on_deleted_secret_versions = kwargs['isEnforcedOnDeletedSecretVersions']
+        if 'isSecretContentRetrievalBlockedOnExpiry' in kwargs:
+            is_secret_content_retrieval_blocked_on_expiry = kwargs['isSecretContentRetrievalBlockedOnExpiry']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'secretVersionExpiryInterval' in kwargs:
+            secret_version_expiry_interval = kwargs['secretVersionExpiryInterval']
+        if 'timeOfAbsoluteExpiry' in kwargs:
+            time_of_absolute_expiry = kwargs['timeOfAbsoluteExpiry']
+
         _setter("is_enforced_on_deleted_secret_versions", is_enforced_on_deleted_secret_versions)
         _setter("is_secret_content_retrieval_blocked_on_expiry", is_secret_content_retrieval_blocked_on_expiry)
         _setter("rule_type", rule_type)

@@ -65,7 +65,25 @@ class PolicyArgs:
              origins: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
              policy_config: Optional[pulumi.Input['PolicyPolicyConfigArgs']] = None,
              waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'additionalDomains' in kwargs:
+            additional_domains = kwargs['additionalDomains']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'policyConfig' in kwargs:
+            policy_config = kwargs['policyConfig']
+        if 'wafConfig' in kwargs:
+            waf_config = kwargs['wafConfig']
+
         _setter("compartment_id", compartment_id)
         _setter("domain", domain)
         if additional_domains is not None:
@@ -270,7 +288,27 @@ class _PolicyState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDomains' in kwargs:
+            additional_domains = kwargs['additionalDomains']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if 'policyConfig' in kwargs:
+            policy_config = kwargs['policyConfig']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'wafConfig' in kwargs:
+            waf_config = kwargs['wafConfig']
+
         if additional_domains is not None:
             _setter("additional_domains", additional_domains)
         if cname is not None:

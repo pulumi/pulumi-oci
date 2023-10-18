@@ -69,7 +69,29 @@ class GatewayArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'caBundles' in kwargs:
+            ca_bundles = kwargs['caBundles']
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'responseCacheDetails' in kwargs:
+            response_cache_details = kwargs['responseCacheDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
         _setter("subnet_id", subnet_id)
@@ -293,7 +315,37 @@ class _GatewayState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundles' in kwargs:
+            ca_bundles = kwargs['caBundles']
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'responseCacheDetails' in kwargs:
+            response_cache_details = kwargs['responseCacheDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if ca_bundles is not None:
             _setter("ca_bundles", ca_bundles)
         if certificate_id is not None:

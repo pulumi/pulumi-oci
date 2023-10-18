@@ -55,7 +55,23 @@ class ModelProvenanceArgs:
              script_dir: Optional[pulumi.Input[str]] = None,
              training_id: Optional[pulumi.Input[str]] = None,
              training_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'gitBranch' in kwargs:
+            git_branch = kwargs['gitBranch']
+        if 'gitCommit' in kwargs:
+            git_commit = kwargs['gitCommit']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if 'scriptDir' in kwargs:
+            script_dir = kwargs['scriptDir']
+        if 'trainingId' in kwargs:
+            training_id = kwargs['trainingId']
+        if 'trainingScript' in kwargs:
+            training_script = kwargs['trainingScript']
+
         _setter("model_id", model_id)
         if git_branch is not None:
             _setter("git_branch", git_branch)
@@ -203,7 +219,23 @@ class _ModelProvenanceState:
              script_dir: Optional[pulumi.Input[str]] = None,
              training_id: Optional[pulumi.Input[str]] = None,
              training_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'gitBranch' in kwargs:
+            git_branch = kwargs['gitBranch']
+        if 'gitCommit' in kwargs:
+            git_commit = kwargs['gitCommit']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if 'scriptDir' in kwargs:
+            script_dir = kwargs['scriptDir']
+        if 'trainingId' in kwargs:
+            training_id = kwargs['trainingId']
+        if 'trainingScript' in kwargs:
+            training_script = kwargs['trainingScript']
+
         if git_branch is not None:
             _setter("git_branch", git_branch)
         if git_commit is not None:

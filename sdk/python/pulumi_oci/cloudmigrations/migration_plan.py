@@ -57,7 +57,23 @@ class MigrationPlanArgs:
              source_migration_plan_id: Optional[pulumi.Input[str]] = None,
              strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
              target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'migrationId' in kwargs:
+            migration_id = kwargs['migrationId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sourceMigrationPlanId' in kwargs:
+            source_migration_plan_id = kwargs['sourceMigrationPlanId']
+        if 'targetEnvironments' in kwargs:
+            target_environments = kwargs['targetEnvironments']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("migration_id", migration_id)
@@ -245,7 +261,37 @@ class _MigrationPlanState:
              target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'calculatedLimits' in kwargs:
+            calculated_limits = kwargs['calculatedLimits']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'migrationId' in kwargs:
+            migration_id = kwargs['migrationId']
+        if 'migrationPlanStats' in kwargs:
+            migration_plan_stats = kwargs['migrationPlanStats']
+        if 'referenceToRmsStack' in kwargs:
+            reference_to_rms_stack = kwargs['referenceToRmsStack']
+        if 'sourceMigrationPlanId' in kwargs:
+            source_migration_plan_id = kwargs['sourceMigrationPlanId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetEnvironments' in kwargs:
+            target_environments = kwargs['targetEnvironments']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if calculated_limits is not None:
             _setter("calculated_limits", calculated_limits)
         if compartment_id is not None:

@@ -38,7 +38,9 @@ class GetPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -72,7 +74,9 @@ class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -148,7 +152,31 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
              subnet_id: str,
              time_created: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsZones' in kwargs:
+            dns_zones = kwargs['dnsZones']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isUsedWithConfigurationSourceProvider' in kwargs:
+            is_used_with_configuration_source_provider = kwargs['isUsedWithConfigurationSourceProvider']
+        if 'nsgIdLists' in kwargs:
+            nsg_id_lists = kwargs['nsgIdLists']
+        if 'sourceIps' in kwargs:
+            source_ips = kwargs['sourceIps']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -295,7 +323,15 @@ class GetStackConfigSourceResult(dict):
              config_source_type: str,
              working_directory: str,
              zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configSourceType' in kwargs:
+            config_source_type = kwargs['configSourceType']
+        if 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("config_source_type", config_source_type)
         _setter("working_directory", working_directory)
         _setter("zip_file_base64encoded", zip_file_base64encoded)
@@ -334,7 +370,9 @@ class GetStacksFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -411,7 +449,21 @@ class GetStacksStackResult(dict):
              state: str,
              time_created: str,
              variables: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configSource' in kwargs:
+            config_source = kwargs['configSource']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("config_source", config_source)
         _setter("defined_tags", defined_tags)
@@ -522,7 +574,15 @@ class GetStacksStackConfigSourceResult(dict):
              config_source_type: str,
              working_directory: str,
              zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configSourceType' in kwargs:
+            config_source_type = kwargs['configSourceType']
+        if 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("config_source_type", config_source_type)
         _setter("working_directory", working_directory)
         _setter("zip_file_base64encoded", zip_file_base64encoded)

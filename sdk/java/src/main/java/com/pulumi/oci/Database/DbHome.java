@@ -74,6 +74,7 @@ import javax.annotation.Nullable;
  *                 .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
  *                 .ncharacterSet(var_.db_home_database_ncharacter_set())
  *                 .pdbName(var_.db_home_database_pdb_name())
+ *                 .pluggableDatabases(var_.db_home_database_pluggable_databases())
  *                 .sidPrefix(var_.db_home_database_sid_prefix())
  *                 .tdeWalletPassword(var_.db_home_database_tde_wallet_password())
  *                 .timeStampForPointInTimeRecovery(var_.db_home_database_time_stamp_for_point_in_time_recovery())

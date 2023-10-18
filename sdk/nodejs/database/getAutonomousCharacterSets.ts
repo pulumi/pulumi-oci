@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
  *     characterSetType: _var.autonomous_database_character_set_character_set_type,
- *     isDedicated: _var.autonomous_database_character_set_is_dedicated,
  *     isShared: _var.autonomous_database_character_set_is_shared,
  * });
  * ```
@@ -50,7 +49,7 @@ export interface GetAutonomousCharacterSetsArgs {
      */
     isDedicated?: boolean;
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      */
     isShared?: boolean;
 }
@@ -85,7 +84,6 @@ export interface GetAutonomousCharacterSetsResult {
  *
  * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
  *     characterSetType: _var.autonomous_database_character_set_character_set_type,
- *     isDedicated: _var.autonomous_database_character_set_is_dedicated,
  *     isShared: _var.autonomous_database_character_set_is_shared,
  * });
  * ```
@@ -108,7 +106,7 @@ export interface GetAutonomousCharacterSetsOutputArgs {
      */
     isDedicated?: pulumi.Input<boolean>;
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      */
     isShared?: pulumi.Input<boolean>;
 }

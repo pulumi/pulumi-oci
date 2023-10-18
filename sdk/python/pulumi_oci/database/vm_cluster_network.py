@@ -71,7 +71,25 @@ class VmClusterNetworkArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              ntps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'vmNetworks' in kwargs:
+            vm_networks = kwargs['vmNetworks']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'drScans' in kwargs:
+            dr_scans = kwargs['drScans']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'validateVmClusterNetwork' in kwargs:
+            validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("exadata_infrastructure_id", exadata_infrastructure_id)
@@ -305,7 +323,31 @@ class _VmClusterNetworkState:
              validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None,
              vm_cluster_id: Optional[pulumi.Input[str]] = None,
              vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drScans' in kwargs:
+            dr_scans = kwargs['drScans']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'validateVmClusterNetwork' in kwargs:
+            validate_vm_cluster_network = kwargs['validateVmClusterNetwork']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+        if 'vmNetworks' in kwargs:
+            vm_networks = kwargs['vmNetworks']
+
         if action is not None:
             _setter("action", action)
         if compartment_id is not None:

@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
         ///         KmsiSettingId = oci_identity_domains_kmsi_setting.Test_kmsi_setting.Id,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Kmsi_setting_authorization,
         ///         ResourceTypeSchemaVersion = @var.Kmsi_setting_resource_type_schema_version,
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
         ///         KmsiSettingId = oci_identity_domains_kmsi_setting.Test_kmsi_setting.Id,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Kmsi_setting_authorization,
         ///         ResourceTypeSchemaVersion = @var.Kmsi_setting_resource_type_schema_version,

@@ -73,7 +73,27 @@ class ConnectionArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              tls_verify_config: Optional[pulumi.Input['ConnectionTlsVerifyConfigArgs']] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'accessToken' in kwargs:
+            access_token = kwargs['accessToken']
+        if 'appPassword' in kwargs:
+            app_password = kwargs['appPassword']
+        if 'baseUrl' in kwargs:
+            base_url = kwargs['baseUrl']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tlsVerifyConfig' in kwargs:
+            tls_verify_config = kwargs['tlsVerifyConfig']
+
         _setter("connection_type", connection_type)
         _setter("project_id", project_id)
         if access_token is not None:
@@ -316,7 +336,37 @@ class _ConnectionState:
              time_updated: Optional[pulumi.Input[str]] = None,
              tls_verify_config: Optional[pulumi.Input['ConnectionTlsVerifyConfigArgs']] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessToken' in kwargs:
+            access_token = kwargs['accessToken']
+        if 'appPassword' in kwargs:
+            app_password = kwargs['appPassword']
+        if 'baseUrl' in kwargs:
+            base_url = kwargs['baseUrl']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lastConnectionValidationResults' in kwargs:
+            last_connection_validation_results = kwargs['lastConnectionValidationResults']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'tlsVerifyConfig' in kwargs:
+            tls_verify_config = kwargs['tlsVerifyConfig']
+
         if access_token is not None:
             _setter("access_token", access_token)
         if app_password is not None:

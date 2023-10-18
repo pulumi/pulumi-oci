@@ -118,7 +118,15 @@ class DiscoveryJobDiscoveryDetails(dict):
              resource_type: str,
              credentials: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentials'] = None,
              tags: Optional['outputs.DiscoveryJobDiscoveryDetailsTags'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("agent_id", agent_id)
         _setter("properties", properties)
         _setter("resource_name", resource_name)
@@ -192,7 +200,9 @@ class DiscoveryJobDiscoveryDetailsCredentials(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DiscoveryJobDiscoveryDetailsCredentialsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -246,7 +256,13 @@ class DiscoveryJobDiscoveryDetailsCredentialsItem(dict):
              credential_name: str,
              credential_type: str,
              properties: 'outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("properties", properties)
@@ -308,7 +324,11 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemProperties(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -353,7 +373,11 @@ class DiscoveryJobDiscoveryDetailsProperties(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -398,7 +422,11 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         if properties_map is not None:
             _setter("properties_map", properties_map)
 
@@ -434,7 +462,9 @@ class MonitoredResourceAdditionalAlias(dict):
              credential: 'outputs.MonitoredResourceAdditionalAliasCredential',
              name: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credential", credential)
         _setter("name", name)
         _setter("source", source)
@@ -487,7 +517,9 @@ class MonitoredResourceAdditionalAliasCredential(dict):
              name: str,
              service: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -582,7 +614,13 @@ class MonitoredResourceAdditionalCredential(dict):
              properties: Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']] = None,
              source: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         if credential_type is not None:
             _setter("credential_type", credential_type)
         if description is not None:
@@ -681,7 +719,9 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -727,7 +767,9 @@ class MonitoredResourceAliases(dict):
              credential: 'outputs.MonitoredResourceAliasesCredential',
              name: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credential", credential)
         _setter("name", name)
         _setter("source", source)
@@ -780,7 +822,9 @@ class MonitoredResourceAliasesCredential(dict):
              name: str,
              service: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -875,7 +919,13 @@ class MonitoredResourceCredentials(dict):
              properties: Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']] = None,
              source: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         if credential_type is not None:
             _setter("credential_type", credential_type)
         if description is not None:
@@ -974,7 +1024,9 @@ class MonitoredResourceCredentialsProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1061,7 +1113,19 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
              db_id: Optional[str] = None,
              db_unique_name: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         _setter("port", port)
         _setter("protocol", protocol)
         _setter("service_name", service_name)
@@ -1150,7 +1214,9 @@ class MonitoredResourceProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -1213,7 +1279,11 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1286,7 +1356,11 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1415,7 +1489,31 @@ class MonitoredResourcesListMemberItem(dict):
              resource_type: Optional[str] = None,
              state: Optional[str] = None,
              system_tags: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'resourceDisplayName' in kwargs:
+            resource_display_name = kwargs['resourceDisplayName']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -1600,7 +1698,21 @@ class MonitoredResourcesSearchAssociationItem(dict):
              source_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail']] = None,
              source_resource_id: Optional[str] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'destinationResourceDetails' in kwargs:
+            destination_resource_details = kwargs['destinationResourceDetails']
+        if 'destinationResourceId' in kwargs:
+            destination_resource_id = kwargs['destinationResourceId']
+        if 'sourceResourceDetails' in kwargs:
+            source_resource_details = kwargs['sourceResourceDetails']
+        if 'sourceResourceId' in kwargs:
+            source_resource_id = kwargs['sourceResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if association_type is not None:
             _setter("association_type", association_type)
         if destination_resource_details is not None:
@@ -1703,7 +1815,11 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1776,7 +1892,11 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
              compartment_id: Optional[str] = None,
              name: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if name is not None:
@@ -1913,7 +2033,27 @@ class MonitoredResourcesSearchItem(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
@@ -2079,7 +2219,9 @@ class MonitoredResourcesSearchItemProperty(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -2114,7 +2256,9 @@ class GetConfigsConfigCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2182,7 +2326,29 @@ class GetConfigsConfigCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("config_type", config_type)
         _setter("defined_tags", defined_tags)
@@ -2311,7 +2477,9 @@ class GetConfigsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2368,7 +2536,15 @@ class GetDiscoveryJobDiscoveryDetailResult(dict):
              resource_name: str,
              resource_type: str,
              tags: Sequence['outputs.GetDiscoveryJobDiscoveryDetailTagResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+
         _setter("agent_id", agent_id)
         _setter("credentials", credentials)
         _setter("properties", properties)
@@ -2440,7 +2616,9 @@ class GetDiscoveryJobDiscoveryDetailCredentialResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2475,7 +2653,13 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemResult(dict):
              credential_name: str,
              credential_type: str,
              properties: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("properties", properties)
@@ -2520,7 +2704,11 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         _setter("properties_map", properties_map)
 
     @property
@@ -2547,7 +2735,11 @@ class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         _setter("properties_map", properties_map)
 
     @property
@@ -2574,7 +2766,11 @@ class GetDiscoveryJobDiscoveryDetailTagResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              properties_map: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'propertiesMap' in kwargs:
+            properties_map = kwargs['propertiesMap']
+
         _setter("properties_map", properties_map)
 
     @property
@@ -2601,7 +2797,9 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2640,7 +2838,15 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
              log_message: str,
              log_type: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logMessage' in kwargs:
+            log_message = kwargs['logMessage']
+        if 'logType' in kwargs:
+            log_type = kwargs['logType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("id", id)
         _setter("log_message", log_message)
         _setter("log_type", log_type)
@@ -2697,7 +2903,9 @@ class GetDiscoveryJobLogsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2734,7 +2942,9 @@ class GetDiscoveryJobsDiscoveryJobCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2813,7 +3023,31 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
              tenant_id: str,
              time_updated: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'statusMessage' in kwargs:
+            status_message = kwargs['statusMessage']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("discovery_type", discovery_type)
@@ -2963,7 +3197,9 @@ class GetDiscoveryJobsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3011,7 +3247,9 @@ class GetMonitoredResourceAdditionalAliasResult(dict):
              credentials: Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult'],
              name: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credentials", credentials)
         _setter("name", name)
         _setter("source", source)
@@ -3064,7 +3302,9 @@ class GetMonitoredResourceAdditionalAliasCredentialResult(dict):
              name: str,
              service: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -3136,7 +3376,13 @@ class GetMonitoredResourceAdditionalCredentialResult(dict):
              properties: Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult'],
              source: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         _setter("credential_type", credential_type)
         _setter("description", description)
         _setter("key_id", key_id)
@@ -3224,7 +3470,9 @@ class GetMonitoredResourceAdditionalCredentialPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3268,7 +3516,9 @@ class GetMonitoredResourceAliasResult(dict):
              credentials: Sequence['outputs.GetMonitoredResourceAliasCredentialResult'],
              name: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("credentials", credentials)
         _setter("name", name)
         _setter("source", source)
@@ -3321,7 +3571,9 @@ class GetMonitoredResourceAliasCredentialResult(dict):
              name: str,
              service: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("service", service)
         _setter("source", source)
@@ -3393,7 +3645,13 @@ class GetMonitoredResourceCredentialResult(dict):
              properties: Sequence['outputs.GetMonitoredResourceCredentialPropertyResult'],
              source: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+
         _setter("credential_type", credential_type)
         _setter("description", description)
         _setter("key_id", key_id)
@@ -3481,7 +3739,9 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3541,7 +3801,19 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
              protocol: str,
              service_name: str,
              ssl_secret_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         _setter("connector_id", connector_id)
         _setter("db_id", db_id)
         _setter("db_unique_name", db_unique_name)
@@ -3626,7 +3898,9 @@ class GetMonitoredResourcePropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 

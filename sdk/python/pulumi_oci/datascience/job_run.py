@@ -65,7 +65,25 @@ class JobRunArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              job_configuration_override_details: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']] = None,
              job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobConfigurationOverrideDetails' in kwargs:
+            job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
+        if 'jobLogConfigurationOverrideDetails' in kwargs:
+            job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("job_id", job_id)
         _setter("project_id", project_id)
@@ -279,7 +297,39 @@ class _JobRunState:
              time_accepted: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobConfigurationOverrideDetails' in kwargs:
+            job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
+        if 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if 'jobLogConfigurationOverrideDetails' in kwargs:
+            job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if asynchronous is not None:
             _setter("asynchronous", asynchronous)
         if compartment_id is not None:

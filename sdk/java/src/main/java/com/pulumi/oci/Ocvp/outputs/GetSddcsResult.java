@@ -20,7 +20,7 @@ public final class GetSddcsResult {
      */
     private String compartmentId;
     /**
-     * @return The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+     * @return (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
      * 
      */
     private @Nullable String computeAvailabilityDomain;
@@ -55,7 +55,7 @@ public final class GetSddcsResult {
         return this.compartmentId;
     }
     /**
-     * @return The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+     * @return (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
      * 
      */
     public Optional<String> computeAvailabilityDomain() {

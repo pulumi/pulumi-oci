@@ -46,7 +46,21 @@ class DefaultDhcpOptionsArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              domain_name_type: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainNameType' in kwargs:
+            domain_name_type = kwargs['domainNameType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("manage_default_resource_id", manage_default_resource_id)
         _setter("options", options)
         if compartment_id is not None:
@@ -163,7 +177,23 @@ class _DefaultDhcpOptionsState:
              options: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultDhcpOptionsOptionArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainNameType' in kwargs:
+            domain_name_type = kwargs['domainNameType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'manageDefaultResourceId' in kwargs:
+            manage_default_resource_id = kwargs['manageDefaultResourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

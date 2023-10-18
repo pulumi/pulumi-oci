@@ -49,7 +49,9 @@ class ConnectionAdditionalAttributeArgs:
              _setter: Callable[[Any, Any], None],
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -103,7 +105,11 @@ class ConnectionBootstrapServerArgs:
              host: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              private_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+
         if host is not None:
             _setter("host", host)
         if port is not None:
@@ -163,7 +169,11 @@ class ConnectionIngressIpArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              ingress_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ingressIp' in kwargs:
+            ingress_ip = kwargs['ingressIp']
+
         if ingress_ip is not None:
             _setter("ingress_ip", ingress_ip)
 
@@ -215,7 +225,15 @@ class DeploymentDeploymentDiagnosticDataArgs:
              object: Optional[pulumi.Input[str]] = None,
              time_diagnostic_end: Optional[pulumi.Input[str]] = None,
              time_diagnostic_start: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diagnosticState' in kwargs:
+            diagnostic_state = kwargs['diagnosticState']
+        if 'timeDiagnosticEnd' in kwargs:
+            time_diagnostic_end = kwargs['timeDiagnosticEnd']
+        if 'timeDiagnosticStart' in kwargs:
+            time_diagnostic_start = kwargs['timeDiagnosticStart']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if diagnostic_state is not None:
@@ -333,7 +351,19 @@ class DeploymentMaintenanceConfigurationArgs:
              is_interim_release_auto_upgrade_enabled: Optional[pulumi.Input[bool]] = None,
              major_release_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
              security_patch_upgrade_period_in_days: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bundleReleaseUpgradePeriodInDays' in kwargs:
+            bundle_release_upgrade_period_in_days = kwargs['bundleReleaseUpgradePeriodInDays']
+        if 'interimReleaseUpgradePeriodInDays' in kwargs:
+            interim_release_upgrade_period_in_days = kwargs['interimReleaseUpgradePeriodInDays']
+        if 'isInterimReleaseAutoUpgradeEnabled' in kwargs:
+            is_interim_release_auto_upgrade_enabled = kwargs['isInterimReleaseAutoUpgradeEnabled']
+        if 'majorReleaseUpgradePeriodInDays' in kwargs:
+            major_release_upgrade_period_in_days = kwargs['majorReleaseUpgradePeriodInDays']
+        if 'securityPatchUpgradePeriodInDays' in kwargs:
+            security_patch_upgrade_period_in_days = kwargs['securityPatchUpgradePeriodInDays']
+
         if bundle_release_upgrade_period_in_days is not None:
             _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
@@ -425,7 +455,11 @@ class DeploymentMaintenanceWindowArgs:
              _setter: Callable[[Any, Any], None],
              day: pulumi.Input[str],
              start_hour: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'startHour' in kwargs:
+            start_hour = kwargs['startHour']
+
         _setter("day", day)
         _setter("start_hour", start_hour)
 
@@ -501,7 +535,23 @@ class DeploymentOggDataArgs:
              key: Optional[pulumi.Input[str]] = None,
              ogg_version: Optional[pulumi.Input[str]] = None,
              password_secret_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentName' in kwargs:
+            deployment_name = kwargs['deploymentName']
+        if 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if 'credentialStore' in kwargs:
+            credential_store = kwargs['credentialStore']
+        if 'identityDomainId' in kwargs:
+            identity_domain_id = kwargs['identityDomainId']
+        if 'oggVersion' in kwargs:
+            ogg_version = kwargs['oggVersion']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+
         _setter("deployment_name", deployment_name)
         if admin_password is not None:
             _setter("admin_password", admin_password)
@@ -650,7 +700,9 @@ class GetConnectionAssignmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -708,7 +760,9 @@ class GetConnectionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -763,7 +817,9 @@ class GetDatabaseRegistrationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -815,7 +871,9 @@ class GetDeploymentBackupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -867,7 +925,9 @@ class GetDeploymentTypesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -919,7 +979,9 @@ class GetDeploymentUpgradesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -971,7 +1033,9 @@ class GetDeploymentVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1023,7 +1087,9 @@ class GetDeploymentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1075,7 +1141,9 @@ class GetMessagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1127,7 +1195,9 @@ class GetTrailFilesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1179,7 +1249,9 @@ class GetTrailSequencesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

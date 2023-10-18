@@ -23,7 +23,7 @@ class GetCaptureFiltersResult:
     """
     A collection of values returned by getCaptureFilters.
     """
-    def __init__(__self__, capture_filters=None, compartment_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, capture_filters=None, compartment_id=None, display_name=None, filter_type=None, filters=None, id=None, state=None):
         if capture_filters and not isinstance(capture_filters, list):
             raise TypeError("Expected argument 'capture_filters' to be a list")
         pulumi.set(__self__, "capture_filters", capture_filters)
@@ -33,6 +33,9 @@ class GetCaptureFiltersResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if filter_type and not isinstance(filter_type, str):
+            raise TypeError("Expected argument 'filter_type' to be a str")
+        pulumi.set(__self__, "filter_type", filter_type)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -68,6 +71,14 @@ class GetCaptureFiltersResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="filterType")
+    def filter_type(self) -> Optional[str]:
+        """
+        Indicates which service will use this capture filter
+        """
+        return pulumi.get(self, "filter_type")
+
+    @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetCaptureFiltersFilterResult']]:
         return pulumi.get(self, "filters")
@@ -98,6 +109,7 @@ class AwaitableGetCaptureFiltersResult(GetCaptureFiltersResult):
             capture_filters=self.capture_filters,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
+            filter_type=self.filter_type,
             filters=self.filters,
             id=self.id,
             state=self.state)
@@ -105,6 +117,7 @@ class AwaitableGetCaptureFiltersResult(GetCaptureFiltersResult):
 
 def get_capture_filters(compartment_id: Optional[str] = None,
                         display_name: Optional[str] = None,
+                        filter_type: Optional[str] = None,
                         filters: Optional[Sequence[pulumi.InputType['GetCaptureFiltersFilterArgs']]] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaptureFiltersResult:
@@ -121,17 +134,20 @@ def get_capture_filters(compartment_id: Optional[str] = None,
 
     test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
         display_name=var["capture_filter_display_name"],
+        filter_type=var["capture_filter_filter_type"],
         state=var["capture_filter_state"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
+    :param str filter_type: A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
     :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['filterType'] = filter_type
     __args__['filters'] = filters
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -141,6 +157,7 @@ def get_capture_filters(compartment_id: Optional[str] = None,
         capture_filters=pulumi.get(__ret__, 'capture_filters'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        filter_type=pulumi.get(__ret__, 'filter_type'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
@@ -149,6 +166,7 @@ def get_capture_filters(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_capture_filters)
 def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                               filter_type: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCaptureFiltersFilterArgs']]]]] = None,
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFiltersResult]:
@@ -165,12 +183,14 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
         display_name=var["capture_filter_display_name"],
+        filter_type=var["capture_filter_filter_type"],
         state=var["capture_filter_state"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
+    :param str filter_type: A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
     :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
     """
     ...

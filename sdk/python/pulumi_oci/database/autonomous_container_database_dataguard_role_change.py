@@ -35,7 +35,15 @@ class AutonomousContainerDatabaseDataguardRoleChangeArgs:
              autonomous_container_database_id: pulumi.Input[str],
              role: pulumi.Input[str],
              connection_strings_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if 'connectionStringsType' in kwargs:
+            connection_strings_type = kwargs['connectionStringsType']
+
         _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         _setter("autonomous_container_database_id", autonomous_container_database_id)
         _setter("role", role)
@@ -103,7 +111,15 @@ class _AutonomousContainerDatabaseDataguardRoleChangeState:
              autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
              connection_strings_type: Optional[pulumi.Input[str]] = None,
              role: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if 'connectionStringsType' in kwargs:
+            connection_strings_type = kwargs['connectionStringsType']
+
         if autonomous_container_database_dataguard_association_id is not None:
             _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         if autonomous_container_database_id is not None:

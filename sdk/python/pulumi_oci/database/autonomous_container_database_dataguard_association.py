@@ -47,7 +47,19 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
              fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
              is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
              protection_mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+            fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
+        if 'isAutomaticFailoverEnabled' in kwargs:
+            is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+
         _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         _setter("autonomous_container_database_id", autonomous_container_database_id)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
@@ -210,7 +222,41 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
              time_last_role_changed: Optional[pulumi.Input[str]] = None,
              time_last_synced: Optional[pulumi.Input[str]] = None,
              transport_lag: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applyLag' in kwargs:
+            apply_lag = kwargs['applyLag']
+        if 'applyRate' in kwargs:
+            apply_rate = kwargs['applyRate']
+        if 'autonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            autonomous_container_database_dataguard_association_id = kwargs['autonomousContainerDatabaseDataguardAssociationId']
+        if 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if 'fastStartFailOverLagLimitInSeconds' in kwargs:
+            fast_start_fail_over_lag_limit_in_seconds = kwargs['fastStartFailOverLagLimitInSeconds']
+        if 'isAutomaticFailoverEnabled' in kwargs:
+            is_automatic_failover_enabled = kwargs['isAutomaticFailoverEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'peerAutonomousContainerDatabaseDataguardAssociationId' in kwargs:
+            peer_autonomous_container_database_dataguard_association_id = kwargs['peerAutonomousContainerDatabaseDataguardAssociationId']
+        if 'peerAutonomousContainerDatabaseId' in kwargs:
+            peer_autonomous_container_database_id = kwargs['peerAutonomousContainerDatabaseId']
+        if 'peerLifecycleState' in kwargs:
+            peer_lifecycle_state = kwargs['peerLifecycleState']
+        if 'peerRole' in kwargs:
+            peer_role = kwargs['peerRole']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastRoleChanged' in kwargs:
+            time_last_role_changed = kwargs['timeLastRoleChanged']
+        if 'timeLastSynced' in kwargs:
+            time_last_synced = kwargs['timeLastSynced']
+        if 'transportLag' in kwargs:
+            transport_lag = kwargs['transportLag']
+
         if apply_lag is not None:
             _setter("apply_lag", apply_lag)
         if apply_rate is not None:

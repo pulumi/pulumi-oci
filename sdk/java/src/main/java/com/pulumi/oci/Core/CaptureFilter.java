@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.CaptureFilterArgs;
 import com.pulumi.oci.Core.inputs.CaptureFilterState;
+import com.pulumi.oci.Core.outputs.CaptureFilterFlowLogCaptureFilterRule;
 import com.pulumi.oci.Core.outputs.CaptureFilterVtapCaptureFilterRule;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
@@ -39,6 +40,14 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.CaptureFilter;
  * import com.pulumi.oci.Core.CaptureFilterArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs;
  * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleArgs;
  * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs;
  * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs;
@@ -65,6 +74,40 @@ import javax.annotation.Nullable;
  *             .filterType(var_.capture_filter_filter_type())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.capture_filter_display_name())
+ *             .flowLogCaptureFilterRules(CaptureFilterFlowLogCaptureFilterRuleArgs.builder()
+ *                 .destinationCidr(var_.capture_filter_flow_log_capture_filter_rules_destination_cidr())
+ *                 .flowLogType(var_.capture_filter_flow_log_capture_filter_rules_flow_log_type())
+ *                 .icmpOptions(CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs.builder()
+ *                     .type(var_.capture_filter_flow_log_capture_filter_rules_icmp_options_type())
+ *                     .code(var_.capture_filter_flow_log_capture_filter_rules_icmp_options_code())
+ *                     .build())
+ *                 .isEnabled(var_.capture_filter_flow_log_capture_filter_rules_is_enabled())
+ *                 .priority(var_.capture_filter_flow_log_capture_filter_rules_priority())
+ *                 .protocol(var_.capture_filter_flow_log_capture_filter_rules_protocol())
+ *                 .ruleAction(var_.capture_filter_flow_log_capture_filter_rules_rule_action())
+ *                 .samplingRate(var_.capture_filter_flow_log_capture_filter_rules_sampling_rate())
+ *                 .sourceCidr(var_.capture_filter_flow_log_capture_filter_rules_source_cidr())
+ *                 .tcpOptions(CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs.builder()
+ *                     .destinationPortRange(CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs.builder()
+ *                         .max(var_.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max())
+ *                         .min(var_.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min())
+ *                         .build())
+ *                     .sourcePortRange(CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max())
+ *                         .min(var_.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .udpOptions(CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs.builder()
+ *                     .destinationPortRange(CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs.builder()
+ *                         .max(var_.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max())
+ *                         .min(var_.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min())
+ *                         .build())
+ *                     .sourcePortRange(CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max())
+ *                         .min(var_.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .build())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .vtapCaptureFilterRules(CaptureFilterVtapCaptureFilterRuleArgs.builder()
  *                 .trafficDirection(var_.capture_filter_vtap_capture_filter_rules_traffic_direction())
@@ -169,6 +212,20 @@ public class CaptureFilter extends com.pulumi.resources.CustomResource {
      */
     public Output<String> filterType() {
         return this.filterType;
+    }
+    /**
+     * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    @Export(name="flowLogCaptureFilterRules", refs={List.class,CaptureFilterFlowLogCaptureFilterRule.class}, tree="[0,1]")
+    private Output<List<CaptureFilterFlowLogCaptureFilterRule>> flowLogCaptureFilterRules;
+
+    /**
+     * @return (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    public Output<List<CaptureFilterFlowLogCaptureFilterRule>> flowLogCaptureFilterRules() {
+        return this.flowLogCaptureFilterRules;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

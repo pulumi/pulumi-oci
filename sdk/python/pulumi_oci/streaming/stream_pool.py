@@ -53,7 +53,21 @@ class StreamPoolArgs:
              kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customEncryptionKey' in kwargs:
+            custom_encryption_key = kwargs['customEncryptionKey']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kafkaSettings' in kwargs:
+            kafka_settings = kwargs['kafkaSettings']
+        if 'privateEndpointSettings' in kwargs:
+            private_endpoint_settings = kwargs['privateEndpointSettings']
+
         _setter("compartment_id", compartment_id)
         if custom_encryption_key is not None:
             _setter("custom_encryption_key", custom_encryption_key)
@@ -213,7 +227,29 @@ class _StreamPoolState:
              private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customEncryptionKey' in kwargs:
+            custom_encryption_key = kwargs['customEncryptionKey']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'kafkaSettings' in kwargs:
+            kafka_settings = kwargs['kafkaSettings']
+        if 'lifecycleStateDetails' in kwargs:
+            lifecycle_state_details = kwargs['lifecycleStateDetails']
+        if 'privateEndpointSettings' in kwargs:
+            private_endpoint_settings = kwargs['privateEndpointSettings']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if custom_encryption_key is not None:

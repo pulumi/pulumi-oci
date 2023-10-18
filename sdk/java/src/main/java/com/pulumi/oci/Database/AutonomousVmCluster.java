@@ -98,6 +98,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/autonomousVmCluster:AutonomousVmCluster")
 public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
+    @Export(name="autonomousDataStoragePercentage", refs={Double.class}, tree="[0]")
+    private Output<Double> autonomousDataStoragePercentage;
+
+    public Output<Double> autonomousDataStoragePercentage() {
+        return this.autonomousDataStoragePercentage;
+    }
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
@@ -209,6 +215,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> cpuCoreCountPerNode() {
         return this.cpuCoreCountPerNode;
+    }
+    @Export(name="cpuPercentage", refs={Double.class}, tree="[0]")
+    private Output<Double> cpuPercentage;
+
+    public Output<Double> cpuPercentage() {
+        return this.cpuPercentage;
     }
     /**
      * The number of enabled CPU cores.
@@ -482,6 +494,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
     public Output<Integer> nodeCount() {
         return this.nodeCount;
     }
+    @Export(name="nonProvisionableAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
+    private Output<Integer> nonProvisionableAutonomousContainerDatabases;
+
+    public Output<Integer> nonProvisionableAutonomousContainerDatabases() {
+        return this.nonProvisionableAutonomousContainerDatabases;
+    }
     /**
      * The number of enabled OCPU cores.
      * 
@@ -495,6 +513,18 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    @Export(name="provisionedAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
+    private Output<Integer> provisionedAutonomousContainerDatabases;
+
+    public Output<Integer> provisionedAutonomousContainerDatabases() {
+        return this.provisionedAutonomousContainerDatabases;
+    }
+    @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
+    private Output<Double> provisionedCpus;
+
+    public Output<Double> provisionedCpus() {
+        return this.provisionedCpus;
     }
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -513,6 +543,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    @Export(name="reservedCpus", refs={Double.class}, tree="[0]")
+    private Output<Double> reservedCpus;
+
+    public Output<Double> reservedCpus() {
+        return this.reservedCpus;
     }
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
@@ -611,6 +647,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeZone() {
         return this.timeZone;
+    }
+    @Export(name="totalAutonomousDataStorageInTbs", refs={Double.class}, tree="[0]")
+    private Output<Double> totalAutonomousDataStorageInTbs;
+
+    public Output<Double> totalAutonomousDataStorageInTbs() {
+        return this.totalAutonomousDataStorageInTbs;
     }
     /**
      * The total number of Autonomous Container Databases that can be created.

@@ -79,7 +79,11 @@ class LogConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              source: 'outputs.LogConfigurationSource',
              compartment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("source", source)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -146,7 +150,11 @@ class LogConfigurationSource(dict):
              resource: str,
              service: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("category", category)
         _setter("resource", resource)
         _setter("service", service)
@@ -218,7 +226,11 @@ class UnifiedAgentConfigurationGroupAssociation(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              group_lists: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupLists' in kwargs:
+            group_lists = kwargs['groupLists']
+
         if group_lists is not None:
             _setter("group_lists", group_lists)
 
@@ -271,7 +283,11 @@ class UnifiedAgentConfigurationServiceConfiguration(dict):
              configuration_type: str,
              destination: 'outputs.UnifiedAgentConfigurationServiceConfigurationDestination',
              sources: Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSource'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configurationType' in kwargs:
+            configuration_type = kwargs['configurationType']
+
         _setter("configuration_type", configuration_type)
         _setter("destination", destination)
         _setter("sources", sources)
@@ -333,7 +349,11 @@ class UnifiedAgentConfigurationServiceConfigurationDestination(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              log_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logObjectId' in kwargs:
+            log_object_id = kwargs['logObjectId']
+
         _setter("log_object_id", log_object_id)
 
     @property
@@ -397,7 +417,11 @@ class UnifiedAgentConfigurationServiceConfigurationSource(dict):
              name: Optional[str] = None,
              parser: Optional['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParser'] = None,
              paths: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("source_type", source_type)
         if channels is not None:
             _setter("channels", channels)
@@ -635,7 +659,51 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
              time_type: Optional[str] = None,
              timeout_in_milliseconds: Optional[int] = None,
              types: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parserType' in kwargs:
+            parser_type = kwargs['parserType']
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'formatFirstline' in kwargs:
+            format_firstline = kwargs['formatFirstline']
+        if 'grokFailureKey' in kwargs:
+            grok_failure_key = kwargs['grokFailureKey']
+        if 'grokNameKey' in kwargs:
+            grok_name_key = kwargs['grokNameKey']
+        if 'isEstimateCurrentEvent' in kwargs:
+            is_estimate_current_event = kwargs['isEstimateCurrentEvent']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'isMergeCriFields' in kwargs:
+            is_merge_cri_fields = kwargs['isMergeCriFields']
+        if 'isNullEmptyString' in kwargs:
+            is_null_empty_string = kwargs['isNullEmptyString']
+        if 'isSupportColonlessIdent' in kwargs:
+            is_support_colonless_ident = kwargs['isSupportColonlessIdent']
+        if 'isWithPriority' in kwargs:
+            is_with_priority = kwargs['isWithPriority']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'messageKey' in kwargs:
+            message_key = kwargs['messageKey']
+        if 'multiLineStartRegexp' in kwargs:
+            multi_line_start_regexp = kwargs['multiLineStartRegexp']
+        if 'nestedParser' in kwargs:
+            nested_parser = kwargs['nestedParser']
+        if 'nullValuePattern' in kwargs:
+            null_value_pattern = kwargs['nullValuePattern']
+        if 'rfc5424timeFormat' in kwargs:
+            rfc5424time_format = kwargs['rfc5424timeFormat']
+        if 'syslogParserType' in kwargs:
+            syslog_parser_type = kwargs['syslogParserType']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+        if 'timeoutInMilliseconds' in kwargs:
+            timeout_in_milliseconds = kwargs['timeoutInMilliseconds']
+
         _setter("parser_type", parser_type)
         if delimiter is not None:
             _setter("delimiter", delimiter)
@@ -963,7 +1031,17 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser(dict
              is_keep_time_key: Optional[bool] = None,
              time_format: Optional[str] = None,
              time_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+
         if field_time_key is not None:
             _setter("field_time_key", field_time_key)
         if is_keep_time_key is not None:
@@ -1058,7 +1136,15 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPattern(dict):
              field_time_zone: Optional[str] = None,
              name: Optional[str] = None,
              pattern: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeFormat' in kwargs:
+            field_time_format = kwargs['fieldTimeFormat']
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'fieldTimeZone' in kwargs:
+            field_time_zone = kwargs['fieldTimeZone']
+
         if field_time_format is not None:
             _setter("field_time_format", field_time_format)
         if field_time_key is not None:
@@ -1130,7 +1216,11 @@ class GetLogConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              compartment_id: str,
              sources: Sequence['outputs.GetLogConfigurationSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("sources", sources)
 
@@ -1179,7 +1269,11 @@ class GetLogConfigurationSourceResult(dict):
              resource: str,
              service: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("category", category)
         _setter("resource", resource)
         _setter("service", service)
@@ -1237,7 +1331,9 @@ class GetLogGroupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1306,7 +1402,21 @@ class GetLogGroupsLogGroupResult(dict):
              state: str,
              time_created: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1411,7 +1521,9 @@ class GetLogSavedSearchesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1448,7 +1560,9 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1508,7 +1622,19 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1619,7 +1745,9 @@ class GetLogsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1708,7 +1836,31 @@ class GetLogsLogResult(dict):
              tenancy_id: str,
              time_created: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logType' in kwargs:
+            log_type = kwargs['logType']
+        if 'retentionDuration' in kwargs:
+            retention_duration = kwargs['retentionDuration']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("compartment_id", compartment_id)
         _setter("configurations", configurations)
         _setter("defined_tags", defined_tags)
@@ -1856,7 +2008,11 @@ class GetLogsLogConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              compartment_id: str,
              sources: Sequence['outputs.GetLogsLogConfigurationSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("sources", sources)
 
@@ -1905,7 +2061,11 @@ class GetLogsLogConfigurationSourceResult(dict):
              resource: str,
              service: str,
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("category", category)
         _setter("resource", resource)
         _setter("service", service)
@@ -1960,7 +2120,11 @@ class GetUnifiedAgentConfigurationGroupAssociationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              group_lists: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupLists' in kwargs:
+            group_lists = kwargs['groupLists']
+
         _setter("group_lists", group_lists)
 
     @property
@@ -1995,7 +2159,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationResult(dict):
              configuration_type: str,
              destinations: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationResult'],
              sources: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configurationType' in kwargs:
+            configuration_type = kwargs['configurationType']
+
         _setter("configuration_type", configuration_type)
         _setter("destinations", destinations)
         _setter("sources", sources)
@@ -2040,7 +2208,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationDestinationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              log_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logObjectId' in kwargs:
+            log_object_id = kwargs['logObjectId']
+
         _setter("log_object_id", log_object_id)
 
     @property
@@ -2083,7 +2255,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceResult(dict):
              parsers: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult'],
              paths: Sequence[str],
              source_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("channels", channels)
         _setter("name", name)
         _setter("parsers", parsers)
@@ -2250,7 +2426,51 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
              time_type: str,
              timeout_in_milliseconds: int,
              types: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'formatFirstline' in kwargs:
+            format_firstline = kwargs['formatFirstline']
+        if 'grokFailureKey' in kwargs:
+            grok_failure_key = kwargs['grokFailureKey']
+        if 'grokNameKey' in kwargs:
+            grok_name_key = kwargs['grokNameKey']
+        if 'isEstimateCurrentEvent' in kwargs:
+            is_estimate_current_event = kwargs['isEstimateCurrentEvent']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'isMergeCriFields' in kwargs:
+            is_merge_cri_fields = kwargs['isMergeCriFields']
+        if 'isNullEmptyString' in kwargs:
+            is_null_empty_string = kwargs['isNullEmptyString']
+        if 'isSupportColonlessIdent' in kwargs:
+            is_support_colonless_ident = kwargs['isSupportColonlessIdent']
+        if 'isWithPriority' in kwargs:
+            is_with_priority = kwargs['isWithPriority']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'messageKey' in kwargs:
+            message_key = kwargs['messageKey']
+        if 'multiLineStartRegexp' in kwargs:
+            multi_line_start_regexp = kwargs['multiLineStartRegexp']
+        if 'nestedParsers' in kwargs:
+            nested_parsers = kwargs['nestedParsers']
+        if 'nullValuePattern' in kwargs:
+            null_value_pattern = kwargs['nullValuePattern']
+        if 'parserType' in kwargs:
+            parser_type = kwargs['parserType']
+        if 'rfc5424timeFormat' in kwargs:
+            rfc5424time_format = kwargs['rfc5424timeFormat']
+        if 'syslogParserType' in kwargs:
+            syslog_parser_type = kwargs['syslogParserType']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+        if 'timeoutInMilliseconds' in kwargs:
+            timeout_in_milliseconds = kwargs['timeoutInMilliseconds']
+
         _setter("delimiter", delimiter)
         _setter("expression", expression)
         _setter("field_time_key", field_time_key)
@@ -2523,7 +2743,17 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserRe
              is_keep_time_key: bool,
              time_format: str,
              time_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+
         _setter("field_time_key", field_time_key)
         _setter("is_keep_time_key", is_keep_time_key)
         _setter("time_format", time_format)
@@ -2593,7 +2823,15 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult(
              field_time_zone: str,
              name: str,
              pattern: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeFormat' in kwargs:
+            field_time_format = kwargs['fieldTimeFormat']
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'fieldTimeZone' in kwargs:
+            field_time_zone = kwargs['fieldTimeZone']
+
         _setter("field_time_format", field_time_format)
         _setter("field_time_key", field_time_key)
         _setter("field_time_zone", field_time_zone)
@@ -2662,7 +2900,9 @@ class GetUnifiedAgentConfigurationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2699,7 +2939,9 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2767,7 +3009,27 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
              state: str,
              time_created: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configurationState' in kwargs:
+            configuration_state = kwargs['configurationState']
+        if 'configurationType' in kwargs:
+            configuration_type = kwargs['configurationType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("compartment_id", compartment_id)
         _setter("configuration_state", configuration_state)
         _setter("configuration_type", configuration_type)

@@ -142,7 +142,11 @@ class BackendSetBackend(dict):
              name: Optional[str] = None,
              offline: Optional[bool] = None,
              weight: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("ip_address", ip_address)
         _setter("port", port)
         if backup is not None:
@@ -297,7 +301,21 @@ class BackendSetHealthChecker(dict):
              return_code: Optional[int] = None,
              timeout_in_millis: Optional[int] = None,
              url_path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalMs' in kwargs:
+            interval_ms = kwargs['intervalMs']
+        if 'isForcePlainText' in kwargs:
+            is_force_plain_text = kwargs['isForcePlainText']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("protocol", protocol)
         if interval_ms is not None:
             _setter("interval_ms", interval_ms)
@@ -483,7 +501,19 @@ class BackendSetLbCookieSessionPersistenceConfiguration(dict):
              is_secure: Optional[bool] = None,
              max_age_in_seconds: Optional[int] = None,
              path: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+        if 'isHttpOnly' in kwargs:
+            is_http_only = kwargs['isHttpOnly']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         if cookie_name is not None:
             _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
@@ -618,7 +648,13 @@ class BackendSetSessionPersistenceConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              cookie_name: str,
              disable_fallback: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+
         _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
             _setter("disable_fallback", disable_fallback)
@@ -748,7 +784,23 @@ class BackendSetSslConfiguration(dict):
              trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
              verify_depth: Optional[int] = None,
              verify_peer_certificate: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateIds' in kwargs:
+            certificate_ids = kwargs['certificateIds']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'cipherSuiteName' in kwargs:
+            cipher_suite_name = kwargs['cipherSuiteName']
+        if 'serverOrderPreference' in kwargs:
+            server_order_preference = kwargs['serverOrderPreference']
+        if 'trustedCertificateAuthorityIds' in kwargs:
+            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
+        if 'verifyDepth' in kwargs:
+            verify_depth = kwargs['verifyDepth']
+        if 'verifyPeerCertificate' in kwargs:
+            verify_peer_certificate = kwargs['verifyPeerCertificate']
+
         if certificate_ids is not None:
             _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
@@ -909,7 +961,13 @@ class ListenerConnectionConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              idle_timeout_in_seconds: str,
              backend_tcp_proxy_protocol_version: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idleTimeoutInSeconds' in kwargs:
+            idle_timeout_in_seconds = kwargs['idleTimeoutInSeconds']
+        if 'backendTcpProxyProtocolVersion' in kwargs:
+            backend_tcp_proxy_protocol_version = kwargs['backendTcpProxyProtocolVersion']
+
         _setter("idle_timeout_in_seconds", idle_timeout_in_seconds)
         if backend_tcp_proxy_protocol_version is not None:
             _setter("backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
@@ -1044,7 +1102,23 @@ class ListenerSslConfiguration(dict):
              trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
              verify_depth: Optional[int] = None,
              verify_peer_certificate: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateIds' in kwargs:
+            certificate_ids = kwargs['certificateIds']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'cipherSuiteName' in kwargs:
+            cipher_suite_name = kwargs['cipherSuiteName']
+        if 'serverOrderPreference' in kwargs:
+            server_order_preference = kwargs['serverOrderPreference']
+        if 'trustedCertificateAuthorityIds' in kwargs:
+            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
+        if 'verifyDepth' in kwargs:
+            verify_depth = kwargs['verifyDepth']
+        if 'verifyPeerCertificate' in kwargs:
+            verify_peer_certificate = kwargs['verifyPeerCertificate']
+
         if certificate_ids is not None:
             _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
@@ -1208,7 +1282,15 @@ class LoadBalancerIpAddressDetail(dict):
              ip_address: Optional[str] = None,
              is_public: Optional[bool] = None,
              reserved_ips: Optional[Sequence['outputs.LoadBalancerIpAddressDetailReservedIp']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         if ip_address is not None:
             _setter("ip_address", ip_address)
         if is_public is not None:
@@ -1253,7 +1335,9 @@ class LoadBalancerIpAddressDetailReservedIp(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -1275,7 +1359,9 @@ class LoadBalancerReservedIp(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
             _setter("id", id)
 
@@ -1312,7 +1398,9 @@ class LoadBalancerRoutingPolicyRule(dict):
              actions: Sequence['outputs.LoadBalancerRoutingPolicyRuleAction'],
              condition: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
         _setter("condition", condition)
         _setter("name", name)
@@ -1386,7 +1474,11 @@ class LoadBalancerRoutingPolicyRuleAction(dict):
              _setter: Callable[[Any, Any], None],
              backend_set_name: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+
         _setter("backend_set_name", backend_set_name)
         _setter("name", name)
 
@@ -1453,7 +1545,13 @@ class LoadBalancerShapeDetails(dict):
              _setter: Callable[[Any, Any], None],
              maximum_bandwidth_in_mbps: int,
              minimum_bandwidth_in_mbps: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumBandwidthInMbps' in kwargs:
+            maximum_bandwidth_in_mbps = kwargs['maximumBandwidthInMbps']
+        if 'minimumBandwidthInMbps' in kwargs:
+            minimum_bandwidth_in_mbps = kwargs['minimumBandwidthInMbps']
+
         _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
         _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
@@ -1525,7 +1623,13 @@ class PathRouteSetPathRoute(dict):
              backend_set_name: str,
              path: str,
              path_match_type: 'outputs.PathRouteSetPathRoutePathMatchType',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'pathMatchType' in kwargs:
+            path_match_type = kwargs['pathMatchType']
+
         _setter("backend_set_name", backend_set_name)
         _setter("path", path)
         _setter("path_match_type", path_match_type)
@@ -1602,7 +1706,11 @@ class PathRouteSetPathRoutePathMatchType(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              match_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+
         _setter("match_type", match_type)
 
     @property
@@ -1770,7 +1878,21 @@ class RuleSetItem(dict):
              status_code: Optional[int] = None,
              suffix: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'areInvalidCharactersAllowed' in kwargs:
+            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
+        if 'httpLargeHeaderSizeInKb' in kwargs:
+            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
+        if 'redirectUri' in kwargs:
+            redirect_uri = kwargs['redirectUri']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         _setter("action", action)
         if allowed_methods is not None:
             _setter("allowed_methods", allowed_methods)
@@ -2007,7 +2129,13 @@ class RuleSetItemCondition(dict):
              attribute_name: str,
              attribute_value: str,
              operator: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
         if operator is not None:
@@ -2134,7 +2262,9 @@ class RuleSetItemRedirectUri(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              query: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
             _setter("host", host)
         if path is not None:
@@ -2272,7 +2402,15 @@ class GetBackendHealthHealthCheckResultResult(dict):
              source_ip_address: str,
              subnet_id: str,
              timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthCheckStatus' in kwargs:
+            health_check_status = kwargs['healthCheckStatus']
+        if 'sourceIpAddress' in kwargs:
+            source_ip_address = kwargs['sourceIpAddress']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         _setter("health_check_status", health_check_status)
         _setter("source_ip_address", source_ip_address)
         _setter("subnet_id", subnet_id)
@@ -2359,7 +2497,19 @@ class GetBackendSetsBackendsetResult(dict):
              session_persistence_configurations: Sequence['outputs.GetBackendSetsBackendsetSessionPersistenceConfigurationResult'],
              ssl_configurations: Sequence['outputs.GetBackendSetsBackendsetSslConfigurationResult'],
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthCheckers' in kwargs:
+            health_checkers = kwargs['healthCheckers']
+        if 'lbCookieSessionPersistenceConfigurations' in kwargs:
+            lb_cookie_session_persistence_configurations = kwargs['lbCookieSessionPersistenceConfigurations']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'sessionPersistenceConfigurations' in kwargs:
+            session_persistence_configurations = kwargs['sessionPersistenceConfigurations']
+        if 'sslConfigurations' in kwargs:
+            ssl_configurations = kwargs['sslConfigurations']
+
         _setter("backends", backends)
         _setter("health_checkers", health_checkers)
         _setter("id", id)
@@ -2482,7 +2632,11 @@ class GetBackendSetsBackendsetBackendResult(dict):
              offline: bool,
              port: int,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("backup", backup)
         _setter("drain", drain)
         _setter("ip_address", ip_address)
@@ -2595,7 +2749,21 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
              return_code: int,
              timeout_in_millis: int,
              url_path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'intervalMs' in kwargs:
+            interval_ms = kwargs['intervalMs']
+        if 'isForcePlainText' in kwargs:
+            is_force_plain_text = kwargs['isForcePlainText']
+        if 'responseBodyRegex' in kwargs:
+            response_body_regex = kwargs['responseBodyRegex']
+        if 'returnCode' in kwargs:
+            return_code = kwargs['returnCode']
+        if 'timeoutInMillis' in kwargs:
+            timeout_in_millis = kwargs['timeoutInMillis']
+        if 'urlPath' in kwargs:
+            url_path = kwargs['urlPath']
+
         _setter("interval_ms", interval_ms)
         _setter("is_force_plain_text", is_force_plain_text)
         _setter("port", port)
@@ -2718,7 +2886,19 @@ class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult(dict
              is_secure: bool,
              max_age_in_seconds: int,
              path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+        if 'isHttpOnly' in kwargs:
+            is_http_only = kwargs['isHttpOnly']
+        if 'isSecure' in kwargs:
+            is_secure = kwargs['isSecure']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("cookie_name", cookie_name)
         _setter("disable_fallback", disable_fallback)
         _setter("domain", domain)
@@ -2803,7 +2983,13 @@ class GetBackendSetsBackendsetSessionPersistenceConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              cookie_name: str,
              disable_fallback: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cookieName' in kwargs:
+            cookie_name = kwargs['cookieName']
+        if 'disableFallback' in kwargs:
+            disable_fallback = kwargs['disableFallback']
+
         _setter("cookie_name", cookie_name)
         _setter("disable_fallback", disable_fallback)
 
@@ -2867,7 +3053,23 @@ class GetBackendSetsBackendsetSslConfigurationResult(dict):
              trusted_certificate_authority_ids: Sequence[str],
              verify_depth: int,
              verify_peer_certificate: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateIds' in kwargs:
+            certificate_ids = kwargs['certificateIds']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'cipherSuiteName' in kwargs:
+            cipher_suite_name = kwargs['cipherSuiteName']
+        if 'serverOrderPreference' in kwargs:
+            server_order_preference = kwargs['serverOrderPreference']
+        if 'trustedCertificateAuthorityIds' in kwargs:
+            trusted_certificate_authority_ids = kwargs['trustedCertificateAuthorityIds']
+        if 'verifyDepth' in kwargs:
+            verify_depth = kwargs['verifyDepth']
+        if 'verifyPeerCertificate' in kwargs:
+            verify_peer_certificate = kwargs['verifyPeerCertificate']
+
         _setter("certificate_ids", certificate_ids)
         _setter("certificate_name", certificate_name)
         _setter("cipher_suite_name", cipher_suite_name)
@@ -2963,7 +3165,9 @@ class GetBackendSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3038,7 +3242,15 @@ class GetBackendsBackendResult(dict):
              state: str,
              weight: int,
              backup: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendsetName' in kwargs:
+            backendset_name = kwargs['backendsetName']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("backendset_name", backendset_name)
         _setter("drain", drain)
         _setter("ip_address", ip_address)
@@ -3150,7 +3362,9 @@ class GetBackendsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3211,7 +3425,19 @@ class GetCertificatesCertificateResult(dict):
              public_certificate: str,
              state: str,
              passphrase: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertificate' in kwargs:
+            ca_certificate = kwargs['caCertificate']
+        if 'certificateName' in kwargs:
+            certificate_name = kwargs['certificateName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'publicCertificate' in kwargs:
+            public_certificate = kwargs['publicCertificate']
+
         _setter("ca_certificate", ca_certificate)
         _setter("certificate_name", certificate_name)
         _setter("load_balancer_id", load_balancer_id)
@@ -3287,7 +3513,9 @@ class GetCertificatesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3330,7 +3558,9 @@ class GetHostnamesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3381,7 +3611,11 @@ class GetHostnamesHostnameResult(dict):
              load_balancer_id: str,
              name: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("hostname", hostname)
         _setter("load_balancer_id", load_balancer_id)
         _setter("name", name)
@@ -3438,7 +3672,9 @@ class GetListenerRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3485,7 +3721,9 @@ class GetListenerRulesListenerRuleResult(dict):
              name: str,
              rules: Sequence['outputs.GetListenerRulesListenerRuleRuleResult'],
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("rules", rules)
         _setter("state", state)
@@ -3580,7 +3818,21 @@ class GetListenerRulesListenerRuleRuleResult(dict):
              status_code: int,
              suffix: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'areInvalidCharactersAllowed' in kwargs:
+            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
+        if 'httpLargeHeaderSizeInKb' in kwargs:
+            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
+        if 'redirectUris' in kwargs:
+            redirect_uris = kwargs['redirectUris']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         _setter("action", action)
         _setter("allowed_methods", allowed_methods)
         _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
@@ -3730,7 +3982,13 @@ class GetListenerRulesListenerRuleRuleConditionResult(dict):
              attribute_name: str,
              attribute_value: str,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
         _setter("operator", operator)
@@ -3795,7 +4053,9 @@ class GetListenerRulesListenerRuleRuleRedirectUriResult(dict):
              port: int,
              protocol: str,
              query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("port", port)
@@ -3864,7 +4124,9 @@ class GetLoadBalancerRoutingPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3919,7 +4181,13 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyResult(dict):
              name: str,
              rules: Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult'],
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionLanguageVersion' in kwargs:
+            condition_language_version = kwargs['conditionLanguageVersion']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("condition_language_version", condition_language_version)
         _setter("load_balancer_id", load_balancer_id)
         _setter("name", name)
@@ -3987,7 +4255,9 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult(dict):
              actions: Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult'],
              condition: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
         _setter("condition", condition)
         _setter("name", name)
@@ -4036,7 +4306,11 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult(dict):
              _setter: Callable[[Any, Any], None],
              backend_set_name: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+
         _setter("backend_set_name", backend_set_name)
         _setter("name", name)
 
@@ -4080,7 +4354,9 @@ class GetLoadBalancerRoutingPolicyRuleResult(dict):
              actions: Sequence['outputs.GetLoadBalancerRoutingPolicyRuleActionResult'],
              condition: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("actions", actions)
         _setter("condition", condition)
         _setter("name", name)
@@ -4129,7 +4405,11 @@ class GetLoadBalancerRoutingPolicyRuleActionResult(dict):
              _setter: Callable[[Any, Any], None],
              backend_set_name: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+
         _setter("backend_set_name", backend_set_name)
         _setter("name", name)
 
@@ -4171,7 +4451,9 @@ class GetLoadBalancersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4273,7 +4555,37 @@ class GetLoadBalancersLoadBalancerResult(dict):
              subnet_ids: Sequence[str],
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddressDetails' in kwargs:
+            ip_address_details = kwargs['ipAddressDetails']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'ipMode' in kwargs:
+            ip_mode = kwargs['ipMode']
+        if 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+        if 'shapeDetails' in kwargs:
+            shape_details = kwargs['shapeDetails']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -4449,7 +4761,15 @@ class GetLoadBalancersLoadBalancerIpAddressDetailResult(dict):
              ip_address: str,
              is_public: bool,
              reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'reservedIps' in kwargs:
+            reserved_ips = kwargs['reservedIps']
+
         _setter("ip_address", ip_address)
         _setter("is_public", is_public)
         _setter("reserved_ips", reserved_ips)
@@ -4494,7 +4814,9 @@ class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -4521,7 +4843,9 @@ class GetLoadBalancersLoadBalancerReservedIpResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
 
     @property
@@ -4552,7 +4876,13 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              maximum_bandwidth_in_mbps: int,
              minimum_bandwidth_in_mbps: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maximumBandwidthInMbps' in kwargs:
+            maximum_bandwidth_in_mbps = kwargs['maximumBandwidthInMbps']
+        if 'minimumBandwidthInMbps' in kwargs:
+            minimum_bandwidth_in_mbps = kwargs['minimumBandwidthInMbps']
+
         _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
         _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
@@ -4594,7 +4924,9 @@ class GetPathRouteSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4645,7 +4977,13 @@ class GetPathRouteSetsPathRouteSetResult(dict):
              name: str,
              path_routes: Sequence['outputs.GetPathRouteSetsPathRouteSetPathRouteResult'],
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'pathRoutes' in kwargs:
+            path_routes = kwargs['pathRoutes']
+
         _setter("load_balancer_id", load_balancer_id)
         _setter("name", name)
         _setter("path_routes", path_routes)
@@ -4707,7 +5045,13 @@ class GetPathRouteSetsPathRouteSetPathRouteResult(dict):
              backend_set_name: str,
              path: str,
              path_match_type: 'outputs.GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'pathMatchType' in kwargs:
+            path_match_type = kwargs['pathMatchType']
+
         _setter("backend_set_name", backend_set_name)
         _setter("path", path)
         _setter("path_match_type", path_match_type)
@@ -4759,7 +5103,11 @@ class GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              match_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'matchType' in kwargs:
+            match_type = kwargs['matchType']
+
         _setter("match_type", match_type)
 
     @property
@@ -4796,7 +5144,9 @@ class GetPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4836,7 +5186,9 @@ class GetPoliciesPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4869,7 +5221,9 @@ class GetProtocolsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4909,7 +5263,9 @@ class GetProtocolsProtocolResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -4989,7 +5345,21 @@ class GetRuleSetItemResult(dict):
              status_code: int,
              suffix: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'areInvalidCharactersAllowed' in kwargs:
+            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
+        if 'httpLargeHeaderSizeInKb' in kwargs:
+            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
+        if 'redirectUris' in kwargs:
+            redirect_uris = kwargs['redirectUris']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         _setter("action", action)
         _setter("allowed_methods", allowed_methods)
         _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
@@ -5142,7 +5512,13 @@ class GetRuleSetItemConditionResult(dict):
              attribute_name: str,
              attribute_value: str,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
         _setter("operator", operator)
@@ -5210,7 +5586,9 @@ class GetRuleSetItemRedirectUriResult(dict):
              port: int,
              protocol: str,
              query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("port", port)
@@ -5279,7 +5657,9 @@ class GetRuleSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5333,7 +5713,11 @@ class GetRuleSetsRuleSetResult(dict):
              load_balancer_id: str,
              name: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("id", id)
         _setter("items", items)
         _setter("load_balancer_id", load_balancer_id)
@@ -5443,7 +5827,21 @@ class GetRuleSetsRuleSetItemResult(dict):
              status_code: int,
              suffix: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'areInvalidCharactersAllowed' in kwargs:
+            are_invalid_characters_allowed = kwargs['areInvalidCharactersAllowed']
+        if 'httpLargeHeaderSizeInKb' in kwargs:
+            http_large_header_size_in_kb = kwargs['httpLargeHeaderSizeInKb']
+        if 'redirectUris' in kwargs:
+            redirect_uris = kwargs['redirectUris']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'statusCode' in kwargs:
+            status_code = kwargs['statusCode']
+
         _setter("action", action)
         _setter("allowed_methods", allowed_methods)
         _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
@@ -5596,7 +5994,13 @@ class GetRuleSetsRuleSetItemConditionResult(dict):
              attribute_name: str,
              attribute_value: str,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
         _setter("operator", operator)
@@ -5664,7 +6068,9 @@ class GetRuleSetsRuleSetItemRedirectUriResult(dict):
              port: int,
              protocol: str,
              query: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("path", path)
         _setter("port", port)
@@ -5733,7 +6139,9 @@ class GetShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5773,7 +6181,9 @@ class GetShapesShapeResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -5806,7 +6216,9 @@ class GetSslCipherSuitesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5857,7 +6269,11 @@ class GetSslCipherSuitesSslCipherSuiteResult(dict):
              load_balancer_id: str,
              name: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("ciphers", ciphers)
         _setter("load_balancer_id", load_balancer_id)
         _setter("name", name)

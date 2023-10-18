@@ -130,7 +130,13 @@ class ConfigAvailabilityConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              max_allowed_failures_per_interval: Optional[int] = None,
              min_allowed_runs_per_interval: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAllowedFailuresPerInterval' in kwargs:
+            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
+        if 'minAllowedRunsPerInterval' in kwargs:
+            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
+
         if max_allowed_failures_per_interval is not None:
             _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         if min_allowed_runs_per_interval is not None:
@@ -281,7 +287,43 @@ class ConfigConfiguration(dict):
              verify_response_codes: Optional[Sequence[str]] = None,
              verify_response_content: Optional[str] = None,
              verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificateDetails' in kwargs:
+            client_certificate_details = kwargs['clientCertificateDetails']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'dnsConfiguration' in kwargs:
+            dns_configuration = kwargs['dnsConfiguration']
+        if 'isCertificateValidationEnabled' in kwargs:
+            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
+        if 'isDefaultSnapshotEnabled' in kwargs:
+            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
+        if 'isFailureRetried' in kwargs:
+            is_failure_retried = kwargs['isFailureRetried']
+        if 'isRedirectionEnabled' in kwargs:
+            is_redirection_enabled = kwargs['isRedirectionEnabled']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'reqAuthenticationDetails' in kwargs:
+            req_authentication_details = kwargs['reqAuthenticationDetails']
+        if 'reqAuthenticationScheme' in kwargs:
+            req_authentication_scheme = kwargs['reqAuthenticationScheme']
+        if 'requestHeaders' in kwargs:
+            request_headers = kwargs['requestHeaders']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestPostBody' in kwargs:
+            request_post_body = kwargs['requestPostBody']
+        if 'requestQueryParams' in kwargs:
+            request_query_params = kwargs['requestQueryParams']
+        if 'verifyResponseCodes' in kwargs:
+            verify_response_codes = kwargs['verifyResponseCodes']
+        if 'verifyResponseContent' in kwargs:
+            verify_response_content = kwargs['verifyResponseContent']
+        if 'verifyTexts' in kwargs:
+            verify_texts = kwargs['verifyTexts']
+
         if client_certificate_details is not None:
             _setter("client_certificate_details", client_certificate_details)
         if config_type is not None:
@@ -492,7 +534,13 @@ class ConfigConfigurationClientCertificateDetails(dict):
              _setter: Callable[[Any, Any], None],
              client_certificate: Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate'] = None,
              private_key: Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificate' in kwargs:
+            client_certificate = kwargs['clientCertificate']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+
         if client_certificate is not None:
             _setter("client_certificate", client_certificate)
         if private_key is not None:
@@ -551,7 +599,11 @@ class ConfigConfigurationClientCertificateDetailsClientCertificate(dict):
              _setter: Callable[[Any, Any], None],
              content: Optional[str] = None,
              file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
             _setter("content", content)
         if file_name is not None:
@@ -610,7 +662,11 @@ class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
              _setter: Callable[[Any, Any], None],
              content: Optional[str] = None,
              file_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
             _setter("content", content)
         if file_name is not None:
@@ -671,7 +727,13 @@ class ConfigConfigurationDnsConfiguration(dict):
              _setter: Callable[[Any, Any], None],
              is_override_dns: Optional[bool] = None,
              override_dns_ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverrideDns' in kwargs:
+            is_override_dns = kwargs['isOverrideDns']
+        if 'overrideDnsIp' in kwargs:
+            override_dns_ip = kwargs['overrideDnsIp']
+
         if is_override_dns is not None:
             _setter("is_override_dns", is_override_dns)
         if override_dns_ip is not None:
@@ -748,7 +810,17 @@ class ConfigConfigurationNetworkConfiguration(dict):
              probe_per_hop: Optional[int] = None,
              protocol: Optional[str] = None,
              transmission_rate: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'numberOfHops' in kwargs:
+            number_of_hops = kwargs['numberOfHops']
+        if 'probeMode' in kwargs:
+            probe_mode = kwargs['probeMode']
+        if 'probePerHop' in kwargs:
+            probe_per_hop = kwargs['probePerHop']
+        if 'transmissionRate' in kwargs:
+            transmission_rate = kwargs['transmissionRate']
+
         if number_of_hops is not None:
             _setter("number_of_hops", number_of_hops)
         if probe_mode is not None:
@@ -875,7 +947,25 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
              auth_user_name: Optional[str] = None,
              auth_user_password: Optional[str] = None,
              oauth_scheme: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authHeaders' in kwargs:
+            auth_headers = kwargs['authHeaders']
+        if 'authRequestMethod' in kwargs:
+            auth_request_method = kwargs['authRequestMethod']
+        if 'authRequestPostBody' in kwargs:
+            auth_request_post_body = kwargs['authRequestPostBody']
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'authUrl' in kwargs:
+            auth_url = kwargs['authUrl']
+        if 'authUserName' in kwargs:
+            auth_user_name = kwargs['authUserName']
+        if 'authUserPassword' in kwargs:
+            auth_user_password = kwargs['authUserPassword']
+        if 'oauthScheme' in kwargs:
+            oauth_scheme = kwargs['oauthScheme']
+
         if auth_headers is not None:
             _setter("auth_headers", auth_headers)
         if auth_request_method is not None:
@@ -996,7 +1086,13 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeader(dict):
              _setter: Callable[[Any, Any], None],
              header_name: Optional[str] = None,
              header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if header_value is not None:
@@ -1057,7 +1153,13 @@ class ConfigConfigurationRequestHeader(dict):
              _setter: Callable[[Any, Any], None],
              header_name: Optional[str] = None,
              header_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if header_value is not None:
@@ -1118,7 +1220,13 @@ class ConfigConfigurationRequestQueryParam(dict):
              _setter: Callable[[Any, Any], None],
              param_name: Optional[str] = None,
              param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
             _setter("param_name", param_name)
         if param_value is not None:
@@ -1156,7 +1264,9 @@ class ConfigConfigurationVerifyText(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              text: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if text is not None:
             _setter("text", text)
 
@@ -1207,7 +1317,13 @@ class ConfigMaintenanceWindowSchedule(dict):
              _setter: Callable[[Any, Any], None],
              time_ended: Optional[str] = None,
              time_started: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if time_ended is not None:
             _setter("time_ended", time_ended)
         if time_started is not None:
@@ -1286,7 +1402,19 @@ class ConfigScriptParameter(dict):
              is_overwritten: Optional[bool] = None,
              is_secret: Optional[bool] = None,
              monitor_script_parameters: Optional[Sequence['outputs.ConfigScriptParameterMonitorScriptParameter']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'monitorScriptParameters' in kwargs:
+            monitor_script_parameters = kwargs['monitorScriptParameters']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
         if is_overwritten is not None:
@@ -1375,7 +1503,13 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
              _setter: Callable[[Any, Any], None],
              param_name: Optional[str] = None,
              param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
             _setter("param_name", param_name)
         if param_value is not None:
@@ -1434,7 +1568,11 @@ class ConfigVantagePoint(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              display_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("name", name)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -1506,7 +1644,17 @@ class DedicatedVantagePointDvpStackDetails(dict):
              dvp_stack_type: str,
              dvp_stream_id: str,
              dvp_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvpStackId' in kwargs:
+            dvp_stack_id = kwargs['dvpStackId']
+        if 'dvpStackType' in kwargs:
+            dvp_stack_type = kwargs['dvpStackType']
+        if 'dvpStreamId' in kwargs:
+            dvp_stream_id = kwargs['dvpStreamId']
+        if 'dvpVersion' in kwargs:
+            dvp_version = kwargs['dvpVersion']
+
         _setter("dvp_stack_id", dvp_stack_id)
         _setter("dvp_stack_type", dvp_stack_type)
         _setter("dvp_stream_id", dvp_stream_id)
@@ -1572,7 +1720,9 @@ class DedicatedVantagePointMonitorStatusCountMap(dict):
              enabled: Optional[int] = None,
              invalid: Optional[int] = None,
              total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
             _setter("disabled", disabled)
         if enabled is not None:
@@ -1642,7 +1792,9 @@ class ScriptMonitorStatusCountMap(dict):
              enabled: Optional[int] = None,
              invalid: Optional[int] = None,
              total: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
             _setter("disabled", disabled)
         if enabled is not None:
@@ -1745,7 +1897,19 @@ class ScriptParameter(dict):
              is_secret: Optional[bool] = None,
              param_value: Optional[str] = None,
              script_parameters: Optional[Sequence['outputs.ScriptParameterScriptParameter']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+
         _setter("param_name", param_name)
         if is_overwritten is not None:
             _setter("is_overwritten", is_overwritten)
@@ -1849,7 +2013,15 @@ class ScriptParameterScriptParameter(dict):
              is_secret: Optional[bool] = None,
              param_name: Optional[str] = None,
              param_value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if is_secret is not None:
             _setter("is_secret", is_secret)
         if param_name is not None:
@@ -1913,7 +2085,17 @@ class GetDedicatedVantagePointDvpStackDetailResult(dict):
              dvp_stack_type: str,
              dvp_stream_id: str,
              dvp_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvpStackId' in kwargs:
+            dvp_stack_id = kwargs['dvpStackId']
+        if 'dvpStackType' in kwargs:
+            dvp_stack_type = kwargs['dvpStackType']
+        if 'dvpStreamId' in kwargs:
+            dvp_stream_id = kwargs['dvpStreamId']
+        if 'dvpVersion' in kwargs:
+            dvp_version = kwargs['dvpVersion']
+
         _setter("dvp_stack_id", dvp_stack_id)
         _setter("dvp_stack_type", dvp_stack_type)
         _setter("dvp_stream_id", dvp_stream_id)
@@ -1979,7 +2161,9 @@ class GetDedicatedVantagePointMonitorStatusCountMapResult(dict):
              enabled: int,
              invalid: int,
              total: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("disabled", disabled)
         _setter("enabled", enabled)
         _setter("invalid", invalid)
@@ -2030,7 +2214,9 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2098,7 +2284,25 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
              status: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dvpStackDetails' in kwargs:
+            dvp_stack_details = kwargs['dvpStackDetails']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'monitorStatusCountMaps' in kwargs:
+            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -2236,7 +2440,17 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail
              dvp_stack_type: str,
              dvp_stream_id: str,
              dvp_version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvpStackId' in kwargs:
+            dvp_stack_id = kwargs['dvpStackId']
+        if 'dvpStackType' in kwargs:
+            dvp_stack_type = kwargs['dvpStackType']
+        if 'dvpStreamId' in kwargs:
+            dvp_stream_id = kwargs['dvpStreamId']
+        if 'dvpVersion' in kwargs:
+            dvp_version = kwargs['dvpVersion']
+
         _setter("dvp_stack_id", dvp_stack_id)
         _setter("dvp_stack_type", dvp_stack_type)
         _setter("dvp_stream_id", dvp_stream_id)
@@ -2302,7 +2516,9 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusC
              enabled: int,
              invalid: int,
              total: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("disabled", disabled)
         _setter("enabled", enabled)
         _setter("invalid", invalid)
@@ -2362,7 +2578,9 @@ class GetDedicatedVantagePointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2406,7 +2624,13 @@ class GetMonitorAvailabilityConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              max_allowed_failures_per_interval: int,
              min_allowed_runs_per_interval: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAllowedFailuresPerInterval' in kwargs:
+            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
+        if 'minAllowedRunsPerInterval' in kwargs:
+            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
+
         _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
@@ -2506,7 +2730,43 @@ class GetMonitorConfigurationResult(dict):
              verify_response_codes: Sequence[str],
              verify_response_content: str,
              verify_texts: Sequence['outputs.GetMonitorConfigurationVerifyTextResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificateDetails' in kwargs:
+            client_certificate_details = kwargs['clientCertificateDetails']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'dnsConfigurations' in kwargs:
+            dns_configurations = kwargs['dnsConfigurations']
+        if 'isCertificateValidationEnabled' in kwargs:
+            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
+        if 'isDefaultSnapshotEnabled' in kwargs:
+            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
+        if 'isFailureRetried' in kwargs:
+            is_failure_retried = kwargs['isFailureRetried']
+        if 'isRedirectionEnabled' in kwargs:
+            is_redirection_enabled = kwargs['isRedirectionEnabled']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'reqAuthenticationDetails' in kwargs:
+            req_authentication_details = kwargs['reqAuthenticationDetails']
+        if 'reqAuthenticationScheme' in kwargs:
+            req_authentication_scheme = kwargs['reqAuthenticationScheme']
+        if 'requestHeaders' in kwargs:
+            request_headers = kwargs['requestHeaders']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestPostBody' in kwargs:
+            request_post_body = kwargs['requestPostBody']
+        if 'requestQueryParams' in kwargs:
+            request_query_params = kwargs['requestQueryParams']
+        if 'verifyResponseCodes' in kwargs:
+            verify_response_codes = kwargs['verifyResponseCodes']
+        if 'verifyResponseContent' in kwargs:
+            verify_response_content = kwargs['verifyResponseContent']
+        if 'verifyTexts' in kwargs:
+            verify_texts = kwargs['verifyTexts']
+
         _setter("client_certificate_details", client_certificate_details)
         _setter("config_type", config_type)
         _setter("dns_configurations", dns_configurations)
@@ -2681,7 +2941,13 @@ class GetMonitorConfigurationClientCertificateDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              client_certificates: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult'],
              private_keys: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificates' in kwargs:
+            client_certificates = kwargs['clientCertificates']
+        if 'privateKeys' in kwargs:
+            private_keys = kwargs['privateKeys']
+
         _setter("client_certificates", client_certificates)
         _setter("private_keys", private_keys)
 
@@ -2721,7 +2987,11 @@ class GetMonitorConfigurationClientCertificateDetailClientCertificateResult(dict
              _setter: Callable[[Any, Any], None],
              content: str,
              file_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("content", content)
         _setter("file_name", file_name)
 
@@ -2761,7 +3031,11 @@ class GetMonitorConfigurationClientCertificateDetailPrivateKeyResult(dict):
              _setter: Callable[[Any, Any], None],
              content: str,
              file_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("content", content)
         _setter("file_name", file_name)
 
@@ -2801,7 +3075,13 @@ class GetMonitorConfigurationDnsConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              is_override_dns: bool,
              override_dns_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverrideDns' in kwargs:
+            is_override_dns = kwargs['isOverrideDns']
+        if 'overrideDnsIp' in kwargs:
+            override_dns_ip = kwargs['overrideDnsIp']
+
         _setter("is_override_dns", is_override_dns)
         _setter("override_dns_ip", override_dns_ip)
 
@@ -2853,7 +3133,17 @@ class GetMonitorConfigurationNetworkConfigurationResult(dict):
              probe_per_hop: int,
              protocol: str,
              transmission_rate: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'numberOfHops' in kwargs:
+            number_of_hops = kwargs['numberOfHops']
+        if 'probeMode' in kwargs:
+            probe_mode = kwargs['probeMode']
+        if 'probePerHop' in kwargs:
+            probe_per_hop = kwargs['probePerHop']
+        if 'transmissionRate' in kwargs:
+            transmission_rate = kwargs['transmissionRate']
+
         _setter("number_of_hops", number_of_hops)
         _setter("probe_mode", probe_mode)
         _setter("probe_per_hop", probe_per_hop)
@@ -2944,7 +3234,25 @@ class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
              auth_user_name: str,
              auth_user_password: str,
              oauth_scheme: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authHeaders' in kwargs:
+            auth_headers = kwargs['authHeaders']
+        if 'authRequestMethod' in kwargs:
+            auth_request_method = kwargs['authRequestMethod']
+        if 'authRequestPostBody' in kwargs:
+            auth_request_post_body = kwargs['authRequestPostBody']
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'authUrl' in kwargs:
+            auth_url = kwargs['authUrl']
+        if 'authUserName' in kwargs:
+            auth_user_name = kwargs['authUserName']
+        if 'authUserPassword' in kwargs:
+            auth_user_password = kwargs['authUserPassword']
+        if 'oauthScheme' in kwargs:
+            oauth_scheme = kwargs['oauthScheme']
+
         _setter("auth_headers", auth_headers)
         _setter("auth_request_method", auth_request_method)
         _setter("auth_request_post_body", auth_request_post_body)
@@ -3038,7 +3346,13 @@ class GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              header_name: str,
              header_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         _setter("header_name", header_name)
         _setter("header_value", header_value)
 
@@ -3078,7 +3392,13 @@ class GetMonitorConfigurationRequestHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              header_name: str,
              header_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         _setter("header_name", header_name)
         _setter("header_value", header_value)
 
@@ -3118,7 +3438,13 @@ class GetMonitorConfigurationRequestQueryParamResult(dict):
              _setter: Callable[[Any, Any], None],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
 
@@ -3154,7 +3480,9 @@ class GetMonitorConfigurationVerifyTextResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              text: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("text", text)
 
     @property
@@ -3185,7 +3513,13 @@ class GetMonitorMaintenanceWindowScheduleResult(dict):
              _setter: Callable[[Any, Any], None],
              time_ended: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("time_ended", time_ended)
         _setter("time_started", time_started)
 
@@ -3237,7 +3571,19 @@ class GetMonitorScriptParameterResult(dict):
              monitor_script_parameters: Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult'],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'monitorScriptParameters' in kwargs:
+            monitor_script_parameters = kwargs['monitorScriptParameters']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("is_overwritten", is_overwritten)
         _setter("is_secret", is_secret)
         _setter("monitor_script_parameters", monitor_script_parameters)
@@ -3304,7 +3650,13 @@ class GetMonitorScriptParameterMonitorScriptParameterResult(dict):
              _setter: Callable[[Any, Any], None],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
 
@@ -3344,7 +3696,11 @@ class GetMonitorVantagePointResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("name", name)
 
@@ -3386,7 +3742,9 @@ class GetMonitorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3423,7 +3781,9 @@ class GetMonitorsMonitorCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMonitorsMonitorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3539,7 +3899,49 @@ class GetMonitorsMonitorCollectionItemResult(dict):
              timeout_in_seconds: int,
              vantage_point_count: int,
              vantage_points: Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'availabilityConfigurations' in kwargs:
+            availability_configurations = kwargs['availabilityConfigurations']
+        if 'batchIntervalInSeconds' in kwargs:
+            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isRunNow' in kwargs:
+            is_run_now = kwargs['isRunNow']
+        if 'isRunOnce' in kwargs:
+            is_run_once = kwargs['isRunOnce']
+        if 'maintenanceWindowSchedules' in kwargs:
+            maintenance_window_schedules = kwargs['maintenanceWindowSchedules']
+        if 'monitorType' in kwargs:
+            monitor_type = kwargs['monitorType']
+        if 'repeatIntervalInSeconds' in kwargs:
+            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
+        if 'schedulingPolicy' in kwargs:
+            scheduling_policy = kwargs['schedulingPolicy']
+        if 'scriptId' in kwargs:
+            script_id = kwargs['scriptId']
+        if 'scriptName' in kwargs:
+            script_name = kwargs['scriptName']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointCount' in kwargs:
+            vantage_point_count = kwargs['vantagePointCount']
+        if 'vantagePoints' in kwargs:
+            vantage_points = kwargs['vantagePoints']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("availability_configurations", availability_configurations)
         _setter("batch_interval_in_seconds", batch_interval_in_seconds)
@@ -3777,7 +4179,13 @@ class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              max_allowed_failures_per_interval: int,
              min_allowed_runs_per_interval: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAllowedFailuresPerInterval' in kwargs:
+            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
+        if 'minAllowedRunsPerInterval' in kwargs:
+            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
+
         _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
@@ -3877,7 +4285,43 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
              verify_response_codes: Sequence[str],
              verify_response_content: str,
              verify_texts: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificateDetails' in kwargs:
+            client_certificate_details = kwargs['clientCertificateDetails']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'dnsConfigurations' in kwargs:
+            dns_configurations = kwargs['dnsConfigurations']
+        if 'isCertificateValidationEnabled' in kwargs:
+            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
+        if 'isDefaultSnapshotEnabled' in kwargs:
+            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
+        if 'isFailureRetried' in kwargs:
+            is_failure_retried = kwargs['isFailureRetried']
+        if 'isRedirectionEnabled' in kwargs:
+            is_redirection_enabled = kwargs['isRedirectionEnabled']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'reqAuthenticationDetails' in kwargs:
+            req_authentication_details = kwargs['reqAuthenticationDetails']
+        if 'reqAuthenticationScheme' in kwargs:
+            req_authentication_scheme = kwargs['reqAuthenticationScheme']
+        if 'requestHeaders' in kwargs:
+            request_headers = kwargs['requestHeaders']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestPostBody' in kwargs:
+            request_post_body = kwargs['requestPostBody']
+        if 'requestQueryParams' in kwargs:
+            request_query_params = kwargs['requestQueryParams']
+        if 'verifyResponseCodes' in kwargs:
+            verify_response_codes = kwargs['verifyResponseCodes']
+        if 'verifyResponseContent' in kwargs:
+            verify_response_content = kwargs['verifyResponseContent']
+        if 'verifyTexts' in kwargs:
+            verify_texts = kwargs['verifyTexts']
+
         _setter("client_certificate_details", client_certificate_details)
         _setter("config_type", config_type)
         _setter("dns_configurations", dns_configurations)
@@ -4052,7 +4496,13 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult
              _setter: Callable[[Any, Any], None],
              client_certificates: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult'],
              private_keys: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificates' in kwargs:
+            client_certificates = kwargs['clientCertificates']
+        if 'privateKeys' in kwargs:
+            private_keys = kwargs['privateKeys']
+
         _setter("client_certificates", client_certificates)
         _setter("private_keys", private_keys)
 
@@ -4092,7 +4542,11 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClient
              _setter: Callable[[Any, Any], None],
              content: str,
              file_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("content", content)
         _setter("file_name", file_name)
 
@@ -4132,7 +4586,11 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivat
              _setter: Callable[[Any, Any], None],
              content: str,
              file_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("content", content)
         _setter("file_name", file_name)
 
@@ -4172,7 +4630,13 @@ class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
              _setter: Callable[[Any, Any], None],
              is_override_dns: bool,
              override_dns_ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverrideDns' in kwargs:
+            is_override_dns = kwargs['isOverrideDns']
+        if 'overrideDnsIp' in kwargs:
+            override_dns_ip = kwargs['overrideDnsIp']
+
         _setter("is_override_dns", is_override_dns)
         _setter("override_dns_ip", override_dns_ip)
 
@@ -4224,7 +4688,17 @@ class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult(di
              probe_per_hop: int,
              protocol: str,
              transmission_rate: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'numberOfHops' in kwargs:
+            number_of_hops = kwargs['numberOfHops']
+        if 'probeMode' in kwargs:
+            probe_mode = kwargs['probeMode']
+        if 'probePerHop' in kwargs:
+            probe_per_hop = kwargs['probePerHop']
+        if 'transmissionRate' in kwargs:
+            transmission_rate = kwargs['transmissionRate']
+
         _setter("number_of_hops", number_of_hops)
         _setter("probe_mode", probe_mode)
         _setter("probe_per_hop", probe_per_hop)
@@ -4315,7 +4789,25 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult
              auth_user_name: str,
              auth_user_password: str,
              oauth_scheme: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authHeaders' in kwargs:
+            auth_headers = kwargs['authHeaders']
+        if 'authRequestMethod' in kwargs:
+            auth_request_method = kwargs['authRequestMethod']
+        if 'authRequestPostBody' in kwargs:
+            auth_request_post_body = kwargs['authRequestPostBody']
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'authUrl' in kwargs:
+            auth_url = kwargs['authUrl']
+        if 'authUserName' in kwargs:
+            auth_user_name = kwargs['authUserName']
+        if 'authUserPassword' in kwargs:
+            auth_user_password = kwargs['authUserPassword']
+        if 'oauthScheme' in kwargs:
+            oauth_scheme = kwargs['oauthScheme']
+
         _setter("auth_headers", auth_headers)
         _setter("auth_request_method", auth_request_method)
         _setter("auth_request_post_body", auth_request_post_body)
@@ -4409,7 +4901,13 @@ class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHe
              _setter: Callable[[Any, Any], None],
              header_name: str,
              header_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         _setter("header_name", header_name)
         _setter("header_value", header_value)
 
@@ -4449,7 +4947,13 @@ class GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              header_name: str,
              header_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         _setter("header_name", header_name)
         _setter("header_value", header_value)
 
@@ -4489,7 +4993,13 @@ class GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult(dict)
              _setter: Callable[[Any, Any], None],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
 
@@ -4525,7 +5035,9 @@ class GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              text: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("text", text)
 
     @property
@@ -4556,7 +5068,13 @@ class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
              _setter: Callable[[Any, Any], None],
              time_ended: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("time_ended", time_ended)
         _setter("time_started", time_started)
 
@@ -4608,7 +5126,19 @@ class GetMonitorsMonitorCollectionItemScriptParameterResult(dict):
              monitor_script_parameters: Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult'],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'monitorScriptParameters' in kwargs:
+            monitor_script_parameters = kwargs['monitorScriptParameters']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("is_overwritten", is_overwritten)
         _setter("is_secret", is_secret)
         _setter("monitor_script_parameters", monitor_script_parameters)
@@ -4675,7 +5205,13 @@ class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResul
              _setter: Callable[[Any, Any], None],
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
 
@@ -4715,7 +5251,11 @@ class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
              _setter: Callable[[Any, Any], None],
              display_name: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("name", name)
 
@@ -4763,7 +5303,13 @@ class GetResultResultDataSetResult(dict):
              name: str,
              string_content: str,
              timestamp: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'byteContent' in kwargs:
+            byte_content = kwargs['byteContent']
+        if 'stringContent' in kwargs:
+            string_content = kwargs['stringContent']
+
         _setter("byte_content", byte_content)
         _setter("name", name)
         _setter("string_content", string_content)
@@ -4829,7 +5375,9 @@ class GetScriptMonitorStatusCountMapResult(dict):
              enabled: int,
              invalid: int,
              total: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("disabled", disabled)
         _setter("enabled", enabled)
         _setter("invalid", invalid)
@@ -4899,7 +5447,19 @@ class GetScriptParameterResult(dict):
              param_name: str,
              param_value: str,
              script_parameters: Sequence['outputs.GetScriptParameterScriptParameterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+
         _setter("is_overwritten", is_overwritten)
         _setter("is_secret", is_secret)
         _setter("param_name", param_name)
@@ -4970,7 +5530,15 @@ class GetScriptParameterScriptParameterResult(dict):
              is_secret: bool,
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("is_secret", is_secret)
         _setter("param_name", param_name)
         _setter("param_value", param_value)
@@ -5018,7 +5586,9 @@ class GetScriptsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5052,7 +5622,9 @@ class GetScriptsScriptCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetScriptsScriptCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5128,7 +5700,31 @@ class GetScriptsScriptCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              time_uploaded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'contentFileName' in kwargs:
+            content_file_name = kwargs['contentFileName']
+        if 'contentSizeInBytes' in kwargs:
+            content_size_in_bytes = kwargs['contentSizeInBytes']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'monitorStatusCountMaps' in kwargs:
+            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeUploaded' in kwargs:
+            time_uploaded = kwargs['timeUploaded']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("content", content)
         _setter("content_file_name", content_file_name)
@@ -5284,7 +5880,9 @@ class GetScriptsScriptCollectionItemMonitorStatusCountMapResult(dict):
              enabled: int,
              invalid: int,
              total: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("disabled", disabled)
         _setter("enabled", enabled)
         _setter("invalid", invalid)
@@ -5354,7 +5952,19 @@ class GetScriptsScriptCollectionItemParameterResult(dict):
              param_name: str,
              param_value: str,
              script_parameters: Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+
         _setter("is_overwritten", is_overwritten)
         _setter("is_secret", is_secret)
         _setter("param_name", param_name)
@@ -5425,7 +6035,15 @@ class GetScriptsScriptCollectionItemParameterScriptParameterResult(dict):
              is_secret: bool,
              param_name: str,
              param_value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         _setter("is_secret", is_secret)
         _setter("param_name", param_name)
         _setter("param_value", param_value)
@@ -5478,7 +6096,11 @@ class GetVantagePointItemResult(dict):
              display_name: str,
              geos: Sequence['outputs.GetVantagePointItemGeoResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("geos", geos)
         _setter("name", name)
@@ -5543,7 +6165,17 @@ class GetVantagePointItemGeoResult(dict):
              country_name: str,
              latitude: float,
              longitude: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminDivCode' in kwargs:
+            admin_div_code = kwargs['adminDivCode']
+        if 'cityName' in kwargs:
+            city_name = kwargs['cityName']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'countryName' in kwargs:
+            country_name = kwargs['countryName']
+
         _setter("admin_div_code", admin_div_code)
         _setter("city_name", city_name)
         _setter("country_code", country_code)
@@ -5621,7 +6253,9 @@ class GetVantagePointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5661,7 +6295,9 @@ class GetVantagePointsPublicVantagePointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5696,7 +6332,11 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
              display_name: str,
              geos: Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("geos", geos)
         _setter("name", name)
@@ -5761,7 +6401,17 @@ class GetVantagePointsPublicVantagePointCollectionItemGeoResult(dict):
              country_name: str,
              latitude: float,
              longitude: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminDivCode' in kwargs:
+            admin_div_code = kwargs['adminDivCode']
+        if 'cityName' in kwargs:
+            city_name = kwargs['cityName']
+        if 'countryCode' in kwargs:
+            country_code = kwargs['countryCode']
+        if 'countryName' in kwargs:
+            country_name = kwargs['countryName']
+
         _setter("admin_div_code", admin_div_code)
         _setter("city_name", city_name)
         _setter("country_code", country_code)

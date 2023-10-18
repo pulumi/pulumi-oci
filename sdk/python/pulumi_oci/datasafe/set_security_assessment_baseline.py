@@ -35,7 +35,13 @@ class SetSecurityAssessmentBaselineArgs:
              _setter: Callable[[Any, Any], None],
              security_assessment_id: pulumi.Input[str],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'securityAssessmentId' in kwargs:
+            security_assessment_id = kwargs['securityAssessmentId']
+        if 'assessmentIds' in kwargs:
+            assessment_ids = kwargs['assessmentIds']
+
         _setter("security_assessment_id", security_assessment_id)
         if assessment_ids is not None:
             _setter("assessment_ids", assessment_ids)
@@ -93,7 +99,13 @@ class _SetSecurityAssessmentBaselineState:
              _setter: Callable[[Any, Any], None],
              assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              security_assessment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assessmentIds' in kwargs:
+            assessment_ids = kwargs['assessmentIds']
+        if 'securityAssessmentId' in kwargs:
+            security_assessment_id = kwargs['securityAssessmentId']
+
         if assessment_ids is not None:
             _setter("assessment_ids", assessment_ids)
         if security_assessment_id is not None:

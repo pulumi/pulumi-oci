@@ -61,7 +61,21 @@ class RepositoryArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'repositoryType' in kwargs:
+            repository_type = kwargs['repositoryType']
+        if 'defaultBranch' in kwargs:
+            default_branch = kwargs['defaultBranch']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mirrorRepositoryConfig' in kwargs:
+            mirror_repository_config = kwargs['mirrorRepositoryConfig']
+
         _setter("project_id", project_id)
         _setter("repository_type", repository_type)
         if default_branch is not None:
@@ -282,7 +296,45 @@ class _RepositoryState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              trigger_build_events: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'branchCount' in kwargs:
+            branch_count = kwargs['branchCount']
+        if 'commitCount' in kwargs:
+            commit_count = kwargs['commitCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultBranch' in kwargs:
+            default_branch = kwargs['defaultBranch']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'httpUrl' in kwargs:
+            http_url = kwargs['httpUrl']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'mirrorRepositoryConfig' in kwargs:
+            mirror_repository_config = kwargs['mirrorRepositoryConfig']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'projectName' in kwargs:
+            project_name = kwargs['projectName']
+        if 'repositoryType' in kwargs:
+            repository_type = kwargs['repositoryType']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'sshUrl' in kwargs:
+            ssh_url = kwargs['sshUrl']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggerBuildEvents' in kwargs:
+            trigger_build_events = kwargs['triggerBuildEvents']
+
         if branch_count is not None:
             _setter("branch_count", branch_count)
         if commit_count is not None:

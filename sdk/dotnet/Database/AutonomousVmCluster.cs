@@ -88,6 +88,9 @@ namespace Pulumi.Oci.Database
     [OciResourceType("oci:Database/autonomousVmCluster:AutonomousVmCluster")]
     public partial class AutonomousVmCluster : global::Pulumi.CustomResource
     {
+        [Output("autonomousDataStoragePercentage")]
+        public Output<double> AutonomousDataStoragePercentage { get; private set; } = null!;
+
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
@@ -135,6 +138,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("cpuCoreCountPerNode")]
         public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
+
+        [Output("cpuPercentage")]
+        public Output<double> CpuPercentage { get; private set; } = null!;
 
         /// <summary>
         /// The number of enabled CPU cores.
@@ -253,11 +259,20 @@ namespace Pulumi.Oci.Database
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
 
+        [Output("nonProvisionableAutonomousContainerDatabases")]
+        public Output<int> NonProvisionableAutonomousContainerDatabases { get; private set; } = null!;
+
         /// <summary>
         /// The number of enabled OCPU cores.
         /// </summary>
         [Output("ocpusEnabled")]
         public Output<double> OcpusEnabled { get; private set; } = null!;
+
+        [Output("provisionedAutonomousContainerDatabases")]
+        public Output<int> ProvisionedAutonomousContainerDatabases { get; private set; } = null!;
+
+        [Output("provisionedCpus")]
+        public Output<double> ProvisionedCpus { get; private set; } = null!;
 
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -266,6 +281,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<int> ReclaimableCpus { get; private set; } = null!;
+
+        [Output("reservedCpus")]
+        public Output<double> ReservedCpus { get; private set; } = null!;
 
         /// <summary>
         /// The SCAN Listener Non TLS port number. Default value is 1521.
@@ -308,6 +326,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
+
+        [Output("totalAutonomousDataStorageInTbs")]
+        public Output<double> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
@@ -521,6 +542,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class AutonomousVmClusterState : global::Pulumi.ResourceArgs
     {
+        [Input("autonomousDataStoragePercentage")]
+        public Input<double>? AutonomousDataStoragePercentage { get; set; }
+
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
@@ -568,6 +592,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
+
+        [Input("cpuPercentage")]
+        public Input<double>? CpuPercentage { get; set; }
 
         /// <summary>
         /// The number of enabled CPU cores.
@@ -716,11 +743,20 @@ namespace Pulumi.Oci.Database
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
 
+        [Input("nonProvisionableAutonomousContainerDatabases")]
+        public Input<int>? NonProvisionableAutonomousContainerDatabases { get; set; }
+
         /// <summary>
         /// The number of enabled OCPU cores.
         /// </summary>
         [Input("ocpusEnabled")]
         public Input<double>? OcpusEnabled { get; set; }
+
+        [Input("provisionedAutonomousContainerDatabases")]
+        public Input<int>? ProvisionedAutonomousContainerDatabases { get; set; }
+
+        [Input("provisionedCpus")]
+        public Input<double>? ProvisionedCpus { get; set; }
 
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -729,6 +765,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<int>? ReclaimableCpus { get; set; }
+
+        [Input("reservedCpus")]
+        public Input<double>? ReservedCpus { get; set; }
 
         /// <summary>
         /// The SCAN Listener Non TLS port number. Default value is 1521.
@@ -771,6 +810,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
+
+        [Input("totalAutonomousDataStorageInTbs")]
+        public Input<double>? TotalAutonomousDataStorageInTbs { get; set; }
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.

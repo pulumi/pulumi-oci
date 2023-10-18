@@ -20,6 +20,7 @@ class CaptureFilterArgs:
                  filter_type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None):
         """
@@ -28,6 +29,7 @@ class CaptureFilterArgs:
         :param pulumi.Input[str] filter_type: Indicates which service will use this capture filter
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
@@ -37,6 +39,7 @@ class CaptureFilterArgs:
             filter_type=filter_type,
             defined_tags=defined_tags,
             display_name=display_name,
+            flow_log_capture_filter_rules=flow_log_capture_filter_rules,
             freeform_tags=freeform_tags,
             vtap_capture_filter_rules=vtap_capture_filter_rules,
         )
@@ -47,15 +50,34 @@ class CaptureFilterArgs:
              filter_type: pulumi.Input[str],
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
+             flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'flowLogCaptureFilterRules' in kwargs:
+            flow_log_capture_filter_rules = kwargs['flowLogCaptureFilterRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'vtapCaptureFilterRules' in kwargs:
+            vtap_capture_filter_rules = kwargs['vtapCaptureFilterRules']
+
         _setter("compartment_id", compartment_id)
         _setter("filter_type", filter_type)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
         if display_name is not None:
             _setter("display_name", display_name)
+        if flow_log_capture_filter_rules is not None:
+            _setter("flow_log_capture_filter_rules", flow_log_capture_filter_rules)
         if freeform_tags is not None:
             _setter("freeform_tags", freeform_tags)
         if vtap_capture_filter_rules is not None:
@@ -110,6 +132,18 @@ class CaptureFilterArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="flowLogCaptureFilterRules")
+    def flow_log_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
+        """
+        (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        """
+        return pulumi.get(self, "flow_log_capture_filter_rules")
+
+    @flow_log_capture_filter_rules.setter
+    def flow_log_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
+        pulumi.set(self, "flow_log_capture_filter_rules", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -141,6 +175,7 @@ class _CaptureFilterState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  filter_type: Optional[pulumi.Input[str]] = None,
+                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -151,6 +186,7 @@ class _CaptureFilterState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] filter_type: Indicates which service will use this capture filter
+        :param pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] state: The capture filter's current administrative state.
         :param pulumi.Input[str] time_created: The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -162,6 +198,7 @@ class _CaptureFilterState:
             defined_tags=defined_tags,
             display_name=display_name,
             filter_type=filter_type,
+            flow_log_capture_filter_rules=flow_log_capture_filter_rules,
             freeform_tags=freeform_tags,
             state=state,
             time_created=time_created,
@@ -174,11 +211,30 @@ class _CaptureFilterState:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              filter_type: Optional[pulumi.Input[str]] = None,
+             flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterVtapCaptureFilterRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if 'flowLogCaptureFilterRules' in kwargs:
+            flow_log_capture_filter_rules = kwargs['flowLogCaptureFilterRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vtapCaptureFilterRules' in kwargs:
+            vtap_capture_filter_rules = kwargs['vtapCaptureFilterRules']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -187,6 +243,8 @@ class _CaptureFilterState:
             _setter("display_name", display_name)
         if filter_type is not None:
             _setter("filter_type", filter_type)
+        if flow_log_capture_filter_rules is not None:
+            _setter("flow_log_capture_filter_rules", flow_log_capture_filter_rules)
         if freeform_tags is not None:
             _setter("freeform_tags", freeform_tags)
         if state is not None:
@@ -243,6 +301,18 @@ class _CaptureFilterState:
     @filter_type.setter
     def filter_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "filter_type", value)
+
+    @property
+    @pulumi.getter(name="flowLogCaptureFilterRules")
+    def flow_log_capture_filter_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]:
+        """
+        (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        """
+        return pulumi.get(self, "flow_log_capture_filter_rules")
+
+    @flow_log_capture_filter_rules.setter
+    def flow_log_capture_filter_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]):
+        pulumi.set(self, "flow_log_capture_filter_rules", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -302,6 +372,7 @@ class CaptureFilter(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  filter_type: Optional[pulumi.Input[str]] = None,
+                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterVtapCaptureFilterRuleArgs']]]]] = None,
                  __props__=None):
@@ -331,6 +402,40 @@ class CaptureFilter(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=var["capture_filter_display_name"],
+            flow_log_capture_filter_rules=[oci.core.CaptureFilterFlowLogCaptureFilterRuleArgs(
+                destination_cidr=var["capture_filter_flow_log_capture_filter_rules_destination_cidr"],
+                flow_log_type=var["capture_filter_flow_log_capture_filter_rules_flow_log_type"],
+                icmp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs(
+                    type=var["capture_filter_flow_log_capture_filter_rules_icmp_options_type"],
+                    code=var["capture_filter_flow_log_capture_filter_rules_icmp_options_code"],
+                ),
+                is_enabled=var["capture_filter_flow_log_capture_filter_rules_is_enabled"],
+                priority=var["capture_filter_flow_log_capture_filter_rules_priority"],
+                protocol=var["capture_filter_flow_log_capture_filter_rules_protocol"],
+                rule_action=var["capture_filter_flow_log_capture_filter_rules_rule_action"],
+                sampling_rate=var["capture_filter_flow_log_capture_filter_rules_sampling_rate"],
+                source_cidr=var["capture_filter_flow_log_capture_filter_rules_source_cidr"],
+                tcp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs(
+                    destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min"],
+                    ),
+                    source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min"],
+                    ),
+                ),
+                udp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs(
+                    destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min"],
+                    ),
+                    source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min"],
+                    ),
+                ),
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -381,6 +486,7 @@ class CaptureFilter(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] filter_type: Indicates which service will use this capture filter
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterVtapCaptureFilterRuleArgs']]]] vtap_capture_filter_rules: (Updatable) The set of rules governing what traffic a VTAP mirrors.
         """
@@ -416,6 +522,40 @@ class CaptureFilter(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             display_name=var["capture_filter_display_name"],
+            flow_log_capture_filter_rules=[oci.core.CaptureFilterFlowLogCaptureFilterRuleArgs(
+                destination_cidr=var["capture_filter_flow_log_capture_filter_rules_destination_cidr"],
+                flow_log_type=var["capture_filter_flow_log_capture_filter_rules_flow_log_type"],
+                icmp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs(
+                    type=var["capture_filter_flow_log_capture_filter_rules_icmp_options_type"],
+                    code=var["capture_filter_flow_log_capture_filter_rules_icmp_options_code"],
+                ),
+                is_enabled=var["capture_filter_flow_log_capture_filter_rules_is_enabled"],
+                priority=var["capture_filter_flow_log_capture_filter_rules_priority"],
+                protocol=var["capture_filter_flow_log_capture_filter_rules_protocol"],
+                rule_action=var["capture_filter_flow_log_capture_filter_rules_rule_action"],
+                sampling_rate=var["capture_filter_flow_log_capture_filter_rules_sampling_rate"],
+                source_cidr=var["capture_filter_flow_log_capture_filter_rules_source_cidr"],
+                tcp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs(
+                    destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min"],
+                    ),
+                    source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min"],
+                    ),
+                ),
+                udp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs(
+                    destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min"],
+                    ),
+                    source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
+                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max"],
+                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min"],
+                    ),
+                ),
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -483,6 +623,7 @@ class CaptureFilter(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  filter_type: Optional[pulumi.Input[str]] = None,
+                 flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  vtap_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterVtapCaptureFilterRuleArgs']]]]] = None,
                  __props__=None):
@@ -502,6 +643,7 @@ class CaptureFilter(pulumi.CustomResource):
             if filter_type is None and not opts.urn:
                 raise TypeError("Missing required property 'filter_type'")
             __props__.__dict__["filter_type"] = filter_type
+            __props__.__dict__["flow_log_capture_filter_rules"] = flow_log_capture_filter_rules
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["vtap_capture_filter_rules"] = vtap_capture_filter_rules
             __props__.__dict__["state"] = None
@@ -520,6 +662,7 @@ class CaptureFilter(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             filter_type: Optional[pulumi.Input[str]] = None,
+            flow_log_capture_filter_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterFlowLogCaptureFilterRuleArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -535,6 +678,7 @@ class CaptureFilter(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] filter_type: Indicates which service will use this capture filter
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CaptureFilterFlowLogCaptureFilterRuleArgs']]]] flow_log_capture_filter_rules: (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] state: The capture filter's current administrative state.
         :param pulumi.Input[str] time_created: The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -548,6 +692,7 @@ class CaptureFilter(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["filter_type"] = filter_type
+        __props__.__dict__["flow_log_capture_filter_rules"] = flow_log_capture_filter_rules
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -585,6 +730,14 @@ class CaptureFilter(pulumi.CustomResource):
         Indicates which service will use this capture filter
         """
         return pulumi.get(self, "filter_type")
+
+    @property
+    @pulumi.getter(name="flowLogCaptureFilterRules")
+    def flow_log_capture_filter_rules(self) -> pulumi.Output[Sequence['outputs.CaptureFilterFlowLogCaptureFilterRule']]:
+        """
+        (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        """
+        return pulumi.get(self, "flow_log_capture_filter_rules")
 
     @property
     @pulumi.getter(name="freeformTags")

@@ -14,6 +14,3424 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetVmClusterNetworkVmNetwork struct {
+	// The network domain name.
+	DomainName string `pulumi:"domainName"`
+	// The network gateway.
+	Gateway string `pulumi:"gateway"`
+	// The network netmask.
+	Netmask string `pulumi:"netmask"`
+	// The network type.
+	NetworkType string `pulumi:"networkType"`
+	// The list of node details.
+	Nodes []GetVmClusterNetworkVmNetworkNode `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId string `pulumi:"vlanId"`
+}
+
+// GetVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworkVmNetworkArgs and GetVmClusterNetworkVmNetworkOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkVmNetworkInput` via:
+//
+//	GetVmClusterNetworkVmNetworkArgs{...}
+type GetVmClusterNetworkVmNetworkInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkVmNetworkOutput() GetVmClusterNetworkVmNetworkOutput
+	ToGetVmClusterNetworkVmNetworkOutputWithContext(context.Context) GetVmClusterNetworkVmNetworkOutput
+}
+
+type GetVmClusterNetworkVmNetworkArgs struct {
+	// The network domain name.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The network gateway.
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// The network netmask.
+	Netmask pulumi.StringInput `pulumi:"netmask"`
+	// The network type.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of node details.
+	Nodes GetVmClusterNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+}
+
+func (GetVmClusterNetworkVmNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutput() GetVmClusterNetworkVmNetworkOutput {
+	return i.ToGetVmClusterNetworkVmNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkOutput)
+}
+
+func (i GetVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkArray and GetVmClusterNetworkVmNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkVmNetworkArrayInput` via:
+//
+//	GetVmClusterNetworkVmNetworkArray{ GetVmClusterNetworkVmNetworkArgs{...} }
+type GetVmClusterNetworkVmNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworkVmNetworkArrayOutput
+	ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(context.Context) GetVmClusterNetworkVmNetworkArrayOutput
+}
+
+type GetVmClusterNetworkVmNetworkArray []GetVmClusterNetworkVmNetworkInput
+
+func (GetVmClusterNetworkVmNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworkVmNetworkArrayOutput {
+	return i.ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkArrayOutput)
+}
+
+func (i GetVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworkVmNetworkOutput() GetVmClusterNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The network domain name.
+func (o GetVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The network gateway.
+func (o GetVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// The network netmask.
+func (o GetVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// The network type.
+func (o GetVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The list of node details.
+func (o GetVmClusterNetworkVmNetworkOutput) Nodes() GetVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) []GetVmClusterNetworkVmNetworkNode { return v.Nodes }).(GetVmClusterNetworkVmNetworkNodeArrayOutput)
+}
+
+// The network VLAN ID.
+func (o GetVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+type GetVmClusterNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkVmNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkVmNetwork {
+		return vs[0].([]GetVmClusterNetworkVmNetwork)[vs[1].(int)]
+	}).(GetVmClusterNetworkVmNetworkOutput)
+}
+
+type GetVmClusterNetworkVmNetworkNode struct {
+	// The Db server associated with the node.
+	DbServerId string `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The node IP address.
+	Ip string `pulumi:"ip"`
+	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+	State string `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip string `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname string `pulumi:"vipHostname"`
+}
+
+// GetVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworkVmNetworkNodeOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkVmNetworkNodeInput` via:
+//
+//	GetVmClusterNetworkVmNetworkNodeArgs{...}
+type GetVmClusterNetworkVmNetworkNodeInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworkVmNetworkNodeOutput
+	ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(context.Context) GetVmClusterNetworkVmNetworkNodeOutput
+}
+
+type GetVmClusterNetworkVmNetworkNodeArgs struct {
+	// The Db server associated with the node.
+	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The node IP address.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+	State pulumi.StringInput `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip pulumi.StringInput `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+}
+
+func (GetVmClusterNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworkVmNetworkNodeOutput {
+	return i.ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeOutput)
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworkVmNetworkNodeArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkVmNetworkNodeArrayInput` via:
+//
+//	GetVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworkVmNetworkNodeArgs{...} }
+type GetVmClusterNetworkVmNetworkNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworkVmNetworkNodeArrayOutput
+	ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(context.Context) GetVmClusterNetworkVmNetworkNodeArrayOutput
+}
+
+type GetVmClusterNetworkVmNetworkNodeArray []GetVmClusterNetworkVmNetworkNodeInput
+
+func (GetVmClusterNetworkVmNetworkNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworkVmNetworkNodeArrayOutput {
+	return i.ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeArrayOutput)
+}
+
+func (i GetVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The Db server associated with the node.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+}
+
+// The node host name.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The node IP address.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) address.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) host name.
+func (o GetVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+}
+
+type GetVmClusterNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkVmNetworkNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkVmNetworkNode {
+		return vs[0].([]GetVmClusterNetworkVmNetworkNode)[vs[1].(int)]
+	}).(GetVmClusterNetworkVmNetworkNodeOutput)
+}
+
+type GetVmClusterNetworksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVmClusterNetworksFilterInput is an input type that accepts GetVmClusterNetworksFilterArgs and GetVmClusterNetworksFilterOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksFilterInput` via:
+//
+//	GetVmClusterNetworksFilterArgs{...}
+type GetVmClusterNetworksFilterInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksFilterOutput() GetVmClusterNetworksFilterOutput
+	ToGetVmClusterNetworksFilterOutputWithContext(context.Context) GetVmClusterNetworksFilterOutput
+}
+
+type GetVmClusterNetworksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVmClusterNetworksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksFilterArgs) ToGetVmClusterNetworksFilterOutput() GetVmClusterNetworksFilterOutput {
+	return i.ToGetVmClusterNetworksFilterOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksFilterArgs) ToGetVmClusterNetworksFilterOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterOutput)
+}
+
+func (i GetVmClusterNetworksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
+	return pulumix.Output[GetVmClusterNetworksFilter]{
+		OutputState: i.ToGetVmClusterNetworksFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksFilterArrayInput is an input type that accepts GetVmClusterNetworksFilterArray and GetVmClusterNetworksFilterArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksFilterArrayInput` via:
+//
+//	GetVmClusterNetworksFilterArray{ GetVmClusterNetworksFilterArgs{...} }
+type GetVmClusterNetworksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksFilterArrayOutput() GetVmClusterNetworksFilterArrayOutput
+	ToGetVmClusterNetworksFilterArrayOutputWithContext(context.Context) GetVmClusterNetworksFilterArrayOutput
+}
+
+type GetVmClusterNetworksFilterArray []GetVmClusterNetworksFilterInput
+
+func (GetVmClusterNetworksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksFilterArray) ToGetVmClusterNetworksFilterArrayOutput() GetVmClusterNetworksFilterArrayOutput {
+	return i.ToGetVmClusterNetworksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksFilterArray) ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterArrayOutput)
+}
+
+func (i GetVmClusterNetworksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
+	return pulumix.Output[[]GetVmClusterNetworksFilter]{
+		OutputState: i.ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutput() GetVmClusterNetworksFilterOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
+	return pulumix.Output[GetVmClusterNetworksFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterNetworksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVmClusterNetworksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVmClusterNetworksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksFilterArrayOutput) ToGetVmClusterNetworksFilterArrayOutput() GetVmClusterNetworksFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksFilterArrayOutput) ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
+	return pulumix.Output[[]GetVmClusterNetworksFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksFilter {
+		return vs[0].([]GetVmClusterNetworksFilter)[vs[1].(int)]
+	}).(GetVmClusterNetworksFilterOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetwork struct {
+	Action string `pulumi:"action"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The list of DNS server IP addresses. Maximum of 3 allowed.
+	Dns []string `pulumi:"dns"`
+	// The SCAN details for DR network
+	DrScans []GetVmClusterNetworksVmClusterNetworkDrScan `pulumi:"drScans"`
+	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The list of NTP server IP addresses. Maximum of 3 allowed.
+	Ntps []string `pulumi:"ntps"`
+	// The SCAN details.
+	Scans []GetVmClusterNetworksVmClusterNetworkScan `pulumi:"scans"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time when the VM cluster network was created.
+	TimeCreated              string `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork bool   `pulumi:"validateVmClusterNetwork"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
+	// Details of the client and backup networks.
+	VmNetworks []GetVmClusterNetworksVmClusterNetworkVmNetwork `pulumi:"vmNetworks"`
+}
+
+// GetVmClusterNetworksVmClusterNetworkInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArgs and GetVmClusterNetworksVmClusterNetworkOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkArgs{...}
+type GetVmClusterNetworksVmClusterNetworkInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkOutput() GetVmClusterNetworksVmClusterNetworkOutput
+	ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkArgs struct {
+	Action pulumi.StringInput `pulumi:"action"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The list of DNS server IP addresses. Maximum of 3 allowed.
+	Dns pulumi.StringArrayInput `pulumi:"dns"`
+	// The SCAN details for DR network
+	DrScans GetVmClusterNetworksVmClusterNetworkDrScanArrayInput `pulumi:"drScans"`
+	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The list of NTP server IP addresses. Maximum of 3 allowed.
+	Ntps pulumi.StringArrayInput `pulumi:"ntps"`
+	// The SCAN details.
+	Scans GetVmClusterNetworksVmClusterNetworkScanArrayInput `pulumi:"scans"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the VM cluster network was created.
+	TimeCreated              pulumi.StringInput `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork pulumi.BoolInput   `pulumi:"validateVmClusterNetwork"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+	// Details of the client and backup networks.
+	VmNetworks GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput `pulumi:"vmNetworks"`
+}
+
+func (GetVmClusterNetworksVmClusterNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkOutput() GetVmClusterNetworksVmClusterNetworkOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksVmClusterNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArray and GetVmClusterNetworksVmClusterNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkArrayInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkArray{ GetVmClusterNetworksVmClusterNetworkArgs{...} }
+type GetVmClusterNetworksVmClusterNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkArrayOutput
+	ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkArrayOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkArray []GetVmClusterNetworksVmClusterNetworkInput
+
+func (GetVmClusterNetworksVmClusterNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArray) ToGetVmClusterNetworksVmClusterNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkArrayOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArray) ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkArrayOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksVmClusterNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkOutput() GetVmClusterNetworksVmClusterNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetVmClusterNetworksVmClusterNetworkOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetVmClusterNetworksVmClusterNetworkOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The list of DNS server IP addresses. Maximum of 3 allowed.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Dns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) []string { return v.Dns }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN details for DR network
+func (o GetVmClusterNetworksVmClusterNetworkOutput) DrScans() GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) []GetVmClusterNetworksVmClusterNetworkDrScan {
+		return v.DrScans
+	}).(GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput)
+}
+
+// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetVmClusterNetworksVmClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The list of NTP server IP addresses. Maximum of 3 allowed.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Ntps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) []string { return v.Ntps }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN details.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Scans() GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) []GetVmClusterNetworksVmClusterNetworkScan {
+		return v.Scans
+	}).(GetVmClusterNetworksVmClusterNetworkScanArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the VM cluster network was created.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) bool { return v.ValidateVmClusterNetwork }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.VmClusterId }).(pulumi.StringOutput)
+}
+
+// Details of the client and backup networks.
+func (o GetVmClusterNetworksVmClusterNetworkOutput) VmNetworks() GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) []GetVmClusterNetworksVmClusterNetworkVmNetwork {
+		return v.VmNetworks
+	}).(GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToGetVmClusterNetworksVmClusterNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetwork {
+		return vs[0].([]GetVmClusterNetworksVmClusterNetwork)[vs[1].(int)]
+	}).(GetVmClusterNetworksVmClusterNetworkOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkDrScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+}
+
+// GetVmClusterNetworksVmClusterNetworkDrScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArgs and GetVmClusterNetworksVmClusterNetworkDrScanOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkDrScanInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkDrScanArgs{...}
+type GetVmClusterNetworksVmClusterNetworkDrScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkDrScanOutput() GetVmClusterNetworksVmClusterNetworkDrScanOutput
+	ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkDrScanOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkDrScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+}
+
+func (GetVmClusterNetworksVmClusterNetworkDrScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToGetVmClusterNetworksVmClusterNetworkDrScanOutput() GetVmClusterNetworksVmClusterNetworkDrScanOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksVmClusterNetworkDrScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArray and GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkDrScanArrayInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkDrScanArray{ GetVmClusterNetworksVmClusterNetworkDrScanArgs{...} }
+type GetVmClusterNetworksVmClusterNetworkDrScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput
+	ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkDrScanArray []GetVmClusterNetworksVmClusterNetworkDrScanInput
+
+func (GetVmClusterNetworksVmClusterNetworkDrScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksVmClusterNetworkDrScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkDrScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanOutput() GetVmClusterNetworksVmClusterNetworkDrScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The node host name.
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkDrScan {
+		return vs[0].([]GetVmClusterNetworksVmClusterNetworkDrScan)[vs[1].(int)]
+	}).(GetVmClusterNetworksVmClusterNetworkDrScanOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port int `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+}
+
+// GetVmClusterNetworksVmClusterNetworkScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArgs and GetVmClusterNetworksVmClusterNetworkScanOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkScanInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkScanArgs{...}
+type GetVmClusterNetworksVmClusterNetworkScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkScanOutput() GetVmClusterNetworksVmClusterNetworkScanOutput
+	ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkScanOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+}
+
+func (GetVmClusterNetworksVmClusterNetworkScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmClusterNetworkScanOutput() GetVmClusterNetworksVmClusterNetworkScanOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArray and GetVmClusterNetworksVmClusterNetworkScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkScanArrayInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkScanArray{ GetVmClusterNetworksVmClusterNetworkScanArgs{...} }
+type GetVmClusterNetworksVmClusterNetworkScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkScanArrayOutput() GetVmClusterNetworksVmClusterNetworkScanArrayOutput
+	ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkScanArrayOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkScanArray []GetVmClusterNetworksVmClusterNetworkScanInput
+
+func (GetVmClusterNetworksVmClusterNetworkScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToGetVmClusterNetworksVmClusterNetworkScanArrayOutput() GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanArrayOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksVmClusterNetworkScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToGetVmClusterNetworksVmClusterNetworkScanOutput() GetVmClusterNetworksVmClusterNetworkScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The node host name.
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkScanArrayOutput() GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkScan {
+		return vs[0].([]GetVmClusterNetworksVmClusterNetworkScan)[vs[1].(int)]
+	}).(GetVmClusterNetworksVmClusterNetworkScanOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetwork struct {
+	// The network domain name.
+	DomainName string `pulumi:"domainName"`
+	// The network gateway.
+	Gateway string `pulumi:"gateway"`
+	// The network netmask.
+	Netmask string `pulumi:"netmask"`
+	// The network type.
+	NetworkType string `pulumi:"networkType"`
+	// The list of node details.
+	Nodes []GetVmClusterNetworksVmClusterNetworkVmNetworkNode `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId string `pulumi:"vlanId"`
+}
+
+// GetVmClusterNetworksVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...}
+type GetVmClusterNetworksVmClusterNetworkVmNetworkInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkOutput
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkArgs struct {
+	// The network domain name.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The network gateway.
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// The network netmask.
+	Netmask pulumi.StringInput `pulumi:"netmask"`
+	// The network type.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of node details.
+	Nodes GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+}
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArray and GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{...} }
+type GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkArray []GetVmClusterNetworksVmClusterNetworkVmNetworkInput
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The network domain name.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The network gateway.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// The network netmask.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// The network type.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The list of node details.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Nodes() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) []GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
+		return v.Nodes
+	}).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput)
+}
+
+// The network VLAN ID.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkVmNetwork {
+		return vs[0].([]GetVmClusterNetworksVmClusterNetworkVmNetwork)[vs[1].(int)]
+	}).(GetVmClusterNetworksVmClusterNetworkVmNetworkOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNode struct {
+	// The Db server associated with the node.
+	DbServerId string `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The node IP address.
+	Ip string `pulumi:"ip"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip string `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname string `pulumi:"vipHostname"`
+}
+
+// GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...}
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs struct {
+	// The Db server associated with the node.
+	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The node IP address.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip pulumi.StringInput `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+}
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput` via:
+//
+//	GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray{ GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{...} }
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput
+	ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray []GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
+	return i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput)
+}
+
+func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The Db server associated with the node.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+}
+
+// The node host name.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The node IP address.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) address.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) host name.
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+}
+
+type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput() GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
+		return vs[0].([]GetVmClusterNetworksVmClusterNetworkVmNetworkNode)[vs[1].(int)]
+	}).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput)
+}
+
+type GetVmClusterPatchHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVmClusterPatchHistoryEntriesFilterInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArgs and GetVmClusterPatchHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterInput` via:
+//
+//	GetVmClusterPatchHistoryEntriesFilterArgs{...}
+type GetVmClusterPatchHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchHistoryEntriesFilterOutput() GetVmClusterPatchHistoryEntriesFilterOutput
+	ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(context.Context) GetVmClusterPatchHistoryEntriesFilterOutput
+}
+
+type GetVmClusterPatchHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVmClusterPatchHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToGetVmClusterPatchHistoryEntriesFilterOutput() GetVmClusterPatchHistoryEntriesFilterOutput {
+	return i.ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterOutput)
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
+	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
+		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterPatchHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArray and GetVmClusterPatchHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterArrayInput` via:
+//
+//	GetVmClusterPatchHistoryEntriesFilterArray{ GetVmClusterPatchHistoryEntriesFilterArgs{...} }
+type GetVmClusterPatchHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchHistoryEntriesFilterArrayOutput() GetVmClusterPatchHistoryEntriesFilterArrayOutput
+	ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(context.Context) GetVmClusterPatchHistoryEntriesFilterArrayOutput
+}
+
+type GetVmClusterPatchHistoryEntriesFilterArray []GetVmClusterPatchHistoryEntriesFilterInput
+
+func (GetVmClusterPatchHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArray) ToGetVmClusterPatchHistoryEntriesFilterArrayOutput() GetVmClusterPatchHistoryEntriesFilterArrayOutput {
+	return i.ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArray) ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterArrayOutput)
+}
+
+func (i GetVmClusterPatchHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
+	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
+		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterPatchHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryEntriesFilterOutput() GetVmClusterPatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
+	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVmClusterPatchHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToGetVmClusterPatchHistoryEntriesFilterArrayOutput() GetVmClusterPatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
+	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchHistoryEntriesFilter {
+		return vs[0].([]GetVmClusterPatchHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetVmClusterPatchHistoryEntriesFilterOutput)
+}
+
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntry struct {
+	// The action being performed or was completed.
+	Action string `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId string `pulumi:"patchId"`
+	// The current state of the action.
+	State string `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs and GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput` via:
+//
+//	GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...}
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput
+	ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput
+}
+
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs struct {
+	// The action being performed or was completed.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	PatchId pulumi.StringInput `pulumi:"patchId"`
+	// The current state of the action.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the patch action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the patch action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
+	return i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput)
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
+	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
+		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray and GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput` via:
+//
+//	GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray{ GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{...} }
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput
+	ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput
+}
+
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray []GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput
+
+func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput)
+}
+
+func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
+	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
+		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
+	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The action being performed or was completed.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+// The current state of the action.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action completed
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the patch action started.
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput() GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
+	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchHistoryEntriesPatchHistoryEntry {
+		return vs[0].([]GetVmClusterPatchHistoryEntriesPatchHistoryEntry)[vs[1].(int)]
+	}).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput)
+}
+
+type GetVmClusterPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVmClusterPatchesFilterInput is an input type that accepts GetVmClusterPatchesFilterArgs and GetVmClusterPatchesFilterOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchesFilterInput` via:
+//
+//	GetVmClusterPatchesFilterArgs{...}
+type GetVmClusterPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchesFilterOutput() GetVmClusterPatchesFilterOutput
+	ToGetVmClusterPatchesFilterOutputWithContext(context.Context) GetVmClusterPatchesFilterOutput
+}
+
+type GetVmClusterPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVmClusterPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchesFilterArgs) ToGetVmClusterPatchesFilterOutput() GetVmClusterPatchesFilterOutput {
+	return i.ToGetVmClusterPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchesFilterArgs) ToGetVmClusterPatchesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterOutput)
+}
+
+func (i GetVmClusterPatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
+	return pulumix.Output[GetVmClusterPatchesFilter]{
+		OutputState: i.ToGetVmClusterPatchesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterPatchesFilterArrayInput is an input type that accepts GetVmClusterPatchesFilterArray and GetVmClusterPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchesFilterArrayInput` via:
+//
+//	GetVmClusterPatchesFilterArray{ GetVmClusterPatchesFilterArgs{...} }
+type GetVmClusterPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchesFilterArrayOutput() GetVmClusterPatchesFilterArrayOutput
+	ToGetVmClusterPatchesFilterArrayOutputWithContext(context.Context) GetVmClusterPatchesFilterArrayOutput
+}
+
+type GetVmClusterPatchesFilterArray []GetVmClusterPatchesFilterInput
+
+func (GetVmClusterPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchesFilterArray) ToGetVmClusterPatchesFilterArrayOutput() GetVmClusterPatchesFilterArrayOutput {
+	return i.ToGetVmClusterPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchesFilterArray) ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterArrayOutput)
+}
+
+func (i GetVmClusterPatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
+	return pulumix.Output[[]GetVmClusterPatchesFilter]{
+		OutputState: i.ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutput() GetVmClusterPatchesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
+	return pulumix.Output[GetVmClusterPatchesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVmClusterPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVmClusterPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchesFilterArrayOutput) ToGetVmClusterPatchesFilterArrayOutput() GetVmClusterPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesFilterArrayOutput) ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
+	return pulumix.Output[[]GetVmClusterPatchesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchesFilter {
+		return vs[0].([]GetVmClusterPatchesFilter)[vs[1].(int)]
+	}).(GetVmClusterPatchesFilterOutput)
+}
+
+type GetVmClusterPatchesPatch struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions []string `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id string `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction string `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State string `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version string `pulumi:"version"`
+}
+
+// GetVmClusterPatchesPatchInput is an input type that accepts GetVmClusterPatchesPatchArgs and GetVmClusterPatchesPatchOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchesPatchInput` via:
+//
+//	GetVmClusterPatchesPatchArgs{...}
+type GetVmClusterPatchesPatchInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchesPatchOutput() GetVmClusterPatchesPatchOutput
+	ToGetVmClusterPatchesPatchOutputWithContext(context.Context) GetVmClusterPatchesPatchOutput
+}
+
+type GetVmClusterPatchesPatchArgs struct {
+	// Actions that can possibly be performed using this patch.
+	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// The text describing this patch package.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Action that is currently being performed or was completed last.
+	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the patch as a result of lastAction.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the patch was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The version of this patch package.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVmClusterPatchesPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchesPatch)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutput() GetVmClusterPatchesPatchOutput {
+	return i.ToGetVmClusterPatchesPatchOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchOutput)
+}
+
+func (i GetVmClusterPatchesPatchArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
+	return pulumix.Output[GetVmClusterPatchesPatch]{
+		OutputState: i.ToGetVmClusterPatchesPatchOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterPatchesPatchArrayInput is an input type that accepts GetVmClusterPatchesPatchArray and GetVmClusterPatchesPatchArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterPatchesPatchArrayInput` via:
+//
+//	GetVmClusterPatchesPatchArray{ GetVmClusterPatchesPatchArgs{...} }
+type GetVmClusterPatchesPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterPatchesPatchArrayOutput() GetVmClusterPatchesPatchArrayOutput
+	ToGetVmClusterPatchesPatchArrayOutputWithContext(context.Context) GetVmClusterPatchesPatchArrayOutput
+}
+
+type GetVmClusterPatchesPatchArray []GetVmClusterPatchesPatchInput
+
+func (GetVmClusterPatchesPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchesPatch)(nil)).Elem()
+}
+
+func (i GetVmClusterPatchesPatchArray) ToGetVmClusterPatchesPatchArrayOutput() GetVmClusterPatchesPatchArrayOutput {
+	return i.ToGetVmClusterPatchesPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterPatchesPatchArray) ToGetVmClusterPatchesPatchArrayOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchArrayOutput)
+}
+
+func (i GetVmClusterPatchesPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
+	return pulumix.Output[[]GetVmClusterPatchesPatch]{
+		OutputState: i.ToGetVmClusterPatchesPatchArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterPatchesPatchOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchesPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterPatchesPatch)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchesPatchOutput) ToGetVmClusterPatchesPatchOutput() GetVmClusterPatchesPatchOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesPatchOutput) ToGetVmClusterPatchesPatchOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesPatchOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
+	return pulumix.Output[GetVmClusterPatchesPatch]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Actions that can possibly be performed using this patch.
+func (o GetVmClusterPatchesPatchOutput) AvailableActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
+}
+
+// The text describing this patch package.
+func (o GetVmClusterPatchesPatchOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+func (o GetVmClusterPatchesPatchOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Action that is currently being performed or was completed last.
+func (o GetVmClusterPatchesPatchOutput) LastAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.LastAction }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
+func (o GetVmClusterPatchesPatchOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the patch as a result of lastAction.
+func (o GetVmClusterPatchesPatchOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the patch was released.
+func (o GetVmClusterPatchesPatchOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The version of this patch package.
+func (o GetVmClusterPatchesPatchOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVmClusterPatchesPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterPatchesPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterPatchesPatch)(nil)).Elem()
+}
+
+func (o GetVmClusterPatchesPatchArrayOutput) ToGetVmClusterPatchesPatchArrayOutput() GetVmClusterPatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesPatchArrayOutput) ToGetVmClusterPatchesPatchArrayOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchArrayOutput {
+	return o
+}
+
+func (o GetVmClusterPatchesPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
+	return pulumix.Output[[]GetVmClusterPatchesPatch]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchesPatch {
+		return vs[0].([]GetVmClusterPatchesPatch)[vs[1].(int)]
+	}).(GetVmClusterPatchesPatchOutput)
+}
+
+type GetVmClusterRecommendedNetworkDrScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+}
+
+// GetVmClusterRecommendedNetworkDrScanInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArgs and GetVmClusterRecommendedNetworkDrScanOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkDrScanInput` via:
+//
+//	GetVmClusterRecommendedNetworkDrScanArgs{...}
+type GetVmClusterRecommendedNetworkDrScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkDrScanOutput() GetVmClusterRecommendedNetworkDrScanOutput
+	ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(context.Context) GetVmClusterRecommendedNetworkDrScanOutput
+}
+
+type GetVmClusterRecommendedNetworkDrScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+}
+
+func (GetVmClusterRecommendedNetworkDrScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArgs) ToGetVmClusterRecommendedNetworkDrScanOutput() GetVmClusterRecommendedNetworkDrScanOutput {
+	return i.ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArgs) ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterRecommendedNetworkDrScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArray and GetVmClusterRecommendedNetworkDrScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkDrScanArrayInput` via:
+//
+//	GetVmClusterRecommendedNetworkDrScanArray{ GetVmClusterRecommendedNetworkDrScanArgs{...} }
+type GetVmClusterRecommendedNetworkDrScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkDrScanArrayOutput() GetVmClusterRecommendedNetworkDrScanArrayOutput
+	ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(context.Context) GetVmClusterRecommendedNetworkDrScanArrayOutput
+}
+
+type GetVmClusterRecommendedNetworkDrScanArray []GetVmClusterRecommendedNetworkDrScanInput
+
+func (GetVmClusterRecommendedNetworkDrScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArray) ToGetVmClusterRecommendedNetworkDrScanArrayOutput() GetVmClusterRecommendedNetworkDrScanArrayOutput {
+	return i.ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArray) ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanArrayOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterRecommendedNetworkDrScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkDrScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ToGetVmClusterRecommendedNetworkDrScanOutput() GetVmClusterRecommendedNetworkDrScanOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The node host name.
+func (o GetVmClusterRecommendedNetworkDrScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterRecommendedNetworkDrScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+type GetVmClusterRecommendedNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkDrScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommendedNetworkDrScanArrayOutput() GetVmClusterRecommendedNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkDrScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkDrScan {
+		return vs[0].([]GetVmClusterRecommendedNetworkDrScan)[vs[1].(int)]
+	}).(GetVmClusterRecommendedNetworkDrScanOutput)
+}
+
+type GetVmClusterRecommendedNetworkNetwork struct {
+	// The cidr for the network.
+	Cidr string `pulumi:"cidr"`
+	// The network domain name.
+	Domain string `pulumi:"domain"`
+	// The network gateway.
+	Gateway string `pulumi:"gateway"`
+	// The network netmask.
+	Netmask string `pulumi:"netmask"`
+	// The network type.
+	NetworkType string `pulumi:"networkType"`
+	// The network domain name.
+	Prefix string `pulumi:"prefix"`
+	// The network VLAN ID.
+	VlanId string `pulumi:"vlanId"`
+}
+
+// GetVmClusterRecommendedNetworkNetworkInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArgs and GetVmClusterRecommendedNetworkNetworkOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkInput` via:
+//
+//	GetVmClusterRecommendedNetworkNetworkArgs{...}
+type GetVmClusterRecommendedNetworkNetworkInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkNetworkOutput() GetVmClusterRecommendedNetworkNetworkOutput
+	ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(context.Context) GetVmClusterRecommendedNetworkNetworkOutput
+}
+
+type GetVmClusterRecommendedNetworkNetworkArgs struct {
+	// The cidr for the network.
+	Cidr pulumi.StringInput `pulumi:"cidr"`
+	// The network domain name.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// The network gateway.
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// The network netmask.
+	Netmask pulumi.StringInput `pulumi:"netmask"`
+	// The network type.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The network domain name.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+	// The network VLAN ID.
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+}
+
+func (GetVmClusterRecommendedNetworkNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArgs) ToGetVmClusterRecommendedNetworkNetworkOutput() GetVmClusterRecommendedNetworkNetworkOutput {
+	return i.ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArgs) ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterRecommendedNetworkNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArray and GetVmClusterRecommendedNetworkNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkArrayInput` via:
+//
+//	GetVmClusterRecommendedNetworkNetworkArray{ GetVmClusterRecommendedNetworkNetworkArgs{...} }
+type GetVmClusterRecommendedNetworkNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkNetworkArrayOutput() GetVmClusterRecommendedNetworkNetworkArrayOutput
+	ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(context.Context) GetVmClusterRecommendedNetworkNetworkArrayOutput
+}
+
+type GetVmClusterRecommendedNetworkNetworkArray []GetVmClusterRecommendedNetworkNetworkInput
+
+func (GetVmClusterRecommendedNetworkNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArray) ToGetVmClusterRecommendedNetworkNetworkArrayOutput() GetVmClusterRecommendedNetworkNetworkArrayOutput {
+	return i.ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArray) ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkArrayOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterRecommendedNetworkNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNetworkNetworkOutput() GetVmClusterRecommendedNetworkNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The cidr for the network.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) Cidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.Cidr }).(pulumi.StringOutput)
+}
+
+// The network domain name.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// The network gateway.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// The network netmask.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) Netmask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// The network type.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The network domain name.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+// The network VLAN ID.
+func (o GetVmClusterRecommendedNetworkNetworkOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+type GetVmClusterRecommendedNetworkNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToGetVmClusterRecommendedNetworkNetworkArrayOutput() GetVmClusterRecommendedNetworkNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkNetwork {
+		return vs[0].([]GetVmClusterRecommendedNetworkNetwork)[vs[1].(int)]
+	}).(GetVmClusterRecommendedNetworkNetworkOutput)
+}
+
+type GetVmClusterRecommendedNetworkScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port int `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+}
+
+// GetVmClusterRecommendedNetworkScanInput is an input type that accepts GetVmClusterRecommendedNetworkScanArgs and GetVmClusterRecommendedNetworkScanOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkScanInput` via:
+//
+//	GetVmClusterRecommendedNetworkScanArgs{...}
+type GetVmClusterRecommendedNetworkScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkScanOutput() GetVmClusterRecommendedNetworkScanOutput
+	ToGetVmClusterRecommendedNetworkScanOutputWithContext(context.Context) GetVmClusterRecommendedNetworkScanOutput
+}
+
+type GetVmClusterRecommendedNetworkScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+}
+
+func (GetVmClusterRecommendedNetworkScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetworkScanOutput() GetVmClusterRecommendedNetworkScanOutput {
+	return i.ToGetVmClusterRecommendedNetworkScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterRecommendedNetworkScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkScanArray and GetVmClusterRecommendedNetworkScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkScanArrayInput` via:
+//
+//	GetVmClusterRecommendedNetworkScanArray{ GetVmClusterRecommendedNetworkScanArgs{...} }
+type GetVmClusterRecommendedNetworkScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkScanArrayOutput() GetVmClusterRecommendedNetworkScanArrayOutput
+	ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(context.Context) GetVmClusterRecommendedNetworkScanArrayOutput
+}
+
+type GetVmClusterRecommendedNetworkScanArray []GetVmClusterRecommendedNetworkScanInput
+
+func (GetVmClusterRecommendedNetworkScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkScanArray) ToGetVmClusterRecommendedNetworkScanArrayOutput() GetVmClusterRecommendedNetworkScanArrayOutput {
+	return i.ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkScanArray) ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanArrayOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterRecommendedNetworkScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkScanOutput) ToGetVmClusterRecommendedNetworkScanOutput() GetVmClusterRecommendedNetworkScanOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkScanOutput) ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The node host name.
+func (o GetVmClusterRecommendedNetworkScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterRecommendedNetworkScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterRecommendedNetworkScanOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+type GetVmClusterRecommendedNetworkScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToGetVmClusterRecommendedNetworkScanArrayOutput() GetVmClusterRecommendedNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterRecommendedNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkScan {
+		return vs[0].([]GetVmClusterRecommendedNetworkScan)[vs[1].(int)]
+	}).(GetVmClusterRecommendedNetworkScanOutput)
+}
+
+type GetVmClusterRecommendedNetworkVmNetwork struct {
+	// The network domain name.
+	DomainName string `pulumi:"domainName"`
+	// The network gateway.
+	Gateway string `pulumi:"gateway"`
+	// The network netmask.
+	Netmask string `pulumi:"netmask"`
+	// The network type.
+	NetworkType string `pulumi:"networkType"`
+	// The list of node details.
+	Nodes []GetVmClusterRecommendedNetworkVmNetworkNode `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId string `pulumi:"vlanId"`
+}
+
+// GetVmClusterRecommendedNetworkVmNetworkInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArgs and GetVmClusterRecommendedNetworkVmNetworkOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkInput` via:
+//
+//	GetVmClusterRecommendedNetworkVmNetworkArgs{...}
+type GetVmClusterRecommendedNetworkVmNetworkInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkVmNetworkOutput() GetVmClusterRecommendedNetworkVmNetworkOutput
+	ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(context.Context) GetVmClusterRecommendedNetworkVmNetworkOutput
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkArgs struct {
+	// The network domain name.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The network gateway.
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// The network netmask.
+	Netmask pulumi.StringInput `pulumi:"netmask"`
+	// The network type.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The list of node details.
+	Nodes GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
+	// The network VLAN ID.
+	VlanId pulumi.StringInput `pulumi:"vlanId"`
+}
+
+func (GetVmClusterRecommendedNetworkVmNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNetworkVmNetworkOutput() GetVmClusterRecommendedNetworkVmNetworkOutput {
+	return i.ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterRecommendedNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArray and GetVmClusterRecommendedNetworkVmNetworkArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkArrayInput` via:
+//
+//	GetVmClusterRecommendedNetworkVmNetworkArray{ GetVmClusterRecommendedNetworkVmNetworkArgs{...} }
+type GetVmClusterRecommendedNetworkVmNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkVmNetworkArrayOutput() GetVmClusterRecommendedNetworkVmNetworkArrayOutput
+	ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(context.Context) GetVmClusterRecommendedNetworkVmNetworkArrayOutput
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkArray []GetVmClusterRecommendedNetworkVmNetworkInput
+
+func (GetVmClusterRecommendedNetworkVmNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkVmNetwork)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToGetVmClusterRecommendedNetworkVmNetworkArrayOutput() GetVmClusterRecommendedNetworkVmNetworkArrayOutput {
+	return i.ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkArrayOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkVmNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToGetVmClusterRecommendedNetworkVmNetworkOutput() GetVmClusterRecommendedNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The network domain name.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The network gateway.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// The network netmask.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+}
+
+// The network type.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The list of node details.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Nodes() GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) []GetVmClusterRecommendedNetworkVmNetworkNode {
+		return v.Nodes
+	}).(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput)
+}
+
+// The network VLAN ID.
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkVmNetwork)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkArrayOutput() GetVmClusterRecommendedNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkVmNetwork {
+		return vs[0].([]GetVmClusterRecommendedNetworkVmNetwork)[vs[1].(int)]
+	}).(GetVmClusterRecommendedNetworkVmNetworkOutput)
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkNode struct {
+	// The Db server associated with the node.
+	DbServerId string `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The node IP address.
+	Ip string `pulumi:"ip"`
+	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+	State string `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip string `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname string `pulumi:"vipHostname"`
+}
+
+// GetVmClusterRecommendedNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArgs and GetVmClusterRecommendedNetworkVmNetworkNodeOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkNodeInput` via:
+//
+//	GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...}
+type GetVmClusterRecommendedNetworkVmNetworkNodeInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkVmNetworkNodeOutput() GetVmClusterRecommendedNetworkVmNetworkNodeOutput
+	ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeOutput
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkNodeArgs struct {
+	// The Db server associated with the node.
+	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The node IP address.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+	State pulumi.StringInput `pulumi:"state"`
+	// The node virtual IP (VIP) address.
+	Vip pulumi.StringInput `pulumi:"vip"`
+	// The node virtual IP (VIP) host name.
+	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+}
+
+func (GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutput() GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
+	return i.ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArray and GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput` via:
+//
+//	GetVmClusterRecommendedNetworkVmNetworkNodeArray{ GetVmClusterRecommendedNetworkVmNetworkNodeArgs{...} }
+type GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput() GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput
+	ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkNodeArray []GetVmClusterRecommendedNetworkVmNetworkNodeInput
+
+func (GetVmClusterRecommendedNetworkVmNetworkNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput() GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
+	return i.ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput)
+}
+
+func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
+		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutput() GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The Db server associated with the node.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+}
+
+// The node host name.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The node IP address.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) address.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+}
+
+// The node virtual IP (VIP) host name.
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+}
+
+type GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterRecommendedNetworkVmNetworkNode)(nil)).Elem()
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput() GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
+	return o
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
+	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkVmNetworkNode {
+		return vs[0].([]GetVmClusterRecommendedNetworkVmNetworkNode)[vs[1].(int)]
+	}).(GetVmClusterRecommendedNetworkVmNetworkNodeOutput)
+}
+
+type GetVmClusterUpdateHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVmClusterUpdateHistoryEntriesFilterInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArgs and GetVmClusterUpdateHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterInput` via:
+//
+//	GetVmClusterUpdateHistoryEntriesFilterArgs{...}
+type GetVmClusterUpdateHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateHistoryEntriesFilterOutput() GetVmClusterUpdateHistoryEntriesFilterOutput
+	ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(context.Context) GetVmClusterUpdateHistoryEntriesFilterOutput
+}
+
+type GetVmClusterUpdateHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVmClusterUpdateHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToGetVmClusterUpdateHistoryEntriesFilterOutput() GetVmClusterUpdateHistoryEntriesFilterOutput {
+	return i.ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterOutput)
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
+	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
+		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterUpdateHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArray and GetVmClusterUpdateHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterArrayInput` via:
+//
+//	GetVmClusterUpdateHistoryEntriesFilterArray{ GetVmClusterUpdateHistoryEntriesFilterArgs{...} }
+type GetVmClusterUpdateHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateHistoryEntriesFilterArrayOutput() GetVmClusterUpdateHistoryEntriesFilterArrayOutput
+	ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(context.Context) GetVmClusterUpdateHistoryEntriesFilterArrayOutput
+}
+
+type GetVmClusterUpdateHistoryEntriesFilterArray []GetVmClusterUpdateHistoryEntriesFilterInput
+
+func (GetVmClusterUpdateHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToGetVmClusterUpdateHistoryEntriesFilterArrayOutput() GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return i.ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterArrayOutput)
+}
+
+func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
+	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
+		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterUpdateHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistoryEntriesFilterOutput() GetVmClusterUpdateHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
+	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVmClusterUpdateHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetVmClusterUpdateHistoryEntriesFilterArrayOutput() GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
+	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdateHistoryEntriesFilter {
+		return vs[0].([]GetVmClusterUpdateHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetVmClusterUpdateHistoryEntriesFilterOutput)
+}
+
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+	Id string `pulumi:"id"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time when the maintenance update action completed.
+	TimeCompleted string `pulumi:"timeCompleted"`
+	// The date and time when the maintenance update action started.
+	TimeStarted string `pulumi:"timeStarted"`
+	// The update action performed using this maintenance update.
+	UpdateAction string `pulumi:"updateAction"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	UpdateId string `pulumi:"updateId"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType string `pulumi:"updateType"`
+}
+
+// GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput` via:
+//
+//	GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...}
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput
+	ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput
+}
+
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the maintenance update action completed.
+	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
+	// The date and time when the maintenance update action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The update action performed using this maintenance update.
+	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	UpdateId pulumi.StringInput `pulumi:"updateId"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType pulumi.StringInput `pulumi:"updateType"`
+}
+
+func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
+	return i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput)
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
+	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
+		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput` via:
+//
+//	GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray{ GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{...} }
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput
+	ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput
+}
+
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray []GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput
+
+func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput {
+	return i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput)
+}
+
+func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
+	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
+		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
+	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Descriptive text providing additional details about the lifecycle state.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the maintenance update action completed.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeCompleted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.TimeCompleted }).(pulumi.StringOutput)
+}
+
+// The date and time when the maintenance update action started.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The update action performed using this maintenance update.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateAction }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given update type exactly.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateType }).(pulumi.StringOutput)
+}
+
+type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput() GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
+	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
+		return vs[0].([]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)[vs[1].(int)]
+	}).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput)
+}
+
+type GetVmClusterUpdatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVmClusterUpdatesFilterInput is an input type that accepts GetVmClusterUpdatesFilterArgs and GetVmClusterUpdatesFilterOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdatesFilterInput` via:
+//
+//	GetVmClusterUpdatesFilterArgs{...}
+type GetVmClusterUpdatesFilterInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdatesFilterOutput() GetVmClusterUpdatesFilterOutput
+	ToGetVmClusterUpdatesFilterOutputWithContext(context.Context) GetVmClusterUpdatesFilterOutput
+}
+
+type GetVmClusterUpdatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVmClusterUpdatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdatesFilterArgs) ToGetVmClusterUpdatesFilterOutput() GetVmClusterUpdatesFilterOutput {
+	return i.ToGetVmClusterUpdatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdatesFilterArgs) ToGetVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterOutput)
+}
+
+func (i GetVmClusterUpdatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
+	return pulumix.Output[GetVmClusterUpdatesFilter]{
+		OutputState: i.ToGetVmClusterUpdatesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterUpdatesFilterArrayInput is an input type that accepts GetVmClusterUpdatesFilterArray and GetVmClusterUpdatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdatesFilterArrayInput` via:
+//
+//	GetVmClusterUpdatesFilterArray{ GetVmClusterUpdatesFilterArgs{...} }
+type GetVmClusterUpdatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdatesFilterArrayOutput() GetVmClusterUpdatesFilterArrayOutput
+	ToGetVmClusterUpdatesFilterArrayOutputWithContext(context.Context) GetVmClusterUpdatesFilterArrayOutput
+}
+
+type GetVmClusterUpdatesFilterArray []GetVmClusterUpdatesFilterInput
+
+func (GetVmClusterUpdatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdatesFilterArray) ToGetVmClusterUpdatesFilterArrayOutput() GetVmClusterUpdatesFilterArrayOutput {
+	return i.ToGetVmClusterUpdatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdatesFilterArray) ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterArrayOutput)
+}
+
+func (i GetVmClusterUpdatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
+	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
+		OutputState: i.ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterUpdatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutput() GetVmClusterUpdatesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
+	return pulumix.Output[GetVmClusterUpdatesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterUpdatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVmClusterUpdatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVmClusterUpdatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdatesFilter)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdatesFilterArrayOutput) ToGetVmClusterUpdatesFilterArrayOutput() GetVmClusterUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesFilterArrayOutput) ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
+	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdatesFilter {
+		return vs[0].([]GetVmClusterUpdatesFilter)[vs[1].(int)]
+	}).(GetVmClusterUpdatesFilterOutput)
+}
+
+type GetVmClusterUpdatesVmClusterUpdate struct {
+	// The possible actions that can be performed using this maintenance update.
+	AvailableActions []string `pulumi:"availableActions"`
+	// Details of the maintenance update package.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	Id string `pulumi:"id"`
+	// The update action performed most recently using this maintenance update.
+	LastAction string `pulumi:"lastAction"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the maintenance update was released.
+	TimeReleased string `pulumi:"timeReleased"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType string `pulumi:"updateType"`
+	// The version of the maintenance update package.
+	Version string `pulumi:"version"`
+}
+
+// GetVmClusterUpdatesVmClusterUpdateInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArgs and GetVmClusterUpdatesVmClusterUpdateOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdatesVmClusterUpdateInput` via:
+//
+//	GetVmClusterUpdatesVmClusterUpdateArgs{...}
+type GetVmClusterUpdatesVmClusterUpdateInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdatesVmClusterUpdateOutput() GetVmClusterUpdatesVmClusterUpdateOutput
+	ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(context.Context) GetVmClusterUpdatesVmClusterUpdateOutput
+}
+
+type GetVmClusterUpdatesVmClusterUpdateArgs struct {
+	// The possible actions that can be performed using this maintenance update.
+	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// Details of the maintenance update package.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The update action performed most recently using this maintenance update.
+	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// Descriptive text providing additional details about the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the maintenance update was released.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// A filter to return only resources that match the given update type exactly.
+	UpdateType pulumi.StringInput `pulumi:"updateType"`
+	// The version of the maintenance update package.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVmClusterUpdatesVmClusterUpdateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdatesVmClusterUpdate)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUpdateOutput() GetVmClusterUpdatesVmClusterUpdateOutput {
+	return i.ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateOutput)
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
+	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
+		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVmClusterUpdatesVmClusterUpdateArrayInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArray and GetVmClusterUpdatesVmClusterUpdateArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdatesVmClusterUpdateArrayInput` via:
+//
+//	GetVmClusterUpdatesVmClusterUpdateArray{ GetVmClusterUpdatesVmClusterUpdateArgs{...} }
+type GetVmClusterUpdatesVmClusterUpdateArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdatesVmClusterUpdateArrayOutput() GetVmClusterUpdatesVmClusterUpdateArrayOutput
+	ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(context.Context) GetVmClusterUpdatesVmClusterUpdateArrayOutput
+}
+
+type GetVmClusterUpdatesVmClusterUpdateArray []GetVmClusterUpdatesVmClusterUpdateInput
+
+func (GetVmClusterUpdatesVmClusterUpdateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdatesVmClusterUpdate)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArray) ToGetVmClusterUpdatesVmClusterUpdateArrayOutput() GetVmClusterUpdatesVmClusterUpdateArrayOutput {
+	return i.ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArray) ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateArrayOutput)
+}
+
+func (i GetVmClusterUpdatesVmClusterUpdateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
+	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
+		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVmClusterUpdatesVmClusterUpdateOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdatesVmClusterUpdateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdatesVmClusterUpdate)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToGetVmClusterUpdatesVmClusterUpdateOutput() GetVmClusterUpdatesVmClusterUpdateOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
+	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The possible actions that can be performed using this maintenance update.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) AvailableActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
+}
+
+// Details of the maintenance update package.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The update action performed most recently using this maintenance update.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) LastAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LastAction }).(pulumi.StringOutput)
+}
+
+// Descriptive text providing additional details about the lifecycle state.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance update was released.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given update type exactly.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) UpdateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.UpdateType }).(pulumi.StringOutput)
+}
+
+// The version of the maintenance update package.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVmClusterUpdatesVmClusterUpdateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdatesVmClusterUpdateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdatesVmClusterUpdate)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToGetVmClusterUpdatesVmClusterUpdateArrayOutput() GetVmClusterUpdatesVmClusterUpdateArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
+	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesVmClusterUpdateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdatesVmClusterUpdate {
+		return vs[0].([]GetVmClusterUpdatesVmClusterUpdate)[vs[1].(int)]
+	}).(GetVmClusterUpdatesVmClusterUpdateOutput)
+}
+
 type GetVmClustersFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -659,12 +4077,96 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkArrayInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkNodeInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkNodeArrayInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksFilterInput)(nil)).Elem(), GetVmClusterNetworksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksFilterArrayInput)(nil)).Elem(), GetVmClusterNetworksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkArrayInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkDrScanInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkDrScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkDrScanArrayInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkDrScanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkScanInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkScanArrayInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkScanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkVmNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkVmNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput)(nil)).Elem(), GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchHistoryEntriesFilterInput)(nil)).Elem(), GetVmClusterPatchHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchHistoryEntriesFilterArrayInput)(nil)).Elem(), GetVmClusterPatchHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput)(nil)).Elem(), GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput)(nil)).Elem(), GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchesFilterInput)(nil)).Elem(), GetVmClusterPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchesFilterArrayInput)(nil)).Elem(), GetVmClusterPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchesPatchInput)(nil)).Elem(), GetVmClusterPatchesPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterPatchesPatchArrayInput)(nil)).Elem(), GetVmClusterPatchesPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkDrScanInput)(nil)).Elem(), GetVmClusterRecommendedNetworkDrScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkDrScanArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkDrScanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkNetworkInput)(nil)).Elem(), GetVmClusterRecommendedNetworkNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkNetworkArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkScanInput)(nil)).Elem(), GetVmClusterRecommendedNetworkScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkScanArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkScanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNodeInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilterInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilterArrayInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdatesFilterInput)(nil)).Elem(), GetVmClusterUpdatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdatesFilterArrayInput)(nil)).Elem(), GetVmClusterUpdatesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdatesVmClusterUpdateInput)(nil)).Elem(), GetVmClusterUpdatesVmClusterUpdateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdatesVmClusterUpdateArrayInput)(nil)).Elem(), GetVmClusterUpdatesVmClusterUpdateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersFilterInput)(nil)).Elem(), GetVmClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersFilterArrayInput)(nil)).Elem(), GetVmClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterInput)(nil)).Elem(), GetVmClustersVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkNodeOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksFilterOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkDrScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkScanArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkVmNetworkOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchesPatchOutput{})
+	pulumi.RegisterOutputType(GetVmClusterPatchesPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkDrScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkDrScanArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkNetworkOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkScanArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkNodeOutput{})
+	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdatesFilterOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdatesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdatesVmClusterUpdateOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdatesVmClusterUpdateArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetVmClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterOutput{})

@@ -57,7 +57,21 @@ class ScriptArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'contentFileName' in kwargs:
+            content_file_name = kwargs['contentFileName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("apm_domain_id", apm_domain_id)
         _setter("content", content)
         _setter("content_type", content_type)
@@ -232,7 +246,31 @@ class _ScriptState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              time_uploaded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if 'contentFileName' in kwargs:
+            content_file_name = kwargs['contentFileName']
+        if 'contentSizeInBytes' in kwargs:
+            content_size_in_bytes = kwargs['contentSizeInBytes']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'monitorStatusCountMaps' in kwargs:
+            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeUploaded' in kwargs:
+            time_uploaded = kwargs['timeUploaded']
+
         if apm_domain_id is not None:
             _setter("apm_domain_id", apm_domain_id)
         if content is not None:

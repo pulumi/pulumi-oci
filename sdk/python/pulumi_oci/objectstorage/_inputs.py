@@ -58,7 +58,19 @@ class BucketRetentionRuleArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_modified: Optional[pulumi.Input[str]] = None,
              time_rule_locked: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'retentionRuleId' in kwargs:
+            retention_rule_id = kwargs['retentionRuleId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if 'timeRuleLocked' in kwargs:
+            time_rule_locked = kwargs['timeRuleLocked']
+
         _setter("display_name", display_name)
         if duration is not None:
             _setter("duration", duration)
@@ -163,7 +175,13 @@ class BucketRetentionRuleDurationArgs:
              _setter: Callable[[Any, Any], None],
              time_amount: pulumi.Input[str],
              time_unit: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+
         _setter("time_amount", time_amount)
         _setter("time_unit", time_unit)
 
@@ -235,7 +253,17 @@ class ObjectLifecyclePolicyRuleArgs:
              time_unit: pulumi.Input[str],
              object_name_filter: Optional[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs']] = None,
              target: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+        if 'objectNameFilter' in kwargs:
+            object_name_filter = kwargs['objectNameFilter']
+
         _setter("action", action)
         _setter("is_enabled", is_enabled)
         _setter("name", name)
@@ -368,7 +396,15 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
              exclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              inclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              inclusion_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'exclusionPatterns' in kwargs:
+            exclusion_patterns = kwargs['exclusionPatterns']
+        if 'inclusionPatterns' in kwargs:
+            inclusion_patterns = kwargs['inclusionPatterns']
+        if 'inclusionPrefixes' in kwargs:
+            inclusion_prefixes = kwargs['inclusionPrefixes']
+
         if exclusion_patterns is not None:
             _setter("exclusion_patterns", exclusion_patterns)
         if inclusion_patterns is not None:
@@ -470,7 +506,17 @@ class StorageObjectSourceUriDetailsArgs:
              destination_object_if_none_match_etag: Optional[pulumi.Input[str]] = None,
              source_object_if_match_etag: Optional[pulumi.Input[str]] = None,
              source_version_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationObjectIfMatchEtag' in kwargs:
+            destination_object_if_match_etag = kwargs['destinationObjectIfMatchEtag']
+        if 'destinationObjectIfNoneMatchEtag' in kwargs:
+            destination_object_if_none_match_etag = kwargs['destinationObjectIfNoneMatchEtag']
+        if 'sourceObjectIfMatchEtag' in kwargs:
+            source_object_if_match_etag = kwargs['sourceObjectIfMatchEtag']
+        if 'sourceVersionId' in kwargs:
+            source_version_id = kwargs['sourceVersionId']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         _setter("object", object)
@@ -606,7 +652,9 @@ class GetBucketSummariesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -664,7 +712,9 @@ class GetObjectVersionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -722,7 +772,9 @@ class GetObjectsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -780,7 +832,9 @@ class GetPreauthrequestsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -838,7 +892,9 @@ class GetReplicationPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -893,7 +949,9 @@ class GetReplicationSourcesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

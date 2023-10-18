@@ -51,7 +51,21 @@ class UserCapabilitiesManagementArgs:
              can_use_console_password: Optional[pulumi.Input[bool]] = None,
              can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'canUseApiKeys' in kwargs:
+            can_use_api_keys = kwargs['canUseApiKeys']
+        if 'canUseAuthTokens' in kwargs:
+            can_use_auth_tokens = kwargs['canUseAuthTokens']
+        if 'canUseConsolePassword' in kwargs:
+            can_use_console_password = kwargs['canUseConsolePassword']
+        if 'canUseCustomerSecretKeys' in kwargs:
+            can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
+        if 'canUseSmtpCredentials' in kwargs:
+            can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
+
         _setter("user_id", user_id)
         if can_use_api_keys is not None:
             _setter("can_use_api_keys", can_use_api_keys)
@@ -181,7 +195,21 @@ class _UserCapabilitiesManagementState:
              can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
              can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'canUseApiKeys' in kwargs:
+            can_use_api_keys = kwargs['canUseApiKeys']
+        if 'canUseAuthTokens' in kwargs:
+            can_use_auth_tokens = kwargs['canUseAuthTokens']
+        if 'canUseConsolePassword' in kwargs:
+            can_use_console_password = kwargs['canUseConsolePassword']
+        if 'canUseCustomerSecretKeys' in kwargs:
+            can_use_customer_secret_keys = kwargs['canUseCustomerSecretKeys']
+        if 'canUseSmtpCredentials' in kwargs:
+            can_use_smtp_credentials = kwargs['canUseSmtpCredentials']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if can_use_api_keys is not None:
             _setter("can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:

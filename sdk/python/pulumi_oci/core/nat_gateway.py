@@ -61,7 +61,25 @@ class NatGatewayArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              public_ip_id: Optional[pulumi.Input[str]] = None,
              route_table_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'blockTraffic' in kwargs:
+            block_traffic = kwargs['blockTraffic']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'publicIpId' in kwargs:
+            public_ip_id = kwargs['publicIpId']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+
         _setter("compartment_id", compartment_id)
         _setter("vcn_id", vcn_id)
         if block_traffic is not None:
@@ -242,7 +260,29 @@ class _NatGatewayState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockTraffic' in kwargs:
+            block_traffic = kwargs['blockTraffic']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'natIp' in kwargs:
+            nat_ip = kwargs['natIp']
+        if 'publicIpId' in kwargs:
+            public_ip_id = kwargs['publicIpId']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if block_traffic is not None:
             _setter("block_traffic", block_traffic)
         if compartment_id is not None:

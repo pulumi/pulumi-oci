@@ -247,7 +247,7 @@ namespace Pulumi.Oci.Ocvp
         public readonly bool? IsBillingDonorsOnly;
         public readonly bool? IsSwapBillingOnly;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         /// </summary>
         public readonly string? SddcId;
         /// <summary>

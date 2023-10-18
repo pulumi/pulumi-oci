@@ -63,7 +63,21 @@ class GetEventsAuditEventResult(dict):
              event_type: str,
              event_type_version: str,
              source: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudEventsVersion' in kwargs:
+            cloud_events_version = kwargs['cloudEventsVersion']
+        if 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if 'eventId' in kwargs:
+            event_id = kwargs['eventId']
+        if 'eventTime' in kwargs:
+            event_time = kwargs['eventTime']
+        if 'eventType' in kwargs:
+            event_type = kwargs['eventType']
+        if 'eventTypeVersion' in kwargs:
+            event_type_version = kwargs['eventTypeVersion']
+
         _setter("cloud_events_version", cloud_events_version)
         _setter("content_type", content_type)
         _setter("datas", datas)
@@ -205,7 +219,31 @@ class GetEventsAuditEventDataResult(dict):
              resource_name: str,
              responses: Sequence['outputs.GetEventsAuditEventDataResponseResult'],
              state_changes: Sequence['outputs.GetEventsAuditEventDataStateChangeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'eventGroupingId' in kwargs:
+            event_grouping_id = kwargs['eventGroupingId']
+        if 'eventName' in kwargs:
+            event_name = kwargs['eventName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'stateChanges' in kwargs:
+            state_changes = kwargs['stateChanges']
+
         _setter("additional_details", additional_details)
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
@@ -385,7 +423,27 @@ class GetEventsAuditEventDataIdentityResult(dict):
              principal_name: str,
              tenant_id: str,
              user_agent: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authType' in kwargs:
+            auth_type = kwargs['authType']
+        if 'callerId' in kwargs:
+            caller_id = kwargs['callerId']
+        if 'callerName' in kwargs:
+            caller_name = kwargs['callerName']
+        if 'consoleSessionId' in kwargs:
+            console_session_id = kwargs['consoleSessionId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'principalId' in kwargs:
+            principal_id = kwargs['principalId']
+        if 'principalName' in kwargs:
+            principal_name = kwargs['principalName']
+        if 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if 'userAgent' in kwargs:
+            user_agent = kwargs['userAgent']
+
         _setter("auth_type", auth_type)
         _setter("caller_id", caller_id)
         _setter("caller_name", caller_name)
@@ -509,7 +567,9 @@ class GetEventsAuditEventDataRequestResult(dict):
              id: str,
              parameters: Mapping[str, Any],
              path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("headers", headers)
         _setter("id", id)
@@ -588,7 +648,11 @@ class GetEventsAuditEventDataResponseResult(dict):
              payload: Mapping[str, Any],
              response_time: str,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responseTime' in kwargs:
+            response_time = kwargs['responseTime']
+
         _setter("headers", headers)
         _setter("message", message)
         _setter("payload", payload)
@@ -655,7 +719,9 @@ class GetEventsAuditEventDataStateChangeResult(dict):
              _setter: Callable[[Any, Any], None],
              current: Mapping[str, Any],
              previous: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("current", current)
         _setter("previous", previous)
 
@@ -694,7 +760,9 @@ class GetEventsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

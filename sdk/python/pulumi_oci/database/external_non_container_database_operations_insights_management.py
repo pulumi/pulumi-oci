@@ -38,7 +38,15 @@ class ExternalNonContainerDatabaseOperationsInsightsManagementArgs:
              enable_operations_insights: pulumi.Input[bool],
              external_database_connector_id: pulumi.Input[str],
              external_non_container_database_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableOperationsInsights' in kwargs:
+            enable_operations_insights = kwargs['enableOperationsInsights']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'externalNonContainerDatabaseId' in kwargs:
+            external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+
         _setter("enable_operations_insights", enable_operations_insights)
         _setter("external_database_connector_id", external_database_connector_id)
         _setter("external_non_container_database_id", external_non_container_database_id)
@@ -110,7 +118,15 @@ class _ExternalNonContainerDatabaseOperationsInsightsManagementState:
              enable_operations_insights: Optional[pulumi.Input[bool]] = None,
              external_database_connector_id: Optional[pulumi.Input[str]] = None,
              external_non_container_database_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableOperationsInsights' in kwargs:
+            enable_operations_insights = kwargs['enableOperationsInsights']
+        if 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if 'externalNonContainerDatabaseId' in kwargs:
+            external_non_container_database_id = kwargs['externalNonContainerDatabaseId']
+
         if enable_operations_insights is not None:
             _setter("enable_operations_insights", enable_operations_insights)
         if external_database_connector_id is not None:

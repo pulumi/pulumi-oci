@@ -67,7 +67,17 @@ class GetAccessRequestHistoryItemResult(dict):
              state: str,
              time_of_action: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionsLists' in kwargs:
+            actions_lists = kwargs['actionsLists']
+        if 'isAutoApproved' in kwargs:
+            is_auto_approved = kwargs['isAutoApproved']
+        if 'timeOfAction' in kwargs:
+            time_of_action = kwargs['timeOfAction']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("actions_lists", actions_lists)
         _setter("description", description)
         _setter("duration", duration)
@@ -145,7 +155,9 @@ class GetAccessRequestsAccessRequestCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -289,7 +301,61 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
              time_of_user_creation: str,
              user_id: str,
              workflow_ids: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessReasonSummary' in kwargs:
+            access_reason_summary = kwargs['accessReasonSummary']
+        if 'actionRequestsLists' in kwargs:
+            action_requests_lists = kwargs['actionRequestsLists']
+        if 'approverComment' in kwargs:
+            approver_comment = kwargs['approverComment']
+        if 'auditTypes' in kwargs:
+            audit_types = kwargs['auditTypes']
+        if 'closureComment' in kwargs:
+            closure_comment = kwargs['closureComment']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'extendDuration' in kwargs:
+            extend_duration = kwargs['extendDuration']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoApproved' in kwargs:
+            is_auto_approved = kwargs['isAutoApproved']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'opctlAdditionalMessage' in kwargs:
+            opctl_additional_message = kwargs['opctlAdditionalMessage']
+        if 'opctlId' in kwargs:
+            opctl_id = kwargs['opctlId']
+        if 'opctlName' in kwargs:
+            opctl_name = kwargs['opctlName']
+        if 'operatorId' in kwargs:
+            operator_id = kwargs['operatorId']
+        if 'requestId' in kwargs:
+            request_id = kwargs['requestId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'subResourceLists' in kwargs:
+            sub_resource_lists = kwargs['subResourceLists']
+        if 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+        if 'timeOfCreation' in kwargs:
+            time_of_creation = kwargs['timeOfCreation']
+        if 'timeOfModification' in kwargs:
+            time_of_modification = kwargs['timeOfModification']
+        if 'timeOfUserCreation' in kwargs:
+            time_of_user_creation = kwargs['timeOfUserCreation']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if 'workflowIds' in kwargs:
+            workflow_ids = kwargs['workflowIds']
+
         _setter("access_reason_summary", access_reason_summary)
         _setter("action_requests_lists", action_requests_lists)
         _setter("approver_comment", approver_comment)
@@ -589,7 +655,9 @@ class GetAccessRequestsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -630,7 +698,9 @@ class GetActionPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -672,7 +742,9 @@ class GetActionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -709,7 +781,9 @@ class GetActionsOperatorActionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetActionsOperatorActionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -765,7 +839,15 @@ class GetActionsOperatorActionCollectionItemResult(dict):
              resource_type: str,
              compartment_id: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerDisplayName' in kwargs:
+            customer_display_name = kwargs['customerDisplayName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("component", component)
         _setter("customer_display_name", customer_display_name)
         _setter("description", description)
@@ -870,7 +952,9 @@ class GetActionsOperatorActionCollectionItemPropertyResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -909,7 +993,9 @@ class GetControlAssignmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -943,7 +1029,9 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1075,7 +1163,59 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
              time_of_assignment: str,
              time_of_deletion: str,
              unassigner_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assignerId' in kwargs:
+            assigner_id = kwargs['assignerId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'detachmentDescription' in kwargs:
+            detachment_description = kwargs['detachmentDescription']
+        if 'errorCode' in kwargs:
+            error_code = kwargs['errorCode']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoApproveDuringMaintenance' in kwargs:
+            is_auto_approve_during_maintenance = kwargs['isAutoApproveDuringMaintenance']
+        if 'isDefaultAssignment' in kwargs:
+            is_default_assignment = kwargs['isDefaultAssignment']
+        if 'isEnforcedAlways' in kwargs:
+            is_enforced_always = kwargs['isEnforcedAlways']
+        if 'isLogForwarded' in kwargs:
+            is_log_forwarded = kwargs['isLogForwarded']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'operatorControlId' in kwargs:
+            operator_control_id = kwargs['operatorControlId']
+        if 'remoteSyslogServerAddress' in kwargs:
+            remote_syslog_server_address = kwargs['remoteSyslogServerAddress']
+        if 'remoteSyslogServerCaCert' in kwargs:
+            remote_syslog_server_ca_cert = kwargs['remoteSyslogServerCaCert']
+        if 'remoteSyslogServerPort' in kwargs:
+            remote_syslog_server_port = kwargs['remoteSyslogServerPort']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'timeAssignmentFrom' in kwargs:
+            time_assignment_from = kwargs['timeAssignmentFrom']
+        if 'timeAssignmentTo' in kwargs:
+            time_assignment_to = kwargs['timeAssignmentTo']
+        if 'timeOfAssignment' in kwargs:
+            time_of_assignment = kwargs['timeOfAssignment']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'unassignerId' in kwargs:
+            unassigner_id = kwargs['unassignerId']
+
         _setter("assigner_id", assigner_id)
         _setter("comment", comment)
         _setter("compartment_id", compartment_id)
@@ -1348,7 +1488,9 @@ class GetControlsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1382,7 +1524,9 @@ class GetControlsOperatorControlCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetControlsOperatorControlCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1482,7 +1626,43 @@ class GetControlsOperatorControlCollectionItemResult(dict):
              time_of_creation: str,
              time_of_deletion: str,
              time_of_modification: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'approvalRequiredOpActionLists' in kwargs:
+            approval_required_op_action_lists = kwargs['approvalRequiredOpActionLists']
+        if 'approverGroupsLists' in kwargs:
+            approver_groups_lists = kwargs['approverGroupsLists']
+        if 'approversLists' in kwargs:
+            approvers_lists = kwargs['approversLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailIdLists' in kwargs:
+            email_id_lists = kwargs['emailIdLists']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDefaultOperatorControl' in kwargs:
+            is_default_operator_control = kwargs['isDefaultOperatorControl']
+        if 'isFullyPreApproved' in kwargs:
+            is_fully_pre_approved = kwargs['isFullyPreApproved']
+        if 'lastModifiedInfo' in kwargs:
+            last_modified_info = kwargs['lastModifiedInfo']
+        if 'operatorControlName' in kwargs:
+            operator_control_name = kwargs['operatorControlName']
+        if 'preApprovedOpActionLists' in kwargs:
+            pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+        if 'timeOfCreation' in kwargs:
+            time_of_creation = kwargs['timeOfCreation']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'timeOfModification' in kwargs:
+            time_of_modification = kwargs['timeOfModification']
+
         _setter("approval_required_op_action_lists", approval_required_op_action_lists)
         _setter("approver_groups_lists", approver_groups_lists)
         _setter("approvers_lists", approvers_lists)

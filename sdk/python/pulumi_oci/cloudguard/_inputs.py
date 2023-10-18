@@ -121,7 +121,21 @@ class CloudGuardDataSourceDataSourceDetailsArgs:
              query_start_time: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']] = None,
              regions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              threshold: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataSourceFeedProvider' in kwargs:
+            data_source_feed_provider = kwargs['dataSourceFeedProvider']
+        if 'additionalEntitiesCount' in kwargs:
+            additional_entities_count = kwargs['additionalEntitiesCount']
+        if 'intervalInMinutes' in kwargs:
+            interval_in_minutes = kwargs['intervalInMinutes']
+        if 'loggingQueryDetails' in kwargs:
+            logging_query_details = kwargs['loggingQueryDetails']
+        if 'loggingQueryType' in kwargs:
+            logging_query_type = kwargs['loggingQueryType']
+        if 'queryStartTime' in kwargs:
+            query_start_time = kwargs['queryStartTime']
+
         _setter("data_source_feed_provider", data_source_feed_provider)
         if additional_entities_count is not None:
             _setter("additional_entities_count", additional_entities_count)
@@ -282,7 +296,13 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
              _setter: Callable[[Any, Any], None],
              logging_query_type: pulumi.Input[str],
              key_entities_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingQueryType' in kwargs:
+            logging_query_type = kwargs['loggingQueryType']
+        if 'keyEntitiesCount' in kwargs:
+            key_entities_count = kwargs['keyEntitiesCount']
+
         _setter("logging_query_type", logging_query_type)
         if key_entities_count is not None:
             _setter("key_entities_count", key_entities_count)
@@ -331,7 +351,13 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
              _setter: Callable[[Any, Any], None],
              start_policy_type: pulumi.Input[str],
              query_start_time: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'startPolicyType' in kwargs:
+            start_policy_type = kwargs['startPolicyType']
+        if 'queryStartTime' in kwargs:
+            query_start_time = kwargs['queryStartTime']
+
         _setter("start_policy_type", start_policy_type)
         if query_start_time is not None:
             _setter("query_start_time", query_start_time)
@@ -380,7 +406,13 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
              _setter: Callable[[Any, Any], None],
              detector_recipe_id: Optional[pulumi.Input[str]] = None,
              detector_rule_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectorRecipeId' in kwargs:
+            detector_recipe_id = kwargs['detectorRecipeId']
+        if 'detectorRuleId' in kwargs:
+            detector_rule_id = kwargs['detectorRuleId']
+
         if detector_recipe_id is not None:
             _setter("detector_recipe_id", detector_recipe_id)
         if detector_rule_id is not None:
@@ -430,7 +462,9 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
              _setter: Callable[[Any, Any], None],
              region: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if region is not None:
             _setter("region", region)
         if status is not None:
@@ -484,7 +518,9 @@ class DataMaskRuleTargetSelectedArgs:
              _setter: Callable[[Any, Any], None],
              kind: pulumi.Input[str],
              values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("kind", kind)
         if values is not None:
             _setter("values", values)
@@ -595,7 +631,31 @@ class DetectorRecipeDetectorRuleArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectorRuleId' in kwargs:
+            detector_rule_id = kwargs['detectorRuleId']
+        if 'candidateResponderRules' in kwargs:
+            candidate_responder_rules = kwargs['candidateResponderRules']
+        if 'dataSourceId' in kwargs:
+            data_source_id = kwargs['dataSourceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entitiesMappings' in kwargs:
+            entities_mappings = kwargs['entitiesMappings']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedListTypes' in kwargs:
+            managed_list_types = kwargs['managedListTypes']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'serviceType' in kwargs:
+            service_type = kwargs['serviceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("details", details)
         _setter("detector_rule_id", detector_rule_id)
         if candidate_responder_rules is not None:
@@ -847,7 +907,13 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
              is_preferred: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isPreferred' in kwargs:
+            is_preferred = kwargs['isPreferred']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -945,7 +1011,19 @@ class DetectorRecipeDetectorRuleDetailsArgs:
              is_configuration_allowed: Optional[pulumi.Input[bool]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              recommendation: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+        if 'dataSourceId' in kwargs:
+            data_source_id = kwargs['dataSourceId']
+        if 'entitiesMappings' in kwargs:
+            entities_mappings = kwargs['entitiesMappings']
+        if 'isConfigurationAllowed' in kwargs:
+            is_configuration_allowed = kwargs['isConfigurationAllowed']
+
         _setter("is_enabled", is_enabled)
         _setter("risk_level", risk_level)
         if condition is not None:
@@ -1117,7 +1195,13 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
              data_type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         _setter("config_key", config_key)
         _setter("name", name)
         if data_type is not None:
@@ -1211,7 +1295,13 @@ class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
              list_type: pulumi.Input[str],
              managed_list_type: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'managedListType' in kwargs:
+            managed_list_type = kwargs['managedListType']
+
         _setter("list_type", list_type)
         _setter("managed_list_type", managed_list_type)
         _setter("value", value)
@@ -1278,7 +1368,15 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
              query_field: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'queryField' in kwargs:
+            query_field = kwargs['queryField']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
         _setter("query_field", query_field)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -1349,7 +1447,15 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              query_field: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'queryField' in kwargs:
+            query_field = kwargs['queryField']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if entity_type is not None:
@@ -1473,7 +1579,31 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'candidateResponderRules' in kwargs:
+            candidate_responder_rules = kwargs['candidateResponderRules']
+        if 'dataSourceId' in kwargs:
+            data_source_id = kwargs['dataSourceId']
+        if 'detectorRuleId' in kwargs:
+            detector_rule_id = kwargs['detectorRuleId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entitiesMappings' in kwargs:
+            entities_mappings = kwargs['entitiesMappings']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedListTypes' in kwargs:
+            managed_list_types = kwargs['managedListTypes']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'serviceType' in kwargs:
+            service_type = kwargs['serviceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if candidate_responder_rules is not None:
             _setter("candidate_responder_rules", candidate_responder_rules)
         if data_source_id is not None:
@@ -1727,7 +1857,13 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              id: Optional[pulumi.Input[str]] = None,
              is_preferred: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isPreferred' in kwargs:
+            is_preferred = kwargs['isPreferred']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -1809,7 +1945,15 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
              is_enabled: Optional[pulumi.Input[bool]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              risk_level: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isConfigurationAllowed' in kwargs:
+            is_configuration_allowed = kwargs['isConfigurationAllowed']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+
         if condition is not None:
             _setter("condition", condition)
         if configurations is not None:
@@ -1927,7 +2071,13 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if data_type is not None:
@@ -2023,7 +2173,13 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
              list_type: Optional[pulumi.Input[str]] = None,
              managed_list_type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'managedListType' in kwargs:
+            managed_list_type = kwargs['managedListType']
+
         if list_type is not None:
             _setter("list_type", list_type)
         if managed_list_type is not None:
@@ -2093,7 +2249,15 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              query_field: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'queryField' in kwargs:
+            query_field = kwargs['queryField']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if entity_type is not None:
@@ -2203,7 +2367,23 @@ class ResponderRecipeEffectiveResponderRuleArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'responderRuleId' in kwargs:
+            responder_rule_id = kwargs['responderRuleId']
+        if 'supportedModes' in kwargs:
+            supported_modes = kwargs['supportedModes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if description is not None:
@@ -2405,7 +2585,11 @@ class ResponderRecipeEffectiveResponderRuleDetailArgs:
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if condition is not None:
             _setter("condition", condition)
         if configurations is not None:
@@ -2487,7 +2671,11 @@ class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
              config_key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if name is not None:
@@ -2595,7 +2783,23 @@ class ResponderRecipeResponderRuleArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responderRuleId' in kwargs:
+            responder_rule_id = kwargs['responderRuleId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'supportedModes' in kwargs:
+            supported_modes = kwargs['supportedModes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("details", details)
         _setter("responder_rule_id", responder_rule_id)
         if compartment_id is not None:
@@ -2795,7 +2999,11 @@ class ResponderRecipeResponderRuleDetailsArgs:
              condition: Optional[pulumi.Input[str]] = None,
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
         if condition is not None:
             _setter("condition", condition)
@@ -2876,7 +3084,11 @@ class ResponderRecipeResponderRuleDetailsConfigurationArgs:
              config_key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if name is not None:
@@ -2948,7 +3160,17 @@ class TargetTargetDetailArgs:
              security_zone_id: Optional[pulumi.Input[str]] = None,
              target_resource_type: Optional[pulumi.Input[str]] = None,
              target_security_zone_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'securityZoneDisplayName' in kwargs:
+            security_zone_display_name = kwargs['securityZoneDisplayName']
+        if 'securityZoneId' in kwargs:
+            security_zone_id = kwargs['securityZoneId']
+        if 'targetResourceType' in kwargs:
+            target_resource_type = kwargs['targetResourceType']
+        if 'targetSecurityZoneRecipes' in kwargs:
+            target_security_zone_recipes = kwargs['targetSecurityZoneRecipes']
+
         if security_zone_display_name is not None:
             _setter("security_zone_display_name", security_zone_display_name)
         if security_zone_id is not None:
@@ -3076,7 +3298,27 @@ class TargetTargetDetailTargetSecurityZoneRecipeArgs:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'securityPolicies' in kwargs:
+            security_policies = kwargs['securityPolicies']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:
@@ -3330,7 +3572,23 @@ class TargetTargetDetectorRecipeArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectorRecipeId' in kwargs:
+            detector_recipe_id = kwargs['detectorRecipeId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'detectorRules' in kwargs:
+            detector_rules = kwargs['detectorRules']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'effectiveDetectorRules' in kwargs:
+            effective_detector_rules = kwargs['effectiveDetectorRules']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("detector_recipe_id", detector_recipe_id)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -3579,7 +3837,29 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'detectorRuleId' in kwargs:
+            detector_rule_id = kwargs['detectorRuleId']
+        if 'dataSourceId' in kwargs:
+            data_source_id = kwargs['dataSourceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entitiesMappings' in kwargs:
+            entities_mappings = kwargs['entitiesMappings']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedListTypes' in kwargs:
+            managed_list_types = kwargs['managedListTypes']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'serviceType' in kwargs:
+            service_type = kwargs['serviceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("details", details)
         _setter("detector_rule_id", detector_rule_id)
         if data_source_id is not None:
@@ -3829,7 +4109,17 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsArgs:
              is_enabled: Optional[pulumi.Input[bool]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              risk_level: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionGroups' in kwargs:
+            condition_groups = kwargs['conditionGroups']
+        if 'isConfigurationAllowed' in kwargs:
+            is_configuration_allowed = kwargs['isConfigurationAllowed']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+
         if condition_groups is not None:
             _setter("condition_groups", condition_groups)
         if configurations is not None:
@@ -3935,7 +4225,11 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              condition: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("condition", condition)
 
@@ -3995,7 +4289,13 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if data_type is not None:
@@ -4091,7 +4391,13 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
              list_type: Optional[pulumi.Input[str]] = None,
              managed_list_type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'managedListType' in kwargs:
+            managed_list_type = kwargs['managedListType']
+
         if list_type is not None:
             _setter("list_type", list_type)
         if managed_list_type is not None:
@@ -4161,7 +4467,15 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              query_field: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'queryField' in kwargs:
+            query_field = kwargs['queryField']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if entity_type is not None:
@@ -4283,7 +4597,29 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataSourceId' in kwargs:
+            data_source_id = kwargs['dataSourceId']
+        if 'detectorRuleId' in kwargs:
+            detector_rule_id = kwargs['detectorRuleId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entitiesMappings' in kwargs:
+            entities_mappings = kwargs['entitiesMappings']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'managedListTypes' in kwargs:
+            managed_list_types = kwargs['managedListTypes']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'serviceType' in kwargs:
+            service_type = kwargs['serviceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if data_source_id is not None:
             _setter("data_source_id", data_source_id)
         if description is not None:
@@ -4535,7 +4871,17 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs:
              is_enabled: Optional[pulumi.Input[bool]] = None,
              labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              risk_level: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'conditionGroups' in kwargs:
+            condition_groups = kwargs['conditionGroups']
+        if 'isConfigurationAllowed' in kwargs:
+            is_configuration_allowed = kwargs['isConfigurationAllowed']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'riskLevel' in kwargs:
+            risk_level = kwargs['riskLevel']
+
         if condition_groups is not None:
             _setter("condition_groups", condition_groups)
         if configurations is not None:
@@ -4641,7 +4987,11 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: Optional[pulumi.Input[str]] = None,
              condition: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if condition is not None:
@@ -4703,7 +5053,13 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
              values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if data_type is not None:
@@ -4799,7 +5155,13 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArg
              list_type: Optional[pulumi.Input[str]] = None,
              managed_list_type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'managedListType' in kwargs:
+            managed_list_type = kwargs['managedListType']
+
         if list_type is not None:
             _setter("list_type", list_type)
         if managed_list_type is not None:
@@ -4869,7 +5231,15 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              entity_type: Optional[pulumi.Input[str]] = None,
              query_field: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'queryField' in kwargs:
+            query_field = kwargs['queryField']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if entity_type is not None:
@@ -4971,7 +5341,23 @@ class TargetTargetResponderRecipeArgs:
              responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responderRecipeId' in kwargs:
+            responder_recipe_id = kwargs['responderRecipeId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'effectiveResponderRules' in kwargs:
+            effective_responder_rules = kwargs['effectiveResponderRules']
+        if 'responderRules' in kwargs:
+            responder_rules = kwargs['responderRules']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("responder_recipe_id", responder_recipe_id)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -5184,7 +5570,23 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'responderRuleId' in kwargs:
+            responder_rule_id = kwargs['responderRuleId']
+        if 'supportedModes' in kwargs:
+            supported_modes = kwargs['supportedModes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if description is not None:
@@ -5390,7 +5792,11 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if condition is not None:
             _setter("condition", condition)
         if configurations is not None:
@@ -5472,7 +5878,11 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs:
              config_key: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+
         if config_key is not None:
             _setter("config_key", config_key)
         if name is not None:
@@ -5584,7 +5994,23 @@ class TargetTargetResponderRecipeResponderRuleArgs:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'responderRuleId' in kwargs:
+            responder_rule_id = kwargs['responderRuleId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'supportedModes' in kwargs:
+            supported_modes = kwargs['supportedModes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("details", details)
         _setter("responder_rule_id", responder_rule_id)
         if compartment_id is not None:
@@ -5788,7 +6214,11 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgs:
              configurations: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              mode: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if condition is not None:
             _setter("condition", condition)
         if configurations is not None:
@@ -5870,7 +6300,11 @@ class TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs:
              config_key: pulumi.Input[str],
              name: pulumi.Input[str],
              value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configKey' in kwargs:
+            config_key = kwargs['configKey']
+
         _setter("config_key", config_key)
         _setter("name", name)
         _setter("value", value)
@@ -5933,7 +6367,9 @@ class GetDataMaskRulesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5988,7 +6424,9 @@ class GetDataSourceEventsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6040,7 +6478,9 @@ class GetDataSourcesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6096,7 +6536,9 @@ class GetDetectorRecipesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6158,7 +6600,9 @@ class GetGuardTargetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6216,7 +6660,9 @@ class GetManagedListsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6268,7 +6714,9 @@ class GetProblemEntitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6323,7 +6771,9 @@ class GetResponderRecipesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6378,7 +6828,9 @@ class GetSecurityPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6430,7 +6882,9 @@ class GetSecurityRecipesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6482,7 +6936,9 @@ class GetSecurityZonesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

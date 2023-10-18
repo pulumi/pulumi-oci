@@ -35,7 +35,13 @@ class SuppressionArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              email_address: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+
         _setter("compartment_id", compartment_id)
         _setter("email_address", email_address)
 
@@ -116,7 +122,23 @@ class _SuppressionState:
              reason: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_suppressed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'errorDetail' in kwargs:
+            error_detail = kwargs['errorDetail']
+        if 'errorSource' in kwargs:
+            error_source = kwargs['errorSource']
+        if 'messageId' in kwargs:
+            message_id = kwargs['messageId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastSuppressed' in kwargs:
+            time_last_suppressed = kwargs['timeLastSuppressed']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if email_address is not None:

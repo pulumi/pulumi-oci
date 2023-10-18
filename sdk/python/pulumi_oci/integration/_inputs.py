@@ -46,7 +46,13 @@ class IntegrationInstanceAlternateCustomEndpointArgs:
              alias: Optional[pulumi.Input[str]] = None,
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if alias is not None:
             _setter("alias", alias)
@@ -136,7 +142,19 @@ class IntegrationInstanceAttachmentArgs:
              target_instance_url: Optional[pulumi.Input[str]] = None,
              target_role: Optional[pulumi.Input[str]] = None,
              target_service_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
             _setter("is_implicit", is_implicit)
         if target_id is not None:
@@ -237,7 +255,13 @@ class IntegrationInstanceCustomEndpointArgs:
              alias: Optional[pulumi.Input[str]] = None,
              certificate_secret_id: Optional[pulumi.Input[str]] = None,
              certificate_secret_version: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateSecretId' in kwargs:
+            certificate_secret_id = kwargs['certificateSecretId']
+        if 'certificateSecretVersion' in kwargs:
+            certificate_secret_version = kwargs['certificateSecretVersion']
+
         _setter("hostname", hostname)
         if alias is not None:
             _setter("alias", alias)
@@ -326,7 +350,19 @@ class IntegrationInstanceIdcsInfoArgs:
              idcs_app_location_url: Optional[pulumi.Input[str]] = None,
              idcs_app_name: Optional[pulumi.Input[str]] = None,
              instance_primary_audience_url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsAppDisplayName' in kwargs:
+            idcs_app_display_name = kwargs['idcsAppDisplayName']
+        if 'idcsAppId' in kwargs:
+            idcs_app_id = kwargs['idcsAppId']
+        if 'idcsAppLocationUrl' in kwargs:
+            idcs_app_location_url = kwargs['idcsAppLocationUrl']
+        if 'idcsAppName' in kwargs:
+            idcs_app_name = kwargs['idcsAppName']
+        if 'instancePrimaryAudienceUrl' in kwargs:
+            instance_primary_audience_url = kwargs['instancePrimaryAudienceUrl']
+
         if idcs_app_display_name is not None:
             _setter("idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
@@ -426,7 +462,17 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
              allowlisted_http_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              allowlisted_http_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]] = None,
              is_integration_vcn_allowlisted: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkEndpointType' in kwargs:
+            network_endpoint_type = kwargs['networkEndpointType']
+        if 'allowlistedHttpIps' in kwargs:
+            allowlisted_http_ips = kwargs['allowlistedHttpIps']
+        if 'allowlistedHttpVcns' in kwargs:
+            allowlisted_http_vcns = kwargs['allowlistedHttpVcns']
+        if 'isIntegrationVcnAllowlisted' in kwargs:
+            is_integration_vcn_allowlisted = kwargs['isIntegrationVcnAllowlisted']
+
         _setter("network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
             _setter("allowlisted_http_ips", allowlisted_http_ips)
@@ -503,7 +549,11 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
              _setter: Callable[[Any, Any], None],
              id: pulumi.Input[str],
              allowlisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowlistedIps' in kwargs:
+            allowlisted_ips = kwargs['allowlistedIps']
+
         _setter("id", id)
         if allowlisted_ips is not None:
             _setter("allowlisted_ips", allowlisted_ips)
@@ -551,7 +601,9 @@ class GetIntegrationInstancesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

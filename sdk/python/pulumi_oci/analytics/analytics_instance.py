@@ -81,7 +81,27 @@ class AnalyticsInstanceArgs:
              name: Optional[pulumi.Input[str]] = None,
              network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'featureSet' in kwargs:
+            feature_set = kwargs['featureSet']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailNotification' in kwargs:
+            email_notification = kwargs['emailNotification']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'networkEndpointDetails' in kwargs:
+            network_endpoint_details = kwargs['networkEndpointDetails']
+
         _setter("capacity", capacity)
         _setter("compartment_id", compartment_id)
         _setter("feature_set", feature_set)
@@ -345,7 +365,33 @@ class _AnalyticsInstanceState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'emailNotification' in kwargs:
+            email_notification = kwargs['emailNotification']
+        if 'featureSet' in kwargs:
+            feature_set = kwargs['featureSet']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if 'networkEndpointDetails' in kwargs:
+            network_endpoint_details = kwargs['networkEndpointDetails']
+        if 'serviceUrl' in kwargs:
+            service_url = kwargs['serviceUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if capacity is not None:
             _setter("capacity", capacity)
         if compartment_id is not None:

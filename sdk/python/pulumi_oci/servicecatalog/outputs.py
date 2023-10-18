@@ -75,7 +75,15 @@ class PrivateApplicationLogo(dict):
              content_url: Optional[str] = None,
              display_name: Optional[str] = None,
              mime_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         if content_url is not None:
             _setter("content_url", content_url)
         if display_name is not None:
@@ -149,7 +157,13 @@ class PrivateApplicationPackageDetails(dict):
              package_type: str,
              version: str,
              zip_file_base64encoded: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("package_type", package_type)
         _setter("version", version)
         if zip_file_base64encoded is not None:
@@ -200,7 +214,15 @@ class GetPrivateApplicationLogoResult(dict):
              content_url: str,
              display_name: str,
              mime_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("display_name", display_name)
         _setter("mime_type", mime_type)
@@ -251,7 +273,13 @@ class GetPrivateApplicationPackageDetailResult(dict):
              package_type: str,
              version: str,
              zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("package_type", package_type)
         _setter("version", version)
         _setter("zip_file_base64encoded", zip_file_base64encoded)
@@ -293,7 +321,9 @@ class GetPrivateApplicationPackagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -327,7 +357,9 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -377,7 +409,21 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
              private_application_id: str,
              time_created: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'privateApplicationId' in kwargs:
+            private_application_id = kwargs['privateApplicationId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("content_url", content_url)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -464,7 +510,9 @@ class GetPrivateApplicationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -498,7 +546,9 @@ class GetPrivateApplicationsPrivateApplicationCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -572,7 +622,31 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'logoFileBase64encoded' in kwargs:
+            logo_file_base64encoded = kwargs['logoFileBase64encoded']
+        if 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+        if 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -718,7 +792,15 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemLogoResult(dict):
              content_url: str,
              display_name: str,
              mime_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         _setter("content_url", content_url)
         _setter("display_name", display_name)
         _setter("mime_type", mime_type)
@@ -769,7 +851,13 @@ class GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailResult(
              package_type: str,
              version: str,
              zip_file_base64encoded: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("package_type", package_type)
         _setter("version", version)
         _setter("zip_file_base64encoded", zip_file_base64encoded)
@@ -811,7 +899,9 @@ class GetServiceCatalogAssociationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -845,7 +935,9 @@ class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -885,7 +977,17 @@ class GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult
              id: str,
              service_catalog_id: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'serviceCatalogId' in kwargs:
+            service_catalog_id = kwargs['serviceCatalogId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("entity_id", entity_id)
         _setter("entity_type", entity_type)
         _setter("id", id)
@@ -951,7 +1053,9 @@ class GetServiceCatalogsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -985,7 +1089,9 @@ class GetServiceCatalogsServiceCatalogCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetServiceCatalogsServiceCatalogCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1037,7 +1143,21 @@ class GetServiceCatalogsServiceCatalogCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)

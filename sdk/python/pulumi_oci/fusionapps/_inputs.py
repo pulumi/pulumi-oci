@@ -53,7 +53,15 @@ class FusionEnvironmentAdminUserItemArgs:
              first_name: Optional[pulumi.Input[str]] = None,
              last_name: Optional[pulumi.Input[str]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         if email_address is not None:
             _setter("email_address", email_address)
         if first_name is not None:
@@ -147,7 +155,15 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
              last_name: pulumi.Input[str],
              password: pulumi.Input[str],
              username: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'emailAddress' in kwargs:
+            email_address = kwargs['emailAddress']
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+
         _setter("email_address", email_address)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -238,7 +254,15 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
              concurrent_maintenance: Optional[pulumi.Input[str]] = None,
              is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
              quarterly_upgrade_begin_times: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'concurrentMaintenance' in kwargs:
+            concurrent_maintenance = kwargs['concurrentMaintenance']
+        if 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         if concurrent_maintenance is not None:
             _setter("concurrent_maintenance", concurrent_maintenance)
         if is_monthly_patching_enabled is not None:
@@ -313,7 +337,23 @@ class FusionEnvironmentKmsKeyInfoArgs:
              scheduled_key_status: Optional[pulumi.Input[str]] = None,
              scheduled_key_version: Optional[pulumi.Input[str]] = None,
              scheduled_lifecycle_state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeKeyId' in kwargs:
+            active_key_id = kwargs['activeKeyId']
+        if 'activeKeyVersion' in kwargs:
+            active_key_version = kwargs['activeKeyVersion']
+        if 'currentKeyLifecycleState' in kwargs:
+            current_key_lifecycle_state = kwargs['currentKeyLifecycleState']
+        if 'scheduledKeyId' in kwargs:
+            scheduled_key_id = kwargs['scheduledKeyId']
+        if 'scheduledKeyStatus' in kwargs:
+            scheduled_key_status = kwargs['scheduledKeyStatus']
+        if 'scheduledKeyVersion' in kwargs:
+            scheduled_key_version = kwargs['scheduledKeyVersion']
+        if 'scheduledLifecycleState' in kwargs:
+            scheduled_lifecycle_state = kwargs['scheduledLifecycleState']
+
         if active_key_id is not None:
             _setter("active_key_id", active_key_id)
         if active_key_version is not None:
@@ -416,7 +456,15 @@ class FusionEnvironmentMaintenancePolicyArgs:
              environment_maintenance_override: Optional[pulumi.Input[str]] = None,
              monthly_patching_override: Optional[pulumi.Input[str]] = None,
              quarterly_upgrade_begin_times: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'environmentMaintenanceOverride' in kwargs:
+            environment_maintenance_override = kwargs['environmentMaintenanceOverride']
+        if 'monthlyPatchingOverride' in kwargs:
+            monthly_patching_override = kwargs['monthlyPatchingOverride']
+        if 'quarterlyUpgradeBeginTimes' in kwargs:
+            quarterly_upgrade_begin_times = kwargs['quarterlyUpgradeBeginTimes']
+
         if environment_maintenance_override is not None:
             _setter("environment_maintenance_override", environment_maintenance_override)
         if monthly_patching_override is not None:
@@ -480,7 +528,13 @@ class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
              _setter: Callable[[Any, Any], None],
              begin_times_value: Optional[pulumi.Input[str]] = None,
              override_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beginTimesValue' in kwargs:
+            begin_times_value = kwargs['beginTimesValue']
+        if 'overrideType' in kwargs:
+            override_type = kwargs['overrideType']
+
         if begin_times_value is not None:
             _setter("begin_times_value", begin_times_value)
         if override_type is not None:
@@ -534,7 +588,15 @@ class FusionEnvironmentRefreshArgs:
              source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
              time_finished: Optional[pulumi.Input[str]] = None,
              time_of_restoration_point: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceFusionEnvironmentId' in kwargs:
+            source_fusion_environment_id = kwargs['sourceFusionEnvironmentId']
+        if 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if 'timeOfRestorationPoint' in kwargs:
+            time_of_restoration_point = kwargs['timeOfRestorationPoint']
+
         if source_fusion_environment_id is not None:
             _setter("source_fusion_environment_id", source_fusion_environment_id)
         if time_finished is not None:
@@ -594,7 +656,11 @@ class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              refresh_issues: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'refreshIssues' in kwargs:
+            refresh_issues = kwargs['refreshIssues']
+
         if refresh_issues is not None:
             _setter("refresh_issues", refresh_issues)
 
@@ -638,7 +704,9 @@ class FusionEnvironmentRuleArgs:
              action: pulumi.Input[str],
              conditions: pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]],
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("action", action)
         _setter("conditions", conditions)
         if description is not None:
@@ -704,7 +772,13 @@ class FusionEnvironmentRuleConditionArgs:
              _setter: Callable[[Any, Any], None],
              attribute_name: pulumi.Input[str],
              attribute_value: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeName' in kwargs:
+            attribute_name = kwargs['attributeName']
+        if 'attributeValue' in kwargs:
+            attribute_value = kwargs['attributeValue']
+
         _setter("attribute_name", attribute_name)
         _setter("attribute_value", attribute_value)
 

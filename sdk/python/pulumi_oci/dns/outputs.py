@@ -110,7 +110,11 @@ class ActionCreateZoneFromZoneFileExternalDownstream(dict):
              address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
             _setter("address", address)
         if port is not None:
@@ -183,7 +187,11 @@ class ActionCreateZoneFromZoneFileExternalMaster(dict):
              address: Optional[str] = None,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
             _setter("address", address)
         if port is not None:
@@ -231,7 +239,9 @@ class ActionCreateZoneFromZoneFileNameserver(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
             _setter("hostname", hostname)
 
@@ -290,7 +300,13 @@ class ActionCreateZoneFromZoneFileZoneTransferServer(dict):
              is_transfer_destination: Optional[bool] = None,
              is_transfer_source: Optional[bool] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
             _setter("address", address)
         if is_transfer_destination is not None:
@@ -365,7 +381,11 @@ class ResolverAttachedView(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("view_id", view_id)
 
     @property
@@ -469,7 +489,27 @@ class ResolverEndpoint(dict):
              subnet_id: Optional[str] = None,
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if endpoint_type is not None:
@@ -646,7 +686,17 @@ class ResolverRule(dict):
              source_endpoint_name: str,
              client_address_conditions: Optional[Sequence[str]] = None,
              qname_cover_conditions: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationAddresses' in kwargs:
+            destination_addresses = kwargs['destinationAddresses']
+        if 'sourceEndpointName' in kwargs:
+            source_endpoint_name = kwargs['sourceEndpointName']
+        if 'clientAddressConditions' in kwargs:
+            client_address_conditions = kwargs['clientAddressConditions']
+        if 'qnameCoverConditions' in kwargs:
+            qname_cover_conditions = kwargs['qnameCoverConditions']
+
         _setter("action", action)
         _setter("destination_addresses", destination_addresses)
         _setter("source_endpoint_name", source_endpoint_name)
@@ -756,7 +806,15 @@ class RrsetItem(dict):
              is_protected: Optional[bool] = None,
              record_hash: Optional[str] = None,
              rrset_version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+
         _setter("domain", domain)
         _setter("rdata", rdata)
         _setter("rtype", rtype)
@@ -873,7 +931,11 @@ class SteeringPolicyAnswer(dict):
              rtype: str,
              is_disabled: Optional[bool] = None,
              pool: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+
         _setter("name", name)
         _setter("rdata", rdata)
         _setter("rtype", rtype)
@@ -975,7 +1037,15 @@ class SteeringPolicyRule(dict):
              default_answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleDefaultAnswerData']] = None,
              default_count: Optional[int] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'defaultAnswerDatas' in kwargs:
+            default_answer_datas = kwargs['defaultAnswerDatas']
+        if 'defaultCount' in kwargs:
+            default_count = kwargs['defaultCount']
+
         _setter("rule_type", rule_type)
         if cases is not None:
             _setter("cases", cases)
@@ -1069,7 +1139,13 @@ class SteeringPolicyRuleCase(dict):
              answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleCaseAnswerData']] = None,
              case_condition: Optional[str] = None,
              count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerDatas' in kwargs:
+            answer_datas = kwargs['answerDatas']
+        if 'caseCondition' in kwargs:
+            case_condition = kwargs['caseCondition']
+
         if answer_datas is not None:
             _setter("answer_datas", answer_datas)
         if case_condition is not None:
@@ -1144,7 +1220,13 @@ class SteeringPolicyRuleCaseAnswerData(dict):
              answer_condition: Optional[str] = None,
              should_keep: Optional[bool] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
             _setter("answer_condition", answer_condition)
         if should_keep is not None:
@@ -1219,7 +1301,13 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
              answer_condition: Optional[str] = None,
              should_keep: Optional[bool] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
             _setter("answer_condition", answer_condition)
         if should_keep is not None:
@@ -1292,7 +1380,11 @@ class ZoneExternalDownstream(dict):
              address: str,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         if port is not None:
             _setter("port", port)
@@ -1364,7 +1456,11 @@ class ZoneExternalMaster(dict):
              address: str,
              port: Optional[int] = None,
              tsig_key_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         if port is not None:
             _setter("port", port)
@@ -1411,7 +1507,9 @@ class ZoneNameserver(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
             _setter("hostname", hostname)
 
@@ -1470,7 +1568,13 @@ class ZoneZoneTransferServer(dict):
              is_transfer_destination: Optional[bool] = None,
              is_transfer_source: Optional[bool] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
             _setter("address", address)
         if is_transfer_destination is not None:
@@ -1531,7 +1635,9 @@ class GetRecordsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1600,7 +1706,19 @@ class GetRecordsRecordResult(dict):
              compartment_id: Optional[str] = None,
              rdata: Optional[str] = None,
              ttl: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+        if 'zoneNameOrId' in kwargs:
+            zone_name_or_id = kwargs['zoneNameOrId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("domain", domain)
         _setter("is_protected", is_protected)
         _setter("record_hash", record_hash)
@@ -1711,7 +1829,11 @@ class GetResolverAttachedViewResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("view_id", view_id)
 
     @property
@@ -1782,7 +1904,27 @@ class GetResolverEndpointResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
         _setter("forwarding_address", forwarding_address)
@@ -1914,7 +2056,9 @@ class GetResolverEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2010,7 +2154,31 @@ class GetResolverEndpointsResolverEndpointResult(dict):
              time_updated: str,
              nsg_ids: Optional[Sequence[str]] = None,
              scope: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
         _setter("forwarding_address", forwarding_address)
@@ -2181,7 +2349,17 @@ class GetResolverRuleResult(dict):
              destination_addresses: Sequence[str],
              qname_cover_conditions: Sequence[str],
              source_endpoint_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAddressConditions' in kwargs:
+            client_address_conditions = kwargs['clientAddressConditions']
+        if 'destinationAddresses' in kwargs:
+            destination_addresses = kwargs['destinationAddresses']
+        if 'qnameCoverConditions' in kwargs:
+            qname_cover_conditions = kwargs['qnameCoverConditions']
+        if 'sourceEndpointName' in kwargs:
+            source_endpoint_name = kwargs['sourceEndpointName']
+
         _setter("action", action)
         _setter("client_address_conditions", client_address_conditions)
         _setter("destination_addresses", destination_addresses)
@@ -2247,7 +2425,9 @@ class GetResolversFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2344,7 +2524,31 @@ class GetResolversResolverResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedVcnId' in kwargs:
+            attached_vcn_id = kwargs['attachedVcnId']
+        if 'attachedViews' in kwargs:
+            attached_views = kwargs['attachedViews']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultViewId' in kwargs:
+            default_view_id = kwargs['defaultViewId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("attached_vcn_id", attached_vcn_id)
         _setter("attached_views", attached_views)
         _setter("compartment_id", compartment_id)
@@ -2500,7 +2704,11 @@ class GetResolversResolverAttachedViewResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              view_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("view_id", view_id)
 
     @property
@@ -2561,7 +2769,27 @@ class GetResolversResolverEndpointResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("endpoint_type", endpoint_type)
         _setter("forwarding_address", forwarding_address)
@@ -2675,7 +2903,17 @@ class GetResolversResolverRuleResult(dict):
              destination_addresses: Sequence[str],
              qname_cover_conditions: Sequence[str],
              source_endpoint_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientAddressConditions' in kwargs:
+            client_address_conditions = kwargs['clientAddressConditions']
+        if 'destinationAddresses' in kwargs:
+            destination_addresses = kwargs['destinationAddresses']
+        if 'qnameCoverConditions' in kwargs:
+            qname_cover_conditions = kwargs['qnameCoverConditions']
+        if 'sourceEndpointName' in kwargs:
+            source_endpoint_name = kwargs['sourceEndpointName']
+
         _setter("action", action)
         _setter("client_address_conditions", client_address_conditions)
         _setter("destination_addresses", destination_addresses)
@@ -2747,7 +2985,15 @@ class GetRrsetItemResult(dict):
              rrset_version: str,
              rtype: str,
              ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+
         _setter("domain", domain)
         _setter("is_protected", is_protected)
         _setter("rdata", rdata)
@@ -2831,7 +3077,9 @@ class GetRrsetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2875,7 +3123,9 @@ class GetRrsetsRrsetResult(dict):
              domain: str,
              items: Sequence['outputs.GetRrsetsRrsetItemResult'],
              rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("domain", domain)
         _setter("items", items)
         _setter("rtype", rtype)
@@ -2941,7 +3191,15 @@ class GetRrsetsRrsetItemResult(dict):
              rrset_version: str,
              rtype: str,
              ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+
         _setter("domain", domain)
         _setter("is_protected", is_protected)
         _setter("rdata", rdata)
@@ -3028,7 +3286,9 @@ class GetSteeringPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3116,7 +3376,21 @@ class GetSteeringPoliciesSteeringPolicyResult(dict):
              template: str,
              time_created: str,
              ttl: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthCheckMonitorId' in kwargs:
+            health_check_monitor_id = kwargs['healthCheckMonitorId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("answers", answers)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3267,7 +3541,11 @@ class GetSteeringPoliciesSteeringPolicyAnswerResult(dict):
              pool: str,
              rdata: str,
              rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+
         _setter("is_disabled", is_disabled)
         _setter("name", name)
         _setter("pool", pool)
@@ -3346,7 +3624,15 @@ class GetSteeringPoliciesSteeringPolicyRuleResult(dict):
              default_count: int,
              description: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultAnswerDatas' in kwargs:
+            default_answer_datas = kwargs['defaultAnswerDatas']
+        if 'defaultCount' in kwargs:
+            default_count = kwargs['defaultCount']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("cases", cases)
         _setter("default_answer_datas", default_answer_datas)
         _setter("default_count", default_count)
@@ -3417,7 +3703,13 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseResult(dict):
              answer_datas: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult'],
              case_condition: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerDatas' in kwargs:
+            answer_datas = kwargs['answerDatas']
+        if 'caseCondition' in kwargs:
+            case_condition = kwargs['caseCondition']
+
         _setter("answer_datas", answer_datas)
         _setter("case_condition", case_condition)
         _setter("count", count)
@@ -3470,7 +3762,13 @@ class GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult(dict):
              answer_condition: str,
              should_keep: bool,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
         _setter("value", value)
@@ -3523,7 +3821,13 @@ class GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult(dict):
              answer_condition: str,
              should_keep: bool,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
         _setter("value", value)
@@ -3584,7 +3888,11 @@ class GetSteeringPolicyAnswerResult(dict):
              pool: str,
              rdata: str,
              rtype: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+
         _setter("is_disabled", is_disabled)
         _setter("name", name)
         _setter("pool", pool)
@@ -3650,7 +3958,9 @@ class GetSteeringPolicyAttachmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3723,7 +4033,21 @@ class GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult(dict):
              steering_policy_id: str,
              time_created: str,
              zone_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'steeringPolicyId' in kwargs:
+            steering_policy_id = kwargs['steeringPolicyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("domain_name", domain_name)
@@ -3847,7 +4171,15 @@ class GetSteeringPolicyRuleResult(dict):
              default_count: int,
              description: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultAnswerDatas' in kwargs:
+            default_answer_datas = kwargs['defaultAnswerDatas']
+        if 'defaultCount' in kwargs:
+            default_count = kwargs['defaultCount']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("cases", cases)
         _setter("default_answer_datas", default_answer_datas)
         _setter("default_count", default_count)
@@ -3918,7 +4250,13 @@ class GetSteeringPolicyRuleCaseResult(dict):
              answer_datas: Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult'],
              case_condition: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerDatas' in kwargs:
+            answer_datas = kwargs['answerDatas']
+        if 'caseCondition' in kwargs:
+            case_condition = kwargs['caseCondition']
+
         _setter("answer_datas", answer_datas)
         _setter("case_condition", case_condition)
         _setter("count", count)
@@ -3971,7 +4309,13 @@ class GetSteeringPolicyRuleCaseAnswerDataResult(dict):
              answer_condition: str,
              should_keep: bool,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
         _setter("value", value)
@@ -4024,7 +4368,13 @@ class GetSteeringPolicyRuleDefaultAnswerDataResult(dict):
              answer_condition: str,
              should_keep: bool,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         _setter("answer_condition", answer_condition)
         _setter("should_keep", should_keep)
         _setter("value", value)
@@ -4075,7 +4425,9 @@ class GetTsigKeysFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4155,7 +4507,19 @@ class GetTsigKeysTsigKeyResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("algorithm", algorithm)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4275,7 +4639,9 @@ class GetViewsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4352,7 +4718,23 @@ class GetViewsViewResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -4475,7 +4857,9 @@ class GetZonesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4584,7 +4968,29 @@ class GetZonesZoneResult(dict):
              view_id: str,
              zone_transfer_servers: Sequence['outputs.GetZonesZoneZoneTransferServerResult'],
              zone_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalDownstreams' in kwargs:
+            external_downstreams = kwargs['externalDownstreams']
+        if 'externalMasters' in kwargs:
+            external_masters = kwargs['externalMasters']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+        if 'zoneTransferServers' in kwargs:
+            zone_transfer_servers = kwargs['zoneTransferServers']
+        if 'zoneType' in kwargs:
+            zone_type = kwargs['zoneType']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("external_downstreams", external_downstreams)
@@ -4773,7 +5179,11 @@ class GetZonesZoneExternalDownstreamResult(dict):
              address: str,
              port: int,
              tsig_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         _setter("port", port)
         _setter("tsig_key_id", tsig_key_id)
@@ -4826,7 +5236,11 @@ class GetZonesZoneExternalMasterResult(dict):
              address: str,
              port: int,
              tsig_key_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         _setter("port", port)
         _setter("tsig_key_id", tsig_key_id)
@@ -4871,7 +5285,9 @@ class GetZonesZoneNameserverResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
 
     @property
@@ -4910,7 +5326,13 @@ class GetZonesZoneZoneTransferServerResult(dict):
              is_transfer_destination: bool,
              is_transfer_source: bool,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         _setter("address", address)
         _setter("is_transfer_destination", is_transfer_destination)
         _setter("is_transfer_source", is_transfer_source)

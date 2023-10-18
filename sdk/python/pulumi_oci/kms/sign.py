@@ -51,7 +51,19 @@ class SignArgs:
              signing_algorithm: pulumi.Input[str],
              key_version_id: Optional[pulumi.Input[str]] = None,
              message_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("key_id", key_id)
         _setter("message", message)
@@ -182,7 +194,19 @@ class _SignState:
              message_type: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              signing_algorithm: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+
         if crypto_endpoint is not None:
             _setter("crypto_endpoint", crypto_endpoint)
         if key_id is not None:

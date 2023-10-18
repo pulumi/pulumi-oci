@@ -22,16 +22,22 @@ class GetPluggableDatabaseResult:
     """
     A collection of values returned by getPluggableDatabase.
     """
-    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_id=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_name=None, pluggable_database_id=None, pluggable_database_management_configs=None, rotate_key_trigger=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
+    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_admin_password=None, container_database_id=None, convert_to_regular_trigger=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_creation_type_details=None, pdb_name=None, pdb_node_level_details=None, pluggable_database_id=None, pluggable_database_management_configs=None, refresh_trigger=None, refreshable_clone_configs=None, rotate_key_trigger=None, should_create_pdb_backup=None, should_pdb_admin_account_be_locked=None, state=None, tde_wallet_password=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_strings and not isinstance(connection_strings, list):
             raise TypeError("Expected argument 'connection_strings' to be a list")
         pulumi.set(__self__, "connection_strings", connection_strings)
+        if container_database_admin_password and not isinstance(container_database_admin_password, str):
+            raise TypeError("Expected argument 'container_database_admin_password' to be a str")
+        pulumi.set(__self__, "container_database_admin_password", container_database_admin_password)
         if container_database_id and not isinstance(container_database_id, str):
             raise TypeError("Expected argument 'container_database_id' to be a str")
         pulumi.set(__self__, "container_database_id", container_database_id)
+        if convert_to_regular_trigger and not isinstance(convert_to_regular_trigger, int):
+            raise TypeError("Expected argument 'convert_to_regular_trigger' to be a int")
+        pulumi.set(__self__, "convert_to_regular_trigger", convert_to_regular_trigger)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -53,18 +59,33 @@ class GetPluggableDatabaseResult:
         if pdb_admin_password and not isinstance(pdb_admin_password, str):
             raise TypeError("Expected argument 'pdb_admin_password' to be a str")
         pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+        if pdb_creation_type_details and not isinstance(pdb_creation_type_details, list):
+            raise TypeError("Expected argument 'pdb_creation_type_details' to be a list")
+        pulumi.set(__self__, "pdb_creation_type_details", pdb_creation_type_details)
         if pdb_name and not isinstance(pdb_name, str):
             raise TypeError("Expected argument 'pdb_name' to be a str")
         pulumi.set(__self__, "pdb_name", pdb_name)
+        if pdb_node_level_details and not isinstance(pdb_node_level_details, list):
+            raise TypeError("Expected argument 'pdb_node_level_details' to be a list")
+        pulumi.set(__self__, "pdb_node_level_details", pdb_node_level_details)
         if pluggable_database_id and not isinstance(pluggable_database_id, str):
             raise TypeError("Expected argument 'pluggable_database_id' to be a str")
         pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
         if pluggable_database_management_configs and not isinstance(pluggable_database_management_configs, list):
             raise TypeError("Expected argument 'pluggable_database_management_configs' to be a list")
         pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+        if refresh_trigger and not isinstance(refresh_trigger, int):
+            raise TypeError("Expected argument 'refresh_trigger' to be a int")
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+        if refreshable_clone_configs and not isinstance(refreshable_clone_configs, list):
+            raise TypeError("Expected argument 'refreshable_clone_configs' to be a list")
+        pulumi.set(__self__, "refreshable_clone_configs", refreshable_clone_configs)
         if rotate_key_trigger and not isinstance(rotate_key_trigger, int):
             raise TypeError("Expected argument 'rotate_key_trigger' to be a int")
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+        if should_create_pdb_backup and not isinstance(should_create_pdb_backup, bool):
+            raise TypeError("Expected argument 'should_create_pdb_backup' to be a bool")
+        pulumi.set(__self__, "should_create_pdb_backup", should_create_pdb_backup)
         if should_pdb_admin_account_be_locked and not isinstance(should_pdb_admin_account_be_locked, bool):
             raise TypeError("Expected argument 'should_pdb_admin_account_be_locked' to be a bool")
         pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
@@ -95,12 +116,22 @@ class GetPluggableDatabaseResult:
         return pulumi.get(self, "connection_strings")
 
     @property
+    @pulumi.getter(name="containerDatabaseAdminPassword")
+    def container_database_admin_password(self) -> str:
+        return pulumi.get(self, "container_database_admin_password")
+
+    @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         """
         return pulumi.get(self, "container_database_id")
+
+    @property
+    @pulumi.getter(name="convertToRegularTrigger")
+    def convert_to_regular_trigger(self) -> int:
+        return pulumi.get(self, "convert_to_regular_trigger")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -156,12 +187,25 @@ class GetPluggableDatabaseResult:
         return pulumi.get(self, "pdb_admin_password")
 
     @property
+    @pulumi.getter(name="pdbCreationTypeDetails")
+    def pdb_creation_type_details(self) -> Sequence['outputs.GetPluggableDatabasePdbCreationTypeDetailResult']:
+        return pulumi.get(self, "pdb_creation_type_details")
+
+    @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> str:
         """
         The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         """
         return pulumi.get(self, "pdb_name")
+
+    @property
+    @pulumi.getter(name="pdbNodeLevelDetails")
+    def pdb_node_level_details(self) -> Sequence['outputs.GetPluggableDatabasePdbNodeLevelDetailResult']:
+        """
+        Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        """
+        return pulumi.get(self, "pdb_node_level_details")
 
     @property
     @pulumi.getter(name="pluggableDatabaseId")
@@ -177,9 +221,27 @@ class GetPluggableDatabaseResult:
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> int:
+        return pulumi.get(self, "refresh_trigger")
+
+    @property
+    @pulumi.getter(name="refreshableCloneConfigs")
+    def refreshable_clone_configs(self) -> Sequence['outputs.GetPluggableDatabaseRefreshableCloneConfigResult']:
+        """
+        Pluggable Database Refreshable Clone Configuration.
+        """
+        return pulumi.get(self, "refreshable_clone_configs")
+
+    @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> int:
         return pulumi.get(self, "rotate_key_trigger")
+
+    @property
+    @pulumi.getter(name="shouldCreatePdbBackup")
+    def should_create_pdb_backup(self) -> bool:
+        return pulumi.get(self, "should_create_pdb_backup")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
@@ -216,7 +278,9 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
         return GetPluggableDatabaseResult(
             compartment_id=self.compartment_id,
             connection_strings=self.connection_strings,
+            container_database_admin_password=self.container_database_admin_password,
             container_database_id=self.container_database_id,
+            convert_to_regular_trigger=self.convert_to_regular_trigger,
             defined_tags=self.defined_tags,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -224,10 +288,15 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
             lifecycle_details=self.lifecycle_details,
             open_mode=self.open_mode,
             pdb_admin_password=self.pdb_admin_password,
+            pdb_creation_type_details=self.pdb_creation_type_details,
             pdb_name=self.pdb_name,
+            pdb_node_level_details=self.pdb_node_level_details,
             pluggable_database_id=self.pluggable_database_id,
             pluggable_database_management_configs=self.pluggable_database_management_configs,
+            refresh_trigger=self.refresh_trigger,
+            refreshable_clone_configs=self.refreshable_clone_configs,
             rotate_key_trigger=self.rotate_key_trigger,
+            should_create_pdb_backup=self.should_create_pdb_backup,
             should_pdb_admin_account_be_locked=self.should_pdb_admin_account_be_locked,
             state=self.state,
             tde_wallet_password=self.tde_wallet_password,
@@ -261,7 +330,9 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
     return AwaitableGetPluggableDatabaseResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_strings=pulumi.get(__ret__, 'connection_strings'),
+        container_database_admin_password=pulumi.get(__ret__, 'container_database_admin_password'),
         container_database_id=pulumi.get(__ret__, 'container_database_id'),
+        convert_to_regular_trigger=pulumi.get(__ret__, 'convert_to_regular_trigger'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -269,10 +340,15 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         open_mode=pulumi.get(__ret__, 'open_mode'),
         pdb_admin_password=pulumi.get(__ret__, 'pdb_admin_password'),
+        pdb_creation_type_details=pulumi.get(__ret__, 'pdb_creation_type_details'),
         pdb_name=pulumi.get(__ret__, 'pdb_name'),
+        pdb_node_level_details=pulumi.get(__ret__, 'pdb_node_level_details'),
         pluggable_database_id=pulumi.get(__ret__, 'pluggable_database_id'),
         pluggable_database_management_configs=pulumi.get(__ret__, 'pluggable_database_management_configs'),
+        refresh_trigger=pulumi.get(__ret__, 'refresh_trigger'),
+        refreshable_clone_configs=pulumi.get(__ret__, 'refreshable_clone_configs'),
         rotate_key_trigger=pulumi.get(__ret__, 'rotate_key_trigger'),
+        should_create_pdb_backup=pulumi.get(__ret__, 'should_create_pdb_backup'),
         should_pdb_admin_account_be_locked=pulumi.get(__ret__, 'should_pdb_admin_account_be_locked'),
         state=pulumi.get(__ret__, 'state'),
         tde_wallet_password=pulumi.get(__ret__, 'tde_wallet_password'),

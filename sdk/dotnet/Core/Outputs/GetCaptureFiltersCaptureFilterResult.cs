@@ -26,9 +26,13 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Indicates which service will use this capture filter
+        /// A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
         /// </summary>
         public readonly string FilterType;
+        /// <summary>
+        /// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleResult> FlowLogCaptureFilterRules;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -60,6 +64,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string filterType,
 
+            ImmutableArray<Outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleResult> flowLogCaptureFilterRules,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -74,6 +80,7 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FilterType = filterType;
+            FlowLogCaptureFilterRules = flowLogCaptureFilterRules;
             FreeformTags = freeformTags;
             Id = id;
             State = state;

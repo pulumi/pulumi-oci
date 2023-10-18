@@ -135,7 +135,21 @@ class DomainsDynamicResourceGroupArgs:
              resource_type_schema_version: Optional[pulumi.Input[str]] = None,
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
              urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'matchingRule' in kwargs:
+            matching_rule = kwargs['matchingRule']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+
         _setter("display_name", display_name)
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("matching_rule", matching_rule)
@@ -636,7 +650,39 @@ class _DomainsDynamicResourceGroupState:
              tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsDynamicResourceGroupTagArgs']]]] = None,
              tenancy_ocid: Optional[pulumi.Input[str]] = None,
              urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'dynamicGroupAppRoles' in kwargs:
+            dynamic_group_app_roles = kwargs['dynamicGroupAppRoles']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'matchingRule' in kwargs:
+            matching_rule = kwargs['matchingRule']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+
         if attribute_sets is not None:
             _setter("attribute_sets", attribute_sets)
         if attributes is not None:

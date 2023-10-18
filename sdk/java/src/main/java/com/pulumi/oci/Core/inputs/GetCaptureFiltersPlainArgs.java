@@ -46,6 +46,21 @@ public final class GetCaptureFiltersPlainArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     * 
+     */
+    @Import(name="filterType")
+    private @Nullable String filterType;
+
+    /**
+     * @return A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+     * 
+     */
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetCaptureFiltersFilter> filters;
 
@@ -73,6 +88,7 @@ public final class GetCaptureFiltersPlainArgs extends com.pulumi.resources.Invok
     private GetCaptureFiltersPlainArgs(GetCaptureFiltersPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.filterType = $.filterType;
         this.filters = $.filters;
         this.state = $.state;
     }
@@ -114,6 +130,17 @@ public final class GetCaptureFiltersPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param filterType A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filterType(@Nullable String filterType) {
+            $.filterType = filterType;
             return this;
         }
 

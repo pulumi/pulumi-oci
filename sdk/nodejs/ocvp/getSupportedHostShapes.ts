@@ -49,7 +49,9 @@ export interface GetSupportedHostShapesArgs {
      */
     name?: string;
     /**
-     * A filter to return only resources that match the given SDDC type exactly.
+     * (Optional) A filter to return only resources that match the given SDDC type exactly.
+     *
+     * @deprecated The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
      */
     sddcType?: string;
 }
@@ -72,6 +74,9 @@ export interface GetSupportedHostShapesResult {
      * The name of the supported compute shape.
      */
     readonly name?: string;
+    /**
+     * @deprecated The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
+     */
     readonly sddcType?: string;
 }
 /**
@@ -110,7 +115,9 @@ export interface GetSupportedHostShapesOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the given SDDC type exactly.
+     * (Optional) A filter to return only resources that match the given SDDC type exactly.
+     *
+     * @deprecated The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
      */
     sddcType?: pulumi.Input<string>;
 }

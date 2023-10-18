@@ -73,7 +73,31 @@ class DatabaseToolsConnectionArgs:
              related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'advancedProperties' in kwargs:
+            advanced_properties = kwargs['advancedProperties']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyStores' in kwargs:
+            key_stores = kwargs['keyStores']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'relatedResource' in kwargs:
+            related_resource = kwargs['relatedResource']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'userPassword' in kwargs:
+            user_password = kwargs['userPassword']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("type", type)
@@ -321,7 +345,39 @@ class _DatabaseToolsConnectionState:
              type: Optional[pulumi.Input[str]] = None,
              user_name: Optional[pulumi.Input[str]] = None,
              user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advancedProperties' in kwargs:
+            advanced_properties = kwargs['advancedProperties']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyStores' in kwargs:
+            key_stores = kwargs['keyStores']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'relatedResource' in kwargs:
+            related_resource = kwargs['relatedResource']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'userPassword' in kwargs:
+            user_password = kwargs['userPassword']
+
         if advanced_properties is not None:
             _setter("advanced_properties", advanced_properties)
         if compartment_id is not None:

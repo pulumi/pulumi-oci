@@ -89,7 +89,41 @@ class ConnectionArgs:
              ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
              tls_keystore: Optional[pulumi.Input[str]] = None,
              tls_wallet: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminCredentials' in kwargs:
+            admin_credentials = kwargs['adminCredentials']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'vaultDetails' in kwargs:
+            vault_details = kwargs['vaultDetails']
+        if 'certificateTdn' in kwargs:
+            certificate_tdn = kwargs['certificateTdn']
+        if 'connectDescriptor' in kwargs:
+            connect_descriptor = kwargs['connectDescriptor']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpoint' in kwargs:
+            private_endpoint = kwargs['privateEndpoint']
+        if 'replicationCredentials' in kwargs:
+            replication_credentials = kwargs['replicationCredentials']
+        if 'sshDetails' in kwargs:
+            ssh_details = kwargs['sshDetails']
+        if 'tlsKeystore' in kwargs:
+            tls_keystore = kwargs['tlsKeystore']
+        if 'tlsWallet' in kwargs:
+            tls_wallet = kwargs['tlsWallet']
+
         _setter("admin_credentials", admin_credentials)
         _setter("compartment_id", compartment_id)
         _setter("database_type", database_type)
@@ -412,7 +446,51 @@ class _ConnectionState:
              tls_keystore: Optional[pulumi.Input[str]] = None,
              tls_wallet: Optional[pulumi.Input[str]] = None,
              vault_details: Optional[pulumi.Input['ConnectionVaultDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminCredentials' in kwargs:
+            admin_credentials = kwargs['adminCredentials']
+        if 'certificateTdn' in kwargs:
+            certificate_tdn = kwargs['certificateTdn']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectDescriptor' in kwargs:
+            connect_descriptor = kwargs['connectDescriptor']
+        if 'credentialsSecretId' in kwargs:
+            credentials_secret_id = kwargs['credentialsSecretId']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpoint' in kwargs:
+            private_endpoint = kwargs['privateEndpoint']
+        if 'replicationCredentials' in kwargs:
+            replication_credentials = kwargs['replicationCredentials']
+        if 'sshDetails' in kwargs:
+            ssh_details = kwargs['sshDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'tlsKeystore' in kwargs:
+            tls_keystore = kwargs['tlsKeystore']
+        if 'tlsWallet' in kwargs:
+            tls_wallet = kwargs['tlsWallet']
+        if 'vaultDetails' in kwargs:
+            vault_details = kwargs['vaultDetails']
+
         if admin_credentials is not None:
             _setter("admin_credentials", admin_credentials)
         if certificate_tdn is not None:

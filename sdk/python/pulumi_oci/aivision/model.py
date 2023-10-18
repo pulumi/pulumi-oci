@@ -77,7 +77,33 @@ class ModelArgs:
              model_version: Optional[pulumi.Input[str]] = None,
              testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'maxTrainingDurationInHours' in kwargs:
+            max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         _setter("compartment_id", compartment_id)
         _setter("model_type", model_type)
         _setter("project_id", project_id)
@@ -374,7 +400,51 @@ class _ModelState:
              trained_duration_in_hours: Optional[pulumi.Input[float]] = None,
              training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
              validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'averagePrecision' in kwargs:
+            average_precision = kwargs['averagePrecision']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'confidenceThreshold' in kwargs:
+            confidence_threshold = kwargs['confidenceThreshold']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxTrainingDurationInHours' in kwargs:
+            max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'testImageCount' in kwargs:
+            test_image_count = kwargs['testImageCount']
+        if 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalImageCount' in kwargs:
+            total_image_count = kwargs['totalImageCount']
+        if 'trainedDurationInHours' in kwargs:
+            trained_duration_in_hours = kwargs['trainedDurationInHours']
+        if 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         if average_precision is not None:
             _setter("average_precision", average_precision)
         if compartment_id is not None:

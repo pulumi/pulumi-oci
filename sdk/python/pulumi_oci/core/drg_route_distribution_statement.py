@@ -45,7 +45,13 @@ class DrgRouteDistributionStatementArgs:
              drg_route_distribution_id: pulumi.Input[str],
              match_criteria: pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'],
              priority: pulumi.Input[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'drgRouteDistributionId' in kwargs:
+            drg_route_distribution_id = kwargs['drgRouteDistributionId']
+        if 'matchCriteria' in kwargs:
+            match_criteria = kwargs['matchCriteria']
+
         _setter("action", action)
         _setter("drg_route_distribution_id", drg_route_distribution_id)
         _setter("match_criteria", match_criteria)
@@ -136,7 +142,13 @@ class _DrgRouteDistributionStatementState:
              drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
              match_criteria: Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']] = None,
              priority: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'drgRouteDistributionId' in kwargs:
+            drg_route_distribution_id = kwargs['drgRouteDistributionId']
+        if 'matchCriteria' in kwargs:
+            match_criteria = kwargs['matchCriteria']
+
         if action is not None:
             _setter("action", action)
         if drg_route_distribution_id is not None:

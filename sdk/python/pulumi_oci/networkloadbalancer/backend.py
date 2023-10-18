@@ -67,7 +67,23 @@ class BackendArgs:
              name: Optional[pulumi.Input[str]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("backend_set_name", backend_set_name)
         _setter("network_load_balancer_id", network_load_balancer_id)
         _setter("port", port)
@@ -267,7 +283,23 @@ class _BackendState:
              port: Optional[pulumi.Input[int]] = None,
              target_id: Optional[pulumi.Input[str]] = None,
              weight: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendSetName' in kwargs:
+            backend_set_name = kwargs['backendSetName']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'isBackup' in kwargs:
+            is_backup = kwargs['isBackup']
+        if 'isDrain' in kwargs:
+            is_drain = kwargs['isDrain']
+        if 'isOffline' in kwargs:
+            is_offline = kwargs['isOffline']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         if backend_set_name is not None:
             _setter("backend_set_name", backend_set_name)
         if ip_address is not None:

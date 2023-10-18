@@ -97,7 +97,43 @@ class WorkspaceArgs:
              registry_name: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsServerIp' in kwargs:
+            dns_server_ip = kwargs['dnsServerIp']
+        if 'dnsServerZone' in kwargs:
+            dns_server_zone = kwargs['dnsServerZone']
+        if 'endpointCompartmentId' in kwargs:
+            endpoint_compartment_id = kwargs['endpointCompartmentId']
+        if 'endpointId' in kwargs:
+            endpoint_id = kwargs['endpointId']
+        if 'endpointName' in kwargs:
+            endpoint_name = kwargs['endpointName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isForceOperation' in kwargs:
+            is_force_operation = kwargs['isForceOperation']
+        if 'isPrivateNetworkEnabled' in kwargs:
+            is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
+        if 'quiesceTimeout' in kwargs:
+            quiesce_timeout = kwargs['quiesceTimeout']
+        if 'registryCompartmentId' in kwargs:
+            registry_compartment_id = kwargs['registryCompartmentId']
+        if 'registryId' in kwargs:
+            registry_id = kwargs['registryId']
+        if 'registryName' in kwargs:
+            registry_name = kwargs['registryName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -450,7 +486,49 @@ class _WorkspaceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsServerIp' in kwargs:
+            dns_server_ip = kwargs['dnsServerIp']
+        if 'dnsServerZone' in kwargs:
+            dns_server_zone = kwargs['dnsServerZone']
+        if 'endpointCompartmentId' in kwargs:
+            endpoint_compartment_id = kwargs['endpointCompartmentId']
+        if 'endpointId' in kwargs:
+            endpoint_id = kwargs['endpointId']
+        if 'endpointName' in kwargs:
+            endpoint_name = kwargs['endpointName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isForceOperation' in kwargs:
+            is_force_operation = kwargs['isForceOperation']
+        if 'isPrivateNetworkEnabled' in kwargs:
+            is_private_network_enabled = kwargs['isPrivateNetworkEnabled']
+        if 'quiesceTimeout' in kwargs:
+            quiesce_timeout = kwargs['quiesceTimeout']
+        if 'registryCompartmentId' in kwargs:
+            registry_compartment_id = kwargs['registryCompartmentId']
+        if 'registryId' in kwargs:
+            registry_id = kwargs['registryId']
+        if 'registryName' in kwargs:
+            registry_name = kwargs['registryName']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

@@ -55,7 +55,17 @@ class PolicyArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              name: Optional[pulumi.Input[str]] = None,
              version_date: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'versionDate' in kwargs:
+            version_date = kwargs['versionDate']
+
         _setter("compartment_id", compartment_id)
         _setter("description", description)
         _setter("statements", statements)
@@ -222,7 +232,27 @@ class _PolicyState:
              statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              version_date: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ETag' in kwargs:
+            e_tag = kwargs['ETag']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if 'lastUpdateETag' in kwargs:
+            last_update_e_tag = kwargs['lastUpdateETag']
+        if 'policyHash' in kwargs:
+            policy_hash = kwargs['policyHash']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'versionDate' in kwargs:
+            version_date = kwargs['versionDate']
+
         if e_tag is not None:
             warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")

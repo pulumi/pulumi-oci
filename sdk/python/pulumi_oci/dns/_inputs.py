@@ -61,7 +61,11 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
              address: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              tsig_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
             _setter("address", address)
         if port is not None:
@@ -129,7 +133,11 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
              address: Optional[pulumi.Input[str]] = None,
              port: Optional[pulumi.Input[int]] = None,
              tsig_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
             _setter("address", address)
         if port is not None:
@@ -189,7 +197,9 @@ class ActionCreateZoneFromZoneFileNameserverArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
             _setter("hostname", hostname)
 
@@ -233,7 +243,13 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
              is_transfer_destination: Optional[pulumi.Input[bool]] = None,
              is_transfer_source: Optional[pulumi.Input[bool]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
             _setter("address", address)
         if is_transfer_destination is not None:
@@ -307,7 +323,11 @@ class ResolverAttachedViewArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              view_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("view_id", view_id)
 
     @property
@@ -382,7 +402,27 @@ class ResolverEndpointArgs:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if endpoint_type is not None:
@@ -584,7 +624,17 @@ class ResolverRuleArgs:
              source_endpoint_name: pulumi.Input[str],
              client_address_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              qname_cover_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationAddresses' in kwargs:
+            destination_addresses = kwargs['destinationAddresses']
+        if 'sourceEndpointName' in kwargs:
+            source_endpoint_name = kwargs['sourceEndpointName']
+        if 'clientAddressConditions' in kwargs:
+            client_address_conditions = kwargs['clientAddressConditions']
+        if 'qnameCoverConditions' in kwargs:
+            qname_cover_conditions = kwargs['qnameCoverConditions']
+
         _setter("action", action)
         _setter("destination_addresses", destination_addresses)
         _setter("source_endpoint_name", source_endpoint_name)
@@ -693,7 +743,15 @@ class RrsetItemArgs:
              is_protected: Optional[pulumi.Input[bool]] = None,
              record_hash: Optional[pulumi.Input[str]] = None,
              rrset_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+
         _setter("domain", domain)
         _setter("rdata", rdata)
         _setter("rtype", rtype)
@@ -821,7 +879,11 @@ class SteeringPolicyAnswerArgs:
              rtype: pulumi.Input[str],
              is_disabled: Optional[pulumi.Input[bool]] = None,
              pool: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+
         _setter("name", name)
         _setter("rdata", rdata)
         _setter("rtype", rtype)
@@ -922,7 +984,15 @@ class SteeringPolicyRuleArgs:
              default_answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]]] = None,
              default_count: Optional[pulumi.Input[int]] = None,
              description: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'defaultAnswerDatas' in kwargs:
+            default_answer_datas = kwargs['defaultAnswerDatas']
+        if 'defaultCount' in kwargs:
+            default_count = kwargs['defaultCount']
+
         _setter("rule_type", rule_type)
         if cases is not None:
             _setter("cases", cases)
@@ -1017,7 +1087,13 @@ class SteeringPolicyRuleCaseArgs:
              answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]]] = None,
              case_condition: Optional[pulumi.Input[str]] = None,
              count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerDatas' in kwargs:
+            answer_datas = kwargs['answerDatas']
+        if 'caseCondition' in kwargs:
+            case_condition = kwargs['caseCondition']
+
         if answer_datas is not None:
             _setter("answer_datas", answer_datas)
         if case_condition is not None:
@@ -1085,7 +1161,13 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
              answer_condition: Optional[pulumi.Input[str]] = None,
              should_keep: Optional[pulumi.Input[bool]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
             _setter("answer_condition", answer_condition)
         if should_keep is not None:
@@ -1153,7 +1235,13 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
              answer_condition: Optional[pulumi.Input[str]] = None,
              should_keep: Optional[pulumi.Input[bool]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
             _setter("answer_condition", answer_condition)
         if should_keep is not None:
@@ -1221,7 +1309,11 @@ class ZoneExternalDownstreamArgs:
              address: pulumi.Input[str],
              port: Optional[pulumi.Input[int]] = None,
              tsig_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         if port is not None:
             _setter("port", port)
@@ -1288,7 +1380,11 @@ class ZoneExternalMasterArgs:
              address: pulumi.Input[str],
              port: Optional[pulumi.Input[int]] = None,
              tsig_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         _setter("address", address)
         if port is not None:
             _setter("port", port)
@@ -1347,7 +1443,9 @@ class ZoneNameserverArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              hostname: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
             _setter("hostname", hostname)
 
@@ -1391,7 +1489,13 @@ class ZoneZoneTransferServerArgs:
              is_transfer_destination: Optional[pulumi.Input[bool]] = None,
              is_transfer_source: Optional[pulumi.Input[bool]] = None,
              port: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
             _setter("address", address)
         if is_transfer_destination is not None:
@@ -1468,7 +1572,9 @@ class GetRecordsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1523,7 +1629,9 @@ class GetResolverEndpointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1578,7 +1686,9 @@ class GetResolversFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1630,7 +1740,9 @@ class GetRrsetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1685,7 +1797,9 @@ class GetSteeringPoliciesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1740,7 +1854,9 @@ class GetSteeringPolicyAttachmentsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1795,7 +1911,9 @@ class GetTsigKeysFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1850,7 +1968,9 @@ class GetViewsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1905,7 +2025,9 @@ class GetZonesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

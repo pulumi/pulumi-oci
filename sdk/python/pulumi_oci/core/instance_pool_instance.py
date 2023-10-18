@@ -43,7 +43,17 @@ class InstancePoolInstanceArgs:
              instance_pool_id: pulumi.Input[str],
              auto_terminate_instance_on_delete: Optional[pulumi.Input[bool]] = None,
              decrement_size_on_delete: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'instancePoolId' in kwargs:
+            instance_pool_id = kwargs['instancePoolId']
+        if 'autoTerminateInstanceOnDelete' in kwargs:
+            auto_terminate_instance_on_delete = kwargs['autoTerminateInstanceOnDelete']
+        if 'decrementSizeOnDelete' in kwargs:
+            decrement_size_on_delete = kwargs['decrementSizeOnDelete']
+
         _setter("instance_id", instance_id)
         _setter("instance_pool_id", instance_pool_id)
         if auto_terminate_instance_on_delete is not None:
@@ -168,7 +178,31 @@ class _InstancePoolInstanceState:
              shape: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoTerminateInstanceOnDelete' in kwargs:
+            auto_terminate_instance_on_delete = kwargs['autoTerminateInstanceOnDelete']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'decrementSizeOnDelete' in kwargs:
+            decrement_size_on_delete = kwargs['decrementSizeOnDelete']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'instancePoolId' in kwargs:
+            instance_pool_id = kwargs['instancePoolId']
+        if 'loadBalancerBackends' in kwargs:
+            load_balancer_backends = kwargs['loadBalancerBackends']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if auto_terminate_instance_on_delete is not None:
             _setter("auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
         if availability_domain is not None:

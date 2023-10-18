@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string ComputeInstanceId;
         /// <summary>
-        /// The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
         public readonly string CurrentSku;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly bool IsBillingSwappingInProgress;
         /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
         public readonly string NextSku;
         /// <summary>

@@ -87,7 +87,23 @@ class GetAlertRulesAlertRuleResult(dict):
              time_updated: str,
              type: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'budgetId' in kwargs:
+            budget_id = kwargs['budgetId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'thresholdType' in kwargs:
+            threshold_type = kwargs['thresholdType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("budget_id", budget_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -243,7 +259,9 @@ class GetAlertRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -371,7 +389,43 @@ class GetBudgetsBudgetResult(dict):
              time_spend_computed: str,
              time_updated: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actualSpend' in kwargs:
+            actual_spend = kwargs['actualSpend']
+        if 'alertRuleCount' in kwargs:
+            alert_rule_count = kwargs['alertRuleCount']
+        if 'budgetProcessingPeriodStartOffset' in kwargs:
+            budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'forecastedSpend' in kwargs:
+            forecasted_spend = kwargs['forecastedSpend']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'processingPeriodType' in kwargs:
+            processing_period_type = kwargs['processingPeriodType']
+        if 'resetPeriod' in kwargs:
+            reset_period = kwargs['resetPeriod']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'targetCompartmentId' in kwargs:
+            target_compartment_id = kwargs['targetCompartmentId']
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeSpendComputed' in kwargs:
+            time_spend_computed = kwargs['timeSpendComputed']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("actual_spend", actual_spend)
         _setter("alert_rule_count", alert_rule_count)
         _setter("amount", amount)
@@ -605,7 +659,9 @@ class GetBudgetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

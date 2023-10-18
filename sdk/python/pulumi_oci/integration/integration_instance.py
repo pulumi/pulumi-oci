@@ -101,7 +101,41 @@ class IntegrationInstanceArgs:
              network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
              shape: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'integrationInstanceType' in kwargs:
+            integration_instance_type = kwargs['integrationInstanceType']
+        if 'isByol' in kwargs:
+            is_byol = kwargs['isByol']
+        if 'messagePacks' in kwargs:
+            message_packs = kwargs['messagePacks']
+        if 'alternateCustomEndpoints' in kwargs:
+            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'customEndpoint' in kwargs:
+            custom_endpoint = kwargs['customEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'enableProcessAutomationTrigger' in kwargs:
+            enable_process_automation_trigger = kwargs['enableProcessAutomationTrigger']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAt' in kwargs:
+            idcs_at = kwargs['idcsAt']
+        if 'isFileServerEnabled' in kwargs:
+            is_file_server_enabled = kwargs['isFileServerEnabled']
+        if 'isVisualBuilderEnabled' in kwargs:
+            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
+        if 'networkEndpointDetails' in kwargs:
+            network_endpoint_details = kwargs['networkEndpointDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("integration_instance_type", integration_instance_type)
@@ -467,7 +501,51 @@ class _IntegrationInstanceState:
              state_message: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternateCustomEndpoints' in kwargs:
+            alternate_custom_endpoints = kwargs['alternateCustomEndpoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'customEndpoint' in kwargs:
+            custom_endpoint = kwargs['customEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'enableProcessAutomationTrigger' in kwargs:
+            enable_process_automation_trigger = kwargs['enableProcessAutomationTrigger']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAt' in kwargs:
+            idcs_at = kwargs['idcsAt']
+        if 'idcsInfos' in kwargs:
+            idcs_infos = kwargs['idcsInfos']
+        if 'instanceUrl' in kwargs:
+            instance_url = kwargs['instanceUrl']
+        if 'integrationInstanceType' in kwargs:
+            integration_instance_type = kwargs['integrationInstanceType']
+        if 'isByol' in kwargs:
+            is_byol = kwargs['isByol']
+        if 'isFileServerEnabled' in kwargs:
+            is_file_server_enabled = kwargs['isFileServerEnabled']
+        if 'isVisualBuilderEnabled' in kwargs:
+            is_visual_builder_enabled = kwargs['isVisualBuilderEnabled']
+        if 'messagePacks' in kwargs:
+            message_packs = kwargs['messagePacks']
+        if 'networkEndpointDetails' in kwargs:
+            network_endpoint_details = kwargs['networkEndpointDetails']
+        if 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if alternate_custom_endpoints is not None:
             _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if attachments is not None:

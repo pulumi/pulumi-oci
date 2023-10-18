@@ -497,7 +497,63 @@ class DomainsUserArgs:
              urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
              user_type: Optional[pulumi.Input[str]] = None,
              x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'nickName' in kwargs:
+            nick_name = kwargs['nickName']
+        if 'phoneNumbers' in kwargs:
+            phone_numbers = kwargs['phoneNumbers']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'profileUrl' in kwargs:
+            profile_url = kwargs['profileUrl']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
+        if 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
+        if 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
+        if 'userType' in kwargs:
+            user_type = kwargs['userType']
+
         _setter("idcs_endpoint", idcs_endpoint)
         _setter("name", name)
         _setter("schemas", schemas)
@@ -2069,7 +2125,85 @@ class _DomainsUserState:
              user_name: Optional[pulumi.Input[str]] = None,
              user_type: Optional[pulumi.Input[str]] = None,
              x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if 'nickName' in kwargs:
+            nick_name = kwargs['nickName']
+        if 'phoneNumbers' in kwargs:
+            phone_numbers = kwargs['phoneNumbers']
+        if 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if 'profileUrl' in kwargs:
+            profile_url = kwargs['profileUrl']
+        if 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
+        if 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
+        if 'urnietfparamsscimschemasoracleidcsextensiondbUserUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_user_users = kwargs['urnietfparamsscimschemasoracleidcsextensiondbUserUsers']
+        if 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpassword_state_users = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers']
+        if 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
+        if 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_credentials_users = kwargs['urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers']
+        if 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
+        if 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'userType' in kwargs:
+            user_type = kwargs['userType']
+
         if active is not None:
             _setter("active", active)
         if addresses is not None:

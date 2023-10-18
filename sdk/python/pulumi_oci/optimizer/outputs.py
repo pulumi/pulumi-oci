@@ -92,7 +92,9 @@ class ProfileLevelsConfiguration(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.ProfileLevelsConfigurationItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -141,7 +143,11 @@ class ProfileLevelsConfigurationItem(dict):
              _setter: Callable[[Any, Any], None],
              level: Optional[str] = None,
              recommendation_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+
         if level is not None:
             _setter("level", level)
         if recommendation_id is not None:
@@ -179,7 +185,9 @@ class ProfileTargetCompartments(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -206,7 +214,9 @@ class ProfileTargetTags(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.ProfileTargetTagsItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -276,7 +286,17 @@ class ProfileTargetTagsItem(dict):
              tag_namespace_name: str,
              tag_value_type: str,
              tag_values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if 'tagNamespaceName' in kwargs:
+            tag_namespace_name = kwargs['tagNamespaceName']
+        if 'tagValueType' in kwargs:
+            tag_value_type = kwargs['tagValueType']
+        if 'tagValues' in kwargs:
+            tag_values = kwargs['tagValues']
+
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
         _setter("tag_value_type", tag_value_type)
@@ -343,7 +363,9 @@ class RecommendationResourceCount(dict):
              _setter: Callable[[Any, Any], None],
              count: Optional[int] = None,
              status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if count is not None:
             _setter("count", count)
         if status is not None:
@@ -381,7 +403,9 @@ class RecommendationSupportedLevel(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.RecommendationSupportedLevelItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -409,7 +433,9 @@ class RecommendationSupportedLevelItem(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -445,7 +471,9 @@ class ResourceActionAction(dict):
              description: Optional[str] = None,
              type: Optional[str] = None,
              url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if description is not None:
             _setter("description", description)
         if type is not None:
@@ -490,7 +518,9 @@ class GetCategoriesCategoryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCategoriesCategoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -558,7 +588,25 @@ class GetCategoriesCategoryCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'recommendationCounts' in kwargs:
+            recommendation_counts = kwargs['recommendationCounts']
+        if 'resourceCounts' in kwargs:
+            resource_counts = kwargs['resourceCounts']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("compartment_name", compartment_name)
         _setter("description", description)
@@ -688,7 +736,9 @@ class GetCategoriesCategoryCollectionItemRecommendationCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              importance: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("importance", importance)
 
@@ -728,7 +778,9 @@ class GetCategoriesCategoryCollectionItemResourceCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -770,7 +822,9 @@ class GetCategoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -814,7 +868,9 @@ class GetCategoryRecommendationCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              importance: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("importance", importance)
 
@@ -854,7 +910,9 @@ class GetCategoryResourceCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -887,7 +945,9 @@ class GetEnrollmentStatusesEnrollmentStatusCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -938,7 +998,19 @@ class GetEnrollmentStatusesEnrollmentStatusCollectionItemResult(dict):
              status_reason: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'enrollmentStatusId' in kwargs:
+            enrollment_status_id = kwargs['enrollmentStatusId']
+        if 'statusReason' in kwargs:
+            status_reason = kwargs['statusReason']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("enrollment_status_id", enrollment_status_id)
         _setter("id", id)
@@ -1028,7 +1100,9 @@ class GetEnrollmentStatusesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1071,7 +1145,9 @@ class GetHistoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1111,7 +1187,9 @@ class GetHistoriesHistoryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetHistoriesHistoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1202,7 +1280,31 @@ class GetHistoriesHistoryCollectionItemResult(dict):
              state: str,
              status: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if 'recommendationName' in kwargs:
+            recommendation_name = kwargs['recommendationName']
+        if 'resourceActionId' in kwargs:
+            resource_action_id = kwargs['resourceActionId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("actions", actions)
         _setter("category_id", category_id)
         _setter("compartment_id", compartment_id)
@@ -1381,7 +1483,9 @@ class GetHistoriesHistoryCollectionItemActionResult(dict):
              description: str,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("type", type)
         _setter("url", url)
@@ -1450,7 +1554,19 @@ class GetProfileLevelItemResult(dict):
              time_created: str,
              time_updated: str,
              valid_intervals: Sequence[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultInterval' in kwargs:
+            default_interval = kwargs['defaultInterval']
+        if 'recommendationName' in kwargs:
+            recommendation_name = kwargs['recommendationName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'validIntervals' in kwargs:
+            valid_intervals = kwargs['validIntervals']
+
         _setter("default_interval", default_interval)
         _setter("metrics", metrics)
         _setter("name", name)
@@ -1543,7 +1659,9 @@ class GetProfileLevelItemMetricResult(dict):
              statistic: str,
              target: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("statistic", statistic)
         _setter("target", target)
@@ -1597,7 +1715,9 @@ class GetProfileLevelsConfigurationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfileLevelsConfigurationItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1628,7 +1748,11 @@ class GetProfileLevelsConfigurationItemResult(dict):
              _setter: Callable[[Any, Any], None],
              level: str,
              recommendation_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+
         _setter("level", level)
         _setter("recommendation_id", recommendation_id)
 
@@ -1670,7 +1794,9 @@ class GetProfileLevelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1710,7 +1836,9 @@ class GetProfileLevelsProfileLevelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1761,7 +1889,19 @@ class GetProfileLevelsProfileLevelCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              valid_intervals: Sequence[int],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultInterval' in kwargs:
+            default_interval = kwargs['defaultInterval']
+        if 'recommendationName' in kwargs:
+            recommendation_name = kwargs['recommendationName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'validIntervals' in kwargs:
+            valid_intervals = kwargs['validIntervals']
+
         _setter("default_interval", default_interval)
         _setter("metrics", metrics)
         _setter("name", name)
@@ -1854,7 +1994,9 @@ class GetProfileLevelsProfileLevelCollectionItemMetricResult(dict):
              statistic: str,
              target: float,
              threshold: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("statistic", statistic)
         _setter("target", target)
@@ -1908,7 +2050,9 @@ class GetProfileTargetCompartmentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1935,7 +2079,9 @@ class GetProfileTargetTagResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfileTargetTagItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1974,7 +2120,17 @@ class GetProfileTargetTagItemResult(dict):
              tag_namespace_name: str,
              tag_value_type: str,
              tag_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if 'tagNamespaceName' in kwargs:
+            tag_namespace_name = kwargs['tagNamespaceName']
+        if 'tagValueType' in kwargs:
+            tag_value_type = kwargs['tagValueType']
+        if 'tagValues' in kwargs:
+            tag_values = kwargs['tagValues']
+
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
         _setter("tag_value_type", tag_value_type)
@@ -2034,7 +2190,9 @@ class GetProfilesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2074,7 +2232,9 @@ class GetProfilesProfileCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfilesProfileCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2149,7 +2309,27 @@ class GetProfilesProfileCollectionItemResult(dict):
              target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregationIntervalInDays' in kwargs:
+            aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'levelsConfigurations' in kwargs:
+            levels_configurations = kwargs['levelsConfigurations']
+        if 'targetCompartments' in kwargs:
+            target_compartments = kwargs['targetCompartments']
+        if 'targetTags' in kwargs:
+            target_tags = kwargs['targetTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("aggregation_interval_in_days", aggregation_interval_in_days)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2284,7 +2464,9 @@ class GetProfilesProfileCollectionItemLevelsConfigurationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2315,7 +2497,11 @@ class GetProfilesProfileCollectionItemLevelsConfigurationItemResult(dict):
              _setter: Callable[[Any, Any], None],
              level: str,
              recommendation_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+
         _setter("level", level)
         _setter("recommendation_id", recommendation_id)
 
@@ -2351,7 +2537,9 @@ class GetProfilesProfileCollectionItemTargetCompartmentResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2378,7 +2566,9 @@ class GetProfilesProfileCollectionItemTargetTagResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2417,7 +2607,17 @@ class GetProfilesProfileCollectionItemTargetTagItemResult(dict):
              tag_namespace_name: str,
              tag_value_type: str,
              tag_values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if 'tagNamespaceName' in kwargs:
+            tag_namespace_name = kwargs['tagNamespaceName']
+        if 'tagValueType' in kwargs:
+            tag_value_type = kwargs['tagValueType']
+        if 'tagValues' in kwargs:
+            tag_values = kwargs['tagValues']
+
         _setter("tag_definition_name", tag_definition_name)
         _setter("tag_namespace_name", tag_namespace_name)
         _setter("tag_value_type", tag_value_type)
@@ -2475,7 +2675,9 @@ class GetRecommendationResourceCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -2517,7 +2719,9 @@ class GetRecommendationStrategiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2557,7 +2761,9 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2588,7 +2794,9 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemResult(dict
              _setter: Callable[[Any, Any], None],
              name: str,
              strategies: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("strategies", strategies)
 
@@ -2632,7 +2840,15 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyRes
              is_default: bool,
              parameters_definitions: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult'],
              strategy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'parametersDefinitions' in kwargs:
+            parameters_definitions = kwargs['parametersDefinitions']
+        if 'strategyName' in kwargs:
+            strategy_name = kwargs['strategyName']
+
         _setter("is_default", is_default)
         _setter("parameters_definitions", parameters_definitions)
         _setter("strategy_name", strategy_name)
@@ -2697,7 +2913,15 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPar
              name: str,
              possible_values: Sequence[Any],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValues' in kwargs:
+            default_values = kwargs['defaultValues']
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         _setter("default_values", default_values)
         _setter("description", description)
         _setter("is_required", is_required)
@@ -2773,7 +2997,9 @@ class GetRecommendationStrategyItemResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              strategies: Sequence['outputs.GetRecommendationStrategyItemStrategyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("strategies", strategies)
 
@@ -2817,7 +3043,15 @@ class GetRecommendationStrategyItemStrategyResult(dict):
              is_default: bool,
              parameters_definitions: Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult'],
              strategy_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'parametersDefinitions' in kwargs:
+            parameters_definitions = kwargs['parametersDefinitions']
+        if 'strategyName' in kwargs:
+            strategy_name = kwargs['strategyName']
+
         _setter("is_default", is_default)
         _setter("parameters_definitions", parameters_definitions)
         _setter("strategy_name", strategy_name)
@@ -2882,7 +3116,15 @@ class GetRecommendationStrategyItemStrategyParametersDefinitionResult(dict):
              name: str,
              possible_values: Sequence[Any],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultValues' in kwargs:
+            default_values = kwargs['defaultValues']
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if 'possibleValues' in kwargs:
+            possible_values = kwargs['possibleValues']
+
         _setter("default_values", default_values)
         _setter("description", description)
         _setter("is_required", is_required)
@@ -2954,7 +3196,9 @@ class GetRecommendationSupportedLevelResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRecommendationSupportedLevelItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2981,7 +3225,9 @@ class GetRecommendationSupportedLevelItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3014,7 +3260,9 @@ class GetRecommendationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3054,7 +3302,9 @@ class GetRecommendationsRecommendationCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3144,7 +3394,31 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
              time_status_begin: str,
              time_status_end: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if 'resourceCounts' in kwargs:
+            resource_counts = kwargs['resourceCounts']
+        if 'supportedLevels' in kwargs:
+            supported_levels = kwargs['supportedLevels']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeStatusBegin' in kwargs:
+            time_status_begin = kwargs['timeStatusBegin']
+        if 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("category_id", category_id)
         _setter("compartment_id", compartment_id)
         _setter("description", description)
@@ -3316,7 +3590,9 @@ class GetRecommendationsRecommendationCollectionItemResourceCountResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -3352,7 +3628,9 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3379,7 +3657,9 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -3414,7 +3694,9 @@ class GetResourceActionActionResult(dict):
              description: str,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("type", type)
         _setter("url", url)
@@ -3465,7 +3747,9 @@ class GetResourceActionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3502,7 +3786,9 @@ class GetResourceActionsResourceActionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3597,7 +3883,35 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
              time_status_begin: str,
              time_status_end: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if 'resourceActionId' in kwargs:
+            resource_action_id = kwargs['resourceActionId']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeStatusBegin' in kwargs:
+            time_status_begin = kwargs['timeStatusBegin']
+        if 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("actions", actions)
         _setter("category_id", category_id)
         _setter("compartment_id", compartment_id)
@@ -3791,7 +4105,9 @@ class GetResourceActionsResourceActionCollectionItemActionResult(dict):
              description: str,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("type", type)
         _setter("url", url)

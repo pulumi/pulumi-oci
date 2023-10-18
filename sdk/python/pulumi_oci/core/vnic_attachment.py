@@ -45,7 +45,17 @@ class VnicAttachmentArgs:
              instance_id: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
              nic_index: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'nicIndex' in kwargs:
+            nic_index = kwargs['nicIndex']
+
         _setter("create_vnic_details", create_vnic_details)
         _setter("instance_id", instance_id)
         if display_name is not None:
@@ -174,7 +184,31 @@ class _VnicAttachmentState:
              vlan_id: Optional[pulumi.Input[str]] = None,
              vlan_tag: Optional[pulumi.Input[int]] = None,
              vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'nicIndex' in kwargs:
+            nic_index = kwargs['nicIndex']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if 'vlanTag' in kwargs:
+            vlan_tag = kwargs['vlanTag']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

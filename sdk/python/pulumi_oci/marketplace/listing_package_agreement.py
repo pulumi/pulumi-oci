@@ -39,7 +39,17 @@ class ListingPackageAgreementArgs:
              listing_id: pulumi.Input[str],
              package_version: pulumi.Input[str],
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("agreement_id", agreement_id)
         _setter("listing_id", listing_id)
         _setter("package_version", package_version)
@@ -139,7 +149,19 @@ class _ListingPackageAgreementState:
              package_version: Optional[pulumi.Input[str]] = None,
              prompt: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         if agreement_id is not None:
             _setter("agreement_id", agreement_id)
         if author is not None:

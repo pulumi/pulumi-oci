@@ -65,7 +65,21 @@ class DetectorRecipeArgs:
              detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'detectorRules' in kwargs:
+            detector_rules = kwargs['detectorRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sourceDetectorRecipeId' in kwargs:
+            source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -266,7 +280,31 @@ class _DetectorRecipeState:
              target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'detectorRules' in kwargs:
+            detector_rules = kwargs['detectorRules']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'effectiveDetectorRules' in kwargs:
+            effective_detector_rules = kwargs['effectiveDetectorRules']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sourceDetectorRecipeId' in kwargs:
+            source_detector_recipe_id = kwargs['sourceDetectorRecipeId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

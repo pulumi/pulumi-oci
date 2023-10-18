@@ -61,7 +61,9 @@ class AutoScalingConfigurationAutoScalingResources(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -154,7 +156,21 @@ class AutoScalingConfigurationPolicy(dict):
              resource_action: Optional['outputs.AutoScalingConfigurationPolicyResourceAction'] = None,
              rules: Optional[Sequence['outputs.AutoScalingConfigurationPolicyRule']] = None,
              time_created: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionSchedule' in kwargs:
+            execution_schedule = kwargs['executionSchedule']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resourceAction' in kwargs:
+            resource_action = kwargs['resourceAction']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("policy_type", policy_type)
         if capacity is not None:
             _setter("capacity", capacity)
@@ -269,7 +285,9 @@ class AutoScalingConfigurationPolicyCapacity(dict):
              initial: Optional[int] = None,
              max: Optional[int] = None,
              min: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if initial is not None:
             _setter("initial", initial)
         if max is not None:
@@ -339,7 +357,9 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
              expression: str,
              timezone: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("expression", expression)
         _setter("timezone", timezone)
         _setter("type", type)
@@ -413,7 +433,11 @@ class AutoScalingConfigurationPolicyResourceAction(dict):
              _setter: Callable[[Any, Any], None],
              action: str,
              action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+
         _setter("action", action)
         _setter("action_type", action_type)
 
@@ -477,7 +501,11 @@ class AutoScalingConfigurationPolicyRule(dict):
              action: Optional['outputs.AutoScalingConfigurationPolicyRuleAction'] = None,
              id: Optional[str] = None,
              metric: Optional['outputs.AutoScalingConfigurationPolicyRuleMetric'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         if action is not None:
             _setter("action", action)
@@ -536,7 +564,9 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
             _setter("type", type)
         if value is not None:
@@ -592,7 +622,11 @@ class AutoScalingConfigurationPolicyRuleMetric(dict):
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[str] = None,
              threshold: Optional['outputs.AutoScalingConfigurationPolicyRuleMetricThreshold'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricType' in kwargs:
+            metric_type = kwargs['metricType']
+
         if metric_type is not None:
             _setter("metric_type", metric_type)
         if threshold is not None:
@@ -629,7 +663,9 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
              _setter: Callable[[Any, Any], None],
              operator: Optional[str] = None,
              value: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if operator is not None:
             _setter("operator", operator)
         if value is not None:
@@ -672,7 +708,9 @@ class GetAutoScalingConfigurationAutoScalingResourceResult(dict):
              _setter: Callable[[Any, Any], None],
              id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -739,7 +777,21 @@ class GetAutoScalingConfigurationPolicyResult(dict):
              resource_actions: Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult'],
              rules: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionSchedules' in kwargs:
+            execution_schedules = kwargs['executionSchedules']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'resourceActions' in kwargs:
+            resource_actions = kwargs['resourceActions']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("capacities", capacities)
         _setter("display_name", display_name)
         _setter("execution_schedules", execution_schedules)
@@ -843,7 +895,9 @@ class GetAutoScalingConfigurationPolicyCapacityResult(dict):
              initial: int,
              max: int,
              min: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("initial", initial)
         _setter("max", max)
         _setter("min", min)
@@ -896,7 +950,9 @@ class GetAutoScalingConfigurationPolicyExecutionScheduleResult(dict):
              expression: str,
              timezone: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("expression", expression)
         _setter("timezone", timezone)
         _setter("type", type)
@@ -945,7 +1001,11 @@ class GetAutoScalingConfigurationPolicyResourceActionResult(dict):
              _setter: Callable[[Any, Any], None],
              action: str,
              action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+
         _setter("action", action)
         _setter("action_type", action_type)
 
@@ -993,7 +1053,11 @@ class GetAutoScalingConfigurationPolicyRuleResult(dict):
              display_name: str,
              id: str,
              metrics: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("actions", actions)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -1050,7 +1114,9 @@ class GetAutoScalingConfigurationPolicyRuleActionResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -1083,7 +1149,11 @@ class GetAutoScalingConfigurationPolicyRuleMetricResult(dict):
              _setter: Callable[[Any, Any], None],
              metric_type: str,
              thresholds: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricType' in kwargs:
+            metric_type = kwargs['metricType']
+
         _setter("metric_type", metric_type)
         _setter("thresholds", thresholds)
 
@@ -1116,7 +1186,9 @@ class GetAutoScalingConfigurationPolicyRuleMetricThresholdResult(dict):
              _setter: Callable[[Any, Any], None],
              operator: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operator", operator)
         _setter("value", value)
 
@@ -1193,7 +1265,29 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
              min_resource_count: int,
              policies: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoScalingResources' in kwargs:
+            auto_scaling_resources = kwargs['autoScalingResources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'coolDownInSeconds' in kwargs:
+            cool_down_in_seconds = kwargs['coolDownInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxResourceCount' in kwargs:
+            max_resource_count = kwargs['maxResourceCount']
+        if 'minResourceCount' in kwargs:
+            min_resource_count = kwargs['minResourceCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("auto_scaling_resources", auto_scaling_resources)
         _setter("compartment_id", compartment_id)
         _setter("cool_down_in_seconds", cool_down_in_seconds)
@@ -1323,7 +1417,9 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceRes
              _setter: Callable[[Any, Any], None],
              id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -1390,7 +1486,21 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult(dict):
              resource_actions: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult'],
              rules: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult'],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionSchedules' in kwargs:
+            execution_schedules = kwargs['executionSchedules']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'resourceActions' in kwargs:
+            resource_actions = kwargs['resourceActions']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("capacities", capacities)
         _setter("display_name", display_name)
         _setter("execution_schedules", execution_schedules)
@@ -1494,7 +1604,9 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult(d
              initial: int,
              max: int,
              min: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("initial", initial)
         _setter("max", max)
         _setter("min", min)
@@ -1547,7 +1659,9 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSchedul
              expression: str,
              timezone: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("expression", expression)
         _setter("timezone", timezone)
         _setter("type", type)
@@ -1596,7 +1710,11 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionRe
              _setter: Callable[[Any, Any], None],
              action: str,
              action_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+
         _setter("action", action)
         _setter("action_type", action_type)
 
@@ -1644,7 +1762,11 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult(dict)
              display_name: str,
              id: str,
              metrics: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("actions", actions)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -1701,7 +1823,9 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult
              _setter: Callable[[Any, Any], None],
              type: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -1734,7 +1858,11 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult
              _setter: Callable[[Any, Any], None],
              metric_type: str,
              thresholds: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricType' in kwargs:
+            metric_type = kwargs['metricType']
+
         _setter("metric_type", metric_type)
         _setter("thresholds", thresholds)
 
@@ -1767,7 +1895,9 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresh
              _setter: Callable[[Any, Any], None],
              operator: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operator", operator)
         _setter("value", value)
 
@@ -1803,7 +1933,9 @@ class GetAutoScalingConfigurationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

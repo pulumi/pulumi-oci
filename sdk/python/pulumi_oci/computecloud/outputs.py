@@ -99,7 +99,19 @@ class AtCustomerCccInfrastructureInfrastructureInventory(dict):
              management_node_count: Optional[int] = None,
              performance_storage_tray_count: Optional[int] = None,
              serial_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+
         if capacity_storage_tray_count is not None:
             _setter("capacity_storage_tray_count", capacity_storage_tray_count)
         if compute_node_count is not None:
@@ -268,7 +280,39 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration(dict):
              uplink_port_forward_error_correction: Optional[str] = None,
              uplink_port_speed_in_gbps: Optional[int] = None,
              uplink_vlan_mtu: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+
         if dns_ips is not None:
             _setter("dns_ips", dns_ips)
         if infrastructure_routing_dynamics is not None:
@@ -465,7 +509,15 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              bgp_topology: Optional[str] = None,
              oracle_asn: Optional[int] = None,
              peer_informations: Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+
         if bgp_topology is not None:
             _setter("bgp_topology", bgp_topology)
         if oracle_asn is not None:
@@ -517,7 +569,9 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              _setter: Callable[[Any, Any], None],
              asn: Optional[int] = None,
              ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if asn is not None:
             _setter("asn", asn)
         if ip is not None:
@@ -578,7 +632,13 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
              _setter: Callable[[Any, Any], None],
              uplink_hsrp_group: Optional[int] = None,
              uplink_vlan: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+
         if uplink_hsrp_group is not None:
             _setter("uplink_hsrp_group", uplink_hsrp_group)
         if uplink_vlan is not None:
@@ -620,7 +680,9 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
              _setter: Callable[[Any, Any], None],
              hostname: Optional[str] = None,
              ip: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
             _setter("hostname", hostname)
         if ip is not None:
@@ -693,7 +755,17 @@ class AtCustomerCccInfrastructureUpgradeInformation(dict):
              is_active: Optional[bool] = None,
              scheduled_upgrade_duration: Optional[str] = None,
              time_of_scheduled_upgrade: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+
         if current_version is not None:
             _setter("current_version", current_version)
         if is_active is not None:
@@ -788,7 +860,15 @@ class AtCustomerCccUpgradeScheduleEvent(dict):
              time_start: str,
              name: Optional[str] = None,
              schedule_event_recurrences: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+
         _setter("description", description)
         _setter("schedule_event_duration", schedule_event_duration)
         _setter("time_start", time_start)
@@ -869,7 +949,19 @@ class GetAtCustomerCccInfrastructureInfrastructureInventoryResult(dict):
              management_node_count: int,
              performance_storage_tray_count: int,
              serial_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+
         _setter("capacity_storage_tray_count", capacity_storage_tray_count)
         _setter("compute_node_count", compute_node_count)
         _setter("management_node_count", management_node_count)
@@ -988,7 +1080,39 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationResult(dic
              uplink_port_forward_error_correction: str,
              uplink_port_speed_in_gbps: int,
              uplink_vlan_mtu: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+
         _setter("dns_ips", dns_ips)
         _setter("infrastructure_routing_dynamics", infrastructure_routing_dynamics)
         _setter("infrastructure_routing_statics", infrastructure_routing_statics)
@@ -1149,7 +1273,15 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
              bgp_topology: str,
              oracle_asn: int,
              peer_informations: Sequence['outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+
         _setter("bgp_topology", bgp_topology)
         _setter("oracle_asn", oracle_asn)
         _setter("peer_informations", peer_informations)
@@ -1198,7 +1330,9 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
              _setter: Callable[[Any, Any], None],
              asn: int,
              ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("asn", asn)
         _setter("ip", ip)
 
@@ -1238,7 +1372,13 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
              _setter: Callable[[Any, Any], None],
              uplink_hsrp_group: int,
              uplink_vlan: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+
         _setter("uplink_hsrp_group", uplink_hsrp_group)
         _setter("uplink_vlan", uplink_vlan)
 
@@ -1278,7 +1418,9 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagement
              _setter: Callable[[Any, Any], None],
              hostname: str,
              ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("ip", ip)
 
@@ -1326,7 +1468,17 @@ class GetAtCustomerCccInfrastructureUpgradeInformationResult(dict):
              is_active: bool,
              scheduled_upgrade_duration: str,
              time_of_scheduled_upgrade: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+
         _setter("current_version", current_version)
         _setter("is_active", is_active)
         _setter("scheduled_upgrade_duration", scheduled_upgrade_duration)
@@ -1377,7 +1529,9 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1481,7 +1635,45 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
              time_created: str,
              time_updated: str,
              upgrade_informations: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cccUpgradeScheduleId' in kwargs:
+            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'connectionState' in kwargs:
+            connection_state = kwargs['connectionState']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureInventories' in kwargs:
+            infrastructure_inventories = kwargs['infrastructureInventories']
+        if 'infrastructureNetworkConfigurations' in kwargs:
+            infrastructure_network_configurations = kwargs['infrastructureNetworkConfigurations']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'provisioningFingerprint' in kwargs:
+            provisioning_fingerprint = kwargs['provisioningFingerprint']
+        if 'provisioningPin' in kwargs:
+            provisioning_pin = kwargs['provisioningPin']
+        if 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'upgradeInformations' in kwargs:
+            upgrade_informations = kwargs['upgradeInformations']
+
         _setter("ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
         _setter("compartment_id", compartment_id)
         _setter("connection_details", connection_details)
@@ -1704,7 +1896,19 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              management_node_count: int,
              performance_storage_tray_count: int,
              serial_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+
         _setter("capacity_storage_tray_count", capacity_storage_tray_count)
         _setter("compute_node_count", compute_node_count)
         _setter("management_node_count", management_node_count)
@@ -1823,7 +2027,39 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              uplink_port_forward_error_correction: str,
              uplink_port_speed_in_gbps: int,
              uplink_vlan_mtu: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+
         _setter("dns_ips", dns_ips)
         _setter("infrastructure_routing_dynamics", infrastructure_routing_dynamics)
         _setter("infrastructure_routing_statics", infrastructure_routing_statics)
@@ -1984,7 +2220,15 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              bgp_topology: str,
              oracle_asn: int,
              peer_informations: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+
         _setter("bgp_topology", bgp_topology)
         _setter("oracle_asn", oracle_asn)
         _setter("peer_informations", peer_informations)
@@ -2033,7 +2277,9 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              _setter: Callable[[Any, Any], None],
              asn: int,
              ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("asn", asn)
         _setter("ip", ip)
 
@@ -2073,7 +2319,13 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              _setter: Callable[[Any, Any], None],
              uplink_hsrp_group: int,
              uplink_vlan: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+
         _setter("uplink_hsrp_group", uplink_hsrp_group)
         _setter("uplink_vlan", uplink_vlan)
 
@@ -2113,7 +2365,9 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
              _setter: Callable[[Any, Any], None],
              hostname: str,
              ip: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("hostname", hostname)
         _setter("ip", ip)
 
@@ -2161,7 +2415,17 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInfor
              is_active: bool,
              scheduled_upgrade_duration: str,
              time_of_scheduled_upgrade: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+
         _setter("current_version", current_version)
         _setter("is_active", is_active)
         _setter("scheduled_upgrade_duration", scheduled_upgrade_duration)
@@ -2218,7 +2482,9 @@ class GetAtCustomerCccInfrastructuresFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2271,7 +2537,15 @@ class GetAtCustomerCccUpgradeScheduleEventResult(dict):
              schedule_event_duration: str,
              schedule_event_recurrences: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("description", description)
         _setter("name", name)
         _setter("schedule_event_duration", schedule_event_duration)
@@ -2331,7 +2605,9 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2403,7 +2679,27 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dic
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infrastructureIds' in kwargs:
+            infrastructure_ids = kwargs['infrastructureIds']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -2554,7 +2850,15 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventResul
              schedule_event_duration: str,
              schedule_event_recurrences: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("description", description)
         _setter("name", name)
         _setter("schedule_event_duration", schedule_event_duration)
@@ -2623,7 +2927,9 @@ class GetAtCustomerCccUpgradeSchedulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

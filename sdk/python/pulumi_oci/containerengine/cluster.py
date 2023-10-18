@@ -77,7 +77,27 @@ class ClusterArgs:
              name: Optional[pulumi.Input[str]] = None,
              options: Optional[pulumi.Input['ClusterOptionsArgs']] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if 'clusterPodNetworkOptions' in kwargs:
+            cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'endpointConfig' in kwargs:
+            endpoint_config = kwargs['endpointConfig']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("compartment_id", compartment_id)
         _setter("kubernetes_version", kubernetes_version)
         _setter("vcn_id", vcn_id)
@@ -333,7 +353,31 @@ class _ClusterState:
              state: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableKubernetesUpgrades' in kwargs:
+            available_kubernetes_upgrades = kwargs['availableKubernetesUpgrades']
+        if 'clusterPodNetworkOptions' in kwargs:
+            cluster_pod_network_options = kwargs['clusterPodNetworkOptions']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'endpointConfig' in kwargs:
+            endpoint_config = kwargs['endpointConfig']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if available_kubernetes_upgrades is not None:
             _setter("available_kubernetes_upgrades", available_kubernetes_upgrades)
         if cluster_pod_network_options is not None:

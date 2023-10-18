@@ -73,7 +73,31 @@ class FusionEnvironmentArgs:
              kms_key_id: Optional[pulumi.Input[str]] = None,
              maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+            create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'fusionEnvironmentFamilyId' in kwargs:
+            fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
+        if 'fusionEnvironmentType' in kwargs:
+            fusion_environment_type = kwargs['fusionEnvironmentType']
+        if 'additionalLanguagePacks' in kwargs:
+            additional_language_packs = kwargs['additionalLanguagePacks']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsPrefix' in kwargs:
+            dns_prefix = kwargs['dnsPrefix']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'maintenancePolicy' in kwargs:
+            maintenance_policy = kwargs['maintenancePolicy']
+
         _setter("compartment_id", compartment_id)
         _setter("create_fusion_environment_admin_user_details", create_fusion_environment_admin_user_details)
         _setter("display_name", display_name)
@@ -363,7 +387,57 @@ class _FusionEnvironmentState:
              time_upcoming_maintenance: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalLanguagePacks' in kwargs:
+            additional_language_packs = kwargs['additionalLanguagePacks']
+        if 'appliedPatchBundles' in kwargs:
+            applied_patch_bundles = kwargs['appliedPatchBundles']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createFusionEnvironmentAdminUserDetails' in kwargs:
+            create_fusion_environment_admin_user_details = kwargs['createFusionEnvironmentAdminUserDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsPrefix' in kwargs:
+            dns_prefix = kwargs['dnsPrefix']
+        if 'domainId' in kwargs:
+            domain_id = kwargs['domainId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'fusionEnvironmentFamilyId' in kwargs:
+            fusion_environment_family_id = kwargs['fusionEnvironmentFamilyId']
+        if 'fusionEnvironmentType' in kwargs:
+            fusion_environment_type = kwargs['fusionEnvironmentType']
+        if 'idcsDomainUrl' in kwargs:
+            idcs_domain_url = kwargs['idcsDomainUrl']
+        if 'isBreakGlassEnabled' in kwargs:
+            is_break_glass_enabled = kwargs['isBreakGlassEnabled']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyInfos' in kwargs:
+            kms_key_infos = kwargs['kmsKeyInfos']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lockboxId' in kwargs:
+            lockbox_id = kwargs['lockboxId']
+        if 'maintenancePolicy' in kwargs:
+            maintenance_policy = kwargs['maintenancePolicy']
+        if 'publicUrl' in kwargs:
+            public_url = kwargs['publicUrl']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpcomingMaintenance' in kwargs:
+            time_upcoming_maintenance = kwargs['timeUpcomingMaintenance']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_language_packs is not None:
             _setter("additional_language_packs", additional_language_packs)
         if applied_patch_bundles is not None:

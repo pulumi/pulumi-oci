@@ -67,7 +67,25 @@ class ResolverEndpointInitArgs:
              name: Optional[pulumi.Input[str]] = None,
              nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              scope: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
         _setter("is_forwarding", is_forwarding)
         _setter("is_listening", is_listening)
         _setter("resolver_id", resolver_id)
@@ -286,7 +304,31 @@ class _ResolverEndpointState:
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if endpoint_type is not None:

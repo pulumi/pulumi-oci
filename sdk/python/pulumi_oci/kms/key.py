@@ -80,7 +80,35 @@ class KeyArgs:
              restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
              restore_trigger: Optional[pulumi.Input[bool]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+        if 'externalKeyReference' in kwargs:
+            external_key_reference = kwargs['externalKeyReference']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("key_shape", key_shape)
@@ -363,7 +391,49 @@ class _KeyState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currentKeyVersion' in kwargs:
+            current_key_version = kwargs['currentKeyVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKeyReference' in kwargs:
+            external_key_reference = kwargs['externalKeyReference']
+        if 'externalKeyReferenceDetails' in kwargs:
+            external_key_reference_details = kwargs['externalKeyReferenceDetails']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if 'protectionMode' in kwargs:
+            protection_mode = kwargs['protectionMode']
+        if 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if 'restoredFromKeyId' in kwargs:
+            restored_from_key_id = kwargs['restoredFromKeyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if current_key_version is not None:

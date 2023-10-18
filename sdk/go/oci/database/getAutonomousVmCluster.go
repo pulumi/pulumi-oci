@@ -59,6 +59,7 @@ type LookupAutonomousVmClusterArgs struct {
 
 // A collection of values returned by getAutonomousVmCluster.
 type LookupAutonomousVmClusterResult struct {
+	AutonomousDataStoragePercentage float64 `pulumi:"autonomousDataStoragePercentage"`
 	// The data disk group size allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	AutonomousVmClusterId          string  `pulumi:"autonomousVmClusterId"`
@@ -75,7 +76,8 @@ type LookupAutonomousVmClusterResult struct {
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled per VM cluster node.
-	CpuCoreCountPerNode int `pulumi:"cpuCoreCountPerNode"`
+	CpuCoreCountPerNode int     `pulumi:"cpuCoreCountPerNode"`
+	CpuPercentage       float64 `pulumi:"cpuPercentage"`
 	// The number of enabled CPU cores.
 	CpusEnabled int `pulumi:"cpusEnabled"`
 	// The total data storage allocated in GBs.
@@ -116,13 +118,17 @@ type LookupAutonomousVmClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the Autonomous VM Cluster.
-	NodeCount int `pulumi:"nodeCount"`
+	NodeCount                                    int `pulumi:"nodeCount"`
+	NonProvisionableAutonomousContainerDatabases int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of enabled OCPU cores.
-	OcpusEnabled float64 `pulumi:"ocpusEnabled"`
+	OcpusEnabled                            float64 `pulumi:"ocpusEnabled"`
+	ProvisionedAutonomousContainerDatabases int     `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedCpus                         float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	ReclaimableCpus int `pulumi:"reclaimableCpus"`
+	ReclaimableCpus int     `pulumi:"reclaimableCpus"`
+	ReservedCpus    float64 `pulumi:"reservedCpus"`
 	// The SCAN Listener Non TLS port number. Default value is 1521.
 	ScanListenerPortNonTls int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port number. Default value is 2484.
@@ -136,7 +142,8 @@ type LookupAutonomousVmClusterResult struct {
 	// The date and time of ORDS certificate expiration.
 	TimeOrdsCertificateExpires string `pulumi:"timeOrdsCertificateExpires"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone                        string  `pulumi:"timeZone"`
+	TotalAutonomousDataStorageInTbs float64 `pulumi:"totalAutonomousDataStorageInTbs"`
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -187,6 +194,10 @@ func (o LookupAutonomousVmClusterResultOutput) ToOutput(ctx context.Context) pul
 	}
 }
 
+func (o LookupAutonomousVmClusterResultOutput) AutonomousDataStoragePercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.AutonomousDataStoragePercentage }).(pulumi.Float64Output)
+}
+
 // The data disk group size allocated for Autonomous Databases, in TBs.
 func (o LookupAutonomousVmClusterResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
@@ -229,6 +240,10 @@ func (o LookupAutonomousVmClusterResultOutput) ComputeModel() pulumi.StringOutpu
 // The number of CPU cores enabled per VM cluster node.
 func (o LookupAutonomousVmClusterResultOutput) CpuCoreCountPerNode() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) CpuPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.CpuPercentage }).(pulumi.Float64Output)
 }
 
 // The number of enabled CPU cores.
@@ -339,9 +354,21 @@ func (o LookupAutonomousVmClusterResultOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
+func (o LookupAutonomousVmClusterResultOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.NonProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
+}
+
 // The number of enabled OCPU cores.
 func (o LookupAutonomousVmClusterResultOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.ProvisionedAutonomousContainerDatabases }).(pulumi.IntOutput)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
 // For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -349,6 +376,10 @@ func (o LookupAutonomousVmClusterResultOutput) OcpusEnabled() pulumi.Float64Outp
 // * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 func (o LookupAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.ReclaimableCpus }).(pulumi.IntOutput)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
 }
 
 // The SCAN Listener Non TLS port number. Default value is 1521.
@@ -384,6 +415,10 @@ func (o LookupAutonomousVmClusterResultOutput) TimeOrdsCertificateExpires() pulu
 // The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o LookupAutonomousVmClusterResultOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) TotalAutonomousDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64Output)
 }
 
 // The total number of Autonomous Container Databases that can be created.

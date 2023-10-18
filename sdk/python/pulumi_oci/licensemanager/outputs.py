@@ -78,7 +78,15 @@ class ProductLicenseImage(dict):
              id: Optional[str] = None,
              listing_name: Optional[str] = None,
              publisher: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'listingName' in kwargs:
+            listing_name = kwargs['listingName']
+
         _setter("listing_id", listing_id)
         _setter("package_version", package_version)
         if id is not None:
@@ -147,7 +155,9 @@ class GetLicenseRecordsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -181,7 +191,9 @@ class GetLicenseRecordsLicenseRecordCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -273,7 +285,41 @@ class GetLicenseRecordsLicenseRecordCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isPerpetual' in kwargs:
+            is_perpetual = kwargs['isPerpetual']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'licenseCount' in kwargs:
+            license_count = kwargs['licenseCount']
+        if 'licenseUnit' in kwargs:
+            license_unit = kwargs['licenseUnit']
+        if 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if 'productLicense' in kwargs:
+            product_license = kwargs['productLicense']
+        if 'productLicenseId' in kwargs:
+            product_license_id = kwargs['productLicenseId']
+        if 'supportEndDate' in kwargs:
+            support_end_date = kwargs['supportEndDate']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -497,7 +543,33 @@ class GetProductLicenseConsumersItemResult(dict):
              resource_name: str,
              resource_unit_count: float,
              resource_unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'areAllOptionsAvailable' in kwargs:
+            are_all_options_available = kwargs['areAllOptionsAvailable']
+        if 'isBaseLicenseAvailable' in kwargs:
+            is_base_license_available = kwargs['isBaseLicenseAvailable']
+        if 'licenseUnitType' in kwargs:
+            license_unit_type = kwargs['licenseUnitType']
+        if 'licenseUnitsConsumed' in kwargs:
+            license_units_consumed = kwargs['licenseUnitsConsumed']
+        if 'missingProducts' in kwargs:
+            missing_products = kwargs['missingProducts']
+        if 'productName' in kwargs:
+            product_name = kwargs['productName']
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'resourceCompartmentName' in kwargs:
+            resource_compartment_name = kwargs['resourceCompartmentName']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'resourceUnitCount' in kwargs:
+            resource_unit_count = kwargs['resourceUnitCount']
+        if 'resourceUnitType' in kwargs:
+            resource_unit_type = kwargs['resourceUnitType']
+
         _setter("are_all_options_available", are_all_options_available)
         _setter("is_base_license_available", is_base_license_available)
         _setter("license_unit_type", license_unit_type)
@@ -631,7 +703,9 @@ class GetProductLicenseConsumersItemMissingProductResult(dict):
              category: str,
              count: float,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("count", count)
         _setter("name", name)
@@ -692,7 +766,15 @@ class GetProductLicenseImageResult(dict):
              listing_name: str,
              package_version: str,
              publisher: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'listingName' in kwargs:
+            listing_name = kwargs['listingName']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         _setter("id", id)
         _setter("listing_id", listing_id)
         _setter("listing_name", listing_name)
@@ -758,7 +840,9 @@ class GetProductLicensesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -792,7 +876,9 @@ class GetProductLicensesProductLicenseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -896,7 +982,43 @@ class GetProductLicensesProductLicenseCollectionItemResult(dict):
              total_license_record_count: int,
              total_license_units_consumed: float,
              vendor_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activeLicenseRecordCount' in kwargs:
+            active_license_record_count = kwargs['activeLicenseRecordCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isOverSubscribed' in kwargs:
+            is_over_subscribed = kwargs['isOverSubscribed']
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'isVendorOracle' in kwargs:
+            is_vendor_oracle = kwargs['isVendorOracle']
+        if 'licenseUnit' in kwargs:
+            license_unit = kwargs['licenseUnit']
+        if 'statusDescription' in kwargs:
+            status_description = kwargs['statusDescription']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalActiveLicenseUnitCount' in kwargs:
+            total_active_license_unit_count = kwargs['totalActiveLicenseUnitCount']
+        if 'totalLicenseRecordCount' in kwargs:
+            total_license_record_count = kwargs['totalLicenseRecordCount']
+        if 'totalLicenseUnitsConsumed' in kwargs:
+            total_license_units_consumed = kwargs['totalLicenseUnitsConsumed']
+        if 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
         _setter("active_license_record_count", active_license_record_count)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -1119,7 +1241,15 @@ class GetProductLicensesProductLicenseCollectionItemImageResult(dict):
              listing_name: str,
              package_version: str,
              publisher: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'listingName' in kwargs:
+            listing_name = kwargs['listingName']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         _setter("id", id)
         _setter("listing_id", listing_id)
         _setter("listing_name", listing_name)
@@ -1206,7 +1336,21 @@ class GetTopUtilizedProductLicensesItemResult(dict):
              total_license_unit_count: int,
              total_units_consumed: float,
              unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if 'productLicenseId' in kwargs:
+            product_license_id = kwargs['productLicenseId']
+        if 'productType' in kwargs:
+            product_type = kwargs['productType']
+        if 'totalLicenseUnitCount' in kwargs:
+            total_license_unit_count = kwargs['totalLicenseUnitCount']
+        if 'totalUnitsConsumed' in kwargs:
+            total_units_consumed = kwargs['totalUnitsConsumed']
+        if 'unitType' in kwargs:
+            unit_type = kwargs['unitType']
+
         _setter("is_unlimited", is_unlimited)
         _setter("product_license_id", product_license_id)
         _setter("product_type", product_type)
@@ -1307,7 +1451,21 @@ class GetTopUtilizedResourcesItemResult(dict):
              resource_name: str,
              total_units: float,
              unit_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'resourceCompartmentId' in kwargs:
+            resource_compartment_id = kwargs['resourceCompartmentId']
+        if 'resourceCompartmentName' in kwargs:
+            resource_compartment_name = kwargs['resourceCompartmentName']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'totalUnits' in kwargs:
+            total_units = kwargs['totalUnits']
+        if 'unitType' in kwargs:
+            unit_type = kwargs['unitType']
+
         _setter("resource_compartment_id", resource_compartment_id)
         _setter("resource_compartment_name", resource_compartment_name)
         _setter("resource_id", resource_id)

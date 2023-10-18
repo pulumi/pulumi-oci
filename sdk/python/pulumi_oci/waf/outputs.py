@@ -155,7 +155,9 @@ class AppFirewallPolicyAction(dict):
              body: Optional['outputs.AppFirewallPolicyActionBody'] = None,
              code: Optional[int] = None,
              headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("type", type)
         if body is not None:
@@ -251,7 +253,9 @@ class AppFirewallPolicyActionBody(dict):
              _setter: Callable[[Any, Any], None],
              text: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("text", text)
         _setter("type", type)
 
@@ -291,7 +295,9 @@ class AppFirewallPolicyActionHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -352,7 +358,11 @@ class AppFirewallPolicyRequestAccessControl(dict):
              _setter: Callable[[Any, Any], None],
              default_action_name: str,
              rules: Optional[Sequence['outputs.AppFirewallPolicyRequestAccessControlRule']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultActionName' in kwargs:
+            default_action_name = kwargs['defaultActionName']
+
         _setter("default_action_name", default_action_name)
         if rules is not None:
             _setter("rules", rules)
@@ -427,7 +437,13 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
              type: str,
              condition: Optional[str] = None,
              condition_language: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("name", name)
         _setter("type", type)
@@ -529,7 +545,13 @@ class AppFirewallPolicyRequestProtection(dict):
              body_inspection_size_limit_exceeded_action_name: Optional[str] = None,
              body_inspection_size_limit_in_bytes: Optional[int] = None,
              rules: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRule']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyInspectionSizeLimitExceededActionName' in kwargs:
+            body_inspection_size_limit_exceeded_action_name = kwargs['bodyInspectionSizeLimitExceededActionName']
+        if 'bodyInspectionSizeLimitInBytes' in kwargs:
+            body_inspection_size_limit_in_bytes = kwargs['bodyInspectionSizeLimitInBytes']
+
         if body_inspection_size_limit_exceeded_action_name is not None:
             _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
         if body_inspection_size_limit_in_bytes is not None:
@@ -640,7 +662,19 @@ class AppFirewallPolicyRequestProtectionRule(dict):
              condition_language: Optional[str] = None,
              is_body_inspection_enabled: Optional[bool] = None,
              protection_capability_settings: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("name", name)
         _setter("protection_capabilities", protection_capabilities)
@@ -776,7 +810,15 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
              collaborative_action_threshold: Optional[int] = None,
              collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
              exclusions: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("key", key)
         _setter("version", version)
         if action_name is not None:
@@ -856,7 +898,9 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -913,7 +957,11 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions(dict)
              _setter: Callable[[Any, Any], None],
              args: Optional[Sequence[str]] = None,
              request_cookies: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         if args is not None:
             _setter("args", args)
         if request_cookies is not None:
@@ -998,7 +1046,21 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings(dict):
              max_number_of_arguments: Optional[int] = None,
              max_single_argument_length: Optional[int] = None,
              max_total_argument_length: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         if allowed_http_methods is not None:
             _setter("allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
@@ -1076,7 +1138,9 @@ class AppFirewallPolicyRequestRateLimiting(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if rules is not None:
             _setter("rules", rules)
 
@@ -1144,7 +1208,13 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
              type: str,
              condition: Optional[str] = None,
              condition_language: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("configurations", configurations)
         _setter("name", name)
@@ -1248,7 +1318,15 @@ class AppFirewallPolicyRequestRateLimitingRuleConfiguration(dict):
              period_in_seconds: int,
              requests_limit: int,
              action_duration_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'periodInSeconds' in kwargs:
+            period_in_seconds = kwargs['periodInSeconds']
+        if 'requestsLimit' in kwargs:
+            requests_limit = kwargs['requestsLimit']
+        if 'actionDurationInSeconds' in kwargs:
+            action_duration_in_seconds = kwargs['actionDurationInSeconds']
+
         _setter("period_in_seconds", period_in_seconds)
         _setter("requests_limit", requests_limit)
         if action_duration_in_seconds is not None:
@@ -1294,7 +1372,9 @@ class AppFirewallPolicyResponseAccessControl(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if rules is not None:
             _setter("rules", rules)
 
@@ -1358,7 +1438,13 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
              type: str,
              condition: Optional[str] = None,
              condition_language: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("name", name)
         _setter("type", type)
@@ -1424,7 +1510,9 @@ class AppFirewallPolicyResponseProtection(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRule']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if rules is not None:
             _setter("rules", rules)
 
@@ -1506,7 +1594,19 @@ class AppFirewallPolicyResponseProtectionRule(dict):
              condition_language: Optional[str] = None,
              is_body_inspection_enabled: Optional[bool] = None,
              protection_capability_settings: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("name", name)
         _setter("protection_capabilities", protection_capabilities)
@@ -1642,7 +1742,15 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
              collaborative_action_threshold: Optional[int] = None,
              collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
              exclusions: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("key", key)
         _setter("version", version)
         if action_name is not None:
@@ -1722,7 +1830,9 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -1779,7 +1889,11 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions(dict
              _setter: Callable[[Any, Any], None],
              args: Optional[Sequence[str]] = None,
              request_cookies: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         if args is not None:
             _setter("args", args)
         if request_cookies is not None:
@@ -1864,7 +1978,21 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(dict):
              max_number_of_arguments: Optional[int] = None,
              max_single_argument_length: Optional[int] = None,
              max_total_argument_length: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         if allowed_http_methods is not None:
             _setter("allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
@@ -1967,7 +2095,11 @@ class NetworkAddressListVcnAddress(dict):
              _setter: Callable[[Any, Any], None],
              addresses: Optional[str] = None,
              vcn_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if addresses is not None:
             _setter("addresses", addresses)
         if vcn_id is not None:
@@ -2012,7 +2144,9 @@ class GetFirewallsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2046,7 +2180,9 @@ class GetFirewallsWebAppFirewallCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2118,7 +2254,31 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              web_app_firewall_policy_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backendType' in kwargs:
+            backend_type = kwargs['backendType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'webAppFirewallPolicyId' in kwargs:
+            web_app_firewall_policy_id = kwargs['webAppFirewallPolicyId']
+
         _setter("backend_type", backend_type)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2257,7 +2417,11 @@ class GetNetworkAddressListVcnAddressResult(dict):
              _setter: Callable[[Any, Any], None],
              addresses: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("addresses", addresses)
         _setter("vcn_id", vcn_id)
 
@@ -2296,7 +2460,9 @@ class GetNetworkAddressListsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2330,7 +2496,9 @@ class GetNetworkAddressListsNetworkAddressListCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2402,7 +2570,27 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
              time_updated: str,
              type: str,
              vcn_addresses: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vcnAddresses' in kwargs:
+            vcn_addresses = kwargs['vcnAddresses']
+
         _setter("addresses", addresses)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -2541,7 +2729,11 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult(dic
              _setter: Callable[[Any, Any], None],
              addresses: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("addresses", addresses)
         _setter("vcn_id", vcn_id)
 
@@ -2580,7 +2772,9 @@ class GetProtectionCapabilitiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2617,7 +2811,9 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2676,7 +2872,19 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult(dict):
              key: str,
              type: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'groupTags' in kwargs:
+            group_tags = kwargs['groupTags']
+        if 'isLatestVersion' in kwargs:
+            is_latest_version = kwargs['isLatestVersion']
+
         _setter("collaborative_action_threshold", collaborative_action_threshold)
         _setter("collaborative_weights", collaborative_weights)
         _setter("description", description)
@@ -2783,7 +2991,11 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWe
              display_name: str,
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         _setter("key", key)
         _setter("weight", weight)
@@ -2834,7 +3046,9 @@ class GetProtectionCapabilityGroupTagsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2874,7 +3088,9 @@ class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2901,7 +3117,9 @@ class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -2934,7 +3152,9 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2971,7 +3191,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3055,7 +3277,35 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'requestAccessControls' in kwargs:
+            request_access_controls = kwargs['requestAccessControls']
+        if 'requestProtections' in kwargs:
+            request_protections = kwargs['requestProtections']
+        if 'requestRateLimitings' in kwargs:
+            request_rate_limitings = kwargs['requestRateLimitings']
+        if 'responseAccessControls' in kwargs:
+            response_access_controls = kwargs['responseAccessControls']
+        if 'responseProtections' in kwargs:
+            response_protections = kwargs['responseProtections']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("actions", actions)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3233,7 +3483,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult(di
              headers: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult'],
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bodies", bodies)
         _setter("code", code)
         _setter("headers", headers)
@@ -3300,7 +3552,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResul
              _setter: Callable[[Any, Any], None],
              text: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("text", text)
         _setter("type", type)
 
@@ -3340,7 +3594,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderRes
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -3382,7 +3638,11 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCo
              _setter: Callable[[Any, Any], None],
              default_action_name: str,
              rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultActionName' in kwargs:
+            default_action_name = kwargs['defaultActionName']
+
         _setter("default_action_name", default_action_name)
         _setter("rules", rules)
 
@@ -3437,7 +3697,13 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCo
              condition_language: str,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -3509,7 +3775,13 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              body_inspection_size_limit_exceeded_action_name: str,
              body_inspection_size_limit_in_bytes: int,
              rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyInspectionSizeLimitExceededActionName' in kwargs:
+            body_inspection_size_limit_exceeded_action_name = kwargs['bodyInspectionSizeLimitExceededActionName']
+        if 'bodyInspectionSizeLimitInBytes' in kwargs:
+            body_inspection_size_limit_in_bytes = kwargs['bodyInspectionSizeLimitInBytes']
+
         _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
         _setter("body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
         _setter("rules", rules)
@@ -3583,7 +3855,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult'],
              protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -3694,7 +3978,15 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult'],
              key: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("action_name", action_name)
         _setter("collaborative_action_threshold", collaborative_action_threshold)
         _setter("collaborative_weights", collaborative_weights)
@@ -3770,7 +4062,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -3810,7 +4104,11 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              _setter: Callable[[Any, Any], None],
              args: Sequence[str],
              request_cookies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         _setter("args", args)
         _setter("request_cookies", request_cookies)
 
@@ -3866,7 +4164,21 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
              max_number_of_arguments: int,
              max_single_argument_length: int,
              max_total_argument_length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("max_http_request_header_length", max_http_request_header_length)
         _setter("max_http_request_headers", max_http_request_headers)
@@ -3938,7 +4250,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -3986,7 +4300,13 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
              configurations: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult'],
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -4067,7 +4387,15 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
              action_duration_in_seconds: int,
              period_in_seconds: int,
              requests_limit: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionDurationInSeconds' in kwargs:
+            action_duration_in_seconds = kwargs['actionDurationInSeconds']
+        if 'periodInSeconds' in kwargs:
+            period_in_seconds = kwargs['periodInSeconds']
+        if 'requestsLimit' in kwargs:
+            requests_limit = kwargs['requestsLimit']
+
         _setter("action_duration_in_seconds", action_duration_in_seconds)
         _setter("period_in_seconds", period_in_seconds)
         _setter("requests_limit", requests_limit)
@@ -4112,7 +4440,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessC
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -4156,7 +4486,13 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessC
              condition_language: str,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -4220,7 +4556,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -4276,7 +4614,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
              protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult'],
              protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -4387,7 +4737,15 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
              exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult'],
              key: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("action_name", action_name)
         _setter("collaborative_action_threshold", collaborative_action_threshold)
         _setter("collaborative_weights", collaborative_weights)
@@ -4463,7 +4821,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -4503,7 +4863,11 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
              _setter: Callable[[Any, Any], None],
              args: Sequence[str],
              request_cookies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         _setter("args", args)
         _setter("request_cookies", request_cookies)
 
@@ -4559,7 +4923,21 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
              max_number_of_arguments: int,
              max_single_argument_length: int,
              max_total_argument_length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("max_http_request_header_length", max_http_request_header_length)
         _setter("max_http_request_headers", max_http_request_headers)
@@ -4647,7 +5025,9 @@ class GetWebAppFirewallPolicyActionResult(dict):
              headers: Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult'],
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bodies", bodies)
         _setter("code", code)
         _setter("headers", headers)
@@ -4714,7 +5094,9 @@ class GetWebAppFirewallPolicyActionBodyResult(dict):
              _setter: Callable[[Any, Any], None],
              text: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("text", text)
         _setter("type", type)
 
@@ -4754,7 +5136,9 @@ class GetWebAppFirewallPolicyActionHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -4796,7 +5180,11 @@ class GetWebAppFirewallPolicyRequestAccessControlResult(dict):
              _setter: Callable[[Any, Any], None],
              default_action_name: str,
              rules: Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultActionName' in kwargs:
+            default_action_name = kwargs['defaultActionName']
+
         _setter("default_action_name", default_action_name)
         _setter("rules", rules)
 
@@ -4851,7 +5239,13 @@ class GetWebAppFirewallPolicyRequestAccessControlRuleResult(dict):
              condition_language: str,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -4923,7 +5317,13 @@ class GetWebAppFirewallPolicyRequestProtectionResult(dict):
              body_inspection_size_limit_exceeded_action_name: str,
              body_inspection_size_limit_in_bytes: int,
              rules: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyInspectionSizeLimitExceededActionName' in kwargs:
+            body_inspection_size_limit_exceeded_action_name = kwargs['bodyInspectionSizeLimitExceededActionName']
+        if 'bodyInspectionSizeLimitInBytes' in kwargs:
+            body_inspection_size_limit_in_bytes = kwargs['bodyInspectionSizeLimitInBytes']
+
         _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
         _setter("body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
         _setter("rules", rules)
@@ -4997,7 +5397,19 @@ class GetWebAppFirewallPolicyRequestProtectionRuleResult(dict):
              protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult'],
              protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -5108,7 +5520,15 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult(dic
              exclusions: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult'],
              key: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("action_name", action_name)
         _setter("collaborative_action_threshold", collaborative_action_threshold)
         _setter("collaborative_weights", collaborative_weights)
@@ -5184,7 +5604,9 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborat
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -5224,7 +5646,11 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionR
              _setter: Callable[[Any, Any], None],
              args: Sequence[str],
              request_cookies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         _setter("args", args)
         _setter("request_cookies", request_cookies)
 
@@ -5280,7 +5706,21 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingRes
              max_number_of_arguments: int,
              max_single_argument_length: int,
              max_total_argument_length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("max_http_request_header_length", max_http_request_header_length)
         _setter("max_http_request_headers", max_http_request_headers)
@@ -5352,7 +5792,9 @@ class GetWebAppFirewallPolicyRequestRateLimitingResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -5400,7 +5842,13 @@ class GetWebAppFirewallPolicyRequestRateLimitingRuleResult(dict):
              configurations: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult'],
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -5481,7 +5929,15 @@ class GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult(dict):
              action_duration_in_seconds: int,
              period_in_seconds: int,
              requests_limit: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionDurationInSeconds' in kwargs:
+            action_duration_in_seconds = kwargs['actionDurationInSeconds']
+        if 'periodInSeconds' in kwargs:
+            period_in_seconds = kwargs['periodInSeconds']
+        if 'requestsLimit' in kwargs:
+            requests_limit = kwargs['requestsLimit']
+
         _setter("action_duration_in_seconds", action_duration_in_seconds)
         _setter("period_in_seconds", period_in_seconds)
         _setter("requests_limit", requests_limit)
@@ -5526,7 +5982,9 @@ class GetWebAppFirewallPolicyResponseAccessControlResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -5570,7 +6028,13 @@ class GetWebAppFirewallPolicyResponseAccessControlRuleResult(dict):
              condition_language: str,
              name: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -5634,7 +6098,9 @@ class GetWebAppFirewallPolicyResponseProtectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
 
     @property
@@ -5690,7 +6156,19 @@ class GetWebAppFirewallPolicyResponseProtectionRuleResult(dict):
              protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult'],
              protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'conditionLanguage' in kwargs:
+            condition_language = kwargs['conditionLanguage']
+        if 'isBodyInspectionEnabled' in kwargs:
+            is_body_inspection_enabled = kwargs['isBodyInspectionEnabled']
+        if 'protectionCapabilities' in kwargs:
+            protection_capabilities = kwargs['protectionCapabilities']
+        if 'protectionCapabilitySettings' in kwargs:
+            protection_capability_settings = kwargs['protectionCapabilitySettings']
+
         _setter("action_name", action_name)
         _setter("condition", condition)
         _setter("condition_language", condition_language)
@@ -5801,7 +6279,15 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult(di
              exclusions: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult'],
              key: str,
              version: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionName' in kwargs:
+            action_name = kwargs['actionName']
+        if 'collaborativeActionThreshold' in kwargs:
+            collaborative_action_threshold = kwargs['collaborativeActionThreshold']
+        if 'collaborativeWeights' in kwargs:
+            collaborative_weights = kwargs['collaborativeWeights']
+
         _setter("action_name", action_name)
         _setter("collaborative_action_threshold", collaborative_action_threshold)
         _setter("collaborative_weights", collaborative_weights)
@@ -5877,7 +6363,9 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabora
              _setter: Callable[[Any, Any], None],
              key: str,
              weight: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("key", key)
         _setter("weight", weight)
 
@@ -5917,7 +6405,11 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion
              _setter: Callable[[Any, Any], None],
              args: Sequence[str],
              request_cookies: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'requestCookies' in kwargs:
+            request_cookies = kwargs['requestCookies']
+
         _setter("args", args)
         _setter("request_cookies", request_cookies)
 
@@ -5973,7 +6465,21 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingRe
              max_number_of_arguments: int,
              max_single_argument_length: int,
              max_total_argument_length: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHttpMethods' in kwargs:
+            allowed_http_methods = kwargs['allowedHttpMethods']
+        if 'maxHttpRequestHeaderLength' in kwargs:
+            max_http_request_header_length = kwargs['maxHttpRequestHeaderLength']
+        if 'maxHttpRequestHeaders' in kwargs:
+            max_http_request_headers = kwargs['maxHttpRequestHeaders']
+        if 'maxNumberOfArguments' in kwargs:
+            max_number_of_arguments = kwargs['maxNumberOfArguments']
+        if 'maxSingleArgumentLength' in kwargs:
+            max_single_argument_length = kwargs['maxSingleArgumentLength']
+        if 'maxTotalArgumentLength' in kwargs:
+            max_total_argument_length = kwargs['maxTotalArgumentLength']
+
         _setter("allowed_http_methods", allowed_http_methods)
         _setter("max_http_request_header_length", max_http_request_header_length)
         _setter("max_http_request_headers", max_http_request_headers)

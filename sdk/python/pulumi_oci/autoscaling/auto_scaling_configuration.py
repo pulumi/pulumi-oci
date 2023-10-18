@@ -60,7 +60,23 @@ class AutoScalingConfigurationArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoScalingResources' in kwargs:
+            auto_scaling_resources = kwargs['autoScalingResources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'coolDownInSeconds' in kwargs:
+            cool_down_in_seconds = kwargs['coolDownInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("auto_scaling_resources", auto_scaling_resources)
         _setter("compartment_id", compartment_id)
         _setter("policies", policies)
@@ -232,7 +248,29 @@ class _AutoScalingConfigurationState:
              min_resource_count: Optional[pulumi.Input[int]] = None,
              policies: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoScalingResources' in kwargs:
+            auto_scaling_resources = kwargs['autoScalingResources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'coolDownInSeconds' in kwargs:
+            cool_down_in_seconds = kwargs['coolDownInSeconds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'maxResourceCount' in kwargs:
+            max_resource_count = kwargs['maxResourceCount']
+        if 'minResourceCount' in kwargs:
+            min_resource_count = kwargs['minResourceCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if auto_scaling_resources is not None:
             _setter("auto_scaling_resources", auto_scaling_resources)
         if compartment_id is not None:

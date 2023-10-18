@@ -101,7 +101,35 @@ class MediaAssetArgs:
              segment_range_start_index: Optional[pulumi.Input[str]] = None,
              source_media_workflow_id: Optional[pulumi.Input[str]] = None,
              source_media_workflow_version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'masterMediaAssetId' in kwargs:
+            master_media_asset_id = kwargs['masterMediaAssetId']
+        if 'mediaAssetTags' in kwargs:
+            media_asset_tags = kwargs['mediaAssetTags']
+        if 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if 'objectEtag' in kwargs:
+            object_etag = kwargs['objectEtag']
+        if 'parentMediaAssetId' in kwargs:
+            parent_media_asset_id = kwargs['parentMediaAssetId']
+        if 'segmentRangeEndIndex' in kwargs:
+            segment_range_end_index = kwargs['segmentRangeEndIndex']
+        if 'segmentRangeStartIndex' in kwargs:
+            segment_range_start_index = kwargs['segmentRangeStartIndex']
+        if 'sourceMediaWorkflowId' in kwargs:
+            source_media_workflow_id = kwargs['sourceMediaWorkflowId']
+        if 'sourceMediaWorkflowVersion' in kwargs:
+            source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
+
         _setter("compartment_id", compartment_id)
         _setter("type", type)
         if bucket is not None:
@@ -462,7 +490,41 @@ class _MediaAssetState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'masterMediaAssetId' in kwargs:
+            master_media_asset_id = kwargs['masterMediaAssetId']
+        if 'mediaAssetTags' in kwargs:
+            media_asset_tags = kwargs['mediaAssetTags']
+        if 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if 'objectEtag' in kwargs:
+            object_etag = kwargs['objectEtag']
+        if 'parentMediaAssetId' in kwargs:
+            parent_media_asset_id = kwargs['parentMediaAssetId']
+        if 'segmentRangeEndIndex' in kwargs:
+            segment_range_end_index = kwargs['segmentRangeEndIndex']
+        if 'segmentRangeStartIndex' in kwargs:
+            segment_range_start_index = kwargs['segmentRangeStartIndex']
+        if 'sourceMediaWorkflowId' in kwargs:
+            source_media_workflow_id = kwargs['sourceMediaWorkflowId']
+        if 'sourceMediaWorkflowVersion' in kwargs:
+            source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if compartment_id is not None:

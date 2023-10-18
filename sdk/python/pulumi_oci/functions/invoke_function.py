@@ -52,7 +52,23 @@ class InvokeFunctionArgs:
              input_body_source_path: Optional[pulumi.Input[str]] = None,
              invoke_function_body: Optional[pulumi.Input[str]] = None,
              invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'base64EncodeContent' in kwargs:
+            base64_encode_content = kwargs['base64EncodeContent']
+        if 'fnIntent' in kwargs:
+            fn_intent = kwargs['fnIntent']
+        if 'fnInvokeType' in kwargs:
+            fn_invoke_type = kwargs['fnInvokeType']
+        if 'inputBodySourcePath' in kwargs:
+            input_body_source_path = kwargs['inputBodySourcePath']
+        if 'invokeFunctionBody' in kwargs:
+            invoke_function_body = kwargs['invokeFunctionBody']
+        if 'invokeFunctionBodyBase64Encoded' in kwargs:
+            invoke_function_body_base64_encoded = kwargs['invokeFunctionBodyBase64Encoded']
+
         _setter("function_id", function_id)
         if base64_encode_content is not None:
             _setter("base64_encode_content", base64_encode_content)
@@ -197,7 +213,25 @@ class _InvokeFunctionState:
              invoke_endpoint: Optional[pulumi.Input[str]] = None,
              invoke_function_body: Optional[pulumi.Input[str]] = None,
              invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'base64EncodeContent' in kwargs:
+            base64_encode_content = kwargs['base64EncodeContent']
+        if 'fnIntent' in kwargs:
+            fn_intent = kwargs['fnIntent']
+        if 'fnInvokeType' in kwargs:
+            fn_invoke_type = kwargs['fnInvokeType']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'inputBodySourcePath' in kwargs:
+            input_body_source_path = kwargs['inputBodySourcePath']
+        if 'invokeEndpoint' in kwargs:
+            invoke_endpoint = kwargs['invokeEndpoint']
+        if 'invokeFunctionBody' in kwargs:
+            invoke_function_body = kwargs['invokeFunctionBody']
+        if 'invokeFunctionBodyBase64Encoded' in kwargs:
+            invoke_function_body_base64_encoded = kwargs['invokeFunctionBodyBase64Encoded']
+
         if base64_encode_content is not None:
             _setter("base64_encode_content", base64_encode_content)
         if content is not None:

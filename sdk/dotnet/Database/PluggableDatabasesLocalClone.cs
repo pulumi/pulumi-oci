@@ -12,6 +12,7 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Pluggable Databases Local Clone resource in Oracle Cloud Infrastructure Database service. Although pluggable databases(PDB) belong to a container database(CDB), there is no change to the parent(CDB) as a result of this operation.
     /// 
+    /// **Deprecated.** Use [CreatePluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/CreatePluggableDatabase) for Pluggable Database LocalClone Operation.
     /// Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
     /// 
     /// ## Example Usage
@@ -110,6 +111,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PdbName { get; private set; } = null!;
 
         /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        [Output("pdbNodeLevelDetails")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasesLocalClonePdbNodeLevelDetail>> PdbNodeLevelDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("pluggableDatabaseId")]
@@ -120,6 +127,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("pluggableDatabaseManagementConfigs")]
         public Output<ImmutableArray<Outputs.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig>> PluggableDatabaseManagementConfigs { get; private set; } = null!;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        [Output("refreshableCloneConfigs")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasesLocalCloneRefreshableCloneConfig>> RefreshableCloneConfigs { get; private set; } = null!;
 
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
@@ -356,6 +369,18 @@ namespace Pulumi.Oci.Database
         [Input("pdbName")]
         public Input<string>? PdbName { get; set; }
 
+        [Input("pdbNodeLevelDetails")]
+        private InputList<Inputs.PluggableDatabasesLocalClonePdbNodeLevelDetailGetArgs>? _pdbNodeLevelDetails;
+
+        /// <summary>
+        /// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasesLocalClonePdbNodeLevelDetailGetArgs> PdbNodeLevelDetails
+        {
+            get => _pdbNodeLevelDetails ?? (_pdbNodeLevelDetails = new InputList<Inputs.PluggableDatabasesLocalClonePdbNodeLevelDetailGetArgs>());
+            set => _pdbNodeLevelDetails = value;
+        }
+
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -372,6 +397,18 @@ namespace Pulumi.Oci.Database
         {
             get => _pluggableDatabaseManagementConfigs ?? (_pluggableDatabaseManagementConfigs = new InputList<Inputs.PluggableDatabasesLocalClonePluggableDatabaseManagementConfigGetArgs>());
             set => _pluggableDatabaseManagementConfigs = value;
+        }
+
+        [Input("refreshableCloneConfigs")]
+        private InputList<Inputs.PluggableDatabasesLocalCloneRefreshableCloneConfigGetArgs>? _refreshableCloneConfigs;
+
+        /// <summary>
+        /// Pluggable Database Refreshable Clone Configuration.
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasesLocalCloneRefreshableCloneConfigGetArgs> RefreshableCloneConfigs
+        {
+            get => _refreshableCloneConfigs ?? (_refreshableCloneConfigs = new InputList<Inputs.PluggableDatabasesLocalCloneRefreshableCloneConfigGetArgs>());
+            set => _refreshableCloneConfigs = value;
         }
 
         /// <summary>

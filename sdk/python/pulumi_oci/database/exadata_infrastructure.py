@@ -131,7 +131,53 @@ class ExadataInfrastructureArgs:
              multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
              network_bonding_mode_details: Optional[pulumi.Input['ExadataInfrastructureNetworkBondingModeDetailsArgs']] = None,
              storage_count: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminNetworkCidr' in kwargs:
+            admin_network_cidr = kwargs['adminNetworkCidr']
+        if 'cloudControlPlaneServer1' in kwargs:
+            cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
+        if 'cloudControlPlaneServer2' in kwargs:
+            cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsServers' in kwargs:
+            dns_servers = kwargs['dnsServers']
+        if 'infiniBandNetworkCidr' in kwargs:
+            infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
+        if 'ntpServers' in kwargs:
+            ntp_servers = kwargs['ntpServers']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if 'activationFile' in kwargs:
+            activation_file = kwargs['activationFile']
+        if 'additionalStorageCount' in kwargs:
+            additional_storage_count = kwargs['additionalStorageCount']
+        if 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if 'corporateProxy' in kwargs:
+            corporate_proxy = kwargs['corporateProxy']
+        if 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCpsOfflineReportEnabled' in kwargs:
+            is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
+        if 'isMultiRackDeployment' in kwargs:
+            is_multi_rack_deployment = kwargs['isMultiRackDeployment']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'multiRackConfigurationFile' in kwargs:
+            multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
+        if 'networkBondingModeDetails' in kwargs:
+            network_bonding_mode_details = kwargs['networkBondingModeDetails']
+        if 'storageCount' in kwargs:
+            storage_count = kwargs['storageCount']
+
         _setter("admin_network_cidr", admin_network_cidr)
         _setter("cloud_control_plane_server1", cloud_control_plane_server1)
         _setter("cloud_control_plane_server2", cloud_control_plane_server2)
@@ -688,7 +734,93 @@ class _ExadataInfrastructureState:
              storage_server_version: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_zone: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'activatedStorageCount' in kwargs:
+            activated_storage_count = kwargs['activatedStorageCount']
+        if 'activationFile' in kwargs:
+            activation_file = kwargs['activationFile']
+        if 'additionalComputeCount' in kwargs:
+            additional_compute_count = kwargs['additionalComputeCount']
+        if 'additionalComputeSystemModel' in kwargs:
+            additional_compute_system_model = kwargs['additionalComputeSystemModel']
+        if 'additionalStorageCount' in kwargs:
+            additional_storage_count = kwargs['additionalStorageCount']
+        if 'adminNetworkCidr' in kwargs:
+            admin_network_cidr = kwargs['adminNetworkCidr']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'cloudControlPlaneServer1' in kwargs:
+            cloud_control_plane_server1 = kwargs['cloudControlPlaneServer1']
+        if 'cloudControlPlaneServer2' in kwargs:
+            cloud_control_plane_server2 = kwargs['cloudControlPlaneServer2']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if 'corporateProxy' in kwargs:
+            corporate_proxy = kwargs['corporateProxy']
+        if 'cpusEnabled' in kwargs:
+            cpus_enabled = kwargs['cpusEnabled']
+        if 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if 'csiNumber' in kwargs:
+            csi_number = kwargs['csiNumber']
+        if 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if 'dbServerVersion' in kwargs:
+            db_server_version = kwargs['dbServerVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsServers' in kwargs:
+            dns_servers = kwargs['dnsServers']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'infiniBandNetworkCidr' in kwargs:
+            infini_band_network_cidr = kwargs['infiniBandNetworkCidr']
+        if 'isCpsOfflineReportEnabled' in kwargs:
+            is_cps_offline_report_enabled = kwargs['isCpsOfflineReportEnabled']
+        if 'isMultiRackDeployment' in kwargs:
+            is_multi_rack_deployment = kwargs['isMultiRackDeployment']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maintenanceSloStatus' in kwargs:
+            maintenance_slo_status = kwargs['maintenanceSloStatus']
+        if 'maintenanceWindow' in kwargs:
+            maintenance_window = kwargs['maintenanceWindow']
+        if 'maxCpuCount' in kwargs:
+            max_cpu_count = kwargs['maxCpuCount']
+        if 'maxDataStorageInTbs' in kwargs:
+            max_data_storage_in_tbs = kwargs['maxDataStorageInTbs']
+        if 'maxDbNodeStorageInGbs' in kwargs:
+            max_db_node_storage_in_gbs = kwargs['maxDbNodeStorageInGbs']
+        if 'maxMemoryInGbs' in kwargs:
+            max_memory_in_gbs = kwargs['maxMemoryInGbs']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'monthlyDbServerVersion' in kwargs:
+            monthly_db_server_version = kwargs['monthlyDbServerVersion']
+        if 'multiRackConfigurationFile' in kwargs:
+            multi_rack_configuration_file = kwargs['multiRackConfigurationFile']
+        if 'networkBondingModeDetails' in kwargs:
+            network_bonding_mode_details = kwargs['networkBondingModeDetails']
+        if 'ntpServers' in kwargs:
+            ntp_servers = kwargs['ntpServers']
+        if 'rackSerialNumber' in kwargs:
+            rack_serial_number = kwargs['rackSerialNumber']
+        if 'storageCount' in kwargs:
+            storage_count = kwargs['storageCount']
+        if 'storageServerVersion' in kwargs:
+            storage_server_version = kwargs['storageServerVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
         if activated_storage_count is not None:
             _setter("activated_storage_count", activated_storage_count)
         if activation_file is not None:

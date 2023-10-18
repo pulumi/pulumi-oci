@@ -50,7 +50,9 @@ class MediaAssetMediaAssetTagArgs:
              _setter: Callable[[Any, Any], None],
              value: pulumi.Input[str],
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("value", value)
         if type is not None:
             _setter("type", type)
@@ -99,7 +101,9 @@ class MediaAssetMetadataArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              metadata: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("metadata", metadata)
 
     @property
@@ -146,7 +150,11 @@ class MediaWorkflowJobOutputArgs:
              id: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assetType' in kwargs:
+            asset_type = kwargs['assetType']
+
         if asset_type is not None:
             _setter("asset_type", asset_type)
         if bucket is not None:
@@ -242,7 +250,11 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
              key: Optional[pulumi.Input[str]] = None,
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if key is not None:
             _setter("key", key)
         if lifecycle_details is not None:
@@ -330,7 +342,13 @@ class MediaWorkflowTaskArgs:
              enable_parameter_reference: Optional[pulumi.Input[str]] = None,
              enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableParameterReference' in kwargs:
+            enable_parameter_reference = kwargs['enableParameterReference']
+        if 'enableWhenReferencedParameterEquals' in kwargs:
+            enable_when_referenced_parameter_equals = kwargs['enableWhenReferencedParameterEquals']
+
         _setter("key", key)
         _setter("parameters", parameters)
         _setter("type", type)
@@ -490,7 +508,31 @@ class StreamCdnConfigConfigArgs:
              origin_auth_secret_key_nonce_b: Optional[pulumi.Input[str]] = None,
              origin_auth_sign_encryption: Optional[pulumi.Input[str]] = None,
              origin_auth_sign_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'edgeHostname' in kwargs:
+            edge_hostname = kwargs['edgeHostname']
+        if 'edgePathPrefix' in kwargs:
+            edge_path_prefix = kwargs['edgePathPrefix']
+        if 'edgeTokenKey' in kwargs:
+            edge_token_key = kwargs['edgeTokenKey']
+        if 'edgeTokenSalt' in kwargs:
+            edge_token_salt = kwargs['edgeTokenSalt']
+        if 'isEdgeTokenAuth' in kwargs:
+            is_edge_token_auth = kwargs['isEdgeTokenAuth']
+        if 'originAuthSecretKeyA' in kwargs:
+            origin_auth_secret_key_a = kwargs['originAuthSecretKeyA']
+        if 'originAuthSecretKeyB' in kwargs:
+            origin_auth_secret_key_b = kwargs['originAuthSecretKeyB']
+        if 'originAuthSecretKeyNonceA' in kwargs:
+            origin_auth_secret_key_nonce_a = kwargs['originAuthSecretKeyNonceA']
+        if 'originAuthSecretKeyNonceB' in kwargs:
+            origin_auth_secret_key_nonce_b = kwargs['originAuthSecretKeyNonceB']
+        if 'originAuthSignEncryption' in kwargs:
+            origin_auth_sign_encryption = kwargs['originAuthSignEncryption']
+        if 'originAuthSignType' in kwargs:
+            origin_auth_sign_type = kwargs['originAuthSignType']
+
         _setter("type", type)
         if edge_hostname is not None:
             _setter("edge_hostname", edge_hostname)
@@ -679,7 +721,11 @@ class StreamPackagingConfigEncryptionArgs:
              _setter: Callable[[Any, Any], None],
              algorithm: pulumi.Input[str],
              kms_key_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+
         _setter("algorithm", algorithm)
         if kms_key_id is not None:
             _setter("kms_key_id", kms_key_id)
@@ -727,7 +773,9 @@ class GetMediaAssetsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -779,7 +827,9 @@ class GetMediaWorkflowConfigurationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -834,7 +884,9 @@ class GetMediaWorkflowJobFactsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -889,7 +941,9 @@ class GetMediaWorkflowJobsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -941,7 +995,9 @@ class GetMediaWorkflowsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -993,7 +1049,9 @@ class GetStreamCdnConfigsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1045,7 +1103,9 @@ class GetStreamDistributionChannelsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1097,7 +1157,9 @@ class GetStreamPackagingConfigsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

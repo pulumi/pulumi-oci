@@ -70,7 +70,23 @@ class ZoneArgs:
              name: Optional[pulumi.Input[str]] = None,
              scope: Optional[pulumi.Input[str]] = None,
              view_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'zoneType' in kwargs:
+            zone_type = kwargs['zoneType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalDownstreams' in kwargs:
+            external_downstreams = kwargs['externalDownstreams']
+        if 'externalMasters' in kwargs:
+            external_masters = kwargs['externalMasters']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+
         _setter("compartment_id", compartment_id)
         _setter("zone_type", zone_type)
         if defined_tags is not None:
@@ -295,7 +311,29 @@ class _ZoneState:
              view_id: Optional[pulumi.Input[str]] = None,
              zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]] = None,
              zone_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'externalDownstreams' in kwargs:
+            external_downstreams = kwargs['externalDownstreams']
+        if 'externalMasters' in kwargs:
+            external_masters = kwargs['externalMasters']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+        if 'zoneTransferServers' in kwargs:
+            zone_transfer_servers = kwargs['zoneTransferServers']
+        if 'zoneType' in kwargs:
+            zone_type = kwargs['zoneType']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

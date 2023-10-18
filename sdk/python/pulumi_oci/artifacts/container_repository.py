@@ -53,7 +53,21 @@ class ContainerRepositoryArgs:
              is_immutable: Optional[pulumi.Input[bool]] = None,
              is_public: Optional[pulumi.Input[bool]] = None,
              readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -232,7 +246,37 @@ class _ContainerRepositoryState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_pushed: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billableSizeInGbs' in kwargs:
+            billable_size_in_gbs = kwargs['billableSizeInGbs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageCount' in kwargs:
+            image_count = kwargs['imageCount']
+        if 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'layerCount' in kwargs:
+            layer_count = kwargs['layerCount']
+        if 'layersSizeInBytes' in kwargs:
+            layers_size_in_bytes = kwargs['layersSizeInBytes']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastPushed' in kwargs:
+            time_last_pushed = kwargs['timeLastPushed']
+
         if billable_size_in_gbs is not None:
             _setter("billable_size_in_gbs", billable_size_in_gbs)
         if compartment_id is not None:

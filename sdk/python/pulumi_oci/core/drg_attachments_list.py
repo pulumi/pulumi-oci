@@ -41,7 +41,15 @@ class DrgAttachmentsListArgs:
              drg_id: pulumi.Input[str],
              attachment_type: Optional[pulumi.Input[str]] = None,
              is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'attachmentType' in kwargs:
+            attachment_type = kwargs['attachmentType']
+        if 'isCrossTenancy' in kwargs:
+            is_cross_tenancy = kwargs['isCrossTenancy']
+
         _setter("drg_id", drg_id)
         if attachment_type is not None:
             _setter("attachment_type", attachment_type)
@@ -121,7 +129,17 @@ class _DrgAttachmentsListState:
              drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]] = None,
              drg_id: Optional[pulumi.Input[str]] = None,
              is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachmentType' in kwargs:
+            attachment_type = kwargs['attachmentType']
+        if 'drgAllAttachments' in kwargs:
+            drg_all_attachments = kwargs['drgAllAttachments']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'isCrossTenancy' in kwargs:
+            is_cross_tenancy = kwargs['isCrossTenancy']
+
         if attachment_type is not None:
             _setter("attachment_type", attachment_type)
         if drg_all_attachments is not None:

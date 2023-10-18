@@ -35,16 +35,24 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     * @deprecated
+     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
     @Import(name="billingDonorHostId")
     private @Nullable Output<String> billingDonorHostId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * 
+     * @deprecated
+     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
     public Optional<Output<String>> billingDonorHostId() {
         return Optional.ofNullable(this.billingDonorHostId);
     }
@@ -110,16 +118,24 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     @Import(name="currentSku")
     private @Nullable Output<String> currentSku;
 
     /**
-     * @return The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
+    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
     public Optional<Output<String>> currentSku() {
         return Optional.ofNullable(this.currentSku);
     }
@@ -163,16 +179,24 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     * @deprecated
+     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
     @Import(name="failedEsxiHostId")
     private @Nullable Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     * @deprecated
+     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
     public Optional<Output<String>> failedEsxiHostId() {
         return Optional.ofNullable(this.failedEsxiHostId);
     }
@@ -267,24 +291,44 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isBillingSwappingInProgress);
     }
 
+    /**
+     * @deprecated
+     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+     * 
+     */
+    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
     @Import(name="nextSku")
     private @Nullable Output<String> nextSku;
 
+    /**
+     * @deprecated
+     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+     * 
+     */
+    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
     public Optional<Output<String>> nextSku() {
         return Optional.ofNullable(this.nextSku);
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+     * 
+     * @deprecated
+     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     @Import(name="nonUpgradedEsxiHostId")
     private @Nullable Output<String> nonUpgradedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+     * 
+     * @deprecated
+     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
+    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
     public Optional<Output<String>> nonUpgradedEsxiHostId() {
         return Optional.ofNullable(this.nonUpgradedEsxiHostId);
     }
@@ -305,22 +349,30 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
     @Import(name="sddcId")
     private @Nullable Output<String> sddcId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+     * 
      */
+    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
     public Optional<Output<String>> sddcId() {
         return Optional.ofNullable(this.sddcId);
     }
@@ -486,22 +538,30 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingDonorHostId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * @param billingDonorHostId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
         public Builder billingDonorHostId(@Nullable Output<String> billingDonorHostId) {
             $.billingDonorHostId = billingDonorHostId;
             return this;
         }
 
         /**
-         * @param billingDonorHostId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * @param billingDonorHostId (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
         public Builder billingDonorHostId(String billingDonorHostId) {
             return billingDonorHostId(Output.of(billingDonorHostId));
         }
@@ -591,22 +651,30 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currentSku The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
         public Builder currentSku(@Nullable Output<String> currentSku) {
             $.currentSku = currentSku;
             return this;
         }
 
         /**
-         * @param currentSku The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
         public Builder currentSku(String currentSku) {
             return currentSku(Output.of(currentSku));
         }
@@ -662,22 +730,30 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+         * @param failedEsxiHostId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
         public Builder failedEsxiHostId(@Nullable Output<String> failedEsxiHostId) {
             $.failedEsxiHostId = failedEsxiHostId;
             return this;
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
+         * @param failedEsxiHostId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
         public Builder failedEsxiHostId(String failedEsxiHostId) {
             return failedEsxiHostId(Output.of(failedEsxiHostId));
         }
@@ -808,32 +884,56 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
             return isBillingSwappingInProgress(Output.of(isBillingSwappingInProgress));
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+         * 
+         */
+        @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
         public Builder nextSku(@Nullable Output<String> nextSku) {
             $.nextSku = nextSku;
             return this;
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+         * 
+         */
+        @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
         public Builder nextSku(String nextSku) {
             return nextSku(Output.of(nextSku));
         }
 
         /**
-         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+         * @param nonUpgradedEsxiHostId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
         public Builder nonUpgradedEsxiHostId(@Nullable Output<String> nonUpgradedEsxiHostId) {
             $.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             return this;
         }
 
         /**
-         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
+         * @param nonUpgradedEsxiHostId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
          * 
          * @return builder
          * 
+         * @deprecated
+         * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * 
          */
+        @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
         public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
             return nonUpgradedEsxiHostId(Output.of(nonUpgradedEsxiHostId));
         }
@@ -860,28 +960,36 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+         * 
          */
+        @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
         public Builder sddcId(@Nullable Output<String> sddcId) {
             $.sddcId = sddcId;
             return this;
         }
 
         /**
-         * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+         * 
          */
+        @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
         public Builder sddcId(String sddcId) {
             return sddcId(Output.of(sddcId));
         }

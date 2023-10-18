@@ -87,7 +87,29 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedCatalogs' in kwargs:
+            attached_catalogs = kwargs['attachedCatalogs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsZones' in kwargs:
+            dns_zones = kwargs['dnsZones']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("attached_catalogs", attached_catalogs)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -216,7 +238,9 @@ class GetCatalogPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -259,7 +283,9 @@ class GetCatalogTypesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -299,7 +325,9 @@ class GetCatalogTypesTypeCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              items: Sequence['outputs.GetCatalogTypesTypeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("items", items)
 
@@ -353,7 +381,13 @@ class GetCatalogTypesTypeCollectionItemResult(dict):
              state: str,
              type_category: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'typeCategory' in kwargs:
+            type_category = kwargs['typeCategory']
+
         _setter("catalog_id", catalog_id)
         _setter("description", description)
         _setter("key", key)
@@ -482,7 +516,31 @@ class GetCatalogsCatalogResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'attachedCatalogPrivateEndpoints' in kwargs:
+            attached_catalog_private_endpoints = kwargs['attachedCatalogPrivateEndpoints']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'numberOfObjects' in kwargs:
+            number_of_objects = kwargs['numberOfObjects']
+        if 'serviceApiUrl' in kwargs:
+            service_api_url = kwargs['serviceApiUrl']
+        if 'serviceConsoleUrl' in kwargs:
+            service_console_url = kwargs['serviceConsoleUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("attached_catalog_private_endpoints", attached_catalog_private_endpoints)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -620,7 +678,9 @@ class GetCatalogsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -657,7 +717,9 @@ class GetConnectionsConnectionCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("items", items)
 
@@ -750,7 +812,33 @@ class GetConnectionsConnectionCollectionItemResult(dict):
              updated_by_id: str,
              uri: str,
              enc_properties: Optional[Mapping[str, Any]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'createdById' in kwargs:
+            created_by_id = kwargs['createdById']
+        if 'dataAssetKey' in kwargs:
+            data_asset_key = kwargs['dataAssetKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKey' in kwargs:
+            external_key = kwargs['externalKey']
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeStatusUpdated' in kwargs:
+            time_status_updated = kwargs['timeStatusUpdated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+        if 'updatedById' in kwargs:
+            updated_by_id = kwargs['updatedById']
+        if 'encProperties' in kwargs:
+            enc_properties = kwargs['encProperties']
+
         _setter("catalog_id", catalog_id)
         _setter("created_by_id", created_by_id)
         _setter("data_asset_key", data_asset_key)
@@ -922,7 +1010,9 @@ class GetConnectionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -959,7 +1049,9 @@ class GetDataAssetsDataAssetCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              items: Sequence['outputs.GetDataAssetsDataAssetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("items", items)
 
@@ -1045,7 +1137,29 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
              type_key: str,
              updated_by_id: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'catalogId' in kwargs:
+            catalog_id = kwargs['catalogId']
+        if 'createdById' in kwargs:
+            created_by_id = kwargs['createdById']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalKey' in kwargs:
+            external_key = kwargs['externalKey']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeHarvested' in kwargs:
+            time_harvested = kwargs['timeHarvested']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'typeKey' in kwargs:
+            type_key = kwargs['typeKey']
+        if 'updatedById' in kwargs:
+            updated_by_id = kwargs['updatedById']
+
         _setter("catalog_id", catalog_id)
         _setter("created_by_id", created_by_id)
         _setter("description", description)
@@ -1201,7 +1315,9 @@ class GetDataAssetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1241,7 +1357,9 @@ class GetMetastoresFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1318,7 +1436,27 @@ class GetMetastoresMetastoreResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'defaultExternalTableLocation' in kwargs:
+            default_external_table_location = kwargs['defaultExternalTableLocation']
+        if 'defaultManagedTableLocation' in kwargs:
+            default_managed_table_location = kwargs['defaultManagedTableLocation']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("default_external_table_location", default_external_table_location)
         _setter("default_managed_table_location", default_managed_table_location)

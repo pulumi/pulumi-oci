@@ -37,7 +37,9 @@ class ObjectLifecyclePolicyArgs:
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         if rules is not None:
@@ -108,7 +110,11 @@ class _ObjectLifecyclePolicyState:
              namespace: Optional[pulumi.Input[str]] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectLifecyclePolicyRuleArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:

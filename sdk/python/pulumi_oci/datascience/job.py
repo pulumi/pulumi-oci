@@ -81,7 +81,33 @@ class JobArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              job_artifact: Optional[pulumi.Input[str]] = None,
              job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'jobConfigurationDetails' in kwargs:
+            job_configuration_details = kwargs['jobConfigurationDetails']
+        if 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobArtifact' in kwargs:
+            job_artifact = kwargs['jobArtifact']
+        if 'jobLogConfigurationDetails' in kwargs:
+            job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+
         _setter("compartment_id", compartment_id)
         _setter("job_configuration_details", job_configuration_details)
         _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
@@ -359,7 +385,45 @@ class _JobState:
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'emptyArtifact' in kwargs:
+            empty_artifact = kwargs['emptyArtifact']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'jobArtifact' in kwargs:
+            job_artifact = kwargs['jobArtifact']
+        if 'jobConfigurationDetails' in kwargs:
+            job_configuration_details = kwargs['jobConfigurationDetails']
+        if 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if 'jobLogConfigurationDetails' in kwargs:
+            job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if artifact_content_disposition is not None:
             _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_length is not None:

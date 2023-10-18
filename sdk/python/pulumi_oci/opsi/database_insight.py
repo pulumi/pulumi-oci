@@ -104,7 +104,45 @@ class DatabaseInsightArgs:
              opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
              service_name: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'connectionCredentialDetails' in kwargs:
+            connection_credential_details = kwargs['connectionCredentialDetails']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseConnectionStatusDetails' in kwargs:
+            database_connection_status_details = kwargs['databaseConnectionStatusDetails']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+
         _setter("compartment_id", compartment_id)
         _setter("entity_source", entity_source)
         if connection_credential_details is not None:
@@ -525,7 +563,73 @@ class _DatabaseInsightState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionCredentialDetails' in kwargs:
+            connection_credential_details = kwargs['connectionCredentialDetails']
+        if 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if 'credentialDetails' in kwargs:
+            credential_details = kwargs['credentialDetails']
+        if 'databaseConnectionStatusDetails' in kwargs:
+            database_connection_status_details = kwargs['databaseConnectionStatusDetails']
+        if 'databaseDisplayName' in kwargs:
+            database_display_name = kwargs['databaseDisplayName']
+        if 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'databaseResourceType' in kwargs:
+            database_resource_type = kwargs['databaseResourceType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+        if 'dbmPrivateEndpointId' in kwargs:
+            dbm_private_endpoint_id = kwargs['dbmPrivateEndpointId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if 'exadataInsightId' in kwargs:
+            exadata_insight_id = kwargs['exadataInsightId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'opsiPrivateEndpointId' in kwargs:
+            opsi_private_endpoint_id = kwargs['opsiPrivateEndpointId']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'processorCount' in kwargs:
+            processor_count = kwargs['processorCount']
+        if 'rootId' in kwargs:
+            root_id = kwargs['rootId']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_credential_details is not None:

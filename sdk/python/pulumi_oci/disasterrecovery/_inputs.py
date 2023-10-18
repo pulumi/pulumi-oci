@@ -51,7 +51,15 @@ class DrPlanExecutionExecutionOptionsArgs:
              plan_execution_type: pulumi.Input[str],
              are_prechecks_enabled: Optional[pulumi.Input[bool]] = None,
              are_warnings_ignored: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'planExecutionType' in kwargs:
+            plan_execution_type = kwargs['planExecutionType']
+        if 'arePrechecksEnabled' in kwargs:
+            are_prechecks_enabled = kwargs['arePrechecksEnabled']
+        if 'areWarningsIgnored' in kwargs:
+            are_warnings_ignored = kwargs['areWarningsIgnored']
+
         _setter("plan_execution_type", plan_execution_type)
         if are_prechecks_enabled is not None:
             _setter("are_prechecks_enabled", are_prechecks_enabled)
@@ -142,7 +150,23 @@ class DrPlanExecutionGroupExecutionArgs:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionDurationInSec' in kwargs:
+            execution_duration_in_sec = kwargs['executionDurationInSec']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if 'stepExecutions' in kwargs:
+            step_executions = kwargs['stepExecutions']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
@@ -322,7 +346,25 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionDurationInSec' in kwargs:
+            execution_duration_in_sec = kwargs['executionDurationInSec']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'logLocations' in kwargs:
+            log_locations = kwargs['logLocations']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if 'stepId' in kwargs:
+            step_id = kwargs['stepId']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
@@ -488,7 +530,9 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -556,7 +600,9 @@ class DrPlanExecutionLogLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -632,7 +678,11 @@ class DrPlanPlanGroupArgs:
              id: Optional[pulumi.Input[str]] = None,
              steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if id is not None:
@@ -746,7 +796,21 @@ class DrPlanPlanGroupStepArgs:
              timeout: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              user_defined_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'errorMode' in kwargs:
+            error_mode = kwargs['errorMode']
+        if 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'memberId' in kwargs:
+            member_id = kwargs['memberId']
+        if 'userDefinedSteps' in kwargs:
+            user_defined_steps = kwargs['userDefinedSteps']
+
         if display_name is not None:
             _setter("display_name", display_name)
         if error_mode is not None:
@@ -926,7 +990,27 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
              run_on_instance_region: Optional[pulumi.Input[str]] = None,
              script_command: Optional[pulumi.Input[str]] = None,
              step_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'functionRegion' in kwargs:
+            function_region = kwargs['functionRegion']
+        if 'objectStorageScriptLocations' in kwargs:
+            object_storage_script_locations = kwargs['objectStorageScriptLocations']
+        if 'requestBody' in kwargs:
+            request_body = kwargs['requestBody']
+        if 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if 'runOnInstanceId' in kwargs:
+            run_on_instance_id = kwargs['runOnInstanceId']
+        if 'runOnInstanceRegion' in kwargs:
+            run_on_instance_region = kwargs['runOnInstanceRegion']
+        if 'scriptCommand' in kwargs:
+            script_command = kwargs['scriptCommand']
+        if 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+
         if function_id is not None:
             _setter("function_id", function_id)
         if function_region is not None:
@@ -1078,7 +1162,9 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
              bucket: Optional[pulumi.Input[str]] = None,
              namespace: Optional[pulumi.Input[str]] = None,
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
             _setter("bucket", bucket)
         if namespace is not None:
@@ -1146,7 +1232,13 @@ class DrProtectionGroupAssociationArgs:
              role: pulumi.Input[str],
              peer_id: Optional[pulumi.Input[str]] = None,
              peer_region: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if 'peerRegion' in kwargs:
+            peer_region = kwargs['peerRegion']
+
         _setter("role", role)
         if peer_id is not None:
             _setter("peer_id", peer_id)
@@ -1213,7 +1305,9 @@ class DrProtectionGroupLogLocationArgs:
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
              object: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         if object is not None:
@@ -1307,7 +1401,29 @@ class DrProtectionGroupMemberArgs:
              password_vault_secret_id: Optional[pulumi.Input[str]] = None,
              vnic_mapping: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
              vnic_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memberId' in kwargs:
+            member_id = kwargs['memberId']
+        if 'memberType' in kwargs:
+            member_type = kwargs['memberType']
+        if 'destinationCapacityReservationId' in kwargs:
+            destination_capacity_reservation_id = kwargs['destinationCapacityReservationId']
+        if 'destinationCompartmentId' in kwargs:
+            destination_compartment_id = kwargs['destinationCompartmentId']
+        if 'destinationDedicatedVmHostId' in kwargs:
+            destination_dedicated_vm_host_id = kwargs['destinationDedicatedVmHostId']
+        if 'isMovable' in kwargs:
+            is_movable = kwargs['isMovable']
+        if 'isRetainFaultDomain' in kwargs:
+            is_retain_fault_domain = kwargs['isRetainFaultDomain']
+        if 'passwordVaultSecretId' in kwargs:
+            password_vault_secret_id = kwargs['passwordVaultSecretId']
+        if 'vnicMapping' in kwargs:
+            vnic_mapping = kwargs['vnicMapping']
+        if 'vnicMappings' in kwargs:
+            vnic_mappings = kwargs['vnicMappings']
+
         _setter("member_id", member_id)
         _setter("member_type", member_type)
         if destination_capacity_reservation_id is not None:
@@ -1479,7 +1595,19 @@ class DrProtectionGroupMemberVnicMappingArgs:
              destination_primary_private_ip_hostname_label: Optional[pulumi.Input[str]] = None,
              destination_subnet_id: Optional[pulumi.Input[str]] = None,
              source_vnic_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationNsgIdLists' in kwargs:
+            destination_nsg_id_lists = kwargs['destinationNsgIdLists']
+        if 'destinationPrimaryPrivateIpAddress' in kwargs:
+            destination_primary_private_ip_address = kwargs['destinationPrimaryPrivateIpAddress']
+        if 'destinationPrimaryPrivateIpHostnameLabel' in kwargs:
+            destination_primary_private_ip_hostname_label = kwargs['destinationPrimaryPrivateIpHostnameLabel']
+        if 'destinationSubnetId' in kwargs:
+            destination_subnet_id = kwargs['destinationSubnetId']
+        if 'sourceVnicId' in kwargs:
+            source_vnic_id = kwargs['sourceVnicId']
+
         if destination_nsg_id_lists is not None:
             _setter("destination_nsg_id_lists", destination_nsg_id_lists)
         if destination_primary_private_ip_address is not None:
@@ -1570,7 +1698,9 @@ class GetDrPlanExecutionsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1622,7 +1752,9 @@ class GetDrPlansFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1674,7 +1806,9 @@ class GetDrProtectionGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

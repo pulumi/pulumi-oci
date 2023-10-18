@@ -41,7 +41,15 @@ class PrivateApplicationLogoArgs:
              content_url: Optional[pulumi.Input[str]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              mime_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+
         if content_url is not None:
             _setter("content_url", content_url)
         if display_name is not None:
@@ -108,7 +116,13 @@ class PrivateApplicationPackageDetailsArgs:
              package_type: pulumi.Input[str],
              version: pulumi.Input[str],
              zip_file_base64encoded: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if 'zipFileBase64encoded' in kwargs:
+            zip_file_base64encoded = kwargs['zipFileBase64encoded']
+
         _setter("package_type", package_type)
         _setter("version", version)
         if zip_file_base64encoded is not None:
@@ -166,7 +180,9 @@ class GetPrivateApplicationPackagesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -218,7 +234,9 @@ class GetPrivateApplicationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -270,7 +288,9 @@ class GetServiceCatalogAssociationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -322,7 +342,9 @@ class GetServiceCatalogsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

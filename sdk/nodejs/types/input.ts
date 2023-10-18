@@ -10950,6 +10950,153 @@ export namespace Core {
         type: pulumi.Input<string>;
     }
 
+    export interface CaptureFilterFlowLogCaptureFilterRule {
+        /**
+         * (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         */
+        destinationCidr?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
+         */
+        flowLogType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+         * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+         * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         *
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+         */
+        icmpOptions?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptions>;
+        /**
+         * (Updatable) Indicates whether a flow log capture filter rule is enabled.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+         * * 1 = ICMP
+         * * 6 = TCP
+         * * 17 = UDP
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+         */
+        ruleAction?: pulumi.Input<string>;
+        /**
+         * (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
+         */
+        samplingRate?: pulumi.Input<number>;
+        /**
+         * (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         */
+        sourceCidr?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        tcpOptions?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleTcpOptions>;
+        /**
+         * (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        udpOptions?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleUdpOptions>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleIcmpOptions {
+        /**
+         * (Updatable) The ICMP code (optional).
+         */
+        code?: pulumi.Input<number>;
+        /**
+         * (Updatable) The ICMP type.
+         */
+        type: pulumi.Input<number>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleTcpOptions {
+        /**
+         * (Updatable)
+         */
+        destinationPortRange?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRange>;
+        /**
+         * (Updatable)
+         */
+        sourcePortRange?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRange>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        min: pulumi.Input<number>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        min: pulumi.Input<number>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleUdpOptions {
+        /**
+         * (Updatable)
+         */
+        destinationPortRange?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRange>;
+        /**
+         * (Updatable)
+         */
+        sourcePortRange?: pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRange>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        min: pulumi.Input<number>;
+    }
+
+    export interface CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: pulumi.Input<number>;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        min: pulumi.Input<number>;
+    }
+
     export interface CaptureFilterVtapCaptureFilterRule {
         /**
          * (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
@@ -16106,6 +16253,24 @@ export namespace DataIntegration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWorkspaceExportRequestsFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceExportRequestsFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspaceFoldersFilter {
         /**
          * Used to filter by the name of the object.
@@ -16116,6 +16281,24 @@ export namespace DataIntegration {
     }
 
     export interface GetWorkspaceFoldersFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetWorkspaceImportRequestsFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceImportRequestsFilterArgs {
         /**
          * Used to filter by the name of the object.
          */
@@ -16383,6 +16566,41 @@ export namespace DataIntegration {
         workspaceId?: pulumi.Input<string>;
     }
 
+    export interface WorkspaceExportRequestExportedItem {
+        /**
+         * Aggregator key
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * Object identifier
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * Export object request key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Name of the export request.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Object name path
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * Object type
+         */
+        objectType?: pulumi.Input<string>;
+        /**
+         * Object version
+         */
+        objectVersion?: pulumi.Input<string>;
+        /**
+         * time at which this object was last updated.
+         */
+        timeUpdatedInMillis?: pulumi.Input<string>;
+    }
+
     export interface WorkspaceFolderMetadata {
         /**
          * (Updatable) The owning object's key for this object.
@@ -16515,6 +16733,64 @@ export namespace DataIntegration {
          * (Updatable) The registry version.
          */
         registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceImportRequestImportConflictResolution {
+        /**
+         * In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+         */
+        duplicatePrefix?: pulumi.Input<string>;
+        /**
+         * In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+         */
+        duplicateSuffix?: pulumi.Input<string>;
+        /**
+         * Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+         */
+        importConflictResolutionType: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceImportRequestImportedObject {
+        /**
+         * Aggregator key
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * Object identifier
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * Name of the import request.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Object name path
+         */
+        namePath?: pulumi.Input<string>;
+        /**
+         * New key of the object
+         */
+        newKey?: pulumi.Input<string>;
+        /**
+         * Object type
+         */
+        objectType?: pulumi.Input<string>;
+        /**
+         * Object version
+         */
+        objectVersion?: pulumi.Input<string>;
+        /**
+         * Old key of the object
+         */
+        oldKey?: pulumi.Input<string>;
+        /**
+         * Object resolution action
+         */
+        resolutionAction?: pulumi.Input<string>;
+        /**
+         * time at which this object was last updated.
+         */
+        timeUpdatedInMillis?: pulumi.Input<string>;
     }
 
     export interface WorkspaceProjectMetadata {
@@ -19557,7 +19833,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
         /**
-         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         disasterRecoveryType?: pulumi.Input<string>;
     }
@@ -20225,6 +20501,10 @@ export namespace Database {
          */
         pdbName?: pulumi.Input<string>;
         /**
+         * The list of pluggable databases that needs to be restored into new database.
+         */
+        pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix?: pulumi.Input<string>;
@@ -20535,6 +20815,10 @@ export namespace Database {
          */
         pdbName?: pulumi.Input<string>;
         /**
+         * The list of pluggable databases that needs to be restored into new database.
+         */
+        pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix?: pulumi.Input<string>;
@@ -20763,6 +21047,10 @@ export namespace Database {
          * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
          */
         pdbName?: pulumi.Input<string>;
+        /**
+         * The list of pluggable databases that needs to be restored into new database.
+         */
+        pluggableDatabases?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * The current state of the DB system.
          */
@@ -21681,6 +21969,18 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetAutonomousVmClusterAcdResourceUsagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousVmClusterAcdResourceUsagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetAutonomousVmClustersFilter {
         /**
          * Name of the month of the year.
@@ -22446,11 +22746,63 @@ export namespace Database {
         managementStatus?: pulumi.Input<string>;
     }
 
+    export interface PluggableDatabasePdbCreationTypeDetails {
+        /**
+         * The Pluggable Database creation type.
+         */
+        creationType: pulumi.Input<string>;
+        /**
+         * The DB link user password.
+         */
+        dblinkUserPassword?: pulumi.Input<string>;
+        /**
+         * The name of the DB link user.
+         */
+        dblinkUsername?: pulumi.Input<string>;
+        /**
+         * Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+         */
+        refreshableCloneDetails?: pulumi.Input<inputs.Database.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails>;
+        /**
+         * The DB system administrator password of the source Container Database.
+         */
+        sourceContainerDatabaseAdminPassword?: pulumi.Input<string>;
+        /**
+         * The OCID of the Source Pluggable Database.
+         */
+        sourcePluggableDatabaseId: pulumi.Input<string>;
+    }
+
+    export interface PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails {
+        /**
+         * Indicates whether Pluggable Database is a refreshable clone.
+         */
+        isRefreshableClone?: pulumi.Input<boolean>;
+    }
+
+    export interface PluggableDatabasePdbNodeLevelDetail {
+        /**
+         * The Node name of the Database Instance.
+         */
+        nodeName?: pulumi.Input<string>;
+        /**
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+         */
+        openMode?: pulumi.Input<string>;
+    }
+
     export interface PluggableDatabasePluggableDatabaseManagementConfig {
         /**
          * The status of the Pluggable Database Management service.
          */
         managementStatus?: pulumi.Input<string>;
+    }
+
+    export interface PluggableDatabaseRefreshableCloneConfig {
+        /**
+         * Indicates whether Pluggable Database is a refreshable clone.
+         */
+        isRefreshableClone?: pulumi.Input<boolean>;
     }
 
     export interface PluggableDatabasesLocalCloneConnectionString {
@@ -22468,11 +22820,29 @@ export namespace Database {
         pdbIpDefault?: pulumi.Input<string>;
     }
 
+    export interface PluggableDatabasesLocalClonePdbNodeLevelDetail {
+        /**
+         * The Node name of the Database Instance.
+         */
+        nodeName?: pulumi.Input<string>;
+        /**
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+         */
+        openMode?: pulumi.Input<string>;
+    }
+
     export interface PluggableDatabasesLocalClonePluggableDatabaseManagementConfig {
         /**
          * The status of the Pluggable Database Management service.
          */
         managementStatus?: pulumi.Input<string>;
+    }
+
+    export interface PluggableDatabasesLocalCloneRefreshableCloneConfig {
+        /**
+         * Indicates whether the Pluggable Database is a refreshable clone.
+         */
+        isRefreshableClone?: pulumi.Input<boolean>;
     }
 
     export interface PluggableDatabasesRemoteCloneConnectionString {
@@ -22490,11 +22860,29 @@ export namespace Database {
         pdbIpDefault?: pulumi.Input<string>;
     }
 
+    export interface PluggableDatabasesRemoteClonePdbNodeLevelDetail {
+        /**
+         * The Node name of the Database Instance.
+         */
+        nodeName?: pulumi.Input<string>;
+        /**
+         * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+         */
+        openMode?: pulumi.Input<string>;
+    }
+
     export interface PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig {
         /**
          * The status of the Pluggable Database Management service.
          */
         managementStatus?: pulumi.Input<string>;
+    }
+
+    export interface PluggableDatabasesRemoteCloneRefreshableCloneConfig {
+        /**
+         * Indicates whether the Pluggable Database is a refreshable clone.
+         */
+        isRefreshableClone?: pulumi.Input<boolean>;
     }
 
     export interface VmClusterAddVirtualNetworkDataCollectionOption {

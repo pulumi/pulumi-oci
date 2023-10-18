@@ -75,7 +75,27 @@ class IpsecArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpeId' in kwargs:
+            cpe_id = kwargs['cpeId']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'staticRoutes' in kwargs:
+            static_routes = kwargs['staticRoutes']
+        if 'cpeLocalIdentifier' in kwargs:
+            cpe_local_identifier = kwargs['cpeLocalIdentifier']
+        if 'cpeLocalIdentifierType' in kwargs:
+            cpe_local_identifier_type = kwargs['cpeLocalIdentifierType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("cpe_id", cpe_id)
         _setter("drg_id", drg_id)
@@ -292,7 +312,31 @@ class _IpsecState:
              static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              transport_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'cpeId' in kwargs:
+            cpe_id = kwargs['cpeId']
+        if 'cpeLocalIdentifier' in kwargs:
+            cpe_local_identifier = kwargs['cpeLocalIdentifier']
+        if 'cpeLocalIdentifierType' in kwargs:
+            cpe_local_identifier_type = kwargs['cpeLocalIdentifierType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'staticRoutes' in kwargs:
+            static_routes = kwargs['staticRoutes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'transportType' in kwargs:
+            transport_type = kwargs['transportType']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if cpe_id is not None:

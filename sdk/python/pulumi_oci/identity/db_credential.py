@@ -39,7 +39,11 @@ class DbCredentialArgs:
              description: pulumi.Input[str],
              password: pulumi.Input[str],
              user_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("description", description)
         _setter("password", password)
         _setter("user_id", user_id)
@@ -129,7 +133,17 @@ class _DbCredentialState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_expires: Optional[pulumi.Input[str]] = None,
              user_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpires' in kwargs:
+            time_expires = kwargs['timeExpires']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if description is not None:
             _setter("description", description)
         if lifecycle_details is not None:

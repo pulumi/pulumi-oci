@@ -111,28 +111,36 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Ocvp/sddc:Sddc")
 public class Sddc extends com.pulumi.resources.CustomResource {
     /**
-     * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * 
+     * @deprecated
+     * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="actualEsxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> actualEsxiHostsCount;
 
     /**
-     * @return The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
      * 
      */
     public Output<Integer> actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     * @deprecated
+     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
     private Output<String> capacityReservationId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
     public Output<String> capacityReservationId() {
@@ -153,28 +161,36 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * 
+     * @deprecated
+     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="computeAvailabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> computeAvailabilityDomain;
 
     /**
-     * @return The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
+     * @return (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
      * 
      */
     public Output<String> computeAvailabilityDomain() {
         return this.computeAvailabilityDomain;
     }
     /**
-     * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * 
+     * @deprecated
+     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="datastores", refs={List.class,SddcDatastore.class}, tree="[0,1]")
     private Output<List<SddcDatastore>> datastores;
 
     /**
-     * @return A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
+     * @return (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
     public Output<List<SddcDatastore>> datastores() {
@@ -209,16 +225,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
+     * @deprecated
+     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="esxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> esxiHostsCount;
 
     /**
-     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * @return (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
@@ -269,28 +289,36 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.hcxFqdn;
     }
     /**
-     * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Export(name="hcxInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> hcxInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
      * 
      */
     public Output<String> hcxInitialPassword() {
         return this.hcxInitialPassword;
     }
     /**
-     * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * 
+     * @deprecated
+     * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="hcxOnPremKey", refs={String.class}, tree="[0]")
     private Output<String> hcxOnPremKey;
 
     /**
-     * @return The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
+     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
      * 
      */
     public Output<String> hcxOnPremKey() {
@@ -325,56 +353,72 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.hcxPrivateIpId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * 
+     * @deprecated
+     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="hcxVlanId", refs={String.class}, tree="[0]")
     private Output<String> hcxVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      * 
      */
     public Output<String> hcxVlanId() {
         return this.hcxVlanId;
     }
     /**
-     * The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     * @deprecated
+     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="initialHostOcpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> initialHostOcpuCount;
 
     /**
-     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts.
      * 
      */
     public Output<Double> initialHostOcpuCount() {
         return this.initialHostOcpuCount;
     }
     /**
-     * The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     * @deprecated
+     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="initialHostShapeName", refs={String.class}, tree="[0]")
     private Output<String> initialHostShapeName;
 
     /**
-     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     public Output<String> initialHostShapeName() {
         return this.initialHostShapeName;
     }
     /**
-     * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * 
+     * @deprecated
+     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="initialSku", refs={String.class}, tree="[0]")
     private Output<String> initialSku;
 
     /**
-     * @return The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
     public Output<String> initialSku() {
@@ -385,7 +429,11 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
      * 
+     * @deprecated
+     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="instanceDisplayNamePrefix", refs={String.class}, tree="[0]")
     private Output<String> instanceDisplayNamePrefix;
 
@@ -399,28 +447,36 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.instanceDisplayNamePrefix;
     }
     /**
-     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
     @Export(name="isHcxEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxEnabled;
 
     /**
-     * @return For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
+     * @return (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
     public Output<Boolean> isHcxEnabled() {
         return this.isHcxEnabled;
     }
     /**
-     * Indicates whether HCX Enterprise is enabled for this SDDC.
+     * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_hcx_enabled&#39; field has been deprecated. Please use &#39;actual_hcx_mode&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
     @Export(name="isHcxEnterpriseEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
-     * @return Indicates whether HCX Enterprise is enabled for this SDDC.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
     public Output<Boolean> isHcxEnterpriseEnabled() {
@@ -441,14 +497,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.isHcxPendingDowngrade;
     }
     /**
-     * Indicates whether shielded instance is enabled for this SDDC.
+     * (Optional) Indicates whether shielded instance is enabled for this SDDC.
+     * 
+     * @deprecated
+     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="isShieldedInstanceEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isShieldedInstanceEnabled;
 
     /**
-     * @return Indicates whether shielded instance is enabled for this SDDC.
+     * @return (Optional) Indicates whether shielded instance is enabled for this SDDC.
      * 
      */
     public Output<Boolean> isShieldedInstanceEnabled() {
@@ -469,30 +529,38 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.isSingleHostSddc;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="nsxEdgeUplink1vlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplink1vlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      * 
      */
     public Output<String> nsxEdgeUplink1vlanId() {
         return this.nsxEdgeUplink1vlanId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
+     * @deprecated
+     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="nsxEdgeUplink2vlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplink2vlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
@@ -501,28 +569,32 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.nsxEdgeUplink2vlanId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
     @Export(name="nsxEdgeUplinkIpId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplinkIpId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
     public Output<String> nsxEdgeUplinkIpId() {
         return this.nsxEdgeUplinkIpId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="nsxEdgeVtepVlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeVtepVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
      * 
      */
     public Output<String> nsxEdgeVtepVlanId() {
@@ -543,14 +615,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.nsxManagerFqdn;
     }
     /**
-     * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * 
+     * @deprecated
+     * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Export(name="nsxManagerInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
      * 
      */
     public Output<String> nsxManagerInitialPassword() {
@@ -585,56 +661,72 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.nsxManagerUsername;
     }
     /**
-     * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * 
+     * @deprecated
+     * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="nsxOverlaySegmentName", refs={String.class}, tree="[0]")
     private Output<String> nsxOverlaySegmentName;
 
     /**
-     * @return The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
+     * @return (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      * 
      */
     public Output<String> nsxOverlaySegmentName() {
         return this.nsxOverlaySegmentName;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="nsxVtepVlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxVtepVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
      * 
      */
     public Output<String> nsxVtepVlanId() {
         return this.nsxVtepVlanId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * 
+     * @deprecated
+     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="provisioningSubnetId", refs={String.class}, tree="[0]")
     private Output<String> provisioningSubnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
+     * @return (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
      * 
      */
     public Output<String> provisioningSubnetId() {
         return this.provisioningSubnetId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="provisioningVlanId", refs={String.class}, tree="[0]")
     private Output<String> provisioningVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
      * 
      */
     public Output<String> provisioningVlanId() {
@@ -655,14 +747,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.refreshHcxLicenseStatus);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="replicationVlanId", refs={String.class}, tree="[0]")
     private Output<String> replicationVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
+     * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
      * 
      */
     public Output<String> replicationVlanId() {
@@ -767,14 +863,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * The vSphere licenses to use when upgrading the SDDC.
+     * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     @Export(name="upgradeLicenses", refs={List.class,SddcUpgradeLicense.class}, tree="[0,1]")
     private Output<List<SddcUpgradeLicense>> upgradeLicenses;
 
     /**
-     * @return The vSphere licenses to use when upgrading the SDDC.
+     * @return (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
      * 
      */
     public Output<List<SddcUpgradeLicense>> upgradeLicenses() {
@@ -795,14 +895,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.vcenterFqdn;
     }
     /**
-     * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * 
+     * @deprecated
+     * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;ocvp_sddc_password&#39; data source instead.
      * 
      */
+    @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
     @Export(name="vcenterInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> vcenterInitialPassword;
 
     /**
-     * @return The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
+     * @return (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
      * 
      */
     public Output<String> vcenterInitialPassword() {
@@ -837,14 +941,18 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.vcenterUsername;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="vmotionVlanId", refs={String.class}, tree="[0]")
     private Output<String> vmotionVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
      * 
      */
     public Output<String> vmotionVlanId() {
@@ -865,73 +973,93 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.vmwareSoftwareVersion;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="vsanVlanId", refs={String.class}, tree="[0]")
     private Output<String> vsanVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
      * 
      */
     public Output<String> vsanVlanId() {
         return this.vsanVlanId;
     }
     /**
-     * The link to guidance for upgrading vSphere.
+     * (**Deprecated**) The link to guidance for upgrading vSphere.
+     * 
+     * @deprecated
+     * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
+    @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="vsphereUpgradeGuide", refs={String.class}, tree="[0]")
     private Output<String> vsphereUpgradeGuide;
 
     /**
-     * @return The link to guidance for upgrading vSphere.
+     * @return (**Deprecated**) The link to guidance for upgrading vSphere.
      * 
      */
     public Output<String> vsphereUpgradeGuide() {
         return this.vsphereUpgradeGuide;
     }
     /**
-     * The links to binary objects needed to upgrade vSphere.
+     * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
+     * 
+     * @deprecated
+     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
+    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     @Export(name="vsphereUpgradeObjects", refs={List.class,SddcVsphereUpgradeObject.class}, tree="[0,1]")
     private Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects;
 
     /**
-     * @return The links to binary objects needed to upgrade vSphere.
+     * @return (**Deprecated**) The links to binary objects needed to upgrade vSphere.
      * 
      */
     public Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects() {
         return this.vsphereUpgradeObjects;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * 
+     * @deprecated
+     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
+    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="vsphereVlanId", refs={String.class}, tree="[0]")
     private Output<String> vsphereVlanId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
+     * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      * 
      */
     public Output<String> vsphereVlanId() {
         return this.vsphereVlanId;
     }
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
+     * @deprecated
+     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * 
      */
+    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
     @Export(name="workloadNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> workloadNetworkCidr;
 
     /**
-     * @return The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * @return (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

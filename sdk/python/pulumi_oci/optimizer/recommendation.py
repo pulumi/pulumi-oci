@@ -43,7 +43,13 @@ class RecommendationArgs:
              recommendation_id: pulumi.Input[str],
              status: pulumi.Input[str],
              time_status_end: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+
         _setter("recommendation_id", recommendation_id)
         _setter("status", status)
         if time_status_end is not None:
@@ -174,7 +180,31 @@ class _RecommendationState:
              time_status_begin: Optional[pulumi.Input[str]] = None,
              time_status_end: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if 'resourceCounts' in kwargs:
+            resource_counts = kwargs['resourceCounts']
+        if 'supportedLevels' in kwargs:
+            supported_levels = kwargs['supportedLevels']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeStatusBegin' in kwargs:
+            time_status_begin = kwargs['timeStatusBegin']
+        if 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if category_id is not None:
             _setter("category_id", category_id)
         if compartment_id is not None:

@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         AuthTokenId = oci_identity_auth_token.Test_auth_token.Id,
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Auth_token_authorization,
         ///         ResourceTypeSchemaVersion = @var.Auth_token_resource_type_schema_version,
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         ///     {
         ///         AuthTokenId = oci_identity_auth_token.Test_auth_token.Id,
         ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AttributeSets = new[] {},
+        ///         AttributeSets = new() { },
         ///         Attributes = "",
         ///         Authorization = @var.Auth_token_authorization,
         ///         ResourceTypeSchemaVersion = @var.Auth_token_resource_type_schema_version,

@@ -42,7 +42,13 @@ class VulnerabilityAuditApplicationDependencyArgs:
              gav: pulumi.Input[str],
              node_id: pulumi.Input[str],
              application_dependency_node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+
         _setter("gav", gav)
         _setter("node_id", node_id)
         if application_dependency_node_ids is not None:
@@ -108,7 +114,13 @@ class VulnerabilityAuditConfigurationArgs:
              exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              max_permissible_cvss_v2score: Optional[pulumi.Input[float]] = None,
              max_permissible_cvss_v3score: Optional[pulumi.Input[float]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+
         if exclusions is not None:
             _setter("exclusions", exclusions)
         if max_permissible_cvss_v2score is not None:
@@ -180,7 +192,11 @@ class VulnerabilityAuditSourceArgs:
              type: pulumi.Input[str],
              description: Optional[pulumi.Input[str]] = None,
              oci_resource_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ociResourceId' in kwargs:
+            oci_resource_id = kwargs['ociResourceId']
+
         _setter("type", type)
         if description is not None:
             _setter("description", description)
@@ -255,7 +271,15 @@ class VulnerabilityAuditVulnerabilityArgs:
              cvss_v3score: Optional[pulumi.Input[float]] = None,
              id: Optional[pulumi.Input[str]] = None,
              is_ignored: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         if cvss_v2score is not None:
             _setter("cvss_v2score", cvss_v2score)
         if cvss_v3score is not None:
@@ -332,7 +356,9 @@ class GetKnowledgebasesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -384,7 +410,9 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -436,7 +464,9 @@ class GetVulnerabilityAuditsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

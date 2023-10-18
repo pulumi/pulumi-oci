@@ -210,7 +210,63 @@ class InstanceArgs:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'agentConfig' in kwargs:
+            agent_config = kwargs['agentConfig']
+        if 'async' in kwargs:
+            async_ = kwargs['async']
+        if 'availabilityConfig' in kwargs:
+            availability_config = kwargs['availabilityConfig']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'computeClusterId' in kwargs:
+            compute_cluster_id = kwargs['computeClusterId']
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'dedicatedVmHostId' in kwargs:
+            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'instanceOptions' in kwargs:
+            instance_options = kwargs['instanceOptions']
+        if 'ipxeScript' in kwargs:
+            ipxe_script = kwargs['ipxeScript']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'launchOptions' in kwargs:
+            launch_options = kwargs['launchOptions']
+        if 'platformConfig' in kwargs:
+            platform_config = kwargs['platformConfig']
+        if 'preemptibleInstanceConfig' in kwargs:
+            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
+        if 'preserveBootVolume' in kwargs:
+            preserve_boot_volume = kwargs['preserveBootVolume']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'updateOperationConstraint' in kwargs:
+            update_operation_constraint = kwargs['updateOperationConstraint']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         if agent_config is not None:
@@ -955,7 +1011,79 @@ class _InstanceState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
              update_operation_constraint: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentConfig' in kwargs:
+            agent_config = kwargs['agentConfig']
+        if 'async' in kwargs:
+            async_ = kwargs['async']
+        if 'availabilityConfig' in kwargs:
+            availability_config = kwargs['availabilityConfig']
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'bootVolumeId' in kwargs:
+            boot_volume_id = kwargs['bootVolumeId']
+        if 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'computeClusterId' in kwargs:
+            compute_cluster_id = kwargs['computeClusterId']
+        if 'createVnicDetails' in kwargs:
+            create_vnic_details = kwargs['createVnicDetails']
+        if 'dedicatedVmHostId' in kwargs:
+            dedicated_vm_host_id = kwargs['dedicatedVmHostId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'instanceConfigurationId' in kwargs:
+            instance_configuration_id = kwargs['instanceConfigurationId']
+        if 'instanceOptions' in kwargs:
+            instance_options = kwargs['instanceOptions']
+        if 'ipxeScript' in kwargs:
+            ipxe_script = kwargs['ipxeScript']
+        if 'isCrossNumaNode' in kwargs:
+            is_cross_numa_node = kwargs['isCrossNumaNode']
+        if 'isPvEncryptionInTransitEnabled' in kwargs:
+            is_pv_encryption_in_transit_enabled = kwargs['isPvEncryptionInTransitEnabled']
+        if 'launchMode' in kwargs:
+            launch_mode = kwargs['launchMode']
+        if 'launchOptions' in kwargs:
+            launch_options = kwargs['launchOptions']
+        if 'platformConfig' in kwargs:
+            platform_config = kwargs['platformConfig']
+        if 'preemptibleInstanceConfig' in kwargs:
+            preemptible_instance_config = kwargs['preemptibleInstanceConfig']
+        if 'preserveBootVolume' in kwargs:
+            preserve_boot_volume = kwargs['preserveBootVolume']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'publicIp' in kwargs:
+            public_ip = kwargs['publicIp']
+        if 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+        if 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeMaintenanceRebootDue' in kwargs:
+            time_maintenance_reboot_due = kwargs['timeMaintenanceRebootDue']
+        if 'updateOperationConstraint' in kwargs:
+            update_operation_constraint = kwargs['updateOperationConstraint']
+
         if agent_config is not None:
             _setter("agent_config", agent_config)
         if async_ is not None:

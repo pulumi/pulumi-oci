@@ -166,7 +166,17 @@ class CertificateAuthorityCertificateAuthorityConfig(dict):
              signing_algorithm: Optional[str] = None,
              validity: Optional['outputs.CertificateAuthorityCertificateAuthorityConfigValidity'] = None,
              version_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("config_type", config_type)
         _setter("subject", subject)
         if issuer_certificate_authority_id is not None:
@@ -341,7 +351,29 @@ class CertificateAuthorityCertificateAuthorityConfigSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         if country is not None:
             _setter("country", country)
@@ -551,7 +583,13 @@ class CertificateAuthorityCertificateAuthorityConfigValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
             _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -617,7 +655,15 @@ class CertificateAuthorityCertificateAuthorityRule(dict):
              rule_type: str,
              certificate_authority_max_validity_duration: Optional[str] = None,
              leaf_certificate_max_validity_duration: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+            certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
+        if 'leafCertificateMaxValidityDuration' in kwargs:
+            leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
+
         _setter("rule_type", rule_type)
         if certificate_authority_max_validity_duration is not None:
             _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
@@ -687,7 +733,13 @@ class CertificateAuthorityCertificateRevocationListDetails(dict):
              _setter: Callable[[Any, Any], None],
              object_storage_config: 'outputs.CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig',
              custom_formatted_urls: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageConfig' in kwargs:
+            object_storage_config = kwargs['objectStorageConfig']
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+
         _setter("object_storage_config", object_storage_config)
         if custom_formatted_urls is not None:
             _setter("custom_formatted_urls", custom_formatted_urls)
@@ -753,7 +805,15 @@ class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig(di
              object_storage_bucket_name: str,
              object_storage_object_name_format: str,
              object_storage_namespace: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_object_name_format", object_storage_object_name_format)
         if object_storage_namespace is not None:
@@ -866,7 +926,25 @@ class CertificateAuthorityCurrentVersion(dict):
              validities: Optional[Sequence['outputs.CertificateAuthorityCurrentVersionValidity']] = None,
              version_name: Optional[str] = None,
              version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         if certificate_authority_id is not None:
             _setter("certificate_authority_id", certificate_authority_id)
         if issuer_ca_version_number is not None:
@@ -1007,7 +1085,13 @@ class CertificateAuthorityCurrentVersionRevocationStatus(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: Optional[str] = None,
              time_of_revocation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         if revocation_reason is not None:
             _setter("revocation_reason", revocation_reason)
         if time_of_revocation is not None:
@@ -1068,7 +1152,13 @@ class CertificateAuthorityCurrentVersionValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         if time_of_validity_not_after is not None:
             _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
@@ -1205,7 +1295,29 @@ class CertificateAuthoritySubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -1460,7 +1572,25 @@ class CertificateCertificateConfig(dict):
              subject_alternative_names: Optional[Sequence['outputs.CertificateCertificateConfigSubjectAlternativeName']] = None,
              validity: Optional['outputs.CertificateCertificateConfigValidity'] = None,
              version_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'certificateProfileType' in kwargs:
+            certificate_profile_type = kwargs['certificateProfileType']
+        if 'csrPem' in kwargs:
+            csr_pem = kwargs['csrPem']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'keyAlgorithm' in kwargs:
+            key_algorithm = kwargs['keyAlgorithm']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("config_type", config_type)
         if certificate_profile_type is not None:
             _setter("certificate_profile_type", certificate_profile_type)
@@ -1676,7 +1806,29 @@ class CertificateCertificateConfigSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         if country is not None:
             _setter("country", country)
@@ -1867,7 +2019,9 @@ class CertificateCertificateConfigSubjectAlternativeName(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -1926,7 +2080,13 @@ class CertificateCertificateConfigValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
             _setter("time_of_validity_not_before", time_of_validity_not_before)
@@ -1986,7 +2146,13 @@ class CertificateCertificateRevocationListDetail(dict):
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Optional[Sequence[str]] = None,
              object_storage_configs: Optional[Sequence['outputs.CertificateCertificateRevocationListDetailObjectStorageConfig']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+        if 'objectStorageConfigs' in kwargs:
+            object_storage_configs = kwargs['objectStorageConfigs']
+
         if custom_formatted_urls is not None:
             _setter("custom_formatted_urls", custom_formatted_urls)
         if object_storage_configs is not None:
@@ -2053,7 +2219,15 @@ class CertificateCertificateRevocationListDetailObjectStorageConfig(dict):
              object_storage_bucket_name: Optional[str] = None,
              object_storage_namespace: Optional[str] = None,
              object_storage_object_name_format: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+
         if object_storage_bucket_name is not None:
             _setter("object_storage_bucket_name", object_storage_bucket_name)
         if object_storage_namespace is not None:
@@ -2130,7 +2304,15 @@ class CertificateCertificateRule(dict):
              advance_renewal_period: str,
              renewal_interval: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advanceRenewalPeriod' in kwargs:
+            advance_renewal_period = kwargs['advanceRenewalPeriod']
+        if 'renewalInterval' in kwargs:
+            renewal_interval = kwargs['renewalInterval']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
         _setter("rule_type", rule_type)
@@ -2248,7 +2430,27 @@ class CertificateCurrentVersion(dict):
              validities: Optional[Sequence['outputs.CertificateCurrentVersionValidity']] = None,
              version_name: Optional[str] = None,
              version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         if certificate_id is not None:
             _setter("certificate_id", certificate_id)
         if issuer_ca_version_number is not None:
@@ -2399,7 +2601,13 @@ class CertificateCurrentVersionRevocationStatus(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: Optional[str] = None,
              time_of_revocation: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         if revocation_reason is not None:
             _setter("revocation_reason", revocation_reason)
         if time_of_revocation is not None:
@@ -2441,7 +2649,9 @@ class CertificateCurrentVersionSubjectAlternativeName(dict):
              _setter: Callable[[Any, Any], None],
              type: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
             _setter("type", type)
         if value is not None:
@@ -2502,7 +2712,13 @@ class CertificateCurrentVersionValidity(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: Optional[str] = None,
              time_of_validity_not_before: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         if time_of_validity_not_after is not None:
             _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
@@ -2639,7 +2855,29 @@ class CertificateSubject(dict):
              surname: Optional[str] = None,
              title: Optional[str] = None,
              user_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         if common_name is not None:
             _setter("common_name", common_name)
         if country is not None:
@@ -2824,7 +3062,9 @@ class GetAssociationsAssociationCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAssociationsAssociationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2876,7 +3116,19 @@ class GetAssociationsAssociationCollectionItemResult(dict):
              name: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedResourceId' in kwargs:
+            associated_resource_id = kwargs['associatedResourceId']
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'certificatesResourceId' in kwargs:
+            certificates_resource_id = kwargs['certificatesResourceId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("associated_resource_id", associated_resource_id)
         _setter("association_type", association_type)
         _setter("certificates_resource_id", certificates_resource_id)
@@ -2972,7 +3224,9 @@ class GetAssociationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3009,7 +3263,9 @@ class GetCaBundlesCaBundleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCaBundlesCaBundleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3068,7 +3324,21 @@ class GetCaBundlesCaBundleCollectionItemResult(dict):
              name: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundlePem' in kwargs:
+            ca_bundle_pem = kwargs['caBundlePem']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("ca_bundle_pem", ca_bundle_pem)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -3179,7 +3449,9 @@ class GetCaBundlesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3216,7 +3488,9 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -3311,7 +3585,37 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult(dict):
              subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult'],
              time_created: str,
              time_of_deletion: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityConfigs' in kwargs:
+            certificate_authority_configs = kwargs['certificateAuthorityConfigs']
+        if 'certificateAuthorityRules' in kwargs:
+            certificate_authority_rules = kwargs['certificateAuthorityRules']
+        if 'certificateRevocationListDetails' in kwargs:
+            certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'currentVersions' in kwargs:
+            current_versions = kwargs['currentVersions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         _setter("certificate_authority_configs", certificate_authority_configs)
         _setter("certificate_authority_rules", certificate_authority_rules)
         _setter("certificate_revocation_list_details", certificate_revocation_list_details)
@@ -3517,7 +3821,17 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
              subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult'],
              validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult'],
              version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("config_type", config_type)
         _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
         _setter("signing_algorithm", signing_algorithm)
@@ -3653,7 +3967,29 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -3828,7 +4164,13 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -3872,7 +4214,15 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
              certificate_authority_max_validity_duration: str,
              leaf_certificate_max_validity_duration: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+            certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
+        if 'leafCertificateMaxValidityDuration' in kwargs:
+            leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
         _setter("rule_type", rule_type)
@@ -3921,7 +4271,13 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Sequence[str],
              object_storage_configs: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+        if 'objectStorageConfigs' in kwargs:
+            object_storage_configs = kwargs['objectStorageConfigs']
+
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
 
@@ -3965,7 +4321,15 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
              object_storage_bucket_name: str,
              object_storage_namespace: str,
              object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
         _setter("object_storage_object_name_format", object_storage_object_name_format)
@@ -4046,7 +4410,25 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
              validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -4158,7 +4540,13 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -4198,7 +4586,13 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionV
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -4298,7 +4692,29 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult(d
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -4475,7 +4891,9 @@ class GetCertificateAuthoritiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4535,7 +4953,17 @@ class GetCertificateAuthorityCertificateAuthorityConfigResult(dict):
              subjects: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigSubjectResult'],
              validities: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigValidityResult'],
              version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("config_type", config_type)
         _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
         _setter("signing_algorithm", signing_algorithm)
@@ -4671,7 +5099,29 @@ class GetCertificateAuthorityCertificateAuthorityConfigSubjectResult(dict):
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -4846,7 +5296,13 @@ class GetCertificateAuthorityCertificateAuthorityConfigValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -4890,7 +5346,15 @@ class GetCertificateAuthorityCertificateAuthorityRuleResult(dict):
              certificate_authority_max_validity_duration: str,
              leaf_certificate_max_validity_duration: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityMaxValidityDuration' in kwargs:
+            certificate_authority_max_validity_duration = kwargs['certificateAuthorityMaxValidityDuration']
+        if 'leafCertificateMaxValidityDuration' in kwargs:
+            leaf_certificate_max_validity_duration = kwargs['leafCertificateMaxValidityDuration']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
         _setter("rule_type", rule_type)
@@ -4939,7 +5403,13 @@ class GetCertificateAuthorityCertificateRevocationListDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Sequence[str],
              object_storage_configs: Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+        if 'objectStorageConfigs' in kwargs:
+            object_storage_configs = kwargs['objectStorageConfigs']
+
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
 
@@ -4983,7 +5453,15 @@ class GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigR
              object_storage_bucket_name: str,
              object_storage_namespace: str,
              object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
         _setter("object_storage_object_name_format", object_storage_object_name_format)
@@ -5064,7 +5542,25 @@ class GetCertificateAuthorityCurrentVersionResult(dict):
              validities: Sequence['outputs.GetCertificateAuthorityCurrentVersionValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -5176,7 +5672,13 @@ class GetCertificateAuthorityCurrentVersionRevocationStatusResult(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -5216,7 +5718,13 @@ class GetCertificateAuthorityCurrentVersionValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -5316,7 +5824,29 @@ class GetCertificateAuthoritySubjectResult(dict):
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -5491,7 +6021,13 @@ class GetCertificateAuthorityVersionRevocationStatusResult(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -5527,7 +6063,9 @@ class GetCertificateAuthorityVersionSubjectAlternativeNameResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -5561,7 +6099,13 @@ class GetCertificateAuthorityVersionValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -5597,7 +6141,9 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5660,7 +6206,25 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
              validities: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -5772,7 +6336,13 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -5812,7 +6382,13 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemVa
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -5851,7 +6427,9 @@ class GetCertificateAuthorityVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5923,7 +6501,25 @@ class GetCertificateCertificateConfigResult(dict):
              subjects: Sequence['outputs.GetCertificateCertificateConfigSubjectResult'],
              validities: Sequence['outputs.GetCertificateCertificateConfigValidityResult'],
              version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateProfileType' in kwargs:
+            certificate_profile_type = kwargs['certificateProfileType']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'csrPem' in kwargs:
+            csr_pem = kwargs['csrPem']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'keyAlgorithm' in kwargs:
+            key_algorithm = kwargs['keyAlgorithm']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("certificate_profile_type", certificate_profile_type)
         _setter("config_type", config_type)
         _setter("csr_pem", csr_pem)
@@ -6092,7 +6688,29 @@ class GetCertificateCertificateConfigSubjectResult(dict):
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -6267,7 +6885,9 @@ class GetCertificateCertificateConfigSubjectAlternativeNameResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -6307,7 +6927,13 @@ class GetCertificateCertificateConfigValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -6347,7 +6973,13 @@ class GetCertificateCertificateRevocationListDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Sequence[str],
              object_storage_configs: Sequence['outputs.GetCertificateCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+        if 'objectStorageConfigs' in kwargs:
+            object_storage_configs = kwargs['objectStorageConfigs']
+
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
 
@@ -6391,7 +7023,15 @@ class GetCertificateCertificateRevocationListDetailObjectStorageConfigResult(dic
              object_storage_bucket_name: str,
              object_storage_namespace: str,
              object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
         _setter("object_storage_object_name_format", object_storage_object_name_format)
@@ -6444,7 +7084,15 @@ class GetCertificateCertificateRuleResult(dict):
              advance_renewal_period: str,
              renewal_interval: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advanceRenewalPeriod' in kwargs:
+            advance_renewal_period = kwargs['advanceRenewalPeriod']
+        if 'renewalInterval' in kwargs:
+            renewal_interval = kwargs['renewalInterval']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
         _setter("rule_type", rule_type)
@@ -6529,7 +7177,27 @@ class GetCertificateCurrentVersionResult(dict):
              validities: Sequence['outputs.GetCertificateCurrentVersionValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -6650,7 +7318,13 @@ class GetCertificateCurrentVersionRevocationStatusResult(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -6690,7 +7364,9 @@ class GetCertificateCurrentVersionSubjectAlternativeNameResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -6730,7 +7406,13 @@ class GetCertificateCurrentVersionValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -6830,7 +7512,29 @@ class GetCertificateSubjectResult(dict):
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -7005,7 +7709,13 @@ class GetCertificateVersionRevocationStatusResult(dict):
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -7045,7 +7755,9 @@ class GetCertificateVersionSubjectAlternativeNameResult(dict):
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -7085,7 +7797,13 @@ class GetCertificateVersionValidityResult(dict):
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -7121,7 +7839,9 @@ class GetCertificateVersionsCertificateVersionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7188,7 +7908,27 @@ class GetCertificateVersionsCertificateVersionCollectionItemResult(dict):
              validities: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -7309,7 +8049,13 @@ class GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResu
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -7349,7 +8095,9 @@ class GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNa
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -7389,7 +8137,13 @@ class GetCertificateVersionsCertificateVersionCollectionItemValidityResult(dict)
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -7428,7 +8182,9 @@ class GetCertificateVersionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7462,7 +8218,9 @@ class GetCertificatesCertificateCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7561,7 +8319,39 @@ class GetCertificatesCertificateCollectionItemResult(dict):
              subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemSubjectResult'],
              time_created: str,
              time_of_deletion: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateConfigs' in kwargs:
+            certificate_configs = kwargs['certificateConfigs']
+        if 'certificateProfileType' in kwargs:
+            certificate_profile_type = kwargs['certificateProfileType']
+        if 'certificateRevocationListDetails' in kwargs:
+            certificate_revocation_list_details = kwargs['certificateRevocationListDetails']
+        if 'certificateRules' in kwargs:
+            certificate_rules = kwargs['certificateRules']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'currentVersions' in kwargs:
+            current_versions = kwargs['currentVersions']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'keyAlgorithm' in kwargs:
+            key_algorithm = kwargs['keyAlgorithm']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
         _setter("certificate_configs", certificate_configs)
         _setter("certificate_profile_type", certificate_profile_type)
         _setter("certificate_revocation_list_details", certificate_revocation_list_details)
@@ -7791,7 +8581,25 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
              subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult'],
              validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidityResult'],
              version_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateProfileType' in kwargs:
+            certificate_profile_type = kwargs['certificateProfileType']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'csrPem' in kwargs:
+            csr_pem = kwargs['csrPem']
+        if 'issuerCertificateAuthorityId' in kwargs:
+            issuer_certificate_authority_id = kwargs['issuerCertificateAuthorityId']
+        if 'keyAlgorithm' in kwargs:
+            key_algorithm = kwargs['keyAlgorithm']
+        if 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+
         _setter("certificate_profile_type", certificate_profile_type)
         _setter("config_type", config_type)
         _setter("csr_pem", csr_pem)
@@ -7960,7 +8768,29 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult(dic
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -8135,7 +8965,9 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativ
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -8175,7 +9007,13 @@ class GetCertificatesCertificateCollectionItemCertificateConfigValidityResult(di
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -8215,7 +9053,13 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailRes
              _setter: Callable[[Any, Any], None],
              custom_formatted_urls: Sequence[str],
              object_storage_configs: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customFormattedUrls' in kwargs:
+            custom_formatted_urls = kwargs['customFormattedUrls']
+        if 'objectStorageConfigs' in kwargs:
+            object_storage_configs = kwargs['objectStorageConfigs']
+
         _setter("custom_formatted_urls", custom_formatted_urls)
         _setter("object_storage_configs", object_storage_configs)
 
@@ -8259,7 +9103,15 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObj
              object_storage_bucket_name: str,
              object_storage_namespace: str,
              object_storage_object_name_format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectStorageBucketName' in kwargs:
+            object_storage_bucket_name = kwargs['objectStorageBucketName']
+        if 'objectStorageNamespace' in kwargs:
+            object_storage_namespace = kwargs['objectStorageNamespace']
+        if 'objectStorageObjectNameFormat' in kwargs:
+            object_storage_object_name_format = kwargs['objectStorageObjectNameFormat']
+
         _setter("object_storage_bucket_name", object_storage_bucket_name)
         _setter("object_storage_namespace", object_storage_namespace)
         _setter("object_storage_object_name_format", object_storage_object_name_format)
@@ -8312,7 +9164,15 @@ class GetCertificatesCertificateCollectionItemCertificateRuleResult(dict):
              advance_renewal_period: str,
              renewal_interval: str,
              rule_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'advanceRenewalPeriod' in kwargs:
+            advance_renewal_period = kwargs['advanceRenewalPeriod']
+        if 'renewalInterval' in kwargs:
+            renewal_interval = kwargs['renewalInterval']
+        if 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+
         _setter("advance_renewal_period", advance_renewal_period)
         _setter("renewal_interval", renewal_interval)
         _setter("rule_type", rule_type)
@@ -8397,7 +9257,27 @@ class GetCertificatesCertificateCollectionItemCurrentVersionResult(dict):
              validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionValidityResult'],
              version_name: str,
              version_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'issuerCaVersionNumber' in kwargs:
+            issuer_ca_version_number = kwargs['issuerCaVersionNumber']
+        if 'revocationStatuses' in kwargs:
+            revocation_statuses = kwargs['revocationStatuses']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'subjectAlternativeNames' in kwargs:
+            subject_alternative_names = kwargs['subjectAlternativeNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'versionName' in kwargs:
+            version_name = kwargs['versionName']
+        if 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         _setter("certificate_id", certificate_id)
         _setter("issuer_ca_version_number", issuer_ca_version_number)
         _setter("revocation_statuses", revocation_statuses)
@@ -8518,7 +9398,13 @@ class GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResu
              _setter: Callable[[Any, Any], None],
              revocation_reason: str,
              time_of_revocation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'revocationReason' in kwargs:
+            revocation_reason = kwargs['revocationReason']
+        if 'timeOfRevocation' in kwargs:
+            time_of_revocation = kwargs['timeOfRevocation']
+
         _setter("revocation_reason", revocation_reason)
         _setter("time_of_revocation", time_of_revocation)
 
@@ -8558,7 +9444,9 @@ class GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNa
              _setter: Callable[[Any, Any], None],
              type: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("value", value)
 
@@ -8598,7 +9486,13 @@ class GetCertificatesCertificateCollectionItemCurrentVersionValidityResult(dict)
              _setter: Callable[[Any, Any], None],
              time_of_validity_not_after: str,
              time_of_validity_not_before: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeOfValidityNotAfter' in kwargs:
+            time_of_validity_not_after = kwargs['timeOfValidityNotAfter']
+        if 'timeOfValidityNotBefore' in kwargs:
+            time_of_validity_not_before = kwargs['timeOfValidityNotBefore']
+
         _setter("time_of_validity_not_after", time_of_validity_not_after)
         _setter("time_of_validity_not_before", time_of_validity_not_before)
 
@@ -8698,7 +9592,29 @@ class GetCertificatesCertificateCollectionItemSubjectResult(dict):
              surname: str,
              title: str,
              user_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commonName' in kwargs:
+            common_name = kwargs['commonName']
+        if 'distinguishedNameQualifier' in kwargs:
+            distinguished_name_qualifier = kwargs['distinguishedNameQualifier']
+        if 'domainComponent' in kwargs:
+            domain_component = kwargs['domainComponent']
+        if 'generationQualifier' in kwargs:
+            generation_qualifier = kwargs['generationQualifier']
+        if 'givenName' in kwargs:
+            given_name = kwargs['givenName']
+        if 'localityName' in kwargs:
+            locality_name = kwargs['localityName']
+        if 'organizationalUnit' in kwargs:
+            organizational_unit = kwargs['organizationalUnit']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'stateOrProvinceName' in kwargs:
+            state_or_province_name = kwargs['stateOrProvinceName']
+        if 'userId' in kwargs:
+            user_id = kwargs['userId']
+
         _setter("common_name", common_name)
         _setter("country", country)
         _setter("distinguished_name_qualifier", distinguished_name_qualifier)
@@ -8875,7 +9791,9 @@ class GetCertificatesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

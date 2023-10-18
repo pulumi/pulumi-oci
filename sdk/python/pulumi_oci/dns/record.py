@@ -51,7 +51,13 @@ class RecordArgs:
              compartment_id: Optional[pulumi.Input[str]] = None,
              rdata: Optional[pulumi.Input[str]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'zoneNameOrId' in kwargs:
+            zone_name_or_id = kwargs['zoneNameOrId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         if domain is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
@@ -209,7 +215,19 @@ class _RecordState:
              rtype: Optional[pulumi.Input[str]] = None,
              ttl: Optional[pulumi.Input[int]] = None,
              zone_name_or_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+        if 'zoneNameOrId' in kwargs:
+            zone_name_or_id = kwargs['zoneNameOrId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if domain is not None:

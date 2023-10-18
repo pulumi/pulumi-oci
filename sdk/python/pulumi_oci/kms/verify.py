@@ -55,7 +55,19 @@ class VerifyArgs:
              signature: pulumi.Input[str],
              signing_algorithm: pulumi.Input[str],
              message_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("key_id", key_id)
         _setter("key_version_id", key_version_id)
@@ -202,7 +214,21 @@ class _VerifyState:
              message_type: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              signing_algorithm: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'isSignatureValid' in kwargs:
+            is_signature_valid = kwargs['isSignatureValid']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+
         if crypto_endpoint is not None:
             _setter("crypto_endpoint", crypto_endpoint)
         if is_signature_valid is not None:

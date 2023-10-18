@@ -71,7 +71,27 @@ class ApplicationArgs:
              shape: Optional[pulumi.Input[str]] = None,
              syslog_url: Optional[pulumi.Input[str]] = None,
              trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'syslogUrl' in kwargs:
+            syslog_url = kwargs['syslogUrl']
+        if 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("subnet_ids", subnet_ids)
@@ -297,7 +317,31 @@ class _ApplicationState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if 'syslogUrl' in kwargs:
+            syslog_url = kwargs['syslogUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if config is not None:

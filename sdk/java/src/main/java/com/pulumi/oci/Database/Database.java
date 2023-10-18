@@ -84,6 +84,7 @@ import javax.annotation.Nullable;
  *                 .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
  *                 .ncharacterSet(var_.database_database_ncharacter_set())
  *                 .pdbName(var_.database_database_pdb_name())
+ *                 .pluggableDatabases(var_.database_database_pluggable_databases())
  *                 .sidPrefix(var_.database_database_sid_prefix())
  *                 .tdeWalletPassword(var_.database_database_tde_wallet_password())
  *                 .vaultId(oci_kms_vault.test_vault().id())

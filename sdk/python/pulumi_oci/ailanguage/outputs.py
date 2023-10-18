@@ -124,7 +124,17 @@ class ModelEvaluationResult(dict):
              labels: Optional[Sequence[str]] = None,
              metrics: Optional[Sequence['outputs.ModelEvaluationResultMetric']] = None,
              model_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classMetrics' in kwargs:
+            class_metrics = kwargs['classMetrics']
+        if 'confusionMatrix' in kwargs:
+            confusion_matrix = kwargs['confusionMatrix']
+        if 'entityMetrics' in kwargs:
+            entity_metrics = kwargs['entityMetrics']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+
         if class_metrics is not None:
             _setter("class_metrics", class_metrics)
         if confusion_matrix is not None:
@@ -218,7 +228,9 @@ class ModelEvaluationResultClassMetric(dict):
              precision: Optional[float] = None,
              recall: Optional[float] = None,
              support: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if f1 is not None:
             _setter("f1", f1)
         if label is not None:
@@ -298,7 +310,9 @@ class ModelEvaluationResultEntityMetric(dict):
              label: Optional[str] = None,
              precision: Optional[float] = None,
              recall: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if f1 is not None:
             _setter("f1", f1)
         if label is not None:
@@ -425,7 +439,27 @@ class ModelEvaluationResultMetric(dict):
              weighted_f1: Optional[float] = None,
              weighted_precision: Optional[float] = None,
              weighted_recall: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'macroF1' in kwargs:
+            macro_f1 = kwargs['macroF1']
+        if 'macroPrecision' in kwargs:
+            macro_precision = kwargs['macroPrecision']
+        if 'macroRecall' in kwargs:
+            macro_recall = kwargs['macroRecall']
+        if 'microF1' in kwargs:
+            micro_f1 = kwargs['microF1']
+        if 'microPrecision' in kwargs:
+            micro_precision = kwargs['microPrecision']
+        if 'microRecall' in kwargs:
+            micro_recall = kwargs['microRecall']
+        if 'weightedF1' in kwargs:
+            weighted_f1 = kwargs['weightedF1']
+        if 'weightedPrecision' in kwargs:
+            weighted_precision = kwargs['weightedPrecision']
+        if 'weightedRecall' in kwargs:
+            weighted_recall = kwargs['weightedRecall']
+
         if accuracy is not None:
             _setter("accuracy", accuracy)
         if macro_f1 is not None:
@@ -576,7 +610,15 @@ class ModelModelDetails(dict):
              classification_mode: Optional['outputs.ModelModelDetailsClassificationMode'] = None,
              language_code: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'classificationMode' in kwargs:
+            classification_mode = kwargs['classificationMode']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+
         _setter("model_type", model_type)
         if classification_mode is not None:
             _setter("classification_mode", classification_mode)
@@ -654,7 +696,11 @@ class ModelModelDetailsClassificationMode(dict):
              _setter: Callable[[Any, Any], None],
              classification_mode: str,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classificationMode' in kwargs:
+            classification_mode = kwargs['classificationMode']
+
         _setter("classification_mode", classification_mode)
         if version is not None:
             _setter("version", version)
@@ -720,7 +766,15 @@ class ModelTestStrategy(dict):
              strategy_type: str,
              testing_dataset: 'outputs.ModelTestStrategyTestingDataset',
              validation_dataset: Optional['outputs.ModelTestStrategyValidationDataset'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+        if 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         _setter("strategy_type", strategy_type)
         _setter("testing_dataset", testing_dataset)
         if validation_dataset is not None:
@@ -795,7 +849,15 @@ class ModelTestStrategyTestingDataset(dict):
              dataset_type: str,
              dataset_id: Optional[str] = None,
              location_details: Optional['outputs.ModelTestStrategyTestingDatasetLocationDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_type", dataset_type)
         if dataset_id is not None:
             _setter("dataset_id", dataset_id)
@@ -877,7 +939,13 @@ class ModelTestStrategyTestingDatasetLocationDetails(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -964,7 +1032,15 @@ class ModelTestStrategyValidationDataset(dict):
              dataset_type: str,
              dataset_id: Optional[str] = None,
              location_details: Optional['outputs.ModelTestStrategyValidationDatasetLocationDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_type", dataset_type)
         if dataset_id is not None:
             _setter("dataset_id", dataset_id)
@@ -1046,7 +1122,13 @@ class ModelTestStrategyValidationDatasetLocationDetails(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -1133,7 +1215,15 @@ class ModelTrainingDataset(dict):
              dataset_type: str,
              dataset_id: Optional[str] = None,
              location_details: Optional['outputs.ModelTrainingDatasetLocationDetails'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_type", dataset_type)
         if dataset_id is not None:
             _setter("dataset_id", dataset_id)
@@ -1215,7 +1305,13 @@ class ModelTrainingDatasetLocationDetails(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -1270,7 +1366,9 @@ class GetEndpointsEndpointCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetEndpointsEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1346,7 +1444,31 @@ class GetEndpointsEndpointCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'inferenceUnits' in kwargs:
+            inference_units = kwargs['inferenceUnits']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -1493,7 +1615,9 @@ class GetEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1550,7 +1674,17 @@ class GetModelEvaluationResultResult(dict):
              labels: Sequence[str],
              metrics: Sequence['outputs.GetModelEvaluationResultMetricResult'],
              model_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classMetrics' in kwargs:
+            class_metrics = kwargs['classMetrics']
+        if 'confusionMatrix' in kwargs:
+            confusion_matrix = kwargs['confusionMatrix']
+        if 'entityMetrics' in kwargs:
+            entity_metrics = kwargs['entityMetrics']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+
         _setter("class_metrics", class_metrics)
         _setter("confusion_matrix", confusion_matrix)
         _setter("entity_metrics", entity_metrics)
@@ -1638,7 +1772,9 @@ class GetModelEvaluationResultClassMetricResult(dict):
              precision: float,
              recall: float,
              support: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("f1", f1)
         _setter("label", label)
         _setter("precision", precision)
@@ -1713,7 +1849,9 @@ class GetModelEvaluationResultEntityMetricResult(dict):
              label: str,
              precision: float,
              recall: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("f1", f1)
         _setter("label", label)
         _setter("precision", precision)
@@ -1803,7 +1941,27 @@ class GetModelEvaluationResultMetricResult(dict):
              weighted_f1: float,
              weighted_precision: float,
              weighted_recall: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'macroF1' in kwargs:
+            macro_f1 = kwargs['macroF1']
+        if 'macroPrecision' in kwargs:
+            macro_precision = kwargs['macroPrecision']
+        if 'macroRecall' in kwargs:
+            macro_recall = kwargs['macroRecall']
+        if 'microF1' in kwargs:
+            micro_f1 = kwargs['microF1']
+        if 'microPrecision' in kwargs:
+            micro_precision = kwargs['microPrecision']
+        if 'microRecall' in kwargs:
+            micro_recall = kwargs['microRecall']
+        if 'weightedF1' in kwargs:
+            weighted_f1 = kwargs['weightedF1']
+        if 'weightedPrecision' in kwargs:
+            weighted_precision = kwargs['weightedPrecision']
+        if 'weightedRecall' in kwargs:
+            weighted_recall = kwargs['weightedRecall']
+
         _setter("accuracy", accuracy)
         _setter("macro_f1", macro_f1)
         _setter("macro_precision", macro_precision)
@@ -1911,7 +2069,9 @@ class GetModelEvaluationResultsEvaluationResultCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1970,7 +2130,23 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemResult(dict):
              record: str,
              true_entities: Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult'],
              true_labels: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if 'predictedEntities' in kwargs:
+            predicted_entities = kwargs['predictedEntities']
+        if 'predictedLabels' in kwargs:
+            predicted_labels = kwargs['predictedLabels']
+        if 'trueEntities' in kwargs:
+            true_entities = kwargs['trueEntities']
+        if 'trueLabels' in kwargs:
+            true_labels = kwargs['trueLabels']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("location", location)
@@ -2077,7 +2253,9 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResu
              length: int,
              offset: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("length", length)
         _setter("offset", offset)
         _setter("type", type)
@@ -2130,7 +2308,9 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult(di
              length: int,
              offset: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("length", length)
         _setter("offset", offset)
         _setter("type", type)
@@ -2178,7 +2358,9 @@ class GetModelEvaluationResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2227,7 +2409,15 @@ class GetModelModelDetailResult(dict):
              language_code: str,
              model_type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classificationModes' in kwargs:
+            classification_modes = kwargs['classificationModes']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+
         _setter("classification_modes", classification_modes)
         _setter("language_code", language_code)
         _setter("model_type", model_type)
@@ -2285,7 +2475,11 @@ class GetModelModelDetailClassificationModeResult(dict):
              _setter: Callable[[Any, Any], None],
              classification_mode: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classificationMode' in kwargs:
+            classification_mode = kwargs['classificationMode']
+
         _setter("classification_mode", classification_mode)
         _setter("version", version)
 
@@ -2329,7 +2523,15 @@ class GetModelTestStrategyResult(dict):
              strategy_type: str,
              testing_datasets: Sequence['outputs.GetModelTestStrategyTestingDatasetResult'],
              validation_datasets: Sequence['outputs.GetModelTestStrategyValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+        if 'testingDatasets' in kwargs:
+            testing_datasets = kwargs['testingDatasets']
+        if 'validationDatasets' in kwargs:
+            validation_datasets = kwargs['validationDatasets']
+
         _setter("strategy_type", strategy_type)
         _setter("testing_datasets", testing_datasets)
         _setter("validation_datasets", validation_datasets)
@@ -2382,7 +2584,15 @@ class GetModelTestStrategyTestingDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelTestStrategyTestingDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -2439,7 +2649,13 @@ class GetModelTestStrategyTestingDatasetLocationDetailResult(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -2501,7 +2717,15 @@ class GetModelTestStrategyValidationDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelTestStrategyValidationDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -2558,7 +2782,13 @@ class GetModelTestStrategyValidationDatasetLocationDetailResult(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -2620,7 +2850,15 @@ class GetModelTrainingDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelTrainingDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -2677,7 +2915,13 @@ class GetModelTrainingDatasetLocationDetailResult(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -2734,7 +2978,9 @@ class GetModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2768,7 +3014,9 @@ class GetModelsModelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetModelsModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2856,7 +3104,35 @@ class GetModelsModelCollectionItemResult(dict):
              time_updated: str,
              training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'evaluationResults' in kwargs:
+            evaluation_results = kwargs['evaluationResults']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'modelDetails' in kwargs:
+            model_details = kwargs['modelDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'testStrategies' in kwargs:
+            test_strategies = kwargs['testStrategies']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trainingDatasets' in kwargs:
+            training_datasets = kwargs['trainingDatasets']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -3047,7 +3323,17 @@ class GetModelsModelCollectionItemEvaluationResultResult(dict):
              labels: Sequence[str],
              metrics: Sequence['outputs.GetModelsModelCollectionItemEvaluationResultMetricResult'],
              model_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classMetrics' in kwargs:
+            class_metrics = kwargs['classMetrics']
+        if 'confusionMatrix' in kwargs:
+            confusion_matrix = kwargs['confusionMatrix']
+        if 'entityMetrics' in kwargs:
+            entity_metrics = kwargs['entityMetrics']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+
         _setter("class_metrics", class_metrics)
         _setter("confusion_matrix", confusion_matrix)
         _setter("entity_metrics", entity_metrics)
@@ -3135,7 +3421,9 @@ class GetModelsModelCollectionItemEvaluationResultClassMetricResult(dict):
              precision: float,
              recall: float,
              support: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("f1", f1)
         _setter("label", label)
         _setter("precision", precision)
@@ -3210,7 +3498,9 @@ class GetModelsModelCollectionItemEvaluationResultEntityMetricResult(dict):
              label: str,
              precision: float,
              recall: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("f1", f1)
         _setter("label", label)
         _setter("precision", precision)
@@ -3300,7 +3590,27 @@ class GetModelsModelCollectionItemEvaluationResultMetricResult(dict):
              weighted_f1: float,
              weighted_precision: float,
              weighted_recall: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'macroF1' in kwargs:
+            macro_f1 = kwargs['macroF1']
+        if 'macroPrecision' in kwargs:
+            macro_precision = kwargs['macroPrecision']
+        if 'macroRecall' in kwargs:
+            macro_recall = kwargs['macroRecall']
+        if 'microF1' in kwargs:
+            micro_f1 = kwargs['microF1']
+        if 'microPrecision' in kwargs:
+            micro_precision = kwargs['microPrecision']
+        if 'microRecall' in kwargs:
+            micro_recall = kwargs['microRecall']
+        if 'weightedF1' in kwargs:
+            weighted_f1 = kwargs['weightedF1']
+        if 'weightedPrecision' in kwargs:
+            weighted_precision = kwargs['weightedPrecision']
+        if 'weightedRecall' in kwargs:
+            weighted_recall = kwargs['weightedRecall']
+
         _setter("accuracy", accuracy)
         _setter("macro_f1", macro_f1)
         _setter("macro_precision", macro_precision)
@@ -3420,7 +3730,15 @@ class GetModelsModelCollectionItemModelDetailResult(dict):
              language_code: str,
              model_type: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classificationModes' in kwargs:
+            classification_modes = kwargs['classificationModes']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+
         _setter("classification_modes", classification_modes)
         _setter("language_code", language_code)
         _setter("model_type", model_type)
@@ -3478,7 +3796,11 @@ class GetModelsModelCollectionItemModelDetailClassificationModeResult(dict):
              _setter: Callable[[Any, Any], None],
              classification_mode: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'classificationMode' in kwargs:
+            classification_mode = kwargs['classificationMode']
+
         _setter("classification_mode", classification_mode)
         _setter("version", version)
 
@@ -3522,7 +3844,15 @@ class GetModelsModelCollectionItemTestStrategyResult(dict):
              strategy_type: str,
              testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestStrategyTestingDatasetResult'],
              validation_datasets: Sequence['outputs.GetModelsModelCollectionItemTestStrategyValidationDatasetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'strategyType' in kwargs:
+            strategy_type = kwargs['strategyType']
+        if 'testingDatasets' in kwargs:
+            testing_datasets = kwargs['testingDatasets']
+        if 'validationDatasets' in kwargs:
+            validation_datasets = kwargs['validationDatasets']
+
         _setter("strategy_type", strategy_type)
         _setter("testing_datasets", testing_datasets)
         _setter("validation_datasets", validation_datasets)
@@ -3575,7 +3905,15 @@ class GetModelsModelCollectionItemTestStrategyTestingDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -3632,7 +3970,13 @@ class GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailResult
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -3694,7 +4038,15 @@ class GetModelsModelCollectionItemTestStrategyValidationDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -3751,7 +4103,13 @@ class GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailRes
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -3813,7 +4171,15 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
              dataset_id: str,
              dataset_type: str,
              location_details: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetLocationDetailResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if 'locationDetails' in kwargs:
+            location_details = kwargs['locationDetails']
+
         _setter("dataset_id", dataset_id)
         _setter("dataset_type", dataset_type)
         _setter("location_details", location_details)
@@ -3870,7 +4236,13 @@ class GetModelsModelCollectionItemTrainingDatasetLocationDetailResult(dict):
              location_type: str,
              namespace: str,
              object_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'locationType' in kwargs:
+            location_type = kwargs['locationType']
+        if 'objectNames' in kwargs:
+            object_names = kwargs['objectNames']
+
         _setter("bucket", bucket)
         _setter("location_type", location_type)
         _setter("namespace", namespace)
@@ -3927,7 +4299,9 @@ class GetProjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3961,7 +4335,9 @@ class GetProjectsProjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4025,7 +4401,25 @@ class GetProjectsProjectCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

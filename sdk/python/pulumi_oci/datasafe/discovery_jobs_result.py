@@ -29,7 +29,11 @@ class DiscoveryJobsResultArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              discovery_job_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'discoveryJobId' in kwargs:
+            discovery_job_id = kwargs['discoveryJobId']
+
         if discovery_job_id is not None:
             warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
@@ -143,7 +147,45 @@ class _DiscoveryJobsResultState:
              schema_name: Optional[pulumi.Input[str]] = None,
              sensitive_columnkey: Optional[pulumi.Input[str]] = None,
              sensitive_type_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if 'discoveryJobId' in kwargs:
+            discovery_job_id = kwargs['discoveryJobId']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'estimatedDataValueCount' in kwargs:
+            estimated_data_value_count = kwargs['estimatedDataValueCount']
+        if 'isResultApplied' in kwargs:
+            is_result_applied = kwargs['isResultApplied']
+        if 'modifiedAttributes' in kwargs:
+            modified_attributes = kwargs['modifiedAttributes']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if 'plannedAction' in kwargs:
+            planned_action = kwargs['plannedAction']
+        if 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if 'sampleDataValues' in kwargs:
+            sample_data_values = kwargs['sampleDataValues']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveColumnkey' in kwargs:
+            sensitive_columnkey = kwargs['sensitiveColumnkey']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
         if app_defined_child_column_keys is not None:
             _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if app_name is not None:

@@ -59,7 +59,23 @@ class AcceptedAgreementArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("agreement_id", agreement_id)
         _setter("compartment_id", compartment_id)
         _setter("listing_id", listing_id)
@@ -225,7 +241,25 @@ class _AcceptedAgreementState:
              package_version: Optional[pulumi.Input[str]] = None,
              signature: Optional[pulumi.Input[str]] = None,
              time_accepted: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+
         if agreement_id is not None:
             _setter("agreement_id", agreement_id)
         if compartment_id is not None:

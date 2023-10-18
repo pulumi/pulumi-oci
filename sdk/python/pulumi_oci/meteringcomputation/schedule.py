@@ -73,7 +73,27 @@ class ScheduleArgs:
              output_file_format: Optional[pulumi.Input[str]] = None,
              query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
              saved_report_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'resultLocation' in kwargs:
+            result_location = kwargs['resultLocation']
+        if 'scheduleRecurrences' in kwargs:
+            schedule_recurrences = kwargs['scheduleRecurrences']
+        if 'timeScheduled' in kwargs:
+            time_scheduled = kwargs['timeScheduled']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'outputFileFormat' in kwargs:
+            output_file_format = kwargs['outputFileFormat']
+        if 'queryProperties' in kwargs:
+            query_properties = kwargs['queryProperties']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+
         _setter("compartment_id", compartment_id)
         _setter("result_location", result_location)
         _setter("schedule_recurrences", schedule_recurrences)
@@ -306,7 +326,33 @@ class _ScheduleState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_next_run: Optional[pulumi.Input[str]] = None,
              time_scheduled: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'outputFileFormat' in kwargs:
+            output_file_format = kwargs['outputFileFormat']
+        if 'queryProperties' in kwargs:
+            query_properties = kwargs['queryProperties']
+        if 'resultLocation' in kwargs:
+            result_location = kwargs['resultLocation']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+        if 'scheduleRecurrences' in kwargs:
+            schedule_recurrences = kwargs['scheduleRecurrences']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNextRun' in kwargs:
+            time_next_run = kwargs['timeNextRun']
+        if 'timeScheduled' in kwargs:
+            time_scheduled = kwargs['timeScheduled']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

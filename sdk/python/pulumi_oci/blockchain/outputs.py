@@ -72,7 +72,9 @@ class BlockchainPlatformComponentDetail(dict):
              _setter: Callable[[Any, Any], None],
              osns: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsn']] = None,
              peers: Optional[Sequence['outputs.BlockchainPlatformComponentDetailPeer']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if osns is not None:
             _setter("osns", osns)
         if peers is not None:
@@ -141,7 +143,13 @@ class BlockchainPlatformComponentDetailOsn(dict):
              ocpu_allocation_params: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsnOcpuAllocationParam']] = None,
              osn_key: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         if ad is not None:
             _setter("ad", ad)
         if ocpu_allocation_params is not None:
@@ -216,7 +224,11 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParam(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         if ocpu_allocation_number is not None:
             _setter("ocpu_allocation_number", ocpu_allocation_number)
 
@@ -287,7 +299,13 @@ class BlockchainPlatformComponentDetailPeer(dict):
              peer_key: Optional[str] = None,
              role: Optional[str] = None,
              state: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         if ad is not None:
             _setter("ad", ad)
         if alias is not None:
@@ -392,7 +410,11 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParam(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         if ocpu_allocation_number is not None:
             _setter("ocpu_allocation_number", ocpu_allocation_number)
 
@@ -447,7 +469,13 @@ class BlockchainPlatformHostOcpuUtilizationInfo(dict):
              host: Optional[str] = None,
              ocpu_capacity_number: Optional[float] = None,
              ocpu_utilization_number: Optional[float] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuCapacityNumber' in kwargs:
+            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
+        if 'ocpuUtilizationNumber' in kwargs:
+            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
+
         if host is not None:
             _setter("host", host)
         if ocpu_capacity_number is not None:
@@ -524,7 +552,15 @@ class BlockchainPlatformReplicas(dict):
              ca_count: Optional[int] = None,
              console_count: Optional[int] = None,
              proxy_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCount' in kwargs:
+            ca_count = kwargs['caCount']
+        if 'consoleCount' in kwargs:
+            console_count = kwargs['consoleCount']
+        if 'proxyCount' in kwargs:
+            proxy_count = kwargs['proxyCount']
+
         if ca_count is not None:
             _setter("ca_count", ca_count)
         if console_count is not None:
@@ -593,7 +629,11 @@ class OsnOcpuAllocationParam(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -641,7 +681,11 @@ class PeerOcpuAllocationParam(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -672,7 +716,9 @@ class GetBlockchainPlatformComponentDetailResult(dict):
              _setter: Callable[[Any, Any], None],
              osns: Sequence['outputs.GetBlockchainPlatformComponentDetailOsnResult'],
              peers: Sequence['outputs.GetBlockchainPlatformComponentDetailPeerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("osns", osns)
         _setter("peers", peers)
 
@@ -720,7 +766,13 @@ class GetBlockchainPlatformComponentDetailOsnResult(dict):
              ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult'],
              osn_key: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         _setter("ad", ad)
         _setter("ocpu_allocation_params", ocpu_allocation_params)
         _setter("osn_key", osn_key)
@@ -774,7 +826,11 @@ class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -825,7 +881,13 @@ class GetBlockchainPlatformComponentDetailPeerResult(dict):
              peer_key: str,
              role: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         _setter("ad", ad)
         _setter("alias", alias)
         _setter("host", host)
@@ -906,7 +968,11 @@ class GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -941,7 +1007,13 @@ class GetBlockchainPlatformHostOcpuUtilizationInfoResult(dict):
              host: str,
              ocpu_capacity_number: float,
              ocpu_utilization_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuCapacityNumber' in kwargs:
+            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
+        if 'ocpuUtilizationNumber' in kwargs:
+            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
+
         _setter("host", host)
         _setter("ocpu_capacity_number", ocpu_capacity_number)
         _setter("ocpu_utilization_number", ocpu_utilization_number)
@@ -986,7 +1058,9 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1013,7 +1087,9 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1052,7 +1128,15 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResul
              patch_info_url: str,
              service_version: str,
              time_patch_due: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'patchInfoUrl' in kwargs:
+            patch_info_url = kwargs['patchInfoUrl']
+        if 'serviceVersion' in kwargs:
+            service_version = kwargs['serviceVersion']
+        if 'timePatchDue' in kwargs:
+            time_patch_due = kwargs['timePatchDue']
+
         _setter("id", id)
         _setter("patch_info_url", patch_info_url)
         _setter("service_version", service_version)
@@ -1109,7 +1193,9 @@ class GetBlockchainPlatformPatchesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1154,7 +1240,15 @@ class GetBlockchainPlatformReplicaResult(dict):
              ca_count: int,
              console_count: int,
              proxy_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCount' in kwargs:
+            ca_count = kwargs['caCount']
+        if 'consoleCount' in kwargs:
+            console_count = kwargs['consoleCount']
+        if 'proxyCount' in kwargs:
+            proxy_count = kwargs['proxyCount']
+
         _setter("ca_count", ca_count)
         _setter("console_count", console_count)
         _setter("proxy_count", proxy_count)
@@ -1196,7 +1290,9 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1325,7 +1421,57 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              total_ocpu_capacity: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCertArchiveText' in kwargs:
+            ca_cert_archive_text = kwargs['caCertArchiveText']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentDetails' in kwargs:
+            component_details = kwargs['componentDetails']
+        if 'computeShape' in kwargs:
+            compute_shape = kwargs['computeShape']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'federatedUserId' in kwargs:
+            federated_user_id = kwargs['federatedUserId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostOcpuUtilizationInfos' in kwargs:
+            host_ocpu_utilization_infos = kwargs['hostOcpuUtilizationInfos']
+        if 'idcsAccessToken' in kwargs:
+            idcs_access_token = kwargs['idcsAccessToken']
+        if 'isByol' in kwargs:
+            is_byol = kwargs['isByol']
+        if 'isMultiAd' in kwargs:
+            is_multi_ad = kwargs['isMultiAd']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'loadBalancerShape' in kwargs:
+            load_balancer_shape = kwargs['loadBalancerShape']
+        if 'platformRole' in kwargs:
+            platform_role = kwargs['platformRole']
+        if 'platformShapeType' in kwargs:
+            platform_shape_type = kwargs['platformShapeType']
+        if 'platformVersion' in kwargs:
+            platform_version = kwargs['platformVersion']
+        if 'serviceEndpoint' in kwargs:
+            service_endpoint = kwargs['serviceEndpoint']
+        if 'serviceVersion' in kwargs:
+            service_version = kwargs['serviceVersion']
+        if 'storageSizeInTbs' in kwargs:
+            storage_size_in_tbs = kwargs['storageSizeInTbs']
+        if 'storageUsedInTbs' in kwargs:
+            storage_used_in_tbs = kwargs['storageUsedInTbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalOcpuCapacity' in kwargs:
+            total_ocpu_capacity = kwargs['totalOcpuCapacity']
+
         _setter("ca_cert_archive_text", ca_cert_archive_text)
         _setter("compartment_id", compartment_id)
         _setter("component_details", component_details)
@@ -1590,7 +1736,9 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResul
              _setter: Callable[[Any, Any], None],
              osns: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult'],
              peers: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("osns", osns)
         _setter("peers", peers)
 
@@ -1638,7 +1786,13 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnRe
              ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult'],
              osn_key: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         _setter("ad", ad)
         _setter("ocpu_allocation_params", ocpu_allocation_params)
         _setter("osn_key", osn_key)
@@ -1692,7 +1846,11 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOc
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -1743,7 +1901,13 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerR
              peer_key: str,
              role: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         _setter("ad", ad)
         _setter("alias", alias)
         _setter("host", host)
@@ -1824,7 +1988,11 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerO
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -1859,7 +2027,13 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationI
              host: str,
              ocpu_capacity_number: float,
              ocpu_utilization_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuCapacityNumber' in kwargs:
+            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
+        if 'ocpuUtilizationNumber' in kwargs:
+            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
+
         _setter("host", host)
         _setter("ocpu_capacity_number", ocpu_capacity_number)
         _setter("ocpu_utilization_number", ocpu_utilization_number)
@@ -1912,7 +2086,15 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult(dict):
              ca_count: int,
              console_count: int,
              proxy_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caCount' in kwargs:
+            ca_count = kwargs['caCount']
+        if 'consoleCount' in kwargs:
+            console_count = kwargs['consoleCount']
+        if 'proxyCount' in kwargs:
+            proxy_count = kwargs['proxyCount']
+
         _setter("ca_count", ca_count)
         _setter("console_count", console_count)
         _setter("proxy_count", proxy_count)
@@ -1960,7 +2142,9 @@ class GetBlockchainPlatformsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1997,7 +2181,11 @@ class GetOsnOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -2027,7 +2215,9 @@ class GetOsnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2061,7 +2251,9 @@ class GetOsnsOsnCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOsnsOsnCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2101,7 +2293,15 @@ class GetOsnsOsnCollectionItemResult(dict):
              ocpu_allocation_param: 'outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult',
              osn_key: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         _setter("ad", ad)
         _setter("blockchain_platform_id", blockchain_platform_id)
         _setter("ocpu_allocation_param", ocpu_allocation_param)
@@ -2164,7 +2364,11 @@ class GetOsnsOsnCollectionItemOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -2191,7 +2395,11 @@ class GetPeerOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
@@ -2221,7 +2429,9 @@ class GetPeersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2255,7 +2465,9 @@ class GetPeersPeerCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetPeersPeerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -2307,7 +2519,15 @@ class GetPeersPeerCollectionItemResult(dict):
              peer_key: str,
              role: str,
              state: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         _setter("ad", ad)
         _setter("alias", alias)
         _setter("blockchain_platform_id", blockchain_platform_id)
@@ -2397,7 +2617,11 @@ class GetPeersPeerCollectionItemOcpuAllocationParamResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ocpu_allocation_number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property

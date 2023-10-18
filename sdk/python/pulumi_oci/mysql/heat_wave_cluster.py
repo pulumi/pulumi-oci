@@ -48,7 +48,17 @@ class HeatWaveClusterArgs:
              shape_name: pulumi.Input[str],
              is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+
         _setter("cluster_size", cluster_size)
         _setter("db_system_id", db_system_id)
         _setter("shape_name", shape_name)
@@ -172,7 +182,25 @@ class _HeatWaveClusterState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clusterNodes' in kwargs:
+            cluster_nodes = kwargs['clusterNodes']
+        if 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_nodes is not None:
             _setter("cluster_nodes", cluster_nodes)
         if cluster_size is not None:

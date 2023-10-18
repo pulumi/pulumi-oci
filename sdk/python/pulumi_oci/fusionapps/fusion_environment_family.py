@@ -56,7 +56,23 @@ class FusionEnvironmentFamilyArgs:
              family_maintenance_policy: Optional[pulumi.Input['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'familyMaintenancePolicy' in kwargs:
+            family_maintenance_policy = kwargs['familyMaintenancePolicy']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("subscription_ids", subscription_ids)
@@ -218,7 +234,31 @@ class _FusionEnvironmentFamilyState:
              system_name: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'familyMaintenancePolicy' in kwargs:
+            family_maintenance_policy = kwargs['familyMaintenancePolicy']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSubscriptionUpdateNeeded' in kwargs:
+            is_subscription_update_needed = kwargs['isSubscriptionUpdateNeeded']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subscriptionIds' in kwargs:
+            subscription_ids = kwargs['subscriptionIds']
+        if 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

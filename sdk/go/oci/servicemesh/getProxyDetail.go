@@ -4,8 +4,12 @@
 package servicemesh
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -51,4 +55,50 @@ type GetProxyDetailResult struct {
 	Id string `pulumi:"id"`
 	// Proxy container image version to be deployed.
 	ProxyImage string `pulumi:"proxyImage"`
+}
+
+func GetProxyDetailOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProxyDetailResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetProxyDetailResult, error) {
+		r, err := GetProxyDetail(ctx, opts...)
+		var s GetProxyDetailResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetProxyDetailResultOutput)
+}
+
+// A collection of values returned by getProxyDetail.
+type GetProxyDetailResultOutput struct{ *pulumi.OutputState }
+
+func (GetProxyDetailResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProxyDetailResult)(nil)).Elem()
+}
+
+func (o GetProxyDetailResultOutput) ToGetProxyDetailResultOutput() GetProxyDetailResultOutput {
+	return o
+}
+
+func (o GetProxyDetailResultOutput) ToGetProxyDetailResultOutputWithContext(ctx context.Context) GetProxyDetailResultOutput {
+	return o
+}
+
+func (o GetProxyDetailResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProxyDetailResult] {
+	return pulumix.Output[GetProxyDetailResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetProxyDetailResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProxyDetailResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Proxy container image version to be deployed.
+func (o GetProxyDetailResultOutput) ProxyImage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProxyDetailResult) string { return v.ProxyImage }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetProxyDetailResultOutput{})
 }

@@ -65,7 +65,23 @@ class ManagedListArgs:
              list_items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              list_type: Optional[pulumi.Input[str]] = None,
              source_managed_list_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'listItems' in kwargs:
+            list_items = kwargs['listItems']
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'sourceManagedListId' in kwargs:
+            source_managed_list_id = kwargs['sourceManagedListId']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         if defined_tags is not None:
@@ -270,7 +286,35 @@ class _ManagedListState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'feedProvider' in kwargs:
+            feed_provider = kwargs['feedProvider']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEditable' in kwargs:
+            is_editable = kwargs['isEditable']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'listItems' in kwargs:
+            list_items = kwargs['listItems']
+        if 'listType' in kwargs:
+            list_type = kwargs['listType']
+        if 'sourceManagedListId' in kwargs:
+            source_managed_list_id = kwargs['sourceManagedListId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

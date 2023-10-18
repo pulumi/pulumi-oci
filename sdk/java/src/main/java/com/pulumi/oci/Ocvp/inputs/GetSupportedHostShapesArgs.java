@@ -55,16 +55,24 @@ public final class GetSupportedHostShapesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * A filter to return only resources that match the given SDDC type exactly.
+     * (Optional) A filter to return only resources that match the given SDDC type exactly.
+     * 
+     * @deprecated
+     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
+    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
     @Import(name="sddcType")
     private @Nullable Output<String> sddcType;
 
     /**
-     * @return A filter to return only resources that match the given SDDC type exactly.
+     * @return (Optional) A filter to return only resources that match the given SDDC type exactly.
+     * 
+     * @deprecated
+     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
+    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
     public Optional<Output<String>> sddcType() {
         return Optional.ofNullable(this.sddcType);
     }
@@ -152,22 +160,30 @@ public final class GetSupportedHostShapesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param sddcType A filter to return only resources that match the given SDDC type exactly.
+         * @param sddcType (Optional) A filter to return only resources that match the given SDDC type exactly.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+         * 
          */
+        @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
         public Builder sddcType(@Nullable Output<String> sddcType) {
             $.sddcType = sddcType;
             return this;
         }
 
         /**
-         * @param sddcType A filter to return only resources that match the given SDDC type exactly.
+         * @param sddcType (Optional) A filter to return only resources that match the given SDDC type exactly.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+         * 
          */
+        @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
         public Builder sddcType(String sddcType) {
             return sddcType(Output.of(sddcType));
         }

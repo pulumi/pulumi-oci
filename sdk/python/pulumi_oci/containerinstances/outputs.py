@@ -149,7 +149,53 @@ class GetContainerInstanceContainerResult(dict):
              time_updated: str,
              volume_mounts: Sequence['outputs.GetContainerInstanceContainerVolumeMountResult'],
              working_directory: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if 'containerInstanceId' in kwargs:
+            container_instance_id = kwargs['containerInstanceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'exitCode' in kwargs:
+            exit_code = kwargs['exitCode']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'imageUrl' in kwargs:
+            image_url = kwargs['imageUrl']
+        if 'isResourcePrincipalDisabled' in kwargs:
+            is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'resourceConfigs' in kwargs:
+            resource_configs = kwargs['resourceConfigs']
+        if 'securityContexts' in kwargs:
+            security_contexts = kwargs['securityContexts']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeTerminated' in kwargs:
+            time_terminated = kwargs['timeTerminated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'volumeMounts' in kwargs:
+            volume_mounts = kwargs['volumeMounts']
+        if 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+
         _setter("arguments", arguments)
         _setter("availability_domain", availability_domain)
         _setter("commands", commands)
@@ -396,7 +442,25 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
              status_details: str,
              success_threshold: int,
              timeout_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureAction' in kwargs:
+            failure_action = kwargs['failureAction']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'healthCheckType' in kwargs:
+            health_check_type = kwargs['healthCheckType']
+        if 'initialDelayInSeconds' in kwargs:
+            initial_delay_in_seconds = kwargs['initialDelayInSeconds']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if 'successThreshold' in kwargs:
+            success_threshold = kwargs['successThreshold']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+
         _setter("commands", commands)
         _setter("failure_action", failure_action)
         _setter("failure_threshold", failure_threshold)
@@ -507,7 +571,9 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -540,7 +606,13 @@ class GetContainerInstanceContainerResourceConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              memory_limit_in_gbs: float,
              vcpus_limit: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryLimitInGbs' in kwargs:
+            memory_limit_in_gbs = kwargs['memoryLimitInGbs']
+        if 'vcpusLimit' in kwargs:
+            vcpus_limit = kwargs['vcpusLimit']
+
         _setter("memory_limit_in_gbs", memory_limit_in_gbs)
         _setter("vcpus_limit", vcpus_limit)
 
@@ -579,7 +651,19 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
              run_as_group: int,
              run_as_user: int,
              security_context_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNonRootUserCheckEnabled' in kwargs:
+            is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
+        if 'isRootFileSystemReadonly' in kwargs:
+            is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
+        if 'runAsGroup' in kwargs:
+            run_as_group = kwargs['runAsGroup']
+        if 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if 'securityContextType' in kwargs:
+            security_context_type = kwargs['securityContextType']
+
         _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         _setter("is_root_file_system_readonly", is_root_file_system_readonly)
         _setter("run_as_group", run_as_group)
@@ -636,7 +720,17 @@ class GetContainerInstanceContainerVolumeMountResult(dict):
              partition: int,
              sub_path: str,
              volume_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'mountPath' in kwargs:
+            mount_path = kwargs['mountPath']
+        if 'subPath' in kwargs:
+            sub_path = kwargs['subPath']
+        if 'volumeName' in kwargs:
+            volume_name = kwargs['volumeName']
+
         _setter("is_read_only", is_read_only)
         _setter("mount_path", mount_path)
         _setter("partition", partition)
@@ -692,7 +786,9 @@ class GetContainerInstanceDnsConfigResult(dict):
              nameservers: Sequence[str],
              options: Sequence[str],
              searches: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("nameservers", nameservers)
         _setter("options", options)
         _setter("searches", searches)
@@ -751,7 +847,15 @@ class GetContainerInstanceImagePullSecretResult(dict):
              secret_id: str,
              secret_type: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'registryEndpoint' in kwargs:
+            registry_endpoint = kwargs['registryEndpoint']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'secretType' in kwargs:
+            secret_type = kwargs['secretType']
+
         _setter("password", password)
         _setter("registry_endpoint", registry_endpoint)
         _setter("secret_id", secret_id)
@@ -820,7 +924,15 @@ class GetContainerInstanceShapeConfigResult(dict):
              networking_bandwidth_in_gbps: float,
              ocpus: float,
              processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
         _setter("ocpus", ocpus)
@@ -890,7 +1002,17 @@ class GetContainerInstanceShapeItemResult(dict):
              networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult'],
              ocpu_options: Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult'],
              processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryOptions' in kwargs:
+            memory_options = kwargs['memoryOptions']
+        if 'networkingBandwidthOptions' in kwargs:
+            networking_bandwidth_options = kwargs['networkingBandwidthOptions']
+        if 'ocpuOptions' in kwargs:
+            ocpu_options = kwargs['ocpuOptions']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("memory_options", memory_options)
         _setter("name", name)
         _setter("networking_bandwidth_options", networking_bandwidth_options)
@@ -969,7 +1091,19 @@ class GetContainerInstanceShapeItemMemoryOptionResult(dict):
              max_per_ocpu_in_gbs: float,
              min_in_gbs: float,
              min_per_ocpu_in_gbs: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbs' in kwargs:
+            default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
+        if 'maxInGbs' in kwargs:
+            max_in_gbs = kwargs['maxInGbs']
+        if 'maxPerOcpuInGbs' in kwargs:
+            max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
+        if 'minInGbs' in kwargs:
+            min_in_gbs = kwargs['minInGbs']
+        if 'minPerOcpuInGbs' in kwargs:
+            min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+
         _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         _setter("max_in_gbs", max_in_gbs)
         _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
@@ -1040,7 +1174,15 @@ class GetContainerInstanceShapeItemNetworkingBandwidthOptionResult(dict):
              default_per_ocpu_in_gbps: float,
              max_in_gbps: float,
              min_in_gbps: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbps' in kwargs:
+            default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
+        if 'maxInGbps' in kwargs:
+            max_in_gbps = kwargs['maxInGbps']
+        if 'minInGbps' in kwargs:
+            min_in_gbps = kwargs['minInGbps']
+
         _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
         _setter("max_in_gbps", max_in_gbps)
         _setter("min_in_gbps", min_in_gbps)
@@ -1089,7 +1231,9 @@ class GetContainerInstanceShapeItemOcpuOptionResult(dict):
              _setter: Callable[[Any, Any], None],
              max: float,
              min: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -1125,7 +1269,9 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1168,7 +1314,17 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
              networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult'],
              ocpu_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult'],
              processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryOptions' in kwargs:
+            memory_options = kwargs['memoryOptions']
+        if 'networkingBandwidthOptions' in kwargs:
+            networking_bandwidth_options = kwargs['networkingBandwidthOptions']
+        if 'ocpuOptions' in kwargs:
+            ocpu_options = kwargs['ocpuOptions']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("memory_options", memory_options)
         _setter("name", name)
         _setter("networking_bandwidth_options", networking_bandwidth_options)
@@ -1247,7 +1403,19 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
              max_per_ocpu_in_gbs: float,
              min_in_gbs: float,
              min_per_ocpu_in_gbs: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbs' in kwargs:
+            default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
+        if 'maxInGbs' in kwargs:
+            max_in_gbs = kwargs['maxInGbs']
+        if 'maxPerOcpuInGbs' in kwargs:
+            max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
+        if 'minInGbs' in kwargs:
+            min_in_gbs = kwargs['minInGbs']
+        if 'minPerOcpuInGbs' in kwargs:
+            min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+
         _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
         _setter("max_in_gbs", max_in_gbs)
         _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
@@ -1318,7 +1486,15 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBa
              default_per_ocpu_in_gbps: float,
              max_in_gbps: float,
              min_in_gbps: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultPerOcpuInGbps' in kwargs:
+            default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
+        if 'maxInGbps' in kwargs:
+            max_in_gbps = kwargs['maxInGbps']
+        if 'minInGbps' in kwargs:
+            min_in_gbps = kwargs['minInGbps']
+
         _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
         _setter("max_in_gbps", max_in_gbps)
         _setter("min_in_gbps", min_in_gbps)
@@ -1367,7 +1543,9 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionRe
              _setter: Callable[[Any, Any], None],
              max: float,
              min: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("max", max)
         _setter("min", min)
 
@@ -1409,7 +1587,9 @@ class GetContainerInstanceShapesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1479,7 +1659,29 @@ class GetContainerInstanceVnicResult(dict):
              skip_source_dest_check: bool,
              subnet_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'isPublicIpAssigned' in kwargs:
+            is_public_ip_assigned = kwargs['isPublicIpAssigned']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
         _setter("freeform_tags", freeform_tags)
@@ -1581,7 +1783,13 @@ class GetContainerInstanceVolumeResult(dict):
              configs: Sequence['outputs.GetContainerInstanceVolumeConfigResult'],
              name: str,
              volume_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backingStore' in kwargs:
+            backing_store = kwargs['backingStore']
+        if 'volumeType' in kwargs:
+            volume_type = kwargs['volumeType']
+
         _setter("backing_store", backing_store)
         _setter("configs", configs)
         _setter("name", name)
@@ -1643,7 +1851,11 @@ class GetContainerInstanceVolumeConfigResult(dict):
              data: str,
              file_name: str,
              path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("data", data)
         _setter("file_name", file_name)
         _setter("path", path)
@@ -1685,7 +1897,9 @@ class GetContainerInstancesContainerInstanceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1797,7 +2011,43 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
              vnics: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult'],
              volume_count: int,
              volumes: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerCount' in kwargs:
+            container_count = kwargs['containerCount']
+        if 'containerRestartPolicy' in kwargs:
+            container_restart_policy = kwargs['containerRestartPolicy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'dnsConfigs' in kwargs:
+            dns_configs = kwargs['dnsConfigs']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gracefulShutdownTimeoutInSeconds' in kwargs:
+            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
+        if 'imagePullSecrets' in kwargs:
+            image_pull_secrets = kwargs['imagePullSecrets']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'volumeCount' in kwargs:
+            volume_count = kwargs['volumeCount']
+
         _setter("availability_domain", availability_domain)
         _setter("compartment_id", compartment_id)
         _setter("container_count", container_count)
@@ -2105,7 +2355,53 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
              time_updated: str,
              volume_mounts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult'],
              working_directory: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if 'containerInstanceId' in kwargs:
+            container_instance_id = kwargs['containerInstanceId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if 'exitCode' in kwargs:
+            exit_code = kwargs['exitCode']
+        if 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if 'imageUrl' in kwargs:
+            image_url = kwargs['imageUrl']
+        if 'isResourcePrincipalDisabled' in kwargs:
+            is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'resourceConfigs' in kwargs:
+            resource_configs = kwargs['resourceConfigs']
+        if 'securityContexts' in kwargs:
+            security_contexts = kwargs['securityContexts']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeTerminated' in kwargs:
+            time_terminated = kwargs['timeTerminated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'volumeMounts' in kwargs:
+            volume_mounts = kwargs['volumeMounts']
+        if 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+
         _setter("arguments", arguments)
         _setter("availability_domain", availability_domain)
         _setter("commands", commands)
@@ -2349,7 +2645,25 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
              status_details: str,
              success_threshold: int,
              timeout_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'failureAction' in kwargs:
+            failure_action = kwargs['failureAction']
+        if 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if 'healthCheckType' in kwargs:
+            health_check_type = kwargs['healthCheckType']
+        if 'initialDelayInSeconds' in kwargs:
+            initial_delay_in_seconds = kwargs['initialDelayInSeconds']
+        if 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if 'successThreshold' in kwargs:
+            success_threshold = kwargs['successThreshold']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+
         _setter("commands", commands)
         _setter("failure_action", failure_action)
         _setter("failure_threshold", failure_threshold)
@@ -2460,7 +2774,9 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -2493,7 +2809,13 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfi
              _setter: Callable[[Any, Any], None],
              memory_limit_in_gbs: float,
              vcpus_limit: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryLimitInGbs' in kwargs:
+            memory_limit_in_gbs = kwargs['memoryLimitInGbs']
+        if 'vcpusLimit' in kwargs:
+            vcpus_limit = kwargs['vcpusLimit']
+
         _setter("memory_limit_in_gbs", memory_limit_in_gbs)
         _setter("vcpus_limit", vcpus_limit)
 
@@ -2532,7 +2854,19 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
              run_as_group: int,
              run_as_user: int,
              security_context_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isNonRootUserCheckEnabled' in kwargs:
+            is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
+        if 'isRootFileSystemReadonly' in kwargs:
+            is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
+        if 'runAsGroup' in kwargs:
+            run_as_group = kwargs['runAsGroup']
+        if 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if 'securityContextType' in kwargs:
+            security_context_type = kwargs['securityContextType']
+
         _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         _setter("is_root_file_system_readonly", is_root_file_system_readonly)
         _setter("run_as_group", run_as_group)
@@ -2589,7 +2923,17 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountRe
              partition: int,
              sub_path: str,
              volume_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if 'mountPath' in kwargs:
+            mount_path = kwargs['mountPath']
+        if 'subPath' in kwargs:
+            sub_path = kwargs['subPath']
+        if 'volumeName' in kwargs:
+            volume_name = kwargs['volumeName']
+
         _setter("is_read_only", is_read_only)
         _setter("mount_path", mount_path)
         _setter("partition", partition)
@@ -2645,7 +2989,9 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
              nameservers: Sequence[str],
              options: Sequence[str],
              searches: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("nameservers", nameservers)
         _setter("options", options)
         _setter("searches", searches)
@@ -2704,7 +3050,15 @@ class GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult(
              secret_id: str,
              secret_type: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'registryEndpoint' in kwargs:
+            registry_endpoint = kwargs['registryEndpoint']
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'secretType' in kwargs:
+            secret_type = kwargs['secretType']
+
         _setter("password", password)
         _setter("registry_endpoint", registry_endpoint)
         _setter("secret_id", secret_id)
@@ -2773,7 +3127,15 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
              networking_bandwidth_in_gbps: float,
              ocpus: float,
              processor_description: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+
         _setter("memory_in_gbs", memory_in_gbs)
         _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
         _setter("ocpus", ocpus)
@@ -2857,7 +3219,29 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
              skip_source_dest_check: bool,
              subnet_id: str,
              vnic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'isPublicIpAssigned' in kwargs:
+            is_public_ip_assigned = kwargs['isPublicIpAssigned']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
         _setter("freeform_tags", freeform_tags)
@@ -2959,7 +3343,13 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
              configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult'],
              name: str,
              volume_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backingStore' in kwargs:
+            backing_store = kwargs['backingStore']
+        if 'volumeType' in kwargs:
+            volume_type = kwargs['volumeType']
+
         _setter("backing_store", backing_store)
         _setter("configs", configs)
         _setter("name", name)
@@ -3021,7 +3411,11 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult(dic
              data: str,
              file_name: str,
              path: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         _setter("data", data)
         _setter("file_name", file_name)
         _setter("path", path)
@@ -3072,7 +3466,9 @@ class GetContainerInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

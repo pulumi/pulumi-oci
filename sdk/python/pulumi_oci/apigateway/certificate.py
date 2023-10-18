@@ -55,7 +55,21 @@ class CertificateArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              intermediate_certificates: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'intermediateCertificates' in kwargs:
+            intermediate_certificates = kwargs['intermediateCertificates']
+
         _setter("certificate", certificate)
         _setter("compartment_id", compartment_id)
         _setter("private_key", private_key)
@@ -225,7 +239,31 @@ class _CertificateState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_not_valid_after: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'intermediateCertificates' in kwargs:
+            intermediate_certificates = kwargs['intermediateCertificates']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if certificate is not None:
             _setter("certificate", certificate)
         if compartment_id is not None:

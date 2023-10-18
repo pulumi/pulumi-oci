@@ -58,7 +58,9 @@ class ContainerRepositoryReadme(dict):
              _setter: Callable[[Any, Any], None],
              content: str,
              format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("content", content)
         _setter("format", format)
 
@@ -106,7 +108,13 @@ class GetContainerImageLayerResult(dict):
              digest: str,
              size_in_bytes: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("digest", digest)
         _setter("size_in_bytes", size_in_bytes)
         _setter("time_created", time_created)
@@ -159,7 +167,13 @@ class GetContainerImageVersionResult(dict):
              created_by: str,
              time_created: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("created_by", created_by)
         _setter("time_created", time_created)
         _setter("version", version)
@@ -204,7 +218,11 @@ class GetContainerImagesContainerImageCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult'],
              remaining_items_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'remainingItemsCount' in kwargs:
+            remaining_items_count = kwargs['remainingItemsCount']
+
         _setter("items", items)
         _setter("remaining_items_count", remaining_items_count)
 
@@ -306,7 +324,35 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
              time_last_pulled: str,
              version: str,
              versions: Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'layersSizeInBytes' in kwargs:
+            layers_size_in_bytes = kwargs['layersSizeInBytes']
+        if 'manifestSizeInBytes' in kwargs:
+            manifest_size_in_bytes = kwargs['manifestSizeInBytes']
+        if 'pullCount' in kwargs:
+            pull_count = kwargs['pullCount']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'repositoryName' in kwargs:
+            repository_name = kwargs['repositoryName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastPulled' in kwargs:
+            time_last_pulled = kwargs['timeLastPulled']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("defined_tags", defined_tags)
@@ -503,7 +549,13 @@ class GetContainerImagesContainerImageCollectionItemLayerResult(dict):
              digest: str,
              size_in_bytes: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("digest", digest)
         _setter("size_in_bytes", size_in_bytes)
         _setter("time_created", time_created)
@@ -556,7 +608,13 @@ class GetContainerImagesContainerImageCollectionItemVersionResult(dict):
              created_by: str,
              time_created: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("created_by", created_by)
         _setter("time_created", time_created)
         _setter("version", version)
@@ -604,7 +662,9 @@ class GetContainerImagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -658,7 +718,19 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
              layers_size_in_bytes: str,
              remaining_items_count: int,
              repository_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'imageCount' in kwargs:
+            image_count = kwargs['imageCount']
+        if 'layerCount' in kwargs:
+            layer_count = kwargs['layerCount']
+        if 'layersSizeInBytes' in kwargs:
+            layers_size_in_bytes = kwargs['layersSizeInBytes']
+        if 'remainingItemsCount' in kwargs:
+            remaining_items_count = kwargs['remainingItemsCount']
+        if 'repositoryCount' in kwargs:
+            repository_count = kwargs['repositoryCount']
+
         _setter("image_count", image_count)
         _setter("items", items)
         _setter("layer_count", layer_count)
@@ -789,7 +861,37 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_last_pushed: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billableSizeInGbs' in kwargs:
+            billable_size_in_gbs = kwargs['billableSizeInGbs']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageCount' in kwargs:
+            image_count = kwargs['imageCount']
+        if 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if 'layerCount' in kwargs:
+            layer_count = kwargs['layerCount']
+        if 'layersSizeInBytes' in kwargs:
+            layers_size_in_bytes = kwargs['layersSizeInBytes']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastPushed' in kwargs:
+            time_last_pushed = kwargs['timeLastPushed']
+
         _setter("billable_size_in_gbs", billable_size_in_gbs)
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
@@ -973,7 +1075,9 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult(dict
              _setter: Callable[[Any, Any], None],
              content: str,
              format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("content", content)
         _setter("format", format)
 
@@ -1012,7 +1116,9 @@ class GetContainerRepositoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1053,7 +1159,9 @@ class GetContainerRepositoryReadmeResult(dict):
              _setter: Callable[[Any, Any], None],
              content: str,
              format: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("content", content)
         _setter("format", format)
 
@@ -1089,7 +1197,11 @@ class GetContainerSignaturesContainerImageSignatureCollectionResult(dict):
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult'],
              remaining_items_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'remainingItemsCount' in kwargs:
+            remaining_items_count = kwargs['remainingItemsCount']
+
         _setter("items", items)
         _setter("remaining_items_count", remaining_items_count)
 
@@ -1175,7 +1287,31 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
              state: str,
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("created_by", created_by)
         _setter("defined_tags", defined_tags)
@@ -1331,7 +1467,9 @@ class GetContainerSignaturesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1371,7 +1509,9 @@ class GetGenericArtifactsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1405,7 +1545,9 @@ class GetGenericArtifactsGenericArtifactCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1476,7 +1618,27 @@ class GetGenericArtifactsGenericArtifactCollectionItemResult(dict):
              state: str,
              time_created: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if 'artifactPath' in kwargs:
+            artifact_path = kwargs['artifactPath']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("artifact_id", artifact_id)
         _setter("artifact_path", artifact_path)
         _setter("compartment_id", compartment_id)
@@ -1611,7 +1773,9 @@ class GetRepositoriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1645,7 +1809,9 @@ class GetRepositoriesRepositoryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -1705,7 +1871,23 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
              repository_type: str,
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if 'repositoryType' in kwargs:
+            repository_type = kwargs['repositoryType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)

@@ -39,7 +39,11 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
              bucket: pulumi.Input[str],
              namespace: pulumi.Input[str],
              is_enabled: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("bucket", bucket)
         _setter("namespace", namespace)
         if is_enabled is not None:
@@ -122,7 +126,15 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
              namespace: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bucket is not None:
             _setter("bucket", bucket)
         if is_enabled is not None:

@@ -51,7 +51,15 @@ class PingProbeArgs:
              port: Optional[pulumi.Input[int]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         _setter("compartment_id", compartment_id)
         _setter("protocol", protocol)
         _setter("targets", targets)
@@ -191,7 +199,21 @@ class _PingProbeState:
              time_created: Optional[pulumi.Input[str]] = None,
              timeout_in_seconds: Optional[pulumi.Input[int]] = None,
              vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'homeRegion' in kwargs:
+            home_region = kwargs['homeRegion']
+        if 'resultsUrl' in kwargs:
+            results_url = kwargs['resultsUrl']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if home_region is not None:

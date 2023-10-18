@@ -49,7 +49,15 @@ class SubscriptionArgs:
              osp_home_region: pulumi.Input[str],
              subscription: pulumi.Input['SubscriptionSubscriptionArgs'],
              subscription_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'ospHomeRegion' in kwargs:
+            osp_home_region = kwargs['ospHomeRegion']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+
         _setter("compartment_id", compartment_id)
         _setter("email", email)
         _setter("osp_home_region", osp_home_region)
@@ -237,7 +245,55 @@ class _SubscriptionState:
              time_start: Optional[pulumi.Input[str]] = None,
              upgrade_state: Optional[pulumi.Input[str]] = None,
              upgrade_state_details: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountType' in kwargs:
+            account_type = kwargs['accountType']
+        if 'billToCustAccountId' in kwargs:
+            bill_to_cust_account_id = kwargs['billToCustAccountId']
+        if 'billingAddresses' in kwargs:
+            billing_addresses = kwargs['billingAddresses']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'gsiOrgCode' in kwargs:
+            gsi_org_code = kwargs['gsiOrgCode']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'languageCode' in kwargs:
+            language_code = kwargs['languageCode']
+        if 'organizationId' in kwargs:
+            organization_id = kwargs['organizationId']
+        if 'ospHomeRegion' in kwargs:
+            osp_home_region = kwargs['ospHomeRegion']
+        if 'paymentGateways' in kwargs:
+            payment_gateways = kwargs['paymentGateways']
+        if 'paymentOptions' in kwargs:
+            payment_options = kwargs['paymentOptions']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+        if 'shipToCustAcctRoleId' in kwargs:
+            ship_to_cust_acct_role_id = kwargs['shipToCustAcctRoleId']
+        if 'shipToCustAcctSiteId' in kwargs:
+            ship_to_cust_acct_site_id = kwargs['shipToCustAcctSiteId']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'subscriptionPlanNumber' in kwargs:
+            subscription_plan_number = kwargs['subscriptionPlanNumber']
+        if 'taxInfos' in kwargs:
+            tax_infos = kwargs['taxInfos']
+        if 'timePersonalToCorporateConv' in kwargs:
+            time_personal_to_corporate_conv = kwargs['timePersonalToCorporateConv']
+        if 'timePlanUpgrade' in kwargs:
+            time_plan_upgrade = kwargs['timePlanUpgrade']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'upgradeState' in kwargs:
+            upgrade_state = kwargs['upgradeState']
+        if 'upgradeStateDetails' in kwargs:
+            upgrade_state_details = kwargs['upgradeStateDetails']
+
         if account_type is not None:
             _setter("account_type", account_type)
         if bill_to_cust_account_id is not None:

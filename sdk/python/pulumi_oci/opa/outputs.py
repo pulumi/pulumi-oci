@@ -76,7 +76,19 @@ class OpaInstanceAttachment(dict):
              target_instance_url: Optional[str] = None,
              target_role: Optional[str] = None,
              target_service_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
             _setter("is_implicit", is_implicit)
         if target_id is not None:
@@ -162,7 +174,19 @@ class GetOpaInstanceAttachmentResult(dict):
              target_instance_url: str,
              target_role: str,
              target_service_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         _setter("is_implicit", is_implicit)
         _setter("target_id", target_id)
         _setter("target_instance_url", target_instance_url)
@@ -229,7 +253,9 @@ class GetOpaInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -263,7 +289,9 @@ class GetOpaInstancesOpaInstanceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -366,7 +394,43 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idcsAt' in kwargs:
+            idcs_at = kwargs['idcsAt']
+        if 'identityAppDisplayName' in kwargs:
+            identity_app_display_name = kwargs['identityAppDisplayName']
+        if 'identityAppGuid' in kwargs:
+            identity_app_guid = kwargs['identityAppGuid']
+        if 'identityAppOpcServiceInstanceGuid' in kwargs:
+            identity_app_opc_service_instance_guid = kwargs['identityAppOpcServiceInstanceGuid']
+        if 'identityDomainUrl' in kwargs:
+            identity_domain_url = kwargs['identityDomainUrl']
+        if 'instanceUrl' in kwargs:
+            instance_url = kwargs['instanceUrl']
+        if 'isBreakglassEnabled' in kwargs:
+            is_breakglass_enabled = kwargs['isBreakglassEnabled']
+        if 'meteringType' in kwargs:
+            metering_type = kwargs['meteringType']
+        if 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("attachments", attachments)
         _setter("compartment_id", compartment_id)
         _setter("consumption_model", consumption_model)
@@ -587,7 +651,19 @@ class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
              target_instance_url: str,
              target_role: str,
              target_service_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         _setter("is_implicit", is_implicit)
         _setter("target_id", target_id)
         _setter("target_instance_url", target_instance_url)

@@ -1668,10 +1668,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataIntegration/workspaceExportRequest",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest": "WorkspaceExportRequest"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataIntegration/workspaceFolder",
   "fqn": "pulumi_oci.dataintegration",
   "classes": {
    "oci:DataIntegration/workspaceFolder:WorkspaceFolder": "WorkspaceFolder"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataIntegration/workspaceImportRequest",
+  "fqn": "pulumi_oci.dataintegration",
+  "classes": {
+   "oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest": "WorkspaceImportRequest"
   }
  },
  {

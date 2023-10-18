@@ -49,7 +49,21 @@ class CrossConnectGroupArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customerReferenceName' in kwargs:
+            customer_reference_name = kwargs['customerReferenceName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'macsecProperties' in kwargs:
+            macsec_properties = kwargs['macsecProperties']
+
         _setter("compartment_id", compartment_id)
         if customer_reference_name is not None:
             _setter("customer_reference_name", customer_reference_name)
@@ -191,7 +205,27 @@ class _CrossConnectGroupState:
              oci_physical_device_name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'customerReferenceName' in kwargs:
+            customer_reference_name = kwargs['customerReferenceName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'macsecProperties' in kwargs:
+            macsec_properties = kwargs['macsecProperties']
+        if 'ociLogicalDeviceName' in kwargs:
+            oci_logical_device_name = kwargs['ociLogicalDeviceName']
+        if 'ociPhysicalDeviceName' in kwargs:
+            oci_physical_device_name = kwargs['ociPhysicalDeviceName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if customer_reference_name is not None:

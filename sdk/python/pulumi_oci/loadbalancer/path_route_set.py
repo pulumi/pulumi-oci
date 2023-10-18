@@ -37,7 +37,13 @@ class PathRouteSetArgs:
              load_balancer_id: pulumi.Input[str],
              path_routes: pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'pathRoutes' in kwargs:
+            path_routes = kwargs['pathRoutes']
+
         _setter("load_balancer_id", load_balancer_id)
         _setter("path_routes", path_routes)
         if name is not None:
@@ -107,7 +113,13 @@ class _PathRouteSetState:
              name: Optional[pulumi.Input[str]] = None,
              path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'pathRoutes' in kwargs:
+            path_routes = kwargs['pathRoutes']
+
         if load_balancer_id is not None:
             _setter("load_balancer_id", load_balancer_id)
         if name is not None:

@@ -468,7 +468,9 @@ class ApiValidationResult(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              result: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if result is not None:
@@ -533,7 +535,13 @@ class DeploymentSpecification(dict):
              routes: Sequence['outputs.DeploymentSpecificationRoute'],
              logging_policies: Optional['outputs.DeploymentSpecificationLoggingPolicies'] = None,
              request_policies: Optional['outputs.DeploymentSpecificationRequestPolicies'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+
         _setter("routes", routes)
         if logging_policies is not None:
             _setter("logging_policies", logging_policies)
@@ -603,7 +611,13 @@ class DeploymentSpecificationLoggingPolicies(dict):
              _setter: Callable[[Any, Any], None],
              access_log: Optional['outputs.DeploymentSpecificationLoggingPoliciesAccessLog'] = None,
              execution_log: Optional['outputs.DeploymentSpecificationLoggingPoliciesExecutionLog'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLog' in kwargs:
+            access_log = kwargs['accessLog']
+        if 'executionLog' in kwargs:
+            execution_log = kwargs['executionLog']
+
         if access_log is not None:
             _setter("access_log", access_log)
         if execution_log is not None:
@@ -658,7 +672,11 @@ class DeploymentSpecificationLoggingPoliciesAccessLog(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -709,7 +727,13 @@ class DeploymentSpecificationLoggingPoliciesExecutionLog(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
              log_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
         if log_level is not None:
@@ -790,7 +814,17 @@ class DeploymentSpecificationRequestPolicies(dict):
              mutual_tls: Optional['outputs.DeploymentSpecificationRequestPoliciesMutualTls'] = None,
              rate_limiting: Optional['outputs.DeploymentSpecificationRequestPoliciesRateLimiting'] = None,
              usage_plans: Optional['outputs.DeploymentSpecificationRequestPoliciesUsagePlans'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dynamicAuthentication' in kwargs:
+            dynamic_authentication = kwargs['dynamicAuthentication']
+        if 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if 'rateLimiting' in kwargs:
+            rate_limiting = kwargs['rateLimiting']
+        if 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         if authentication is not None:
             _setter("authentication", authentication)
         if cors is not None:
@@ -965,7 +999,31 @@ class DeploymentSpecificationRequestPoliciesAuthentication(dict):
              validation_failure_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy'] = None,
              validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy'] = None,
              verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicy' in kwargs:
+            validation_failure_policy = kwargs['validationFailurePolicy']
+        if 'validationPolicy' in kwargs:
+            validation_policy = kwargs['validationPolicy']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("type", type)
         if audiences is not None:
             _setter("audiences", audiences)
@@ -1175,7 +1233,13 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys(dict):
              keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey']] = None,
              max_cache_duration_in_hours: Optional[int] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("type", type)
         if is_ssl_verify_disabled is not None:
             _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -1295,7 +1359,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey(dict):
              kty: Optional[str] = None,
              n: Optional[str] = None,
              use: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("format", format)
         if alg is not None:
             _setter("alg", alg)
@@ -1497,7 +1565,33 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              use_cookies_for_intermediate_steps: Optional[bool] = None,
              use_cookies_for_session: Optional[bool] = None,
              use_pkce: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("type", type)
         if client_details is not None:
             _setter("client_details", client_details)
@@ -1695,7 +1789,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              client_id: Optional[str] = None,
              client_secret_id: Optional[str] = None,
              client_secret_version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("type", type)
         if client_id is not None:
             _setter("client_id", client_id)
@@ -1785,7 +1887,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              filter_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders'] = None,
              rename_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders'] = None,
              set_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
             _setter("filter_headers", filter_headers)
         if rename_headers is not None:
@@ -1841,7 +1951,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem']] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
         if type is not None:
@@ -1883,7 +1995,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -1911,7 +2025,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -1960,7 +2076,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              _setter: Callable[[Any, Any], None],
              from_: Optional[str] = None,
              to: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         if from_ is not None:
             _setter("from_", from_)
         if to is not None:
@@ -1998,7 +2118,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -2051,7 +2173,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              if_exists: Optional[str] = None,
              name: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         if if_exists is not None:
             _setter("if_exists", if_exists)
         if name is not None:
@@ -2107,7 +2233,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if uri is not None:
             _setter("uri", uri)
@@ -2205,7 +2333,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy(dict)
              max_cache_duration_in_hours: Optional[int] = None,
              source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails'] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicy' in kwargs:
+            additional_validation_policy = kwargs['additionalValidationPolicy']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("type", type)
         if additional_validation_policy is not None:
             _setter("additional_validation_policy", additional_validation_policy)
@@ -2331,7 +2471,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
              audiences: Optional[Sequence[str]] = None,
              issuers: Optional[Sequence[str]] = None,
              verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         if audiences is not None:
             _setter("audiences", audiences)
         if issuers is not None:
@@ -2404,7 +2548,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
              is_required: Optional[bool] = None,
              key: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
             _setter("is_required", is_required)
         if key is not None:
@@ -2489,7 +2637,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
              client_id: Optional[str] = None,
              client_secret_id: Optional[str] = None,
              client_secret_version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("type", type)
         if client_id is not None:
             _setter("client_id", client_id)
@@ -2599,7 +2755,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey(di
              kty: Optional[str] = None,
              n: Optional[str] = None,
              use: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("format", format)
         if alg is not None:
             _setter("alg", alg)
@@ -2714,7 +2874,9 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if uri is not None:
             _setter("uri", uri)
@@ -2780,7 +2942,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim(dict):
              is_required: Optional[bool] = None,
              key: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
             _setter("is_required", is_required)
         if key is not None:
@@ -2875,7 +3041,21 @@ class DeploymentSpecificationRequestPoliciesCors(dict):
              exposed_headers: Optional[Sequence[str]] = None,
              is_allow_credentials_enabled: Optional[bool] = None,
              max_age_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_origins", allowed_origins)
         if allowed_headers is not None:
             _setter("allowed_headers", allowed_headers)
@@ -2975,7 +3155,13 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthentication(dict):
              _setter: Callable[[Any, Any], None],
              authentication_servers: Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer'],
              selection_source: 'outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if 'selectionSource' in kwargs:
+            selection_source = kwargs['selectionSource']
+
         _setter("authentication_servers", authentication_servers)
         _setter("selection_source", selection_source)
 
@@ -3032,7 +3218,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              authentication_server_detail: 'outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail',
              key: 'outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey',
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServerDetail' in kwargs:
+            authentication_server_detail = kwargs['authenticationServerDetail']
+
         _setter("authentication_server_detail", authentication_server_detail)
         _setter("key", key)
 
@@ -3165,7 +3355,31 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              validation_failure_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy'] = None,
              validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicy'] = None,
              verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicy' in kwargs:
+            validation_failure_policy = kwargs['validationFailurePolicy']
+        if 'validationPolicy' in kwargs:
+            validation_policy = kwargs['validationPolicy']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("type", type)
         if audiences is not None:
             _setter("audiences", audiences)
@@ -3375,7 +3589,13 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey']] = None,
              max_cache_duration_in_hours: Optional[int] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("type", type)
         if is_ssl_verify_disabled is not None:
             _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -3495,7 +3715,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              kty: Optional[str] = None,
              n: Optional[str] = None,
              use: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("format", format)
         if alg is not None:
             _setter("alg", alg)
@@ -3697,7 +3921,33 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              use_cookies_for_intermediate_steps: Optional[bool] = None,
              use_cookies_for_session: Optional[bool] = None,
              use_pkce: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("type", type)
         if client_details is not None:
             _setter("client_details", client_details)
@@ -3895,7 +4145,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              client_id: Optional[str] = None,
              client_secret_id: Optional[str] = None,
              client_secret_version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("type", type)
         if client_id is not None:
             _setter("client_id", client_id)
@@ -3985,7 +4243,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              filter_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders'] = None,
              rename_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders'] = None,
              set_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
             _setter("filter_headers", filter_headers)
         if rename_headers is not None:
@@ -4041,7 +4307,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem']] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
         if type is not None:
@@ -4083,7 +4351,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
 
@@ -4111,7 +4381,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4160,7 +4432,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              from_: Optional[str] = None,
              to: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         if from_ is not None:
             _setter("from_", from_)
         if to is not None:
@@ -4198,7 +4474,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
             _setter("items", items)
 
@@ -4251,7 +4529,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              if_exists: Optional[str] = None,
              name: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         if if_exists is not None:
             _setter("if_exists", if_exists)
         if name is not None:
@@ -4307,7 +4589,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if uri is not None:
             _setter("uri", uri)
@@ -4405,7 +4689,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              max_cache_duration_in_hours: Optional[int] = None,
              source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetails'] = None,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicy' in kwargs:
+            additional_validation_policy = kwargs['additionalValidationPolicy']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("type", type)
         if additional_validation_policy is not None:
             _setter("additional_validation_policy", additional_validation_policy)
@@ -4531,7 +4827,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              audiences: Optional[Sequence[str]] = None,
              issuers: Optional[Sequence[str]] = None,
              verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         if audiences is not None:
             _setter("audiences", audiences)
         if issuers is not None:
@@ -4604,7 +4904,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              is_required: Optional[bool] = None,
              key: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
             _setter("is_required", is_required)
         if key is not None:
@@ -4689,7 +4993,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              client_id: Optional[str] = None,
              client_secret_id: Optional[str] = None,
              client_secret_version_number: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("type", type)
         if client_id is not None:
             _setter("client_id", client_id)
@@ -4799,7 +5111,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              kty: Optional[str] = None,
              n: Optional[str] = None,
              use: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("format", format)
         if alg is not None:
             _setter("alg", alg)
@@ -4914,7 +5230,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         if uri is not None:
             _setter("uri", uri)
@@ -4980,7 +5298,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              is_required: Optional[bool] = None,
              key: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
             _setter("is_required", is_required)
         if key is not None:
@@ -5065,7 +5387,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
              is_default: Optional[bool] = None,
              type: Optional[str] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("name", name)
         if expression is not None:
             _setter("expression", expression)
@@ -5144,7 +5470,9 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -5207,7 +5535,13 @@ class DeploymentSpecificationRequestPoliciesMutualTls(dict):
              _setter: Callable[[Any, Any], None],
              allowed_sans: Optional[Sequence[str]] = None,
              is_verified_certificate_required: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+
         if allowed_sans is not None:
             _setter("allowed_sans", allowed_sans)
         if is_verified_certificate_required is not None:
@@ -5268,7 +5602,13 @@ class DeploymentSpecificationRequestPoliciesRateLimiting(dict):
              _setter: Callable[[Any, Any], None],
              rate_in_requests_per_second: int,
              rate_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+
         _setter("rate_in_requests_per_second", rate_in_requests_per_second)
         _setter("rate_key", rate_key)
 
@@ -5325,7 +5665,11 @@ class DeploymentSpecificationRequestPoliciesUsagePlans(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              token_locations: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+
         _setter("token_locations", token_locations)
 
     @property
@@ -5397,7 +5741,15 @@ class DeploymentSpecificationRoute(dict):
              methods: Optional[Sequence[str]] = None,
              request_policies: Optional['outputs.DeploymentSpecificationRouteRequestPolicies'] = None,
              response_policies: Optional['outputs.DeploymentSpecificationRouteResponsePolicies'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+
         _setter("backend", backend)
         _setter("path", path)
         if logging_policies is not None:
@@ -5562,7 +5914,27 @@ class DeploymentSpecificationRouteBackend(dict):
              send_timeout_in_seconds: Optional[float] = None,
              status: Optional[int] = None,
              url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if 'selectionSource' in kwargs:
+            selection_source = kwargs['selectionSource']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("type", type)
         if allowed_post_logout_uris is not None:
             _setter("allowed_post_logout_uris", allowed_post_logout_uris)
@@ -5727,7 +6099,9 @@ class DeploymentSpecificationRouteBackendHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -5769,7 +6143,9 @@ class DeploymentSpecificationRouteBackendRoutingBackend(dict):
              _setter: Callable[[Any, Any], None],
              backend: Optional['outputs.DeploymentSpecificationRouteBackendRoutingBackendBackend'] = None,
              key: Optional['outputs.DeploymentSpecificationRouteBackendRoutingBackendKey'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if backend is not None:
             _setter("backend", backend)
         if key is not None:
@@ -5872,7 +6248,19 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
              send_timeout_in_seconds: Optional[float] = None,
              status: Optional[int] = None,
              url: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("type", type)
         if body is not None:
             _setter("body", body)
@@ -5997,7 +6385,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: Optional[str] = None,
              value: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
             _setter("name", name)
         if value is not None:
@@ -6072,7 +6462,11 @@ class DeploymentSpecificationRouteBackendRoutingBackendKey(dict):
              expression: Optional[str] = None,
              is_default: Optional[bool] = None,
              values: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("name", name)
         _setter("type", type)
         if expression is not None:
@@ -6150,7 +6544,9 @@ class DeploymentSpecificationRouteBackendSelectionSource(dict):
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -6213,7 +6609,13 @@ class DeploymentSpecificationRouteLoggingPolicies(dict):
              _setter: Callable[[Any, Any], None],
              access_log: Optional['outputs.DeploymentSpecificationRouteLoggingPoliciesAccessLog'] = None,
              execution_log: Optional['outputs.DeploymentSpecificationRouteLoggingPoliciesExecutionLog'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLog' in kwargs:
+            access_log = kwargs['accessLog']
+        if 'executionLog' in kwargs:
+            execution_log = kwargs['executionLog']
+
         if access_log is not None:
             _setter("access_log", access_log)
         if execution_log is not None:
@@ -6268,7 +6670,11 @@ class DeploymentSpecificationRouteLoggingPoliciesAccessLog(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
 
@@ -6319,7 +6725,13 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLog(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: Optional[bool] = None,
              log_level: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         if is_enabled is not None:
             _setter("is_enabled", is_enabled)
         if log_level is not None:
@@ -6412,7 +6824,21 @@ class DeploymentSpecificationRouteRequestPolicies(dict):
              query_parameter_transformations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations'] = None,
              query_parameter_validations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations'] = None,
              response_cache_lookup: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyValidation' in kwargs:
+            body_validation = kwargs['bodyValidation']
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if 'responseCacheLookup' in kwargs:
+            response_cache_lookup = kwargs['responseCacheLookup']
+
         if authorization is not None:
             _setter("authorization", authorization)
         if body_validation is not None:
@@ -6535,7 +6961,11 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorization(dict):
              _setter: Callable[[Any, Any], None],
              allowed_scopes: Optional[Sequence[str]] = None,
              type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+
         if allowed_scopes is not None:
             _setter("allowed_scopes", allowed_scopes)
         if type is not None:
@@ -6608,7 +7038,11 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidation(dict):
              contents: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContent']] = None,
              required: Optional[bool] = None,
              validation_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if contents is not None:
             _setter("contents", contents)
         if required is not None:
@@ -6691,7 +7125,13 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContent(dict):
              _setter: Callable[[Any, Any], None],
              media_type: str,
              validation_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         _setter("media_type", media_type)
         _setter("validation_type", validation_type)
 
@@ -6780,7 +7220,21 @@ class DeploymentSpecificationRouteRequestPoliciesCors(dict):
              exposed_headers: Optional[Sequence[str]] = None,
              is_allow_credentials_enabled: Optional[bool] = None,
              max_age_in_seconds: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_origins", allowed_origins)
         if allowed_headers is not None:
             _setter("allowed_headers", allowed_headers)
@@ -6886,7 +7340,15 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformations(dict):
              filter_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeaders'] = None,
              rename_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeaders'] = None,
              set_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
             _setter("filter_headers", filter_headers)
         if rename_headers is not None:
@@ -6942,7 +7404,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItem'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -6982,7 +7446,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -7009,7 +7475,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7057,7 +7525,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -7093,7 +7565,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7145,7 +7619,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
              name: str,
              values: Sequence[str],
              if_exists: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("name", name)
         _setter("values", values)
         if if_exists is not None:
@@ -7218,7 +7696,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidations(dict):
              _setter: Callable[[Any, Any], None],
              headers: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader']] = None,
              validation_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if headers is not None:
             _setter("headers", headers)
         if validation_mode is not None:
@@ -7266,7 +7748,9 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              required: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if required is not None:
             _setter("required", required)
@@ -7332,7 +7816,15 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations(d
              filter_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters'] = None,
              rename_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters'] = None,
              set_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+
         if filter_query_parameters is not None:
             _setter("filter_query_parameters", filter_query_parameters)
         if rename_query_parameters is not None:
@@ -7388,7 +7880,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -7428,7 +7922,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -7455,7 +7951,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7503,7 +8001,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -7539,7 +8041,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7591,7 +8095,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
              name: str,
              values: Sequence[str],
              if_exists: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("name", name)
         _setter("values", values)
         if if_exists is not None:
@@ -7664,7 +8172,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations(dict)
              _setter: Callable[[Any, Any], None],
              parameters: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter']] = None,
              validation_mode: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if parameters is not None:
             _setter("parameters", parameters)
         if validation_mode is not None:
@@ -7712,7 +8224,9 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
              _setter: Callable[[Any, Any], None],
              name: str,
              required: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         if required is not None:
             _setter("required", required)
@@ -7790,7 +8304,15 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup(dict):
              cache_key_additions: Optional[Sequence[str]] = None,
              is_enabled: Optional[bool] = None,
              is_private_caching_enabled: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+
         _setter("type", type)
         if cache_key_additions is not None:
             _setter("cache_key_additions", cache_key_additions)
@@ -7878,7 +8400,13 @@ class DeploymentSpecificationRouteResponsePolicies(dict):
              _setter: Callable[[Any, Any], None],
              header_transformations: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformations'] = None,
              response_cache_store: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesResponseCacheStore'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'responseCacheStore' in kwargs:
+            response_cache_store = kwargs['responseCacheStore']
+
         if header_transformations is not None:
             _setter("header_transformations", header_transformations)
         if response_cache_store is not None:
@@ -7945,7 +8473,15 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformations(dict):
              filter_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders'] = None,
              rename_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders'] = None,
              set_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
             _setter("filter_headers", filter_headers)
         if rename_headers is not None:
@@ -8001,7 +8537,9 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItem'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -8041,7 +8579,9 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -8068,7 +8608,9 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8116,7 +8658,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -8152,7 +8698,9 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8204,7 +8752,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
              name: str,
              values: Sequence[str],
              if_exists: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("name", name)
         _setter("values", values)
         if if_exists is not None:
@@ -8275,7 +8827,11 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
              _setter: Callable[[Any, Any], None],
              time_to_live_in_seconds: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+
         _setter("time_to_live_in_seconds", time_to_live_in_seconds)
         _setter("type", type)
 
@@ -8342,7 +8898,13 @@ class GatewayCaBundle(dict):
              type: str,
              ca_bundle_id: Optional[str] = None,
              certificate_authority_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+
         _setter("type", type)
         if ca_bundle_id is not None:
             _setter("ca_bundle_id", ca_bundle_id)
@@ -8406,7 +8968,11 @@ class GatewayIpAddress(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         if ip_address is not None:
             _setter("ip_address", ip_address)
 
@@ -8495,7 +9061,23 @@ class GatewayResponseCacheDetails(dict):
              read_timeout_in_ms: Optional[int] = None,
              send_timeout_in_ms: Optional[int] = None,
              servers: Optional[Sequence['outputs.GatewayResponseCacheDetailsServer']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+
         _setter("type", type)
         if authentication_secret_id is not None:
             _setter("authentication_secret_id", authentication_secret_id)
@@ -8606,7 +9188,9 @@ class GatewayResponseCacheDetailsServer(dict):
              _setter: Callable[[Any, Any], None],
              host: Optional[str] = None,
              port: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
             _setter("host", host)
         if port is not None:
@@ -8648,7 +9232,9 @@ class SubscriberClient(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              token: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("token", token)
 
@@ -8717,7 +9303,11 @@ class UsagePlanEntitlement(dict):
              quota: Optional['outputs.UsagePlanEntitlementQuota'] = None,
              rate_limit: Optional['outputs.UsagePlanEntitlementRateLimit'] = None,
              targets: Optional[Sequence['outputs.UsagePlanEntitlementTarget']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateLimit' in kwargs:
+            rate_limit = kwargs['rateLimit']
+
         _setter("name", name)
         if description is not None:
             _setter("description", description)
@@ -8815,7 +9405,13 @@ class UsagePlanEntitlementQuota(dict):
              reset_policy: str,
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+
         _setter("operation_on_breach", operation_on_breach)
         _setter("reset_policy", reset_policy)
         _setter("unit", unit)
@@ -8873,7 +9469,9 @@ class UsagePlanEntitlementRateLimit(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -8926,7 +9524,11 @@ class UsagePlanEntitlementTarget(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              deployment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+
         _setter("deployment_id", deployment_id)
 
     @property
@@ -8957,7 +9559,13 @@ class GetApiDeploymentSpecificationLoggingPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -8993,7 +9601,11 @@ class GetApiDeploymentSpecificationLoggingPolicyAccessLogResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -9024,7 +9636,13 @@ class GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -9080,7 +9698,17 @@ class GetApiDeploymentSpecificationRequestPolicyResult(dict):
              mutual_tls: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyMutualTlResult'],
              rate_limitings: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyRateLimitingResult'],
              usage_plans: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyUsagePlanResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         _setter("authentications", authentications)
         _setter("cors", cors)
         _setter("dynamic_authentications", dynamic_authentications)
@@ -9207,7 +9835,31 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
              validation_failure_policies: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -9373,7 +10025,13 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult(di
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -9468,7 +10126,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -9619,7 +10281,33 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -9775,7 +10463,15 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -9837,7 +10533,15 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              filter_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -9886,7 +10590,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -9922,7 +10628,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -9949,7 +10657,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -9980,7 +10690,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -10016,7 +10730,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10051,7 +10767,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -10100,7 +10820,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -10164,7 +10886,19 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyRe
              source_uri_details: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -10262,7 +10996,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAd
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -10315,7 +11053,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAd
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -10372,7 +11114,15 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyCl
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -10458,7 +11208,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKe
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -10561,7 +11315,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySo
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -10605,7 +11361,11 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult(
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -10670,7 +11430,21 @@ class GetApiDeploymentSpecificationRequestPolicyCorResult(dict):
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -10746,7 +11520,13 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult(dict
              _setter: Callable[[Any, Any], None],
              authentication_servers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult'],
              selection_sources: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+
         _setter("authentication_servers", authentication_servers)
         _setter("selection_sources", selection_sources)
 
@@ -10786,7 +11566,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              _setter: Callable[[Any, Any], None],
              authentication_server_details: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult'],
              keys: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+
         _setter("authentication_server_details", authentication_server_details)
         _setter("keys", keys)
 
@@ -10877,7 +11661,31 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              validation_failure_policies: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -11043,7 +11851,13 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -11138,7 +11952,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -11289,7 +12107,33 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -11445,7 +12289,15 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -11507,7 +12359,15 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              filter_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -11556,7 +12416,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -11592,7 +12454,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -11619,7 +12483,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11650,7 +12516,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -11686,7 +12556,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11721,7 +12593,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -11770,7 +12646,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -11834,7 +12712,19 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              source_uri_details: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -11932,7 +12822,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -11985,7 +12879,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -12042,7 +12940,15 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -12128,7 +13034,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -12231,7 +13141,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -12275,7 +13187,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -12336,7 +13252,11 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -12403,7 +13323,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSo
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -12443,7 +13365,13 @@ class GetApiDeploymentSpecificationRequestPolicyMutualTlResult(dict):
              _setter: Callable[[Any, Any], None],
              allowed_sans: Sequence[str],
              is_verified_certificate_required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+
         _setter("allowed_sans", allowed_sans)
         _setter("is_verified_certificate_required", is_verified_certificate_required)
 
@@ -12483,7 +13411,13 @@ class GetApiDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
              _setter: Callable[[Any, Any], None],
              rate_in_requests_per_second: int,
              rate_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+
         _setter("rate_in_requests_per_second", rate_in_requests_per_second)
         _setter("rate_key", rate_key)
 
@@ -12523,7 +13457,11 @@ class GetApiDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              token_locations: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+
         _setter("token_locations", token_locations)
 
     @property
@@ -12574,7 +13512,15 @@ class GetApiDeploymentSpecificationRouteResult(dict):
              path: str,
              request_policies: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyResult'],
              response_policies: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+
         _setter("backends", backends)
         _setter("logging_policies", logging_policies)
         _setter("methods", methods)
@@ -12695,7 +13641,27 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("allowed_post_logout_uris", allowed_post_logout_uris)
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -12834,7 +13800,9 @@ class GetApiDeploymentSpecificationRouteBackendHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -12874,7 +13842,9 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendResult(dict):
              _setter: Callable[[Any, Any], None],
              backends: Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult'],
              keys: Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("backends", backends)
         _setter("keys", keys)
 
@@ -12944,7 +13914,19 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict)
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
         _setter("function_id", function_id)
@@ -13050,7 +14032,9 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -13102,7 +14086,11 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyResult(dict):
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -13169,7 +14157,9 @@ class GetApiDeploymentSpecificationRouteBackendSelectionSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -13209,7 +14199,13 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -13245,7 +14241,11 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -13276,7 +14276,13 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -13340,7 +14346,21 @@ class GetApiDeploymentSpecificationRouteRequestPolicyResult(dict):
              query_parameter_transformations: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult'],
              query_parameter_validations: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult'],
              response_cache_lookups: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+
         _setter("authorizations", authorizations)
         _setter("body_validations", body_validations)
         _setter("cors", cors)
@@ -13434,7 +14454,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyAuthorizationResult(dict):
              _setter: Callable[[Any, Any], None],
              allowed_scopes: Sequence[str],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+
         _setter("allowed_scopes", allowed_scopes)
         _setter("type", type)
 
@@ -13478,7 +14502,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationResult(dict):
              contents: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult'],
              required: bool,
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("contents", contents)
         _setter("required", required)
         _setter("validation_mode", validation_mode)
@@ -13527,7 +14555,13 @@ class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult
              _setter: Callable[[Any, Any], None],
              media_type: str,
              validation_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         _setter("media_type", media_type)
         _setter("validation_type", validation_type)
 
@@ -13583,7 +14617,21 @@ class GetApiDeploymentSpecificationRouteRequestPolicyCorResult(dict):
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -13663,7 +14711,15 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult(
              filter_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -13712,7 +14768,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterH
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -13748,7 +14806,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterH
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -13775,7 +14835,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameH
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13806,7 +14868,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameH
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -13842,7 +14908,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHead
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13877,7 +14945,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHead
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -13925,7 +14997,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict
              _setter: Callable[[Any, Any], None],
              headers: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("headers", headers)
         _setter("validation_mode", validation_mode)
 
@@ -13962,7 +15038,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResul
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -14006,7 +15084,15 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
              filter_query_parameters: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult'],
              rename_query_parameters: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult'],
              set_query_parameters: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+
         _setter("filter_query_parameters", filter_query_parameters)
         _setter("rename_query_parameters", rename_query_parameters)
         _setter("set_query_parameters", set_query_parameters)
@@ -14055,7 +15141,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -14091,7 +15179,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -14118,7 +15208,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14149,7 +15241,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -14185,7 +15281,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14220,7 +15318,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -14268,7 +15370,11 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationRes
              _setter: Callable[[Any, Any], None],
              parameters: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("parameters", parameters)
         _setter("validation_mode", validation_mode)
 
@@ -14305,7 +15411,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationPar
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -14353,7 +15461,15 @@ class GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult(d
              is_enabled: bool,
              is_private_caching_enabled: bool,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+
         _setter("cache_key_additions", cache_key_additions)
         _setter("is_enabled", is_enabled)
         _setter("is_private_caching_enabled", is_private_caching_enabled)
@@ -14411,7 +15527,13 @@ class GetApiDeploymentSpecificationRouteResponsePolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              header_transformations: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult'],
              response_cache_stores: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+
         _setter("header_transformations", header_transformations)
         _setter("response_cache_stores", response_cache_stores)
 
@@ -14455,7 +15577,15 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult
              filter_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -14504,7 +15634,9 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilter
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -14540,7 +15672,9 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilter
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -14567,7 +15701,9 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRename
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14598,7 +15734,11 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRename
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -14634,7 +15774,9 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHea
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14669,7 +15811,11 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHea
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -14718,7 +15864,11 @@ class GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(d
              _setter: Callable[[Any, Any], None],
              time_to_live_in_seconds: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+
         _setter("time_to_live_in_seconds", time_to_live_in_seconds)
         _setter("type", type)
 
@@ -14758,7 +15908,9 @@ class GetApiValidationResultResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              result: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("result", result)
 
@@ -14802,7 +15954,9 @@ class GetApiValidationValidationResult(dict):
              details: Sequence['outputs.GetApiValidationValidationDetailResult'],
              name: str,
              result: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("name", name)
         _setter("result", result)
@@ -14855,7 +16009,9 @@ class GetApiValidationValidationDetailResult(dict):
              msg: str,
              severity: str,
              srcs: Sequence['outputs.GetApiValidationValidationDetailSrcResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("msg", msg)
         _setter("severity", severity)
         _setter("srcs", srcs)
@@ -14897,7 +16053,9 @@ class GetApiValidationValidationDetailSrcResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence[Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14918,7 +16076,9 @@ class GetApisApiCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetApisApiCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14992,7 +16152,27 @@ class GetApisApiCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              validation_results: Sequence['outputs.GetApisApiCollectionItemValidationResultResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'specificationType' in kwargs:
+            specification_type = kwargs['specificationType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'validationResults' in kwargs:
+            validation_results = kwargs['validationResults']
+
         _setter("compartment_id", compartment_id)
         _setter("content", content)
         _setter("defined_tags", defined_tags)
@@ -15126,7 +16306,9 @@ class GetApisApiCollectionItemValidationResultResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              result: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("result", result)
 
@@ -15168,7 +16350,9 @@ class GetApisFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15205,7 +16389,9 @@ class GetCertificatesCertificateCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15280,7 +16466,31 @@ class GetCertificatesCertificateCollectionItemResult(dict):
              time_created: str,
              time_not_valid_after: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'intermediateCertificates' in kwargs:
+            intermediate_certificates = kwargs['intermediateCertificates']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("certificate", certificate)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -15424,7 +16634,9 @@ class GetCertificatesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15469,7 +16681,13 @@ class GetDeploymentSpecificationResult(dict):
              logging_policies: Sequence['outputs.GetDeploymentSpecificationLoggingPolicyResult'],
              request_policies: Sequence['outputs.GetDeploymentSpecificationRequestPolicyResult'],
              routes: Sequence['outputs.GetDeploymentSpecificationRouteResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+
         _setter("logging_policies", logging_policies)
         _setter("request_policies", request_policies)
         _setter("routes", routes)
@@ -15518,7 +16736,13 @@ class GetDeploymentSpecificationLoggingPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetDeploymentSpecificationLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetDeploymentSpecificationLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -15554,7 +16778,11 @@ class GetDeploymentSpecificationLoggingPolicyAccessLogResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -15585,7 +16813,13 @@ class GetDeploymentSpecificationLoggingPolicyExecutionLogResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -15641,7 +16875,17 @@ class GetDeploymentSpecificationRequestPolicyResult(dict):
              mutual_tls: Sequence['outputs.GetDeploymentSpecificationRequestPolicyMutualTlResult'],
              rate_limitings: Sequence['outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult'],
              usage_plans: Sequence['outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         _setter("authentications", authentications)
         _setter("cors", cors)
         _setter("dynamic_authentications", dynamic_authentications)
@@ -15768,7 +17012,31 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
              validation_failure_policies: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -15934,7 +17202,13 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult(dict)
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -16029,7 +17303,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult(di
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -16180,7 +17458,33 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -16336,7 +17640,15 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -16398,7 +17710,15 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              filter_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -16447,7 +17767,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -16483,7 +17805,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -16510,7 +17834,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16541,7 +17867,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -16577,7 +17907,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16612,7 +17944,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -16661,7 +17997,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -16725,7 +18063,19 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResul
              source_uri_details: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -16823,7 +18173,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAddit
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -16876,7 +18230,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAddit
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -16933,7 +18291,15 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClien
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -17019,7 +18385,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyRe
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -17122,7 +18492,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourc
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -17166,7 +18538,11 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult(dic
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -17231,7 +18607,21 @@ class GetDeploymentSpecificationRequestPolicyCorResult(dict):
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -17307,7 +18697,13 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationResult(dict):
              _setter: Callable[[Any, Any], None],
              authentication_servers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult'],
              selection_sources: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+
         _setter("authentication_servers", authentication_servers)
         _setter("selection_sources", selection_sources)
 
@@ -17347,7 +18743,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              _setter: Callable[[Any, Any], None],
              authentication_server_details: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult'],
              keys: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+
         _setter("authentication_server_details", authentication_server_details)
         _setter("keys", keys)
 
@@ -17438,7 +18838,31 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              validation_failure_policies: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -17604,7 +19028,13 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -17699,7 +19129,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -17850,7 +19284,33 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -18006,7 +19466,15 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -18068,7 +19536,15 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              filter_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -18117,7 +19593,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -18153,7 +19631,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -18180,7 +19660,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18211,7 +19693,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -18247,7 +19733,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18282,7 +19770,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -18331,7 +19823,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -18395,7 +19889,19 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              source_uri_details: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -18493,7 +19999,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -18546,7 +20056,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -18603,7 +20117,15 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -18689,7 +20211,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -18792,7 +20318,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -18836,7 +20364,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -18897,7 +20429,11 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -18964,7 +20500,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourc
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -19004,7 +20542,13 @@ class GetDeploymentSpecificationRequestPolicyMutualTlResult(dict):
              _setter: Callable[[Any, Any], None],
              allowed_sans: Sequence[str],
              is_verified_certificate_required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+
         _setter("allowed_sans", allowed_sans)
         _setter("is_verified_certificate_required", is_verified_certificate_required)
 
@@ -19044,7 +20588,13 @@ class GetDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
              _setter: Callable[[Any, Any], None],
              rate_in_requests_per_second: int,
              rate_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+
         _setter("rate_in_requests_per_second", rate_in_requests_per_second)
         _setter("rate_key", rate_key)
 
@@ -19084,7 +20634,11 @@ class GetDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              token_locations: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+
         _setter("token_locations", token_locations)
 
     @property
@@ -19135,7 +20689,15 @@ class GetDeploymentSpecificationRouteResult(dict):
              path: str,
              request_policies: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyResult'],
              response_policies: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+
         _setter("backends", backends)
         _setter("logging_policies", logging_policies)
         _setter("methods", methods)
@@ -19256,7 +20818,27 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("allowed_post_logout_uris", allowed_post_logout_uris)
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -19395,7 +20977,9 @@ class GetDeploymentSpecificationRouteBackendHeaderResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -19435,7 +21019,9 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendResult(dict):
              _setter: Callable[[Any, Any], None],
              backends: Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult'],
              keys: Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("backends", backends)
         _setter("keys", keys)
 
@@ -19505,7 +21091,19 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict):
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
         _setter("function_id", function_id)
@@ -19611,7 +21209,9 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult(di
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -19663,7 +21263,11 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendKeyResult(dict):
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -19730,7 +21334,9 @@ class GetDeploymentSpecificationRouteBackendSelectionSourceResult(dict):
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -19770,7 +21376,13 @@ class GetDeploymentSpecificationRouteLoggingPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetDeploymentSpecificationRouteLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetDeploymentSpecificationRouteLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -19806,7 +21418,11 @@ class GetDeploymentSpecificationRouteLoggingPolicyAccessLogResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -19837,7 +21453,13 @@ class GetDeploymentSpecificationRouteLoggingPolicyExecutionLogResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -19901,7 +21523,21 @@ class GetDeploymentSpecificationRouteRequestPolicyResult(dict):
              query_parameter_transformations: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult'],
              query_parameter_validations: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult'],
              response_cache_lookups: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+
         _setter("authorizations", authorizations)
         _setter("body_validations", body_validations)
         _setter("cors", cors)
@@ -19995,7 +21631,11 @@ class GetDeploymentSpecificationRouteRequestPolicyAuthorizationResult(dict):
              _setter: Callable[[Any, Any], None],
              allowed_scopes: Sequence[str],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+
         _setter("allowed_scopes", allowed_scopes)
         _setter("type", type)
 
@@ -20039,7 +21679,11 @@ class GetDeploymentSpecificationRouteRequestPolicyBodyValidationResult(dict):
              contents: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult'],
              required: bool,
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("contents", contents)
         _setter("required", required)
         _setter("validation_mode", validation_mode)
@@ -20088,7 +21732,13 @@ class GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult(di
              _setter: Callable[[Any, Any], None],
              media_type: str,
              validation_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         _setter("media_type", media_type)
         _setter("validation_type", validation_type)
 
@@ -20144,7 +21794,21 @@ class GetDeploymentSpecificationRouteRequestPolicyCorResult(dict):
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -20224,7 +21888,15 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult(dic
              filter_headers: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -20273,7 +21945,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHead
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -20309,7 +21983,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHead
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -20336,7 +22012,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHead
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20367,7 +22045,11 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHead
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -20403,7 +22085,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderR
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20438,7 +22122,11 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderI
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -20486,7 +22174,11 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict):
              _setter: Callable[[Any, Any], None],
              headers: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("headers", headers)
         _setter("validation_mode", validation_mode)
 
@@ -20523,7 +22215,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult(d
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -20567,7 +22261,15 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
              filter_query_parameters: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult'],
              rename_query_parameters: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult'],
              set_query_parameters: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+
         _setter("filter_query_parameters", filter_query_parameters)
         _setter("rename_query_parameters", rename_query_parameters)
         _setter("set_query_parameters", set_query_parameters)
@@ -20616,7 +22318,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFi
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -20652,7 +22356,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFi
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -20679,7 +22385,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20710,7 +22418,11 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -20746,7 +22458,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20781,7 +22495,11 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSe
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -20829,7 +22547,11 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult
              _setter: Callable[[Any, Any], None],
              parameters: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("parameters", parameters)
         _setter("validation_mode", validation_mode)
 
@@ -20866,7 +22588,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParame
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -20914,7 +22638,15 @@ class GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult(dict
              is_enabled: bool,
              is_private_caching_enabled: bool,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+
         _setter("cache_key_additions", cache_key_additions)
         _setter("is_enabled", is_enabled)
         _setter("is_private_caching_enabled", is_private_caching_enabled)
@@ -20972,7 +22704,13 @@ class GetDeploymentSpecificationRouteResponsePolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              header_transformations: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult'],
              response_cache_stores: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+
         _setter("header_transformations", header_transformations)
         _setter("response_cache_stores", response_cache_stores)
 
@@ -21016,7 +22754,15 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult(di
              filter_headers: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -21065,7 +22811,9 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHea
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -21101,7 +22849,9 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHea
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -21128,7 +22878,9 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHea
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21159,7 +22911,11 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHea
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -21195,7 +22951,9 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21230,7 +22988,11 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -21279,7 +23041,11 @@ class GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(dict
              _setter: Callable[[Any, Any], None],
              time_to_live_in_seconds: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+
         _setter("time_to_live_in_seconds", time_to_live_in_seconds)
         _setter("type", type)
 
@@ -21363,7 +23129,27 @@ class GetDeploymentsDeploymentCollectionResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gatewayId' in kwargs:
+            gateway_id = kwargs['gatewayId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'pathPrefix' in kwargs:
+            path_prefix = kwargs['pathPrefix']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -21506,7 +23292,13 @@ class GetDeploymentsDeploymentCollectionSpecificationResult(dict):
              logging_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult'],
              request_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult'],
              routes: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+
         _setter("logging_policies", logging_policies)
         _setter("request_policies", request_policies)
         _setter("routes", routes)
@@ -21555,7 +23347,13 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -21591,7 +23389,11 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -21622,7 +23424,13 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogRe
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -21678,7 +23486,17 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult(dict):
              mutual_tls: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult'],
              rate_limitings: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult'],
              usage_plans: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         _setter("authentications", authentications)
         _setter("cors", cors)
         _setter("dynamic_authentications", dynamic_authentications)
@@ -21805,7 +23623,31 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              validation_failure_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -21971,7 +23813,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -22066,7 +23914,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -22217,7 +24069,33 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -22373,7 +24251,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -22435,7 +24321,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              filter_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -22484,7 +24378,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -22520,7 +24416,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -22547,7 +24445,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22578,7 +24478,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -22614,7 +24518,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22649,7 +24555,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -22698,7 +24608,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -22762,7 +24674,19 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              source_uri_details: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -22860,7 +24784,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -22913,7 +24841,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -22970,7 +24902,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -23056,7 +24996,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -23159,7 +25103,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -23203,7 +25149,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -23268,7 +25218,21 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult(dict
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -23344,7 +25308,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              authentication_servers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult'],
              selection_sources: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+
         _setter("authentication_servers", authentication_servers)
         _setter("selection_sources", selection_sources)
 
@@ -23384,7 +25354,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              authentication_server_details: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult'],
              keys: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+
         _setter("authentication_server_details", authentication_server_details)
         _setter("keys", keys)
 
@@ -23475,7 +25449,31 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              validation_failure_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult'],
              validation_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult'],
              verify_claims: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("cache_keys", cache_keys)
         _setter("function_id", function_id)
@@ -23641,7 +25639,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              max_cache_duration_in_hours: int,
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         _setter("keys", keys)
         _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
@@ -23736,7 +25740,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -23887,7 +25895,33 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              use_cookies_for_intermediate_steps: bool,
              use_cookies_for_session: bool,
              use_pkce: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
         _setter("client_details", client_details)
         _setter("fallback_redirect_path", fallback_redirect_path)
         _setter("logout_path", logout_path)
@@ -24043,7 +26077,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -24105,7 +26147,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              filter_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -24154,7 +26204,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -24190,7 +26242,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -24217,7 +26271,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -24248,7 +26304,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -24284,7 +26344,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -24319,7 +26381,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -24368,7 +26434,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -24432,7 +26500,19 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              source_uri_details: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult'],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
         _setter("additional_validation_policies", additional_validation_policies)
         _setter("client_details", client_details)
         _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -24530,7 +26610,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              audiences: Sequence[str],
              issuers: Sequence[str],
              verify_claims: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         _setter("audiences", audiences)
         _setter("issuers", issuers)
         _setter("verify_claims", verify_claims)
@@ -24583,7 +26667,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -24640,7 +26728,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              client_secret_id: str,
              client_secret_version_number: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
         _setter("client_id", client_id)
         _setter("client_secret_id", client_secret_id)
         _setter("client_secret_version_number", client_secret_version_number)
@@ -24726,7 +26822,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              kty: str,
              n: str,
              use: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
         _setter("alg", alg)
         _setter("e", e)
         _setter("format", format)
@@ -24829,7 +26929,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              type: str,
              uri: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("type", type)
         _setter("uri", uri)
 
@@ -24873,7 +26975,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              is_required: bool,
              key: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         _setter("is_required", is_required)
         _setter("key", key)
         _setter("values", values)
@@ -24934,7 +27040,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -25001,7 +27111,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -25041,7 +27153,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult
              _setter: Callable[[Any, Any], None],
              allowed_sans: Sequence[str],
              is_verified_certificate_required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+
         _setter("allowed_sans", allowed_sans)
         _setter("is_verified_certificate_required", is_verified_certificate_required)
 
@@ -25081,7 +27199,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingRe
              _setter: Callable[[Any, Any], None],
              rate_in_requests_per_second: int,
              rate_key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+
         _setter("rate_in_requests_per_second", rate_in_requests_per_second)
         _setter("rate_key", rate_key)
 
@@ -25121,7 +27245,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              token_locations: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+
         _setter("token_locations", token_locations)
 
     @property
@@ -25172,7 +27300,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResult(dict):
              path: str,
              request_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResult'],
              response_policies: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+
         _setter("backends", backends)
         _setter("logging_policies", logging_policies)
         _setter("methods", methods)
@@ -25293,7 +27429,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("allowed_post_logout_uris", allowed_post_logout_uris)
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -25432,7 +27588,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult(di
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -25472,7 +27630,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendR
              _setter: Callable[[Any, Any], None],
              backends: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendResult'],
              keys: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendKeyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("backends", backends)
         _setter("keys", keys)
 
@@ -25542,7 +27702,19 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
              status: int,
              type: str,
              url: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
         _setter("body", body)
         _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
         _setter("function_id", function_id)
@@ -25648,7 +27820,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
              _setter: Callable[[Any, Any], None],
              name: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("value", value)
 
@@ -25700,7 +27874,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendK
              name: str,
              type: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("expression", expression)
         _setter("is_default", is_default)
         _setter("name", name)
@@ -25767,7 +27945,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource
              _setter: Callable[[Any, Any], None],
              selector: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("selector", selector)
         _setter("type", type)
 
@@ -25807,7 +27987,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyResult(di
              _setter: Callable[[Any, Any], None],
              access_logs: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLogResult'],
              execution_logs: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLogResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+
         _setter("access_logs", access_logs)
         _setter("execution_logs", execution_logs)
 
@@ -25843,7 +28029,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
 
     @property
@@ -25874,7 +28064,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecution
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              log_level: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         _setter("is_enabled", is_enabled)
         _setter("log_level", log_level)
 
@@ -25938,7 +28134,21 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResult(di
              query_parameter_transformations: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationResult'],
              query_parameter_validations: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationResult'],
              response_cache_lookups: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookupResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+
         _setter("authorizations", authorizations)
         _setter("body_validations", body_validations)
         _setter("cors", cors)
@@ -26032,7 +28242,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthoriza
              _setter: Callable[[Any, Any], None],
              allowed_scopes: Sequence[str],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+
         _setter("allowed_scopes", allowed_scopes)
         _setter("type", type)
 
@@ -26076,7 +28290,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValid
              contents: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContentResult'],
              required: bool,
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("contents", contents)
         _setter("required", required)
         _setter("validation_mode", validation_mode)
@@ -26125,7 +28343,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValid
              _setter: Callable[[Any, Any], None],
              media_type: str,
              validation_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+
         _setter("media_type", media_type)
         _setter("validation_type", validation_type)
 
@@ -26181,7 +28405,21 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCorResult
              exposed_headers: Sequence[str],
              is_allow_credentials_enabled: bool,
              max_age_in_seconds: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
         _setter("allowed_headers", allowed_headers)
         _setter("allowed_methods", allowed_methods)
         _setter("allowed_origins", allowed_origins)
@@ -26261,7 +28499,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
              filter_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -26310,7 +28556,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -26346,7 +28594,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -26373,7 +28623,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26404,7 +28656,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -26440,7 +28696,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26475,7 +28733,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -26523,7 +28785,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
              _setter: Callable[[Any, Any], None],
              headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("headers", headers)
         _setter("validation_mode", validation_mode)
 
@@ -26560,7 +28826,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -26604,7 +28872,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              filter_query_parameters: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult'],
              rename_query_parameters: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult'],
              set_query_parameters: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+
         _setter("filter_query_parameters", filter_query_parameters)
         _setter("rename_query_parameters", rename_query_parameters)
         _setter("set_query_parameters", set_query_parameters)
@@ -26653,7 +28929,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -26689,7 +28967,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -26716,7 +28996,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26747,7 +29029,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -26783,7 +29069,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26818,7 +29106,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -26866,7 +29158,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              _setter: Callable[[Any, Any], None],
              parameters: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
              validation_mode: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         _setter("parameters", parameters)
         _setter("validation_mode", validation_mode)
 
@@ -26903,7 +29199,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
              _setter: Callable[[Any, Any], None],
              name: str,
              required: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("required", required)
 
@@ -26951,7 +29249,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseC
              is_enabled: bool,
              is_private_caching_enabled: bool,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+
         _setter("cache_key_additions", cache_key_additions)
         _setter("is_enabled", is_enabled)
         _setter("is_private_caching_enabled", is_private_caching_enabled)
@@ -27009,7 +29315,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResult(d
              _setter: Callable[[Any, Any], None],
              header_transformations: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationResult'],
              response_cache_stores: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStoreResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+
         _setter("header_transformations", header_transformations)
         _setter("response_cache_stores", response_cache_stores)
 
@@ -27053,7 +29365,15 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
              filter_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult'],
              rename_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult'],
              set_headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         _setter("filter_headers", filter_headers)
         _setter("rename_headers", rename_headers)
         _setter("set_headers", set_headers)
@@ -27102,7 +29422,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
         _setter("type", type)
 
@@ -27138,7 +29460,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -27165,7 +29489,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -27196,7 +29522,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
              _setter: Callable[[Any, Any], None],
              from_: str,
              to: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'from' in kwargs:
+            from_ = kwargs['from']
+
         _setter("from_", from_)
         _setter("to", to)
 
@@ -27232,7 +29562,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -27267,7 +29599,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
              if_exists: str,
              name: str,
              values: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         _setter("if_exists", if_exists)
         _setter("name", name)
         _setter("values", values)
@@ -27316,7 +29652,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponse
              _setter: Callable[[Any, Any], None],
              time_to_live_in_seconds: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+
         _setter("time_to_live_in_seconds", time_to_live_in_seconds)
         _setter("type", type)
 
@@ -27359,7 +29699,9 @@ class GetDeploymentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -27410,7 +29752,13 @@ class GetGatewayCaBundleResult(dict):
              ca_bundle_id: str,
              certificate_authority_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+
         _setter("ca_bundle_id", ca_bundle_id)
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("type", type)
@@ -27455,7 +29803,11 @@ class GetGatewayIpAddressResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("ip_address", ip_address)
 
     @property
@@ -27514,7 +29866,23 @@ class GetGatewayResponseCacheDetailResult(dict):
              send_timeout_in_ms: int,
              servers: Sequence['outputs.GetGatewayResponseCacheDetailServerResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+
         _setter("authentication_secret_id", authentication_secret_id)
         _setter("authentication_secret_version_number", authentication_secret_version_number)
         _setter("connect_timeout_in_ms", connect_timeout_in_ms)
@@ -27617,7 +29985,9 @@ class GetGatewayResponseCacheDetailServerResult(dict):
              _setter: Callable[[Any, Any], None],
              host: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("port", port)
 
@@ -27656,7 +30026,9 @@ class GetGatewaysFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -27757,7 +30129,37 @@ class GetGatewaysGatewayCollectionResult(dict):
              subnet_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundles' in kwargs:
+            ca_bundles = kwargs['caBundles']
+        if 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if 'responseCacheDetails' in kwargs:
+            response_cache_details = kwargs['responseCacheDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("ca_bundles", ca_bundles)
         _setter("certificate_id", certificate_id)
         _setter("compartment_id", compartment_id)
@@ -27936,7 +30338,13 @@ class GetGatewaysGatewayCollectionCaBundleResult(dict):
              ca_bundle_id: str,
              certificate_authority_id: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+
         _setter("ca_bundle_id", ca_bundle_id)
         _setter("certificate_authority_id", certificate_authority_id)
         _setter("type", type)
@@ -27981,7 +30389,11 @@ class GetGatewaysGatewayCollectionIpAddressResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("ip_address", ip_address)
 
     @property
@@ -28040,7 +30452,23 @@ class GetGatewaysGatewayCollectionResponseCacheDetailResult(dict):
              send_timeout_in_ms: int,
              servers: Sequence['outputs.GetGatewaysGatewayCollectionResponseCacheDetailServerResult'],
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+
         _setter("authentication_secret_id", authentication_secret_id)
         _setter("authentication_secret_version_number", authentication_secret_version_number)
         _setter("connect_timeout_in_ms", connect_timeout_in_ms)
@@ -28143,7 +30571,9 @@ class GetGatewaysGatewayCollectionResponseCacheDetailServerResult(dict):
              _setter: Callable[[Any, Any], None],
              host: str,
              port: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("port", port)
 
@@ -28183,7 +30613,9 @@ class GetSubscriberClientResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              token: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("token", token)
 
@@ -28225,7 +30657,9 @@ class GetSubscribersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -28262,7 +30696,9 @@ class GetSubscribersSubscriberCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSubscribersSubscriberCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -28326,7 +30762,25 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              usage_plans: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         _setter("clients", clients)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -28447,7 +30901,9 @@ class GetSubscribersSubscriberCollectionItemClientResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              token: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("token", token)
 
@@ -28499,7 +30955,11 @@ class GetUsagePlanEntitlementResult(dict):
              quotas: Sequence['outputs.GetUsagePlanEntitlementQuotaResult'],
              rate_limits: Sequence['outputs.GetUsagePlanEntitlementRateLimitResult'],
              targets: Sequence['outputs.GetUsagePlanEntitlementTargetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateLimits' in kwargs:
+            rate_limits = kwargs['rateLimits']
+
         _setter("description", description)
         _setter("name", name)
         _setter("quotas", quotas)
@@ -28574,7 +31034,13 @@ class GetUsagePlanEntitlementQuotaResult(dict):
              reset_policy: str,
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+
         _setter("operation_on_breach", operation_on_breach)
         _setter("reset_policy", reset_policy)
         _setter("unit", unit)
@@ -28632,7 +31098,9 @@ class GetUsagePlanEntitlementRateLimitResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -28668,7 +31136,11 @@ class GetUsagePlanEntitlementTargetResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              deployment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+
         _setter("deployment_id", deployment_id)
 
     @property
@@ -28701,7 +31173,9 @@ class GetUsagePlansFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -28738,7 +31212,9 @@ class GetUsagePlansUsagePlanCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -28798,7 +31274,23 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("display_name", display_name)
@@ -28922,7 +31414,11 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementResult(dict):
              quotas: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult'],
              rate_limits: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult'],
              targets: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'rateLimits' in kwargs:
+            rate_limits = kwargs['rateLimits']
+
         _setter("description", description)
         _setter("name", name)
         _setter("quotas", quotas)
@@ -28997,7 +31493,13 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult(dict):
              reset_policy: str,
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+
         _setter("operation_on_breach", operation_on_breach)
         _setter("reset_policy", reset_policy)
         _setter("unit", unit)
@@ -29055,7 +31557,9 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult(dict):
              _setter: Callable[[Any, Any], None],
              unit: str,
              value: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("unit", unit)
         _setter("value", value)
 
@@ -29091,7 +31595,11 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              deployment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+
         _setter("deployment_id", deployment_id)
 
     @property

@@ -53,7 +53,21 @@ class GeneratedKeyArgs:
              key_shape: pulumi.Input['GeneratedKeyKeyShapeArgs'],
              associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'includePlaintextKey' in kwargs:
+            include_plaintext_key = kwargs['includePlaintextKey']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+
         _setter("crypto_endpoint", crypto_endpoint)
         _setter("include_plaintext_key", include_plaintext_key)
         _setter("key_id", key_id)
@@ -192,7 +206,23 @@ class _GeneratedKeyState:
              logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              plaintext: Optional[pulumi.Input[str]] = None,
              plaintext_checksum: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if 'includePlaintextKey' in kwargs:
+            include_plaintext_key = kwargs['includePlaintextKey']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+        if 'plaintextChecksum' in kwargs:
+            plaintext_checksum = kwargs['plaintextChecksum']
+
         if associated_data is not None:
             _setter("associated_data", associated_data)
         if ciphertext is not None:

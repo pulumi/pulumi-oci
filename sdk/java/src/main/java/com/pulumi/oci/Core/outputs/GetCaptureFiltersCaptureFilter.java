@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRule;
 import java.lang.Object;
 import java.lang.String;
@@ -29,10 +30,15 @@ public final class GetCaptureFiltersCaptureFilter {
      */
     private String displayName;
     /**
-     * @return Indicates which service will use this capture filter
+     * @return A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
      * 
      */
     private String filterType;
+    /**
+     * @return The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    private List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule> flowLogCaptureFilterRules;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -82,11 +88,18 @@ public final class GetCaptureFiltersCaptureFilter {
         return this.displayName;
     }
     /**
-     * @return Indicates which service will use this capture filter
+     * @return A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
      * 
      */
     public String filterType() {
         return this.filterType;
+    }
+    /**
+     * @return The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
+     * 
+     */
+    public List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule> flowLogCaptureFilterRules() {
+        return this.flowLogCaptureFilterRules;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -137,6 +150,7 @@ public final class GetCaptureFiltersCaptureFilter {
         private Map<String,Object> definedTags;
         private String displayName;
         private String filterType;
+        private List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule> flowLogCaptureFilterRules;
         private Map<String,Object> freeformTags;
         private String id;
         private String state;
@@ -149,6 +163,7 @@ public final class GetCaptureFiltersCaptureFilter {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.filterType = defaults.filterType;
+    	      this.flowLogCaptureFilterRules = defaults.flowLogCaptureFilterRules;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
@@ -175,6 +190,14 @@ public final class GetCaptureFiltersCaptureFilter {
         public Builder filterType(String filterType) {
             this.filterType = Objects.requireNonNull(filterType);
             return this;
+        }
+        @CustomType.Setter
+        public Builder flowLogCaptureFilterRules(List<GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule> flowLogCaptureFilterRules) {
+            this.flowLogCaptureFilterRules = Objects.requireNonNull(flowLogCaptureFilterRules);
+            return this;
+        }
+        public Builder flowLogCaptureFilterRules(GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRule... flowLogCaptureFilterRules) {
+            return flowLogCaptureFilterRules(List.of(flowLogCaptureFilterRules));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -210,6 +233,7 @@ public final class GetCaptureFiltersCaptureFilter {
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.filterType = filterType;
+            o.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
             o.freeformTags = freeformTags;
             o.id = id;
             o.state = state;

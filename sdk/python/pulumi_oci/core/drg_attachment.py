@@ -76,7 +76,29 @@ class DrgAttachmentArgs:
              remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[bool]] = None,
              route_table_id: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if 'exportDrgRouteDistributionId' in kwargs:
+            export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'networkDetails' in kwargs:
+            network_details = kwargs['networkDetails']
+        if 'removeExportDrgRouteDistributionTrigger' in kwargs:
+            remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("drg_id", drg_id)
         if defined_tags is not None:
             _setter("defined_tags", defined_tags)
@@ -308,7 +330,35 @@ class _DrgAttachmentState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if 'exportDrgRouteDistributionId' in kwargs:
+            export_drg_route_distribution_id = kwargs['exportDrgRouteDistributionId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isCrossTenancy' in kwargs:
+            is_cross_tenancy = kwargs['isCrossTenancy']
+        if 'networkDetails' in kwargs:
+            network_details = kwargs['networkDetails']
+        if 'removeExportDrgRouteDistributionTrigger' in kwargs:
+            remove_export_drg_route_distribution_trigger = kwargs['removeExportDrgRouteDistributionTrigger']
+        if 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if defined_tags is not None:

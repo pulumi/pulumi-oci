@@ -37,7 +37,9 @@ class GetOrganizationSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -105,7 +107,17 @@ class GetOrganizationSubscriptionsSubscriptionResult(dict):
              time_start: str,
              total_value: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+
         _setter("currencies", currencies)
         _setter("id", id)
         _setter("service_name", service_name)
@@ -203,7 +215,13 @@ class GetOrganizationSubscriptionsSubscriptionCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)

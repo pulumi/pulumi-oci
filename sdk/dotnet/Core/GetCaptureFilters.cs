@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Capture_filter_display_name,
+        ///         FilterType = @var.Capture_filter_filter_type,
         ///         State = @var.Capture_filter_state,
         ///     });
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Capture_filter_display_name,
+        ///         FilterType = @var.Capture_filter_filter_type,
         ///         State = @var.Capture_filter_state,
         ///     });
         /// 
@@ -92,6 +94,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+        /// </summary>
+        [Input("filterType")]
+        public string? FilterType { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetCaptureFiltersFilterArgs>? _filters;
@@ -126,6 +134,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
+        /// </summary>
+        [Input("filterType")]
+        public Input<string>? FilterType { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetCaptureFiltersFilterInputArgs>? _filters;
@@ -163,6 +177,10 @@ namespace Pulumi.Oci.Core
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
+        /// <summary>
+        /// Indicates which service will use this capture filter
+        /// </summary>
+        public readonly string? FilterType;
         public readonly ImmutableArray<Outputs.GetCaptureFiltersFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -181,6 +199,8 @@ namespace Pulumi.Oci.Core
 
             string? displayName,
 
+            string? filterType,
+
             ImmutableArray<Outputs.GetCaptureFiltersFilterResult> filters,
 
             string id,
@@ -190,6 +210,7 @@ namespace Pulumi.Oci.Core
             CaptureFilters = captureFilters;
             CompartmentId = compartmentId;
             DisplayName = displayName;
+            FilterType = filterType;
             Filters = filters;
             Id = id;
             State = state;

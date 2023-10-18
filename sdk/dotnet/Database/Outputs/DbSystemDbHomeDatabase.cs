@@ -92,6 +92,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? PdbName;
         /// <summary>
+        /// The list of pluggable databases that needs to be restored into new database.
+        /// </summary>
+        public readonly ImmutableArray<string> PluggableDatabases;
+        /// <summary>
         /// The current state of the DB system.
         /// </summary>
         public readonly string? State;
@@ -154,6 +158,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? pdbName,
 
+            ImmutableArray<string> pluggableDatabases,
+
             string? state,
 
             string? tdeWalletPassword,
@@ -184,6 +190,7 @@ namespace Pulumi.Oci.Database.Outputs
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
             PdbName = pdbName;
+            PluggableDatabases = pluggableDatabases;
             State = state;
             TdeWalletPassword = tdeWalletPassword;
             TimeCreated = timeCreated;

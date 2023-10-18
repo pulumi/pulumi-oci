@@ -75,7 +75,25 @@ class ListenerArgs:
              routing_policy_name: Optional[pulumi.Input[str]] = None,
              rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'defaultBackendSetName' in kwargs:
+            default_backend_set_name = kwargs['defaultBackendSetName']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'connectionConfiguration' in kwargs:
+            connection_configuration = kwargs['connectionConfiguration']
+        if 'hostnameNames' in kwargs:
+            hostname_names = kwargs['hostnameNames']
+        if 'pathRouteSetName' in kwargs:
+            path_route_set_name = kwargs['pathRouteSetName']
+        if 'routingPolicyName' in kwargs:
+            routing_policy_name = kwargs['routingPolicyName']
+        if 'ruleSetNames' in kwargs:
+            rule_set_names = kwargs['ruleSetNames']
+        if 'sslConfiguration' in kwargs:
+            ssl_configuration = kwargs['sslConfiguration']
+
         _setter("default_backend_set_name", default_backend_set_name)
         _setter("load_balancer_id", load_balancer_id)
         _setter("port", port)
@@ -299,7 +317,25 @@ class _ListenerState:
              rule_set_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionConfiguration' in kwargs:
+            connection_configuration = kwargs['connectionConfiguration']
+        if 'defaultBackendSetName' in kwargs:
+            default_backend_set_name = kwargs['defaultBackendSetName']
+        if 'hostnameNames' in kwargs:
+            hostname_names = kwargs['hostnameNames']
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if 'pathRouteSetName' in kwargs:
+            path_route_set_name = kwargs['pathRouteSetName']
+        if 'routingPolicyName' in kwargs:
+            routing_policy_name = kwargs['routingPolicyName']
+        if 'ruleSetNames' in kwargs:
+            rule_set_names = kwargs['ruleSetNames']
+        if 'sslConfiguration' in kwargs:
+            ssl_configuration = kwargs['sslConfiguration']
+
         if connection_configuration is not None:
             _setter("connection_configuration", connection_configuration)
         if default_backend_set_name is not None:

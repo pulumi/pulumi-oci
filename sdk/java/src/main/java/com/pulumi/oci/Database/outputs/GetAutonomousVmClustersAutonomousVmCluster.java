@@ -17,6 +17,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousVmClustersAutonomousVmCluster {
+    private Double autonomousDataStoragePercentage;
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
@@ -57,6 +58,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * 
      */
     private Integer cpuCoreCountPerNode;
+    private Double cpuPercentage;
     /**
      * @return The number of enabled CPU cores.
      * 
@@ -158,11 +160,14 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * 
      */
     private Integer nodeCount;
+    private Integer nonProvisionableAutonomousContainerDatabases;
     /**
      * @return The number of enabled OCPU cores.
      * 
      */
     private Double ocpusEnabled;
+    private Integer provisionedAutonomousContainerDatabases;
+    private Double provisionedCpus;
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
@@ -170,6 +175,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * 
      */
     private Integer reclaimableCpus;
+    private Double reservedCpus;
     /**
      * @return The SCAN Listener Non TLS port number. Default value is 1521.
      * 
@@ -205,6 +211,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * 
      */
     private String timeZone;
+    private Double totalAutonomousDataStorageInTbs;
     /**
      * @return The total number of Autonomous Container Databases that can be created.
      * 
@@ -217,6 +224,9 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     private String vmClusterNetworkId;
 
     private GetAutonomousVmClustersAutonomousVmCluster() {}
+    public Double autonomousDataStoragePercentage() {
+        return this.autonomousDataStoragePercentage;
+    }
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
@@ -272,6 +282,9 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      */
     public Integer cpuCoreCountPerNode() {
         return this.cpuCoreCountPerNode;
+    }
+    public Double cpuPercentage() {
+        return this.cpuPercentage;
     }
     /**
      * @return The number of enabled CPU cores.
@@ -416,12 +429,21 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     public Integer nodeCount() {
         return this.nodeCount;
     }
+    public Integer nonProvisionableAutonomousContainerDatabases() {
+        return this.nonProvisionableAutonomousContainerDatabases;
+    }
     /**
      * @return The number of enabled OCPU cores.
      * 
      */
     public Double ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    public Integer provisionedAutonomousContainerDatabases() {
+        return this.provisionedAutonomousContainerDatabases;
+    }
+    public Double provisionedCpus() {
+        return this.provisionedCpus;
     }
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -431,6 +453,9 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      */
     public Integer reclaimableCpus() {
         return this.reclaimableCpus;
+    }
+    public Double reservedCpus() {
+        return this.reservedCpus;
     }
     /**
      * @return The SCAN Listener Non TLS port number. Default value is 1521.
@@ -481,6 +506,9 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     public String timeZone() {
         return this.timeZone;
     }
+    public Double totalAutonomousDataStorageInTbs() {
+        return this.totalAutonomousDataStorageInTbs;
+    }
     /**
      * @return The total number of Autonomous Container Databases that can be created.
      * 
@@ -505,6 +533,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Double autonomousDataStoragePercentage;
         private Double autonomousDataStorageSizeInTbs;
         private Double availableAutonomousDataStorageSizeInTbs;
         private Integer availableContainerDatabases;
@@ -513,6 +542,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private String compartmentId;
         private String computeModel;
         private Integer cpuCoreCountPerNode;
+        private Double cpuPercentage;
         private Integer cpusEnabled;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
@@ -534,8 +564,12 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
         private Integer nodeCount;
+        private Integer nonProvisionableAutonomousContainerDatabases;
         private Double ocpusEnabled;
+        private Integer provisionedAutonomousContainerDatabases;
+        private Double provisionedCpus;
         private Integer reclaimableCpus;
+        private Double reservedCpus;
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
         private String state;
@@ -543,11 +577,13 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private String timeDatabaseSslCertificateExpires;
         private String timeOrdsCertificateExpires;
         private String timeZone;
+        private Double totalAutonomousDataStorageInTbs;
         private Integer totalContainerDatabases;
         private String vmClusterNetworkId;
         public Builder() {}
         public Builder(GetAutonomousVmClustersAutonomousVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autonomousDataStoragePercentage = defaults.autonomousDataStoragePercentage;
     	      this.autonomousDataStorageSizeInTbs = defaults.autonomousDataStorageSizeInTbs;
     	      this.availableAutonomousDataStorageSizeInTbs = defaults.availableAutonomousDataStorageSizeInTbs;
     	      this.availableContainerDatabases = defaults.availableContainerDatabases;
@@ -556,6 +592,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
+    	      this.cpuPercentage = defaults.cpuPercentage;
     	      this.cpusEnabled = defaults.cpusEnabled;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
@@ -577,8 +614,12 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
+    	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
+    	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
+    	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.reservedCpus = defaults.reservedCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.state = defaults.state;
@@ -586,10 +627,16 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.timeDatabaseSslCertificateExpires = defaults.timeDatabaseSslCertificateExpires;
     	      this.timeOrdsCertificateExpires = defaults.timeOrdsCertificateExpires;
     	      this.timeZone = defaults.timeZone;
+    	      this.totalAutonomousDataStorageInTbs = defaults.totalAutonomousDataStorageInTbs;
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
         }
 
+        @CustomType.Setter
+        public Builder autonomousDataStoragePercentage(Double autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = Objects.requireNonNull(autonomousDataStoragePercentage);
+            return this;
+        }
         @CustomType.Setter
         public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
             this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
@@ -628,6 +675,11 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         @CustomType.Setter
         public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
             this.cpuCoreCountPerNode = Objects.requireNonNull(cpuCoreCountPerNode);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cpuPercentage(Double cpuPercentage) {
+            this.cpuPercentage = Objects.requireNonNull(cpuPercentage);
             return this;
         }
         @CustomType.Setter
@@ -745,13 +797,33 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases = Objects.requireNonNull(nonProvisionableAutonomousContainerDatabases);
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpusEnabled(Double ocpusEnabled) {
             this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
             return this;
         }
         @CustomType.Setter
+        public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = Objects.requireNonNull(provisionedAutonomousContainerDatabases);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder provisionedCpus(Double provisionedCpus) {
+            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+            return this;
+        }
+        @CustomType.Setter
         public Builder reclaimableCpus(Integer reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder reservedCpus(Double reservedCpus) {
+            this.reservedCpus = Objects.requireNonNull(reservedCpus);
             return this;
         }
         @CustomType.Setter
@@ -790,6 +862,11 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder totalAutonomousDataStorageInTbs(Double totalAutonomousDataStorageInTbs) {
+            this.totalAutonomousDataStorageInTbs = Objects.requireNonNull(totalAutonomousDataStorageInTbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
             this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
             return this;
@@ -801,6 +878,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         }
         public GetAutonomousVmClustersAutonomousVmCluster build() {
             final var o = new GetAutonomousVmClustersAutonomousVmCluster();
+            o.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
             o.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             o.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
             o.availableContainerDatabases = availableContainerDatabases;
@@ -809,6 +887,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             o.compartmentId = compartmentId;
             o.computeModel = computeModel;
             o.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            o.cpuPercentage = cpuPercentage;
             o.cpusEnabled = cpusEnabled;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
@@ -830,8 +909,12 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.nodeCount = nodeCount;
+            o.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             o.ocpusEnabled = ocpusEnabled;
+            o.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            o.provisionedCpus = provisionedCpus;
             o.reclaimableCpus = reclaimableCpus;
+            o.reservedCpus = reservedCpus;
             o.scanListenerPortNonTls = scanListenerPortNonTls;
             o.scanListenerPortTls = scanListenerPortTls;
             o.state = state;
@@ -839,6 +922,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             o.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             o.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
             o.timeZone = timeZone;
+            o.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             o.totalContainerDatabases = totalContainerDatabases;
             o.vmClusterNetworkId = vmClusterNetworkId;
             return o;

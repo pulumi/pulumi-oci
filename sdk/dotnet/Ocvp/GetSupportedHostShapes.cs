@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Ocvp
         public string? Name { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given SDDC type exactly.
+        /// (Optional) A filter to return only resources that match the given SDDC type exactly.
         /// </summary>
         [Input("sddcType")]
         public string? SddcType { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given SDDC type exactly.
+        /// (Optional) A filter to return only resources that match the given SDDC type exactly.
         /// </summary>
         [Input("sddcType")]
         public Input<string>? SddcType { get; set; }

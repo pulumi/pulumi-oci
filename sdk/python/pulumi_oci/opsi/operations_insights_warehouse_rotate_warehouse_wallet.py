@@ -31,7 +31,11 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              operations_insights_warehouse_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+
         _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
 
     @property
@@ -71,7 +75,11 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     def _configure(
              _setter: Callable[[Any, Any], None],
              operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+
         if operations_insights_warehouse_id is not None:
             _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
 

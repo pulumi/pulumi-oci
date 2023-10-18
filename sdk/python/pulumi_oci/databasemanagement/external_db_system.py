@@ -45,7 +45,19 @@ class ExternalDbSystemArgs:
              database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbSystemDiscoveryId' in kwargs:
+            db_system_discovery_id = kwargs['dbSystemDiscoveryId']
+        if 'databaseManagementConfig' in kwargs:
+            database_management_config = kwargs['databaseManagementConfig']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'stackMonitoringConfig' in kwargs:
+            stack_monitoring_config = kwargs['stackMonitoringConfig']
+
         _setter("compartment_id", compartment_id)
         _setter("db_system_discovery_id", db_system_discovery_id)
         if database_management_config is not None:
@@ -176,7 +188,31 @@ class _ExternalDbSystemState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseManagementConfig' in kwargs:
+            database_management_config = kwargs['databaseManagementConfig']
+        if 'dbSystemDiscoveryId' in kwargs:
+            db_system_discovery_id = kwargs['dbSystemDiscoveryId']
+        if 'discoveryAgentId' in kwargs:
+            discovery_agent_id = kwargs['discoveryAgentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'stackMonitoringConfig' in kwargs:
+            stack_monitoring_config = kwargs['stackMonitoringConfig']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database_management_config is not None:

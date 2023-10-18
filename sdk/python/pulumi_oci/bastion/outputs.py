@@ -55,7 +55,11 @@ class SessionKeyDetails(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'publicKeyContent' in kwargs:
+            public_key_content = kwargs['publicKeyContent']
+
         _setter("public_key_content", public_key_content)
 
     @property
@@ -139,7 +143,23 @@ class SessionTargetResourceDetails(dict):
              target_resource_operating_system_user_name: Optional[str] = None,
              target_resource_port: Optional[int] = None,
              target_resource_private_ip_address: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sessionType' in kwargs:
+            session_type = kwargs['sessionType']
+        if 'targetResourceDisplayName' in kwargs:
+            target_resource_display_name = kwargs['targetResourceDisplayName']
+        if 'targetResourceFqdn' in kwargs:
+            target_resource_fqdn = kwargs['targetResourceFqdn']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceOperatingSystemUserName' in kwargs:
+            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
+        if 'targetResourcePort' in kwargs:
+            target_resource_port = kwargs['targetResourcePort']
+        if 'targetResourcePrivateIpAddress' in kwargs:
+            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+
         _setter("session_type", session_type)
         if target_resource_display_name is not None:
             _setter("target_resource_display_name", target_resource_display_name)
@@ -306,7 +326,43 @@ class GetBastionsBastionResult(dict):
              target_vcn_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionType' in kwargs:
+            bastion_type = kwargs['bastionType']
+        if 'clientCidrBlockAllowLists' in kwargs:
+            client_cidr_block_allow_lists = kwargs['clientCidrBlockAllowLists']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'dnsProxyStatus' in kwargs:
+            dns_proxy_status = kwargs['dnsProxyStatus']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maxSessionTtlInSeconds' in kwargs:
+            max_session_ttl_in_seconds = kwargs['maxSessionTtlInSeconds']
+        if 'maxSessionsAllowed' in kwargs:
+            max_sessions_allowed = kwargs['maxSessionsAllowed']
+        if 'phoneBookEntry' in kwargs:
+            phone_book_entry = kwargs['phoneBookEntry']
+        if 'privateEndpointIpAddress' in kwargs:
+            private_endpoint_ip_address = kwargs['privateEndpointIpAddress']
+        if 'staticJumpHostIpAddresses' in kwargs:
+            static_jump_host_ip_addresses = kwargs['staticJumpHostIpAddresses']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetSubnetId' in kwargs:
+            target_subnet_id = kwargs['targetSubnetId']
+        if 'targetVcnId' in kwargs:
+            target_vcn_id = kwargs['targetVcnId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("bastion_type", bastion_type)
         _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
         _setter("compartment_id", compartment_id)
@@ -510,7 +566,9 @@ class GetBastionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -550,7 +608,11 @@ class GetSessionKeyDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'publicKeyContent' in kwargs:
+            public_key_content = kwargs['publicKeyContent']
+
         _setter("public_key_content", public_key_content)
 
     @property
@@ -601,7 +663,23 @@ class GetSessionTargetResourceDetailResult(dict):
              target_resource_operating_system_user_name: str,
              target_resource_port: int,
              target_resource_private_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sessionType' in kwargs:
+            session_type = kwargs['sessionType']
+        if 'targetResourceDisplayName' in kwargs:
+            target_resource_display_name = kwargs['targetResourceDisplayName']
+        if 'targetResourceFqdn' in kwargs:
+            target_resource_fqdn = kwargs['targetResourceFqdn']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceOperatingSystemUserName' in kwargs:
+            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
+        if 'targetResourcePort' in kwargs:
+            target_resource_port = kwargs['targetResourcePort']
+        if 'targetResourcePrivateIpAddress' in kwargs:
+            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+
         _setter("session_type", session_type)
         _setter("target_resource_display_name", target_resource_display_name)
         _setter("target_resource_fqdn", target_resource_fqdn)
@@ -685,7 +763,9 @@ class GetSessionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -778,7 +858,35 @@ class GetSessionsSessionResult(dict):
              target_resource_details: Sequence['outputs.GetSessionsSessionTargetResourceDetailResult'],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'bastionId' in kwargs:
+            bastion_id = kwargs['bastionId']
+        if 'bastionName' in kwargs:
+            bastion_name = kwargs['bastionName']
+        if 'bastionPublicHostKeyInfo' in kwargs:
+            bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
+        if 'bastionUserName' in kwargs:
+            bastion_user_name = kwargs['bastionUserName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+        if 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'sessionTtlInSeconds' in kwargs:
+            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
+        if 'sshMetadata' in kwargs:
+            ssh_metadata = kwargs['sshMetadata']
+        if 'targetResourceDetails' in kwargs:
+            target_resource_details = kwargs['targetResourceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("bastion_id", bastion_id)
         _setter("bastion_name", bastion_name)
         _setter("bastion_public_host_key_info", bastion_public_host_key_info)
@@ -931,7 +1039,11 @@ class GetSessionsSessionKeyDetailResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              public_key_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'publicKeyContent' in kwargs:
+            public_key_content = kwargs['publicKeyContent']
+
         _setter("public_key_content", public_key_content)
 
     @property
@@ -982,7 +1094,23 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
              target_resource_operating_system_user_name: str,
              target_resource_port: int,
              target_resource_private_ip_address: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sessionType' in kwargs:
+            session_type = kwargs['sessionType']
+        if 'targetResourceDisplayName' in kwargs:
+            target_resource_display_name = kwargs['targetResourceDisplayName']
+        if 'targetResourceFqdn' in kwargs:
+            target_resource_fqdn = kwargs['targetResourceFqdn']
+        if 'targetResourceId' in kwargs:
+            target_resource_id = kwargs['targetResourceId']
+        if 'targetResourceOperatingSystemUserName' in kwargs:
+            target_resource_operating_system_user_name = kwargs['targetResourceOperatingSystemUserName']
+        if 'targetResourcePort' in kwargs:
+            target_resource_port = kwargs['targetResourcePort']
+        if 'targetResourcePrivateIpAddress' in kwargs:
+            target_resource_private_ip_address = kwargs['targetResourcePrivateIpAddress']
+
         _setter("session_type", session_type)
         _setter("target_resource_display_name", target_resource_display_name)
         _setter("target_resource_fqdn", target_resource_fqdn)

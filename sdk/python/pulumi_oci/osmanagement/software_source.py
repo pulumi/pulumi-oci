@@ -73,7 +73,29 @@ class SoftwareSourceArgs:
              maintainer_name: Optional[pulumi.Input[str]] = None,
              maintainer_phone: Optional[pulumi.Input[str]] = None,
              parent_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+
         _setter("arch_type", arch_type)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -331,7 +353,41 @@ class _SoftwareSourceState:
              state: Optional[pulumi.Input[str]] = None,
              status: Optional[pulumi.Input[str]] = None,
              url: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if 'associatedManagedInstances' in kwargs:
+            associated_managed_instances = kwargs['associatedManagedInstances']
+        if 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'parentName' in kwargs:
+            parent_name = kwargs['parentName']
+        if 'repoType' in kwargs:
+            repo_type = kwargs['repoType']
+
         if arch_type is not None:
             _setter("arch_type", arch_type)
         if associated_managed_instances is not None:

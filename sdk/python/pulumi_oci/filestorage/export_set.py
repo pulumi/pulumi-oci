@@ -42,7 +42,17 @@ class ExportSetArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              max_fs_stat_bytes: Optional[pulumi.Input[str]] = None,
              max_fs_stat_files: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'maxFsStatBytes' in kwargs:
+            max_fs_stat_bytes = kwargs['maxFsStatBytes']
+        if 'maxFsStatFiles' in kwargs:
+            max_fs_stat_files = kwargs['maxFsStatFiles']
+
         _setter("mount_target_id", mount_target_id)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -154,7 +164,25 @@ class _ExportSetState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              vcn_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'maxFsStatBytes' in kwargs:
+            max_fs_stat_bytes = kwargs['maxFsStatBytes']
+        if 'maxFsStatFiles' in kwargs:
+            max_fs_stat_files = kwargs['maxFsStatFiles']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if availability_domain is not None:
             _setter("availability_domain", availability_domain)
         if compartment_id is not None:

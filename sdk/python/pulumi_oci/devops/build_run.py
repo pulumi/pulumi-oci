@@ -53,7 +53,21 @@ class BuildRunArgs:
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildRunArguments' in kwargs:
+            build_run_arguments = kwargs['buildRunArguments']
+        if 'commitInfo' in kwargs:
+            commit_info = kwargs['commitInfo']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("build_pipeline_id", build_pipeline_id)
         if build_run_arguments is not None:
             _setter("build_run_arguments", build_run_arguments)
@@ -223,7 +237,39 @@ class _BuildRunState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'buildOutputs' in kwargs:
+            build_outputs = kwargs['buildOutputs']
+        if 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if 'buildRunArguments' in kwargs:
+            build_run_arguments = kwargs['buildRunArguments']
+        if 'buildRunProgresses' in kwargs:
+            build_run_progresses = kwargs['buildRunProgresses']
+        if 'buildRunSources' in kwargs:
+            build_run_sources = kwargs['buildRunSources']
+        if 'commitInfo' in kwargs:
+            commit_info = kwargs['commitInfo']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if build_outputs is not None:
             _setter("build_outputs", build_outputs)
         if build_pipeline_id is not None:

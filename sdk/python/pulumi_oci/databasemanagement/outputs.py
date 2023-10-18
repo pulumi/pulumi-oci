@@ -424,7 +424,23 @@ class ExternalAsmServicedDatabase(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              is_managed: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'diskGroups' in kwargs:
+            disk_groups = kwargs['diskGroups']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -549,7 +565,13 @@ class ExternalClusterNetworkConfiguration(dict):
              network_number: Optional[int] = None,
              network_type: Optional[str] = None,
              subnet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         if network_number is not None:
             _setter("network_number", network_number)
         if network_type is not None:
@@ -632,7 +654,17 @@ class ExternalClusterScanConfiguration(dict):
              scan_name: Optional[str] = None,
              scan_port: Optional[int] = None,
              scan_protocol: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         if network_number is not None:
             _setter("network_number", network_number)
         if scan_name is not None:
@@ -717,7 +749,13 @@ class ExternalClusterVipConfiguration(dict):
              address: Optional[str] = None,
              network_number: Optional[int] = None,
              node_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         if address is not None:
             _setter("address", address)
         if network_number is not None:
@@ -794,7 +832,15 @@ class ExternalDbSystemConnectorConnectionInfo(dict):
              component_type: str,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         if connection_credentials is not None:
             _setter("connection_credentials", connection_credentials)
@@ -886,7 +932,19 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredential(dict):
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if credential_name is not None:
             _setter("credential_name", credential_name)
         if credential_type is not None:
@@ -997,7 +1055,11 @@ class ExternalDbSystemConnectorConnectionInfoConnectionString(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -1082,7 +1144,11 @@ class ExternalDbSystemDatabaseManagementConfig(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("license_model", license_model)
 
     @property
@@ -1390,7 +1456,93 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
              trace_directory: Optional[str] = None,
              version: Optional[str] = None,
              vip_configurations: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'asmInstances' in kwargs:
+            asm_instances = kwargs['asmInstances']
+        if 'associatedComponents' in kwargs:
+            associated_components = kwargs['associatedComponents']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'clusterInstances' in kwargs:
+            cluster_instances = kwargs['clusterInstances']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'dbEdition' in kwargs:
+            db_edition = kwargs['dbEdition']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbNodeName' in kwargs:
+            db_node_name = kwargs['dbNodeName']
+        if 'dbPacks' in kwargs:
+            db_packs = kwargs['dbPacks']
+        if 'dbRole' in kwargs:
+            db_role = kwargs['dbRole']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'isFlexCluster' in kwargs:
+            is_flex_cluster = kwargs['isFlexCluster']
+        if 'isFlexEnabled' in kwargs:
+            is_flex_enabled = kwargs['isFlexEnabled']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+        if 'listenerAlias' in kwargs:
+            listener_alias = kwargs['listenerAlias']
+        if 'listenerType' in kwargs:
+            listener_type = kwargs['listenerType']
+        if 'logDirectory' in kwargs:
+            log_directory = kwargs['logDirectory']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if 'ocrFileLocation' in kwargs:
+            ocr_file_location = kwargs['ocrFileLocation']
+        if 'oracleHome' in kwargs:
+            oracle_home = kwargs['oracleHome']
+        if 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'scanConfigurations' in kwargs:
+            scan_configurations = kwargs['scanConfigurations']
+        if 'traceDirectory' in kwargs:
+            trace_directory = kwargs['traceDirectory']
+        if 'vipConfigurations' in kwargs:
+            vip_configurations = kwargs['vipConfigurations']
+
         if adr_home_directory is not None:
             _setter("adr_home_directory", adr_home_directory)
         if asm_instances is not None:
@@ -1901,7 +2053,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance(dict):
              adr_home_directory: Optional[str] = None,
              host_name: Optional[str] = None,
              instance_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+
         if adr_home_directory is not None:
             _setter("adr_home_directory", adr_home_directory)
         if host_name is not None:
@@ -1978,7 +2138,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent(dict):
              association_type: Optional[str] = None,
              component_id: Optional[str] = None,
              component_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+
         if association_type is not None:
             _setter("association_type", association_type)
         if component_id is not None:
@@ -2071,7 +2239,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance(dict):
              crs_base_directory: Optional[str] = None,
              host_name: Optional[str] = None,
              node_role: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+
         if adr_home_directory is not None:
             _setter("adr_home_directory", adr_home_directory)
         if cluster_id is not None:
@@ -2202,7 +2382,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector(dict)
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if connection_failure_message is not None:
@@ -2319,7 +2515,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         if component_type is not None:
             _setter("component_type", component_type)
         if connection_credentials is not None:
@@ -2412,7 +2616,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if credential_name is not None:
             _setter("credential_name", credential_name)
         if credential_type is not None:
@@ -2523,7 +2739,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -2644,7 +2864,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnector(dict):
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if connection_failure_message is not None:
@@ -2761,7 +2997,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo(dict):
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         if component_type is not None:
             _setter("component_type", component_type)
         if connection_credentials is not None:
@@ -2854,7 +3098,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if credential_name is not None:
             _setter("credential_name", credential_name)
         if credential_type is not None:
@@ -2965,7 +3221,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -3049,7 +3309,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpoint(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              services: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
             _setter("host", host)
         if key is not None:
@@ -3144,7 +3406,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration(dict):
              network_number: Optional[int] = None,
              network_type: Optional[str] = None,
              subnet: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         if network_number is not None:
             _setter("network_number", network_number)
         if network_type is not None:
@@ -3223,7 +3491,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase(dict):
              connectors: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector']] = None,
              container_database_id: Optional[str] = None,
              guid: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connectors is not None:
@@ -3334,7 +3608,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector(dic
              connector_type: Optional[str] = None,
              display_name: Optional[str] = None,
              time_connection_status_last_updated: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if connection_failure_message is not None:
@@ -3451,7 +3741,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              component_type: Optional[str] = None,
              connection_credentials: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential']] = None,
              connection_strings: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         if component_type is not None:
             _setter("component_type", component_type)
         if connection_credentials is not None:
@@ -3544,7 +3842,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if credential_name is not None:
             _setter("credential_name", credential_name)
         if credential_type is not None:
@@ -3655,7 +3965,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -3758,7 +4072,17 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration(dict):
              scan_name: Optional[str] = None,
              scan_port: Optional[int] = None,
              scan_protocol: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         if network_number is not None:
             _setter("network_number", network_number)
         if scan_name is not None:
@@ -3843,7 +4167,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration(dict):
              address: Optional[str] = None,
              network_number: Optional[int] = None,
              node_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         if address is not None:
             _setter("address", address)
         if network_number is not None:
@@ -3903,7 +4233,9 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
              operation: str,
              selection: str,
              value: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValue'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operation", operation)
         _setter("selection", selection)
         if value is not None:
@@ -3986,7 +4318,15 @@ class ExternalDbSystemDiscoveryPatchOperationValue(dict):
              connector: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnector'] = None,
              display_name: Optional[str] = None,
              is_selected_for_monitoring: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connector is not None:
@@ -4079,7 +4419,17 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnector(dict):
              display_name: str,
              agent_id: Optional[str] = None,
              connection_info: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionInfo' in kwargs:
+            connection_info = kwargs['connectionInfo']
+
         _setter("connector_type", connector_type)
         _setter("display_name", display_name)
         if agent_id is not None:
@@ -4164,7 +4514,15 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo(dict):
              component_type: str,
              connection_credentials: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials'] = None,
              connection_string: Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString'] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+
         _setter("component_type", component_type)
         if connection_credentials is not None:
             _setter("connection_credentials", connection_credentials)
@@ -4256,7 +4614,19 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
              role: Optional[str] = None,
              ssl_secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_type", credential_type)
         if credential_name is not None:
             _setter("credential_name", credential_name)
@@ -4366,7 +4736,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              service: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         if host_name is not None:
             _setter("host_name", host_name)
         if hosts is not None:
@@ -4459,7 +4833,11 @@ class ExternalDbSystemStackMonitoringConfig(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              metadata: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
         if metadata is not None:
             _setter("metadata", metadata)
@@ -4575,7 +4953,25 @@ class ExternalExadataInfrastructureDatabaseSystem(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if compartment_id is not None:
@@ -4782,7 +5178,23 @@ class ExternalExadataInfrastructureStorageGrid(dict):
              time_created: Optional[str] = None,
              time_updated: Optional[str] = None,
              version: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'serverCount' in kwargs:
+            server_count = kwargs['serverCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if display_name is not None:
@@ -4947,7 +5359,15 @@ class ExternalExadataStorageConnectorCredentialInfo(dict):
              ssl_trust_store_location: Optional[str] = None,
              ssl_trust_store_password: Optional[str] = None,
              ssl_trust_store_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sslTrustStoreLocation' in kwargs:
+            ssl_trust_store_location = kwargs['sslTrustStoreLocation']
+        if 'sslTrustStorePassword' in kwargs:
+            ssl_trust_store_password = kwargs['sslTrustStorePassword']
+        if 'sslTrustStoreType' in kwargs:
+            ssl_trust_store_type = kwargs['sslTrustStoreType']
+
         _setter("password", password)
         _setter("username", username)
         if ssl_trust_store_location is not None:
@@ -5029,7 +5449,9 @@ class ExternalListenerEndpoint(dict):
              port: Optional[int] = None,
              protocol: Optional[str] = None,
              services: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
             _setter("host", host)
         if key is not None:
@@ -5124,7 +5546,13 @@ class ExternalListenerServicedAsm(dict):
              compartment_id: Optional[str] = None,
              display_name: Optional[str] = None,
              id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if display_name is not None:
@@ -5223,7 +5651,21 @@ class ExternalListenerServicedDatabase(dict):
              display_name: Optional[str] = None,
              id: Optional[str] = None,
              is_managed: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -5370,7 +5812,21 @@ class ManagedDatabaseGroupManagedDatabase(dict):
              name: Optional[str] = None,
              time_added: Optional[str] = None,
              workload_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'timeAdded' in kwargs:
+            time_added = kwargs['timeAdded']
+        if 'workloadType' in kwargs:
+            workload_type = kwargs['workloadType']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -5503,7 +5959,13 @@ class ManagedDatabasesChangeDatabaseParameterCredentials(dict):
              role: Optional[str] = None,
              secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if password is not None:
             _setter("password", password)
         if role is not None:
@@ -5586,7 +6048,11 @@ class ManagedDatabasesChangeDatabaseParameterParameter(dict):
              name: str,
              value: str,
              update_comment: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'updateComment' in kwargs:
+            update_comment = kwargs['updateComment']
+
         _setter("name", name)
         _setter("value", value)
         if update_comment is not None:
@@ -5663,7 +6129,13 @@ class ManagedDatabasesResetDatabaseParameterCredentials(dict):
              role: Optional[str] = None,
              secret_id: Optional[str] = None,
              user_name: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         if password is not None:
             _setter("password", password)
         if role is not None:
@@ -5733,7 +6205,13 @@ class GetDbManagementPrivateEndpointAssociatedDatabaseItemResult(dict):
              id: str,
              name: str,
              time_registered: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'timeRegistered' in kwargs:
+            time_registered = kwargs['timeRegistered']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("name", name)
@@ -5787,7 +6265,9 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollect
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5826,7 +6306,13 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollect
              id: str,
              name: str,
              time_registered: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'timeRegistered' in kwargs:
+            time_registered = kwargs['timeRegistered']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("name", name)
@@ -5886,7 +6372,9 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5923,7 +6411,9 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionResult
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5987,7 +6477,23 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
              subnet_id: str,
              time_created: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("description", description)
         _setter("id", id)
@@ -6110,7 +6616,9 @@ class GetDbManagementPrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6170,7 +6678,21 @@ class GetExternalAsmConfigurationInitParameterResult(dict):
              disk_discovery_path: str,
              preferred_read_failure_groups: Sequence[str],
              rebalance_power: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'asmInstanceDisplayName' in kwargs:
+            asm_instance_display_name = kwargs['asmInstanceDisplayName']
+        if 'asmInstanceId' in kwargs:
+            asm_instance_id = kwargs['asmInstanceId']
+        if 'autoMountDiskGroups' in kwargs:
+            auto_mount_disk_groups = kwargs['autoMountDiskGroups']
+        if 'diskDiscoveryPath' in kwargs:
+            disk_discovery_path = kwargs['diskDiscoveryPath']
+        if 'preferredReadFailureGroups' in kwargs:
+            preferred_read_failure_groups = kwargs['preferredReadFailureGroups']
+        if 'rebalancePower' in kwargs:
+            rebalance_power = kwargs['rebalancePower']
+
         _setter("asm_instance_display_name", asm_instance_display_name)
         _setter("asm_instance_id", asm_instance_id)
         _setter("auto_mount_disk_groups", auto_mount_disk_groups)
@@ -6242,7 +6764,9 @@ class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6301,7 +6825,23 @@ class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult(dict):
              total_size_in_mbs: str,
              used_percent: float,
              used_size_in_mbs: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dismountingInstanceCount' in kwargs:
+            dismounting_instance_count = kwargs['dismountingInstanceCount']
+        if 'isSparse' in kwargs:
+            is_sparse = kwargs['isSparse']
+        if 'mountingInstanceCount' in kwargs:
+            mounting_instance_count = kwargs['mountingInstanceCount']
+        if 'redundancyType' in kwargs:
+            redundancy_type = kwargs['redundancyType']
+        if 'totalSizeInMbs' in kwargs:
+            total_size_in_mbs = kwargs['totalSizeInMbs']
+        if 'usedPercent' in kwargs:
+            used_percent = kwargs['usedPercent']
+        if 'usedSizeInMbs' in kwargs:
+            used_size_in_mbs = kwargs['usedSizeInMbs']
+
         _setter("databases", databases)
         _setter("dismounting_instance_count", dismounting_instance_count)
         _setter("is_sparse", is_sparse)
@@ -6406,7 +6946,9 @@ class GetExternalAsmDiskGroupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6443,7 +6985,9 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6515,7 +7059,31 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalAsmId' in kwargs:
+            external_asm_id = kwargs['externalAsmId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -6653,7 +7221,9 @@ class GetExternalAsmInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6718,7 +7288,23 @@ class GetExternalAsmServicedDatabaseResult(dict):
              display_name: str,
              id: str,
              is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'diskGroups' in kwargs:
+            disk_groups = kwargs['diskGroups']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -6808,7 +7394,9 @@ class GetExternalAsmUsersExternalAsmUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalAsmUsersExternalAsmUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6843,7 +7431,11 @@ class GetExternalAsmUsersExternalAsmUserCollectionItemResult(dict):
              asm_id: str,
              name: str,
              privileges: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'asmId' in kwargs:
+            asm_id = kwargs['asmId']
+
         _setter("asm_id", asm_id)
         _setter("name", name)
         _setter("privileges", privileges)
@@ -6894,7 +7486,9 @@ class GetExternalAsmUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6931,7 +7525,9 @@ class GetExternalAsmsExternalAsmCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7018,7 +7614,37 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalAsmId' in kwargs:
+            external_asm_id = kwargs['externalAsmId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'isFlexEnabled' in kwargs:
+            is_flex_enabled = kwargs['isFlexEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'servicedDatabases' in kwargs:
+            serviced_databases = kwargs['servicedDatabases']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -7214,7 +7840,23 @@ class GetExternalAsmsExternalAsmCollectionItemServicedDatabaseResult(dict):
              display_name: str,
              id: str,
              is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'diskGroups' in kwargs:
+            disk_groups = kwargs['diskGroups']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -7307,7 +7949,9 @@ class GetExternalAsmsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7341,7 +7985,9 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7428,7 +8074,39 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if 'externalClusterInstanceId' in kwargs:
+            external_cluster_instance_id = kwargs['externalClusterInstanceId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -7599,7 +8277,9 @@ class GetExternalClusterInstancesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7644,7 +8324,13 @@ class GetExternalClusterNetworkConfigurationResult(dict):
              network_number: int,
              network_type: str,
              subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         _setter("network_number", network_number)
         _setter("network_type", network_type)
         _setter("subnet", subnet)
@@ -7701,7 +8387,17 @@ class GetExternalClusterScanConfigurationResult(dict):
              scan_name: str,
              scan_port: int,
              scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
         _setter("scan_port", scan_port)
@@ -7763,7 +8459,13 @@ class GetExternalClusterVipConfigurationResult(dict):
              address: str,
              network_number: int,
              node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         _setter("address", address)
         _setter("network_number", network_number)
         _setter("node_name", node_name)
@@ -7805,7 +8507,9 @@ class GetExternalClustersExternalClusterCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7900,7 +8604,41 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
              time_updated: str,
              version: str,
              vip_configurations: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'isFlexCluster' in kwargs:
+            is_flex_cluster = kwargs['isFlexCluster']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'ocrFileLocation' in kwargs:
+            ocr_file_location = kwargs['ocrFileLocation']
+        if 'scanConfigurations' in kwargs:
+            scan_configurations = kwargs['scanConfigurations']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'vipConfigurations' in kwargs:
+            vip_configurations = kwargs['vipConfigurations']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -8094,7 +8832,13 @@ class GetExternalClustersExternalClusterCollectionItemNetworkConfigurationResult
              network_number: int,
              network_type: str,
              subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         _setter("network_number", network_number)
         _setter("network_type", network_type)
         _setter("subnet", subnet)
@@ -8151,7 +8895,17 @@ class GetExternalClustersExternalClusterCollectionItemScanConfigurationResult(di
              scan_name: str,
              scan_port: int,
              scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
         _setter("scan_port", scan_port)
@@ -8213,7 +8967,13 @@ class GetExternalClustersExternalClusterCollectionItemVipConfigurationResult(dic
              address: str,
              network_number: int,
              node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         _setter("address", address)
         _setter("network_number", network_number)
         _setter("node_name", node_name)
@@ -8261,7 +9021,9 @@ class GetExternalClustersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8298,7 +9060,9 @@ class GetExternalDatabasesExternalDatabaseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8373,7 +9137,31 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
              instance_details: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult'],
              state: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbManagementConfigs' in kwargs:
+            db_management_configs = kwargs['dbManagementConfigs']
+        if 'dbSystemInfos' in kwargs:
+            db_system_infos = kwargs['dbSystemInfos']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalContainerDatabaseId' in kwargs:
+            external_container_database_id = kwargs['externalContainerDatabaseId']
+        if 'externalDbHomeId' in kwargs:
+            external_db_home_id = kwargs['externalDbHomeId']
+        if 'instanceDetails' in kwargs:
+            instance_details = kwargs['instanceDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -8516,7 +9304,15 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult
              connector_id: str,
              database_management_status: str,
              license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("connector_id", connector_id)
         _setter("database_management_status", database_management_status)
         _setter("license_model", license_model)
@@ -8573,7 +9369,15 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult(dict)
              display_name: str,
              exadata_infra_infos: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult'],
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfraInfos' in kwargs:
+            exadata_infra_infos = kwargs['exadataInfraInfos']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("exadata_infra_infos", exadata_infra_infos)
@@ -8635,7 +9439,13 @@ class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfra
              compartment_id: str,
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -8688,7 +9498,15 @@ class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult(dic
              host_name: str,
              instance_name: str,
              instance_number: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+        if 'instanceNumber' in kwargs:
+            instance_number = kwargs['instanceNumber']
+
         _setter("host_name", host_name)
         _setter("instance_name", instance_name)
         _setter("instance_number", instance_number)
@@ -8736,7 +9554,9 @@ class GetExternalDatabasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8770,7 +9590,9 @@ class GetExternalDbHomesExternalDbHomeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDbHomesExternalDbHomeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8834,7 +9656,27 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -8954,7 +9796,9 @@ class GetExternalDbHomesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8988,7 +9832,9 @@ class GetExternalDbNodesExternalDbNodeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDbNodesExternalDbNodeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -9071,7 +9917,37 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("component_name", component_name)
@@ -9233,7 +10109,9 @@ class GetExternalDbNodesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9278,7 +10156,15 @@ class GetExternalDbSystemConnectorConnectionInfoResult(dict):
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -9343,7 +10229,19 @@ class GetExternalDbSystemConnectorConnectionInfoConnectionCredentialResult(dict)
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -9431,7 +10329,11 @@ class GetExternalDbSystemConnectorConnectionInfoConnectionStringResult(dict):
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -9491,7 +10393,9 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -9567,7 +10471,33 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
              time_connection_status_last_updated: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("agent_id", agent_id)
         _setter("compartment_id", compartment_id)
         _setter("connection_failure_message", connection_failure_message)
@@ -9719,7 +10649,15 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -9784,7 +10722,19 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -9872,7 +10822,11 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnec
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -9938,7 +10892,9 @@ class GetExternalDbSystemConnectorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9975,7 +10931,11 @@ class GetExternalDbSystemDatabaseManagementConfigResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("license_model", license_model)
 
     @property
@@ -9999,7 +10959,9 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10069,7 +11031,31 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'discoveredComponents' in kwargs:
+            discovered_components = kwargs['discoveredComponents']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDbSystemDiscoveryId' in kwargs:
+            external_db_system_discovery_id = kwargs['externalDbSystemDiscoveryId']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'patchOperations' in kwargs:
+            patch_operations = kwargs['patchOperations']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("agent_id", agent_id)
         _setter("compartment_id", compartment_id)
         _setter("discovered_components", discovered_components)
@@ -10380,7 +11366,93 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              trace_directory: str,
              version: str,
              vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'asmInstances' in kwargs:
+            asm_instances = kwargs['asmInstances']
+        if 'associatedComponents' in kwargs:
+            associated_components = kwargs['associatedComponents']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'clusterInstances' in kwargs:
+            cluster_instances = kwargs['clusterInstances']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'dbEdition' in kwargs:
+            db_edition = kwargs['dbEdition']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbNodeName' in kwargs:
+            db_node_name = kwargs['dbNodeName']
+        if 'dbPacks' in kwargs:
+            db_packs = kwargs['dbPacks']
+        if 'dbRole' in kwargs:
+            db_role = kwargs['dbRole']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'isFlexCluster' in kwargs:
+            is_flex_cluster = kwargs['isFlexCluster']
+        if 'isFlexEnabled' in kwargs:
+            is_flex_enabled = kwargs['isFlexEnabled']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+        if 'listenerAlias' in kwargs:
+            listener_alias = kwargs['listenerAlias']
+        if 'listenerType' in kwargs:
+            listener_type = kwargs['listenerType']
+        if 'logDirectory' in kwargs:
+            log_directory = kwargs['logDirectory']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if 'ocrFileLocation' in kwargs:
+            ocr_file_location = kwargs['ocrFileLocation']
+        if 'oracleHome' in kwargs:
+            oracle_home = kwargs['oracleHome']
+        if 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'scanConfigurations' in kwargs:
+            scan_configurations = kwargs['scanConfigurations']
+        if 'traceDirectory' in kwargs:
+            trace_directory = kwargs['traceDirectory']
+        if 'vipConfigurations' in kwargs:
+            vip_configurations = kwargs['vipConfigurations']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("asm_instances", asm_instances)
         _setter("associated_components", associated_components)
@@ -10823,7 +11895,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              adr_home_directory: str,
              host_name: str,
              instance_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("host_name", host_name)
         _setter("instance_name", instance_name)
@@ -10876,7 +11956,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              association_type: str,
              component_id: str,
              component_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+
         _setter("association_type", association_type)
         _setter("component_id", component_id)
         _setter("component_type", component_type)
@@ -10941,7 +12029,19 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              crs_base_directory: str,
              host_name: str,
              node_role: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("cluster_id", cluster_id)
         _setter("connectors", connectors)
@@ -11037,7 +12137,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -11126,7 +12242,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -11191,7 +12315,19 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -11279,7 +12415,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -11366,7 +12506,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -11455,7 +12611,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -11520,7 +12684,19 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -11608,7 +12784,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -11687,7 +12867,9 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              port: int,
              protocol: str,
              services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("key", key)
         _setter("port", port)
@@ -11758,7 +12940,13 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              network_number: int,
              network_type: str,
              subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         _setter("network_number", network_number)
         _setter("network_type", network_type)
         _setter("subnet", subnet)
@@ -11815,7 +13003,13 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult'],
              container_database_id: str,
              guid: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
         _setter("container_database_id", container_database_id)
@@ -11893,7 +13087,23 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -11982,7 +13192,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -12047,7 +13265,19 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -12135,7 +13365,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -12210,7 +13444,17 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              scan_name: str,
              scan_port: int,
              scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
         _setter("scan_port", scan_port)
@@ -12272,7 +13516,13 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
              address: str,
              network_number: int,
              node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         _setter("address", address)
         _setter("network_number", network_number)
         _setter("node_name", node_name)
@@ -12320,7 +13570,9 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              operation: str,
              selection: str,
              values: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operation", operation)
         _setter("selection", selection)
         _setter("values", values)
@@ -12368,7 +13620,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              connectors: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult'],
              display_name: str,
              is_selected_for_monitoring: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
         _setter("display_name", display_name)
@@ -12434,7 +13694,17 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult'],
              connector_type: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("agent_id", agent_id)
         _setter("connection_infos", connection_infos)
         _setter("connector_type", connector_type)
@@ -12496,7 +13766,15 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -12561,7 +13839,19 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -12649,7 +13939,11 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatch
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -12715,7 +14009,9 @@ class GetExternalDbSystemDiscoveriesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -12934,7 +14230,93 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
              trace_directory: str,
              version: str,
              vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'asmInstances' in kwargs:
+            asm_instances = kwargs['asmInstances']
+        if 'associatedComponents' in kwargs:
+            associated_components = kwargs['associatedComponents']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'clusterInstances' in kwargs:
+            cluster_instances = kwargs['clusterInstances']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+        if 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'dbEdition' in kwargs:
+            db_edition = kwargs['dbEdition']
+        if 'dbId' in kwargs:
+            db_id = kwargs['dbId']
+        if 'dbNodeName' in kwargs:
+            db_node_name = kwargs['dbNodeName']
+        if 'dbPacks' in kwargs:
+            db_packs = kwargs['dbPacks']
+        if 'dbRole' in kwargs:
+            db_role = kwargs['dbRole']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'gridHome' in kwargs:
+            grid_home = kwargs['gridHome']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'isFlexCluster' in kwargs:
+            is_flex_cluster = kwargs['isFlexCluster']
+        if 'isFlexEnabled' in kwargs:
+            is_flex_enabled = kwargs['isFlexEnabled']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+        if 'listenerAlias' in kwargs:
+            listener_alias = kwargs['listenerAlias']
+        if 'listenerType' in kwargs:
+            listener_type = kwargs['listenerType']
+        if 'logDirectory' in kwargs:
+            log_directory = kwargs['logDirectory']
+        if 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if 'ocrFileLocation' in kwargs:
+            ocr_file_location = kwargs['ocrFileLocation']
+        if 'oracleHome' in kwargs:
+            oracle_home = kwargs['oracleHome']
+        if 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if 'scanConfigurations' in kwargs:
+            scan_configurations = kwargs['scanConfigurations']
+        if 'traceDirectory' in kwargs:
+            trace_directory = kwargs['traceDirectory']
+        if 'vipConfigurations' in kwargs:
+            vip_configurations = kwargs['vipConfigurations']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("asm_instances", asm_instances)
         _setter("associated_components", associated_components)
@@ -13377,7 +14759,15 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult(dict):
              adr_home_directory: str,
              host_name: str,
              instance_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'instanceName' in kwargs:
+            instance_name = kwargs['instanceName']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("host_name", host_name)
         _setter("instance_name", instance_name)
@@ -13430,7 +14820,15 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult(d
              association_type: str,
              component_id: str,
              component_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associationType' in kwargs:
+            association_type = kwargs['associationType']
+        if 'componentId' in kwargs:
+            component_id = kwargs['componentId']
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+
         _setter("association_type", association_type)
         _setter("component_id", component_id)
         _setter("component_type", component_type)
@@ -13495,7 +14893,19 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(dict)
              crs_base_directory: str,
              host_name: str,
              node_role: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+
         _setter("adr_home_directory", adr_home_directory)
         _setter("cluster_id", cluster_id)
         _setter("connectors", connectors)
@@ -13591,7 +15001,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorRes
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -13680,7 +15106,15 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -13745,7 +15179,19 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -13833,7 +15279,11 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorCon
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -13920,7 +15370,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorResult(dict):
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -14009,7 +15475,15 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResu
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -14074,7 +15548,19 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConn
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -14162,7 +15648,11 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConn
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -14241,7 +15731,9 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult(dict):
              port: int,
              protocol: str,
              services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("key", key)
         _setter("port", port)
@@ -14312,7 +15804,13 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult(
              network_number: int,
              network_type: str,
              subnet: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+
         _setter("network_number", network_number)
         _setter("network_type", network_type)
         _setter("subnet", subnet)
@@ -14369,7 +15867,13 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult(dic
              connectors: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult'],
              container_database_id: str,
              guid: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'containerDatabaseId' in kwargs:
+            container_database_id = kwargs['containerDatabaseId']
+
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
         _setter("container_database_id", container_database_id)
@@ -14447,7 +15951,23 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorR
              connector_type: str,
              display_name: str,
              time_connection_status_last_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionFailureMessage' in kwargs:
+            connection_failure_message = kwargs['connectionFailureMessage']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+
         _setter("agent_id", agent_id)
         _setter("connection_failure_message", connection_failure_message)
         _setter("connection_infos", connection_infos)
@@ -14536,7 +16056,15 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -14601,7 +16129,19 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -14689,7 +16229,11 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorC
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -14764,7 +16308,17 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationResult(dic
              scan_name: str,
              scan_port: int,
              scan_protocol: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'scanName' in kwargs:
+            scan_name = kwargs['scanName']
+        if 'scanPort' in kwargs:
+            scan_port = kwargs['scanPort']
+        if 'scanProtocol' in kwargs:
+            scan_protocol = kwargs['scanProtocol']
+
         _setter("network_number", network_number)
         _setter("scan_name", scan_name)
         _setter("scan_port", scan_port)
@@ -14826,7 +16380,13 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult(dict
              address: str,
              network_number: int,
              node_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'networkNumber' in kwargs:
+            network_number = kwargs['networkNumber']
+        if 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+
         _setter("address", address)
         _setter("network_number", network_number)
         _setter("node_name", node_name)
@@ -14874,7 +16434,9 @@ class GetExternalDbSystemDiscoveryPatchOperationResult(dict):
              operation: str,
              selection: str,
              values: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operation", operation)
         _setter("selection", selection)
         _setter("values", values)
@@ -14922,7 +16484,15 @@ class GetExternalDbSystemDiscoveryPatchOperationValueResult(dict):
              connectors: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult'],
              display_name: str,
              is_selected_for_monitoring: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isSelectedForMonitoring' in kwargs:
+            is_selected_for_monitoring = kwargs['isSelectedForMonitoring']
+
         _setter("compartment_id", compartment_id)
         _setter("connectors", connectors)
         _setter("display_name", display_name)
@@ -14988,7 +16558,17 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult(dict):
              connection_infos: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult'],
              connector_type: str,
              display_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionInfos' in kwargs:
+            connection_infos = kwargs['connectionInfos']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("agent_id", agent_id)
         _setter("connection_infos", connection_infos)
         _setter("connector_type", connector_type)
@@ -15050,7 +16630,15 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResu
              component_type: str,
              connection_credentials: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
              connection_strings: Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'componentType' in kwargs:
+            component_type = kwargs['componentType']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+
         _setter("component_type", component_type)
         _setter("connection_credentials", connection_credentials)
         _setter("connection_strings", connection_strings)
@@ -15115,7 +16703,19 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConn
              role: str,
              ssl_secret_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("credential_name", credential_name)
         _setter("credential_type", credential_type)
         _setter("password_secret_id", password_secret_id)
@@ -15203,7 +16803,11 @@ class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConn
              port: int,
              protocol: str,
              service: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+
         _setter("host_name", host_name)
         _setter("hosts", hosts)
         _setter("port", port)
@@ -15270,7 +16874,11 @@ class GetExternalDbSystemStackMonitoringConfigResult(dict):
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
         _setter("metadata", metadata)
 
@@ -15303,7 +16911,9 @@ class GetExternalDbSystemsExternalDbSystemCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15375,7 +16985,31 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseManagementConfigs' in kwargs:
+            database_management_configs = kwargs['databaseManagementConfigs']
+        if 'dbSystemDiscoveryId' in kwargs:
+            db_system_discovery_id = kwargs['dbSystemDiscoveryId']
+        if 'discoveryAgentId' in kwargs:
+            discovery_agent_id = kwargs['discoveryAgentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'homeDirectory' in kwargs:
+            home_directory = kwargs['homeDirectory']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'stackMonitoringConfigs' in kwargs:
+            stack_monitoring_configs = kwargs['stackMonitoringConfigs']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("database_management_configs", database_management_configs)
         _setter("db_system_discovery_id", db_system_discovery_id)
@@ -15510,7 +17144,11 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig
     def _configure(
              _setter: Callable[[Any, Any], None],
              license_model: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("license_model", license_model)
 
     @property
@@ -15541,7 +17179,11 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigRes
              _setter: Callable[[Any, Any], None],
              is_enabled: bool,
              metadata: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         _setter("is_enabled", is_enabled)
         _setter("metadata", metadata)
 
@@ -15580,7 +17222,9 @@ class GetExternalDbSystemsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15661,7 +17305,25 @@ class GetExternalExadataInfrastructureDatabaseSystemResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -15827,7 +17489,23 @@ class GetExternalExadataInfrastructureStorageGridResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'serverCount' in kwargs:
+            server_count = kwargs['serverCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -15941,7 +17619,9 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionRe
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16034,7 +17714,39 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseCompartments' in kwargs:
+            database_compartments = kwargs['databaseCompartments']
+        if 'databaseSystems' in kwargs:
+            database_systems = kwargs['databaseSystems']
+        if 'dbSystemIds' in kwargs:
+            db_system_ids = kwargs['dbSystemIds']
+        if 'discoveryKey' in kwargs:
+            discovery_key = kwargs['discoveryKey']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'rackSize' in kwargs:
+            rack_size = kwargs['rackSize']
+        if 'storageGrids' in kwargs:
+            storage_grids = kwargs['storageGrids']
+        if 'storageServerNames' in kwargs:
+            storage_server_names = kwargs['storageServerNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("database_compartments", database_compartments)
@@ -16258,7 +17970,25 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
@@ -16424,7 +18154,23 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'serverCount' in kwargs:
+            server_count = kwargs['serverCount']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -16544,7 +18290,9 @@ class GetExternalExadataInfrastructuresFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -16590,7 +18338,15 @@ class GetExternalExadataStorageConnectorCredentialInfoResult(dict):
              ssl_trust_store_password: str,
              ssl_trust_store_type: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sslTrustStoreLocation' in kwargs:
+            ssl_trust_store_location = kwargs['sslTrustStoreLocation']
+        if 'sslTrustStorePassword' in kwargs:
+            ssl_trust_store_password = kwargs['sslTrustStorePassword']
+        if 'sslTrustStoreType' in kwargs:
+            ssl_trust_store_type = kwargs['sslTrustStoreType']
+
         _setter("password", password)
         _setter("ssl_trust_store_location", ssl_trust_store_location)
         _setter("ssl_trust_store_password", ssl_trust_store_password)
@@ -16635,7 +18391,9 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -16717,7 +18475,33 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if 'connectorName' in kwargs:
+            connector_name = kwargs['connectorName']
+        if 'credentialInfos' in kwargs:
+            credential_infos = kwargs['credentialInfos']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("agent_id", agent_id)
         _setter("connection_uri", connection_uri)
@@ -16882,7 +18666,15 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
              ssl_trust_store_password: str,
              ssl_trust_store_type: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sslTrustStoreLocation' in kwargs:
+            ssl_trust_store_location = kwargs['sslTrustStoreLocation']
+        if 'sslTrustStorePassword' in kwargs:
+            ssl_trust_store_password = kwargs['sslTrustStorePassword']
+        if 'sslTrustStoreType' in kwargs:
+            ssl_trust_store_type = kwargs['sslTrustStoreType']
+
         _setter("password", password)
         _setter("ssl_trust_store_location", ssl_trust_store_location)
         _setter("ssl_trust_store_password", ssl_trust_store_password)
@@ -16933,7 +18725,9 @@ class GetExternalExadataStorageConnectorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -17046,7 +18840,41 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'cpuCount' in kwargs:
+            cpu_count = kwargs['cpuCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'makeModel' in kwargs:
+            make_model = kwargs['makeModel']
+        if 'maxFlashDiskIops' in kwargs:
+            max_flash_disk_iops = kwargs['maxFlashDiskIops']
+        if 'maxFlashDiskThroughput' in kwargs:
+            max_flash_disk_throughput = kwargs['maxFlashDiskThroughput']
+        if 'maxHardDiskIops' in kwargs:
+            max_hard_disk_iops = kwargs['maxHardDiskIops']
+        if 'maxHardDiskThroughput' in kwargs:
+            max_hard_disk_throughput = kwargs['maxHardDiskThroughput']
+        if 'memoryGb' in kwargs:
+            memory_gb = kwargs['memoryGb']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("connector_id", connector_id)
         _setter("cpu_count", cpu_count)
@@ -17296,7 +19124,29 @@ class GetExternalExadataStorageServerConnectorResult(dict):
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("agent_id", agent_id)
         _setter("connection_uri", connection_uri)
@@ -17440,7 +19290,9 @@ class GetExternalExadataStorageServerIormPlanDbPlanResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalExadataStorageServerIormPlanDbPlanItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -17536,7 +19388,31 @@ class GetExternalExadataStorageServerIormPlanDbPlanItemResult(dict):
              role: str,
              share: int,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'asmCluster' in kwargs:
+            asm_cluster = kwargs['asmCluster']
+        if 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+        if 'flashCacheMin' in kwargs:
+            flash_cache_min = kwargs['flashCacheMin']
+        if 'flashCacheSize' in kwargs:
+            flash_cache_size = kwargs['flashCacheSize']
+        if 'isFlashCacheOn' in kwargs:
+            is_flash_cache_on = kwargs['isFlashCacheOn']
+        if 'isFlashLogOn' in kwargs:
+            is_flash_log_on = kwargs['isFlashLogOn']
+        if 'isPmemCacheOn' in kwargs:
+            is_pmem_cache_on = kwargs['isPmemCacheOn']
+        if 'isPmemLogOn' in kwargs:
+            is_pmem_log_on = kwargs['isPmemLogOn']
+        if 'pmemCacheLimit' in kwargs:
+            pmem_cache_limit = kwargs['pmemCacheLimit']
+        if 'pmemCacheMin' in kwargs:
+            pmem_cache_min = kwargs['pmemCacheMin']
+        if 'pmemCacheSize' in kwargs:
+            pmem_cache_size = kwargs['pmemCacheSize']
+
         _setter("allocation", allocation)
         _setter("asm_cluster", asm_cluster)
         _setter("flash_cache_limit", flash_cache_limit)
@@ -17727,7 +19603,11 @@ class GetExternalExadataStorageServerOpenAlertHistoryAlertResult(dict):
              severity: str,
              time_start_at: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeStartAt' in kwargs:
+            time_start_at = kwargs['timeStartAt']
+
         _setter("message", message)
         _setter("severity", severity)
         _setter("time_start_at", time_start_at)
@@ -17789,7 +19669,15 @@ class GetExternalExadataStorageServerTopSqlCpuActivityActivityResult(dict):
              cpu_activity: float,
              database_name: str,
              sql_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cpuActivity' in kwargs:
+            cpu_activity = kwargs['cpuActivity']
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'sqlId' in kwargs:
+            sql_id = kwargs['sqlId']
+
         _setter("cpu_activity", cpu_activity)
         _setter("database_name", database_name)
         _setter("sql_id", sql_id)
@@ -17831,7 +19719,9 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalExadataStorageServersExternalExadataStorageServerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -17938,7 +19828,45 @@ class GetExternalExadataStorageServersExternalExadataStorageServerCollectionItem
              time_created: str,
              time_updated: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'connectorId' in kwargs:
+            connector_id = kwargs['connectorId']
+        if 'cpuCount' in kwargs:
+            cpu_count = kwargs['cpuCount']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'makeModel' in kwargs:
+            make_model = kwargs['makeModel']
+        if 'maxFlashDiskIops' in kwargs:
+            max_flash_disk_iops = kwargs['maxFlashDiskIops']
+        if 'maxFlashDiskThroughput' in kwargs:
+            max_flash_disk_throughput = kwargs['maxFlashDiskThroughput']
+        if 'maxHardDiskIops' in kwargs:
+            max_hard_disk_iops = kwargs['maxHardDiskIops']
+        if 'maxHardDiskThroughput' in kwargs:
+            max_hard_disk_throughput = kwargs['maxHardDiskThroughput']
+        if 'memoryGb' in kwargs:
+            memory_gb = kwargs['memoryGb']
+        if 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if 'storageGridId' in kwargs:
+            storage_grid_id = kwargs['storageGridId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("additional_details", additional_details)
         _setter("connector_id", connector_id)
         _setter("cpu_count", cpu_count)
@@ -18154,7 +20082,9 @@ class GetExternalExadataStorageServersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18207,7 +20137,9 @@ class GetExternalListenerEndpointResult(dict):
              port: int,
              protocol: str,
              services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("key", key)
         _setter("port", port)
@@ -18278,7 +20210,13 @@ class GetExternalListenerServicedAsmResult(dict):
              compartment_id: str,
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -18347,7 +20285,21 @@ class GetExternalListenerServicedDatabaseResult(dict):
              display_name: str,
              id: str,
              is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -18428,7 +20380,9 @@ class GetExternalListenerServicesExternalListenerServiceCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalListenerServicesExternalListenerServiceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18463,7 +20417,13 @@ class GetExternalListenerServicesExternalListenerServiceCollectionItemResult(dic
              listener_id: str,
              managed_database_id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'listenerId' in kwargs:
+            listener_id = kwargs['listenerId']
+        if 'managedDatabaseId' in kwargs:
+            managed_database_id = kwargs['managedDatabaseId']
+
         _setter("listener_id", listener_id)
         _setter("managed_database_id", managed_database_id)
         _setter("name", name)
@@ -18514,7 +20474,9 @@ class GetExternalListenerServicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18551,7 +20513,9 @@ class GetExternalListenersExternalListenerCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -18674,7 +20638,53 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
              time_updated: str,
              trace_directory: str,
              version: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if 'externalDbHomeId' in kwargs:
+            external_db_home_id = kwargs['externalDbHomeId']
+        if 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if 'externalListenerId' in kwargs:
+            external_listener_id = kwargs['externalListenerId']
+        if 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'listenerAlias' in kwargs:
+            listener_alias = kwargs['listenerAlias']
+        if 'listenerOraLocation' in kwargs:
+            listener_ora_location = kwargs['listenerOraLocation']
+        if 'listenerType' in kwargs:
+            listener_type = kwargs['listenerType']
+        if 'logDirectory' in kwargs:
+            log_directory = kwargs['logDirectory']
+        if 'oracleHome' in kwargs:
+            oracle_home = kwargs['oracleHome']
+        if 'servicedAsms' in kwargs:
+            serviced_asms = kwargs['servicedAsms']
+        if 'servicedDatabases' in kwargs:
+            serviced_databases = kwargs['servicedDatabases']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'traceDirectory' in kwargs:
+            trace_directory = kwargs['traceDirectory']
+
         _setter("additional_details", additional_details)
         _setter("adr_home_directory", adr_home_directory)
         _setter("compartment_id", compartment_id)
@@ -18939,7 +20949,9 @@ class GetExternalListenersExternalListenerCollectionItemEndpointResult(dict):
              port: int,
              protocol: str,
              services: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("host", host)
         _setter("key", key)
         _setter("port", port)
@@ -19010,7 +21022,13 @@ class GetExternalListenersExternalListenerCollectionItemServicedAsmResult(dict):
              compartment_id: str,
              display_name: str,
              id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("compartment_id", compartment_id)
         _setter("display_name", display_name)
         _setter("id", id)
@@ -19079,7 +21097,21 @@ class GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult(d
              display_name: str,
              id: str,
              is_managed: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'isManaged' in kwargs:
+            is_managed = kwargs['isManaged']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -19163,7 +21195,9 @@ class GetExternalListenersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19204,7 +21238,9 @@ class GetJobExecutionsStatusItemResult(dict):
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -19246,7 +21282,9 @@ class GetJobExecutionsStatusesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19286,7 +21324,9 @@ class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19317,7 +21357,9 @@ class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult(dic
              _setter: Callable[[Any, Any], None],
              count: int,
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("status", status)
 
@@ -19397,7 +21439,27 @@ class GetManagedDatabaseAddmTaskItemResult(dict):
              task_id: str,
              task_name: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beginSnapshotId' in kwargs:
+            begin_snapshot_id = kwargs['beginSnapshotId']
+        if 'dbUser' in kwargs:
+            db_user = kwargs['dbUser']
+        if 'endSnapshotId' in kwargs:
+            end_snapshot_id = kwargs['endSnapshotId']
+        if 'endSnapshotTime' in kwargs:
+            end_snapshot_time = kwargs['endSnapshotTime']
+        if 'howCreated' in kwargs:
+            how_created = kwargs['howCreated']
+        if 'startSnapshotTime' in kwargs:
+            start_snapshot_time = kwargs['startSnapshotTime']
+        if 'taskId' in kwargs:
+            task_id = kwargs['taskId']
+        if 'taskName' in kwargs:
+            task_name = kwargs['taskName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("begin_snapshot_id", begin_snapshot_id)
         _setter("db_user", db_user)
         _setter("description", description)
@@ -19523,7 +21585,9 @@ class GetManagedDatabaseAddmTasksAddmTasksCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19594,7 +21658,27 @@ class GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult(dict):
              task_id: str,
              task_name: str,
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'beginSnapshotId' in kwargs:
+            begin_snapshot_id = kwargs['beginSnapshotId']
+        if 'dbUser' in kwargs:
+            db_user = kwargs['dbUser']
+        if 'endSnapshotId' in kwargs:
+            end_snapshot_id = kwargs['endSnapshotId']
+        if 'endSnapshotTime' in kwargs:
+            end_snapshot_time = kwargs['endSnapshotTime']
+        if 'howCreated' in kwargs:
+            how_created = kwargs['howCreated']
+        if 'startSnapshotTime' in kwargs:
+            start_snapshot_time = kwargs['startSnapshotTime']
+        if 'taskId' in kwargs:
+            task_id = kwargs['taskId']
+        if 'taskName' in kwargs:
+            task_name = kwargs['taskName']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("begin_snapshot_id", begin_snapshot_id)
         _setter("db_user", db_user)
         _setter("description", description)
@@ -19723,7 +21807,9 @@ class GetManagedDatabaseAddmTasksFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19764,7 +21850,9 @@ class GetManagedDatabaseAlertLogCountItemResult(dict):
              _setter: Callable[[Any, Any], None],
              category: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("count", count)
 
@@ -19800,7 +21888,9 @@ class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19831,7 +21921,9 @@ class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult(dict):
              _setter: Callable[[Any, Any], None],
              category: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("count", count)
 
@@ -19870,7 +21962,9 @@ class GetManagedDatabaseAlertLogCountsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19911,7 +22005,9 @@ class GetManagedDatabaseAttentionLogCountItemResult(dict):
              _setter: Callable[[Any, Any], None],
              category: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("count", count)
 
@@ -19947,7 +22043,9 @@ class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -19978,7 +22076,9 @@ class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult
              _setter: Callable[[Any, Any], None],
              category: str,
              count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("category", category)
         _setter("count", count)
 
@@ -20017,7 +22117,9 @@ class GetManagedDatabaseAttentionLogCountsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20054,7 +22156,9 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20089,7 +22193,13 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemR
              schema: str,
              sql_id: str,
              sql_text: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sqlId' in kwargs:
+            sql_id = kwargs['sqlId']
+        if 'sqlText' in kwargs:
+            sql_text = kwargs['sqlText']
+
         _setter("schema", schema)
         _setter("sql_id", sql_id)
         _setter("sql_text", sql_text)
@@ -20137,7 +22247,9 @@ class GetManagedDatabaseCursorCacheStatementsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20202,7 +22314,21 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
              name: str,
              time_added: str,
              workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'timeAdded' in kwargs:
+            time_added = kwargs['timeAdded']
+        if 'workloadType' in kwargs:
+            workload_type = kwargs['workloadType']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -20298,7 +22424,9 @@ class GetManagedDatabaseGroupsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20335,7 +22463,9 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -20387,7 +22517,17 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'managedDatabases' in kwargs:
+            managed_databases = kwargs['managedDatabases']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("description", description)
         _setter("id", id)
@@ -20505,7 +22645,21 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
              name: str,
              time_added: str,
              workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'timeAdded' in kwargs:
+            time_added = kwargs['timeAdded']
+        if 'workloadType' in kwargs:
+            workload_type = kwargs['workloadType']
+
         _setter("compartment_id", compartment_id)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -20603,7 +22757,11 @@ class GetManagedDatabaseManagedDatabaseGroupResult(dict):
              compartment_id: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("name", name)
@@ -20672,7 +22830,19 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseResult(dict):
              db_version: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbDeploymentType' in kwargs:
+            db_deployment_type = kwargs['dbDeploymentType']
+        if 'dbSubType' in kwargs:
+            db_sub_type = kwargs['dbSubType']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
         _setter("db_sub_type", db_sub_type)
@@ -20757,7 +22927,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportResult(dict):
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult'],
              summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
         _setter("summary", summary)
 
@@ -20801,7 +22973,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleResult(dict
              description: str,
              findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("findings", findings)
         _setter("name", name)
@@ -20854,7 +23028,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResu
              details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult'],
              message: str,
              recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("message", message)
         _setter("recommendations", recommendations)
@@ -20903,7 +23079,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDeta
              _setter: Callable[[Any, Any], None],
              operations: Sequence[str],
              schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchemaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operations", operations)
         _setter("schemas", schemas)
 
@@ -20943,7 +23121,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDeta
              _setter: Callable[[Any, Any], None],
              name: str,
              objects: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("objects", objects)
 
@@ -20987,7 +23167,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
              examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleResult'],
              message: str,
              rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationaleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("examples", examples)
         _setter("message", message)
         _setter("rationales", rationales)
@@ -21032,7 +23214,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     def _configure(
              _setter: Callable[[Any, Any], None],
              lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLineResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("lines", lines)
 
     @property
@@ -21063,7 +23247,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
              _setter: Callable[[Any, Any], None],
              comment: str,
              operation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("comment", comment)
         _setter("operation", operation)
 
@@ -21099,7 +23285,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingReco
     def _configure(
              _setter: Callable[[Any, Any], None],
              message: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("message", message)
 
     @property
@@ -21132,7 +23320,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21169,7 +23359,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21229,7 +23421,21 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              task_name: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'executionName' in kwargs:
+            execution_name = kwargs['executionName']
+        if 'statusMessage' in kwargs:
+            status_message = kwargs['statusMessage']
+        if 'taskName' in kwargs:
+            task_name = kwargs['taskName']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("databases", databases)
         _setter("error_message", error_message)
         _setter("execution_name", execution_name)
@@ -21361,7 +23567,19 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              db_version: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbDeploymentType' in kwargs:
+            db_deployment_type = kwargs['dbDeploymentType']
+        if 'dbSubType' in kwargs:
+            db_sub_type = kwargs['dbSubType']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
         _setter("db_sub_type", db_sub_type)
@@ -21446,7 +23664,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              _setter: Callable[[Any, Any], None],
              rules: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleResult'],
              summary: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("rules", rules)
         _setter("summary", summary)
 
@@ -21490,7 +23710,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              description: str,
              findings: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingResult'],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("findings", findings)
         _setter("name", name)
@@ -21543,7 +23765,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              details: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailResult'],
              message: str,
              recommendations: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("message", message)
         _setter("recommendations", recommendations)
@@ -21592,7 +23816,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              _setter: Callable[[Any, Any], None],
              operations: Sequence[str],
              schemas: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchemaResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("operations", operations)
         _setter("schemas", schemas)
 
@@ -21632,7 +23858,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              _setter: Callable[[Any, Any], None],
              name: str,
              objects: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("objects", objects)
 
@@ -21676,7 +23904,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              examples: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleResult'],
              message: str,
              rationales: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("examples", examples)
         _setter("message", message)
         _setter("rationales", rationales)
@@ -21721,7 +23951,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     def _configure(
              _setter: Callable[[Any, Any], None],
              lines: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("lines", lines)
 
     @property
@@ -21752,7 +23984,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
              _setter: Callable[[Any, Any], None],
              comment: str,
              operation: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("comment", comment)
         _setter("operation", operation)
 
@@ -21788,7 +24022,9 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsA
     def _configure(
              _setter: Callable[[Any, Any], None],
              message: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("message", message)
 
     @property
@@ -21818,7 +24054,9 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterResult(di
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21855,7 +24093,9 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatis
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21922,7 +24162,19 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatis
              timed_out: int,
              total: int,
              unknown: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupBy' in kwargs:
+            group_by = kwargs['groupBy']
+        if 'inProgress' in kwargs:
+            in_progress = kwargs['inProgress']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'timedOut' in kwargs:
+            timed_out = kwargs['timedOut']
+
         _setter("completed", completed)
         _setter("failed", failed)
         _setter("group_by", group_by)
@@ -22063,7 +24315,19 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabaseResult(dic
              db_version: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbDeploymentType' in kwargs:
+            db_deployment_type = kwargs['dbDeploymentType']
+        if 'dbSubType' in kwargs:
+            db_sub_type = kwargs['dbSubType']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
         _setter("db_sub_type", db_sub_type)
@@ -22160,7 +24424,15 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult(dict):
              target_type: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("status", status)
         _setter("target", target)
         _setter("target_type", target_type)
@@ -22229,7 +24501,9 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterResult(dict
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -22266,7 +24540,9 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22346,7 +24622,29 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
              tasks: Sequence['outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult'],
              timed_out_count: int,
              total_objects_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'completedCount' in kwargs:
+            completed_count = kwargs['completedCount']
+        if 'durationInSeconds' in kwargs:
+            duration_in_seconds = kwargs['durationInSeconds']
+        if 'endTime' in kwargs:
+            end_time = kwargs['endTime']
+        if 'failedCount' in kwargs:
+            failed_count = kwargs['failedCount']
+        if 'inProgressCount' in kwargs:
+            in_progress_count = kwargs['inProgressCount']
+        if 'jobName' in kwargs:
+            job_name = kwargs['jobName']
+        if 'operationName' in kwargs:
+            operation_name = kwargs['operationName']
+        if 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if 'timedOutCount' in kwargs:
+            timed_out_count = kwargs['timedOutCount']
+        if 'totalObjectsCount' in kwargs:
+            total_objects_count = kwargs['totalObjectsCount']
+
         _setter("completed_count", completed_count)
         _setter("databases", databases)
         _setter("duration_in_seconds", duration_in_seconds)
@@ -22523,7 +24821,19 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
              db_version: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbDeploymentType' in kwargs:
+            db_deployment_type = kwargs['dbDeploymentType']
+        if 'dbSubType' in kwargs:
+            db_sub_type = kwargs['dbSubType']
+        if 'dbType' in kwargs:
+            db_type = kwargs['dbType']
+        if 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+
         _setter("compartment_id", compartment_id)
         _setter("db_deployment_type", db_deployment_type)
         _setter("db_sub_type", db_sub_type)
@@ -22620,7 +24930,15 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisti
              target_type: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("status", status)
         _setter("target", target)
         _setter("target_type", target_type)
@@ -22703,7 +25021,17 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult(dict
              time_last_modified: str,
              values_to_excludes: Sequence[str],
              values_to_includes: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'modifiedBy' in kwargs:
+            modified_by = kwargs['modifiedBy']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+        if 'valuesToExcludes' in kwargs:
+            values_to_excludes = kwargs['valuesToExcludes']
+        if 'valuesToIncludes' in kwargs:
+            values_to_includes = kwargs['valuesToIncludes']
+
         _setter("modified_by", modified_by)
         _setter("name", name)
         _setter("time_last_modified", time_last_modified)
@@ -22786,7 +25114,19 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterRe
              alternate_plan_limit: int,
              alternate_plan_sources: Sequence[str],
              are_plans_auto_accepted: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedTimeLimit' in kwargs:
+            allowed_time_limit = kwargs['allowedTimeLimit']
+        if 'alternatePlanBaselines' in kwargs:
+            alternate_plan_baselines = kwargs['alternatePlanBaselines']
+        if 'alternatePlanLimit' in kwargs:
+            alternate_plan_limit = kwargs['alternatePlanLimit']
+        if 'alternatePlanSources' in kwargs:
+            alternate_plan_sources = kwargs['alternatePlanSources']
+        if 'arePlansAutoAccepted' in kwargs:
+            are_plans_auto_accepted = kwargs['arePlansAutoAccepted']
+
         _setter("allowed_time_limit", allowed_time_limit)
         _setter("alternate_plan_baselines", alternate_plan_baselines)
         _setter("alternate_plan_limit", alternate_plan_limit)
@@ -22855,7 +25195,9 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -22895,7 +25237,9 @@ class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult(di
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22934,7 +25278,11 @@ class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItemResul
              status: str,
              time_created: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("name", name)
         _setter("status", status)
         _setter("time_created", time_created)
@@ -22991,7 +25339,9 @@ class GetManagedDatabaseSqlPlanBaselinesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23025,7 +25375,9 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -23109,7 +25461,25 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult(dict
              time_created: str,
              time_last_executed: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autoPurge' in kwargs:
+            auto_purge = kwargs['autoPurge']
+        if 'executionPlan' in kwargs:
+            execution_plan = kwargs['executionPlan']
+        if 'planName' in kwargs:
+            plan_name = kwargs['planName']
+        if 'sqlHandle' in kwargs:
+            sql_handle = kwargs['sqlHandle']
+        if 'sqlText' in kwargs:
+            sql_text = kwargs['sqlText']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastExecuted' in kwargs:
+            time_last_executed = kwargs['timeLastExecuted']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("accepted", accepted)
         _setter("action", action)
         _setter("adaptive", adaptive)
@@ -23315,7 +25685,27 @@ class GetManagedDatabaseSqlTuningAdvisorTaskItemResult(dict):
              time_execution_ended: str,
              time_execution_started: str,
              total_sql_statements: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'daysToExpire' in kwargs:
+            days_to_expire = kwargs['daysToExpire']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'recommendationCount' in kwargs:
+            recommendation_count = kwargs['recommendationCount']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'taskStatus' in kwargs:
+            task_status = kwargs['taskStatus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExecutionEnded' in kwargs:
+            time_execution_ended = kwargs['timeExecutionEnded']
+        if 'timeExecutionStarted' in kwargs:
+            time_execution_started = kwargs['timeExecutionStarted']
+        if 'totalSqlStatements' in kwargs:
+            total_sql_statements = kwargs['totalSqlStatements']
+
         _setter("days_to_expire", days_to_expire)
         _setter("description", description)
         _setter("instance_id", instance_id)
@@ -23449,7 +25839,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifie
              plan_stats: Mapping[str, Any],
              plan_status: str,
              plan_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'planStats' in kwargs:
+            plan_stats = kwargs['planStats']
+        if 'planStatus' in kwargs:
+            plan_status = kwargs['planStatus']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+
         _setter("plan_stats", plan_stats)
         _setter("plan_status", plan_status)
         _setter("plan_type", plan_type)
@@ -23502,7 +25900,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOrigina
              plan_stats: Mapping[str, Any],
              plan_status: str,
              plan_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'planStats' in kwargs:
+            plan_stats = kwargs['planStats']
+        if 'planStatus' in kwargs:
+            plan_status = kwargs['planStatus']
+        if 'planType' in kwargs:
+            plan_type = kwargs['planType']
+
         _setter("plan_stats", plan_stats)
         _setter("plan_status", plan_status)
         _setter("plan_type", plan_type)
@@ -23553,7 +25959,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23657,7 +26065,43 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingItemResult(dict):
              sql_tuning_advisor_task_id: str,
              sql_tuning_advisor_task_object_execution_id: str,
              sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbTimeBenefit' in kwargs:
+            db_time_benefit = kwargs['dbTimeBenefit']
+        if 'isAlternativePlanFindingPresent' in kwargs:
+            is_alternative_plan_finding_present = kwargs['isAlternativePlanFindingPresent']
+        if 'isErrorFindingPresent' in kwargs:
+            is_error_finding_present = kwargs['isErrorFindingPresent']
+        if 'isIndexFindingPresent' in kwargs:
+            is_index_finding_present = kwargs['isIndexFindingPresent']
+        if 'isMiscellaneousFindingPresent' in kwargs:
+            is_miscellaneous_finding_present = kwargs['isMiscellaneousFindingPresent']
+        if 'isRestructureSqlFindingPresent' in kwargs:
+            is_restructure_sql_finding_present = kwargs['isRestructureSqlFindingPresent']
+        if 'isSqlProfileFindingImplemented' in kwargs:
+            is_sql_profile_finding_implemented = kwargs['isSqlProfileFindingImplemented']
+        if 'isSqlProfileFindingPresent' in kwargs:
+            is_sql_profile_finding_present = kwargs['isSqlProfileFindingPresent']
+        if 'isStatsFindingPresent' in kwargs:
+            is_stats_finding_present = kwargs['isStatsFindingPresent']
+        if 'isTimeoutFindingPresent' in kwargs:
+            is_timeout_finding_present = kwargs['isTimeoutFindingPresent']
+        if 'parsingSchema' in kwargs:
+            parsing_schema = kwargs['parsingSchema']
+        if 'perExecutionPercentage' in kwargs:
+            per_execution_percentage = kwargs['perExecutionPercentage']
+        if 'sqlKey' in kwargs:
+            sql_key = kwargs['sqlKey']
+        if 'sqlText' in kwargs:
+            sql_text = kwargs['sqlText']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
+            sql_tuning_advisor_task_object_execution_id = kwargs['sqlTuningAdvisorTaskObjectExecutionId']
+        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+            sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+
         _setter("db_time_benefit", db_time_benefit)
         _setter("is_alternative_plan_finding_present", is_alternative_plan_finding_present)
         _setter("is_error_finding_present", is_error_finding_present)
@@ -23831,7 +26275,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23868,7 +26314,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFinding
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -23959,7 +26407,43 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFinding
              sql_tuning_advisor_task_id: str,
              sql_tuning_advisor_task_object_execution_id: str,
              sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbTimeBenefit' in kwargs:
+            db_time_benefit = kwargs['dbTimeBenefit']
+        if 'isAlternativePlanFindingPresent' in kwargs:
+            is_alternative_plan_finding_present = kwargs['isAlternativePlanFindingPresent']
+        if 'isErrorFindingPresent' in kwargs:
+            is_error_finding_present = kwargs['isErrorFindingPresent']
+        if 'isIndexFindingPresent' in kwargs:
+            is_index_finding_present = kwargs['isIndexFindingPresent']
+        if 'isMiscellaneousFindingPresent' in kwargs:
+            is_miscellaneous_finding_present = kwargs['isMiscellaneousFindingPresent']
+        if 'isRestructureSqlFindingPresent' in kwargs:
+            is_restructure_sql_finding_present = kwargs['isRestructureSqlFindingPresent']
+        if 'isSqlProfileFindingImplemented' in kwargs:
+            is_sql_profile_finding_implemented = kwargs['isSqlProfileFindingImplemented']
+        if 'isSqlProfileFindingPresent' in kwargs:
+            is_sql_profile_finding_present = kwargs['isSqlProfileFindingPresent']
+        if 'isStatsFindingPresent' in kwargs:
+            is_stats_finding_present = kwargs['isStatsFindingPresent']
+        if 'isTimeoutFindingPresent' in kwargs:
+            is_timeout_finding_present = kwargs['isTimeoutFindingPresent']
+        if 'parsingSchema' in kwargs:
+            parsing_schema = kwargs['parsingSchema']
+        if 'perExecutionPercentage' in kwargs:
+            per_execution_percentage = kwargs['perExecutionPercentage']
+        if 'sqlKey' in kwargs:
+            sql_key = kwargs['sqlKey']
+        if 'sqlText' in kwargs:
+            sql_text = kwargs['sqlText']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'sqlTuningAdvisorTaskObjectExecutionId' in kwargs:
+            sql_tuning_advisor_task_object_execution_id = kwargs['sqlTuningAdvisorTaskObjectExecutionId']
+        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+            sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+
         _setter("db_time_benefit", db_time_benefit)
         _setter("is_alternative_plan_finding_present", is_alternative_plan_finding_present)
         _setter("is_error_finding_present", is_error_finding_present)
@@ -24166,7 +26650,21 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
              recommendation_type: str,
              sql_tuning_advisor_task_id: str,
              sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'implementActionSql' in kwargs:
+            implement_action_sql = kwargs['implementActionSql']
+        if 'isParallelExecution' in kwargs:
+            is_parallel_execution = kwargs['isParallelExecution']
+        if 'recommendationKey' in kwargs:
+            recommendation_key = kwargs['recommendationKey']
+        if 'recommendationType' in kwargs:
+            recommendation_type = kwargs['recommendationType']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+            sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+
         _setter("benefit", benefit)
         _setter("finding", finding)
         _setter("implement_action_sql", implement_action_sql)
@@ -24277,7 +26775,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -24314,7 +26814,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -24377,7 +26879,21 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
              recommendation_type: str,
              sql_tuning_advisor_task_id: str,
              sql_tuning_advisor_task_object_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'implementActionSql' in kwargs:
+            implement_action_sql = kwargs['implementActionSql']
+        if 'isParallelExecution' in kwargs:
+            is_parallel_execution = kwargs['isParallelExecution']
+        if 'recommendationKey' in kwargs:
+            recommendation_key = kwargs['recommendationKey']
+        if 'recommendationType' in kwargs:
+            recommendation_type = kwargs['recommendationType']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'sqlTuningAdvisorTaskObjectId' in kwargs:
+            sql_tuning_advisor_task_object_id = kwargs['sqlTuningAdvisorTaskObjectId']
+
         _setter("benefit", benefit)
         _setter("finding", finding)
         _setter("implement_action_sql", implement_action_sql)
@@ -24597,7 +27113,45 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult(dict):
              step_id: int,
              temp_space: str,
              time: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accessPredicates' in kwargs:
+            access_predicates = kwargs['accessPredicates']
+        if 'cpuCost' in kwargs:
+            cpu_cost = kwargs['cpuCost']
+        if 'filterPredicates' in kwargs:
+            filter_predicates = kwargs['filterPredicates']
+        if 'ioCost' in kwargs:
+            io_cost = kwargs['ioCost']
+        if 'numberOfSearchColumn' in kwargs:
+            number_of_search_column = kwargs['numberOfSearchColumn']
+        if 'objectNode' in kwargs:
+            object_node = kwargs['objectNode']
+        if 'objectOwner' in kwargs:
+            object_owner = kwargs['objectOwner']
+        if 'objectPosition' in kwargs:
+            object_position = kwargs['objectPosition']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'optimizerMode' in kwargs:
+            optimizer_mode = kwargs['optimizerMode']
+        if 'otherTag' in kwargs:
+            other_tag = kwargs['otherTag']
+        if 'parentStepId' in kwargs:
+            parent_step_id = kwargs['parentStepId']
+        if 'partitionId' in kwargs:
+            partition_id = kwargs['partitionId']
+        if 'partitionStart' in kwargs:
+            partition_start = kwargs['partitionStart']
+        if 'partitionStop' in kwargs:
+            partition_stop = kwargs['partitionStop']
+        if 'planHashValue' in kwargs:
+            plan_hash_value = kwargs['planHashValue']
+        if 'stepId' in kwargs:
+            step_id = kwargs['stepId']
+        if 'tempSpace' in kwargs:
+            temp_space = kwargs['tempSpace']
+
         _setter("access_predicates", access_predicates)
         _setter("attribute", attribute)
         _setter("bytes", bytes)
@@ -24876,7 +27430,9 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionResul
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -24947,7 +27503,27 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItemR
              time_execution_ended: str,
              time_execution_started: str,
              total_sql_statements: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'daysToExpire' in kwargs:
+            days_to_expire = kwargs['daysToExpire']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'recommendationCount' in kwargs:
+            recommendation_count = kwargs['recommendationCount']
+        if 'sqlTuningAdvisorTaskId' in kwargs:
+            sql_tuning_advisor_task_id = kwargs['sqlTuningAdvisorTaskId']
+        if 'taskStatus' in kwargs:
+            task_status = kwargs['taskStatus']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExecutionEnded' in kwargs:
+            time_execution_ended = kwargs['timeExecutionEnded']
+        if 'timeExecutionStarted' in kwargs:
+            time_execution_started = kwargs['timeExecutionStarted']
+        if 'totalSqlStatements' in kwargs:
+            total_sql_statements = kwargs['totalSqlStatements']
+
         _setter("days_to_expire", days_to_expire)
         _setter("description", description)
         _setter("instance_id", instance_id)
@@ -25093,7 +27669,19 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult(dic
              reference_count: int,
              schema: str,
              table_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'indexColumns' in kwargs:
+            index_columns = kwargs['indexColumns']
+        if 'indexHashValue' in kwargs:
+            index_hash_value = kwargs['indexHashValue']
+        if 'indexName' in kwargs:
+            index_name = kwargs['indexName']
+        if 'referenceCount' in kwargs:
+            reference_count = kwargs['referenceCount']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+
         _setter("index_columns", index_columns)
         _setter("index_hash_value", index_hash_value)
         _setter("index_name", index_name)
@@ -25185,7 +27773,17 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFindingResul
              problem_type: str,
              reference_count: int,
              schema: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectHashValue' in kwargs:
+            object_hash_value = kwargs['objectHashValue']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'problemType' in kwargs:
+            problem_type = kwargs['problemType']
+        if 'referenceCount' in kwargs:
+            reference_count = kwargs['referenceCount']
+
         _setter("object", object)
         _setter("object_hash_value", object_hash_value)
         _setter("object_type", object_type)
@@ -25265,7 +27863,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticResult(dict):
              finding_benefits: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefitResult'],
              finding_counts: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountResult'],
              statement_counts: Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'findingBenefits' in kwargs:
+            finding_benefits = kwargs['findingBenefits']
+        if 'findingCounts' in kwargs:
+            finding_counts = kwargs['findingCounts']
+        if 'statementCounts' in kwargs:
+            statement_counts = kwargs['statementCounts']
+
         _setter("finding_benefits", finding_benefits)
         _setter("finding_counts", finding_counts)
         _setter("statement_counts", statement_counts)
@@ -25322,7 +27928,17 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefi
              db_time_after_recommended: int,
              db_time_before_implemented: int,
              db_time_before_recommended: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dbTimeAfterImplemented' in kwargs:
+            db_time_after_implemented = kwargs['dbTimeAfterImplemented']
+        if 'dbTimeAfterRecommended' in kwargs:
+            db_time_after_recommended = kwargs['dbTimeAfterRecommended']
+        if 'dbTimeBeforeImplemented' in kwargs:
+            db_time_before_implemented = kwargs['dbTimeBeforeImplemented']
+        if 'dbTimeBeforeRecommended' in kwargs:
+            db_time_before_recommended = kwargs['dbTimeBeforeRecommended']
+
         _setter("db_time_after_implemented", db_time_after_implemented)
         _setter("db_time_after_recommended", db_time_after_recommended)
         _setter("db_time_before_implemented", db_time_before_implemented)
@@ -25396,7 +28012,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountR
              recommended_sql_profile: int,
              restructure: int,
              statistics: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alternatePlan' in kwargs:
+            alternate_plan = kwargs['alternatePlan']
+        if 'implementedSqlProfile' in kwargs:
+            implemented_sql_profile = kwargs['implementedSqlProfile']
+        if 'recommendedSqlProfile' in kwargs:
+            recommended_sql_profile = kwargs['recommendedSqlProfile']
+
         _setter("alternate_plan", alternate_plan)
         _setter("implemented_sql_profile", implemented_sql_profile)
         _setter("index", index)
@@ -25480,7 +28104,17 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCoun
              error_count: int,
              finding_count: int,
              total_sql: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'distinctSql' in kwargs:
+            distinct_sql = kwargs['distinctSql']
+        if 'errorCount' in kwargs:
+            error_count = kwargs['errorCount']
+        if 'findingCount' in kwargs:
+            finding_count = kwargs['findingCount']
+        if 'totalSql' in kwargs:
+            total_sql = kwargs['totalSql']
+
         _setter("distinct_sql", distinct_sql)
         _setter("error_count", error_count)
         _setter("finding_count", finding_count)
@@ -25562,7 +28196,15 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult(dict):
              status: str,
              time_ended: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'runningTime' in kwargs:
+            running_time = kwargs['runningTime']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("description", description)
         _setter("id", id)
         _setter("name", name)
@@ -25664,7 +28306,11 @@ class GetManagedDatabaseSqlTuningSetItemResult(dict):
              name: str,
              owner: str,
              statement_counts: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'statementCounts' in kwargs:
+            statement_counts = kwargs['statementCounts']
+
         _setter("description", description)
         _setter("name", name)
         _setter("owner", owner)
@@ -25724,7 +28370,9 @@ class GetManagedDatabaseSqlTuningSetsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -25764,7 +28412,9 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -25827,7 +28477,19 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
              status: str,
              time_created: str,
              time_last_modified: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'scheduledJobName' in kwargs:
+            scheduled_job_name = kwargs['scheduledJobName']
+        if 'statementCounts' in kwargs:
+            statement_counts = kwargs['statementCounts']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         _setter("description", description)
         _setter("error_message", error_message)
         _setter("id", id)
@@ -25938,7 +28600,9 @@ class GetManagedDatabaseTableStatisticsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -25975,7 +28639,9 @@ class GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26010,7 +28676,9 @@ class GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult(dict)
              count: int,
              percentage: float,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("percentage", percentage)
         _setter("type", type)
@@ -26063,7 +28731,13 @@ class GetManagedDatabaseUserConsumerGroupPrivilegeItemResult(dict):
              grant_option: str,
              initial_group: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantOption' in kwargs:
+            grant_option = kwargs['grantOption']
+        if 'initialGroup' in kwargs:
+            initial_group = kwargs['initialGroup']
+
         _setter("grant_option", grant_option)
         _setter("initial_group", initial_group)
         _setter("name", name)
@@ -26108,7 +28782,9 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollect
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26143,7 +28819,13 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollect
              grant_option: str,
              initial_group: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantOption' in kwargs:
+            grant_option = kwargs['grantOption']
+        if 'initialGroup' in kwargs:
+            initial_group = kwargs['initialGroup']
+
         _setter("grant_option", grant_option)
         _setter("initial_group", initial_group)
         _setter("name", name)
@@ -26194,7 +28876,9 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -26234,7 +28918,9 @@ class GetManagedDatabaseUserDataAccessContainerItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -26261,7 +28947,9 @@ class GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionRes
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26288,7 +28976,9 @@ class GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionIte
     def _configure(
              _setter: Callable[[Any, Any], None],
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
 
     @property
@@ -26321,7 +29011,9 @@ class GetManagedDatabaseUserDataAccessContainersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -26393,7 +29085,13 @@ class GetManagedDatabaseUserObjectPrivilegeItemResult(dict):
              object: str,
              owner: str,
              schema_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantOption' in kwargs:
+            grant_option = kwargs['grantOption']
+        if 'schemaType' in kwargs:
+            schema_type = kwargs['schemaType']
+
         _setter("common", common)
         _setter("grant_option", grant_option)
         _setter("grantor", grantor)
@@ -26498,7 +29196,9 @@ class GetManagedDatabaseUserObjectPrivilegesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -26538,7 +29238,9 @@ class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26597,7 +29299,13 @@ class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItemResult(
              object: str,
              owner: str,
              schema_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'grantOption' in kwargs:
+            grant_option = kwargs['grantOption']
+        if 'schemaType' in kwargs:
+            schema_type = kwargs['schemaType']
+
         _setter("common", common)
         _setter("grant_option", grant_option)
         _setter("grantor", grantor)
@@ -26704,7 +29412,9 @@ class GetManagedDatabaseUserProxiedForUserItemResult(dict):
              authentication: str,
              flags: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("authentication", authentication)
         _setter("flags", flags)
         _setter("name", name)
@@ -26755,7 +29465,9 @@ class GetManagedDatabaseUserProxiedForUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -26795,7 +29507,9 @@ class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -26830,7 +29544,9 @@ class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemResult(di
              authentication: str,
              flags: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("authentication", authentication)
         _setter("flags", flags)
         _setter("name", name)
@@ -26895,7 +29611,15 @@ class GetManagedDatabaseUserRoleItemResult(dict):
              delegate_option: str,
              inherited: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminOption' in kwargs:
+            admin_option = kwargs['adminOption']
+        if 'defaultRole' in kwargs:
+            default_role = kwargs['defaultRole']
+        if 'delegateOption' in kwargs:
+            delegate_option = kwargs['delegateOption']
+
         _setter("admin_option", admin_option)
         _setter("common", common)
         _setter("default_role", default_role)
@@ -26973,7 +29697,9 @@ class GetManagedDatabaseUserRolesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -27013,7 +29739,9 @@ class GetManagedDatabaseUserRolesRoleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUserRolesRoleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -27060,7 +29788,15 @@ class GetManagedDatabaseUserRolesRoleCollectionItemResult(dict):
              delegate_option: str,
              inherited: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminOption' in kwargs:
+            admin_option = kwargs['adminOption']
+        if 'defaultRole' in kwargs:
+            default_role = kwargs['defaultRole']
+        if 'delegateOption' in kwargs:
+            delegate_option = kwargs['delegateOption']
+
         _setter("admin_option", admin_option)
         _setter("common", common)
         _setter("default_role", default_role)
@@ -27138,7 +29874,9 @@ class GetManagedDatabaseUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -27175,7 +29913,9 @@ class GetManagedDatabaseUsersUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabaseUsersUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -27291,7 +30031,43 @@ class GetManagedDatabaseUsersUserCollectionItemResult(dict):
              time_last_login: str,
              time_locked: str,
              time_password_changed: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allShared' in kwargs:
+            all_shared = kwargs['allShared']
+        if 'consumerGroup' in kwargs:
+            consumer_group = kwargs['consumerGroup']
+        if 'defaultCollation' in kwargs:
+            default_collation = kwargs['defaultCollation']
+        if 'defaultTablespace' in kwargs:
+            default_tablespace = kwargs['defaultTablespace']
+        if 'editionsEnabled' in kwargs:
+            editions_enabled = kwargs['editionsEnabled']
+        if 'externalName' in kwargs:
+            external_name = kwargs['externalName']
+        if 'externalShared' in kwargs:
+            external_shared = kwargs['externalShared']
+        if 'localTempTablespace' in kwargs:
+            local_temp_tablespace = kwargs['localTempTablespace']
+        if 'oracleMaintained' in kwargs:
+            oracle_maintained = kwargs['oracleMaintained']
+        if 'passwordVersions' in kwargs:
+            password_versions = kwargs['passwordVersions']
+        if 'proxyConnect' in kwargs:
+            proxy_connect = kwargs['proxyConnect']
+        if 'tempTablespace' in kwargs:
+            temp_tablespace = kwargs['tempTablespace']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeExpiring' in kwargs:
+            time_expiring = kwargs['timeExpiring']
+        if 'timeLastLogin' in kwargs:
+            time_last_login = kwargs['timeLastLogin']
+        if 'timeLocked' in kwargs:
+            time_locked = kwargs['timeLocked']
+        if 'timePasswordChanged' in kwargs:
+            time_password_changed = kwargs['timePasswordChanged']
+
         _setter("all_shared", all_shared)
         _setter("authentication", authentication)
         _setter("common", common)
@@ -27525,7 +30301,9 @@ class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -27552,7 +30330,11 @@ class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              disk_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diskGroup' in kwargs:
+            disk_group = kwargs['diskGroup']
+
         _setter("disk_group", disk_group)
 
     @property
@@ -27585,7 +30367,9 @@ class GetManagedDatabasesAsmPropertiesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -27625,7 +30409,11 @@ class GetManagedDatabasesAsmPropertyItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              disk_group: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'diskGroup' in kwargs:
+            disk_group = kwargs['diskGroup']
+
         _setter("disk_group", disk_group)
 
     @property
@@ -27743,7 +30531,37 @@ class GetManagedDatabasesDatabaseParameterItemResult(dict):
              type: str,
              update_comment: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValues' in kwargs:
+            allowed_values = kwargs['allowedValues']
+        if 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if 'displayValue' in kwargs:
+            display_value = kwargs['displayValue']
+        if 'isAdjusted' in kwargs:
+            is_adjusted = kwargs['isAdjusted']
+        if 'isBasic' in kwargs:
+            is_basic = kwargs['isBasic']
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'isDeprecated' in kwargs:
+            is_deprecated = kwargs['isDeprecated']
+        if 'isInstanceModifiable' in kwargs:
+            is_instance_modifiable = kwargs['isInstanceModifiable']
+        if 'isModified' in kwargs:
+            is_modified = kwargs['isModified']
+        if 'isPdbModifiable' in kwargs:
+            is_pdb_modifiable = kwargs['isPdbModifiable']
+        if 'isSessionModifiable' in kwargs:
+            is_session_modifiable = kwargs['isSessionModifiable']
+        if 'isSpecified' in kwargs:
+            is_specified = kwargs['isSpecified']
+        if 'isSystemModifiable' in kwargs:
+            is_system_modifiable = kwargs['isSystemModifiable']
+        if 'updateComment' in kwargs:
+            update_comment = kwargs['updateComment']
+
         _setter("allowed_values", allowed_values)
         _setter("category", category)
         _setter("constraint", constraint)
@@ -27979,7 +30797,11 @@ class GetManagedDatabasesDatabaseParameterItemAllowedValueResult(dict):
              is_default: bool,
              ordinal: float,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("is_default", is_default)
         _setter("ordinal", ordinal)
         _setter("value", value)
@@ -28040,7 +30862,17 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionResult(di
              database_type: str,
              database_version: str,
              items: Sequence['outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'databaseVersion' in kwargs:
+            database_version = kwargs['databaseVersion']
+
         _setter("database_name", database_name)
         _setter("database_sub_type", database_sub_type)
         _setter("database_type", database_type)
@@ -28194,7 +31026,37 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResul
              type: str,
              update_comment: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'allowedValues' in kwargs:
+            allowed_values = kwargs['allowedValues']
+        if 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if 'displayValue' in kwargs:
+            display_value = kwargs['displayValue']
+        if 'isAdjusted' in kwargs:
+            is_adjusted = kwargs['isAdjusted']
+        if 'isBasic' in kwargs:
+            is_basic = kwargs['isBasic']
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if 'isDeprecated' in kwargs:
+            is_deprecated = kwargs['isDeprecated']
+        if 'isInstanceModifiable' in kwargs:
+            is_instance_modifiable = kwargs['isInstanceModifiable']
+        if 'isModified' in kwargs:
+            is_modified = kwargs['isModified']
+        if 'isPdbModifiable' in kwargs:
+            is_pdb_modifiable = kwargs['isPdbModifiable']
+        if 'isSessionModifiable' in kwargs:
+            is_session_modifiable = kwargs['isSessionModifiable']
+        if 'isSpecified' in kwargs:
+            is_specified = kwargs['isSpecified']
+        if 'isSystemModifiable' in kwargs:
+            is_system_modifiable = kwargs['isSystemModifiable']
+        if 'updateComment' in kwargs:
+            update_comment = kwargs['updateComment']
+
         _setter("allowed_values", allowed_values)
         _setter("category", category)
         _setter("constraint", constraint)
@@ -28430,7 +31292,11 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllow
              is_default: bool,
              ordinal: float,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
         _setter("is_default", is_default)
         _setter("ordinal", ordinal)
         _setter("value", value)
@@ -28481,7 +31347,9 @@ class GetManagedDatabasesDatabaseParametersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -28527,7 +31395,9 @@ class GetManagedDatabasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -28564,7 +31434,9 @@ class GetManagedDatabasesManagedDatabaseCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabasesManagedDatabaseCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -28648,7 +31520,37 @@ class GetManagedDatabasesManagedDatabaseCollectionItemResult(dict):
              storage_system_id: str,
              time_created: str,
              workload_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseStatus' in kwargs:
+            database_status = kwargs['databaseStatus']
+        if 'databaseSubType' in kwargs:
+            database_sub_type = kwargs['databaseSubType']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if 'isCluster' in kwargs:
+            is_cluster = kwargs['isCluster']
+        if 'managedDatabaseGroups' in kwargs:
+            managed_database_groups = kwargs['managedDatabaseGroups']
+        if 'managementOption' in kwargs:
+            management_option = kwargs['managementOption']
+        if 'parentContainerId' in kwargs:
+            parent_container_id = kwargs['parentContainerId']
+        if 'storageSystemId' in kwargs:
+            storage_system_id = kwargs['storageSystemId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'workloadType' in kwargs:
+            workload_type = kwargs['workloadType']
+
         _setter("additional_details", additional_details)
         _setter("compartment_id", compartment_id)
         _setter("database_status", database_status)
@@ -28818,7 +31720,11 @@ class GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroupResult
              compartment_id: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("name", name)
@@ -28871,7 +31777,9 @@ class GetManagedDatabasesUserProxyUserItemResult(dict):
              authentication: str,
              flags: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("authentication", authentication)
         _setter("flags", flags)
         _setter("name", name)
@@ -28922,7 +31830,9 @@ class GetManagedDatabasesUserProxyUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -28962,7 +31872,9 @@ class GetManagedDatabasesUserProxyUsersProxyUserCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabasesUserProxyUsersProxyUserCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -28997,7 +31909,9 @@ class GetManagedDatabasesUserProxyUsersProxyUserCollectionItemResult(dict):
              authentication: str,
              flags: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("authentication", authentication)
         _setter("flags", flags)
         _setter("name", name)
@@ -29054,7 +31968,11 @@ class GetManagedDatabasesUserSystemPrivilegeItemResult(dict):
              common: str,
              inherited: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminOption' in kwargs:
+            admin_option = kwargs['adminOption']
+
         _setter("admin_option", admin_option)
         _setter("common", common)
         _setter("inherited", inherited)
@@ -29114,7 +32032,9 @@ class GetManagedDatabasesUserSystemPrivilegesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -29154,7 +32074,9 @@ class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult(dic
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -29193,7 +32115,11 @@ class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItemResult
              common: str,
              inherited: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminOption' in kwargs:
+            admin_option = kwargs['adminOption']
+
         _setter("admin_option", admin_option)
         _setter("common", common)
         _setter("inherited", inherited)

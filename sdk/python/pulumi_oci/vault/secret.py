@@ -69,7 +69,25 @@ class SecretArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'secretContent' in kwargs:
+            secret_content = kwargs['secretContent']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'secretRules' in kwargs:
+            secret_rules = kwargs['secretRules']
+
         _setter("compartment_id", compartment_id)
         _setter("key_id", key_id)
         _setter("secret_content", secret_content)
@@ -291,7 +309,35 @@ class _SecretState:
              time_of_current_version_expiry: Optional[pulumi.Input[str]] = None,
              time_of_deletion: Optional[pulumi.Input[str]] = None,
              vault_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'currentVersionNumber' in kwargs:
+            current_version_number = kwargs['currentVersionNumber']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'secretContent' in kwargs:
+            secret_content = kwargs['secretContent']
+        if 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+        if 'secretRules' in kwargs:
+            secret_rules = kwargs['secretRules']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeOfCurrentVersionExpiry' in kwargs:
+            time_of_current_version_expiry = kwargs['timeOfCurrentVersionExpiry']
+        if 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if current_version_number is not None:

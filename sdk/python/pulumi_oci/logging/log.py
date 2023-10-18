@@ -61,7 +61,23 @@ class LogArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              is_enabled: Optional[pulumi.Input[bool]] = None,
              retention_duration: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logType' in kwargs:
+            log_type = kwargs['logType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'retentionDuration' in kwargs:
+            retention_duration = kwargs['retentionDuration']
+
         _setter("display_name", display_name)
         _setter("log_group_id", log_group_id)
         _setter("log_type", log_type)
@@ -245,7 +261,31 @@ class _LogState:
              tenancy_id: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_last_modified: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if 'logType' in kwargs:
+            log_type = kwargs['logType']
+        if 'retentionDuration' in kwargs:
+            retention_duration = kwargs['retentionDuration']
+        if 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastModified' in kwargs:
+            time_last_modified = kwargs['timeLastModified']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if configuration is not None:

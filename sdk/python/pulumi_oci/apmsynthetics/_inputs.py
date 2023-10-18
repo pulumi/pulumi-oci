@@ -56,7 +56,13 @@ class ConfigAvailabilityConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              max_allowed_failures_per_interval: Optional[pulumi.Input[int]] = None,
              min_allowed_runs_per_interval: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxAllowedFailuresPerInterval' in kwargs:
+            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
+        if 'minAllowedRunsPerInterval' in kwargs:
+            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
+
         if max_allowed_failures_per_interval is not None:
             _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         if min_allowed_runs_per_interval is not None:
@@ -166,7 +172,43 @@ class ConfigConfigurationArgs:
              verify_response_codes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              verify_response_content: Optional[pulumi.Input[str]] = None,
              verify_texts: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificateDetails' in kwargs:
+            client_certificate_details = kwargs['clientCertificateDetails']
+        if 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if 'dnsConfiguration' in kwargs:
+            dns_configuration = kwargs['dnsConfiguration']
+        if 'isCertificateValidationEnabled' in kwargs:
+            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
+        if 'isDefaultSnapshotEnabled' in kwargs:
+            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
+        if 'isFailureRetried' in kwargs:
+            is_failure_retried = kwargs['isFailureRetried']
+        if 'isRedirectionEnabled' in kwargs:
+            is_redirection_enabled = kwargs['isRedirectionEnabled']
+        if 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if 'reqAuthenticationDetails' in kwargs:
+            req_authentication_details = kwargs['reqAuthenticationDetails']
+        if 'reqAuthenticationScheme' in kwargs:
+            req_authentication_scheme = kwargs['reqAuthenticationScheme']
+        if 'requestHeaders' in kwargs:
+            request_headers = kwargs['requestHeaders']
+        if 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if 'requestPostBody' in kwargs:
+            request_post_body = kwargs['requestPostBody']
+        if 'requestQueryParams' in kwargs:
+            request_query_params = kwargs['requestQueryParams']
+        if 'verifyResponseCodes' in kwargs:
+            verify_response_codes = kwargs['verifyResponseCodes']
+        if 'verifyResponseContent' in kwargs:
+            verify_response_content = kwargs['verifyResponseContent']
+        if 'verifyTexts' in kwargs:
+            verify_texts = kwargs['verifyTexts']
+
         if client_certificate_details is not None:
             _setter("client_certificate_details", client_certificate_details)
         if config_type is not None:
@@ -426,7 +468,13 @@ class ConfigConfigurationClientCertificateDetailsArgs:
              _setter: Callable[[Any, Any], None],
              client_certificate: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']] = None,
              private_key: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'clientCertificate' in kwargs:
+            client_certificate = kwargs['clientCertificate']
+        if 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+
         if client_certificate is not None:
             _setter("client_certificate", client_certificate)
         if private_key is not None:
@@ -476,7 +524,11 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
              _setter: Callable[[Any, Any], None],
              content: Optional[pulumi.Input[str]] = None,
              file_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
             _setter("content", content)
         if file_name is not None:
@@ -526,7 +578,11 @@ class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
              _setter: Callable[[Any, Any], None],
              content: Optional[pulumi.Input[str]] = None,
              file_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
             _setter("content", content)
         if file_name is not None:
@@ -576,7 +632,13 @@ class ConfigConfigurationDnsConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              is_override_dns: Optional[pulumi.Input[bool]] = None,
              override_dns_ip: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOverrideDns' in kwargs:
+            is_override_dns = kwargs['isOverrideDns']
+        if 'overrideDnsIp' in kwargs:
+            override_dns_ip = kwargs['overrideDnsIp']
+
         if is_override_dns is not None:
             _setter("is_override_dns", is_override_dns)
         if override_dns_ip is not None:
@@ -638,7 +700,17 @@ class ConfigConfigurationNetworkConfigurationArgs:
              probe_per_hop: Optional[pulumi.Input[int]] = None,
              protocol: Optional[pulumi.Input[str]] = None,
              transmission_rate: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'numberOfHops' in kwargs:
+            number_of_hops = kwargs['numberOfHops']
+        if 'probeMode' in kwargs:
+            probe_mode = kwargs['probeMode']
+        if 'probePerHop' in kwargs:
+            probe_per_hop = kwargs['probePerHop']
+        if 'transmissionRate' in kwargs:
+            transmission_rate = kwargs['transmissionRate']
+
         if number_of_hops is not None:
             _setter("number_of_hops", number_of_hops)
         if probe_mode is not None:
@@ -754,7 +826,25 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
              auth_user_name: Optional[pulumi.Input[str]] = None,
              auth_user_password: Optional[pulumi.Input[str]] = None,
              oauth_scheme: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authHeaders' in kwargs:
+            auth_headers = kwargs['authHeaders']
+        if 'authRequestMethod' in kwargs:
+            auth_request_method = kwargs['authRequestMethod']
+        if 'authRequestPostBody' in kwargs:
+            auth_request_post_body = kwargs['authRequestPostBody']
+        if 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if 'authUrl' in kwargs:
+            auth_url = kwargs['authUrl']
+        if 'authUserName' in kwargs:
+            auth_user_name = kwargs['authUserName']
+        if 'authUserPassword' in kwargs:
+            auth_user_password = kwargs['authUserPassword']
+        if 'oauthScheme' in kwargs:
+            oauth_scheme = kwargs['oauthScheme']
+
         if auth_headers is not None:
             _setter("auth_headers", auth_headers)
         if auth_request_method is not None:
@@ -888,7 +978,13 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs:
              _setter: Callable[[Any, Any], None],
              header_name: Optional[pulumi.Input[str]] = None,
              header_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if header_value is not None:
@@ -938,7 +1034,13 @@ class ConfigConfigurationRequestHeaderArgs:
              _setter: Callable[[Any, Any], None],
              header_name: Optional[pulumi.Input[str]] = None,
              header_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
             _setter("header_name", header_name)
         if header_value is not None:
@@ -988,7 +1090,13 @@ class ConfigConfigurationRequestQueryParamArgs:
              _setter: Callable[[Any, Any], None],
              param_name: Optional[pulumi.Input[str]] = None,
              param_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
             _setter("param_name", param_name)
         if param_value is not None:
@@ -1034,7 +1142,9 @@ class ConfigConfigurationVerifyTextArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              text: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if text is not None:
             _setter("text", text)
 
@@ -1070,7 +1180,13 @@ class ConfigMaintenanceWindowScheduleArgs:
              _setter: Callable[[Any, Any], None],
              time_ended: Optional[pulumi.Input[str]] = None,
              time_started: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if time_ended is not None:
             _setter("time_ended", time_ended)
         if time_started is not None:
@@ -1132,7 +1248,19 @@ class ConfigScriptParameterArgs:
              is_overwritten: Optional[pulumi.Input[bool]] = None,
              is_secret: Optional[pulumi.Input[bool]] = None,
              monitor_script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'monitorScriptParameters' in kwargs:
+            monitor_script_parameters = kwargs['monitorScriptParameters']
+
         _setter("param_name", param_name)
         _setter("param_value", param_value)
         if is_overwritten is not None:
@@ -1222,7 +1350,13 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
              _setter: Callable[[Any, Any], None],
              param_name: Optional[pulumi.Input[str]] = None,
              param_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
             _setter("param_name", param_name)
         if param_value is not None:
@@ -1272,7 +1406,11 @@ class ConfigVantagePointArgs:
              _setter: Callable[[Any, Any], None],
              name: pulumi.Input[str],
              display_name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("name", name)
         if display_name is not None:
             _setter("display_name", display_name)
@@ -1329,7 +1467,17 @@ class DedicatedVantagePointDvpStackDetailsArgs:
              dvp_stack_type: pulumi.Input[str],
              dvp_stream_id: pulumi.Input[str],
              dvp_version: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dvpStackId' in kwargs:
+            dvp_stack_id = kwargs['dvpStackId']
+        if 'dvpStackType' in kwargs:
+            dvp_stack_type = kwargs['dvpStackType']
+        if 'dvpStreamId' in kwargs:
+            dvp_stream_id = kwargs['dvpStreamId']
+        if 'dvpVersion' in kwargs:
+            dvp_version = kwargs['dvpVersion']
+
         _setter("dvp_stack_id", dvp_stack_id)
         _setter("dvp_stack_type", dvp_stack_type)
         _setter("dvp_stream_id", dvp_stream_id)
@@ -1411,7 +1559,9 @@ class DedicatedVantagePointMonitorStatusCountMapArgs:
              enabled: Optional[pulumi.Input[int]] = None,
              invalid: Optional[pulumi.Input[int]] = None,
              total: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
             _setter("disabled", disabled)
         if enabled is not None:
@@ -1497,7 +1647,9 @@ class ScriptMonitorStatusCountMapArgs:
              enabled: Optional[pulumi.Input[int]] = None,
              invalid: Optional[pulumi.Input[int]] = None,
              total: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
             _setter("disabled", disabled)
         if enabled is not None:
@@ -1591,7 +1743,19 @@ class ScriptParameterArgs:
              is_secret: Optional[pulumi.Input[bool]] = None,
              param_value: Optional[pulumi.Input[str]] = None,
              script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterScriptParameterArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+
         _setter("param_name", param_name)
         if is_overwritten is not None:
             _setter("is_overwritten", is_overwritten)
@@ -1694,7 +1858,15 @@ class ScriptParameterScriptParameterArgs:
              is_secret: Optional[pulumi.Input[bool]] = None,
              param_name: Optional[pulumi.Input[str]] = None,
              param_value: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if is_secret is not None:
             _setter("is_secret", is_secret)
         if param_name is not None:
@@ -1764,7 +1936,9 @@ class GetDedicatedVantagePointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1822,7 +1996,9 @@ class GetMonitorsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1877,7 +2053,9 @@ class GetScriptsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1932,7 +2110,9 @@ class GetVantagePointsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -39,7 +39,15 @@ class AgentPluginArgs:
              agent_id: pulumi.Input[str],
              plugin_name: pulumi.Input[str],
              desired_state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+
         _setter("agent_id", agent_id)
         _setter("plugin_name", plugin_name)
         if desired_state is not None:
@@ -150,7 +158,29 @@ class _AgentPluginState:
              system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_id is not None:
             _setter("agent_id", agent_id)
         if defined_tags is not None:

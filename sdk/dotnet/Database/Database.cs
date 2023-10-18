@@ -63,6 +63,7 @@ namespace Pulumi.Oci.Database
     ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
     ///             NcharacterSet = @var.Database_database_ncharacter_set,
     ///             PdbName = @var.Database_database_pdb_name,
+    ///             PluggableDatabases = @var.Database_database_pluggable_databases,
     ///             SidPrefix = @var.Database_database_sid_prefix,
     ///             TdeWalletPassword = @var.Database_database_tde_wallet_password,
     ///             VaultId = oci_kms_vault.Test_vault.Id,

@@ -61,7 +61,23 @@ class TargetDatabaseArgs:
              display_name: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseDetails' in kwargs:
+            database_details = kwargs['databaseDetails']
+        if 'connectionOption' in kwargs:
+            connection_option = kwargs['connectionOption']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'tlsConfig' in kwargs:
+            tls_config = kwargs['tlsConfig']
+
         _setter("compartment_id", compartment_id)
         _setter("database_details", database_details)
         if connection_option is not None:
@@ -260,7 +276,33 @@ class _TargetDatabaseState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedResourceIds' in kwargs:
+            associated_resource_ids = kwargs['associatedResourceIds']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionOption' in kwargs:
+            connection_option = kwargs['connectionOption']
+        if 'databaseDetails' in kwargs:
+            database_details = kwargs['databaseDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'tlsConfig' in kwargs:
+            tls_config = kwargs['tlsConfig']
+
         if associated_resource_ids is not None:
             _setter("associated_resource_ids", associated_resource_ids)
         if compartment_id is not None:

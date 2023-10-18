@@ -49,7 +49,19 @@ class ExternalExadataStorageConnectorArgs:
              connector_name: pulumi.Input[str],
              credential_info: pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs'],
              storage_server_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if 'connectorName' in kwargs:
+            connector_name = kwargs['connectorName']
+        if 'credentialInfo' in kwargs:
+            credential_info = kwargs['credentialInfo']
+        if 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+
         _setter("agent_id", agent_id)
         _setter("connection_uri", connection_uri)
         _setter("connector_name", connector_name)
@@ -197,7 +209,33 @@ class _ExternalExadataStorageConnectorState:
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
              version: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if 'connectorName' in kwargs:
+            connector_name = kwargs['connectorName']
+        if 'credentialInfo' in kwargs:
+            credential_info = kwargs['credentialInfo']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
             _setter("additional_details", additional_details)
         if agent_id is not None:

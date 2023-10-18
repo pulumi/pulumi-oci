@@ -41,7 +41,9 @@ class AutoScalingConfigurationAutoScalingResourcesArgs:
              _setter: Callable[[Any, Any], None],
              id: pulumi.Input[str],
              type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("id", id)
         _setter("type", type)
 
@@ -115,7 +117,21 @@ class AutoScalingConfigurationPolicyArgs:
              resource_action: Optional[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs']] = None,
              rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'executionSchedule' in kwargs:
+            execution_schedule = kwargs['executionSchedule']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'resourceAction' in kwargs:
+            resource_action = kwargs['resourceAction']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("policy_type", policy_type)
         if capacity is not None:
             _setter("capacity", capacity)
@@ -266,7 +282,9 @@ class AutoScalingConfigurationPolicyCapacityArgs:
              initial: Optional[pulumi.Input[int]] = None,
              max: Optional[pulumi.Input[int]] = None,
              min: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if initial is not None:
             _setter("initial", initial)
         if max is not None:
@@ -348,7 +366,9 @@ class AutoScalingConfigurationPolicyExecutionScheduleArgs:
              expression: pulumi.Input[str],
              timezone: pulumi.Input[str],
              type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("expression", expression)
         _setter("timezone", timezone)
         _setter("type", type)
@@ -417,7 +437,11 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
              _setter: Callable[[Any, Any], None],
              action: pulumi.Input[str],
              action_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+
         _setter("action", action)
         _setter("action_type", action_type)
 
@@ -472,7 +496,11 @@ class AutoScalingConfigurationPolicyRuleArgs:
              action: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs']] = None,
              id: Optional[pulumi.Input[str]] = None,
              metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         _setter("display_name", display_name)
         if action is not None:
             _setter("action", action)
@@ -547,7 +575,9 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
              _setter: Callable[[Any, Any], None],
              type: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
             _setter("type", type)
         if value is not None:
@@ -594,7 +624,11 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
              _setter: Callable[[Any, Any], None],
              metric_type: Optional[pulumi.Input[str]] = None,
              threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricType' in kwargs:
+            metric_type = kwargs['metricType']
+
         if metric_type is not None:
             _setter("metric_type", metric_type)
         if threshold is not None:
@@ -639,7 +673,9 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
              _setter: Callable[[Any, Any], None],
              operator: Optional[pulumi.Input[str]] = None,
              value: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if operator is not None:
             _setter("operator", operator)
         if value is not None:
@@ -689,7 +725,9 @@ class GetAutoScalingConfigurationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

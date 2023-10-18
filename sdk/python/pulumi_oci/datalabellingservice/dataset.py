@@ -77,7 +77,31 @@ class DatasetArgs:
              initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
              initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
              labeling_instructions: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'annotationFormat' in kwargs:
+            annotation_format = kwargs['annotationFormat']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'datasetFormatDetails' in kwargs:
+            dataset_format_details = kwargs['datasetFormatDetails']
+        if 'datasetSourceDetails' in kwargs:
+            dataset_source_details = kwargs['datasetSourceDetails']
+        if 'labelSet' in kwargs:
+            label_set = kwargs['labelSet']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialImportDatasetConfiguration' in kwargs:
+            initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
+        if 'initialRecordGenerationConfiguration' in kwargs:
+            initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
+        if 'labelingInstructions' in kwargs:
+            labeling_instructions = kwargs['labelingInstructions']
+
         _setter("annotation_format", annotation_format)
         _setter("compartment_id", compartment_id)
         _setter("dataset_format_details", dataset_format_details)
@@ -335,7 +359,41 @@ class _DatasetState:
              state: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'additionalProperties' in kwargs:
+            additional_properties = kwargs['additionalProperties']
+        if 'annotationFormat' in kwargs:
+            annotation_format = kwargs['annotationFormat']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'datasetFormatDetails' in kwargs:
+            dataset_format_details = kwargs['datasetFormatDetails']
+        if 'datasetSourceDetails' in kwargs:
+            dataset_source_details = kwargs['datasetSourceDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'initialImportDatasetConfiguration' in kwargs:
+            initial_import_dataset_configuration = kwargs['initialImportDatasetConfiguration']
+        if 'initialRecordGenerationConfiguration' in kwargs:
+            initial_record_generation_configuration = kwargs['initialRecordGenerationConfiguration']
+        if 'labelSet' in kwargs:
+            label_set = kwargs['labelSet']
+        if 'labelingInstructions' in kwargs:
+            labeling_instructions = kwargs['labelingInstructions']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'lifecycleSubstate' in kwargs:
+            lifecycle_substate = kwargs['lifecycleSubstate']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_properties is not None:
             _setter("additional_properties", additional_properties)
         if annotation_format is not None:

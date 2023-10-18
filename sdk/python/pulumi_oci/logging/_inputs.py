@@ -44,7 +44,11 @@ class LogConfigurationArgs:
              _setter: Callable[[Any, Any], None],
              source: pulumi.Input['LogConfigurationSourceArgs'],
              compartment_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
         _setter("source", source)
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
@@ -102,7 +106,11 @@ class LogConfigurationSourceArgs:
              resource: pulumi.Input[str],
              service: pulumi.Input[str],
              source_type: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("category", category)
         _setter("resource", resource)
         _setter("service", service)
@@ -173,7 +181,11 @@ class UnifiedAgentConfigurationGroupAssociationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupLists' in kwargs:
+            group_lists = kwargs['groupLists']
+
         if group_lists is not None:
             _setter("group_lists", group_lists)
 
@@ -213,7 +225,11 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
              configuration_type: pulumi.Input[str],
              destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs'],
              sources: pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'configurationType' in kwargs:
+            configuration_type = kwargs['configurationType']
+
         _setter("configuration_type", configuration_type)
         _setter("destination", destination)
         _setter("sources", sources)
@@ -270,7 +286,11 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
     def _configure(
              _setter: Callable[[Any, Any], None],
              log_object_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'logObjectId' in kwargs:
+            log_object_id = kwargs['logObjectId']
+
         _setter("log_object_id", log_object_id)
 
     @property
@@ -321,7 +341,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
              name: Optional[pulumi.Input[str]] = None,
              parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']] = None,
              paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+
         _setter("source_type", source_type)
         if channels is not None:
             _setter("channels", channels)
@@ -522,7 +546,51 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
              time_type: Optional[pulumi.Input[str]] = None,
              timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
              types: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'parserType' in kwargs:
+            parser_type = kwargs['parserType']
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'formatFirstline' in kwargs:
+            format_firstline = kwargs['formatFirstline']
+        if 'grokFailureKey' in kwargs:
+            grok_failure_key = kwargs['grokFailureKey']
+        if 'grokNameKey' in kwargs:
+            grok_name_key = kwargs['grokNameKey']
+        if 'isEstimateCurrentEvent' in kwargs:
+            is_estimate_current_event = kwargs['isEstimateCurrentEvent']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'isMergeCriFields' in kwargs:
+            is_merge_cri_fields = kwargs['isMergeCriFields']
+        if 'isNullEmptyString' in kwargs:
+            is_null_empty_string = kwargs['isNullEmptyString']
+        if 'isSupportColonlessIdent' in kwargs:
+            is_support_colonless_ident = kwargs['isSupportColonlessIdent']
+        if 'isWithPriority' in kwargs:
+            is_with_priority = kwargs['isWithPriority']
+        if 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if 'messageKey' in kwargs:
+            message_key = kwargs['messageKey']
+        if 'multiLineStartRegexp' in kwargs:
+            multi_line_start_regexp = kwargs['multiLineStartRegexp']
+        if 'nestedParser' in kwargs:
+            nested_parser = kwargs['nestedParser']
+        if 'nullValuePattern' in kwargs:
+            null_value_pattern = kwargs['nullValuePattern']
+        if 'rfc5424timeFormat' in kwargs:
+            rfc5424time_format = kwargs['rfc5424timeFormat']
+        if 'syslogParserType' in kwargs:
+            syslog_parser_type = kwargs['syslogParserType']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+        if 'timeoutInMilliseconds' in kwargs:
+            timeout_in_milliseconds = kwargs['timeoutInMilliseconds']
+
         _setter("parser_type", parser_type)
         if delimiter is not None:
             _setter("delimiter", delimiter)
@@ -935,7 +1003,17 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
              is_keep_time_key: Optional[pulumi.Input[bool]] = None,
              time_format: Optional[pulumi.Input[str]] = None,
              time_type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+
         if field_time_key is not None:
             _setter("field_time_key", field_time_key)
         if is_keep_time_key is not None:
@@ -1025,7 +1103,15 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
              field_time_zone: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              pattern: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldTimeFormat' in kwargs:
+            field_time_format = kwargs['fieldTimeFormat']
+        if 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if 'fieldTimeZone' in kwargs:
+            field_time_zone = kwargs['fieldTimeZone']
+
         if field_time_format is not None:
             _setter("field_time_format", field_time_format)
         if field_time_key is not None:
@@ -1116,7 +1202,9 @@ class GetLogGroupsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1171,7 +1259,9 @@ class GetLogSavedSearchesFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1226,7 +1316,9 @@ class GetLogsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1281,7 +1373,9 @@ class GetUnifiedAgentConfigurationsFilterArgs:
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:

@@ -47,7 +47,19 @@ class ApplicationVipArgs:
              subnet_id: pulumi.Input[str],
              db_node_id: Optional[pulumi.Input[str]] = None,
              ip_address: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         _setter("hostname_label", hostname_label)
         _setter("subnet_id", subnet_id)
@@ -181,7 +193,29 @@ class _ApplicationVipState:
              state: Optional[pulumi.Input[str]] = None,
              subnet_id: Optional[pulumi.Input[str]] = None,
              time_assigned: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'timeAssigned' in kwargs:
+            time_assigned = kwargs['timeAssigned']
+
         if cloud_vm_cluster_id is not None:
             _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         if compartment_id is not None:

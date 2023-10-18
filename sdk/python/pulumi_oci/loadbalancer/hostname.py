@@ -39,7 +39,11 @@ class HostnameArgs:
              hostname: pulumi.Input[str],
              load_balancer_id: pulumi.Input[str],
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         _setter("hostname", hostname)
         _setter("load_balancer_id", load_balancer_id)
         if name is not None:
@@ -117,7 +121,11 @@ class _HostnameState:
              load_balancer_id: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if hostname is not None:
             _setter("hostname", hostname)
         if load_balancer_id is not None:

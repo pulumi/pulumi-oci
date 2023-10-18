@@ -69,7 +69,25 @@ class DataMaskRuleArgs:
              description: Optional[pulumi.Input[str]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              state: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataMaskCategories' in kwargs:
+            data_mask_categories = kwargs['dataMaskCategories']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'iamGroupId' in kwargs:
+            iam_group_id = kwargs['iamGroupId']
+        if 'targetSelected' in kwargs:
+            target_selected = kwargs['targetSelected']
+        if 'dataMaskRuleStatus' in kwargs:
+            data_mask_rule_status = kwargs['dataMaskRuleStatus']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("compartment_id", compartment_id)
         _setter("data_mask_categories", data_mask_categories)
         _setter("display_name", display_name)
@@ -283,7 +301,33 @@ class _DataMaskRuleState:
              target_selected: Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']] = None,
              time_created: Optional[pulumi.Input[str]] = None,
              time_updated: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataMaskCategories' in kwargs:
+            data_mask_categories = kwargs['dataMaskCategories']
+        if 'dataMaskRuleStatus' in kwargs:
+            data_mask_rule_status = kwargs['dataMaskRuleStatus']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'iamGroupId' in kwargs:
+            iam_group_id = kwargs['iamGroupId']
+        if 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetSelected' in kwargs:
+            target_selected = kwargs['targetSelected']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if data_mask_categories is not None:

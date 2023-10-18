@@ -332,7 +332,17 @@ class AuditPolicyAuditCondition(dict):
              enable_conditions: Optional[Sequence['outputs.AuditPolicyAuditConditionEnableCondition']] = None,
              is_data_safe_service_account_audited: Optional[bool] = None,
              is_priv_users_managed_by_data_safe: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'enableConditions' in kwargs:
+            enable_conditions = kwargs['enableConditions']
+        if 'isDataSafeServiceAccountAudited' in kwargs:
+            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
+        if 'isPrivUsersManagedByDataSafe' in kwargs:
+            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
+
         if audit_policy_name is not None:
             _setter("audit_policy_name", audit_policy_name)
         if enable_conditions is not None:
@@ -425,7 +435,17 @@ class AuditPolicyAuditConditionEnableCondition(dict):
              entity_selection: Optional[str] = None,
              entity_type: Optional[str] = None,
              operation_status: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityNames' in kwargs:
+            entity_names = kwargs['entityNames']
+        if 'entitySelection' in kwargs:
+            entity_selection = kwargs['entitySelection']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+
         if entity_names is not None:
             _setter("entity_names", entity_names)
         if entity_selection is not None:
@@ -560,7 +580,31 @@ class AuditPolicyAuditSpecification(dict):
              is_seeded_in_target: Optional[bool] = None,
              is_view_only: Optional[bool] = None,
              partially_enabled_msg: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyCategory' in kwargs:
+            audit_policy_category = kwargs['auditPolicyCategory']
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'databasePolicyNames' in kwargs:
+            database_policy_names = kwargs['databasePolicyNames']
+        if 'enableStatus' in kwargs:
+            enable_status = kwargs['enableStatus']
+        if 'enabledEntities' in kwargs:
+            enabled_entities = kwargs['enabledEntities']
+        if 'isCreated' in kwargs:
+            is_created = kwargs['isCreated']
+        if 'isEnabledForAllUsers' in kwargs:
+            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
+        if 'isSeededInDataSafe' in kwargs:
+            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
+        if 'isSeededInTarget' in kwargs:
+            is_seeded_in_target = kwargs['isSeededInTarget']
+        if 'isViewOnly' in kwargs:
+            is_view_only = kwargs['isViewOnly']
+        if 'partiallyEnabledMsg' in kwargs:
+            partially_enabled_msg = kwargs['partiallyEnabledMsg']
+
         if audit_policy_category is not None:
             _setter("audit_policy_category", audit_policy_category)
         if audit_policy_name is not None:
@@ -805,7 +849,39 @@ class AuditProfileAuditTrail(dict):
              time_updated: Optional[str] = None,
              trail_location: Optional[str] = None,
              work_request_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectionStartTime' in kwargs:
+            audit_collection_start_time = kwargs['auditCollectionStartTime']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoPurgeEnabled' in kwargs:
+            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastCollected' in kwargs:
+            time_last_collected = kwargs['timeLastCollected']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if audit_collection_start_time is not None:
             _setter("audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
@@ -1042,7 +1118,15 @@ class DataSafeConfigurationGlobalSetting(dict):
              is_paid_usage: Optional[bool] = None,
              offline_retention_period: Optional[int] = None,
              online_retention_period: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPaidUsage' in kwargs:
+            is_paid_usage = kwargs['isPaidUsage']
+        if 'offlineRetentionPeriod' in kwargs:
+            offline_retention_period = kwargs['offlineRetentionPeriod']
+        if 'onlineRetentionPeriod' in kwargs:
+            online_retention_period = kwargs['onlineRetentionPeriod']
+
         if is_paid_usage is not None:
             _setter("is_paid_usage", is_paid_usage)
         if offline_retention_period is not None:
@@ -1113,7 +1197,13 @@ class DiscoveryJobsResultModifiedAttribute(dict):
              _setter: Callable[[Any, Any], None],
              app_defined_child_column_keys: Optional[Sequence[str]] = None,
              db_defined_child_column_keys: Optional[Sequence[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+
         if app_defined_child_column_keys is not None:
             _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if db_defined_child_column_keys is not None:
@@ -1298,7 +1388,49 @@ class LibraryMasingFormatFormatEntry(dict):
              start_value: Optional[float] = None,
              table_name: Optional[str] = None,
              user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("type", type)
         if column_name is not None:
             _setter("column_name", column_name)
@@ -1574,7 +1706,11 @@ class MaskingPoliciesMaskingColumnMaskingFormat(dict):
              format_entries: Sequence['outputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntry'],
              condition: Optional[str] = None,
              description: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatEntries' in kwargs:
+            format_entries = kwargs['formatEntries']
+
         _setter("format_entries", format_entries)
         if condition is not None:
             _setter("condition", condition)
@@ -1768,7 +1904,49 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
              start_value: Optional[float] = None,
              table_name: Optional[str] = None,
              user_defined_function: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("type", type)
         if column_name is not None:
             _setter("column_name", column_name)
@@ -2048,7 +2226,15 @@ class MaskingPolicyColumnSource(dict):
              column_source: str,
              sensitive_data_model_id: Optional[str] = None,
              target_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnSource' in kwargs:
+            column_source = kwargs['columnSource']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("column_source", column_source)
         if sensitive_data_model_id is not None:
             _setter("sensitive_data_model_id", sensitive_data_model_id)
@@ -2132,7 +2318,15 @@ class ReportDefinitionColumnFilter(dict):
              is_enabled: bool,
              is_hidden: bool,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("expressions", expressions)
         _setter("field_name", field_name)
         _setter("is_enabled", is_enabled)
@@ -2236,7 +2430,19 @@ class ReportDefinitionColumnInfo(dict):
              field_name: str,
              is_hidden: bool,
              data_type: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+
         _setter("display_name", display_name)
         _setter("display_order", display_order)
         _setter("field_name", field_name)
@@ -2329,7 +2535,15 @@ class ReportDefinitionColumnSorting(dict):
              field_name: str,
              is_ascending: bool,
              sorting_order: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isAscending' in kwargs:
+            is_ascending = kwargs['isAscending']
+        if 'sortingOrder' in kwargs:
+            sorting_order = kwargs['sortingOrder']
+
         _setter("field_name", field_name)
         _setter("is_ascending", is_ascending)
         _setter("sorting_order", sorting_order)
@@ -2423,7 +2637,19 @@ class ReportDefinitionSummary(dict):
              group_by_field_name: Optional[str] = None,
              is_hidden: Optional[bool] = None,
              scim_filter: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'countOf' in kwargs:
+            count_of = kwargs['countOf']
+        if 'groupByFieldName' in kwargs:
+            group_by_field_name = kwargs['groupByFieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+
         _setter("display_order", display_order)
         _setter("name", name)
         if count_of is not None:
@@ -2550,7 +2776,17 @@ class SecurityAssessmentStatistic(dict):
              medium_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticMediumRisk']] = None,
              passes: Optional[Sequence['outputs.SecurityAssessmentStatisticPass']] = None,
              targets_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'highRisks' in kwargs:
+            high_risks = kwargs['highRisks']
+        if 'lowRisks' in kwargs:
+            low_risks = kwargs['lowRisks']
+        if 'mediumRisks' in kwargs:
+            medium_risks = kwargs['mediumRisks']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+
         if advisories is not None:
             _setter("advisories", advisories)
         if evaluates is not None:
@@ -2697,7 +2933,25 @@ class SecurityAssessmentStatisticAdvisory(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -2854,7 +3108,25 @@ class SecurityAssessmentStatisticEvaluate(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3011,7 +3283,25 @@ class SecurityAssessmentStatisticHighRisk(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3168,7 +3458,25 @@ class SecurityAssessmentStatisticLowRisk(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3325,7 +3633,25 @@ class SecurityAssessmentStatisticMediumRisk(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3482,7 +3808,25 @@ class SecurityAssessmentStatisticPass(dict):
              privileges_and_roles_findings_count: Optional[int] = None,
              targets_count: Optional[int] = None,
              user_accounts_findings_count: Optional[int] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         if auditing_findings_count is not None:
             _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
@@ -3611,7 +3955,15 @@ class TargetDatabaseConnectionOption(dict):
              connection_type: str,
              datasafe_private_endpoint_id: Optional[str] = None,
              on_prem_connector_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'datasafePrivateEndpointId' in kwargs:
+            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
+        if 'onPremConnectorId' in kwargs:
+            on_prem_connector_id = kwargs['onPremConnectorId']
+
         _setter("connection_type", connection_type)
         if datasafe_private_endpoint_id is not None:
             _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
@@ -3681,7 +4033,11 @@ class TargetDatabaseCredentials(dict):
              _setter: Callable[[Any, Any], None],
              password: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("password", password)
         _setter("user_name", user_name)
 
@@ -3782,7 +4138,27 @@ class TargetDatabaseDatabaseDetails(dict):
              listener_port: Optional[int] = None,
              service_name: Optional[str] = None,
              vm_cluster_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         _setter("database_type", database_type)
         _setter("infrastructure_type", infrastructure_type)
         if autonomous_database_id is not None:
@@ -3931,7 +4307,17 @@ class TargetDatabaseTlsConfig(dict):
              key_store_content: Optional[str] = None,
              store_password: Optional[str] = None,
              trust_store_content: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateStoreType' in kwargs:
+            certificate_store_type = kwargs['certificateStoreType']
+        if 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if 'storePassword' in kwargs:
+            store_password = kwargs['storePassword']
+        if 'trustStoreContent' in kwargs:
+            trust_store_content = kwargs['trustStoreContent']
+
         _setter("status", status)
         if certificate_store_type is not None:
             _setter("certificate_store_type", certificate_store_type)
@@ -4033,7 +4419,15 @@ class UserAssessmentIgnoredTarget(dict):
              lifecycle_state: Optional[str] = None,
              target_id: Optional[str] = None,
              user_assessment_id: Optional[str] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleState' in kwargs:
+            lifecycle_state = kwargs['lifecycleState']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         if lifecycle_state is not None:
             _setter("lifecycle_state", lifecycle_state)
         if target_id is not None:
@@ -4095,7 +4489,15 @@ class GetAlertAnalyticItemResult(dict):
              metric_name: str,
              time_ended: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -4158,7 +4560,11 @@ class GetAlertAnalyticItemDimensionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              group_by: Mapping[str, Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'groupBy' in kwargs:
+            group_by = kwargs['groupBy']
+
         _setter("group_by", group_by)
 
     @property
@@ -4182,7 +4588,9 @@ class GetAlertPoliciesAlertPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4254,7 +4662,27 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alertPolicyType' in kwargs:
+            alert_policy_type = kwargs['alertPolicyType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isUserDefined' in kwargs:
+            is_user_defined = kwargs['isUserDefined']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("alert_policy_type", alert_policy_type)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -4392,7 +4820,9 @@ class GetAlertPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4437,7 +4867,9 @@ class GetAlertPolicyRuleItemResult(dict):
              description: str,
              expression: str,
              key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("expression", expression)
         _setter("key", key)
@@ -4482,7 +4914,9 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4517,7 +4951,9 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
              description: str,
              expression: str,
              key: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("expression", expression)
         _setter("key", key)
@@ -4565,7 +5001,9 @@ class GetAlertPolicyRulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4599,7 +5037,9 @@ class GetAlertsAlertCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAlertsAlertCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -4710,7 +5150,41 @@ class GetAlertsAlertCollectionItemResult(dict):
              target_names: Sequence[str],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'alertId' in kwargs:
+            alert_id = kwargs['alertId']
+        if 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'featureDetails' in kwargs:
+            feature_details = kwargs['featureDetails']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+        if 'operationTime' in kwargs:
+            operation_time = kwargs['operationTime']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'resourceName' in kwargs:
+            resource_name = kwargs['resourceName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'targetNames' in kwargs:
+            target_names = kwargs['targetNames']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("alert_id", alert_id)
         _setter("alert_type", alert_type)
         _setter("comment", comment)
@@ -4935,7 +5409,9 @@ class GetAlertsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -4969,7 +5445,9 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -5057,7 +5535,37 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult(dict):
              time_completed: str,
              time_of_expiry: str,
              time_requested: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditEventCount' in kwargs:
+            audit_event_count = kwargs['auditEventCount']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'errorInfo' in kwargs:
+            error_info = kwargs['errorInfo']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if 'timeOfExpiry' in kwargs:
+            time_of_expiry = kwargs['timeOfExpiry']
+        if 'timeRequested' in kwargs:
+            time_requested = kwargs['timeRequested']
+
         _setter("audit_event_count", audit_event_count)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -5231,7 +5739,9 @@ class GetAuditArchiveRetrievalsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -5288,7 +5798,17 @@ class GetAuditEventAnalyticItemResult(dict):
              metric_name: str,
              time_ended: str,
              time_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+        if 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("display_name", display_name)
@@ -5400,7 +5920,31 @@ class GetAuditEventAnalyticItemDimensionResult(dict):
              target_classes: Sequence[str],
              target_ids: Sequence[str],
              target_names: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditEventTimes' in kwargs:
+            audit_event_times = kwargs['auditEventTimes']
+        if 'auditTypes' in kwargs:
+            audit_types = kwargs['auditTypes']
+        if 'clientHostnames' in kwargs:
+            client_hostnames = kwargs['clientHostnames']
+        if 'clientIds' in kwargs:
+            client_ids = kwargs['clientIds']
+        if 'clientPrograms' in kwargs:
+            client_programs = kwargs['clientPrograms']
+        if 'dbUserNames' in kwargs:
+            db_user_names = kwargs['dbUserNames']
+        if 'eventNames' in kwargs:
+            event_names = kwargs['eventNames']
+        if 'objectTypes' in kwargs:
+            object_types = kwargs['objectTypes']
+        if 'targetClasses' in kwargs:
+            target_classes = kwargs['targetClasses']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'targetNames' in kwargs:
+            target_names = kwargs['targetNames']
+
         _setter("audit_event_times", audit_event_times)
         _setter("audit_types", audit_types)
         _setter("client_hostnames", client_hostnames)
@@ -5652,7 +6196,71 @@ class GetAuditEventItemResult(dict):
              target_id: str,
              target_name: str,
              time_collected: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionTaken' in kwargs:
+            action_taken = kwargs['actionTaken']
+        if 'auditEventTime' in kwargs:
+            audit_event_time = kwargs['auditEventTime']
+        if 'auditLocation' in kwargs:
+            audit_location = kwargs['auditLocation']
+        if 'auditPolicies' in kwargs:
+            audit_policies = kwargs['auditPolicies']
+        if 'auditTrailId' in kwargs:
+            audit_trail_id = kwargs['auditTrailId']
+        if 'auditType' in kwargs:
+            audit_type = kwargs['auditType']
+        if 'clientHostname' in kwargs:
+            client_hostname = kwargs['clientHostname']
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientIp' in kwargs:
+            client_ip = kwargs['clientIp']
+        if 'clientProgram' in kwargs:
+            client_program = kwargs['clientProgram']
+        if 'commandParam' in kwargs:
+            command_param = kwargs['commandParam']
+        if 'commandText' in kwargs:
+            command_text = kwargs['commandText']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'errorCode' in kwargs:
+            error_code = kwargs['errorCode']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'eventName' in kwargs:
+            event_name = kwargs['eventName']
+        if 'extendedEventAttributes' in kwargs:
+            extended_event_attributes = kwargs['extendedEventAttributes']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAlerted' in kwargs:
+            is_alerted = kwargs['isAlerted']
+        if 'objectOwner' in kwargs:
+            object_owner = kwargs['objectOwner']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+        if 'osTerminal' in kwargs:
+            os_terminal = kwargs['osTerminal']
+        if 'osUserName' in kwargs:
+            os_user_name = kwargs['osUserName']
+        if 'targetClass' in kwargs:
+            target_class = kwargs['targetClass']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetName' in kwargs:
+            target_name = kwargs['targetName']
+        if 'timeCollected' in kwargs:
+            time_collected = kwargs['timeCollected']
+
         _setter("action_taken", action_taken)
         _setter("audit_event_time", audit_event_time)
         _setter("audit_location", audit_location)
@@ -5979,7 +6587,9 @@ class GetAuditEventsAuditEventCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditEventsAuditEventCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6141,7 +6751,71 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
              target_id: str,
              target_name: str,
              time_collected: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'actionTaken' in kwargs:
+            action_taken = kwargs['actionTaken']
+        if 'auditEventTime' in kwargs:
+            audit_event_time = kwargs['auditEventTime']
+        if 'auditLocation' in kwargs:
+            audit_location = kwargs['auditLocation']
+        if 'auditPolicies' in kwargs:
+            audit_policies = kwargs['auditPolicies']
+        if 'auditTrailId' in kwargs:
+            audit_trail_id = kwargs['auditTrailId']
+        if 'auditType' in kwargs:
+            audit_type = kwargs['auditType']
+        if 'clientHostname' in kwargs:
+            client_hostname = kwargs['clientHostname']
+        if 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if 'clientIp' in kwargs:
+            client_ip = kwargs['clientIp']
+        if 'clientProgram' in kwargs:
+            client_program = kwargs['clientProgram']
+        if 'commandParam' in kwargs:
+            command_param = kwargs['commandParam']
+        if 'commandText' in kwargs:
+            command_text = kwargs['commandText']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'errorCode' in kwargs:
+            error_code = kwargs['errorCode']
+        if 'errorMessage' in kwargs:
+            error_message = kwargs['errorMessage']
+        if 'eventName' in kwargs:
+            event_name = kwargs['eventName']
+        if 'extendedEventAttributes' in kwargs:
+            extended_event_attributes = kwargs['extendedEventAttributes']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAlerted' in kwargs:
+            is_alerted = kwargs['isAlerted']
+        if 'objectOwner' in kwargs:
+            object_owner = kwargs['objectOwner']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+        if 'osTerminal' in kwargs:
+            os_terminal = kwargs['osTerminal']
+        if 'osUserName' in kwargs:
+            os_user_name = kwargs['osUserName']
+        if 'targetClass' in kwargs:
+            target_class = kwargs['targetClass']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetName' in kwargs:
+            target_name = kwargs['targetName']
+        if 'timeCollected' in kwargs:
+            time_collected = kwargs['timeCollected']
+
         _setter("action_taken", action_taken)
         _setter("audit_event_time", audit_event_time)
         _setter("audit_location", audit_location)
@@ -6471,7 +7145,9 @@ class GetAuditEventsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -6505,7 +7181,9 @@ class GetAuditPoliciesAuditPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -6603,7 +7281,43 @@ class GetAuditPoliciesAuditPolicyCollectionItemResult(dict):
              time_last_provisioned: str,
              time_last_retrieved: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditConditions' in kwargs:
+            audit_conditions = kwargs['auditConditions']
+        if 'auditPolicyId' in kwargs:
+            audit_policy_id = kwargs['auditPolicyId']
+        if 'auditSpecifications' in kwargs:
+            audit_specifications = kwargs['auditSpecifications']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDataSafeServiceAccountExcluded' in kwargs:
+            is_data_safe_service_account_excluded = kwargs['isDataSafeServiceAccountExcluded']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'provisionTrigger' in kwargs:
+            provision_trigger = kwargs['provisionTrigger']
+        if 'retrieveFromTargetTrigger' in kwargs:
+            retrieve_from_target_trigger = kwargs['retrieveFromTargetTrigger']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastProvisioned' in kwargs:
+            time_last_provisioned = kwargs['timeLastProvisioned']
+        if 'timeLastRetrieved' in kwargs:
+            time_last_retrieved = kwargs['timeLastRetrieved']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("audit_conditions", audit_conditions)
         _setter("audit_policy_id", audit_policy_id)
         _setter("audit_specifications", audit_specifications)
@@ -6807,7 +7521,17 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult(dict):
              enable_conditions: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult'],
              is_data_safe_service_account_audited: bool,
              is_priv_users_managed_by_data_safe: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'enableConditions' in kwargs:
+            enable_conditions = kwargs['enableConditions']
+        if 'isDataSafeServiceAccountAudited' in kwargs:
+            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
+        if 'isPrivUsersManagedByDataSafe' in kwargs:
+            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
+
         _setter("audit_policy_name", audit_policy_name)
         _setter("enable_conditions", enable_conditions)
         _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
@@ -6873,7 +7597,17 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResu
              entity_selection: str,
              entity_type: str,
              operation_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityNames' in kwargs:
+            entity_names = kwargs['entityNames']
+        if 'entitySelection' in kwargs:
+            entity_selection = kwargs['entitySelection']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+
         _setter("entity_names", entity_names)
         _setter("entity_selection", entity_selection)
         _setter("entity_type", entity_type)
@@ -6967,7 +7701,31 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult(dict):
              is_seeded_in_target: bool,
              is_view_only: bool,
              partially_enabled_msg: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyCategory' in kwargs:
+            audit_policy_category = kwargs['auditPolicyCategory']
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'databasePolicyNames' in kwargs:
+            database_policy_names = kwargs['databasePolicyNames']
+        if 'enableStatus' in kwargs:
+            enable_status = kwargs['enableStatus']
+        if 'enabledEntities' in kwargs:
+            enabled_entities = kwargs['enabledEntities']
+        if 'isCreated' in kwargs:
+            is_created = kwargs['isCreated']
+        if 'isEnabledForAllUsers' in kwargs:
+            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
+        if 'isSeededInDataSafe' in kwargs:
+            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
+        if 'isSeededInTarget' in kwargs:
+            is_seeded_in_target = kwargs['isSeededInTarget']
+        if 'isViewOnly' in kwargs:
+            is_view_only = kwargs['isViewOnly']
+        if 'partiallyEnabledMsg' in kwargs:
+            partially_enabled_msg = kwargs['partiallyEnabledMsg']
+
         _setter("audit_policy_category", audit_policy_category)
         _setter("audit_policy_name", audit_policy_name)
         _setter("database_policy_names", database_policy_names)
@@ -7087,7 +7845,9 @@ class GetAuditPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7136,7 +7896,17 @@ class GetAuditPolicyAuditConditionResult(dict):
              enable_conditions: Sequence['outputs.GetAuditPolicyAuditConditionEnableConditionResult'],
              is_data_safe_service_account_audited: bool,
              is_priv_users_managed_by_data_safe: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'enableConditions' in kwargs:
+            enable_conditions = kwargs['enableConditions']
+        if 'isDataSafeServiceAccountAudited' in kwargs:
+            is_data_safe_service_account_audited = kwargs['isDataSafeServiceAccountAudited']
+        if 'isPrivUsersManagedByDataSafe' in kwargs:
+            is_priv_users_managed_by_data_safe = kwargs['isPrivUsersManagedByDataSafe']
+
         _setter("audit_policy_name", audit_policy_name)
         _setter("enable_conditions", enable_conditions)
         _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
@@ -7202,7 +7972,17 @@ class GetAuditPolicyAuditConditionEnableConditionResult(dict):
              entity_selection: str,
              entity_type: str,
              operation_status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'entityNames' in kwargs:
+            entity_names = kwargs['entityNames']
+        if 'entitySelection' in kwargs:
+            entity_selection = kwargs['entitySelection']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'operationStatus' in kwargs:
+            operation_status = kwargs['operationStatus']
+
         _setter("entity_names", entity_names)
         _setter("entity_selection", entity_selection)
         _setter("entity_type", entity_type)
@@ -7296,7 +8076,31 @@ class GetAuditPolicyAuditSpecificationResult(dict):
              is_seeded_in_target: bool,
              is_view_only: bool,
              partially_enabled_msg: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditPolicyCategory' in kwargs:
+            audit_policy_category = kwargs['auditPolicyCategory']
+        if 'auditPolicyName' in kwargs:
+            audit_policy_name = kwargs['auditPolicyName']
+        if 'databasePolicyNames' in kwargs:
+            database_policy_names = kwargs['databasePolicyNames']
+        if 'enableStatus' in kwargs:
+            enable_status = kwargs['enableStatus']
+        if 'enabledEntities' in kwargs:
+            enabled_entities = kwargs['enabledEntities']
+        if 'isCreated' in kwargs:
+            is_created = kwargs['isCreated']
+        if 'isEnabledForAllUsers' in kwargs:
+            is_enabled_for_all_users = kwargs['isEnabledForAllUsers']
+        if 'isSeededInDataSafe' in kwargs:
+            is_seeded_in_data_safe = kwargs['isSeededInDataSafe']
+        if 'isSeededInTarget' in kwargs:
+            is_seeded_in_target = kwargs['isSeededInTarget']
+        if 'isViewOnly' in kwargs:
+            is_view_only = kwargs['isViewOnly']
+        if 'partiallyEnabledMsg' in kwargs:
+            partially_enabled_msg = kwargs['partiallyEnabledMsg']
+
         _setter("audit_policy_category", audit_policy_category)
         _setter("audit_policy_name", audit_policy_name)
         _setter("database_policy_names", database_policy_names)
@@ -7417,7 +8221,9 @@ class GetAuditProfileAnalyticItemResult(dict):
              _setter: Callable[[Any, Any], None],
              count: str,
              dimensions: Sequence['outputs.GetAuditProfileAnalyticItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("dimensions", dimensions)
 
@@ -7453,7 +8259,11 @@ class GetAuditProfileAnalyticItemDimensionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              is_paid_usage_enabled: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPaidUsageEnabled' in kwargs:
+            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
+
         _setter("is_paid_usage_enabled", is_paid_usage_enabled)
 
     @property
@@ -7552,7 +8362,39 @@ class GetAuditProfileAuditTrailResult(dict):
              time_updated: str,
              trail_location: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectionStartTime' in kwargs:
+            audit_collection_start_time = kwargs['auditCollectionStartTime']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoPurgeEnabled' in kwargs:
+            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastCollected' in kwargs:
+            time_last_collected = kwargs['timeLastCollected']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("audit_collection_start_time", audit_collection_start_time)
         _setter("audit_profile_id", audit_profile_id)
         _setter("compartment_id", compartment_id)
@@ -7753,7 +8595,15 @@ class GetAuditProfileAvailableAuditVolumeItemResult(dict):
              month_in_consideration: str,
              trail_location: str,
              volume: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'monthInConsideration' in kwargs:
+            month_in_consideration = kwargs['monthInConsideration']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+
         _setter("audit_profile_id", audit_profile_id)
         _setter("month_in_consideration", month_in_consideration)
         _setter("trail_location", trail_location)
@@ -7807,7 +8657,9 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7834,7 +8686,9 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -7873,7 +8727,15 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem
              month_in_consideration: str,
              trail_location: str,
              volume: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'monthInConsideration' in kwargs:
+            month_in_consideration = kwargs['monthInConsideration']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+
         _setter("audit_profile_id", audit_profile_id)
         _setter("month_in_consideration", month_in_consideration)
         _setter("trail_location", trail_location)
@@ -7930,7 +8792,9 @@ class GetAuditProfileAvailableAuditVolumesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7979,7 +8843,17 @@ class GetAuditProfileCollectedAuditVolumeItemResult(dict):
              audit_profile_id: str,
              month_in_consideration: str,
              online_volume: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archivedVolume' in kwargs:
+            archived_volume = kwargs['archivedVolume']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'monthInConsideration' in kwargs:
+            month_in_consideration = kwargs['monthInConsideration']
+        if 'onlineVolume' in kwargs:
+            online_volume = kwargs['onlineVolume']
+
         _setter("archived_volume", archived_volume)
         _setter("audit_profile_id", audit_profile_id)
         _setter("month_in_consideration", month_in_consideration)
@@ -8033,7 +8907,9 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8060,7 +8936,9 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8099,7 +8977,17 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem
              audit_profile_id: str,
              month_in_consideration: str,
              online_volume: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'archivedVolume' in kwargs:
+            archived_volume = kwargs['archivedVolume']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'monthInConsideration' in kwargs:
+            month_in_consideration = kwargs['monthInConsideration']
+        if 'onlineVolume' in kwargs:
+            online_volume = kwargs['onlineVolume']
+
         _setter("archived_volume", archived_volume)
         _setter("audit_profile_id", audit_profile_id)
         _setter("month_in_consideration", month_in_consideration)
@@ -8156,7 +9044,9 @@ class GetAuditProfileCollectedAuditVolumesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8190,7 +9080,9 @@ class GetAuditProfilesAuditProfileCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8289,7 +9181,43 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
              target_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectedVolume' in kwargs:
+            audit_collected_volume = kwargs['auditCollectedVolume']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'auditTrails' in kwargs:
+            audit_trails = kwargs['auditTrails']
+        if 'changeRetentionTrigger' in kwargs:
+            change_retention_trigger = kwargs['changeRetentionTrigger']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isOverrideGlobalRetentionSetting' in kwargs:
+            is_override_global_retention_setting = kwargs['isOverrideGlobalRetentionSetting']
+        if 'isPaidUsageEnabled' in kwargs:
+            is_paid_usage_enabled = kwargs['isPaidUsageEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'offlineMonths' in kwargs:
+            offline_months = kwargs['offlineMonths']
+        if 'onlineMonths' in kwargs:
+            online_months = kwargs['onlineMonths']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("audit_collected_volume", audit_collected_volume)
         _setter("audit_profile_id", audit_profile_id)
         _setter("audit_trails", audit_trails)
@@ -8556,7 +9484,39 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
              time_updated: str,
              trail_location: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectionStartTime' in kwargs:
+            audit_collection_start_time = kwargs['auditCollectionStartTime']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoPurgeEnabled' in kwargs:
+            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastCollected' in kwargs:
+            time_last_collected = kwargs['timeLastCollected']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("audit_collection_start_time", audit_collection_start_time)
         _setter("audit_profile_id", audit_profile_id)
         _setter("compartment_id", compartment_id)
@@ -8748,7 +9708,9 @@ class GetAuditProfilesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -8789,7 +9751,9 @@ class GetAuditTrailAnalyticItemResult(dict):
              _setter: Callable[[Any, Any], None],
              count: str,
              dimensions: Sequence['outputs.GetAuditTrailAnalyticItemDimensionResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("count", count)
         _setter("dimensions", dimensions)
 
@@ -8837,7 +9801,11 @@ class GetAuditTrailAnalyticItemDimensionResult(dict):
              state: str,
              status: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("location", location)
         _setter("state", state)
         _setter("status", status)
@@ -8888,7 +9856,9 @@ class GetAuditTrailsAuditTrailCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetAuditTrailsAuditTrailCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -8991,7 +9961,43 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
              time_updated: str,
              trail_location: str,
              work_request_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditCollectionStartTime' in kwargs:
+            audit_collection_start_time = kwargs['auditCollectionStartTime']
+        if 'auditProfileId' in kwargs:
+            audit_profile_id = kwargs['auditProfileId']
+        if 'auditTrailId' in kwargs:
+            audit_trail_id = kwargs['auditTrailId']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAutoPurgeEnabled' in kwargs:
+            is_auto_purge_enabled = kwargs['isAutoPurgeEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'resumeTrigger' in kwargs:
+            resume_trigger = kwargs['resumeTrigger']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastCollected' in kwargs:
+            time_last_collected = kwargs['timeLastCollected']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'trailLocation' in kwargs:
+            trail_location = kwargs['trailLocation']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         _setter("audit_collection_start_time", audit_collection_start_time)
         _setter("audit_profile_id", audit_profile_id)
         _setter("audit_trail_id", audit_trail_id)
@@ -9198,7 +10204,9 @@ class GetAuditTrailsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9239,7 +10247,13 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeResult(dict):
              _setter: Callable[[Any, Any], None],
              data_type: str,
              masking_formats: Sequence['outputs.GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'maskingFormats' in kwargs:
+            masking_formats = kwargs['maskingFormats']
+
         _setter("data_type", data_type)
         _setter("masking_formats", masking_formats)
 
@@ -9283,7 +10297,9 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult(dict)
              description: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("id", id)
         _setter("name", name)
@@ -9332,7 +10348,13 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult(dict):
              _setter: Callable[[Any, Any], None],
              masking_formats: Sequence['outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult'],
              sensitive_type_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maskingFormats' in kwargs:
+            masking_formats = kwargs['maskingFormats']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
         _setter("masking_formats", masking_formats)
         _setter("sensitive_type_id", sensitive_type_id)
 
@@ -9376,7 +10398,9 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatRe
              description: str,
              id: str,
              name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("description", description)
         _setter("id", id)
         _setter("name", name)
@@ -9429,7 +10453,15 @@ class GetDataSafeConfigurationGlobalSettingResult(dict):
              is_paid_usage: bool,
              offline_retention_period: int,
              online_retention_period: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isPaidUsage' in kwargs:
+            is_paid_usage = kwargs['isPaidUsage']
+        if 'offlineRetentionPeriod' in kwargs:
+            offline_retention_period = kwargs['offlineRetentionPeriod']
+        if 'onlineRetentionPeriod' in kwargs:
+            online_retention_period = kwargs['onlineRetentionPeriod']
+
         _setter("is_paid_usage", is_paid_usage)
         _setter("offline_retention_period", offline_retention_period)
         _setter("online_retention_period", online_retention_period)
@@ -9530,7 +10562,33 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              vcn_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -9686,7 +10744,9 @@ class GetDataSafePrivateEndpointsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9731,7 +10791,11 @@ class GetDiscoveryAnalyticItemResult(dict):
              count: str,
              dimensions: Sequence['outputs.GetDiscoveryAnalyticItemDimensionResult'],
              metric_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -9780,7 +10844,13 @@ class GetDiscoveryAnalyticItemDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              sensitive_data_model_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("sensitive_data_model_id", sensitive_data_model_id)
         _setter("target_id", target_id)
 
@@ -9816,7 +10886,9 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -9851,7 +10923,11 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult(dict):
              count: str,
              dimensions: Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult'],
              metric_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -9900,7 +10976,13 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(dict)
              _setter: Callable[[Any, Any], None],
              sensitive_data_model_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("sensitive_data_model_id", sensitive_data_model_id)
         _setter("target_id", target_id)
 
@@ -9939,7 +11021,9 @@ class GetDiscoveryAnalyticsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -9980,7 +11064,13 @@ class GetDiscoveryJobsResultModifiedAttributeResult(dict):
              _setter: Callable[[Any, Any], None],
              app_defined_child_column_keys: Sequence[str],
              db_defined_child_column_keys: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+
         _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         _setter("db_defined_child_column_keys", db_defined_child_column_keys)
 
@@ -10013,7 +11103,9 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10113,7 +11205,45 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
              schema_name: str,
              sensitive_columnkey: str,
              sensitive_type_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if 'discoveryJobId' in kwargs:
+            discovery_job_id = kwargs['discoveryJobId']
+        if 'discoveryType' in kwargs:
+            discovery_type = kwargs['discoveryType']
+        if 'estimatedDataValueCount' in kwargs:
+            estimated_data_value_count = kwargs['estimatedDataValueCount']
+        if 'isResultApplied' in kwargs:
+            is_result_applied = kwargs['isResultApplied']
+        if 'modifiedAttributes' in kwargs:
+            modified_attributes = kwargs['modifiedAttributes']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if 'plannedAction' in kwargs:
+            planned_action = kwargs['plannedAction']
+        if 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if 'sampleDataValues' in kwargs:
+            sample_data_values = kwargs['sampleDataValues']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveColumnkey' in kwargs:
+            sensitive_columnkey = kwargs['sensitiveColumnkey']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
         _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         _setter("app_name", app_name)
         _setter("column_name", column_name)
@@ -10324,7 +11454,13 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeRe
              _setter: Callable[[Any, Any], None],
              app_defined_child_column_keys: Sequence[str],
              db_defined_child_column_keys: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+
         _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         _setter("db_defined_child_column_keys", db_defined_child_column_keys)
 
@@ -10363,7 +11499,9 @@ class GetDiscoveryJobsResultsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -10488,7 +11626,49 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
              table_name: str,
              type: str,
              user_defined_function: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("column_name", column_name)
         _setter("description", description)
         _setter("end_date", end_date)
@@ -10716,7 +11896,9 @@ class GetLibraryMaskingFormatsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -10750,7 +11932,9 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -10818,7 +12002,25 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'formatEntries' in kwargs:
+            format_entries = kwargs['formatEntries']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'sensitiveTypeIds' in kwargs:
+            sensitive_type_ids = kwargs['sensitiveTypeIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -11032,7 +12234,49 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
              table_name: str,
              type: str,
              user_defined_function: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("column_name", column_name)
         _setter("description", description)
         _setter("end_date", end_date)
@@ -11260,7 +12504,9 @@ class GetListUserGrantsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11313,7 +12559,17 @@ class GetListUserGrantsGrantResult(dict):
              key: str,
              privilege_category: str,
              privilege_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'depthLevel' in kwargs:
+            depth_level = kwargs['depthLevel']
+        if 'grantName' in kwargs:
+            grant_name = kwargs['grantName']
+        if 'privilegeCategory' in kwargs:
+            privilege_category = kwargs['privilegeCategory']
+        if 'privilegeType' in kwargs:
+            privilege_type = kwargs['privilegeType']
+
         _setter("depth_level", depth_level)
         _setter("grant_name", grant_name)
         _setter("key", key)
@@ -11384,7 +12640,11 @@ class GetMaskingAnalyticItemResult(dict):
              count: str,
              dimensions: Sequence['outputs.GetMaskingAnalyticItemDimensionResult'],
              metric_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -11433,7 +12693,13 @@ class GetMaskingAnalyticItemDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              policy_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("policy_id", policy_id)
         _setter("target_id", target_id)
 
@@ -11472,7 +12738,9 @@ class GetMaskingAnalyticsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11509,7 +12777,9 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -11544,7 +12814,11 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult(dict):
              count: str,
              dimensions: Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult'],
              metric_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'metricName' in kwargs:
+            metric_name = kwargs['metricName']
+
         _setter("count", count)
         _setter("dimensions", dimensions)
         _setter("metric_name", metric_name)
@@ -11593,7 +12867,13 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult(dict):
              _setter: Callable[[Any, Any], None],
              policy_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("policy_id", policy_id)
         _setter("target_id", target_id)
 
@@ -11632,7 +12912,9 @@ class GetMaskingPoliciesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11677,7 +12959,11 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatResult(dict):
              condition: str,
              description: str,
              format_entries: Sequence['outputs.GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatEntries' in kwargs:
+            format_entries = kwargs['formatEntries']
+
         _setter("condition", condition)
         _setter("description", description)
         _setter("format_entries", format_entries)
@@ -11810,7 +13096,49 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
              table_name: str,
              type: str,
              user_defined_function: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("column_name", column_name)
         _setter("description", description)
         _setter("end_date", end_date)
@@ -12038,7 +13366,9 @@ class GetMaskingPoliciesMaskingColumnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -12072,7 +13402,9 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12156,7 +13488,35 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'childColumns' in kwargs:
+            child_columns = kwargs['childColumns']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'isMaskingEnabled' in kwargs:
+            is_masking_enabled = kwargs['isMaskingEnabled']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'maskingColumnGroup' in kwargs:
+            masking_column_group = kwargs['maskingColumnGroup']
+        if 'maskingFormats' in kwargs:
+            masking_formats = kwargs['maskingFormats']
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("child_columns", child_columns)
         _setter("column_name", column_name)
         _setter("data_type", data_type)
@@ -12326,7 +13686,11 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatRe
              condition: str,
              description: str,
              format_entries: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'formatEntries' in kwargs:
+            format_entries = kwargs['formatEntries']
+
         _setter("condition", condition)
         _setter("description", description)
         _setter("format_entries", format_entries)
@@ -12459,7 +13823,49 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
              table_name: str,
              type: str,
              user_defined_function: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if 'endLength' in kwargs:
+            end_length = kwargs['endLength']
+        if 'endValue' in kwargs:
+            end_value = kwargs['endValue']
+        if 'fixedNumber' in kwargs:
+            fixed_number = kwargs['fixedNumber']
+        if 'fixedString' in kwargs:
+            fixed_string = kwargs['fixedString']
+        if 'groupingColumns' in kwargs:
+            grouping_columns = kwargs['groupingColumns']
+        if 'libraryMaskingFormatId' in kwargs:
+            library_masking_format_id = kwargs['libraryMaskingFormatId']
+        if 'postProcessingFunction' in kwargs:
+            post_processing_function = kwargs['postProcessingFunction']
+        if 'randomLists' in kwargs:
+            random_lists = kwargs['randomLists']
+        if 'regularExpression' in kwargs:
+            regular_expression = kwargs['regularExpression']
+        if 'replaceWith' in kwargs:
+            replace_with = kwargs['replaceWith']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sqlExpression' in kwargs:
+            sql_expression = kwargs['sqlExpression']
+        if 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if 'startLength' in kwargs:
+            start_length = kwargs['startLength']
+        if 'startPosition' in kwargs:
+            start_position = kwargs['startPosition']
+        if 'startValue' in kwargs:
+            start_value = kwargs['startValue']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if 'userDefinedFunction' in kwargs:
+            user_defined_function = kwargs['userDefinedFunction']
+
         _setter("column_name", column_name)
         _setter("description", description)
         _setter("end_date", end_date)
@@ -12681,7 +14087,9 @@ class GetMaskingPoliciesMaskingPolicyCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -12772,7 +14180,37 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
              state: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addMaskingColumnsFromSdmTrigger' in kwargs:
+            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
+        if 'columnSources' in kwargs:
+            column_sources = kwargs['columnSources']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if 'postMaskingScript' in kwargs:
+            post_masking_script = kwargs['postMaskingScript']
+        if 'preMaskingScript' in kwargs:
+            pre_masking_script = kwargs['preMaskingScript']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
         _setter("column_sources", column_sources)
         _setter("compartment_id", compartment_id)
@@ -12957,7 +14395,15 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult(dict):
              column_source: str,
              sensitive_data_model_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnSource' in kwargs:
+            column_source = kwargs['columnSource']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("column_source", column_source)
         _setter("sensitive_data_model_id", sensitive_data_model_id)
         _setter("target_id", target_id)
@@ -13010,7 +14456,15 @@ class GetMaskingPolicyColumnSourceResult(dict):
              column_source: str,
              sensitive_data_model_id: str,
              target_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnSource' in kwargs:
+            column_source = kwargs['columnSource']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("column_source", column_source)
         _setter("sensitive_data_model_id", sensitive_data_model_id)
         _setter("target_id", target_id)
@@ -13058,7 +14512,9 @@ class GetMaskingPolicyMaskingObjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -13095,7 +14551,9 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13130,7 +14588,13 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult(dict):
              object: str,
              object_type: str,
              schema_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("object", object)
         _setter("object_type", object_type)
         _setter("schema_name", schema_name)
@@ -13178,7 +14642,9 @@ class GetMaskingPolicyMaskingSchemasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -13215,7 +14681,9 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13242,7 +14710,11 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              schema_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("schema_name", schema_name)
 
     @property
@@ -13272,7 +14744,9 @@ class GetMaskingReportMaskedColumnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -13309,7 +14783,9 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13372,7 +14848,25 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult(dict):
              schema_name: str,
              sensitive_type_id: str,
              total_masked_values: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'maskingColumnGroup' in kwargs:
+            masking_column_group = kwargs['maskingColumnGroup']
+        if 'maskingFormatUsed' in kwargs:
+            masking_format_used = kwargs['maskingFormatUsed']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKey' in kwargs:
+            parent_column_key = kwargs['parentColumnKey']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'totalMaskedValues' in kwargs:
+            total_masked_values = kwargs['totalMaskedValues']
+
         _setter("column_name", column_name)
         _setter("key", key)
         _setter("masking_column_group", masking_column_group)
@@ -13483,7 +14977,9 @@ class GetMaskingReportsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -13556,7 +15052,25 @@ class GetMaskingReportsMaskedColumnItemResult(dict):
              schema_name: str,
              sensitive_type_id: str,
              total_masked_values: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'maskingColumnGroup' in kwargs:
+            masking_column_group = kwargs['maskingColumnGroup']
+        if 'maskingFormatUsed' in kwargs:
+            masking_format_used = kwargs['maskingFormatUsed']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKey' in kwargs:
+            parent_column_key = kwargs['parentColumnKey']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'totalMaskedValues' in kwargs:
+            total_masked_values = kwargs['totalMaskedValues']
+
         _setter("column_name", column_name)
         _setter("key", key)
         _setter("masking_column_group", masking_column_group)
@@ -13661,7 +15175,9 @@ class GetMaskingReportsMaskingReportCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetMaskingReportsMaskingReportCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -13757,7 +15273,41 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
              total_masked_schemas: str,
              total_masked_sensitive_types: str,
              total_masked_values: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'maskingWorkRequestId' in kwargs:
+            masking_work_request_id = kwargs['maskingWorkRequestId']
+        if 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeMaskingFinished' in kwargs:
+            time_masking_finished = kwargs['timeMaskingFinished']
+        if 'timeMaskingStarted' in kwargs:
+            time_masking_started = kwargs['timeMaskingStarted']
+        if 'totalMaskedColumns' in kwargs:
+            total_masked_columns = kwargs['totalMaskedColumns']
+        if 'totalMaskedObjects' in kwargs:
+            total_masked_objects = kwargs['totalMaskedObjects']
+        if 'totalMaskedSchemas' in kwargs:
+            total_masked_schemas = kwargs['totalMaskedSchemas']
+        if 'totalMaskedSensitiveTypes' in kwargs:
+            total_masked_sensitive_types = kwargs['totalMaskedSensitiveTypes']
+        if 'totalMaskedValues' in kwargs:
+            total_masked_values = kwargs['totalMaskedValues']
+
         _setter("compartment_id", compartment_id)
         _setter("id", id)
         _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
@@ -13949,7 +15499,9 @@ class GetOnpremConnectorsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -14030,7 +15582,27 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
              state: str,
              system_tags: Mapping[str, Any],
              time_created: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableVersion' in kwargs:
+            available_version = kwargs['availableVersion']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdVersion' in kwargs:
+            created_version = kwargs['createdVersion']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         _setter("available_version", available_version)
         _setter("compartment_id", compartment_id)
         _setter("created_version", created_version)
@@ -14172,7 +15744,15 @@ class GetReportDefinitionColumnFilterResult(dict):
              is_enabled: bool,
              is_hidden: bool,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("expressions", expressions)
         _setter("field_name", field_name)
         _setter("is_enabled", is_enabled)
@@ -14251,7 +15831,19 @@ class GetReportDefinitionColumnInfoResult(dict):
              display_order: int,
              field_name: str,
              is_hidden: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("data_type", data_type)
         _setter("display_name", display_name)
         _setter("display_order", display_order)
@@ -14322,7 +15914,15 @@ class GetReportDefinitionColumnSortingResult(dict):
              field_name: str,
              is_ascending: bool,
              sorting_order: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isAscending' in kwargs:
+            is_ascending = kwargs['isAscending']
+        if 'sortingOrder' in kwargs:
+            sorting_order = kwargs['sortingOrder']
+
         _setter("field_name", field_name)
         _setter("is_ascending", is_ascending)
         _setter("sorting_order", sorting_order)
@@ -14387,7 +15987,19 @@ class GetReportDefinitionSummaryResult(dict):
              is_hidden: bool,
              name: str,
              scim_filter: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countOf' in kwargs:
+            count_of = kwargs['countOf']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'groupByFieldName' in kwargs:
+            group_by_field_name = kwargs['groupByFieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+
         _setter("count_of", count_of)
         _setter("display_order", display_order)
         _setter("group_by_field_name", group_by_field_name)
@@ -14465,7 +16077,9 @@ class GetReportDefinitionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -14502,7 +16116,9 @@ class GetReportDefinitionsReportDefinitionCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -14630,7 +16246,51 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnFilters' in kwargs:
+            column_filters = kwargs['columnFilters']
+        if 'columnInfos' in kwargs:
+            column_infos = kwargs['columnInfos']
+        if 'columnSortings' in kwargs:
+            column_sortings = kwargs['columnSortings']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'complianceStandards' in kwargs:
+            compliance_standards = kwargs['complianceStandards']
+        if 'dataSource' in kwargs:
+            data_source = kwargs['dataSource']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isSeeded' in kwargs:
+            is_seeded = kwargs['isSeeded']
+        if 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if 'recordTimeSpan' in kwargs:
+            record_time_span = kwargs['recordTimeSpan']
+        if 'scheduledReportCompartmentId' in kwargs:
+            scheduled_report_compartment_id = kwargs['scheduledReportCompartmentId']
+        if 'scheduledReportMimeType' in kwargs:
+            scheduled_report_mime_type = kwargs['scheduledReportMimeType']
+        if 'scheduledReportName' in kwargs:
+            scheduled_report_name = kwargs['scheduledReportName']
+        if 'scheduledReportRowLimit' in kwargs:
+            scheduled_report_row_limit = kwargs['scheduledReportRowLimit']
+        if 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("category", category)
         _setter("column_filters", column_filters)
         _setter("column_infos", column_infos)
@@ -14907,7 +16567,15 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult(dict)
              is_enabled: bool,
              is_hidden: bool,
              operator: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("expressions", expressions)
         _setter("field_name", field_name)
         _setter("is_enabled", is_enabled)
@@ -14986,7 +16654,19 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult(dict):
              display_order: int,
              field_name: str,
              is_hidden: bool,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+
         _setter("data_type", data_type)
         _setter("display_name", display_name)
         _setter("display_order", display_order)
@@ -15057,7 +16737,15 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult(dict
              field_name: str,
              is_ascending: bool,
              sorting_order: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'fieldName' in kwargs:
+            field_name = kwargs['fieldName']
+        if 'isAscending' in kwargs:
+            is_ascending = kwargs['isAscending']
+        if 'sortingOrder' in kwargs:
+            sorting_order = kwargs['sortingOrder']
+
         _setter("field_name", field_name)
         _setter("is_ascending", is_ascending)
         _setter("sorting_order", sorting_order)
@@ -15122,7 +16810,19 @@ class GetReportDefinitionsReportDefinitionCollectionItemSummaryResult(dict):
              is_hidden: bool,
              name: str,
              scim_filter: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'countOf' in kwargs:
+            count_of = kwargs['countOf']
+        if 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if 'groupByFieldName' in kwargs:
+            group_by_field_name = kwargs['groupByFieldName']
+        if 'isHidden' in kwargs:
+            is_hidden = kwargs['isHidden']
+        if 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+
         _setter("count_of", count_of)
         _setter("display_order", display_order)
         _setter("group_by_field_name", group_by_field_name)
@@ -15197,7 +16897,9 @@ class GetReportsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15231,7 +16933,9 @@ class GetReportsReportCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetReportsReportCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15299,7 +17003,25 @@ class GetReportsReportCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_generated: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'mimeType' in kwargs:
+            mime_type = kwargs['mimeType']
+        if 'reportDefinitionId' in kwargs:
+            report_definition_id = kwargs['reportDefinitionId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeGenerated' in kwargs:
+            time_generated = kwargs['timeGenerated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -15428,7 +17150,9 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15462,7 +17186,9 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceCo
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15526,7 +17252,27 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceCo
              sensitive_type_id: str,
              sync_status: str,
              time_last_synced: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'differenceType' in kwargs:
+            difference_type = kwargs['differenceType']
+        if 'maskingColumnkey' in kwargs:
+            masking_columnkey = kwargs['maskingColumnkey']
+        if 'plannedAction' in kwargs:
+            planned_action = kwargs['plannedAction']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveColumnkey' in kwargs:
+            sensitive_columnkey = kwargs['sensitiveColumnkey']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'syncStatus' in kwargs:
+            sync_status = kwargs['syncStatus']
+        if 'timeLastSynced' in kwargs:
+            time_last_synced = kwargs['timeLastSynced']
+
         _setter("column_name", column_name)
         _setter("difference_type", difference_type)
         _setter("key", key)
@@ -15646,7 +17392,9 @@ class GetSdmMaskingPolicyDifferencesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -15680,7 +17428,9 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -15748,7 +17498,29 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
              system_tags: Mapping[str, Any],
              time_created: str,
              time_creation_started: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'differenceType' in kwargs:
+            difference_type = kwargs['differenceType']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeCreationStarted' in kwargs:
+            time_creation_started = kwargs['timeCreationStarted']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("difference_type", difference_type)
@@ -15906,7 +17678,25 @@ class GetSecurityAssessmentComparisonTargetResult(dict):
              fine_grained_access_controls: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult'],
              privileges_and_roles: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult'],
              user_accounts: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authorizationControls' in kwargs:
+            authorization_controls = kwargs['authorizationControls']
+        if 'baselineTargetId' in kwargs:
+            baseline_target_id = kwargs['baselineTargetId']
+        if 'currentTargetId' in kwargs:
+            current_target_id = kwargs['currentTargetId']
+        if 'dataEncryptions' in kwargs:
+            data_encryptions = kwargs['dataEncryptions']
+        if 'dbConfigurations' in kwargs:
+            db_configurations = kwargs['dbConfigurations']
+        if 'fineGrainedAccessControls' in kwargs:
+            fine_grained_access_controls = kwargs['fineGrainedAccessControls']
+        if 'privilegesAndRoles' in kwargs:
+            privileges_and_roles = kwargs['privilegesAndRoles']
+        if 'userAccounts' in kwargs:
+            user_accounts = kwargs['userAccounts']
+
         _setter("auditings", auditings)
         _setter("authorization_controls", authorization_controls)
         _setter("baseline_target_id", baseline_target_id)
@@ -16025,7 +17815,15 @@ class GetSecurityAssessmentComparisonTargetAuditingResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -16121,7 +17919,9 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -16210,7 +18010,9 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -16279,7 +18081,9 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -16368,7 +18172,9 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -16433,7 +18239,15 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -16529,7 +18343,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(di
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -16618,7 +18434,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -16687,7 +18505,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dic
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -16776,7 +18596,9 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -16841,7 +18663,15 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -16937,7 +18767,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -17026,7 +18858,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -17095,7 +18929,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -17184,7 +19020,9 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -17249,7 +19087,15 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -17345,7 +19191,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -17434,7 +19282,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -17503,7 +19353,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -17592,7 +19444,9 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -17657,7 +19511,15 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -17753,7 +19615,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResul
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -17842,7 +19706,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -17911,7 +19777,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -18000,7 +19868,9 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -18065,7 +19935,15 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -18161,7 +20039,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict)
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -18250,7 +20130,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -18319,7 +20201,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -18408,7 +20292,9 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -18473,7 +20359,15 @@ class GetSecurityAssessmentComparisonTargetUserAccountResult(dict):
              modified_items: Sequence[str],
              removed_items: Sequence[str],
              severity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'addedItems' in kwargs:
+            added_items = kwargs['addedItems']
+        if 'modifiedItems' in kwargs:
+            modified_items = kwargs['modifiedItems']
+        if 'removedItems' in kwargs:
+            removed_items = kwargs['removedItems']
+
         _setter("added_items", added_items)
         _setter("baselines", baselines)
         _setter("currents", currents)
@@ -18569,7 +20463,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -18658,7 +20554,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -18727,7 +20625,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
              severity: str,
              summary: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("details", details)
         _setter("key", key)
         _setter("references", references)
@@ -18816,7 +20716,9 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -18864,7 +20766,9 @@ class GetSecurityAssessmentFindingFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -18922,7 +20826,13 @@ class GetSecurityAssessmentFindingFindingResult(dict):
              summary: str,
              target_id: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assessmentId' in kwargs:
+            assessment_id = kwargs['assessmentId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("assessment_id", assessment_id)
         _setter("details", details)
         _setter("key", key)
@@ -18997,7 +20907,9 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -19036,7 +20948,9 @@ class GetSecurityAssessmentFindingsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -19105,7 +21019,13 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
              summary: str,
              target_id: str,
              title: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'assessmentId' in kwargs:
+            assessment_id = kwargs['assessmentId']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+
         _setter("assessment_id", assessment_id)
         _setter("details", details)
         _setter("key", key)
@@ -19212,7 +21132,9 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
              cis: str,
              gdpr: str,
              stig: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("cis", cis)
         _setter("gdpr", gdpr)
         _setter("stig", stig)
@@ -19281,7 +21203,17 @@ class GetSecurityAssessmentStatisticResult(dict):
              medium_risks: Sequence['outputs.GetSecurityAssessmentStatisticMediumRiskResult'],
              passes: Sequence['outputs.GetSecurityAssessmentStatisticPassResult'],
              targets_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'highRisks' in kwargs:
+            high_risks = kwargs['highRisks']
+        if 'lowRisks' in kwargs:
+            low_risks = kwargs['lowRisks']
+        if 'mediumRisks' in kwargs:
+            medium_risks = kwargs['mediumRisks']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+
         _setter("advisories", advisories)
         _setter("evaluates", evaluates)
         _setter("high_risks", high_risks)
@@ -19390,7 +21322,25 @@ class GetSecurityAssessmentStatisticAdvisoryResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -19508,7 +21458,25 @@ class GetSecurityAssessmentStatisticEvaluateResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -19626,7 +21594,25 @@ class GetSecurityAssessmentStatisticHighRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -19744,7 +21730,25 @@ class GetSecurityAssessmentStatisticLowRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -19862,7 +21866,25 @@ class GetSecurityAssessmentStatisticMediumRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -19980,7 +22002,25 @@ class GetSecurityAssessmentStatisticPassResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -20073,7 +22113,9 @@ class GetSecurityAssessmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -20210,7 +22252,47 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
              time_updated: str,
              triggered_by: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ignoredAssessmentIds' in kwargs:
+            ignored_assessment_ids = kwargs['ignoredAssessmentIds']
+        if 'ignoredTargets' in kwargs:
+            ignored_targets = kwargs['ignoredTargets']
+        if 'isBaseline' in kwargs:
+            is_baseline = kwargs['isBaseline']
+        if 'isDeviatedFromBaseline' in kwargs:
+            is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
+        if 'lastComparedBaselineId' in kwargs:
+            last_compared_baseline_id = kwargs['lastComparedBaselineId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'scheduleSecurityAssessmentId' in kwargs:
+            schedule_security_assessment_id = kwargs['scheduleSecurityAssessmentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'targetVersion' in kwargs:
+            target_version = kwargs['targetVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastAssessed' in kwargs:
+            time_last_assessed = kwargs['timeLastAssessed']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggeredBy' in kwargs:
+            triggered_by = kwargs['triggeredBy']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -20486,7 +22568,17 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
              medium_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult'],
              passes: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticPassResult'],
              targets_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'highRisks' in kwargs:
+            high_risks = kwargs['highRisks']
+        if 'lowRisks' in kwargs:
+            low_risks = kwargs['lowRisks']
+        if 'mediumRisks' in kwargs:
+            medium_risks = kwargs['mediumRisks']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+
         _setter("advisories", advisories)
         _setter("evaluates", evaluates)
         _setter("high_risks", high_risks)
@@ -20595,7 +22687,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -20713,7 +22823,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -20831,7 +22959,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -20949,7 +23095,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -21067,7 +23231,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -21185,7 +23367,25 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticPassResult(dict):
              privileges_and_roles_findings_count: int,
              targets_count: int,
              user_accounts_findings_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'auditingFindingsCount' in kwargs:
+            auditing_findings_count = kwargs['auditingFindingsCount']
+        if 'authorizationControlFindingsCount' in kwargs:
+            authorization_control_findings_count = kwargs['authorizationControlFindingsCount']
+        if 'dataEncryptionFindingsCount' in kwargs:
+            data_encryption_findings_count = kwargs['dataEncryptionFindingsCount']
+        if 'dbConfigurationFindingsCount' in kwargs:
+            db_configuration_findings_count = kwargs['dbConfigurationFindingsCount']
+        if 'fineGrainedAccessControlFindingsCount' in kwargs:
+            fine_grained_access_control_findings_count = kwargs['fineGrainedAccessControlFindingsCount']
+        if 'privilegesAndRolesFindingsCount' in kwargs:
+            privileges_and_roles_findings_count = kwargs['privilegesAndRolesFindingsCount']
+        if 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if 'userAccountsFindingsCount' in kwargs:
+            user_accounts_findings_count = kwargs['userAccountsFindingsCount']
+
         _setter("auditing_findings_count", auditing_findings_count)
         _setter("authorization_control_findings_count", authorization_control_findings_count)
         _setter("data_encryption_findings_count", data_encryption_findings_count)
@@ -21278,7 +23478,9 @@ class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21315,7 +23517,9 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21350,7 +23554,13 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult(d
              object: str,
              object_type: str,
              schema_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("object", object)
         _setter("object_type", object_type)
         _setter("schema_name", schema_name)
@@ -21398,7 +23608,9 @@ class GetSensitiveDataModelSensitiveSchemasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21435,7 +23647,9 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult(dict)
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21462,7 +23676,11 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(d
     def _configure(
              _setter: Callable[[Any, Any], None],
              schema_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("schema_name", schema_name)
 
     @property
@@ -21492,7 +23710,9 @@ class GetSensitiveDataModelsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21532,7 +23752,9 @@ class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -21566,7 +23788,9 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult(dict
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21674,7 +23898,43 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
              status: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if 'columnGroups' in kwargs:
+            column_groups = kwargs['columnGroups']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if 'estimatedDataValueCount' in kwargs:
+            estimated_data_value_count = kwargs['estimatedDataValueCount']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if 'sampleDataValues' in kwargs:
+            sample_data_values = kwargs['sampleDataValues']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         _setter("app_name", app_name)
         _setter("column_groups", column_groups)
@@ -21887,7 +24147,9 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -21979,7 +24241,39 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
              target_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'appSuiteName' in kwargs:
+            app_suite_name = kwargs['appSuiteName']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isAppDefinedRelationDiscoveryEnabled' in kwargs:
+            is_app_defined_relation_discovery_enabled = kwargs['isAppDefinedRelationDiscoveryEnabled']
+        if 'isIncludeAllSchemas' in kwargs:
+            is_include_all_schemas = kwargs['isIncludeAllSchemas']
+        if 'isIncludeAllSensitiveTypes' in kwargs:
+            is_include_all_sensitive_types = kwargs['isIncludeAllSensitiveTypes']
+        if 'isSampleDataCollectionEnabled' in kwargs:
+            is_sample_data_collection_enabled = kwargs['isSampleDataCollectionEnabled']
+        if 'schemasForDiscoveries' in kwargs:
+            schemas_for_discoveries = kwargs['schemasForDiscoveries']
+        if 'sensitiveTypeIdsForDiscoveries' in kwargs:
+            sensitive_type_ids_for_discoveries = kwargs['sensitiveTypeIdsForDiscoveries']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("app_suite_name", app_suite_name)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -22162,7 +24456,9 @@ class GetSensitiveTypesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -22196,7 +24492,9 @@ class GetSensitiveTypesSensitiveTypeCollectionResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22292,7 +24590,39 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
              system_tags: Mapping[str, Any],
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commentPattern' in kwargs:
+            comment_pattern = kwargs['commentPattern']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataPattern' in kwargs:
+            data_pattern = kwargs['dataPattern']
+        if 'defaultMaskingFormatId' in kwargs:
+            default_masking_format_id = kwargs['defaultMaskingFormatId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'namePattern' in kwargs:
+            name_pattern = kwargs['namePattern']
+        if 'parentCategoryId' in kwargs:
+            parent_category_id = kwargs['parentCategoryId']
+        if 'searchType' in kwargs:
+            search_type = kwargs['searchType']
+        if 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("comment_pattern", comment_pattern)
         _setter("compartment_id", compartment_id)
         _setter("data_pattern", data_pattern)
@@ -22484,7 +24814,9 @@ class GetTargetAlertPolicyAssociationsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -22518,7 +24850,9 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResu
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -22590,7 +24924,29 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
              target_id: str,
              time_created: str,
              time_updated: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if 'policyId' in kwargs:
+            policy_id = kwargs['policyId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -22735,7 +25091,15 @@ class GetTargetDatabaseConnectionOptionResult(dict):
              connection_type: str,
              datasafe_private_endpoint_id: str,
              on_prem_connector_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'datasafePrivateEndpointId' in kwargs:
+            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
+        if 'onPremConnectorId' in kwargs:
+            on_prem_connector_id = kwargs['onPremConnectorId']
+
         _setter("connection_type", connection_type)
         _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
         _setter("on_prem_connector_id", on_prem_connector_id)
@@ -22786,7 +25150,11 @@ class GetTargetDatabaseCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              password: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("password", password)
         _setter("user_name", user_name)
 
@@ -22854,7 +25222,27 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
              listener_port: int,
              service_name: str,
              vm_cluster_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         _setter("autonomous_database_id", autonomous_database_id)
         _setter("database_type", database_type)
         _setter("db_system_id", db_system_id)
@@ -22956,7 +25344,9 @@ class GetTargetDatabaseRoleFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23008,7 +25398,23 @@ class GetTargetDatabaseRoleRoleResult(dict):
              is_oracle_maintained: bool,
              is_password_required: bool,
              role_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'isCommon' in kwargs:
+            is_common = kwargs['isCommon']
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'isInherited' in kwargs:
+            is_inherited = kwargs['isInherited']
+        if 'isOracleMaintained' in kwargs:
+            is_oracle_maintained = kwargs['isOracleMaintained']
+        if 'isPasswordRequired' in kwargs:
+            is_password_required = kwargs['isPasswordRequired']
+        if 'roleName' in kwargs:
+            role_name = kwargs['roleName']
+
         _setter("authentication_type", authentication_type)
         _setter("is_common", is_common)
         _setter("is_implicit", is_implicit)
@@ -23071,7 +25477,9 @@ class GetTargetDatabaseRolesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23132,7 +25540,23 @@ class GetTargetDatabaseRolesRoleResult(dict):
              is_oracle_maintained: bool,
              is_password_required: bool,
              role_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'isCommon' in kwargs:
+            is_common = kwargs['isCommon']
+        if 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if 'isInherited' in kwargs:
+            is_inherited = kwargs['isInherited']
+        if 'isOracleMaintained' in kwargs:
+            is_oracle_maintained = kwargs['isOracleMaintained']
+        if 'isPasswordRequired' in kwargs:
+            is_password_required = kwargs['isPasswordRequired']
+        if 'roleName' in kwargs:
+            role_name = kwargs['roleName']
+
         _setter("authentication_type", authentication_type)
         _setter("is_common", is_common)
         _setter("is_implicit", is_implicit)
@@ -23229,7 +25653,17 @@ class GetTargetDatabaseTlsConfigResult(dict):
              status: str,
              store_password: str,
              trust_store_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateStoreType' in kwargs:
+            certificate_store_type = kwargs['certificateStoreType']
+        if 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if 'storePassword' in kwargs:
+            store_password = kwargs['storePassword']
+        if 'trustStoreContent' in kwargs:
+            trust_store_content = kwargs['trustStoreContent']
+
         _setter("certificate_store_type", certificate_store_type)
         _setter("key_store_content", key_store_content)
         _setter("status", status)
@@ -23320,7 +25754,19 @@ class GetTargetDatabasesColumnsColumnResult(dict):
              scale: int,
              schema_name: str,
              table_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'characterLength' in kwargs:
+            character_length = kwargs['characterLength']
+        if 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+
         _setter("character_length", character_length)
         _setter("column_name", column_name)
         _setter("data_type", data_type)
@@ -23413,7 +25859,9 @@ class GetTargetDatabasesColumnsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23453,7 +25901,9 @@ class GetTargetDatabasesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23493,7 +25943,9 @@ class GetTargetDatabasesSchemasFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23534,7 +25986,13 @@ class GetTargetDatabasesSchemasSchemaResult(dict):
              _setter: Callable[[Any, Any], None],
              is_oracle_maintained: bool,
              schema_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isOracleMaintained' in kwargs:
+            is_oracle_maintained = kwargs['isOracleMaintained']
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+
         _setter("is_oracle_maintained", is_oracle_maintained)
         _setter("schema_name", schema_name)
 
@@ -23573,7 +26031,9 @@ class GetTargetDatabasesTablesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -23614,7 +26074,13 @@ class GetTargetDatabasesTablesTableResult(dict):
              _setter: Callable[[Any, Any], None],
              schema_name: str,
              table_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+
         _setter("schema_name", schema_name)
         _setter("table_name", table_name)
 
@@ -23710,7 +26176,33 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
              time_created: str,
              time_updated: str,
              tls_configs: Sequence['outputs.GetTargetDatabasesTargetDatabaseTlsConfigResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'associatedResourceIds' in kwargs:
+            associated_resource_ids = kwargs['associatedResourceIds']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionOptions' in kwargs:
+            connection_options = kwargs['connectionOptions']
+        if 'databaseDetails' in kwargs:
+            database_details = kwargs['databaseDetails']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'tlsConfigs' in kwargs:
+            tls_configs = kwargs['tlsConfigs']
+
         _setter("associated_resource_ids", associated_resource_ids)
         _setter("compartment_id", compartment_id)
         _setter("connection_options", connection_options)
@@ -23882,7 +26374,15 @@ class GetTargetDatabasesTargetDatabaseConnectionOptionResult(dict):
              connection_type: str,
              datasafe_private_endpoint_id: str,
              on_prem_connector_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if 'datasafePrivateEndpointId' in kwargs:
+            datasafe_private_endpoint_id = kwargs['datasafePrivateEndpointId']
+        if 'onPremConnectorId' in kwargs:
+            on_prem_connector_id = kwargs['onPremConnectorId']
+
         _setter("connection_type", connection_type)
         _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
         _setter("on_prem_connector_id", on_prem_connector_id)
@@ -23933,7 +26433,11 @@ class GetTargetDatabasesTargetDatabaseCredentialResult(dict):
              _setter: Callable[[Any, Any], None],
              password: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("password", password)
         _setter("user_name", user_name)
 
@@ -24001,7 +26505,27 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
              listener_port: int,
              service_name: str,
              vm_cluster_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if 'databaseType' in kwargs:
+            database_type = kwargs['databaseType']
+        if 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if 'instanceId' in kwargs:
+            instance_id = kwargs['instanceId']
+        if 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'vmClusterId' in kwargs:
+            vm_cluster_id = kwargs['vmClusterId']
+
         _setter("autonomous_database_id", autonomous_database_id)
         _setter("database_type", database_type)
         _setter("db_system_id", db_system_id)
@@ -24116,7 +26640,17 @@ class GetTargetDatabasesTargetDatabaseTlsConfigResult(dict):
              status: str,
              store_password: str,
              trust_store_content: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'certificateStoreType' in kwargs:
+            certificate_store_type = kwargs['certificateStoreType']
+        if 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if 'storePassword' in kwargs:
+            store_password = kwargs['storePassword']
+        if 'trustStoreContent' in kwargs:
+            trust_store_content = kwargs['trustStoreContent']
+
         _setter("certificate_store_type", certificate_store_type)
         _setter("key_store_content", key_store_content)
         _setter("status", status)
@@ -24182,7 +26716,9 @@ class GetUserAssessmentComparisonSummaryResult(dict):
              baselines: Sequence['outputs.GetUserAssessmentComparisonSummaryBaselineResult'],
              currents: Sequence['outputs.GetUserAssessmentComparisonSummaryCurrentResult'],
              status: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("baselines", baselines)
         _setter("currents", currents)
         _setter("status", status)
@@ -24221,7 +26757,13 @@ class GetUserAssessmentComparisonSummaryBaselineResult(dict):
              _setter: Callable[[Any, Any], None],
              target_id: str,
              user_assessment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("target_id", target_id)
         _setter("user_assessment_id", user_assessment_id)
 
@@ -24257,7 +26799,13 @@ class GetUserAssessmentComparisonSummaryCurrentResult(dict):
              _setter: Callable[[Any, Any], None],
              target_id: str,
              user_assessment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("target_id", target_id)
         _setter("user_assessment_id", user_assessment_id)
 
@@ -24296,7 +26844,15 @@ class GetUserAssessmentIgnoredTargetResult(dict):
              lifecycle_state: str,
              target_id: str,
              user_assessment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleState' in kwargs:
+            lifecycle_state = kwargs['lifecycleState']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("lifecycle_state", lifecycle_state)
         _setter("target_id", target_id)
         _setter("user_assessment_id", user_assessment_id)
@@ -24338,7 +26894,9 @@ class GetUserAssessmentProfileAnalyticsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -24383,7 +26941,13 @@ class GetUserAssessmentProfileAnalyticsProfileAggregationResult(dict):
              defined_tags: Mapping[str, Any],
              freeform_tags: Mapping[str, Any],
              items: Sequence[Any],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("defined_tags", defined_tags)
         _setter("freeform_tags", freeform_tags)
         _setter("items", items)
@@ -24431,7 +26995,9 @@ class GetUserAssessmentProfilesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -24572,7 +27138,63 @@ class GetUserAssessmentProfilesProfileResult(dict):
              target_id: str,
              user_assessment_id: str,
              user_count: int,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compositeLimit' in kwargs:
+            composite_limit = kwargs['compositeLimit']
+        if 'connectTime' in kwargs:
+            connect_time = kwargs['connectTime']
+        if 'cpuPerCall' in kwargs:
+            cpu_per_call = kwargs['cpuPerCall']
+        if 'cpuPerSession' in kwargs:
+            cpu_per_session = kwargs['cpuPerSession']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'failedLoginAttempts' in kwargs:
+            failed_login_attempts = kwargs['failedLoginAttempts']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTime' in kwargs:
+            idle_time = kwargs['idleTime']
+        if 'inactiveAccountTime' in kwargs:
+            inactive_account_time = kwargs['inactiveAccountTime']
+        if 'isUserCreated' in kwargs:
+            is_user_created = kwargs['isUserCreated']
+        if 'logicalReadsPerCall' in kwargs:
+            logical_reads_per_call = kwargs['logicalReadsPerCall']
+        if 'logicalReadsPerSession' in kwargs:
+            logical_reads_per_session = kwargs['logicalReadsPerSession']
+        if 'passwordGraceTime' in kwargs:
+            password_grace_time = kwargs['passwordGraceTime']
+        if 'passwordLifeTime' in kwargs:
+            password_life_time = kwargs['passwordLifeTime']
+        if 'passwordLockTime' in kwargs:
+            password_lock_time = kwargs['passwordLockTime']
+        if 'passwordReuseMax' in kwargs:
+            password_reuse_max = kwargs['passwordReuseMax']
+        if 'passwordReuseTime' in kwargs:
+            password_reuse_time = kwargs['passwordReuseTime']
+        if 'passwordRolloverTime' in kwargs:
+            password_rollover_time = kwargs['passwordRolloverTime']
+        if 'passwordVerificationFunction' in kwargs:
+            password_verification_function = kwargs['passwordVerificationFunction']
+        if 'passwordVerificationFunctionDetails' in kwargs:
+            password_verification_function_details = kwargs['passwordVerificationFunctionDetails']
+        if 'privateSga' in kwargs:
+            private_sga = kwargs['privateSga']
+        if 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if 'sessionsPerUser' in kwargs:
+            sessions_per_user = kwargs['sessionsPerUser']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+        if 'userCount' in kwargs:
+            user_count = kwargs['userCount']
+
         _setter("compartment_id", compartment_id)
         _setter("composite_limit", composite_limit)
         _setter("connect_time", connect_time)
@@ -24836,7 +27458,9 @@ class GetUserAssessmentUserAnalyticsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -24873,7 +27497,9 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              items: Sequence['outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("items", items)
 
     @property
@@ -24892,8 +27518,10 @@ class GetUserAssessmentUserAnalyticsUserAggregationItemResult(dict):
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
         pass
+
 
 
 @pulumi.output_type
@@ -24914,7 +27542,9 @@ class GetUserAssessmentUsersFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -24995,7 +27625,31 @@ class GetUserAssessmentUsersUserResult(dict):
              user_name: str,
              user_profile: str,
              user_types: Sequence[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'accountStatus' in kwargs:
+            account_status = kwargs['accountStatus']
+        if 'adminRoles' in kwargs:
+            admin_roles = kwargs['adminRoles']
+        if 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'timeLastLogin' in kwargs:
+            time_last_login = kwargs['timeLastLogin']
+        if 'timePasswordChanged' in kwargs:
+            time_password_changed = kwargs['timePasswordChanged']
+        if 'timeUserCreated' in kwargs:
+            time_user_created = kwargs['timeUserCreated']
+        if 'userCategory' in kwargs:
+            user_category = kwargs['userCategory']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if 'userProfile' in kwargs:
+            user_profile = kwargs['userProfile']
+        if 'userTypes' in kwargs:
+            user_types = kwargs['userTypes']
+
         _setter("account_status", account_status)
         _setter("admin_roles", admin_roles)
         _setter("authentication_type", authentication_type)
@@ -25124,7 +27778,9 @@ class GetUserAssessmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -25167,7 +27823,15 @@ class GetUserAssessmentsIgnoredTargetResult(dict):
              lifecycle_state: str,
              target_id: str,
              user_assessment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleState' in kwargs:
+            lifecycle_state = kwargs['lifecycleState']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("lifecycle_state", lifecycle_state)
         _setter("target_id", target_id)
         _setter("user_assessment_id", user_assessment_id)
@@ -25298,7 +27962,45 @@ class GetUserAssessmentsUserAssessmentResult(dict):
              time_updated: str,
              triggered_by: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'ignoredAssessmentIds' in kwargs:
+            ignored_assessment_ids = kwargs['ignoredAssessmentIds']
+        if 'ignoredTargets' in kwargs:
+            ignored_targets = kwargs['ignoredTargets']
+        if 'isBaseline' in kwargs:
+            is_baseline = kwargs['isBaseline']
+        if 'isDeviatedFromBaseline' in kwargs:
+            is_deviated_from_baseline = kwargs['isDeviatedFromBaseline']
+        if 'lastComparedBaselineId' in kwargs:
+            last_compared_baseline_id = kwargs['lastComparedBaselineId']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'scheduleAssessmentId' in kwargs:
+            schedule_assessment_id = kwargs['scheduleAssessmentId']
+        if 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'targetIds' in kwargs:
+            target_ids = kwargs['targetIds']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeLastAssessed' in kwargs:
+            time_last_assessed = kwargs['timeLastAssessed']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'triggeredBy' in kwargs:
+            triggered_by = kwargs['triggeredBy']
+
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
         _setter("description", description)
@@ -25538,7 +28240,15 @@ class GetUserAssessmentsUserAssessmentIgnoredTargetResult(dict):
              lifecycle_state: str,
              target_id: str,
              user_assessment_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'lifecycleState' in kwargs:
+            lifecycle_state = kwargs['lifecycleState']
+        if 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if 'userAssessmentId' in kwargs:
+            user_assessment_id = kwargs['userAssessmentId']
+
         _setter("lifecycle_state", lifecycle_state)
         _setter("target_id", target_id)
         _setter("user_assessment_id", user_assessment_id)

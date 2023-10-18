@@ -161,7 +161,29 @@ class GetAggregatedComputedUsagesAggregatedComputedUsageResult(dict):
              subscription_id: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'aggregatedComputedUsages' in kwargs:
+            aggregated_computed_usages = kwargs['aggregatedComputedUsages']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'parentProducts' in kwargs:
+            parent_products = kwargs['parentProducts']
+        if 'parentSubscribedServiceId' in kwargs:
+            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
+        if 'planNumber' in kwargs:
+            plan_number = kwargs['planNumber']
+        if 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if 'rateCardId' in kwargs:
+            rate_card_id = kwargs['rateCardId']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("aggregated_computed_usages", aggregated_computed_usages)
         _setter("currency_code", currency_code)
         _setter("parent_products", parent_products)
@@ -297,7 +319,17 @@ class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageR
              quantity: str,
              time_metered_on: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costUnrounded' in kwargs:
+            cost_unrounded = kwargs['costUnrounded']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'timeMeteredOn' in kwargs:
+            time_metered_on = kwargs['timeMeteredOn']
+
         _setter("cost", cost)
         _setter("cost_unrounded", cost_unrounded)
         _setter("data_center", data_center)
@@ -411,7 +443,21 @@ class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageP
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -516,7 +562,21 @@ class GetAggregatedComputedUsagesAggregatedComputedUsageParentProductResult(dict
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -603,7 +663,9 @@ class GetAggregatedComputedUsagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -691,7 +753,29 @@ class GetBillingSchedulesBillingScheduleResult(dict):
              time_end: str,
              time_invoicing: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'arCustomerTransactionId' in kwargs:
+            ar_customer_transaction_id = kwargs['arCustomerTransactionId']
+        if 'arInvoiceNumber' in kwargs:
+            ar_invoice_number = kwargs['arInvoiceNumber']
+        if 'billingFrequency' in kwargs:
+            billing_frequency = kwargs['billingFrequency']
+        if 'invoiceStatus' in kwargs:
+            invoice_status = kwargs['invoiceStatus']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if 'subscribedServiceId' in kwargs:
+            subscribed_service_id = kwargs['subscribedServiceId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeInvoicing' in kwargs:
+            time_invoicing = kwargs['timeInvoicing']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("amount", amount)
         _setter("ar_customer_transaction_id", ar_customer_transaction_id)
         _setter("ar_invoice_number", ar_invoice_number)
@@ -830,7 +914,11 @@ class GetBillingSchedulesBillingScheduleProductResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              part_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+
         _setter("name", name)
         _setter("part_number", part_number)
 
@@ -872,7 +960,9 @@ class GetBillingSchedulesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -940,7 +1030,21 @@ class GetCommitmentsCommitmentResult(dict):
              time_end: str,
              time_start: str,
              used_amount: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'subscribedServiceId' in kwargs:
+            subscribed_service_id = kwargs['subscribedServiceId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'usedAmount' in kwargs:
+            used_amount = kwargs['usedAmount']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("id", id)
@@ -1033,7 +1137,9 @@ class GetCommitmentsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1094,7 +1200,21 @@ class GetComputedUsageParentProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1199,7 +1319,21 @@ class GetComputedUsageProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1379,7 +1513,51 @@ class GetComputedUsagesComputedUsageResult(dict):
              type: str,
              unit_of_measure: str,
              usage_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'commitmentServiceId' in kwargs:
+            commitment_service_id = kwargs['commitmentServiceId']
+        if 'computeSource' in kwargs:
+            compute_source = kwargs['computeSource']
+        if 'computedUsageId' in kwargs:
+            computed_usage_id = kwargs['computedUsageId']
+        if 'costRounded' in kwargs:
+            cost_rounded = kwargs['costRounded']
+        if 'currencyCode' in kwargs:
+            currency_code = kwargs['currencyCode']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'isInvoiced' in kwargs:
+            is_invoiced = kwargs['isInvoiced']
+        if 'mqsMessageId' in kwargs:
+            mqs_message_id = kwargs['mqsMessageId']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'originalUsageNumber' in kwargs:
+            original_usage_number = kwargs['originalUsageNumber']
+        if 'parentProducts' in kwargs:
+            parent_products = kwargs['parentProducts']
+        if 'parentSubscribedServiceId' in kwargs:
+            parent_subscribed_service_id = kwargs['parentSubscribedServiceId']
+        if 'planNumber' in kwargs:
+            plan_number = kwargs['planNumber']
+        if 'rateCardId' in kwargs:
+            rate_card_id = kwargs['rateCardId']
+        if 'rateCardTierdId' in kwargs:
+            rate_card_tierd_id = kwargs['rateCardTierdId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeMeteredOn' in kwargs:
+            time_metered_on = kwargs['timeMeteredOn']
+        if 'timeOfArrival' in kwargs:
+            time_of_arrival = kwargs['timeOfArrival']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+        if 'usageNumber' in kwargs:
+            usage_number = kwargs['usageNumber']
+
         _setter("commitment_service_id", commitment_service_id)
         _setter("compute_source", compute_source)
         _setter("computed_usage_id", computed_usage_id)
@@ -1652,7 +1830,21 @@ class GetComputedUsagesComputedUsageParentProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1757,7 +1949,21 @@ class GetComputedUsagesComputedUsageProductResult(dict):
              provisioning_group: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -1844,7 +2050,9 @@ class GetComputedUsagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1890,7 +2098,9 @@ class GetInvoiceLineComputedUsagesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -1958,7 +2168,17 @@ class GetInvoiceLineComputedUsagesInvoicelineComputedUsageResult(dict):
              quantity: float,
              time_metered_on: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'costRounded' in kwargs:
+            cost_rounded = kwargs['costRounded']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'parentProducts' in kwargs:
+            parent_products = kwargs['parentProducts']
+        if 'timeMeteredOn' in kwargs:
+            time_metered_on = kwargs['timeMeteredOn']
+
         _setter("cost", cost)
         _setter("cost_rounded", cost_rounded)
         _setter("net_unit_price", net_unit_price)
@@ -2068,7 +2288,19 @@ class GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductResult(di
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -2160,7 +2392,19 @@ class GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -2238,7 +2482,9 @@ class GetInvoicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -2350,7 +2596,39 @@ class GetInvoicesInvoiceResult(dict):
              time_updated: str,
              type: str,
              updated_by: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'arInvoices' in kwargs:
+            ar_invoices = kwargs['arInvoices']
+        if 'billToAddresses' in kwargs:
+            bill_to_addresses = kwargs['billToAddresses']
+        if 'billToContacts' in kwargs:
+            bill_to_contacts = kwargs['billToContacts']
+        if 'billToCustomers' in kwargs:
+            bill_to_customers = kwargs['billToCustomers']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'invoiceLines' in kwargs:
+            invoice_lines = kwargs['invoiceLines']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'paymentTerms' in kwargs:
+            payment_terms = kwargs['paymentTerms']
+        if 'receiptMethod' in kwargs:
+            receipt_method = kwargs['receiptMethod']
+        if 'spmInvoiceNumber' in kwargs:
+            spm_invoice_number = kwargs['spmInvoiceNumber']
+        if 'subscriptionNumber' in kwargs:
+            subscription_number = kwargs['subscriptionNumber']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeInvoiceDate' in kwargs:
+            time_invoice_date = kwargs['timeInvoiceDate']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("ar_invoices", ar_invoices)
         _setter("bill_to_addresses", bill_to_addresses)
         _setter("bill_to_contacts", bill_to_contacts)
@@ -2571,7 +2849,21 @@ class GetInvoicesInvoiceBillToAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -2694,7 +2986,13 @@ class GetInvoicesInvoiceBillToAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -2803,7 +3101,21 @@ class GetInvoicesInvoiceBillToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              user_name: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'userName' in kwargs:
+            user_name = kwargs['userName']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -2925,7 +3237,25 @@ class GetInvoicesInvoiceBillToCustomerResult(dict):
              tca_customer_account_number: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaCustomerAccountNumber' in kwargs:
+            tca_customer_account_number = kwargs['tcaCustomerAccountNumber']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -3032,7 +3362,13 @@ class GetInvoicesInvoiceCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -3097,7 +3433,17 @@ class GetInvoicesInvoiceInvoiceLineResult(dict):
              products: Sequence['outputs.GetInvoicesInvoiceInvoiceLineProductResult'],
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'arInvoiceNumber' in kwargs:
+            ar_invoice_number = kwargs['arInvoiceNumber']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("ar_invoice_number", ar_invoice_number)
         _setter("data_center", data_center)
         _setter("id", id)
@@ -3189,7 +3535,19 @@ class GetInvoicesInvoiceInvoiceLineProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -3265,7 +3623,9 @@ class GetInvoicesInvoiceOrganizationResult(dict):
              _setter: Callable[[Any, Any], None],
              name: str,
              number: float,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("number", number)
 
@@ -3329,7 +3689,19 @@ class GetInvoicesInvoicePaymentTermResult(dict):
              time_updated: str,
              updated_by: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("created_by", created_by)
         _setter("description", description)
         _setter("is_active", is_active)
@@ -3425,7 +3797,9 @@ class GetOrganizationSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3493,7 +3867,17 @@ class GetOrganizationSubscriptionsOrganizationSubscriptionResult(dict):
              time_start: str,
              total_value: str,
              type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+
         _setter("currencies", currencies)
         _setter("id", id)
         _setter("service_name", service_name)
@@ -3591,7 +3975,13 @@ class GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -3642,7 +4032,9 @@ class GetRatecardsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -3718,7 +4110,25 @@ class GetRatecardsRateCardResult(dict):
              subscribed_service_id: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'discretionaryDiscountPercentage' in kwargs:
+            discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
+        if 'isTier' in kwargs:
+            is_tier = kwargs['isTier']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'rateCardTiers' in kwargs:
+            rate_card_tiers = kwargs['rateCardTiers']
+        if 'subscribedServiceId' in kwargs:
+            subscribed_service_id = kwargs['subscribedServiceId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("discretionary_discount_percentage", discretionary_discount_percentage)
         _setter("is_tier", is_tier)
@@ -3834,7 +4244,13 @@ class GetRatecardsRateCardCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -3899,7 +4315,19 @@ class GetRatecardsRateCardProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -3979,7 +4407,15 @@ class GetRatecardsRateCardRateCardTierResult(dict):
              net_unit_price: str,
              overage_price: str,
              up_to_quantity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'upToQuantity' in kwargs:
+            up_to_quantity = kwargs['upToQuantity']
+
         _setter("net_unit_price", net_unit_price)
         _setter("overage_price", overage_price)
         _setter("up_to_quantity", up_to_quantity)
@@ -4056,7 +4492,21 @@ class GetSubscribedServiceBillToAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -4179,7 +4629,13 @@ class GetSubscribedServiceBillToAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -4288,7 +4744,19 @@ class GetSubscribedServiceBillToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -4410,7 +4878,25 @@ class GetSubscribedServiceBillToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -4529,7 +5015,19 @@ class GetSubscribedServiceCommitmentServiceResult(dict):
              quantity: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("line_net_amount", line_net_amount)
@@ -4633,7 +5131,21 @@ class GetSubscribedServiceEndUserAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -4756,7 +5268,13 @@ class GetSubscribedServiceEndUserAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -4865,7 +5383,19 @@ class GetSubscribedServiceEndUserContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -4987,7 +5517,25 @@ class GetSubscribedServiceEndUserCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -5114,7 +5662,19 @@ class GetSubscribedServicePaymentTermResult(dict):
              time_updated: str,
              updated_by: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("created_by", created_by)
         _setter("description", description)
         _setter("is_active", is_active)
@@ -5224,7 +5784,19 @@ class GetSubscribedServiceProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -5332,7 +5904,25 @@ class GetSubscribedServiceRateCardResult(dict):
              subscribed_service_id: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'discretionaryDiscountPercentage' in kwargs:
+            discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
+        if 'isTier' in kwargs:
+            is_tier = kwargs['isTier']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'rateCardTiers' in kwargs:
+            rate_card_tiers = kwargs['rateCardTiers']
+        if 'subscribedServiceId' in kwargs:
+            subscribed_service_id = kwargs['subscribedServiceId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("discretionary_discount_percentage", discretionary_discount_percentage)
         _setter("is_tier", is_tier)
@@ -5448,7 +6038,13 @@ class GetSubscribedServiceRateCardCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -5513,7 +6109,19 @@ class GetSubscribedServiceRateCardProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -5593,7 +6201,15 @@ class GetSubscribedServiceRateCardRateCardTierResult(dict):
              net_unit_price: str,
              overage_price: str,
              up_to_quantity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'upToQuantity' in kwargs:
+            up_to_quantity = kwargs['upToQuantity']
+
         _setter("net_unit_price", net_unit_price)
         _setter("overage_price", overage_price)
         _setter("up_to_quantity", up_to_quantity)
@@ -5670,7 +6286,21 @@ class GetSubscribedServiceResellerAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -5793,7 +6423,13 @@ class GetSubscribedServiceResellerAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -5902,7 +6538,19 @@ class GetSubscribedServiceResellerContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -6024,7 +6672,25 @@ class GetSubscribedServiceResellerCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -6155,7 +6821,21 @@ class GetSubscribedServiceServiceToAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -6278,7 +6958,13 @@ class GetSubscribedServiceServiceToAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -6387,7 +7073,19 @@ class GetSubscribedServiceServiceToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -6509,7 +7207,25 @@ class GetSubscribedServiceServiceToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -6636,7 +7352,19 @@ class GetSubscribedServiceSoldToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -6758,7 +7486,25 @@ class GetSubscribedServiceSoldToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -6863,7 +7609,9 @@ class GetSubscribedServicesFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -7343,7 +8091,219 @@ class GetSubscribedServicesSubscribedServiceResult(dict):
              type: str,
              updated_by: str,
              used_amount: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'adminEmail' in kwargs:
+            admin_email = kwargs['adminEmail']
+        if 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if 'agreementName' in kwargs:
+            agreement_name = kwargs['agreementName']
+        if 'agreementType' in kwargs:
+            agreement_type = kwargs['agreementType']
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'billToAddresses' in kwargs:
+            bill_to_addresses = kwargs['billToAddresses']
+        if 'billToContacts' in kwargs:
+            bill_to_contacts = kwargs['billToContacts']
+        if 'billToCustomers' in kwargs:
+            bill_to_customers = kwargs['billToCustomers']
+        if 'billingFrequency' in kwargs:
+            billing_frequency = kwargs['billingFrequency']
+        if 'bookingOptyNumber' in kwargs:
+            booking_opty_number = kwargs['bookingOptyNumber']
+        if 'buyerEmail' in kwargs:
+            buyer_email = kwargs['buyerEmail']
+        if 'commitmentScheduleId' in kwargs:
+            commitment_schedule_id = kwargs['commitmentScheduleId']
+        if 'commitmentServices' in kwargs:
+            commitment_services = kwargs['commitmentServices']
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'creditPercentage' in kwargs:
+            credit_percentage = kwargs['creditPercentage']
+        if 'customerTransactionReference' in kwargs:
+            customer_transaction_reference = kwargs['customerTransactionReference']
+        if 'dataCenter' in kwargs:
+            data_center = kwargs['dataCenter']
+        if 'dataCenterRegion' in kwargs:
+            data_center_region = kwargs['dataCenterRegion']
+        if 'eligibleToRenew' in kwargs:
+            eligible_to_renew = kwargs['eligibleToRenew']
+        if 'endUserAddresses' in kwargs:
+            end_user_addresses = kwargs['endUserAddresses']
+        if 'endUserContacts' in kwargs:
+            end_user_contacts = kwargs['endUserContacts']
+        if 'endUserCustomers' in kwargs:
+            end_user_customers = kwargs['endUserCustomers']
+        if 'fulfillmentSet' in kwargs:
+            fulfillment_set = kwargs['fulfillmentSet']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'isAllowance' in kwargs:
+            is_allowance = kwargs['isAllowance']
+        if 'isCapToPriceList' in kwargs:
+            is_cap_to_price_list = kwargs['isCapToPriceList']
+        if 'isCreditEnabled' in kwargs:
+            is_credit_enabled = kwargs['isCreditEnabled']
+        if 'isHavingUsage' in kwargs:
+            is_having_usage = kwargs['isHavingUsage']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'isPayg' in kwargs:
+            is_payg = kwargs['isPayg']
+        if 'isSingleRateCard' in kwargs:
+            is_single_rate_card = kwargs['isSingleRateCard']
+        if 'isVariableCommitment' in kwargs:
+            is_variable_commitment = kwargs['isVariableCommitment']
+        if 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if 'majorSet' in kwargs:
+            major_set = kwargs['majorSet']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'operationType' in kwargs:
+            operation_type = kwargs['operationType']
+        if 'orderHeaderId' in kwargs:
+            order_header_id = kwargs['orderHeaderId']
+        if 'orderLineId' in kwargs:
+            order_line_id = kwargs['orderLineId']
+        if 'orderLineNumber' in kwargs:
+            order_line_number = kwargs['orderLineNumber']
+        if 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if 'orderType' in kwargs:
+            order_type = kwargs['orderType']
+        if 'originalPromoAmount' in kwargs:
+            original_promo_amount = kwargs['originalPromoAmount']
+        if 'overageBillTo' in kwargs:
+            overage_bill_to = kwargs['overageBillTo']
+        if 'overageDiscountPercentage' in kwargs:
+            overage_discount_percentage = kwargs['overageDiscountPercentage']
+        if 'overagePolicy' in kwargs:
+            overage_policy = kwargs['overagePolicy']
+        if 'partnerCreditAmount' in kwargs:
+            partner_credit_amount = kwargs['partnerCreditAmount']
+        if 'partnerTransactionType' in kwargs:
+            partner_transaction_type = kwargs['partnerTransactionType']
+        if 'paygPolicy' in kwargs:
+            payg_policy = kwargs['paygPolicy']
+        if 'paymentMethod' in kwargs:
+            payment_method = kwargs['paymentMethod']
+        if 'paymentNumber' in kwargs:
+            payment_number = kwargs['paymentNumber']
+        if 'paymentTerms' in kwargs:
+            payment_terms = kwargs['paymentTerms']
+        if 'pricePeriod' in kwargs:
+            price_period = kwargs['pricePeriod']
+        if 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if 'programType' in kwargs:
+            program_type = kwargs['programType']
+        if 'promoOrderLineId' in kwargs:
+            promo_order_line_id = kwargs['promoOrderLineId']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+        if 'promotionPricingType' in kwargs:
+            promotion_pricing_type = kwargs['promotionPricingType']
+        if 'provisioningSource' in kwargs:
+            provisioning_source = kwargs['provisioningSource']
+        if 'rateCardDiscountPercentage' in kwargs:
+            rate_card_discount_percentage = kwargs['rateCardDiscountPercentage']
+        if 'rateCards' in kwargs:
+            rate_cards = kwargs['rateCards']
+        if 'ratecardType' in kwargs:
+            ratecard_type = kwargs['ratecardType']
+        if 'renewalOptyId' in kwargs:
+            renewal_opty_id = kwargs['renewalOptyId']
+        if 'renewalOptyNumber' in kwargs:
+            renewal_opty_number = kwargs['renewalOptyNumber']
+        if 'renewalOptyType' in kwargs:
+            renewal_opty_type = kwargs['renewalOptyType']
+        if 'renewedSubscribedServiceId' in kwargs:
+            renewed_subscribed_service_id = kwargs['renewedSubscribedServiceId']
+        if 'resellerAddresses' in kwargs:
+            reseller_addresses = kwargs['resellerAddresses']
+        if 'resellerContacts' in kwargs:
+            reseller_contacts = kwargs['resellerContacts']
+        if 'resellerCustomers' in kwargs:
+            reseller_customers = kwargs['resellerCustomers']
+        if 'revenueLineId' in kwargs:
+            revenue_line_id = kwargs['revenueLineId']
+        if 'revenueLineNumber' in kwargs:
+            revenue_line_number = kwargs['revenueLineNumber']
+        if 'revisedArrInLc' in kwargs:
+            revised_arr_in_lc = kwargs['revisedArrInLc']
+        if 'revisedArrInSc' in kwargs:
+            revised_arr_in_sc = kwargs['revisedArrInSc']
+        if 'salesAccountPartyId' in kwargs:
+            sales_account_party_id = kwargs['salesAccountPartyId']
+        if 'salesChannel' in kwargs:
+            sales_channel = kwargs['salesChannel']
+        if 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if 'serviceToAddresses' in kwargs:
+            service_to_addresses = kwargs['serviceToAddresses']
+        if 'serviceToContacts' in kwargs:
+            service_to_contacts = kwargs['serviceToContacts']
+        if 'serviceToCustomers' in kwargs:
+            service_to_customers = kwargs['serviceToCustomers']
+        if 'soldToContacts' in kwargs:
+            sold_to_contacts = kwargs['soldToContacts']
+        if 'soldToCustomers' in kwargs:
+            sold_to_customers = kwargs['soldToCustomers']
+        if 'startDateType' in kwargs:
+            start_date_type = kwargs['startDateType']
+        if 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if 'subscriptionSource' in kwargs:
+            subscription_source = kwargs['subscriptionSource']
+        if 'systemArrInLc' in kwargs:
+            system_arr_in_lc = kwargs['systemArrInLc']
+        if 'systemArrInSc' in kwargs:
+            system_arr_in_sc = kwargs['systemArrInSc']
+        if 'systemAtrArrInLc' in kwargs:
+            system_atr_arr_in_lc = kwargs['systemAtrArrInLc']
+        if 'systemAtrArrInSc' in kwargs:
+            system_atr_arr_in_sc = kwargs['systemAtrArrInSc']
+        if 'termValue' in kwargs:
+            term_value = kwargs['termValue']
+        if 'termValueUom' in kwargs:
+            term_value_uom = kwargs['termValueUom']
+        if 'timeAgreementEnd' in kwargs:
+            time_agreement_end = kwargs['timeAgreementEnd']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeCustomerConfig' in kwargs:
+            time_customer_config = kwargs['timeCustomerConfig']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeMajorsetEnd' in kwargs:
+            time_majorset_end = kwargs['timeMajorsetEnd']
+        if 'timeMajorsetStart' in kwargs:
+            time_majorset_start = kwargs['timeMajorsetStart']
+        if 'timePaymentExpiry' in kwargs:
+            time_payment_expiry = kwargs['timePaymentExpiry']
+        if 'timeProvisioned' in kwargs:
+            time_provisioned = kwargs['timeProvisioned']
+        if 'timeServiceConfigurationEmailSent' in kwargs:
+            time_service_configuration_email_sent = kwargs['timeServiceConfigurationEmailSent']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'timeWelcomeEmailSent' in kwargs:
+            time_welcome_email_sent = kwargs['timeWelcomeEmailSent']
+        if 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+        if 'transactionExtensionId' in kwargs:
+            transaction_extension_id = kwargs['transactionExtensionId']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+        if 'usedAmount' in kwargs:
+            used_amount = kwargs['usedAmount']
+
         _setter("admin_email", admin_email)
         _setter("agreement_id", agreement_id)
         _setter("agreement_name", agreement_name)
@@ -8392,7 +9352,21 @@ class GetSubscribedServicesSubscribedServiceBillToAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -8515,7 +9489,13 @@ class GetSubscribedServicesSubscribedServiceBillToAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -8624,7 +9604,19 @@ class GetSubscribedServicesSubscribedServiceBillToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -8746,7 +9738,25 @@ class GetSubscribedServicesSubscribedServiceBillToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -8865,7 +9875,19 @@ class GetSubscribedServicesSubscribedServiceCommitmentServiceResult(dict):
              quantity: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("line_net_amount", line_net_amount)
@@ -8969,7 +9991,21 @@ class GetSubscribedServicesSubscribedServiceEndUserAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -9092,7 +10128,13 @@ class GetSubscribedServicesSubscribedServiceEndUserAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -9201,7 +10243,19 @@ class GetSubscribedServicesSubscribedServiceEndUserContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -9323,7 +10377,25 @@ class GetSubscribedServicesSubscribedServiceEndUserCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -9450,7 +10522,19 @@ class GetSubscribedServicesSubscribedServicePaymentTermResult(dict):
              time_updated: str,
              updated_by: str,
              value: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'updatedBy' in kwargs:
+            updated_by = kwargs['updatedBy']
+
         _setter("created_by", created_by)
         _setter("description", description)
         _setter("is_active", is_active)
@@ -9560,7 +10644,19 @@ class GetSubscribedServicesSubscribedServiceProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -9668,7 +10764,25 @@ class GetSubscribedServicesSubscribedServiceRateCardResult(dict):
              subscribed_service_id: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'discretionaryDiscountPercentage' in kwargs:
+            discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
+        if 'isTier' in kwargs:
+            is_tier = kwargs['isTier']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'rateCardTiers' in kwargs:
+            rate_card_tiers = kwargs['rateCardTiers']
+        if 'subscribedServiceId' in kwargs:
+            subscribed_service_id = kwargs['subscribedServiceId']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("discretionary_discount_percentage", discretionary_discount_percentage)
         _setter("is_tier", is_tier)
@@ -9784,7 +10898,13 @@ class GetSubscribedServicesSubscribedServiceRateCardCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -9849,7 +10969,19 @@ class GetSubscribedServicesSubscribedServiceRateCardProductResult(dict):
              product_category: str,
              ucm_rate_card_part_type: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("billing_category", billing_category)
         _setter("name", name)
         _setter("part_number", part_number)
@@ -9929,7 +11061,15 @@ class GetSubscribedServicesSubscribedServiceRateCardRateCardTierResult(dict):
              net_unit_price: str,
              overage_price: str,
              up_to_quantity: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if 'upToQuantity' in kwargs:
+            up_to_quantity = kwargs['upToQuantity']
+
         _setter("net_unit_price", net_unit_price)
         _setter("overage_price", overage_price)
         _setter("up_to_quantity", up_to_quantity)
@@ -10006,7 +11146,21 @@ class GetSubscribedServicesSubscribedServiceResellerAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -10129,7 +11283,13 @@ class GetSubscribedServicesSubscribedServiceResellerAddressLocationResult(dict):
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -10238,7 +11398,19 @@ class GetSubscribedServicesSubscribedServiceResellerContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -10360,7 +11532,25 @@ class GetSubscribedServicesSubscribedServiceResellerCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -10491,7 +11681,21 @@ class GetSubscribedServicesSubscribedServiceServiceToAddressResult(dict):
              service2site_use_id: str,
              tca_cust_acct_site_id: str,
              tca_party_site_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'billSiteUseId' in kwargs:
+            bill_site_use_id = kwargs['billSiteUseId']
+        if 'isBillTo' in kwargs:
+            is_bill_to = kwargs['isBillTo']
+        if 'isShipTo' in kwargs:
+            is_ship_to = kwargs['isShipTo']
+        if 'service2siteUseId' in kwargs:
+            service2site_use_id = kwargs['service2siteUseId']
+        if 'tcaCustAcctSiteId' in kwargs:
+            tca_cust_acct_site_id = kwargs['tcaCustAcctSiteId']
+        if 'tcaPartySiteNumber' in kwargs:
+            tca_party_site_number = kwargs['tcaPartySiteNumber']
+
         _setter("bill_site_use_id", bill_site_use_id)
         _setter("is_bill_to", is_bill_to)
         _setter("is_ship_to", is_ship_to)
@@ -10614,7 +11818,13 @@ class GetSubscribedServicesSubscribedServiceServiceToAddressLocationResult(dict)
              postal_code: str,
              region: str,
              tca_location_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'postalCode' in kwargs:
+            postal_code = kwargs['postalCode']
+        if 'tcaLocationId' in kwargs:
+            tca_location_id = kwargs['tcaLocationId']
+
         _setter("address1", address1)
         _setter("address2", address2)
         _setter("city", city)
@@ -10723,7 +11933,19 @@ class GetSubscribedServicesSubscribedServiceServiceToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -10845,7 +12067,25 @@ class GetSubscribedServicesSubscribedServiceServiceToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -10972,7 +12212,19 @@ class GetSubscribedServicesSubscribedServiceSoldToContactResult(dict):
              tca_cust_accnt_site_id: str,
              tca_party_id: str,
              username: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'firstName' in kwargs:
+            first_name = kwargs['firstName']
+        if 'lastName' in kwargs:
+            last_name = kwargs['lastName']
+        if 'tcaContactId' in kwargs:
+            tca_contact_id = kwargs['tcaContactId']
+        if 'tcaCustAccntSiteId' in kwargs:
+            tca_cust_accnt_site_id = kwargs['tcaCustAccntSiteId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+
         _setter("email", email)
         _setter("first_name", first_name)
         _setter("last_name", last_name)
@@ -11094,7 +12346,25 @@ class GetSubscribedServicesSubscribedServiceSoldToCustomerResult(dict):
              tca_customer_account_id: str,
              tca_party_id: str,
              tca_party_number: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'customerChainType' in kwargs:
+            customer_chain_type = kwargs['customerChainType']
+        if 'isChainCustomer' in kwargs:
+            is_chain_customer = kwargs['isChainCustomer']
+        if 'isPublicSector' in kwargs:
+            is_public_sector = kwargs['isPublicSector']
+        if 'namePhonetic' in kwargs:
+            name_phonetic = kwargs['namePhonetic']
+        if 'tcaCustAccountNumber' in kwargs:
+            tca_cust_account_number = kwargs['tcaCustAccountNumber']
+        if 'tcaCustomerAccountId' in kwargs:
+            tca_customer_account_id = kwargs['tcaCustomerAccountId']
+        if 'tcaPartyId' in kwargs:
+            tca_party_id = kwargs['tcaPartyId']
+        if 'tcaPartyNumber' in kwargs:
+            tca_party_number = kwargs['tcaPartyNumber']
+
         _setter("customer_chain_type", customer_chain_type)
         _setter("is_chain_customer", is_chain_customer)
         _setter("is_public_sector", is_public_sector)
@@ -11199,7 +12469,9 @@ class GetSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -11267,7 +12539,21 @@ class GetSubscriptionsSubscriptionResult(dict):
              time_end: str,
              time_hold_release_eta: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'holdReason' in kwargs:
+            hold_reason = kwargs['holdReason']
+        if 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if 'subscribedServices' in kwargs:
+            subscribed_services = kwargs['subscribedServices']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeHoldReleaseEta' in kwargs:
+            time_hold_release_eta = kwargs['timeHoldReleaseEta']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("currencies", currencies)
         _setter("hold_reason", hold_reason)
         _setter("service_name", service_name)
@@ -11365,7 +12651,13 @@ class GetSubscriptionsSubscriptionCurrencyResult(dict):
              iso_code: str,
              name: str,
              std_precision: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+
         _setter("iso_code", iso_code)
         _setter("name", name)
         _setter("std_precision", std_precision)
@@ -11506,7 +12798,49 @@ class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
              time_start: str,
              total_value: str,
              used_amount: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'bookingOptyNumber' in kwargs:
+            booking_opty_number = kwargs['bookingOptyNumber']
+        if 'commitmentServices' in kwargs:
+            commitment_services = kwargs['commitmentServices']
+        if 'dataCenterRegion' in kwargs:
+            data_center_region = kwargs['dataCenterRegion']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if 'operationType' in kwargs:
+            operation_type = kwargs['operationType']
+        if 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if 'originalPromoAmount' in kwargs:
+            original_promo_amount = kwargs['originalPromoAmount']
+        if 'partnerTransactionType' in kwargs:
+            partner_transaction_type = kwargs['partnerTransactionType']
+        if 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if 'programType' in kwargs:
+            program_type = kwargs['programType']
+        if 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+        if 'termValue' in kwargs:
+            term_value = kwargs['termValue']
+        if 'termValueUom' in kwargs:
+            term_value_uom = kwargs['termValueUom']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+        if 'usedAmount' in kwargs:
+            used_amount = kwargs['usedAmount']
+
         _setter("available_amount", available_amount)
         _setter("booking_opty_number", booking_opty_number)
         _setter("commitment_services", commitment_services)
@@ -11769,7 +13103,19 @@ class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict)
              quantity: str,
              time_end: str,
              time_start: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+
         _setter("available_amount", available_amount)
         _setter("funded_allocation_value", funded_allocation_value)
         _setter("line_net_amount", line_net_amount)
@@ -11853,7 +13199,15 @@ class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
              part_number: str,
              provisioning_group: str,
              unit_of_measure: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+
         _setter("name", name)
         _setter("part_number", part_number)
         _setter("provisioning_group", provisioning_group)

@@ -40,7 +40,9 @@ class GetNotificationTopicsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -124,7 +126,23 @@ class GetNotificationTopicsNotificationTopicResult(dict):
              state: str,
              time_created: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'apiEndpoint' in kwargs:
+            api_endpoint = kwargs['apiEndpoint']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'shortTopicId' in kwargs:
+            short_topic_id = kwargs['shortTopicId']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("api_endpoint", api_endpoint)
         _setter("compartment_id", compartment_id)
         _setter("defined_tags", defined_tags)
@@ -253,7 +271,9 @@ class GetSubscriptionsFilterResult(dict):
              name: str,
              values: Sequence[str],
              regex: Optional[bool] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         _setter("name", name)
         _setter("values", values)
         if regex is not None:
@@ -329,7 +349,21 @@ class GetSubscriptionsSubscriptionResult(dict):
              protocol: str,
              state: str,
              topic_id: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'createdTime' in kwargs:
+            created_time = kwargs['createdTime']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'deliveryPolicies' in kwargs:
+            delivery_policies = kwargs['deliveryPolicies']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
         _setter("compartment_id", compartment_id)
         _setter("created_time", created_time)
         _setter("defined_tags", defined_tags)
@@ -440,7 +474,11 @@ class GetSubscriptionsSubscriptionDeliveryPolicyResult(dict):
     def _configure(
              _setter: Callable[[Any, Any], None],
              backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult'],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'backoffRetryPolicies' in kwargs:
+            backoff_retry_policies = kwargs['backoffRetryPolicies']
+
         _setter("backoff_retry_policies", backoff_retry_policies)
 
     @property
@@ -468,7 +506,13 @@ class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(dict):
              _setter: Callable[[Any, Any], None],
              max_retry_duration: int,
              policy_type: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'maxRetryDuration' in kwargs:
+            max_retry_duration = kwargs['maxRetryDuration']
+        if 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+
         _setter("max_retry_duration", max_retry_duration)
         _setter("policy_type", policy_type)
 

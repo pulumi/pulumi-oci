@@ -39,7 +39,15 @@ class ExternalExadataInfrastructureExadataManagementArgs:
              enable_exadata: pulumi.Input[bool],
              external_exadata_infrastructure_id: pulumi.Input[str],
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableExadata' in kwargs:
+            enable_exadata = kwargs['enableExadata']
+        if 'externalExadataInfrastructureId' in kwargs:
+            external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         _setter("enable_exadata", enable_exadata)
         _setter("external_exadata_infrastructure_id", external_exadata_infrastructure_id)
         if license_model is not None:
@@ -114,7 +122,15 @@ class _ExternalExadataInfrastructureExadataManagementState:
              enable_exadata: Optional[pulumi.Input[bool]] = None,
              external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
              license_model: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'enableExadata' in kwargs:
+            enable_exadata = kwargs['enableExadata']
+        if 'externalExadataInfrastructureId' in kwargs:
+            external_exadata_infrastructure_id = kwargs['externalExadataInfrastructureId']
+        if 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if enable_exadata is not None:
             _setter("enable_exadata", enable_exadata)
         if external_exadata_infrastructure_id is not None:

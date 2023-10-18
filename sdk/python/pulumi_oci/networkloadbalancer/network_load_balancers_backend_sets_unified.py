@@ -61,7 +61,17 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
              ip_version: Optional[pulumi.Input[str]] = None,
              is_preserve_source: Optional[pulumi.Input[bool]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPreserveSource' in kwargs:
+            is_preserve_source = kwargs['isPreserveSource']
+
         _setter("health_checker", health_checker)
         _setter("network_load_balancer_id", network_load_balancer_id)
         _setter("policy", policy)
@@ -215,7 +225,17 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
              name: Optional[pulumi.Input[str]] = None,
              network_load_balancer_id: Optional[pulumi.Input[str]] = None,
              policy: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if 'isPreserveSource' in kwargs:
+            is_preserve_source = kwargs['isPreserveSource']
+        if 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+
         if backends is not None:
             _setter("backends", backends)
         if health_checker is not None:

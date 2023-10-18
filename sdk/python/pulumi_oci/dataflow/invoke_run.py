@@ -128,7 +128,47 @@ class InvokeRunArgs:
              spark_version: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         _setter("compartment_id", compartment_id)
         if application_id is not None:
             _setter("application_id", application_id)
@@ -672,7 +712,81 @@ class _InvokeRunState:
              total_ocpu: Optional[pulumi.Input[int]] = None,
              type: Optional[pulumi.Input[str]] = None,
              warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if 'className' in kwargs:
+            class_name = kwargs['className']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if 'dataWrittenInBytes' in kwargs:
+            data_written_in_bytes = kwargs['dataWrittenInBytes']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if 'opcRequestId' in kwargs:
+            opc_request_id = kwargs['opcRequestId']
+        if 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if 'privateEndpointDnsZones' in kwargs:
+            private_endpoint_dns_zones = kwargs['privateEndpointDnsZones']
+        if 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if 'privateEndpointMaxHostCount' in kwargs:
+            private_endpoint_max_host_count = kwargs['privateEndpointMaxHostCount']
+        if 'privateEndpointNsgIds' in kwargs:
+            private_endpoint_nsg_ids = kwargs['privateEndpointNsgIds']
+        if 'privateEndpointSubnetId' in kwargs:
+            private_endpoint_subnet_id = kwargs['privateEndpointSubnetId']
+        if 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'totalOcpu' in kwargs:
+            total_ocpu = kwargs['totalOcpu']
+        if 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         if application_id is not None:
             _setter("application_id", application_id)
         if application_log_config is not None:

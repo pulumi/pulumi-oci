@@ -61,7 +61,25 @@ class ExternalDatabaseConnectorArgs:
              connector_type: Optional[pulumi.Input[str]] = None,
              defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'connectorAgentId' in kwargs:
+            connector_agent_id = kwargs['connectorAgentId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDatabaseId' in kwargs:
+            external_database_id = kwargs['externalDatabaseId']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
         _setter("connection_credentials", connection_credentials)
         _setter("connection_string", connection_string)
         _setter("connector_agent_id", connector_agent_id)
@@ -247,7 +265,35 @@ class _ExternalDatabaseConnectorState:
              state: Optional[pulumi.Input[str]] = None,
              time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
              time_created: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'connectionCredentials' in kwargs:
+            connection_credentials = kwargs['connectionCredentials']
+        if 'connectionStatus' in kwargs:
+            connection_status = kwargs['connectionStatus']
+        if 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if 'connectorAgentId' in kwargs:
+            connector_agent_id = kwargs['connectorAgentId']
+        if 'connectorType' in kwargs:
+            connector_type = kwargs['connectorType']
+        if 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'externalDatabaseId' in kwargs:
+            external_database_id = kwargs['externalDatabaseId']
+        if 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'timeConnectionStatusLastUpdated' in kwargs:
+            time_connection_status_last_updated = kwargs['timeConnectionStatusLastUpdated']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if connection_credentials is not None:

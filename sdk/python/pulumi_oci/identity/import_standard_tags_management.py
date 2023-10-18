@@ -35,7 +35,13 @@ class ImportStandardTagsManagementArgs:
              _setter: Callable[[Any, Any], None],
              compartment_id: pulumi.Input[str],
              standard_tag_namespace_name: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'standardTagNamespaceName' in kwargs:
+            standard_tag_namespace_name = kwargs['standardTagNamespaceName']
+
         _setter("compartment_id", compartment_id)
         _setter("standard_tag_namespace_name", standard_tag_namespace_name)
 
@@ -95,7 +101,15 @@ class _ImportStandardTagsManagementState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
              work_request_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'standardTagNamespaceName' in kwargs:
+            standard_tag_namespace_name = kwargs['standardTagNamespaceName']
+        if 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if standard_tag_namespace_name is not None:

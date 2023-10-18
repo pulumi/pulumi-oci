@@ -53,7 +53,21 @@ class TargetAssetArgs:
              user_spec: pulumi.Input['TargetAssetUserSpecArgs'],
              block_volumes_performance: Optional[pulumi.Input[int]] = None,
              ms_license: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'isExcludedFromExecution' in kwargs:
+            is_excluded_from_execution = kwargs['isExcludedFromExecution']
+        if 'migrationPlanId' in kwargs:
+            migration_plan_id = kwargs['migrationPlanId']
+        if 'preferredShapeType' in kwargs:
+            preferred_shape_type = kwargs['preferredShapeType']
+        if 'userSpec' in kwargs:
+            user_spec = kwargs['userSpec']
+        if 'blockVolumesPerformance' in kwargs:
+            block_volumes_performance = kwargs['blockVolumesPerformance']
+        if 'msLicense' in kwargs:
+            ms_license = kwargs['msLicense']
+
         _setter("is_excluded_from_execution", is_excluded_from_execution)
         _setter("migration_plan_id", migration_plan_id)
         _setter("preferred_shape_type", preferred_shape_type)
@@ -241,7 +255,45 @@ class _TargetAssetState:
              time_updated: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
              user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'blockVolumesPerformance' in kwargs:
+            block_volumes_performance = kwargs['blockVolumesPerformance']
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'compatibilityMessages' in kwargs:
+            compatibility_messages = kwargs['compatibilityMessages']
+        if 'createdResourceId' in kwargs:
+            created_resource_id = kwargs['createdResourceId']
+        if 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if 'estimatedCosts' in kwargs:
+            estimated_costs = kwargs['estimatedCosts']
+        if 'isExcludedFromExecution' in kwargs:
+            is_excluded_from_execution = kwargs['isExcludedFromExecution']
+        if 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if 'migrationAssets' in kwargs:
+            migration_assets = kwargs['migrationAssets']
+        if 'migrationPlanId' in kwargs:
+            migration_plan_id = kwargs['migrationPlanId']
+        if 'msLicense' in kwargs:
+            ms_license = kwargs['msLicense']
+        if 'preferredShapeType' in kwargs:
+            preferred_shape_type = kwargs['preferredShapeType']
+        if 'recommendedSpecs' in kwargs:
+            recommended_specs = kwargs['recommendedSpecs']
+        if 'testSpecs' in kwargs:
+            test_specs = kwargs['testSpecs']
+        if 'timeAssessed' in kwargs:
+            time_assessed = kwargs['timeAssessed']
+        if 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if 'userSpec' in kwargs:
+            user_spec = kwargs['userSpec']
+
         if block_volumes_performance is not None:
             _setter("block_volumes_performance", block_volumes_performance)
         if compartment_id is not None:

@@ -41,7 +41,15 @@ class CustomTableArgs:
              compartment_id: pulumi.Input[str],
              saved_custom_table: pulumi.Input['CustomTableSavedCustomTableArgs'],
              saved_report_id: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'savedCustomTable' in kwargs:
+            saved_custom_table = kwargs['savedCustomTable']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+
         _setter("compartment_id", compartment_id)
         _setter("saved_custom_table", saved_custom_table)
         _setter("saved_report_id", saved_report_id)
@@ -115,7 +123,15 @@ class _CustomTableState:
              compartment_id: Optional[pulumi.Input[str]] = None,
              saved_custom_table: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']] = None,
              saved_report_id: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if 'savedCustomTable' in kwargs:
+            saved_custom_table = kwargs['savedCustomTable']
+        if 'savedReportId' in kwargs:
+            saved_report_id = kwargs['savedReportId']
+
         if compartment_id is not None:
             _setter("compartment_id", compartment_id)
         if saved_custom_table is not None:

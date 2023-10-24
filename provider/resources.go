@@ -37,18 +37,18 @@ const (
 	mainPkg = "oci"
 	// modules:
 	mainMod                         = "index"                        // the oci module
+	admMod                          = "Adm"                          // ADM
 	aiAnomalyDetectionMod           = "AiAnomalyDetection"           // AI Anomaly Detection
 	aiDocumentMod                   = "AiDocument"                   // AI Document
-	aiVisionMod                     = "AiVision"                     // AI Vision
 	aiLanguageMod                   = "AiLanguage"                   // AI Language
+	aiVisionMod                     = "AiVision"                     // AI Vision
 	analyticsMod                    = "Analytics"                    // Analytics
-	apiGatewayMod                   = "ApiGateway"                   // API Gateway
-	admMod                          = "Adm"                          // ADM
 	announcementsServiceMod         = "AnnouncementsService"         // Announcements Service
-	apmMod                          = "Apm"                          // APM
-	apmTracesMod                    = "ApmTraces"                    // APM Traces
+	apiGatewayMod                   = "ApiGateway"                   // API Gateway
 	apmConfigMod                    = "ApmConfig"                    // APM Config
+	apmMod                          = "Apm"                          // APM
 	apmSyntheticsMod                = "ApmSynthetics"                // APM Synthetics
+	apmTracesMod                    = "ApmTraces"                    // APM Traces
 	appMgmtControlMod               = "AppMgmtControl"               // AppMgmt Control
 	artifactsMod                    = "Artifacts"                    // Artifacts
 	auditMod                        = "Audit"                        // Audit
@@ -66,21 +66,21 @@ const (
 	containerEngineMod              = "ContainerEngine"              // Container Engine
 	containerInstancesMod           = "ContainerInstances"           // Container Instances
 	coreMod                         = "Core"                         // Core
-	dataLabellingServiceMod         = "DataLabellingService"         // Data Labelling Service
-	dataSafeMod                     = "DataSafe"                     // Data Safe
-	databaseMod                     = "Database"                     // Database
-	databaseManagementMod           = "DatabaseManagement"           // Database Management
-	databaseMigrationMod            = "DatabaseMigration"            // Database Migration
-	databaseToolsMod                = "DatabaseTools"                // Database Tools
 	dataCatalogMod                  = "DataCatalog"                  // Data Catalog
 	dataFlowMod                     = "DataFlow"                     // Data Flow
 	dataIntegrationMod              = "DataIntegration"              // Data Integration
+	dataLabellingServiceMod         = "DataLabellingService"         // Data Labelling Service
+	dataSafeMod                     = "DataSafe"                     // Data Safe
 	dataScienceMod                  = "DataScience"                  // Data Science
+	databaseManagementMod           = "DatabaseManagement"           // Database Management
+	databaseMigrationMod            = "DatabaseMigration"            // Database Migration
+	databaseMod                     = "Database"                     // Database
+	databaseToolsMod                = "DatabaseTools"                // Database Tools
 	devopsMod                       = "DevOps"                       // DevOps
 	disasterRecoveryMod             = "DisasterRecovery"             // Disaster Recovery
 	dnsMod                          = "Dns"                          // DNS
-	emailMod                        = "Email"                        // Email
 	emWarehouseMod                  = "EmWarehouse"                  // EM Warehouse
+	emailMod                        = "Email"                        // Email
 	eventsMod                       = "Events"                       // Events
 	fileStorageMod                  = "FileStorage"                  // File Storage
 	functionsMod                    = "Functions"                    // Functions
@@ -88,8 +88,8 @@ const (
 	genericArtifactsContentMod      = "GenericArtifactsContent"      // Generic Artifacts Content
 	goldenGateMod                   = "GoldenGate"                   // Golden Gate
 	healthChecksMod                 = "HealthChecks"                 // Health Checks
-	identityMod                     = "Identity"                     // Identity
 	identityDataPlaneMod            = "IdentityDataPlane"            // Identity Data Plane
+	identityMod                     = "Identity"                     // Identity
 	integrationMod                  = "Integration"                  // Integration
 	jmsMod                          = "Jms"                          // Jms
 	kmsMod                          = "Kms"                          // Kms
@@ -105,28 +105,29 @@ const (
 	meteringComputationMod          = "MeteringComputation"          // Metering Computation
 	monitoringMod                   = "Monitoring"                   // Monitoring
 	mysqlMod                        = "Mysql"                        // Mysql
-	networkLoadBalancerMod          = "NetworkLoadBalancer"          // Network Load Balancer
 	networkFirewallMod              = "NetworkFirewall"              // Network Firewall
+	networkLoadBalancerMod          = "NetworkLoadBalancer"          // Network Load Balancer
 	nosqlMod                        = "Nosql"                        // Nosql
 	objectStorageMod                = "ObjectStorage"                // Object Storage
 	oceMod                          = "Oce"                          // OCE
 	ocvpMod                         = "Ocvp"                         // OCVP
 	odaMod                          = "Oda"                          // Oda
-	osManagementMod                 = "OsManagement"                 // Os Management
-	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
-	onsMod                          = "Ons"                          // Ons
 	oneSubscriptionMod              = "OneSubsription"               // One Subscription
+	onsMod                          = "Ons"                          // Ons
 	opaMod                          = "Opa"                          // OPA (Oracle Policy Agent)
 	opensearchMod                   = "Opensearch"                   // Opensearch
 	operatorAccessControlMod        = "OperatorAccessControl"        // Operator Access Control
 	opsiMod                         = "Opsi"                         // Opsi
 	optimizerMod                    = "Optimizer"                    // Optimizer
+	osManagementMod                 = "OsManagement"                 // Os Management
+	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
 	osubBillingScheduleMod          = "OsubBillingSchedule"          // Osub Billing Schedule
 	osubOrganizationSubscriptionMod = "OsubOrganizationSubscription" // Osub Organization Subscription
 	osubSubscriptionMod             = "OsubSubscription"             // Osub Subscription
 	osubUsageMod                    = "OsubUsage"                    // Osub Usage
 	queueMod                        = "Queue"                        // Queue
 	recoveryMod                     = "RecoveryMod"                  // Recovery
+	redisMod                        = "Redis"                        // Redis
 	resourceManagerMod              = "ResourceManager"              // Resource Manager
 	schMod                          = "Sch"                          // Sch
 	secretsMod                      = "Secrets"                      // Secrets
@@ -149,18 +150,18 @@ const (
 // A mapping between the terraform prefix and the pulumi module name.
 // This mapping is used by x.TokensKnownModules to compute module names.
 var mappedMods = map[string]string{
+	"adm":                            admMod,
 	"ai_anomaly_detection":           aiAnomalyDetectionMod,
 	"ai_document":                    aiDocumentMod,
-	"ai_vision":                      aiVisionMod,
 	"ai_language":                    aiLanguageMod,
+	"ai_vision":                      aiVisionMod,
 	"analytics":                      analyticsMod,
-	"apigateway":                     apiGatewayMod,
-	"adm":                            admMod,
 	"announcements_service":          announcementsServiceMod,
+	"apigateway":                     apiGatewayMod,
 	"apm":                            apmMod,
-	"apm_traces":                     apmTracesMod,
 	"apm_config":                     apmConfigMod,
 	"apm_synthetics":                 apmSyntheticsMod,
+	"apm_traces":                     apmTracesMod,
 	"appmgmt_control":                appMgmtControlMod,
 	"artifacts":                      artifactsMod,
 	"audit":                          auditMod,
@@ -173,13 +174,13 @@ var mappedMods = map[string]string{
 	"cloud_bridge":                   cloudBridgeMod,
 	"cloud_guard":                    cloudGuardMod,
 	"cloud_migrations":               cloudMigrationsMod,
-	"computeinstanceagent":           computeInstanceAgent,
-	"containerengine":                containerEngineMod,
 	"compute_cloud":                  computeCloudMod,
+	"computeinstanceagent":           computeInstanceAgent,
 	"container_instances":            containerInstancesMod,
+	"containerengine":                containerEngineMod,
 	"core":                           coreMod,
-	"data_labelling_service":         dataLabellingServiceMod,
 	"data_labeling_service":          dataLabellingServiceMod,
+	"data_labelling_service":         dataLabellingServiceMod,
 	"data_safe":                      dataSafeMod,
 	"database":                       databaseMod,
 	"database_management":            databaseManagementMod,
@@ -192,8 +193,8 @@ var mappedMods = map[string]string{
 	"devops":                         devopsMod,
 	"disaster_recovery":              disasterRecoveryMod,
 	"dns":                            dnsMod,
-	"email":                          emailMod,
 	"em_warehouse":                   emWarehouseMod,
+	"email":                          emailMod,
 	"events":                         eventsMod,
 	"file_storage":                   fileStorageMod,
 	"functions":                      functionsMod,
@@ -218,28 +219,29 @@ var mappedMods = map[string]string{
 	"metering_computation":           meteringComputationMod,
 	"monitoring":                     monitoringMod,
 	"mysql":                          mysqlMod,
-	"network_load_balancer":          networkLoadBalancerMod,
 	"network_firewall":               networkFirewallMod,
+	"network_load_balancer":          networkLoadBalancerMod,
 	"nosql":                          nosqlMod,
 	"objectstorage":                  objectStorageMod,
 	"oce":                            oceMod,
 	"ocvp":                           ocvpMod,
 	"oda":                            odaMod,
-	"osmanagement":                   osManagementMod,
-	"osp_gateway":                    ospGatewayMod,
-	"ons":                            onsMod,
 	"onesubscription":                oneSubscriptionMod,
+	"ons":                            onsMod,
 	"opa":                            opaMod,
 	"opensearch":                     opensearchMod,
 	"operator_access_control":        operatorAccessControlMod,
 	"opsi":                           opsiMod,
 	"optimizer":                      optimizerMod,
+	"osmanagement":                   osManagementMod,
+	"osp_gateway":                    ospGatewayMod,
 	"osub_billing_schedule":          osubBillingScheduleMod,
 	"osub_organization_subscription": osubOrganizationSubscriptionMod,
 	"osub_subscription":              osubSubscriptionMod,
 	"osub_usage":                     osubUsageMod,
 	"queue":                          queueMod,
 	"recovery":                       recoveryMod,
+	"redis":                          redisMod,
 	"resourcemanager":                resourceManagerMod,
 	"sch":                            schMod,
 	"secrets":                        secretsMod,

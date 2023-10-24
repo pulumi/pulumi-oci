@@ -12,10 +12,12 @@ import com.pulumi.oci.DataScience.inputs.JobState;
 import com.pulumi.oci.DataScience.outputs.JobJobConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobInfrastructureConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobLogConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.JobJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -38,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -79,6 +82,16 @@ import javax.annotation.Nullable;
  *                 .enableLogging(var_.job_job_log_configuration_details_enable_logging())
  *                 .logGroupId(oci_logging_log_group.test_log_group().id())
  *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .jobStorageMountConfigurationDetailsLists(JobJobStorageMountConfigurationDetailsListArgs.builder()
+ *                 .destinationDirectoryName(var_.job_job_storage_mount_configuration_details_list_destination_directory_name())
+ *                 .storageType(var_.job_job_storage_mount_configuration_details_list_storage_type())
+ *                 .bucket(var_.job_job_storage_mount_configuration_details_list_bucket())
+ *                 .destinationPath(var_.job_job_storage_mount_configuration_details_list_destination_path())
+ *                 .exportId(oci_file_storage_export.test_export().id())
+ *                 .mountTargetId(oci_file_storage_mount_target.test_mount_target().id())
+ *                 .namespace(var_.job_job_storage_mount_configuration_details_list_namespace())
+ *                 .prefix(var_.job_job_storage_mount_configuration_details_list_prefix())
  *                 .build())
  *             .build());
  * 
@@ -302,6 +315,20 @@ public class Job extends com.pulumi.resources.CustomResource {
      */
     public Output<JobJobLogConfigurationDetails> jobLogConfigurationDetails() {
         return this.jobLogConfigurationDetails;
+    }
+    /**
+     * (Updatable) Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Export(name="jobStorageMountConfigurationDetailsLists", refs={List.class,JobJobStorageMountConfigurationDetailsList.class}, tree="[0,1]")
+    private Output<List<JobJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Output<List<JobJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists() {
+        return this.jobStorageMountConfigurationDetailsLists;
     }
     /**
      * The state of the job.

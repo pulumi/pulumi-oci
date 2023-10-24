@@ -4,44 +4,26 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyApplicationList;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionProfile;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRule;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyIpAddressList;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecret;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRule;
-import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlList;
-import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPolicyResult {
     /**
-     * @return Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * @return Count of number of Network Firewall attached to the Policy.
      * 
      */
-    private List<GetNetworkFirewallPolicyApplicationList> applicationLists;
+    private Integer attachedNetworkFirewallCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
      * 
      */
     private String compartmentId;
     /**
-     * @return Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-     * 
-     */
-    private List<GetNetworkFirewallPolicyDecryptionProfile> decryptionProfiles;
-    /**
-     * @return List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    private List<GetNetworkFirewallPolicyDecryptionRule> decryptionRules;
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
@@ -51,7 +33,7 @@ public final class GetNetworkFirewallPolicyResult {
      */
     private String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
@@ -61,31 +43,11 @@ public final class GetNetworkFirewallPolicyResult {
      */
     private String id;
     /**
-     * @return Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-     * 
-     */
-    private List<GetNetworkFirewallPolicyIpAddressList> ipAddressLists;
-    /**
-     * @return To determine if any Network Firewall is associated with this Network Firewall Policy.
-     * 
-     */
-    private Boolean isFirewallAttached;
-    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     private String lifecycleDetails;
-    /**
-     * @return Map defining secrets of the policy. The value of an entry is a &#34;mapped secret&#34; consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-     * 
-     */
-    private List<GetNetworkFirewallPolicyMappedSecret> mappedSecrets;
     private String networkFirewallPolicyId;
-    /**
-     * @return List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    private List<GetNetworkFirewallPolicySecurityRule> securityRules;
     /**
      * @return The current state of the Network Firewall Policy.
      * 
@@ -106,19 +68,14 @@ public final class GetNetworkFirewallPolicyResult {
      * 
      */
     private String timeUpdated;
-    /**
-     * @return Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-     * 
-     */
-    private List<GetNetworkFirewallPolicyUrlList> urlLists;
 
     private GetNetworkFirewallPolicyResult() {}
     /**
-     * @return Map defining application lists of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+     * @return Count of number of Network Firewall attached to the Policy.
      * 
      */
-    public List<GetNetworkFirewallPolicyApplicationList> applicationLists() {
-        return this.applicationLists;
+    public Integer attachedNetworkFirewallCount() {
+        return this.attachedNetworkFirewallCount;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
@@ -128,21 +85,7 @@ public final class GetNetworkFirewallPolicyResult {
         return this.compartmentId;
     }
     /**
-     * @return Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
-     * 
-     */
-    public List<GetNetworkFirewallPolicyDecryptionProfile> decryptionProfiles() {
-        return this.decryptionProfiles;
-    }
-    /**
-     * @return List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    public List<GetNetworkFirewallPolicyDecryptionRule> decryptionRules() {
-        return this.decryptionRules;
-    }
-    /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
@@ -156,7 +99,7 @@ public final class GetNetworkFirewallPolicyResult {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -170,42 +113,14 @@ public final class GetNetworkFirewallPolicyResult {
         return this.id;
     }
     /**
-     * @return Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
-     * 
-     */
-    public List<GetNetworkFirewallPolicyIpAddressList> ipAddressLists() {
-        return this.ipAddressLists;
-    }
-    /**
-     * @return To determine if any Network Firewall is associated with this Network Firewall Policy.
-     * 
-     */
-    public Boolean isFirewallAttached() {
-        return this.isFirewallAttached;
-    }
-    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    /**
-     * @return Map defining secrets of the policy. The value of an entry is a &#34;mapped secret&#34; consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
-     * 
-     */
-    public List<GetNetworkFirewallPolicyMappedSecret> mappedSecrets() {
-        return this.mappedSecrets;
-    }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
-    }
-    /**
-     * @return List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
-     * 
-     */
-    public List<GetNetworkFirewallPolicySecurityRule> securityRules() {
-        return this.securityRules;
     }
     /**
      * @return The current state of the Network Firewall Policy.
@@ -235,13 +150,6 @@ public final class GetNetworkFirewallPolicyResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
-    /**
-     * @return Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
-     * 
-     */
-    public List<GetNetworkFirewallPolicyUrlList> urlLists() {
-        return this.urlLists;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -252,77 +160,44 @@ public final class GetNetworkFirewallPolicyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkFirewallPolicyApplicationList> applicationLists;
+        private Integer attachedNetworkFirewallCount;
         private String compartmentId;
-        private List<GetNetworkFirewallPolicyDecryptionProfile> decryptionProfiles;
-        private List<GetNetworkFirewallPolicyDecryptionRule> decryptionRules;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
-        private List<GetNetworkFirewallPolicyIpAddressList> ipAddressLists;
-        private Boolean isFirewallAttached;
         private String lifecycleDetails;
-        private List<GetNetworkFirewallPolicyMappedSecret> mappedSecrets;
         private String networkFirewallPolicyId;
-        private List<GetNetworkFirewallPolicySecurityRule> securityRules;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-        private List<GetNetworkFirewallPolicyUrlList> urlLists;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.applicationLists = defaults.applicationLists;
+    	      this.attachedNetworkFirewallCount = defaults.attachedNetworkFirewallCount;
     	      this.compartmentId = defaults.compartmentId;
-    	      this.decryptionProfiles = defaults.decryptionProfiles;
-    	      this.decryptionRules = defaults.decryptionRules;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
-    	      this.ipAddressLists = defaults.ipAddressLists;
-    	      this.isFirewallAttached = defaults.isFirewallAttached;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
-    	      this.mappedSecrets = defaults.mappedSecrets;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
-    	      this.securityRules = defaults.securityRules;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
-    	      this.urlLists = defaults.urlLists;
         }
 
         @CustomType.Setter
-        public Builder applicationLists(List<GetNetworkFirewallPolicyApplicationList> applicationLists) {
-            this.applicationLists = Objects.requireNonNull(applicationLists);
+        public Builder attachedNetworkFirewallCount(Integer attachedNetworkFirewallCount) {
+            this.attachedNetworkFirewallCount = Objects.requireNonNull(attachedNetworkFirewallCount);
             return this;
-        }
-        public Builder applicationLists(GetNetworkFirewallPolicyApplicationList... applicationLists) {
-            return applicationLists(List.of(applicationLists));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
-        }
-        @CustomType.Setter
-        public Builder decryptionProfiles(List<GetNetworkFirewallPolicyDecryptionProfile> decryptionProfiles) {
-            this.decryptionProfiles = Objects.requireNonNull(decryptionProfiles);
-            return this;
-        }
-        public Builder decryptionProfiles(GetNetworkFirewallPolicyDecryptionProfile... decryptionProfiles) {
-            return decryptionProfiles(List.of(decryptionProfiles));
-        }
-        @CustomType.Setter
-        public Builder decryptionRules(List<GetNetworkFirewallPolicyDecryptionRule> decryptionRules) {
-            this.decryptionRules = Objects.requireNonNull(decryptionRules);
-            return this;
-        }
-        public Builder decryptionRules(GetNetworkFirewallPolicyDecryptionRule... decryptionRules) {
-            return decryptionRules(List.of(decryptionRules));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -345,43 +220,14 @@ public final class GetNetworkFirewallPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddressLists(List<GetNetworkFirewallPolicyIpAddressList> ipAddressLists) {
-            this.ipAddressLists = Objects.requireNonNull(ipAddressLists);
-            return this;
-        }
-        public Builder ipAddressLists(GetNetworkFirewallPolicyIpAddressList... ipAddressLists) {
-            return ipAddressLists(List.of(ipAddressLists));
-        }
-        @CustomType.Setter
-        public Builder isFirewallAttached(Boolean isFirewallAttached) {
-            this.isFirewallAttached = Objects.requireNonNull(isFirewallAttached);
-            return this;
-        }
-        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
         @CustomType.Setter
-        public Builder mappedSecrets(List<GetNetworkFirewallPolicyMappedSecret> mappedSecrets) {
-            this.mappedSecrets = Objects.requireNonNull(mappedSecrets);
-            return this;
-        }
-        public Builder mappedSecrets(GetNetworkFirewallPolicyMappedSecret... mappedSecrets) {
-            return mappedSecrets(List.of(mappedSecrets));
-        }
-        @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
             this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
             return this;
-        }
-        @CustomType.Setter
-        public Builder securityRules(List<GetNetworkFirewallPolicySecurityRule> securityRules) {
-            this.securityRules = Objects.requireNonNull(securityRules);
-            return this;
-        }
-        public Builder securityRules(GetNetworkFirewallPolicySecurityRule... securityRules) {
-            return securityRules(List.of(securityRules));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -403,35 +249,20 @@ public final class GetNetworkFirewallPolicyResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
-        @CustomType.Setter
-        public Builder urlLists(List<GetNetworkFirewallPolicyUrlList> urlLists) {
-            this.urlLists = Objects.requireNonNull(urlLists);
-            return this;
-        }
-        public Builder urlLists(GetNetworkFirewallPolicyUrlList... urlLists) {
-            return urlLists(List.of(urlLists));
-        }
         public GetNetworkFirewallPolicyResult build() {
             final var o = new GetNetworkFirewallPolicyResult();
-            o.applicationLists = applicationLists;
+            o.attachedNetworkFirewallCount = attachedNetworkFirewallCount;
             o.compartmentId = compartmentId;
-            o.decryptionProfiles = decryptionProfiles;
-            o.decryptionRules = decryptionRules;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
             o.id = id;
-            o.ipAddressLists = ipAddressLists;
-            o.isFirewallAttached = isFirewallAttached;
             o.lifecycleDetails = lifecycleDetails;
-            o.mappedSecrets = mappedSecrets;
             o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.securityRules = securityRules;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
-            o.urlLists = urlLists;
             return o;
         }
     }

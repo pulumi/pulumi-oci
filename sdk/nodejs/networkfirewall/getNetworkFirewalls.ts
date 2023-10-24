@@ -77,7 +77,7 @@ export interface GetNetworkFirewallsArgs {
  */
 export interface GetNetworkFirewallsResult {
     /**
-     * Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
+     * Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      */
     readonly availabilityDomain?: string;
     /**

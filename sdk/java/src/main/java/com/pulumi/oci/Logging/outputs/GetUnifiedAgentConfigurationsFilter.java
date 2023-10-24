@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetUnifiedAgentConfigurationsFilter {
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     private String name;
@@ -23,7 +23,7 @@ public final class GetUnifiedAgentConfigurationsFilter {
 
     private GetUnifiedAgentConfigurationsFilter() {}
     /**
-     * @return The name key to tag this grok pattern.
+     * @return The name key to tag this Grok pattern.
      * 
      */
     public String name() {

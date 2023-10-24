@@ -16,7 +16,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
      */
     private String fieldTimeKey;
     /**
-     * @return If true, keep time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     private Boolean isKeepTimeKey;
@@ -26,7 +26,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
      */
     private String timeFormat;
     /**
-     * @return Time type of JSON parser.
+     * @return JSON parser time type.
      * 
      */
     private String timeType;
@@ -40,7 +40,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
         return this.fieldTimeKey;
     }
     /**
-     * @return If true, keep time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     public Boolean isKeepTimeKey() {
@@ -54,7 +54,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
         return this.timeFormat;
     }
     /**
-     * @return Time type of JSON parser.
+     * @return JSON parser time type.
      * 
      */
     public String timeType() {

@@ -17,17 +17,9 @@ public final class GetNetworkFirewallPoliciesFilterArgs extends com.pulumi.resou
 
     public static final GetNetworkFirewallPoliciesFilterArgs Empty = new GetNetworkFirewallPoliciesFilterArgs();
 
-    /**
-     * Name for the Security rule, must be unique within the policy.
-     * 
-     */
     @Import(name="name", required=true)
     private Output<String> name;
 
-    /**
-     * @return Name for the Security rule, must be unique within the policy.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
@@ -72,23 +64,11 @@ public final class GetNetworkFirewallPoliciesFilterArgs extends com.pulumi.resou
             $ = new GetNetworkFirewallPoliciesFilterArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name Name for the Security rule, must be unique within the policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name Name for the Security rule, must be unique within the policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

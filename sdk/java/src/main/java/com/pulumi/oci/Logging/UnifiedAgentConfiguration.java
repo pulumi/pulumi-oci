@@ -34,6 +34,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Logging.UnifiedAgentConfigurationArgs;
  * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationArgs;
  * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs;
  * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationGroupAssociationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -57,6 +61,19 @@ import javax.annotation.Nullable;
  *                 .configurationType(var_.unified_agent_configuration_service_configuration_configuration_type())
  *                 .destination(UnifiedAgentConfigurationServiceConfigurationDestinationArgs.builder()
  *                     .logObjectId(oci_objectstorage_object.test_object().id())
+ *                     .operationalMetricsConfiguration(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs.builder()
+ *                         .destination(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs.builder()
+ *                             .compartmentId(var_.compartment_id())
+ *                             .build())
+ *                         .source(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs.builder()
+ *                             .type(var_.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type())
+ *                             .metrics(var_.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics())
+ *                             .recordInput(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs.builder()
+ *                                 .namespace(var_.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace())
+ *                                 .resourceGroup(var_.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group())
+ *                                 .build())
+ *                             .build())
+ *                         .build())
  *                     .build())
  *                 .sources(UnifiedAgentConfigurationServiceConfigurationSourceArgs.builder()
  *                     .sourceType(var_.unified_agent_configuration_service_configuration_sources_source_type())

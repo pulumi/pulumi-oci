@@ -26,11 +26,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string FieldTimeZone;
         /// <summary>
-        /// The name key to tag this grok pattern.
+        /// The name key to tag this Grok pattern.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The grok pattern.
+        /// The Grok pattern.
         /// </summary>
         public readonly string Pattern;
 

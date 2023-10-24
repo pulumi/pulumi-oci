@@ -13,19 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesFilter {
-    /**
-     * @return Name for the Security rule, must be unique within the policy.
-     * 
-     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetNetworkFirewallPoliciesFilter() {}
-    /**
-     * @return Name for the Security rule, must be unique within the policy.
-     * 
-     */
     public String name() {
         return this.name;
     }

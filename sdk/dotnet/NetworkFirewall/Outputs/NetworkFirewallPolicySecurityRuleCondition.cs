@@ -14,19 +14,23 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     public sealed class NetworkFirewallPolicySecurityRuleCondition
     {
         /// <summary>
-        /// (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+        /// (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
         /// </summary>
         public readonly ImmutableArray<string> Applications;
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic destination address.
         /// </summary>
-        public readonly ImmutableArray<string> Destinations;
+        public readonly ImmutableArray<string> DestinationAddresses;
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        /// (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
         /// </summary>
-        public readonly ImmutableArray<string> Sources;
+        public readonly ImmutableArray<string> Services;
         /// <summary>
-        /// (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+        /// (Updatable) An array of address list names to be evaluated against the traffic source address.
+        /// </summary>
+        public readonly ImmutableArray<string> SourceAddresses;
+        /// <summary>
+        /// (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
         /// </summary>
         public readonly ImmutableArray<string> Urls;
 
@@ -34,15 +38,18 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         private NetworkFirewallPolicySecurityRuleCondition(
             ImmutableArray<string> applications,
 
-            ImmutableArray<string> destinations,
+            ImmutableArray<string> destinationAddresses,
 
-            ImmutableArray<string> sources,
+            ImmutableArray<string> services,
+
+            ImmutableArray<string> sourceAddresses,
 
             ImmutableArray<string> urls)
         {
             Applications = applications;
-            Destinations = destinations;
-            Sources = sources;
+            DestinationAddresses = destinationAddresses;
+            Services = services;
+            SourceAddresses = sourceAddresses;
             Urls = urls;
         }
     }

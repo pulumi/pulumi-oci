@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string> ConfigurationType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Logging destination object.
+        /// (Updatable) Unified monitoring agent operational metrics destination object.
         /// </summary>
         [Input("destination", required: true)]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationGetArgs> Destination { get; set; } = null!;

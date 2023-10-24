@@ -15,10 +15,12 @@ __all__ = [
     'JobJobInfrastructureConfigurationDetails',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
     'JobJobLogConfigurationDetails',
+    'JobJobStorageMountConfigurationDetailsList',
     'JobRunJobConfigurationOverrideDetails',
     'JobRunJobInfrastructureConfigurationDetail',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail',
     'JobRunJobLogConfigurationOverrideDetails',
+    'JobRunJobStorageMountConfigurationDetailsList',
     'JobRunLogDetail',
     'ModelCustomMetadataList',
     'ModelDefinedMetadataList',
@@ -38,6 +40,7 @@ __all__ = [
     'NotebookSessionNotebookSessionRuntimeConfigDetails',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection',
+    'NotebookSessionNotebookSessionStorageMountConfigurationDetailsList',
     'PipelineConfigurationDetails',
     'PipelineInfrastructureConfigurationDetails',
     'PipelineInfrastructureConfigurationDetailsShapeConfigDetails',
@@ -60,10 +63,12 @@ __all__ = [
     'GetJobJobInfrastructureConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobJobLogConfigurationDetailResult',
+    'GetJobJobStorageMountConfigurationDetailsListResult',
     'GetJobRunJobConfigurationOverrideDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunJobLogConfigurationOverrideDetailResult',
+    'GetJobRunJobStorageMountConfigurationDetailsListResult',
     'GetJobRunLogDetailResult',
     'GetJobRunsFilterResult',
     'GetJobRunsJobRunResult',
@@ -71,6 +76,7 @@ __all__ = [
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunsJobRunJobLogConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult',
     'GetJobRunsJobRunLogDetailResult',
     'GetJobShapesFilterResult',
     'GetJobShapesJobShapeResult',
@@ -80,6 +86,7 @@ __all__ = [
     'GetJobsJobJobInfrastructureConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobsJobJobLogConfigurationDetailResult',
+    'GetJobsJobJobStorageMountConfigurationDetailsListResult',
     'GetModelCustomMetadataListResult',
     'GetModelDefinedMetadataListResult',
     'GetModelDeploymentCategoryLogDetailResult',
@@ -117,6 +124,7 @@ __all__ = [
     'GetNotebookSessionNotebookSessionRuntimeConfigDetailResult',
     'GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult',
     'GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult',
+    'GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult',
     'GetNotebookSessionShapesFilterResult',
     'GetNotebookSessionShapesNotebookSessionShapeResult',
     'GetNotebookSessionsFilterResult',
@@ -128,6 +136,7 @@ __all__ = [
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult',
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult',
     'GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult',
+    'GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult',
     'GetPipelineConfigurationDetailResult',
     'GetPipelineInfrastructureConfigurationDetailResult',
     'GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult',
@@ -557,6 +566,167 @@ class JobJobLogConfigurationDetails(dict):
 
 
 @pulumi.output_type
+class JobJobStorageMountConfigurationDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationDirectoryName":
+            suggest = "destination_directory_name"
+        elif key == "storageType":
+            suggest = "storage_type"
+        elif key == "destinationPath":
+            suggest = "destination_path"
+        elif key == "exportId":
+            suggest = "export_id"
+        elif key == "mountTargetId":
+            suggest = "mount_target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobStorageMountConfigurationDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_directory_name: str,
+                 storage_type: str,
+                 bucket: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None):
+        """
+        :param str destination_directory_name: (Updatable) The local directory name to be mounted
+        :param str storage_type: (Updatable) The type of storage.
+        :param str bucket: (Updatable) The object storage bucket
+        :param str destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param str export_id: (Updatable) OCID of the export
+        :param str mount_target_id: (Updatable) OCID of the mount target
+        :param str namespace: (Updatable) The object storage namespace
+        :param str prefix: (Updatable) Prefix in the bucket to mount
+        """
+        JobJobStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: str,
+             storage_type: str,
+             bucket: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        (Updatable) The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[str]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
 class JobRunJobConfigurationOverrideDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -943,6 +1113,169 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class JobRunJobStorageMountConfigurationDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationDirectoryName":
+            suggest = "destination_directory_name"
+        elif key == "destinationPath":
+            suggest = "destination_path"
+        elif key == "exportId":
+            suggest = "export_id"
+        elif key == "mountTargetId":
+            suggest = "mount_target_id"
+        elif key == "storageType":
+            suggest = "storage_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobStorageMountConfigurationDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        JobRunJobStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_directory_name is not None:
+            _setter("destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+        if storage_type is not None:
+            _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> Optional[str]:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[str]:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[str]:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[str]:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> Optional[str]:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
@@ -2402,6 +2735,167 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         (Updatable) The repository URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class NotebookSessionNotebookSessionStorageMountConfigurationDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationDirectoryName":
+            suggest = "destination_directory_name"
+        elif key == "storageType":
+            suggest = "storage_type"
+        elif key == "destinationPath":
+            suggest = "destination_path"
+        elif key == "exportId":
+            suggest = "export_id"
+        elif key == "mountTargetId":
+            suggest = "mount_target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NotebookSessionNotebookSessionStorageMountConfigurationDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NotebookSessionNotebookSessionStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NotebookSessionNotebookSessionStorageMountConfigurationDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_directory_name: str,
+                 storage_type: str,
+                 bucket: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None):
+        """
+        :param str destination_directory_name: (Updatable) The local directory name to be mounted
+        :param str storage_type: (Updatable) The type of storage.
+        :param str bucket: (Updatable) The object storage bucket
+        :param str destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param str export_id: (Updatable) OCID of the export
+        :param str mount_target_id: (Updatable) OCID of the mount target
+        :param str namespace: (Updatable) The object storage namespace
+        :param str prefix: (Updatable) Prefix in the bucket to mount
+        """
+        NotebookSessionNotebookSessionStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: str,
+             storage_type: str,
+             bucket: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        (Updatable) The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[str]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[str]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type
@@ -4385,6 +4879,136 @@ class GetJobJobLogConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetJobJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetJobRunJobConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
@@ -4672,6 +5296,136 @@ class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobRunJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetJobRunJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetJobRunLogDetailResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -4773,6 +5527,7 @@ class GetJobRunsJobRunResult(dict):
                  job_id: str,
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
+                 job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: str,
                  log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
                  project_id: str,
@@ -4791,6 +5546,7 @@ class GetJobRunsJobRunResult(dict):
         :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param str lifecycle_details: Details of the state of the job run.
         :param Sequence['GetJobRunsJobRunLogDetailArgs'] log_details: Customer logging details for job run.
         :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -4812,6 +5568,7 @@ class GetJobRunsJobRunResult(dict):
             job_id=job_id,
             job_infrastructure_configuration_details=job_infrastructure_configuration_details,
             job_log_configuration_override_details=job_log_configuration_override_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
             lifecycle_details=lifecycle_details,
             log_details=log_details,
             project_id=project_id,
@@ -4834,6 +5591,7 @@ class GetJobRunsJobRunResult(dict):
              job_id: str,
              job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
              job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
+             job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
              lifecycle_details: str,
              log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
              project_id: str,
@@ -4861,6 +5619,8 @@ class GetJobRunsJobRunResult(dict):
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
         if 'jobLogConfigurationOverrideDetails' in kwargs:
             job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
         if 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
         if 'logDetails' in kwargs:
@@ -4885,6 +5645,7 @@ class GetJobRunsJobRunResult(dict):
         _setter("job_id", job_id)
         _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         _setter("job_log_configuration_override_details", job_log_configuration_override_details)
+        _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         _setter("lifecycle_details", lifecycle_details)
         _setter("log_details", log_details)
         _setter("project_id", project_id)
@@ -4977,6 +5738,14 @@ class GetJobRunsJobRunResult(dict):
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_override_details")
+
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -5323,6 +6092,136 @@ class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetJobRunsJobRunLogDetailResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -5552,6 +6451,7 @@ class GetJobsJobResult(dict):
                  job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
+                 job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: str,
                  project_id: str,
                  state: str,
@@ -5567,6 +6467,7 @@ class GetJobsJobResult(dict):
         :param Sequence['GetJobsJobJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobsJobJobLogConfigurationDetailArgs'] job_log_configuration_details: Logging configuration for resource.
+        :param Sequence['GetJobsJobJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param str lifecycle_details: The state of the job.
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -5591,6 +6492,7 @@ class GetJobsJobResult(dict):
             job_configuration_details=job_configuration_details,
             job_infrastructure_configuration_details=job_infrastructure_configuration_details,
             job_log_configuration_details=job_log_configuration_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
             lifecycle_details=lifecycle_details,
             project_id=project_id,
             state=state,
@@ -5616,6 +6518,7 @@ class GetJobsJobResult(dict):
              job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
              job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
              job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
+             job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
              lifecycle_details: str,
              project_id: str,
              state: str,
@@ -5652,6 +6555,8 @@ class GetJobsJobResult(dict):
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
         if 'jobLogConfigurationDetails' in kwargs:
             job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
         if 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
         if 'projectId' in kwargs:
@@ -5676,6 +6581,7 @@ class GetJobsJobResult(dict):
         _setter("job_configuration_details", job_configuration_details)
         _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         _setter("job_log_configuration_details", job_log_configuration_details)
+        _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         _setter("lifecycle_details", lifecycle_details)
         _setter("project_id", project_id)
         _setter("state", state)
@@ -5795,6 +6701,14 @@ class GetJobsJobResult(dict):
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_details")
+
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -6114,6 +7028,136 @@ class GetJobsJobJobLogConfigurationDetailResult(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetJobsJobJobStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetJobsJobJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
@@ -8816,6 +9860,136 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
 
 
 @pulumi.output_type
+class GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetNotebookSessionShapesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -8992,6 +10166,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
                  notebook_session_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult'],
                  notebook_session_configuration_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult'],
                  notebook_session_runtime_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult'],
+                 notebook_session_storage_mount_configuration_details_lists: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult'],
                  notebook_session_url: str,
                  project_id: str,
                  state: str,
@@ -9007,6 +10182,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs'] notebook_session_config_details: Details for the notebook session configuration.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs'] notebook_session_configuration_details: Details for the notebook session configuration.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs'] notebook_session_runtime_config_details: Notebook Session runtime configuration details.
+        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs'] notebook_session_storage_mount_configuration_details_lists: Collection of NotebookSessionStorageMountConfigurationDetails.
         :param str notebook_session_url: The URL to interact with the notebook session.
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -9024,6 +10200,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
             notebook_session_config_details=notebook_session_config_details,
             notebook_session_configuration_details=notebook_session_configuration_details,
             notebook_session_runtime_config_details=notebook_session_runtime_config_details,
+            notebook_session_storage_mount_configuration_details_lists=notebook_session_storage_mount_configuration_details_lists,
             notebook_session_url=notebook_session_url,
             project_id=project_id,
             state=state,
@@ -9042,6 +10219,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
              notebook_session_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult'],
              notebook_session_configuration_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult'],
              notebook_session_runtime_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult'],
+             notebook_session_storage_mount_configuration_details_lists: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult'],
              notebook_session_url: str,
              project_id: str,
              state: str,
@@ -9066,6 +10244,8 @@ class GetNotebookSessionsNotebookSessionResult(dict):
             notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
         if 'notebookSessionRuntimeConfigDetails' in kwargs:
             notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if 'notebookSessionStorageMountConfigurationDetailsLists' in kwargs:
+            notebook_session_storage_mount_configuration_details_lists = kwargs['notebookSessionStorageMountConfigurationDetailsLists']
         if 'notebookSessionUrl' in kwargs:
             notebook_session_url = kwargs['notebookSessionUrl']
         if 'projectId' in kwargs:
@@ -9083,6 +10263,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         _setter("notebook_session_config_details", notebook_session_config_details)
         _setter("notebook_session_configuration_details", notebook_session_configuration_details)
         _setter("notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+        _setter("notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
         _setter("notebook_session_url", notebook_session_url)
         _setter("project_id", project_id)
         _setter("state", state)
@@ -9167,6 +10348,14 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         Notebook Session runtime configuration details.
         """
         return pulumi.get(self, "notebook_session_runtime_config_details")
+
+    @property
+    @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
+    def notebook_session_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']:
+        """
+        Collection of NotebookSessionStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="notebookSessionUrl")
@@ -9571,6 +10760,136 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         The repository URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 destination_directory_name: str,
+                 destination_path: str,
+                 export_id: str,
+                 mount_target_id: str,
+                 namespace: str,
+                 prefix: str,
+                 storage_type: str):
+        """
+        :param str bucket: The object storage bucket
+        :param str destination_directory_name: The local directory name to be mounted
+        :param str destination_path: The local path of the mounted directory, excluding directory name.
+        :param str export_id: OCID of the export
+        :param str mount_target_id: OCID of the mount target
+        :param str namespace: The object storage namespace
+        :param str prefix: Prefix in the bucket to mount
+        :param str storage_type: The type of storage.
+        """
+        GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             destination_directory_name: str,
+             destination_path: str,
+             export_id: str,
+             mount_target_id: str,
+             namespace: str,
+             prefix: str,
+             storage_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> str:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> str:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> str:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> str:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> str:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> str:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type

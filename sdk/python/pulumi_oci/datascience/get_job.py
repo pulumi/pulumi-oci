@@ -22,7 +22,7 @@ class GetJobResult:
     """
     A collection of values returned by getJob.
     """
-    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
         if artifact_content_disposition and not isinstance(artifact_content_disposition, str):
             raise TypeError("Expected argument 'artifact_content_disposition' to be a str")
         pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -77,6 +77,9 @@ class GetJobResult:
         if job_log_configuration_details and not isinstance(job_log_configuration_details, list):
             raise TypeError("Expected argument 'job_log_configuration_details' to be a list")
         pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+        if job_storage_mount_configuration_details_lists and not isinstance(job_storage_mount_configuration_details_lists, list):
+            raise TypeError("Expected argument 'job_storage_mount_configuration_details_lists' to be a list")
+        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -211,6 +214,14 @@ class GetJobResult:
         return pulumi.get(self, "job_log_configuration_details")
 
     @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobJobStorageMountConfigurationDetailsListResult']:
+        """
+        Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -267,6 +278,7 @@ class AwaitableGetJobResult(GetJobResult):
             job_id=self.job_id,
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
             job_log_configuration_details=self.job_log_configuration_details,
+            job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
             lifecycle_details=self.lifecycle_details,
             project_id=self.project_id,
             state=self.state,
@@ -316,6 +328,7 @@ def get_job(job_id: Optional[str] = None,
         job_id=pulumi.get(__ret__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
         job_log_configuration_details=pulumi.get(__ret__, 'job_log_configuration_details'),
+        job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),

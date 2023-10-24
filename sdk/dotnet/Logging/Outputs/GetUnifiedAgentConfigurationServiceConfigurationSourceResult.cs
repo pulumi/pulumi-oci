@@ -18,15 +18,15 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Channels;
         /// <summary>
-        /// The name key to tag this grok pattern.
+        /// The name key to tag this Grok pattern.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// source parser object.
+        /// Source parser object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult> Parsers;
         /// <summary>
-        /// Absolute paths for log source files. Wildcard can be used.
+        /// Absolute paths for log source files. Wildcards can be used.
         /// </summary>
         public readonly ImmutableArray<string> Paths;
         /// <summary>

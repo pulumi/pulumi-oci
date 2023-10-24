@@ -12,30 +12,30 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NetworkFirewallPolicyDecryptionRuleCondition {
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    private @Nullable List<String> destinations;
+    private @Nullable List<String> destinationAddresses;
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    private @Nullable List<String> sources;
+    private @Nullable List<String> sourceAddresses;
 
     private NetworkFirewallPolicyDecryptionRuleCondition() {}
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    public List<String> destinations() {
-        return this.destinations == null ? List.of() : this.destinations;
+    public List<String> destinationAddresses() {
+        return this.destinationAddresses == null ? List.of() : this.destinationAddresses;
     }
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    public List<String> sources() {
-        return this.sources == null ? List.of() : this.sources;
+    public List<String> sourceAddresses() {
+        return this.sourceAddresses == null ? List.of() : this.sourceAddresses;
     }
 
     public static Builder builder() {
@@ -47,35 +47,35 @@ public final class NetworkFirewallPolicyDecryptionRuleCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<String> destinations;
-        private @Nullable List<String> sources;
+        private @Nullable List<String> destinationAddresses;
+        private @Nullable List<String> sourceAddresses;
         public Builder() {}
         public Builder(NetworkFirewallPolicyDecryptionRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.destinations = defaults.destinations;
-    	      this.sources = defaults.sources;
+    	      this.destinationAddresses = defaults.destinationAddresses;
+    	      this.sourceAddresses = defaults.sourceAddresses;
         }
 
         @CustomType.Setter
-        public Builder destinations(@Nullable List<String> destinations) {
-            this.destinations = destinations;
+        public Builder destinationAddresses(@Nullable List<String> destinationAddresses) {
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
-        public Builder destinations(String... destinations) {
-            return destinations(List.of(destinations));
+        public Builder destinationAddresses(String... destinationAddresses) {
+            return destinationAddresses(List.of(destinationAddresses));
         }
         @CustomType.Setter
-        public Builder sources(@Nullable List<String> sources) {
-            this.sources = sources;
+        public Builder sourceAddresses(@Nullable List<String> sourceAddresses) {
+            this.sourceAddresses = sourceAddresses;
             return this;
         }
-        public Builder sources(String... sources) {
-            return sources(List.of(sources));
+        public Builder sourceAddresses(String... sourceAddresses) {
+            return sourceAddresses(List.of(sourceAddresses));
         }
         public NetworkFirewallPolicyDecryptionRuleCondition build() {
             final var o = new NetworkFirewallPolicyDecryptionRuleCondition();
-            o.destinations = destinations;
-            o.sources = sources;
+            o.destinationAddresses = destinationAddresses;
+            o.sourceAddresses = sourceAddresses;
             return o;
         }
     }

@@ -16,20 +16,20 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// An array of IP address list names to be evaluated against the traffic destination address.
         /// </summary>
-        public readonly ImmutableArray<string> Destinations;
+        public readonly ImmutableArray<string> DestinationAddresses;
         /// <summary>
         /// An array of IP address list names to be evaluated against the traffic source address.
         /// </summary>
-        public readonly ImmutableArray<string> Sources;
+        public readonly ImmutableArray<string> SourceAddresses;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyDecryptionRuleConditionResult(
-            ImmutableArray<string> destinations,
+            ImmutableArray<string> destinationAddresses,
 
-            ImmutableArray<string> sources)
+            ImmutableArray<string> sourceAddresses)
         {
-            Destinations = destinations;
-            Sources = sources;
+            DestinationAddresses = destinationAddresses;
+            SourceAddresses = sourceAddresses;
         }
     }
 }

@@ -20,11 +20,15 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// An array of IP address list names to be evaluated against the traffic destination address.
         /// </summary>
-        public readonly ImmutableArray<string> Destinations;
+        public readonly ImmutableArray<string> DestinationAddresses;
+        /// <summary>
+        /// An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+        /// </summary>
+        public readonly ImmutableArray<string> Services;
         /// <summary>
         /// An array of IP address list names to be evaluated against the traffic source address.
         /// </summary>
-        public readonly ImmutableArray<string> Sources;
+        public readonly ImmutableArray<string> SourceAddresses;
         /// <summary>
         /// An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         /// </summary>
@@ -34,15 +38,18 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         private GetNetworkFirewallPolicySecurityRuleConditionResult(
             ImmutableArray<string> applications,
 
-            ImmutableArray<string> destinations,
+            ImmutableArray<string> destinationAddresses,
 
-            ImmutableArray<string> sources,
+            ImmutableArray<string> services,
+
+            ImmutableArray<string> sourceAddresses,
 
             ImmutableArray<string> urls)
         {
             Applications = applications;
-            Destinations = destinations;
-            Sources = sources;
+            DestinationAddresses = destinationAddresses;
+            Services = services;
+            SourceAddresses = sourceAddresses;
             Urls = urls;
         }
     }

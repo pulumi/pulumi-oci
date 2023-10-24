@@ -11,12 +11,72 @@ import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicePlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListPlainArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsPlainArgs;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPoliciesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListsResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyApplicationGroupResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyApplicationGroupsResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyApplicationResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyApplicationsResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionProfileResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionProfilesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRuleResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRulesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecretResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyMappedSecretsResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRuleResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicySecurityRulesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceListResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceListsResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServiceResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyServicesResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListResult;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListsResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallsResult;
 import com.pulumi.oci.Utilities;
@@ -502,6 +562,3254 @@ public final class NetworkFirewallFunctions {
      */
     public static CompletableFuture<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicyPlain(GetNetworkFirewallPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicy:getNetworkFirewallPolicy", TypeShape.of(GetNetworkFirewallPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(oci_waas_address_list.test_address_list().name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args) {
+        return getNetworkFirewallPolicyAddressList(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(oci_waas_address_list.test_address_list().name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args) {
+        return getNetworkFirewallPolicyAddressListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(oci_waas_address_list.test_address_list().name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(oci_waas_address_list.test_address_list().name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Network Firewall Policies.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs args) {
+        return getNetworkFirewallPolicyAddressLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Network Firewall Policies.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressListsPlain(GetNetworkFirewallPolicyAddressListsPlainArgs args) {
+        return getNetworkFirewallPolicyAddressListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Network Firewall Policies.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressLists:getNetworkFirewallPolicyAddressLists", TypeShape.of(GetNetworkFirewallPolicyAddressListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Network Firewall Policies.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyAddressListsResult> getNetworkFirewallPolicyAddressListsPlain(GetNetworkFirewallPolicyAddressListsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyAddressLists:getNetworkFirewallPolicyAddressLists", TypeShape.of(GetNetworkFirewallPolicyAddressListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(var_.network_firewall_policy_application_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args) {
+        return getNetworkFirewallPolicyApplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(var_.network_firewall_policy_application_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args) {
+        return getNetworkFirewallPolicyApplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(var_.network_firewall_policy_application_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(var_.network_firewall_policy_application_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args) {
+        return getNetworkFirewallPolicyApplicationGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args) {
+        return getNetworkFirewallPolicyApplicationGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ApplicationGroups for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs args) {
+        return getNetworkFirewallPolicyApplicationGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ApplicationGroups for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroupsPlain(GetNetworkFirewallPolicyApplicationGroupsPlainArgs args) {
+        return getNetworkFirewallPolicyApplicationGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ApplicationGroups for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ApplicationGroups for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupsResult> getNetworkFirewallPolicyApplicationGroupsPlain(GetNetworkFirewallPolicyApplicationGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroups:getNetworkFirewallPolicyApplicationGroups", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Applications in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Applications for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs args) {
+        return getNetworkFirewallPolicyApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Applications in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Applications for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplicationsPlain(GetNetworkFirewallPolicyApplicationsPlainArgs args) {
+        return getNetworkFirewallPolicyApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Applications in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Applications for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications", TypeShape.of(GetNetworkFirewallPolicyApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Applications in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Applications for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyApplicationsResult> getNetworkFirewallPolicyApplicationsPlain(GetNetworkFirewallPolicyApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplications:getNetworkFirewallPolicyApplications", TypeShape.of(GetNetworkFirewallPolicyApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args) {
+        return getNetworkFirewallPolicyDecryptionProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args) {
+        return getNetworkFirewallPolicyDecryptionProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Profile for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs args) {
+        return getNetworkFirewallPolicyDecryptionProfiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Profile for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfilesPlain(GetNetworkFirewallPolicyDecryptionProfilesPlainArgs args) {
+        return getNetworkFirewallPolicyDecryptionProfilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Profile for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Profile for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfilesResult> getNetworkFirewallPolicyDecryptionProfilesPlain(GetNetworkFirewallPolicyDecryptionProfilesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfiles:getNetworkFirewallPolicyDecryptionProfiles", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args) {
+        return getNetworkFirewallPolicyDecryptionRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args) {
+        return getNetworkFirewallPolicyDecryptionRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
+     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs args) {
+        return getNetworkFirewallPolicyDecryptionRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
+     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRulesPlain(GetNetworkFirewallPolicyDecryptionRulesPlainArgs args) {
+        return getNetworkFirewallPolicyDecryptionRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
+     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", TypeShape.of(GetNetworkFirewallPolicyDecryptionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Decryption Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
+     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRulesResult> getNetworkFirewallPolicyDecryptionRulesPlain(GetNetworkFirewallPolicyDecryptionRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRules:getNetworkFirewallPolicyDecryptionRules", TypeShape.of(GetNetworkFirewallPolicyDecryptionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args) {
+        return getNetworkFirewallPolicyMappedSecret(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args) {
+        return getNetworkFirewallPolicyMappedSecretPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Mapped Secret for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs args) {
+        return getNetworkFirewallPolicyMappedSecrets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Mapped Secret for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecretsPlain(GetNetworkFirewallPolicyMappedSecretsPlainArgs args) {
+        return getNetworkFirewallPolicyMappedSecretsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Mapped Secret for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets", TypeShape.of(GetNetworkFirewallPolicyMappedSecretsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Mapped Secret for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretsResult> getNetworkFirewallPolicyMappedSecretsPlain(GetNetworkFirewallPolicyMappedSecretsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecrets:getNetworkFirewallPolicyMappedSecrets", TypeShape.of(GetNetworkFirewallPolicyMappedSecretsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args) {
+        return getNetworkFirewallPolicySecurityRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args) {
+        return getNetworkFirewallPolicySecurityRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Security Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
+     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs args) {
+        return getNetworkFirewallPolicySecurityRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Security Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
+     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRulesPlain(GetNetworkFirewallPolicySecurityRulesPlainArgs args) {
+        return getNetworkFirewallPolicySecurityRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Security Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
+     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", TypeShape.of(GetNetworkFirewallPolicySecurityRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Security Rule for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
+     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicySecurityRulesResult> getNetworkFirewallPolicySecurityRulesPlain(GetNetworkFirewallPolicySecurityRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRules:getNetworkFirewallPolicySecurityRules", TypeShape.of(GetNetworkFirewallPolicySecurityRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args) {
+        return getNetworkFirewallPolicyService(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args) {
+        return getNetworkFirewallPolicyServicePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args) {
+        return getNetworkFirewallPolicyServiceList(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args) {
+        return getNetworkFirewallPolicyServiceListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", TypeShape.of(GetNetworkFirewallPolicyServiceListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", TypeShape.of(GetNetworkFirewallPolicyServiceListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Service Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ServiceLists for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs args) {
+        return getNetworkFirewallPolicyServiceLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Service Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ServiceLists for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceListsPlain(GetNetworkFirewallPolicyServiceListsPlainArgs args) {
+        return getNetworkFirewallPolicyServiceListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Service Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ServiceLists for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServiceLists:getNetworkFirewallPolicyServiceLists", TypeShape.of(GetNetworkFirewallPolicyServiceListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Service Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of ServiceLists for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServiceListsResult> getNetworkFirewallPolicyServiceListsPlain(GetNetworkFirewallPolicyServiceListsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyServiceLists:getNetworkFirewallPolicyServiceLists", TypeShape.of(GetNetworkFirewallPolicyServiceListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Services in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Services for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs args) {
+        return getNetworkFirewallPolicyServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Services in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Services for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServicesPlain(GetNetworkFirewallPolicyServicesPlainArgs args) {
+        return getNetworkFirewallPolicyServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Services in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Services for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServices:getNetworkFirewallPolicyServices", TypeShape.of(GetNetworkFirewallPolicyServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Services in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of Services for the policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyServicesResult> getNetworkFirewallPolicyServicesPlain(GetNetworkFirewallPolicyServicesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyServices:getNetworkFirewallPolicyServices", TypeShape.of(GetNetworkFirewallPolicyServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args) {
+        return getNetworkFirewallPolicyUrlList(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args) {
+        return getNetworkFirewallPolicyUrlListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of URL lists for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs args) {
+        return getNetworkFirewallPolicyUrlLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of URL lists for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlListsPlain(GetNetworkFirewallPolicyUrlListsPlainArgs args) {
+        return getNetworkFirewallPolicyUrlListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of URL lists for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlLists:getNetworkFirewallPolicyUrlLists", TypeShape.of(GetNetworkFirewallPolicyUrlListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Firewall Policy Url Lists in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Returns a list of URL lists for the Network Firewall Policy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallPolicyUrlListsResult> getNetworkFirewallPolicyUrlListsPlain(GetNetworkFirewallPolicyUrlListsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyUrlLists:getNetworkFirewallPolicyUrlLists", TypeShape.of(GetNetworkFirewallPolicyUrlListsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.

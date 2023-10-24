@@ -191,6 +191,8 @@ if typing.TYPE_CHECKING:
     queue = __queue
     import pulumi_oci.recoverymod as __recoverymod
     recoverymod = __recoverymod
+    import pulumi_oci.redis as __redis
+    redis = __redis
     import pulumi_oci.resourcemanager as __resourcemanager
     resourcemanager = __resourcemanager
     import pulumi_oci.sch as __sch
@@ -317,6 +319,7 @@ else:
     osubusage = _utilities.lazy_import('pulumi_oci.osubusage')
     queue = _utilities.lazy_import('pulumi_oci.queue')
     recoverymod = _utilities.lazy_import('pulumi_oci.recoverymod')
+    redis = _utilities.lazy_import('pulumi_oci.redis')
     resourcemanager = _utilities.lazy_import('pulumi_oci.resourcemanager')
     sch = _utilities.lazy_import('pulumi_oci.sch')
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
@@ -4140,6 +4143,86 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyAddressList",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList": "NetworkFirewallPolicyAddressList"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyApplication",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication": "NetworkFirewallPolicyApplication"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyApplicationGroup",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup": "NetworkFirewallPolicyApplicationGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyDecryptionProfile",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile": "NetworkFirewallPolicyDecryptionProfile"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyDecryptionRule",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule": "NetworkFirewallPolicyDecryptionRule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyMappedSecret",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret": "NetworkFirewallPolicyMappedSecret"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicySecurityRule",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule": "NetworkFirewallPolicySecurityRule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyService",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService": "NetworkFirewallPolicyService"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyServiceList",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList": "NetworkFirewallPolicyServiceList"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicyUrlList",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList": "NetworkFirewallPolicyUrlList"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "NetworkLoadBalancer/backend",
   "fqn": "pulumi_oci.networkloadbalancer",
   "classes": {
@@ -4552,6 +4635,14 @@ _utilities.register(
   "fqn": "pulumi_oci.recoverymod",
   "classes": {
    "oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet": "RecoveryServiceSubnet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/redisCluster",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/redisCluster:RedisCluster": "RedisCluster"
   }
  },
  {

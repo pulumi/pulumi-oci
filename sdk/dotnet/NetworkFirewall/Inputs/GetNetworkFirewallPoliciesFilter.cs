@@ -12,9 +12,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class GetNetworkFirewallPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Name for the Security rule, must be unique within the policy.
-        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

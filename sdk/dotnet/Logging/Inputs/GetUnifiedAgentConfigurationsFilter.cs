@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class GetUnifiedAgentConfigurationsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name key to tag this grok pattern.
+        /// The name key to tag this Grok pattern.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

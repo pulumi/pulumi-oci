@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
  *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .availabilityDomain(var_.network_firewall_availability_domain())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.network_firewall_display_name())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .ipv4address(var_.network_firewall_ipv4address())
  *             .ipv6address(var_.network_firewall_ipv6address())
  *             .networkSecurityGroupIds(var_.network_firewall_network_security_group_ids())
@@ -100,14 +100,14 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -128,14 +128,14 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -170,14 +170,14 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
         return this.ipv6address;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in &#39;FAILED&#39; state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in &#39;FAILED&#39; state.
      * 
      */
     public Output<String> lifecycleDetails() {
@@ -260,28 +260,28 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * @return The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeUpdated() {

@@ -25,6 +25,26 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkFirewall{}
 	case "oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy":
 		r = &NetworkFirewallPolicy{}
+	case "oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList":
+		r = &NetworkFirewallPolicyAddressList{}
+	case "oci:NetworkFirewall/networkFirewallPolicyApplication:NetworkFirewallPolicyApplication":
+		r = &NetworkFirewallPolicyApplication{}
+	case "oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup":
+		r = &NetworkFirewallPolicyApplicationGroup{}
+	case "oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile":
+		r = &NetworkFirewallPolicyDecryptionProfile{}
+	case "oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule":
+		r = &NetworkFirewallPolicyDecryptionRule{}
+	case "oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret":
+		r = &NetworkFirewallPolicyMappedSecret{}
+	case "oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule":
+		r = &NetworkFirewallPolicySecurityRule{}
+	case "oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService":
+		r = &NetworkFirewallPolicyService{}
+	case "oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList":
+		r = &NetworkFirewallPolicyServiceList{}
+	case "oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList":
+		r = &NetworkFirewallPolicyUrlList{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +66,56 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"NetworkFirewall/networkFirewallPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyAddressList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyApplication",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyApplicationGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyDecryptionProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyDecryptionRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyMappedSecret",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicySecurityRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyService",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyServiceList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkFirewall/networkFirewallPolicyUrlList",
 		&module{version},
 	)
 }

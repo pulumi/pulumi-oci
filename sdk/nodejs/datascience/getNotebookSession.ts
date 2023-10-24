@@ -86,6 +86,10 @@ export interface GetNotebookSessionResult {
      */
     readonly notebookSessionRuntimeConfigDetails: outputs.DataScience.GetNotebookSessionNotebookSessionRuntimeConfigDetail[];
     /**
+     * Collection of NotebookSessionStorageMountConfigurationDetails.
+     */
+    readonly notebookSessionStorageMountConfigurationDetailsLists: outputs.DataScience.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList[];
+    /**
      * The URL to interact with the notebook session.
      */
     readonly notebookSessionUrl: string;

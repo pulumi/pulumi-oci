@@ -12,9 +12,11 @@ import com.pulumi.oci.DataScience.inputs.NotebookSessionState;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionConfigDetails;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionRuntimeConfigDetails;
+import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -38,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -84,6 +87,16 @@ import javax.annotation.Nullable;
  *                         .url(var_.notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url())
  *                         .build())
  *                     .build())
+ *                 .build())
+ *             .notebookSessionStorageMountConfigurationDetailsLists(NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs.builder()
+ *                 .destinationDirectoryName(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name())
+ *                 .storageType(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type())
+ *                 .bucket(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_bucket())
+ *                 .destinationPath(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path())
+ *                 .exportId(oci_file_storage_export.test_export().id())
+ *                 .mountTargetId(oci_file_storage_mount_target.test_mount_target().id())
+ *                 .namespace(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_namespace())
+ *                 .prefix(var_.notebook_session_notebook_session_storage_mount_configuration_details_list_prefix())
  *                 .build())
  *             .build());
  * 
@@ -227,6 +240,20 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      */
     public Output<NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails() {
         return this.notebookSessionRuntimeConfigDetails;
+    }
+    /**
+     * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    @Export(name="notebookSessionStorageMountConfigurationDetailsLists", refs={List.class,NotebookSessionNotebookSessionStorageMountConfigurationDetailsList.class}, tree="[0,1]")
+    private Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> notebookSessionStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    public Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> notebookSessionStorageMountConfigurationDetailsLists() {
+        return this.notebookSessionStorageMountConfigurationDetailsLists;
     }
     /**
      * The URL to interact with the notebook session.

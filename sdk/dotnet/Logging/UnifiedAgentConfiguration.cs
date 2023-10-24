@@ -36,6 +36,23 @@ namespace Pulumi.Oci.Logging
     ///             Destination = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs
     ///             {
     ///                 LogObjectId = oci_objectstorage_object.Test_object.Id,
+    ///                 OperationalMetricsConfiguration = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs
+    ///                 {
+    ///                     Destination = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs
+    ///                     {
+    ///                         CompartmentId = @var.Compartment_id,
+    ///                     },
+    ///                     Source = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs
+    ///                     {
+    ///                         Type = @var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type,
+    ///                         Metrics = @var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics,
+    ///                         RecordInput = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs
+    ///                         {
+    ///                             Namespace = @var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace,
+    ///                             ResourceGroup = @var.Unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group,
+    ///                         },
+    ///                     },
+    ///                 },
     ///             },
     ///             Sources = new[]
     ///             {

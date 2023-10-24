@@ -7,59 +7,70 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicySecurityRuleCondition {
     /**
-     * @return (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     * @return (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private @Nullable List<String> applications;
+    private List<String> applications;
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    private @Nullable List<String> destinations;
+    private List<String> destinationAddresses;
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private @Nullable List<String> sources;
+    private List<String> services;
     /**
-     * @return (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
-    private @Nullable List<String> urls;
+    private List<String> sourceAddresses;
+    /**
+     * @return (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+     * 
+     */
+    private List<String> urls;
 
     private NetworkFirewallPolicySecurityRuleCondition() {}
     /**
-     * @return (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     * @return (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
     public List<String> applications() {
-        return this.applications == null ? List.of() : this.applications;
+        return this.applications;
     }
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
-    public List<String> destinations() {
-        return this.destinations == null ? List.of() : this.destinations;
+    public List<String> destinationAddresses() {
+        return this.destinationAddresses;
     }
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    public List<String> sources() {
-        return this.sources == null ? List.of() : this.sources;
+    public List<String> services() {
+        return this.services;
     }
     /**
-     * @return (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
+     * 
+     */
+    public List<String> sourceAddresses() {
+        return this.sourceAddresses;
+    }
+    /**
+     * @return (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
      * 
      */
     public List<String> urls() {
-        return this.urls == null ? List.of() : this.urls;
+        return this.urls;
     }
 
     public static Builder builder() {
@@ -71,46 +82,56 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<String> applications;
-        private @Nullable List<String> destinations;
-        private @Nullable List<String> sources;
-        private @Nullable List<String> urls;
+        private List<String> applications;
+        private List<String> destinationAddresses;
+        private List<String> services;
+        private List<String> sourceAddresses;
+        private List<String> urls;
         public Builder() {}
         public Builder(NetworkFirewallPolicySecurityRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applications = defaults.applications;
-    	      this.destinations = defaults.destinations;
-    	      this.sources = defaults.sources;
+    	      this.destinationAddresses = defaults.destinationAddresses;
+    	      this.services = defaults.services;
+    	      this.sourceAddresses = defaults.sourceAddresses;
     	      this.urls = defaults.urls;
         }
 
         @CustomType.Setter
-        public Builder applications(@Nullable List<String> applications) {
-            this.applications = applications;
+        public Builder applications(List<String> applications) {
+            this.applications = Objects.requireNonNull(applications);
             return this;
         }
         public Builder applications(String... applications) {
             return applications(List.of(applications));
         }
         @CustomType.Setter
-        public Builder destinations(@Nullable List<String> destinations) {
-            this.destinations = destinations;
+        public Builder destinationAddresses(List<String> destinationAddresses) {
+            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
             return this;
         }
-        public Builder destinations(String... destinations) {
-            return destinations(List.of(destinations));
+        public Builder destinationAddresses(String... destinationAddresses) {
+            return destinationAddresses(List.of(destinationAddresses));
         }
         @CustomType.Setter
-        public Builder sources(@Nullable List<String> sources) {
-            this.sources = sources;
+        public Builder services(List<String> services) {
+            this.services = Objects.requireNonNull(services);
             return this;
         }
-        public Builder sources(String... sources) {
-            return sources(List.of(sources));
+        public Builder services(String... services) {
+            return services(List.of(services));
         }
         @CustomType.Setter
-        public Builder urls(@Nullable List<String> urls) {
-            this.urls = urls;
+        public Builder sourceAddresses(List<String> sourceAddresses) {
+            this.sourceAddresses = Objects.requireNonNull(sourceAddresses);
+            return this;
+        }
+        public Builder sourceAddresses(String... sourceAddresses) {
+            return sourceAddresses(List.of(sourceAddresses));
+        }
+        @CustomType.Setter
+        public Builder urls(List<String> urls) {
+            this.urls = Objects.requireNonNull(urls);
             return this;
         }
         public Builder urls(String... urls) {
@@ -119,8 +140,9 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         public NetworkFirewallPolicySecurityRuleCondition build() {
             final var o = new NetworkFirewallPolicySecurityRuleCondition();
             o.applications = applications;
-            o.destinations = destinations;
-            o.sources = sources;
+            o.destinationAddresses = destinationAddresses;
+            o.services = services;
+            o.sourceAddresses = sourceAddresses;
             o.urls = urls;
             return o;
         }

@@ -8,9 +8,11 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -244,6 +246,21 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Import(name="jobStorageMountConfigurationDetailsLists")
+    private @Nullable Output<List<JobJobStorageMountConfigurationDetailsListArgs>> jobStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return (Updatable) Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Optional<Output<List<JobJobStorageMountConfigurationDetailsListArgs>>> jobStorageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.jobStorageMountConfigurationDetailsLists);
+    }
+
+    /**
      * The state of the job.
      * 
      */
@@ -322,6 +339,7 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         this.jobConfigurationDetails = $.jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = $.jobLogConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.lifecycleDetails = $.lifecycleDetails;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -650,6 +668,37 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs jobLogConfigurationDetails) {
             return jobLogConfigurationDetails(Output.of(jobLogConfigurationDetails));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists (Updatable) Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(@Nullable Output<List<JobJobStorageMountConfigurationDetailsListArgs>> jobStorageMountConfigurationDetailsLists) {
+            $.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists (Updatable) Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(List<JobJobStorageMountConfigurationDetailsListArgs> jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(Output.of(jobStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists (Updatable) Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(JobJobStorageMountConfigurationDetailsListArgs... jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
         }
 
         /**

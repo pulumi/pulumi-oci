@@ -78,7 +78,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
+        Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -94,7 +94,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -110,7 +110,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -142,7 +142,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -195,7 +195,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -203,7 +203,7 @@ class GetNetworkFirewallResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

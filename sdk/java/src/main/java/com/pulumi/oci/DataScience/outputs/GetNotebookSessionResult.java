@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionConfigDetail;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -66,6 +67,11 @@ public final class GetNotebookSessionResult {
      * 
      */
     private List<GetNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
+    /**
+     * @return Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    private List<GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
     /**
      * @return The URL to interact with the notebook session.
      * 
@@ -162,6 +168,13 @@ public final class GetNotebookSessionResult {
         return this.notebookSessionRuntimeConfigDetails;
     }
     /**
+     * @return Collection of NotebookSessionStorageMountConfigurationDetails.
+     * 
+     */
+    public List<GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists() {
+        return this.notebookSessionStorageMountConfigurationDetailsLists;
+    }
+    /**
      * @return The URL to interact with the notebook session.
      * 
      */
@@ -210,6 +223,7 @@ public final class GetNotebookSessionResult {
         private List<GetNotebookSessionNotebookSessionConfigurationDetail> notebookSessionConfigurationDetails;
         private String notebookSessionId;
         private List<GetNotebookSessionNotebookSessionRuntimeConfigDetail> notebookSessionRuntimeConfigDetails;
+        private List<GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists;
         private String notebookSessionUrl;
         private String projectId;
         private String state;
@@ -228,6 +242,7 @@ public final class GetNotebookSessionResult {
     	      this.notebookSessionConfigurationDetails = defaults.notebookSessionConfigurationDetails;
     	      this.notebookSessionId = defaults.notebookSessionId;
     	      this.notebookSessionRuntimeConfigDetails = defaults.notebookSessionRuntimeConfigDetails;
+    	      this.notebookSessionStorageMountConfigurationDetailsLists = defaults.notebookSessionStorageMountConfigurationDetailsLists;
     	      this.notebookSessionUrl = defaults.notebookSessionUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -299,6 +314,14 @@ public final class GetNotebookSessionResult {
             return notebookSessionRuntimeConfigDetails(List.of(notebookSessionRuntimeConfigDetails));
         }
         @CustomType.Setter
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(List<GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList> notebookSessionStorageMountConfigurationDetailsLists) {
+            this.notebookSessionStorageMountConfigurationDetailsLists = Objects.requireNonNull(notebookSessionStorageMountConfigurationDetailsLists);
+            return this;
+        }
+        public Builder notebookSessionStorageMountConfigurationDetailsLists(GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsList... notebookSessionStorageMountConfigurationDetailsLists) {
+            return notebookSessionStorageMountConfigurationDetailsLists(List.of(notebookSessionStorageMountConfigurationDetailsLists));
+        }
+        @CustomType.Setter
         public Builder notebookSessionUrl(String notebookSessionUrl) {
             this.notebookSessionUrl = Objects.requireNonNull(notebookSessionUrl);
             return this;
@@ -331,6 +354,7 @@ public final class GetNotebookSessionResult {
             o.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
             o.notebookSessionId = notebookSessionId;
             o.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            o.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
             o.notebookSessionUrl = notebookSessionUrl;
             o.projectId = projectId;
             o.state = state;

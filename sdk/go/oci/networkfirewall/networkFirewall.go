@@ -37,11 +37,11 @@ import (
 //				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				AvailabilityDomain:      pulumi.Any(_var.Network_firewall_availability_domain),
 //				DefinedTags: pulumi.AnyMap{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				DisplayName: pulumi.Any(_var.Network_firewall_display_name),
 //				FreeformTags: pulumi.AnyMap{
-//					"bar-key": pulumi.Any("value"),
+//					"Department": pulumi.Any("Finance"),
 //				},
 //				Ipv4address:             pulumi.Any(_var.Network_firewall_ipv4address),
 //				Ipv6address:             pulumi.Any(_var.Network_firewall_ipv6address),
@@ -72,17 +72,17 @@ type NetworkFirewall struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// IPv4 address for the Network Firewall.
 	Ipv4address pulumi.StringOutput `pulumi:"ipv4address"`
 	// IPv6 address for the Network Firewall.
 	Ipv6address pulumi.StringOutput `pulumi:"ipv6address"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
@@ -97,9 +97,9 @@ type NetworkFirewall struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -146,17 +146,17 @@ type networkFirewallState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IPv4 address for the Network Firewall.
 	Ipv4address *string `pulumi:"ipv4address"`
 	// IPv6 address for the Network Firewall.
 	Ipv6address *string `pulumi:"ipv6address"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId *string `pulumi:"networkFirewallPolicyId"`
@@ -171,9 +171,9 @@ type networkFirewallState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
@@ -182,17 +182,17 @@ type NetworkFirewallState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// IPv4 address for the Network Firewall.
 	Ipv4address pulumi.StringPtrInput
 	// IPv6 address for the Network Firewall.
 	Ipv6address pulumi.StringPtrInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
 	NetworkFirewallPolicyId pulumi.StringPtrInput
@@ -207,9 +207,9 @@ type NetworkFirewallState struct {
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
-	// The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -222,11 +222,11 @@ type networkFirewallArgs struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IPv4 address for the Network Firewall.
 	Ipv4address *string `pulumi:"ipv4address"`
@@ -249,11 +249,11 @@ type NetworkFirewallArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// IPv4 address for the Network Firewall.
 	Ipv4address pulumi.StringPtrInput
@@ -391,7 +391,7 @@ func (o NetworkFirewallOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o NetworkFirewallOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -401,7 +401,7 @@ func (o NetworkFirewallOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o NetworkFirewallOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -416,7 +416,7 @@ func (o NetworkFirewallOutput) Ipv6address() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
 func (o NetworkFirewallOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -449,12 +449,12 @@ func (o NetworkFirewallOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o NetworkFirewallOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o NetworkFirewallOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

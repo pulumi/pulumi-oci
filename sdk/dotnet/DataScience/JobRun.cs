@@ -130,6 +130,12 @@ namespace Pulumi.Oci.DataScience
         public Output<Outputs.JobRunJobLogConfigurationOverrideDetails> JobLogConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        [Output("jobStorageMountConfigurationDetailsLists")]
+        public Output<ImmutableArray<Outputs.JobRunJobStorageMountConfigurationDetailsList>> JobStorageMountConfigurationDetailsLists { get; private set; } = null!;
+
+        /// <summary>
         /// Details of the state of the job run.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -376,6 +382,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobLogConfigurationOverrideDetails")]
         public Input<Inputs.JobRunJobLogConfigurationOverrideDetailsGetArgs>? JobLogConfigurationOverrideDetails { get; set; }
+
+        [Input("jobStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs> JobStorageMountConfigurationDetailsLists
+        {
+            get => _jobStorageMountConfigurationDetailsLists ?? (_jobStorageMountConfigurationDetailsLists = new InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs>());
+            set => _jobStorageMountConfigurationDetailsLists = value;
+        }
 
         /// <summary>
         /// Details of the state of the job run.

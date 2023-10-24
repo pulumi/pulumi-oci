@@ -50,6 +50,16 @@ import * as utilities from "../utilities";
  *         logGroupId: oci_logging_log_group.test_log_group.id,
  *         logId: oci_logging_log.test_log.id,
  *     },
+ *     jobStorageMountConfigurationDetailsLists: [{
+ *         destinationDirectoryName: _var.job_job_storage_mount_configuration_details_list_destination_directory_name,
+ *         storageType: _var.job_job_storage_mount_configuration_details_list_storage_type,
+ *         bucket: _var.job_job_storage_mount_configuration_details_list_bucket,
+ *         destinationPath: _var.job_job_storage_mount_configuration_details_list_destination_path,
+ *         exportId: oci_file_storage_export.test_export.id,
+ *         mountTargetId: oci_file_storage_mount_target.test_mount_target.id,
+ *         namespace: _var.job_job_storage_mount_configuration_details_list_namespace,
+ *         prefix: _var.job_job_storage_mount_configuration_details_list_prefix,
+ *     }],
  * });
  * ```
  *
@@ -149,6 +159,10 @@ export class Job extends pulumi.CustomResource {
      */
     public readonly jobLogConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails>;
     /**
+     * (Updatable) Collection of JobStorageMountConfigurationDetails.
+     */
+    public readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[]>;
+    /**
      * The state of the job.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -194,6 +208,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobConfigurationDetails"] = state ? state.jobConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = state ? state.jobLogConfigurationDetails : undefined;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -224,6 +239,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobConfigurationDetails"] = args ? args.jobConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = args ? args.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = args ? args.jobLogConfigurationDetails : undefined;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = args ? args.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
@@ -302,6 +318,10 @@ export interface JobState {
      */
     jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
     /**
+     * (Updatable) Collection of JobStorageMountConfigurationDetails.
+     */
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[]>;
+    /**
      * The state of the job.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -375,6 +395,10 @@ export interface JobArgs {
      * Logging configuration for resource.
      */
     jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
+    /**
+     * (Updatable) Collection of JobStorageMountConfigurationDetails.
+     */
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */

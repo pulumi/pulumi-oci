@@ -81,6 +81,8 @@ type LookupJobRunResult struct {
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails []GetJobRunJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
 	JobRunId                           string                                       `pulumi:"jobRunId"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []GetJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -203,6 +205,13 @@ func (o LookupJobRunResultOutput) JobLogConfigurationOverrideDetails() GetJobRun
 
 func (o LookupJobRunResultOutput) JobRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.JobRunId }).(pulumi.StringOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o LookupJobRunResultOutput) JobStorageMountConfigurationDetailsLists() GetJobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobStorageMountConfigurationDetailsList {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Details of the state of the job run.

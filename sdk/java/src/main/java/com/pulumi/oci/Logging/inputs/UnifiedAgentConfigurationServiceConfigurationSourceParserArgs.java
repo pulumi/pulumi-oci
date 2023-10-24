@@ -23,14 +23,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     public static final UnifiedAgentConfigurationServiceConfigurationSourceParserArgs Empty = new UnifiedAgentConfigurationServiceConfigurationSourceParserArgs();
 
     /**
-     * (Updatable) csv delimiter.
+     * (Updatable) CSV delimiter.
      * 
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
-     * @return (Updatable) csv delimiter.
+     * @return (Updatable) CSV delimiter.
      * 
      */
     public Optional<Output<String>> delimiter() {
@@ -98,14 +98,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) grok failure key.
+     * (Updatable) Grok failure key.
      * 
      */
     @Import(name="grokFailureKey")
     private @Nullable Output<String> grokFailureKey;
 
     /**
-     * @return (Updatable) grok failure key.
+     * @return (Updatable) Grok failure key.
      * 
      */
     public Optional<Output<String>> grokFailureKey() {
@@ -113,14 +113,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) grok name key.
+     * (Updatable) Grok name key.
      * 
      */
     @Import(name="grokNameKey")
     private @Nullable Output<String> grokNameKey;
 
     /**
-     * @return (Updatable) grok name key.
+     * @return (Updatable) Grok name key.
      * 
      */
     public Optional<Output<String>> grokNameKey() {
@@ -128,14 +128,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     @Import(name="isEstimateCurrentEvent")
     private @Nullable Output<Boolean> isEstimateCurrentEvent;
 
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * 
      */
     public Optional<Output<Boolean>> isEstimateCurrentEvent() {
@@ -143,14 +143,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) If true, keep time field in the record.
+     * (Updatable) If true, keep the time field in the record.
      * 
      */
     @Import(name="isKeepTimeKey")
     private @Nullable Output<Boolean> isKeepTimeKey;
 
     /**
-     * @return (Updatable) If true, keep time field in the record.
+     * @return (Updatable) If true, keep the time field in the record.
      * 
      */
     public Optional<Output<Boolean>> isKeepTimeKey() {
@@ -158,14 +158,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     @Import(name="isMergeCriFields")
     private @Nullable Output<Boolean> isMergeCriFields;
 
     /**
-     * @return (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+     * @return (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
      * 
      */
     public Optional<Output<Boolean>> isMergeCriFields() {
@@ -173,14 +173,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) If true, an empty string field is replaced with nil.
+     * (Updatable) If true, an empty string field is replaced with a null value.
      * 
      */
     @Import(name="isNullEmptyString")
     private @Nullable Output<Boolean> isNullEmptyString;
 
     /**
-     * @return (Updatable) If true, an empty string field is replaced with nil.
+     * @return (Updatable) If true, an empty string field is replaced with a null value.
      * 
      */
     public Optional<Output<Boolean>> isNullEmptyString() {
@@ -188,14 +188,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Support colonless ident or not.
+     * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     @Import(name="isSupportColonlessIdent")
     private @Nullable Output<Boolean> isSupportColonlessIdent;
 
     /**
-     * @return (Updatable) Support colonless ident or not.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * 
      */
     public Optional<Output<Boolean>> isSupportColonlessIdent() {
@@ -203,14 +203,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) With priority or not.
+     * (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     @Import(name="isWithPriority")
     private @Nullable Output<Boolean> isWithPriority;
 
     /**
-     * @return (Updatable) With priority or not.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * 
      */
     public Optional<Output<Boolean>> isWithPriority() {
@@ -218,14 +218,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) csv keys.
+     * (Updatable) CSV keys.
      * 
      */
     @Import(name="keys")
     private @Nullable Output<List<String>> keys;
 
     /**
-     * @return (Updatable) csv keys.
+     * @return (Updatable) CSV keys.
      * 
      */
     public Optional<Output<List<String>>> keys() {
@@ -233,14 +233,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Message format of syslog.
+     * (Updatable) Syslog message format.
      * 
      */
     @Import(name="messageFormat")
     private @Nullable Output<String> messageFormat;
 
     /**
-     * @return (Updatable) Message format of syslog.
+     * @return (Updatable) Syslog message format.
      * 
      */
     public Optional<Output<String>> messageFormat() {
@@ -278,14 +278,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     @Import(name="nestedParser")
     private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs> nestedParser;
 
     /**
-     * @return (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * @return (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
      * 
      */
     public Optional<Output<UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs>> nestedParser() {
@@ -323,14 +323,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) grok pattern object.
+     * (Updatable) Grok pattern object.
      * 
      */
     @Import(name="patterns")
     private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs>> patterns;
 
     /**
-     * @return (Updatable) grok pattern object.
+     * @return (Updatable) Grok pattern object.
      * 
      */
     public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs>>> patterns() {
@@ -338,14 +338,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) rfc5424 time format.
+     * (Updatable) RFC 5424 time format.
      * 
      */
     @Import(name="rfc5424timeFormat")
     private @Nullable Output<String> rfc5424timeFormat;
 
     /**
-     * @return (Updatable) rfc5424 time format.
+     * @return (Updatable) RFC 5424 time format.
      * 
      */
     public Optional<Output<String>> rfc5424timeFormat() {
@@ -383,14 +383,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Time type of JSON parser.
+     * (Updatable) JSON parser time type.
      * 
      */
     @Import(name="timeType")
     private @Nullable Output<String> timeType;
 
     /**
-     * @return (Updatable) Time type of JSON parser.
+     * @return (Updatable) JSON parser time type.
      * 
      */
     public Optional<Output<String>> timeType() {
@@ -490,7 +490,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param delimiter (Updatable) csv delimiter.
+         * @param delimiter (Updatable) CSV delimiter.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param delimiter (Updatable) csv delimiter.
+         * @param delimiter (Updatable) CSV delimiter.
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokFailureKey (Updatable) grok failure key.
+         * @param grokFailureKey (Updatable) Grok failure key.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokFailureKey (Updatable) grok failure key.
+         * @param grokFailureKey (Updatable) Grok failure key.
          * 
          * @return builder
          * 
@@ -626,7 +626,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokNameKey (Updatable) grok name key.
+         * @param grokNameKey (Updatable) Grok name key.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param grokNameKey (Updatable) grok name key.
+         * @param grokNameKey (Updatable) Grok name key.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
          * 
          * @return builder
          * 
@@ -658,7 +658,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep time field in the record.
+         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep time field in the record.
+         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
          * 
          * @return builder
          * 
@@ -689,7 +689,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isMergeCriFields (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+         * @param isMergeCriFields (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isMergeCriFields (Updatable) If you don&#39;t need stream/logtag fields, set this to false.
+         * @param isMergeCriFields (Updatable) If you don&#39;t need stream or logtag fields, set this to false.
          * 
          * @return builder
          * 
@@ -710,7 +710,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isNullEmptyString (Updatable) If true, an empty string field is replaced with nil.
+         * @param isNullEmptyString (Updatable) If true, an empty string field is replaced with a null value.
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isNullEmptyString (Updatable) If true, an empty string field is replaced with nil.
+         * @param isNullEmptyString (Updatable) If true, an empty string field is replaced with a null value.
          * 
          * @return builder
          * 
@@ -731,7 +731,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable) Support colonless ident or not.
+         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable) Support colonless ident or not.
+         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable) With priority or not.
+         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable) With priority or not.
+         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
          * 
          * @return builder
          * 
@@ -773,7 +773,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable) csv keys.
+         * @param keys (Updatable) CSV keys.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable) csv keys.
+         * @param keys (Updatable) CSV keys.
          * 
          * @return builder
          * 
@@ -794,7 +794,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param keys (Updatable) csv keys.
+         * @param keys (Updatable) CSV keys.
          * 
          * @return builder
          * 
@@ -804,7 +804,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageFormat (Updatable) Message format of syslog.
+         * @param messageFormat (Updatable) Syslog message format.
          * 
          * @return builder
          * 
@@ -815,7 +815,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param messageFormat (Updatable) Message format of syslog.
+         * @param messageFormat (Updatable) Syslog message format.
          * 
          * @return builder
          * 
@@ -867,7 +867,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         * @param nestedParser (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
          * 
          * @return builder
          * 
@@ -930,7 +930,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable) grok pattern object.
+         * @param patterns (Updatable) Grok pattern object.
          * 
          * @return builder
          * 
@@ -941,7 +941,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable) grok pattern object.
+         * @param patterns (Updatable) Grok pattern object.
          * 
          * @return builder
          * 
@@ -951,7 +951,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param patterns (Updatable) grok pattern object.
+         * @param patterns (Updatable) Grok pattern object.
          * 
          * @return builder
          * 
@@ -961,7 +961,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param rfc5424timeFormat (Updatable) rfc5424 time format.
+         * @param rfc5424timeFormat (Updatable) RFC 5424 time format.
          * 
          * @return builder
          * 
@@ -972,7 +972,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param rfc5424timeFormat (Updatable) rfc5424 time format.
+         * @param rfc5424timeFormat (Updatable) RFC 5424 time format.
          * 
          * @return builder
          * 
@@ -1024,7 +1024,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeType (Updatable) Time type of JSON parser.
+         * @param timeType (Updatable) JSON parser time type.
          * 
          * @return builder
          * 
@@ -1035,7 +1035,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param timeType (Updatable) Time type of JSON parser.
+         * @param timeType (Updatable) JSON parser time type.
          * 
          * @return builder
          * 

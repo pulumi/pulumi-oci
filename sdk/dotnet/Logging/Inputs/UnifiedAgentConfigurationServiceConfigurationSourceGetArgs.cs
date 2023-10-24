@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The name key to tag this grok pattern.
+        /// (Updatable) The name key to tag this Grok pattern.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) source parser object.
+        /// (Updatable) Source parser object.
         /// </summary>
         [Input("parser")]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserGetArgs>? Parser { get; set; }
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _paths;
 
         /// <summary>
-        /// (Updatable) Absolute paths for log source files. Wildcard can be used.
+        /// (Updatable) Absolute paths for log source files. Wildcards can be used.
         /// </summary>
         public InputList<string> Paths
         {

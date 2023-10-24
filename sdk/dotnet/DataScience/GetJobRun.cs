@@ -148,6 +148,10 @@ namespace Pulumi.Oci.DataScience
         public readonly ImmutableArray<Outputs.GetJobRunJobLogConfigurationOverrideDetailResult> JobLogConfigurationOverrideDetails;
         public readonly string JobRunId;
         /// <summary>
+        /// Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
+        /// <summary>
         /// Details of the state of the job run.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -202,6 +206,8 @@ namespace Pulumi.Oci.DataScience
 
             string jobRunId,
 
+            ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationDetailsListResult> jobStorageMountConfigurationDetailsLists,
+
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetJobRunLogDetailResult> logDetails,
@@ -228,6 +234,7 @@ namespace Pulumi.Oci.DataScience
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             JobRunId = jobRunId;
+            JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             LifecycleDetails = lifecycleDetails;
             LogDetails = logDetails;
             ProjectId = projectId;

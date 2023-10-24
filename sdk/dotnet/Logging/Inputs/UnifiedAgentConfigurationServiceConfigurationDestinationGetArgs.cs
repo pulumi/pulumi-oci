@@ -18,6 +18,12 @@ namespace Pulumi.Oci.Logging.Inputs
         [Input("logObjectId", required: true)]
         public Input<string> LogObjectId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Unified monitoring agent operational metrics configuration object.
+        /// </summary>
+        [Input("operationalMetricsConfiguration")]
+        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationGetArgs>? OperationalMetricsConfiguration { get; set; }
+
         public UnifiedAgentConfigurationServiceConfigurationDestinationGetArgs()
         {
         }

@@ -28,7 +28,8 @@ class JobArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_artifact: Optional[pulumi.Input[str]] = None,
-                 job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None):
+                 job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None):
         """
         The set of arguments for constructing a Job resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -48,6 +49,7 @@ class JobArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
         :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         """
         JobArgs._configure(
             lambda key, value: pulumi.set(__self__, key, value),
@@ -64,6 +66,7 @@ class JobArgs:
             freeform_tags=freeform_tags,
             job_artifact=job_artifact,
             job_log_configuration_details=job_log_configuration_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
         )
     @staticmethod
     def _configure(
@@ -81,6 +84,7 @@ class JobArgs:
              freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
              job_artifact: Optional[pulumi.Input[str]] = None,
              job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+             job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
              opts: Optional[pulumi.ResourceOptions]=None,
              **kwargs):
         if 'compartmentId' in kwargs:
@@ -107,6 +111,8 @@ class JobArgs:
             job_artifact = kwargs['jobArtifact']
         if 'jobLogConfigurationDetails' in kwargs:
             job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
 
         _setter("compartment_id", compartment_id)
         _setter("job_configuration_details", job_configuration_details)
@@ -130,6 +136,8 @@ class JobArgs:
             _setter("job_artifact", job_artifact)
         if job_log_configuration_details is not None:
             _setter("job_log_configuration_details", job_log_configuration_details)
+        if job_storage_mount_configuration_details_lists is not None:
+            _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -291,6 +299,18 @@ class JobArgs:
     def job_log_configuration_details(self, value: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']]):
         pulumi.set(self, "job_log_configuration_details", value)
 
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
+        """
+        (Updatable) Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @job_storage_mount_configuration_details_lists.setter
+    def job_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
+        pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
+
 
 @pulumi.input_type
 class _JobState:
@@ -311,6 +331,7 @@ class _JobState:
                  job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
                  job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
                  job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -334,6 +355,7 @@ class _JobState:
         :param pulumi.Input['JobJobConfigurationDetailsArgs'] job_configuration_details: The job configuration details
         :param pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: The state of the job.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         :param pulumi.Input[str] state: The state of the job.
@@ -357,6 +379,7 @@ class _JobState:
             job_configuration_details=job_configuration_details,
             job_infrastructure_configuration_details=job_infrastructure_configuration_details,
             job_log_configuration_details=job_log_configuration_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
             lifecycle_details=lifecycle_details,
             project_id=project_id,
             state=state,
@@ -381,6 +404,7 @@ class _JobState:
              job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
              job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
              job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+             job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]] = None,
              lifecycle_details: Optional[pulumi.Input[str]] = None,
              project_id: Optional[pulumi.Input[str]] = None,
              state: Optional[pulumi.Input[str]] = None,
@@ -417,6 +441,8 @@ class _JobState:
             job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
         if 'jobLogConfigurationDetails' in kwargs:
             job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
         if 'lifecycleDetails' in kwargs:
             lifecycle_details = kwargs['lifecycleDetails']
         if 'projectId' in kwargs:
@@ -456,6 +482,8 @@ class _JobState:
             _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         if job_log_configuration_details is not None:
             _setter("job_log_configuration_details", job_log_configuration_details)
+        if job_storage_mount_configuration_details_lists is not None:
+            _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         if lifecycle_details is not None:
             _setter("lifecycle_details", lifecycle_details)
         if project_id is not None:
@@ -653,6 +681,18 @@ class _JobState:
         pulumi.set(self, "job_log_configuration_details", value)
 
     @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]:
+        """
+        (Updatable) Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
+
+    @job_storage_mount_configuration_details_lists.setter
+    def job_storage_mount_configuration_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobJobStorageMountConfigurationDetailsListArgs']]]]):
+        pulumi.set(self, "job_storage_mount_configuration_details_lists", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -718,6 +758,7 @@ class Job(pulumi.CustomResource):
                  job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
                  job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
                  job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -763,7 +804,17 @@ class Job(pulumi.CustomResource):
                 enable_logging=var["job_job_log_configuration_details_enable_logging"],
                 log_group_id=oci_logging_log_group["test_log_group"]["id"],
                 log_id=oci_logging_log["test_log"]["id"],
-            ))
+            ),
+            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
+                destination_directory_name=var["job_job_storage_mount_configuration_details_list_destination_directory_name"],
+                storage_type=var["job_job_storage_mount_configuration_details_list_storage_type"],
+                bucket=var["job_job_storage_mount_configuration_details_list_bucket"],
+                destination_path=var["job_job_storage_mount_configuration_details_list_destination_path"],
+                export_id=oci_file_storage_export["test_export"]["id"],
+                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
+                namespace=var["job_job_storage_mount_configuration_details_list_namespace"],
+                prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
+            )])
         ```
 
         ## Import
@@ -792,6 +843,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
         :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         """
         ...
@@ -843,7 +895,17 @@ class Job(pulumi.CustomResource):
                 enable_logging=var["job_job_log_configuration_details_enable_logging"],
                 log_group_id=oci_logging_log_group["test_log_group"]["id"],
                 log_id=oci_logging_log["test_log"]["id"],
-            ))
+            ),
+            job_storage_mount_configuration_details_lists=[oci.data_science.JobJobStorageMountConfigurationDetailsListArgs(
+                destination_directory_name=var["job_job_storage_mount_configuration_details_list_destination_directory_name"],
+                storage_type=var["job_job_storage_mount_configuration_details_list_storage_type"],
+                bucket=var["job_job_storage_mount_configuration_details_list_bucket"],
+                destination_path=var["job_job_storage_mount_configuration_details_list_destination_path"],
+                export_id=oci_file_storage_export["test_export"]["id"],
+                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
+                namespace=var["job_job_storage_mount_configuration_details_list_namespace"],
+                prefix=var["job_job_storage_mount_configuration_details_list_prefix"],
+            )])
         ```
 
         ## Import
@@ -885,6 +947,7 @@ class Job(pulumi.CustomResource):
                  job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
                  job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
                  job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
+                 job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -928,6 +991,7 @@ class Job(pulumi.CustomResource):
                     job_log_configuration_details[key] = value
                 JobJobLogConfigurationDetailsArgs._configure(_setter, **job_log_configuration_details)
             __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
+            __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -964,6 +1028,7 @@ class Job(pulumi.CustomResource):
             job_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']]] = None,
             job_infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']]] = None,
             job_log_configuration_details: Optional[pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']]] = None,
+            job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -992,6 +1057,7 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['JobJobConfigurationDetailsArgs']] job_configuration_details: The job configuration details
         :param pulumi.Input[pulumi.InputType['JobJobInfrastructureConfigurationDetailsArgs']] job_infrastructure_configuration_details: (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         :param pulumi.Input[pulumi.InputType['JobJobLogConfigurationDetailsArgs']] job_log_configuration_details: Logging configuration for resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: (Updatable) Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: The state of the job.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         :param pulumi.Input[str] state: The state of the job.
@@ -1017,6 +1083,7 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["job_configuration_details"] = job_configuration_details
         __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
         __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
+        __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
@@ -1145,6 +1212,14 @@ class Job(pulumi.CustomResource):
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_details")
+
+    @property
+    @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
+    def job_storage_mount_configuration_details_lists(self) -> pulumi.Output[Sequence['outputs.JobJobStorageMountConfigurationDetailsList']]:
+        """
+        (Updatable) Collection of JobStorageMountConfigurationDetails.
+        """
+        return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

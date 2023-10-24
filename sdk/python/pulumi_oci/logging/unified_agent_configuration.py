@@ -472,6 +472,19 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                 configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
                 destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
                     log_object_id=oci_objectstorage_object["test_object"]["id"],
+                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
+                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
+                            compartment_id=var["compartment_id"],
+                        ),
+                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
+                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
+                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
+                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
+                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
+                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
+                            ),
+                        ),
+                    ),
                 ),
                 sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
                     source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],
@@ -575,6 +588,19 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                 configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
                 destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
                     log_object_id=oci_objectstorage_object["test_object"]["id"],
+                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
+                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
+                            compartment_id=var["compartment_id"],
+                        ),
+                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
+                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
+                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
+                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
+                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
+                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
+                            ),
+                        ),
+                    ),
                 ),
                 sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
                     source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],

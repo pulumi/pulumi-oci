@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? FieldTimeKey;
         /// <summary>
-        /// (Updatable) If true, keep time field in the record.
+        /// (Updatable) If true, keep the time field in the record.
         /// </summary>
         public readonly bool? IsKeepTimeKey;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? TimeFormat;
         /// <summary>
-        /// (Updatable) Time type of JSON parser.
+        /// (Updatable) JSON parser time type.
         /// </summary>
         public readonly string? TimeType;
 

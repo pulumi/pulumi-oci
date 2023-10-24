@@ -97,6 +97,8 @@ type JobRun struct {
 	JobInfrastructureConfigurationDetails JobRunJobInfrastructureConfigurationDetailArrayOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsOutput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -175,6 +177,8 @@ type jobRunState struct {
 	JobInfrastructureConfigurationDetails []JobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists []JobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
@@ -215,6 +219,8 @@ type JobRunState struct {
 	JobInfrastructureConfigurationDetails JobRunJobInfrastructureConfigurationDetailArrayInput
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
+	// Collection of JobStorageMountConfigurationDetails.
+	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayInput
 	// Details of the state of the job run.
 	LifecycleDetails pulumi.StringPtrInput
 	// Customer logging details for job run.
@@ -450,6 +456,13 @@ func (o JobRunOutput) JobLogConfigurationOverrideDetails() JobRunJobLogConfigura
 	return o.ApplyT(func(v *JobRun) JobRunJobLogConfigurationOverrideDetailsOutput {
 		return v.JobLogConfigurationOverrideDetails
 	}).(JobRunJobLogConfigurationOverrideDetailsOutput)
+}
+
+// Collection of JobStorageMountConfigurationDetails.
+func (o JobRunOutput) JobStorageMountConfigurationDetailsLists() JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobStorageMountConfigurationDetailsListArrayOutput {
+		return v.JobStorageMountConfigurationDetailsLists
+	}).(JobRunJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
 // Details of the state of the job run.

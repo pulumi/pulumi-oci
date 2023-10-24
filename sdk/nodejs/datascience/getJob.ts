@@ -93,6 +93,10 @@ export interface GetJobResult {
      */
     readonly jobLogConfigurationDetails: outputs.DataScience.GetJobJobLogConfigurationDetail[];
     /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobJobStorageMountConfigurationDetailsList[];
+    /**
      * The state of the job.
      */
     readonly lifecycleDetails: string;

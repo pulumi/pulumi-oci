@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string ConfigurationType;
         /// <summary>
-        /// (Updatable) Logging destination object.
+        /// (Updatable) Unified monitoring agent operational metrics destination object.
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationDestination Destination;
         /// <summary>

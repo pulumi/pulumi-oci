@@ -64,6 +64,20 @@ namespace Pulumi.Oci.DataScience
     ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
     ///             LogId = oci_logging_log.Test_log.Id,
     ///         },
+    ///         JobStorageMountConfigurationDetailsLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.JobJobStorageMountConfigurationDetailsListArgs
+    ///             {
+    ///                 DestinationDirectoryName = @var.Job_job_storage_mount_configuration_details_list_destination_directory_name,
+    ///                 StorageType = @var.Job_job_storage_mount_configuration_details_list_storage_type,
+    ///                 Bucket = @var.Job_job_storage_mount_configuration_details_list_bucket,
+    ///                 DestinationPath = @var.Job_job_storage_mount_configuration_details_list_destination_path,
+    ///                 ExportId = oci_file_storage_export.Test_export.Id,
+    ///                 MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
+    ///                 Namespace = @var.Job_job_storage_mount_configuration_details_list_namespace,
+    ///                 Prefix = @var.Job_job_storage_mount_configuration_details_list_prefix,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -170,6 +184,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("jobLogConfigurationDetails")]
         public Output<Outputs.JobJobLogConfigurationDetails> JobLogConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        [Output("jobStorageMountConfigurationDetailsLists")]
+        public Output<ImmutableArray<Outputs.JobJobStorageMountConfigurationDetailsList>> JobStorageMountConfigurationDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// The state of the job.
@@ -329,6 +349,18 @@ namespace Pulumi.Oci.DataScience
         [Input("jobLogConfigurationDetails")]
         public Input<Inputs.JobJobLogConfigurationDetailsArgs>? JobLogConfigurationDetails { get; set; }
 
+        [Input("jobStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.JobJobStorageMountConfigurationDetailsListArgs>? _jobStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.JobJobStorageMountConfigurationDetailsListArgs> JobStorageMountConfigurationDetailsLists
+        {
+            get => _jobStorageMountConfigurationDetailsLists ?? (_jobStorageMountConfigurationDetailsLists = new InputList<Inputs.JobJobStorageMountConfigurationDetailsListArgs>());
+            set => _jobStorageMountConfigurationDetailsLists = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         /// </summary>
@@ -445,6 +477,18 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobLogConfigurationDetails")]
         public Input<Inputs.JobJobLogConfigurationDetailsGetArgs>? JobLogConfigurationDetails { get; set; }
+
+        [Input("jobStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.JobJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// (Updatable) Collection of JobStorageMountConfigurationDetails.
+        /// </summary>
+        public InputList<Inputs.JobJobStorageMountConfigurationDetailsListGetArgs> JobStorageMountConfigurationDetailsLists
+        {
+            get => _jobStorageMountConfigurationDetailsLists ?? (_jobStorageMountConfigurationDetailsLists = new InputList<Inputs.JobJobStorageMountConfigurationDetailsListGetArgs>());
+            set => _jobStorageMountConfigurationDetailsLists = value;
+        }
 
         /// <summary>
         /// The state of the job.

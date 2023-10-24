@@ -87,6 +87,10 @@ export interface GetJobRunResult {
     readonly jobLogConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobLogConfigurationOverrideDetail[];
     readonly jobRunId: string;
     /**
+     * Collection of JobStorageMountConfigurationDetails.
+     */
+    readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobRunJobStorageMountConfigurationDetailsList[];
+    /**
      * Details of the state of the job run.
      */
     readonly lifecycleDetails: string;

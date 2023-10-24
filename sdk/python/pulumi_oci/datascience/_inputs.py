@@ -14,10 +14,12 @@ __all__ = [
     'JobJobInfrastructureConfigurationDetailsArgs',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs',
     'JobJobLogConfigurationDetailsArgs',
+    'JobJobStorageMountConfigurationDetailsListArgs',
     'JobRunJobConfigurationOverrideDetailsArgs',
     'JobRunJobInfrastructureConfigurationDetailArgs',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs',
     'JobRunJobLogConfigurationOverrideDetailsArgs',
+    'JobRunJobStorageMountConfigurationDetailsListArgs',
     'JobRunLogDetailArgs',
     'ModelCustomMetadataListArgs',
     'ModelDefinedMetadataListArgs',
@@ -37,6 +39,7 @@ __all__ = [
     'NotebookSessionNotebookSessionRuntimeConfigDetailsArgs',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs',
     'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs',
+    'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs',
     'PipelineConfigurationDetailsArgs',
     'PipelineInfrastructureConfigurationDetailsArgs',
     'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs',
@@ -428,6 +431,174 @@ class JobJobLogConfigurationDetailsArgs:
 
 
 @pulumi.input_type
+class JobJobStorageMountConfigurationDetailsListArgs:
+    def __init__(__self__, *,
+                 destination_directory_name: pulumi.Input[str],
+                 storage_type: pulumi.Input[str],
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 destination_path: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
+        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
+        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
+        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
+        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
+        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
+        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
+        """
+        JobJobStorageMountConfigurationDetailsListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: pulumi.Input[str],
+             storage_type: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             destination_path: Optional[pulumi.Input[str]] = None,
+             export_id: Optional[pulumi.Input[str]] = None,
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @destination_directory_name.setter
+    def destination_directory_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_directory_name", value)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "storage_type", value)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @destination_path.setter
+    def destination_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_path", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+
+@pulumi.input_type
 class JobRunJobConfigurationOverrideDetailsArgs:
     def __init__(__self__, *,
                  job_type: pulumi.Input[str],
@@ -786,6 +957,176 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
     @log_id.setter
     def log_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_id", value)
+
+
+@pulumi.input_type
+class JobRunJobStorageMountConfigurationDetailsListArgs:
+    def __init__(__self__, *,
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 destination_directory_name: Optional[pulumi.Input[str]] = None,
+                 destination_path: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 storage_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] bucket: The object storage bucket
+        :param pulumi.Input[str] destination_directory_name: The local directory name to be mounted
+        :param pulumi.Input[str] destination_path: The local path of the mounted directory, excluding directory name.
+        :param pulumi.Input[str] export_id: OCID of the export
+        :param pulumi.Input[str] mount_target_id: OCID of the mount target
+        :param pulumi.Input[str] namespace: The object storage namespace
+        :param pulumi.Input[str] prefix: Prefix in the bucket to mount
+        :param pulumi.Input[str] storage_type: The type of storage.
+        """
+        JobRunJobStorageMountConfigurationDetailsListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             destination_directory_name: Optional[pulumi.Input[str]] = None,
+             destination_path: Optional[pulumi.Input[str]] = None,
+             export_id: Optional[pulumi.Input[str]] = None,
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             storage_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_directory_name is not None:
+            _setter("destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+        if storage_type is not None:
+            _setter("storage_type", storage_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @destination_directory_name.setter
+    def destination_directory_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_directory_name", value)
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @destination_path.setter
+    def destination_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_path", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_type", value)
 
 
 @pulumi.input_type
@@ -2168,6 +2509,174 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
     @url.setter
     def url(self, value: pulumi.Input[str]):
         pulumi.set(self, "url", value)
+
+
+@pulumi.input_type
+class NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs:
+    def __init__(__self__, *,
+                 destination_directory_name: pulumi.Input[str],
+                 storage_type: pulumi.Input[str],
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 destination_path: Optional[pulumi.Input[str]] = None,
+                 export_id: Optional[pulumi.Input[str]] = None,
+                 mount_target_id: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] destination_directory_name: (Updatable) The local directory name to be mounted
+        :param pulumi.Input[str] storage_type: (Updatable) The type of storage.
+        :param pulumi.Input[str] bucket: (Updatable) The object storage bucket
+        :param pulumi.Input[str] destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
+        :param pulumi.Input[str] export_id: (Updatable) OCID of the export
+        :param pulumi.Input[str] mount_target_id: (Updatable) OCID of the mount target
+        :param pulumi.Input[str] namespace: (Updatable) The object storage namespace
+        :param pulumi.Input[str] prefix: (Updatable) Prefix in the bucket to mount
+        """
+        NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: pulumi.Input[str],
+             storage_type: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             destination_path: Optional[pulumi.Input[str]] = None,
+             export_id: Optional[pulumi.Input[str]] = None,
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if destination_path is not None:
+            _setter("destination_path", destination_path)
+        if export_id is not None:
+            _setter("export_id", export_id)
+        if mount_target_id is not None:
+            _setter("mount_target_id", mount_target_id)
+        if namespace is not None:
+            _setter("namespace", namespace)
+        if prefix is not None:
+            _setter("prefix", prefix)
+
+    @property
+    @pulumi.getter(name="destinationDirectoryName")
+    def destination_directory_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The local directory name to be mounted
+        """
+        return pulumi.get(self, "destination_directory_name")
+
+    @destination_directory_name.setter
+    def destination_directory_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_directory_name", value)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of storage.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "storage_type", value)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage bucket
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="destinationPath")
+    def destination_path(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The local path of the mounted directory, excluding directory name.
+        """
+        return pulumi.get(self, "destination_path")
+
+    @destination_path.setter
+    def destination_path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "destination_path", value)
+
+    @property
+    @pulumi.getter(name="exportId")
+    def export_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the export
+        """
+        return pulumi.get(self, "export_id")
+
+    @export_id.setter
+    def export_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "export_id", value)
+
+    @property
+    @pulumi.getter(name="mountTargetId")
+    def mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of the mount target
+        """
+        return pulumi.get(self, "mount_target_id")
+
+    @mount_target_id.setter
+    def mount_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_target_id", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The object storage namespace
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Prefix in the bucket to mount
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
 
 
 @pulumi.input_type

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationDetailsListArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunLogDetailArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -174,6 +175,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    @Import(name="jobStorageMountConfigurationDetailsLists")
+    private @Nullable Output<List<JobRunJobStorageMountConfigurationDetailsListArgs>> jobStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return Collection of JobStorageMountConfigurationDetails.
+     * 
+     */
+    public Optional<Output<List<JobRunJobStorageMountConfigurationDetailsListArgs>>> jobStorageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.jobStorageMountConfigurationDetailsLists);
+    }
+
+    /**
      * Details of the state of the job run.
      * 
      */
@@ -297,6 +313,7 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         this.jobId = $.jobId;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationOverrideDetails = $.jobLogConfigurationOverrideDetails;
+        this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logDetails = $.logDetails;
         this.projectId = $.projectId;
@@ -542,6 +559,37 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs jobLogConfigurationOverrideDetails) {
             return jobLogConfigurationOverrideDetails(Output.of(jobLogConfigurationOverrideDetails));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(@Nullable Output<List<JobRunJobStorageMountConfigurationDetailsListArgs>> jobStorageMountConfigurationDetailsLists) {
+            $.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(List<JobRunJobStorageMountConfigurationDetailsListArgs> jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(Output.of(jobStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param jobStorageMountConfigurationDetailsLists Collection of JobStorageMountConfigurationDetails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobStorageMountConfigurationDetailsLists(JobRunJobStorageMountConfigurationDetailsListArgs... jobStorageMountConfigurationDetailsLists) {
+            return jobStorageMountConfigurationDetailsLists(List.of(jobStorageMountConfigurationDetailsLists));
         }
 
         /**

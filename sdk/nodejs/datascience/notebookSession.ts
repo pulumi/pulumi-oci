@@ -55,6 +55,16 @@ import * as utilities from "../utilities";
  *             }],
  *         },
  *     },
+ *     notebookSessionStorageMountConfigurationDetailsLists: [{
+ *         destinationDirectoryName: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+ *         storageType: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+ *         bucket: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+ *         destinationPath: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+ *         exportId: oci_file_storage_export.test_export.id,
+ *         mountTargetId: oci_file_storage_mount_target.test_mount_target.id,
+ *         namespace: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+ *         prefix: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+ *     }],
  * });
  * ```
  *
@@ -131,6 +141,10 @@ export class NotebookSession extends pulumi.CustomResource {
      */
     public readonly notebookSessionRuntimeConfigDetails!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
     /**
+     * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     */
+    public readonly notebookSessionStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList[]>;
+    /**
      * The URL to interact with the notebook session.
      */
     public /*out*/ readonly notebookSessionUrl!: pulumi.Output<string>;
@@ -173,6 +187,7 @@ export class NotebookSession extends pulumi.CustomResource {
             resourceInputs["notebookSessionConfigDetails"] = state ? state.notebookSessionConfigDetails : undefined;
             resourceInputs["notebookSessionConfigurationDetails"] = state ? state.notebookSessionConfigurationDetails : undefined;
             resourceInputs["notebookSessionRuntimeConfigDetails"] = state ? state.notebookSessionRuntimeConfigDetails : undefined;
+            resourceInputs["notebookSessionStorageMountConfigurationDetailsLists"] = state ? state.notebookSessionStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["notebookSessionUrl"] = state ? state.notebookSessionUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -192,6 +207,7 @@ export class NotebookSession extends pulumi.CustomResource {
             resourceInputs["notebookSessionConfigDetails"] = args ? args.notebookSessionConfigDetails : undefined;
             resourceInputs["notebookSessionConfigurationDetails"] = args ? args.notebookSessionConfigurationDetails : undefined;
             resourceInputs["notebookSessionRuntimeConfigDetails"] = args ? args.notebookSessionRuntimeConfigDetails : undefined;
+            resourceInputs["notebookSessionStorageMountConfigurationDetailsLists"] = args ? args.notebookSessionStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -244,6 +260,10 @@ export interface NotebookSessionState {
      * (Updatable) Notebook Session runtime configuration details.
      */
     notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    /**
+     * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     */
+    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[]>;
     /**
      * The URL to interact with the notebook session.
      */
@@ -298,6 +318,10 @@ export interface NotebookSessionArgs {
      * (Updatable) Notebook Session runtime configuration details.
      */
     notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    /**
+     * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
+     */
+    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      *

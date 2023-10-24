@@ -17,11 +17,19 @@ namespace Pulumi.Oci.Logging.Outputs
         /// The OCID of the resource.
         /// </summary>
         public readonly string LogObjectId;
+        /// <summary>
+        /// Unified monitoring agent operational metrics configuration object.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationResult> OperationalMetricsConfigurations;
 
         [OutputConstructor]
-        private GetUnifiedAgentConfigurationServiceConfigurationDestinationResult(string logObjectId)
+        private GetUnifiedAgentConfigurationServiceConfigurationDestinationResult(
+            string logObjectId,
+
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationResult> operationalMetricsConfigurations)
         {
             LogObjectId = logObjectId;
+            OperationalMetricsConfigurations = operationalMetricsConfigurations;
         }
     }
 }
